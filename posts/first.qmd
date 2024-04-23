@@ -1,0 +1,19 @@
+---
+title: "Portfolio"
+listing:
+  - id: posts
+    contents: "**/first/*.qmd"
+    type: default
+    fields: [image, date, title, categories, reading-time] 
+    sort: "date desc"
+    sort-ui: true
+    filter-ui: true
+    page-size: 10     
+page-layout: full
+title-block-banner: false
+comments: false
+toc: true
+---
+
+
+

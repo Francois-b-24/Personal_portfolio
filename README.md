@@ -1,2 +1,2 @@
 # Personal_portfolio
-Personal_portfolio create with Quarto.
+Personal portfolio create with Quarto.

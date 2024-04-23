@@ -1,0 +1,16 @@
+{
+  "hash": "c229066ce284a6e994ece5565d92daa9",
+  "result": {
+    "markdown": "---\ntitle: \"Pricing\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"mco.png\"\ncategories: [Pricing]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](index_files/figure-html/include_pdf-1.png){fig-align='center' width=100%}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

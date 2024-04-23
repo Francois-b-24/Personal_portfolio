@@ -1,0 +1,31 @@
+---
+title: "Alternatives aux moindres carrés ordinaires"
+subtitle: "*Travail de recherche en économétrie*"
+author: "BOUSSENGUI François"
+date: "2024-04-21"
+date-modified: ""
+image: "mco.png"
+categories: [Économétrie]
+fields: [reading-time]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/first/AlternativesMCO.pdf")
+```
+
+<div style="text-align:center;">
+[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}
+</div>
+
+```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 } 
+knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
+```
+
+<div style="text-align:center;">
+[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+</div>

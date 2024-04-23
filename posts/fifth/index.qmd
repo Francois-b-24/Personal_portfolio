@@ -1,0 +1,23 @@
+---
+title: "Pricing"
+author: "BOUSSENGUI François"
+date: "2024-04-21"
+date-modified: ""
+image: "mco.png"
+categories: [Pricing]
+fields: [reading-time]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+webshot::webshot(url = "/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/fifth/PRICING_BOUSSENGUI_LEGER.html", 
+                 file = "htmg.png", 
+                 cliprect = "viewport")
+```
+
+
+

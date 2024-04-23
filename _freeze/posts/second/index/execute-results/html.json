@@ -1,0 +1,14 @@
+{
+  "hash": "4e7a78bee3ad94f2b9a94c40f4f67a27",
+  "result": {
+    "markdown": "---\ntitle: \"Application d'algorithmes de classification non supervisée sur les biesn immobiliers de Saratoga, Californie\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"classification.png\"\ncategories: [Classification]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}\n</div>\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,24 @@
+---
+title: "Application d'algorithmes de classification non supervisée sur les biesn immobiliers de Saratoga, Californie"
+author: "BOUSSENGUI François"
+date: "2024-04-21"
+date-modified: ""
+image: "classification.png"
+categories: [Classification]
+fields: [reading-time]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/second/Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf")
+```
+
+<div style="text-align:center;">
+[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}
+</div>
+
+

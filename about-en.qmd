@@ -1,0 +1,28 @@
+---
+title: "Curriculum Vitae - Aanglais"
+comments: false
+image: moi.jpg
+about:
+  template: trestles
+  links: 
+     - icon: github
+       href: https://github.com/
+     - icon: linkedin
+       href: https://www.linkedin.com/feed/
+     - icon: envelope
+       href: mailto:f.boussengui@gmail.com
+---
+
+Holder of a Master 2 in econometrics, I am mainly specialized in the realization of statistical work of a descriptive but also predictive nature. I am also endowed with theoretical knowledge in economics and econometrics as well as technical skills in programming (R, Python, SQL) that allow me to answer various economic problems.
+
+After a rewarding experience as a Data analyst at LSA Courtage in the Supply and Profitability Department, I subsequently joined the Aon group as a Statistical Studies Officer in the automotive technical department, position I currently hold.
+
+Please find attached my resume :
+
+```{r include_pdf, echo=FALSE, fig.width=20, fig.height=20 }
+knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal_portfolio/FRANCOIS_BOUSSENGUI_CV.pdf")
+```
+
+<div style="text-align:center;">
+[<img src="down.png" width="100">](https://drive.google.com/file/d/1BRthhuI_sx2a047TWS4Pf3bHlPgC-0GE/view?usp=sharing)
+</div>

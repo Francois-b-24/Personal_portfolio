@@ -1,0 +1,43 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "BOUSSENGUI François - Portfolio"
+  page-footer:
+    left: "Website made with [Quarto](https://quarto.org/), by BOUSSENGUI François. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+    right: 
+    - icon: github
+      href: https://github.com/
+    - icon: linkedin
+      href: https://www.linkedin.com/feed/
+    - icon: envelope
+      href: mailto:f.boussengui@gmail.com 
+
+
+  navbar:
+    right:
+      - text: Dive in it
+        menu:      
+          - text: Curriculum vitae - Français
+            href: about-cv.qmd
+          - text: Curriculum vitae - Anglais
+            href: about-en.qmd
+    
+      - icon: github
+        href: https://github.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/feed/
+      - icon: envelope
+        href: mailto:f.boussengui@gmail.com
+
+format:
+  html:
+    theme: theme.scss
+
+editor: visual
+
+comments:
+  utterances:
+    repo: francois-b-24/utterance
+

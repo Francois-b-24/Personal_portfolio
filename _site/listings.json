@@ -1,0 +1,40 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/fifth/index.html",
+      "/posts/first/index.html",
+      "/posts/fourth/index.html",
+      "/posts/second/index.html",
+      "/posts/third/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/fifth/index.html",
+      "/posts/first/index.html",
+      "/posts/fourth/index.html",
+      "/posts/second/index.html",
+      "/posts/third/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/first.html",
+    "items": [
+      "/posts/first/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/second.html",
+    "items": [
+      "/posts/second/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/third.html",
+    "items": [
+      "/posts/third/index.html"
+    ]
+  }
+]

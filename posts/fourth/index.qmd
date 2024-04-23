@@ -1,0 +1,24 @@
+---
+title: "Stochastic frontier analysis"
+author: "BOUSSENGUI François"
+date: "2024-04-21"
+date-modified: ""
+image: "mco.png"
+categories: [Économétrie]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/fourth/hmtl.png")
+```
+
+
+
+
+
+

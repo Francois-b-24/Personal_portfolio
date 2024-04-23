@@ -1,0 +1,14 @@
+{
+  "hash": "430505f93c152ae2506aeae73e407c95",
+  "result": {
+    "markdown": "---\ntitle: \"Alternatives aux moindres carrés ordinaires\"\nsubtitle: \"*Travail de recherche en économétrie*\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"mco.png\"\ncategories: [Économétrie]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](AlternativesMCO.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}\n</div>\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Alternatives aux MCO.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)\n</div>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
