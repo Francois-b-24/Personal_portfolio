@@ -1,5 +1,5 @@
 ---
-title: "Application de modèles de machine learning"
+title: "Appplication des méthodes de classication surpervisée sur des données bancaires"
 author: "BOUSSENGUI François"
 date: "2024-04-21"
 date-modified: ""
@@ -14,8 +14,9 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
-knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/third/Application de modèles de machine learning.pdf")
+knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/third/Application de modèles de machine learning.pdf")
 ```
+
 
 <div style="text-align:center;">
 [<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}

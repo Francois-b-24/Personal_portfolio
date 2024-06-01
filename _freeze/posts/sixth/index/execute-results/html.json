@@ -1,0 +1,15 @@
+{
+  "hash": "ea439d505c7359240acf23716e8f5f18",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Application des méthodes de régression logistique\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"mco.png\"\ncategories: [Économétrie]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Logit-Probit modelling.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/10z5FpyIFDDW6iTGgUda4-aNgHK6Nf2yv/view?usp=sharing)\n</div>\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,7 +1,8 @@
 {
-  "hash": "36d46eead4651210f8c04bba38df4a37",
+  "hash": "2cf9eea67664aff18a71e3f510fd5c96",
   "result": {
-    "markdown": "---\ntitle: \"Application de modèles de machine learning\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"classification.png\"\ncategories: [Classification]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Application de modèles de machine learning.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}\n</div>\n\n\n",
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Appplication des méthodes de classication surpervisée sur des données bancaires\"\nauthor: \"BOUSSENGUI François\"\ndate: \"2024-04-21\"\ndate-modified: \"\"\nimage: \"classification.png\"\ncategories: [Classification]\nfields: [reading-time]\n---\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Application de modèles de machine learning.pdf){fig-align='center' width=100%}\n:::\n:::\n\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}\n</div>\n\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

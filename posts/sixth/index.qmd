@@ -1,0 +1,24 @@
+---
+title: "Application des méthodes de régression logistique"
+author: "BOUSSENGUI François"
+date: "2024-04-21"
+date-modified: ""
+image: "mco.png"
+categories: [Économétrie]
+fields: [reading-time]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/sixth/Logit-Probit modelling.pdf")
+```
+
+<div style="text-align:center;">
+[<img src="down.png" width="100">](https://drive.google.com/file/d/10z5FpyIFDDW6iTGgUda4-aNgHK6Nf2yv/view?usp=sharing)
+</div>
+
+

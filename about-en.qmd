@@ -12,15 +12,23 @@ about:
      - icon: envelope
        href: mailto:f.boussengui@gmail.com
 ---
+**Professional Summary**
 
-Holder of a Master 2 in econometrics, I am mainly specialized in the realization of statistical work of a descriptive but also predictive nature. I am also endowed with theoretical knowledge in economics and econometrics as well as technical skills in programming (R, Python, SQL) that allow me to answer various economic problems.
+Holder of a Master in Econometrics, I have a solid background in statistics, applied mathematics and data analysis. With deep expertise in economic modeling and forecasting, I am able to turn complex data into actionable insights to support strategic decision-making. 
+
+During my studies, I developed advanced skills using analysis software such as R, Python, SQL and SAS to conduct rigorous quantitative analysis. I also gained practical experience through academic projects and internships, especially in the realization of machine learning projects (ranging from data recovery to model production), in the analysis of economic trends and the implementation of decision support tools. 
+
+With exceptional analytical skills and an eye for detail, I excel in identifying the key variables influencing markets and economic behaviour. I am also adept at communicating complex results to non-technical audiences, facilitating clear understanding and effective implementation of recommendations.
+
+Passionate about economics and data, I spend a lot of my free time researching various economic topics. 
+I’m also a member of the American Economic Association. It is a non-profit association that publishes research in microeconomics, macroeconomics, applied economics and economic policies. 
 
 After a rewarding experience as a Data analyst at LSA Courtage in the Supply and Profitability Department, I subsequently joined the Aon group as a Statistical Studies Officer in the automotive technical department, position I currently hold.
 
-Please find attached my resume :
+Please find attached my resume:
 
 ```{r include_pdf, echo=FALSE, fig.width=20, fig.height=20 }
-knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal_portfolio/FRANCOIS_BOUSSENGUI_CV.pdf")
+knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/FRANCOIS_BOUSSENGUI_CV.pdf")
 ```
 
 <div style="text-align:center;">

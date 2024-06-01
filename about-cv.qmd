@@ -13,14 +13,23 @@ about:
        href: mailto:f.boussengui@gmail.com
 ---
 
-Titulaire d'un Master 2 en économétrie, je suis principalement spécialisé dans la réalisation travaux statistiques à caractère descriptif mais aussi prédictif. Je suis également doté de connaissances théoriques en économie et en économétrie ainsi que de compétences techniques en programmation (R, Python, SQL) qui me permettent de répondre à diverses problématiques économiques.
+**Résumé Professionnel**
+
+Titulaire d’un Master en Économétrie, je possède une solide formation en statistiques, mathématiques appliquées et analyse de données. Avec une expertise approfondie dans la modélisation économique et la prévision, je suis capable de transformer des données complexes en informations exploitables pour soutenir la prise de décision stratégique. 
+
+Au cours de mes études, j'ai développé des compétences avancées en utilisant des logiciels d'analyse tels que R, Python, SQL et SAS  pour mener des analyses quantitatives rigoureuses. J'ai également acquis une expérience pratique grâce à des projets académiques et des stages, notamment dans la réalisation de projets de machine learning (allant de la récupération des données à la mise en production du modèle), dans l’analyse des tendances économiques et la mise en place d'outil d'aide à la décision. 
+
+Fort d’une capacité analytique exceptionnelle et d’un grand souci du détail, j'excelle dans l’identification des variables clés influençant les marchés et les comportements économiques. Je suis également habile à communiquer des résultats complexes à des publics non techniques, facilitant ainsi une compréhension claire et une mise en œuvre efficace des recommandations.
+
+Passionné par l’économie et les données, je consacre beaucoup de mon temps libre à me documenter sur divers sujets à caractère économique. 
+Par ailleurs, je fais partie de l'American Economic Assocition. C'est une association à but non lucratif qui publie des travaux de recherche en microéconomie, macroéconomie, économie appliqué et sur les politiques économiques. 
 
 Après une expérience enrichissante en tant que Data analyst chez LSA Courtage au sein de la Direction de l'Offre et de la Rentabilité, j'ai par la suite intégré le groupe Aon en tant Chargé d'études statistiques au sein de la direction technique automobile, poste que j'occupe actuellement.
 
 Vous trouverez-ci joint mon CV :
 
 ```{r include_pdf, echo=FALSE, fig.width=20, fig.height=20 }
-knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal_portfolio/FRANCOIS_BOUSSENGUI_CV.pdf")
+knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/FRANCOIS_BOUSSENGUI_CV.pdf")
 ```
 
 <div style="text-align:center;">
