@@ -9,7 +9,7 @@
 <meta name="author" content="BOUSSENGUI François">
 <meta name="dcterms.date" content="2024-04-21">
 
-<title>BOUSSENGUI François - Portfolio - Application d’algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie</title>
+<title>BOUSSENGUI François - L’immobilier à Saratoga, CA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">BOUSSENGUI François - Portfolio</span>
+    <span class="navbar-title">BOUSSENGUI François</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Application d’algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie</h1>
+<h1 class="title">L’immobilier à Saratoga, CA</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Classification</div>
   </div>
@@ -170,7 +170,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Nous avions à notre disposition une base de données contenant des informations sur les caractéristiques des biens immobiliers à Saragota, en Californie. Par le biais de techniques de classification non supervisée, il était donc question de mettre en évidence des classes de biens homogènes par leurs caractéristiques.</p>
+<p><strong>Contexte général</strong></p>
+<p>Dans le cadre d’un projet réalisé durant le cours de datamining, il a été question d’appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
+<p><strong>Objectifs du travail</strong></p>
+<p>Comme dans toutes les villes, les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partont du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant les mêmes caractéristiques. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.</p>
+<p><strong>Méthodologie</strong></p>
+<p>Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.</p>
+<ul>
+<li><p>Analyses factorielles</p>
+<ul>
+<li><p>Analyse factorielle des correspondances (AFC)</p></li>
+<li><p>Analyse des composantes principales (ACP)</p></li>
+<li><p>Analyse des composantes multiples (ACM)</p></li>
+</ul></li>
+<li><p>Méthodes de partitionnement</p>
+<ul>
+<li><p>Classification ascendante hiérarchique</p></li>
+<li><p>K-Means</p></li>
+</ul></li>
+</ul>
+<p><strong>Principaux résultats</strong></p>
+<p>L’analyse des composantes principales nous a permis de déterminer les 2 homogène suivnates classes suivantes :</p>
+<ul>
+<li><p>Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.</p></li>
+<li><p>Inverserment, les biens immobiliers présentant des prix relativement élevés, une surface habitable relativement élevée et qui sont plus anciens.</p></li>
+</ul>
+<p>L’analyse des composantes multiples nous a permis quant à elle de classifier les biens comme suit :</p>
+<ul>
+<li><p>Les biens chauffés à l’electrique et n’ayant pas de cheminée</p></li>
+<li><p>Inversement, les biens possédant une cheminée ou plus et chauffés à l’air chaud ou à l’eau chaude</p></li>
+</ul>
+<p><strong>Conclusion et perspectives</strong></p>
+<p>La combinaison des résultats de ces 2 analyses nous permis de tirer la conclusion générale suivante :</p>
+<p>Les biens immobiliers de Saratoga présent effectivement des disparités non négligeables. Néanmoins, par le biais d’application de méthode de classification non supervisées nous sommes parvenus à proposer 2 grandes classes de biens, à savoir :</p>
+<ul>
+<li>Les biens immobiliers présentant des prix faibles, chauffés à l’électrique et possèdant au maximum 3 pièces. Contrairment à ceux présentant des prix plus élevés, chauffés à l’eau chaude, voire au fioul et possédant au minimum une cheminée.</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -181,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div style="text-align:center;">
-<p><a href="https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing" width="5px"><img src="down.png" width="100"></a></p>
+<p><a href="https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing"><img src="down.png" width="100"></a></p>
 </div>
 
 
