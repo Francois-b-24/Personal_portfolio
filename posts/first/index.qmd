@@ -13,20 +13,57 @@ fields: [reading-time]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
 
-Dans le cadre d'un projet de recherche réalisé durant mon Master 2, il était question dans un premier temps de présenter de manière théorique les différentes alternatives d'estimation économétriques autres la régression linéaire. Dans un second temps, il été question de représenter les principaux résultats d'une régression par Moindres Carrés Ordinaires.
+-   **Contexte général**
 
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+    Les moindres carrés ordinaires (MCO), ou en anglais Ordinary Least Squares (OLS), est une méthode statistique utilisée pour estimer les coefficients d'une équation de régression linéaire. La méthode des moindres carrés vise à minimiser la somme des carrés des résidus (différences entre les valeurs observées et les valeurs prédites par le modèle).
+
+    L'économétrie offre un panel de méthodes de prévision riche qui dépendent de la nature des données à disposition ainsi que de la problématique à laquelle on cherche à répondre. Ce travail s'inscrit dans le cadre de travaux de recherches réalisés durant ma seconde année de Master en économétrie.
+
+-   **Objectifs du travail**
+
+    L'objectif principal de ces travaux est de présenter les principales méthodes alternatives à la méthode des moindres carrés ordinaires. (MCO). Dans un premier temps, il a été question de présenter sous forme de diagramme les principaux résultats de la méthode des OLS. Puis, pour finir de présenter les principales méthodes alternatives aux OLS.
+
+-   **Méthodologie**
+
+    Pour atteindre ces objectifs, nous avons effectué des recherches bibliographiques et nous avons travaillé en étroite collaboration avec notre professeur référent en économétrie.
+
+-   **Résultats principaux**
+
+    Nos recherches nous ont permis d'aboutir à la proposition d'une représentation alternative des principaux résultats d'une régression linéaire simple.
+
+    Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :
+
+    -   Moindres carrés ordinaires
+
+    -   Régression orthogonale
+
+    -   Régression non paramétrique
+
+    Pour chacune des méthodes, nous avons présenté :
+
+    -   La forme fonctionnelle
+
+    -   Les principales hypothèses associées au modèle
+
+    -   Leur application dans le logiciel R
+
+```{=html}
+<!-- -->
+```
+-   **Conclusions et perspectives**
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/AlternativesMCO.pdf")
 ```
 
-<div style="text-align:center;">
-[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}
-</div>
+::: {style="text-align:center;"}
+[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+:::
 
-```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 } 
-knitr::include_graphics("/Users/f.b/Desktop/Data Science/Personal Portfolio/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
+```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 }
+knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
 ```
 
-<div style="text-align:center;">
-[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
-</div>
+::: {style="text-align:center;"}
+[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+:::

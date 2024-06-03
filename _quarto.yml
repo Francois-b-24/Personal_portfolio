@@ -3,7 +3,7 @@ project:
 
 website:
   page-navigation: true
-  title: "BOUSSENGUI François - Portfolio"
+  title: "BOUSSENGUI François"
   page-footer:
     left: "Website made with [Quarto](https://quarto.org/), by BOUSSENGUI François. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     right: 
