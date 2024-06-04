@@ -1,5 +1,6 @@
 ---
-title: "Appplication des méthodes de classication surpervisée sur des données bancaires"
+title: "Par le biais de méthodes statistiques, peut-on prévenir les défauts de paiement ?"
+description: "*Classification supervisée*"
 author: "BOUSSENGUI François"
 date: "2024-04-21"
 date-modified: ""
@@ -12,14 +13,62 @@ fields: [reading-time]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
 
+**Contexte général**
 
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 
+La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces dangers. La classification supervisée regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable.
+
+**Objectifs du travail**
+
+Ainsi, dans le cas des défauts de paiement bancaire, l'objectif est de pouvoir modéliser l'appartenance d'un individu à l'une des classes suivantes :
+
+1.  **Oui**, l'individu est en défaut de paiement
+
+2.  **Non**, l'individu n'est pas en défaut de paiement
+
+L'application de ces méthodes de classification supervisée aboutira à l'attribution d'un score ou probabilité de risque de défauts de paiement.
+
+**Méthodologie**
+
+Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont), nous avons procédé comme suit :
+
+-   Découpage de la population en 2 sous-groupes :
+
+    -   Un groupe dédié à l'apprentissage, autrement dit, le groupe d'entraînement ;
+
+    -   Un groupe dédié à la validation des modèles, autrement dit, le groupe test ;
+
+-   Première application des modèles sans prise en compte du déséquilibre des classes
+
+-   Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d'application de méthode de rééchantillonnage des classes, à savoir :
+
+    -   Sous-échantillonnage
+
+    -   Sur-échantillognnage
+
+    -   SMOTE, qui est une combinaison des 2 méthodes précédentes
+
+-   Les modèles utilisés sont les suivants :
+
+    -   Analyse linéaire discriminante
+
+    -   Analyse quadratique discriminante
+
+    -   Arbres de décisions
+
+    -   Bagging, Boosting
+
+    -   Forêts aléatoires
+
+**Principaux résultats**
+
+Nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l'ayant pas pris en compte. Le modèle que nous avons retenu sur la base des métriques d'évaluation est une Forêt Aléatoire sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de prédiction pour les mauvaises prédiction.
+
+**Conclusion et perspective**
+
+```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/third/Application de modèles de machine learning.pdf")
 ```
 
-
-<div style="text-align:center;">
-[<img src="down.png" width="100">](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing){width=5px}
-</div>
-
-
+::: {style="text-align:center;"}
+[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+:::

@@ -8,8 +8,9 @@
 
 <meta name="author" content="BOUSSENGUI François">
 <meta name="dcterms.date" content="2024-04-21">
+<meta name="description" content="Classification supervisée">
 
-<title>BOUSSENGUI François - Portfolio - Appplication des méthodes de classication surpervisée sur des données bancaires</title>
+<title>BOUSSENGUI François - Par le biais de méthodes statistiques, peut-on prévenir les défauts de paiement ?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">BOUSSENGUI François - Portfolio</span>
+    <span class="navbar-title">BOUSSENGUI François</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -138,12 +139,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appplication des méthodes de classication surpervisée sur des données bancaires</h1>
+<h1 class="title">Par le biais de méthodes statistiques, peut-on prévenir les défauts de paiement ?</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Classification</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    <em>Classification supervisée</em>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -170,6 +176,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Contexte général</strong></p>
+<p>La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces dangers. La classification supervisée regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable.</p>
+<p><strong>Objectifs du travail</strong></p>
+<p>Ainsi, dans le cas des défauts de paiement bancaire, l’objectif est de pouvoir modéliser l’appartenance d’un individu à l’une des classes suivantes :</p>
+<ol type="1">
+<li><p><strong>Oui</strong>, l’individu est en défaut de paiement</p></li>
+<li><p><strong>Non</strong>, l’individu n’est pas en défaut de paiement</p></li>
+</ol>
+<p>L’application de ces méthodes de classification supervisée aboutira à l’attribution d’un score ou probabilité de risque de défauts de paiement.</p>
+<p><strong>Méthodologie</strong></p>
+<p>Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont), nous avons procédé comme suit :</p>
+<ul>
+<li><p>Découpage de la population en 2 sous-groupes :</p>
+<ul>
+<li><p>Un groupe dédié à l’apprentissage, autrement dit, le groupe d’entraînement ;</p></li>
+<li><p>Un groupe dédié à la validation des modèles, autrement dit, le groupe test ;</p></li>
+</ul></li>
+<li><p>Première application des modèles sans prise en compte du déséquilibre des classes</p></li>
+<li><p>Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d’application de méthode de rééchantillonnage des classes, à savoir :</p>
+<ul>
+<li><p>Sous-échantillonnage</p></li>
+<li><p>Sur-échantillognnage</p></li>
+<li><p>SMOTE, qui est une combinaison des 2 méthodes précédentes</p></li>
+</ul></li>
+<li><p>Les modèles utilisés sont les suivants :</p>
+<ul>
+<li><p>Analyse linéaire discriminante</p></li>
+<li><p>Analyse quadratique discriminante</p></li>
+<li><p>Arbres de décisions</p></li>
+<li><p>Bagging, Boosting</p></li>
+<li><p>Forêts aléatoires</p></li>
+</ul></li>
+</ul>
+<p><strong>Principaux résultats</strong></p>
+<p>Nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l’ayant pas pris en compte. Le modèle que nous avons retenu sur la base des métriques d’évaluation est une Forêt Aléatoire sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de prédiction pour les mauvaises prédiction.</p>
+<p><strong>Conclusion et perspective</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -180,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div style="text-align:center;">
-<p><a href="https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing" width="5px"><img src="down.png" width="100"></a></p>
+<p><a href="https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing"><img src="down.png" width="100"></a></p>
 </div>
 
 

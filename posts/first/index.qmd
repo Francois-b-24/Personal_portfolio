@@ -13,8 +13,6 @@ fields: [reading-time]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
 
-<p style="text-align: justify;">
-
 -   **Contexte général**
 
     Les moindres carrés ordinaires (MCO), ou en anglais Ordinary Least Squares (OLS), est une méthode statistique utilisée pour estimer les coefficients d'une équation de régression linéaire. La méthode des moindres carrés vise à minimiser la somme des carrés des résidus (différences entre les valeurs observées et les valeurs prédites par le modèle).
@@ -48,8 +46,6 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
     -   Les principales hypothèses associées au modèle
 
     -   Leur application dans le logiciel R
-
-</p>
 
 <!-- -->
 
