@@ -1,5 +1,5 @@
 ---
-title: "Stochastic Frontier Analysis"
+title: "Analyse des frontières stochastiques"
 author: "BOUSSENGUI François"
 date: "2024-04-21"
 date-modified: ""
@@ -11,7 +11,11 @@ categories: [Économétrie]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
+# Contexte et objectifs
+
 L'objectif de se travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain.
+
+# Méthodologie
 
 L'analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).
 
@@ -35,7 +39,7 @@ $y_i = f(x_i, \beta) \times TE_i \times (v_i)$
 
 Nous supposons que $TE_i$ est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.
 
-L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d\'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. "L'analyse de la frontière du profit" examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
+L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. "L'analyse de la frontière du profit" examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
 
 L'analyse des frontières stochastiques a également été appliquée aux microdonnées de la demande des consommateurs dans le but de comparer la consommation et de segmenter les consommateurs. Dans une approche en deux étapes, un modèle de frontière stochastique est estimé, puis les écarts par rapport à la frontière sont régressés sur les caractéristiques des consommateurs (Baltas 2005).
 

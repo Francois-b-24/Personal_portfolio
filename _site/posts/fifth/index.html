@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
 <meta name="dcterms.date" content="2024-04-21">
 
-<title>BOUSSENGUI François Portfolio - Pricing</title>
+<title>BOUSSENGUI François - Pricing &amp; Segmentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,11 +62,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -68,11 +105,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">BOUSSENGUI François Portfolio</span>
+    <span class="navbar-title">BOUSSENGUI François</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -82,39 +119,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dive-in-it" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dive-in-it" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Dive in it</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-dive-in-it">    
         <li>
-    <a class="dropdown-item" href="../../about-cv.html" rel="" target="">
+    <a class="dropdown-item" href="../../about-cv.html">
  <span class="dropdown-text">Curriculum vitae - Français</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../about-en.html" rel="" target="">
+    <a class="dropdown-item" href="../../about-en.html">
  <span class="dropdown-text">Curriculum vitae - Anglais</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/feed/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/feed/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:f.boussengui@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:f.boussengui@gmail.com"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -123,14 +160,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a>
+  <ul class="collapse">
+  <li><a href="#les-principaux-aspects-du-pricing" id="toc-les-principaux-aspects-du-pricing" class="nav-link" data-scroll-target="#les-principaux-aspects-du-pricing">Les principaux aspects du pricing</a></li>
+  <li><a href="#stratégies-de-pricing" id="toc-stratégies-de-pricing" class="nav-link" data-scroll-target="#stratégies-de-pricing">Stratégies de Pricing</a></li>
+  </ul></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pricing</h1>
+<h1 class="title">Pricing &amp; Segmentation</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Pricing</div>
   </div>
@@ -158,19 +207,55 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/include_pdf-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+
+<section id="contexte-général" class="level1">
+<h1>Contexte général</h1>
+<p>Le pricing en économie fait référence à l’ensemble des processus et des stratégies utilisés par les entreprises pour fixer les prix de leurs produits ou services. Il s’agit d’une composante essentielle du marketing et de la gestion des entreprises, car le prix d’un produit influence directement la demande des consommateurs, la concurrence sur le marché, et la rentabilité de l’entreprise.</p>
+<section id="les-principaux-aspects-du-pricing" class="level2">
+<h2 class="anchored" data-anchor-id="les-principaux-aspects-du-pricing">Les principaux aspects du pricing</h2>
+<ol type="1">
+<li><p><strong>Analyse des Coûts :</strong> Comprendre les coûts fixes et variables associés à la production et à la distribution d’un produit pour s’assurer que le prix couvre ces coûts et permet une marge bénéficiaire.</p></li>
+<li><p><strong>Étude de la Demande :</strong> Analyser comment les consommateurs réagissent aux changements de prix, ce qui implique souvent l’étude de l’élasticité-prix de la demande.</p></li>
+<li><p><strong>Concurrence :</strong> Prendre en compte les prix fixés par les concurrents et la position concurrentielle de l’entreprise sur le marché. Cela peut conduire à des stratégies de prix compétitives telles que le prix d’écrémage ou le prix de pénétration.</p></li>
+<li><p><strong>Objectifs de l’Entreprise :</strong> Fixer les prix en fonction des objectifs stratégiques de l’entreprise, qui peuvent inclure la maximisation des profits, la part de marché, la survie sur le marché, ou le leadership en termes de qualité.</p></li>
+<li><p><strong>Valeur Perçue :</strong> Considérer la valeur perçue par les consommateurs, qui peut justifier des prix plus élevés si le produit est perçu comme offrant un bénéfice supérieur ou une qualité supérieure.</p></li>
+</ol>
+</section>
+<section id="stratégies-de-pricing" class="level2">
+<h2 class="anchored" data-anchor-id="stratégies-de-pricing">Stratégies de Pricing</h2>
+<ul>
+<li><strong>Prix de Pénétration :</strong> Fixer un prix bas pour entrer rapidement sur un marché et attirer un large volume de consommateurs.</li>
+<li><strong>Prix d’Écrémage :</strong> Fixer un prix initial élevé pour maximiser les profits des segments de marché moins sensibles au prix, avant de baisser progressivement le prix.</li>
+<li><strong>Prix Psychologique :</strong> Utiliser des techniques de fixation des prix qui influencent la perception du consommateur, comme fixer un prix à 9,99 € au lieu de 10 €.</li>
+<li><strong>Prix de Groupe :</strong> Offrir des prix différents à différents segments de marché en fonction de leur disposition à payer.</li>
+<li><strong>Prix de Prestiges :</strong> Fixer un prix élevé pour donner une image de qualité supérieure ou de luxe.</li>
+</ul>
+<p>Le pricing est donc une discipline complexe qui requiert une compréhension approfondie de nombreux facteurs économiques et comportementaux pour réussir.</p>
+</section>
+</section>
+<section id="objectifs-du-travail" class="level1">
+<h1>Objectifs du travail</h1>
+<p>Nous nous sommes placés dans le contexte d’un cinéma en situation de monopole qui vend des places selon différentes stratégies tarifaires et nous avons étudié l’impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.</p>
+</section>
+<section id="méthodologie" class="level1">
+<h1>Méthodologie</h1>
+<p>Pour atteindre notre objectif, nous nous sommes placés dans un cadre paramétrique. Cela nous a offert plus de flexibilité et la possibilité d’explorer tous les cas de figures possibles.</p>
+<p>Sachant une fonction de demande dépendant d’un paramètre <span class="math inline">\(\theta\)</span>, nous nous sommes placés dans 2 cas de figure :</p>
+<ol type="1">
+<li><p>Simulation réalisée avec le paramètre <span class="math inline">\(\theta\)</span> suivant une loi uniforme [0,1]</p></li>
+<li><p>Simulation réalisée avec la paramètre <span class="math inline">\(\theta\)</span> suivant une loi Beta (9,2)</p></li>
+</ol>
+<p>Dans un premier temps, pour chacun de ces cas nous avons étudié l’mpact d’une stratégie de vente à l’unité, celle d’une stratégie de vente forfaitaire et celle ou les deux stratégies sont appliquées en même temps.</p>
+<p>Concernant les consommateurs, nous avons quantifié les impacts de ces stratégies sur la <em>demande individuelle</em>, sur la <em>demande indirecte</em> et sur le <em>surplus individuel</em> des consommateurs. Ensuite, nous avons comparé les résultats obtenus dans les 2 cas de figure pour savoir quelle stratégie est la plus optimale, si le monopole décide de les appliquer séparément. Puis, nous avons étudié la situation dans laquelle le monopole donne la possibilité au consommateur de choisir entre les 2 formules.</p>
+<p>Pour finir, dans chacun des cas nous avons quantifié l’impact de ces stratégies sur le monopole.</p>
+<iframe src="PRICING_BOUSSENGUI_LEGER.html" width="100%" height="700px">
+</iframe>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -252,10 +337,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -265,8 +367,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -278,7 +389,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -322,6 +556,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -347,6 +582,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -411,7 +672,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Website made with <a href="https://quarto.org/">Quarto</a>, by BOUSSENGUI François. License: <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</div>   
+    <div class="nav-footer-left">
+<p>Website made with <a href="https://quarto.org/">Quarto</a>, by BOUSSENGUI François. License: <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -439,6 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

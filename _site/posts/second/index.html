@@ -131,7 +131,17 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  <li><a href="#principaux-résultats" id="toc-principaux-résultats" class="nav-link" data-scroll-target="#principaux-résultats">Principaux résultats</a></li>
+  <li><a href="#conclusion-et-perspectives" id="toc-conclusion-et-perspectives" class="nav-link" data-scroll-target="#conclusion-et-perspectives">Conclusion et perspectives</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -139,6 +149,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">L’immobilier à Saratoga, CA</h1>
+<p class="subtitle lead">*Classification non supervisée</p>
   <div class="quarto-categories">
     <div class="quarto-category">Classification</div>
   </div>
@@ -170,11 +181,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Contexte général</strong></p>
+<section id="contexte-général" class="level1">
+<h1>Contexte général</h1>
 <p>Dans le cadre d’un projet réalisé durant le cours de datamining, il a été question d’appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
-<p><strong>Objectifs du travail</strong></p>
+</section>
+<section id="objectifs-du-travail" class="level1">
+<h1>Objectifs du travail</h1>
 <p>Comme dans toutes les villes, les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partont du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant les mêmes caractéristiques. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.</p>
-<p><strong>Méthodologie</strong></p>
+</section>
+<section id="méthodologie" class="level1">
+<h1>Méthodologie</h1>
 <p>Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.</p>
 <ul>
 <li><p>Analyses factorielles</p>
@@ -189,7 +205,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p>K-Means</p></li>
 </ul></li>
 </ul>
-<p><strong>Principaux résultats</strong></p>
+</section>
+<section id="principaux-résultats" class="level1">
+<h1>Principaux résultats</h1>
 <p>L’analyse des composantes principales nous a permis de déterminer les 2 homogène suivnates classes suivantes :</p>
 <ul>
 <li><p>Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.</p></li>
@@ -200,7 +218,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Les biens chauffés à l’electrique et n’ayant pas de cheminée</p></li>
 <li><p>Inversement, les biens possédant une cheminée ou plus et chauffés à l’air chaud ou à l’eau chaude</p></li>
 </ul>
-<p><strong>Conclusion et perspectives</strong></p>
+</section>
+<section id="conclusion-et-perspectives" class="level1">
+<h1>Conclusion et perspectives</h1>
 <p>La combinaison des résultats de ces 2 analyses nous permis de tirer la conclusion générale suivante :</p>
 <p>Les biens immobiliers de Saratoga présent effectivement des disparités non négligeables. Néanmoins, par le biais d’application de méthode de classification non supervisées nous sommes parvenus à proposer 2 grandes classes de biens, à savoir :</p>
 <ul>
@@ -220,6 +240,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -8,9 +8,8 @@
 
 <meta name="author" content="BOUSSENGUI François">
 <meta name="dcterms.date" content="2024-04-21">
-<meta name="description" content="Classification supervisée">
 
-<title>BOUSSENGUI François - Par le biais de méthodes statistiques, peut-on prévenir les défauts de paiement ?</title>
+<title>BOUSSENGUI François - Statistiquement, peut-on prévenir les défauts de paiement ?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,17 +138,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Par le biais de méthodes statistiques, peut-on prévenir les défauts de paiement ?</h1>
+<h1 class="title">Statistiquement, peut-on prévenir les défauts de paiement ?</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Classification</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    <em>Classification supervisée</em>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -181,8 +175,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Objectifs du travail</strong></p>
 <p>Ainsi, dans le cas des défauts de paiement bancaire, l’objectif est de pouvoir modéliser l’appartenance d’un individu à l’une des classes suivantes :</p>
 <ol type="1">
-<li><p><strong>Oui</strong>, l’individu est en défaut de paiement</p></li>
-<li><p><strong>Non</strong>, l’individu n’est pas en défaut de paiement</p></li>
+<li><p><strong>Oui</strong>, l’individu est en défaut de paiement ;</p></li>
+<li><p><strong>Non</strong>, l’individu n’est pas en défaut de paiement ;</p></li>
 </ol>
 <p>L’application de ces méthodes de classification supervisée aboutira à l’attribution d’un score ou probabilité de risque de défauts de paiement.</p>
 <p><strong>Méthodologie</strong></p>
@@ -210,8 +204,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <p><strong>Principaux résultats</strong></p>
-<p>Nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l’ayant pas pris en compte. Le modèle que nous avons retenu sur la base des métriques d’évaluation est une Forêt Aléatoire sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de prédiction pour les mauvaises prédiction.</p>
-<p><strong>Conclusion et perspective</strong></p>
+<p>Après avoir entraîné les modèles sur l’échantillon d’entraînement, nous avons appliqué les modèles sur les données test. Plus précisément, nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l’ayant pas pris en compte. Il s’avère que le modèle que nous avons retenu sur la base des métriques d’évaluation est une <strong>Forêt Aléatoire</strong> sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.</p>
+<p><strong>Conclusions et perspective</strong></p>
+<p>Il est fort probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. C’est un aspect qui biaise fortement les résultats d’estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour résoudre le problème. Au sortir de là, nous avons un modèle qui nous permet de prédire l’appartenance à l’une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l’intérêt de ce genre de méthodes est qu’elle donne la possibilité de mettre en place de moyens de prévention pour se protéger des risques des personnes qui sont en défauts de paiement.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

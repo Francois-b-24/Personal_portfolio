@@ -13,15 +13,15 @@ fields: [reading-time]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
 
-**Contexte général**
+# Contexte général
 
 Dans le cadre d'un projet réalisé durant le cours de datamining, il a été question d'appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur *1728* biens immobiliers de la ville de Saratoga, en Californie.
 
-**Objectifs du travail**
+# Objectifs du travail
 
 Comme dans toutes les villes, les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partont du postulat qu'il est tout à fait possible de regrouper ces biens en classes homogènes. En d'autres termes, en groupe de biens présentant les mêmes caractéristiques. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.
 
-**Méthodologie**
+# Méthodologie
 
 Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.
 
@@ -39,7 +39,7 @@ Pour ce faire, nous avons appliquer des méthodes de classification non supervis
 
     -   K-Means
 
-**Principaux résultats**
+# Principaux résultats 
 
 L'analyse des composantes principales nous a permis de déterminer les 2 homogène suivnates classes suivantes :
 
@@ -53,7 +53,7 @@ L'analyse des composantes multiples nous a permis quant à elle de classifier le
 
 -   Inversement, les biens possédant une cheminée ou plus et chauffés à l'air chaud ou à l'eau chaude
 
-**Conclusion et perspectives**
+# Conclusion et perspectives
 
 La combinaison des résultats de ces 2 analyses nous permis de tirer la conclusion générale suivante :
 
