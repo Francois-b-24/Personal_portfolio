@@ -1,8 +1,7 @@
 ---
-title: "Application des méthodes de régression logistique"
+title: "Marketing quantitatif au service de la santé"
+subtitle: "*Économétrie*"
 author: "BOUSSENGUI François"
-date: "2024-04-21"
-date-modified: ""
 image: "mco.png"
 categories: [Économétrie]
 fields: [reading-time]
@@ -11,6 +10,26 @@ fields: [reading-time]
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
+
+# Contexte général 
+
+Le marketing quantitatif est une approche analytique du marketing qui se concentre sur l'utilisation de données et de statistiques pour prendre des décisions éclairées et mesurer les performances des activités marketing. Les prestataires de services peuvent avoir recours à ce genre de techniques afin de mieux comprendre la demande et ainsi affiner les propositions. En l'occurrence, nous sommes dans le cas d'une étude qui concerne le programme d'assurance Medicare aux Etats-Unis. C'est un programme d’assurance maladie qui aide les personnes âgées à payer les services de santé. Certaines personnes souscrivent une assurance complémentaire (Medigap) qui les aide à payer le reste à charge de Medicare et les autres dépenses médicales qui ne sont pas couvertes par Medicare. Cette assurance est parfois fournie par le dernier employeur de la personne dans le cadre d’une prestation de retraite. D’autres personnes souscrivent une assurance maladie complémentaire auprès de sociétés d’assurances privées.
+
+# Objectifs du travail 
+
+L'objectif du travail est d'appliquer des méthodes issues de l'économétrie afin de répondre à la question suivante : Au vue des caractéristiques des individus ayant souscrit au programme Medicare, quel est le profil des ceux ayant souscrit à une complémentaire santé ? 
+
+# Méthodologie 
+
+Pour ce faire, il a été nécessaire de traiter une base données contenant des informations sur des indivudus ayant souscrits au programme d'assurance Medicare. La variable d'intérêt est *Assurance*. Elle vaut 1 quand l'individu à souscrit à une complémentaire et 0 sinon. 
+
+Dans un premier temps, une analyse descriptive de la base de données à été nécessaire pour dégager les tendances primaires qui se dégagent de cette base données. Cette analyse descriptive a permis de déterminer les profils types des individus ayant souscrit à une complémentaire et ceux ne l'ayant pas fait. 
+
+Ensuite, afin de répondre à la question soulevée dans la problématique, l'application de méthodes économétriques à été nécessaire. Plus précisément, la réponse à la question à nécéssité l'application de modèles dont la variable à expliquer est binaire. Dans. notre cas, il s'agit d'un modèle **Logit**. Le modèle Logit, ou modèle de régression logistique, est un outil statistique utilisé pour modéliser une variable dépendante binaire (c'est-à-dire une variable qui prend deux valeurs possibles, généralement 0 et 1) en fonction d'une ou plusieurs variables explicatives. Dans notre cas, la variable dépendante que nous modélisons est *Assurance*, valant 1 quand l'individu à souscrit à une complémentaire et 0 sinon. 
+
+# Principaux résultats 
+
+L'application de cette méthode économétrique a permis de déterminer le type d'individu inscrit au programme d'assurance Medicare ayant une forte probabilité de souscrire à une complémentaire. Par la suite, au vue des résultats obtenus, cela à conduit à des recommandations qui peuvent être utiles lors des campagnes de prévention, ou pour mieux cibler les personnes qui sont plus probables de souscrire à ce genre de services. 
 
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 } 

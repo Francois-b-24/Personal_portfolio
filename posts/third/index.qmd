@@ -1,8 +1,7 @@
 ---
-title: "Statistiquement, peut-on prévenir les défauts de paiement ?"
+title: "Statistiquement, peut-on prévoir les défauts de paiement bancaire?"
+subtitle: "*Classification supervisée*"
 author: "BOUSSENGUI François"
-date: "2024-04-21"
-date-modified: ""
 image: "classification.png"
 categories: [Classification]
 fields: [reading-time]
@@ -14,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 
 # Contexte général
 
-La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces dangers. La classification supervisée regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable.
+La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La classification supervisée regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable. Nous sommes ici dans le cas d'un banque qui souhaite attribuer un score ou probabilité de risque à ses clients. 
 
 # Objectifs du travail
 
@@ -24,11 +23,11 @@ Ainsi, dans le cas des défauts de paiement bancaire, l'objectif est de pouvoir 
 
 2.  **Non**, l'individu n'est pas en défaut de paiement ;
 
-L'application de ces méthodes de classification supervisée aboutira à l'attribution d'un score ou probabilité de risque de défauts de paiement.
+L'application des méthodes de classification supervisée aboutira à l'attribution d'un score ou probabilité de risque de défauts de paiement.
 
 # Méthodologie
 
-Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont), nous avons procédé comme suit :
+Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont). Cela nous a donc conduit a procédé comme suit :
 
 -   Découpage de la population en 2 sous-groupes :
 
@@ -44,7 +43,7 @@ Après avoir réalisé une analyse descriptive qui a nous permis de découvrir u
 
     -   Sur-échantillognnage
 
-    -   SMOTE, qui est une combinaison des 2 méthodes précédentes
+    -   SMOTE (qui est une combinaison des 2 méthodes précédentes)
 
 -   Les modèles utilisés sont les suivants :
 

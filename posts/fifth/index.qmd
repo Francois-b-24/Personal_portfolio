@@ -1,8 +1,7 @@
 ---
 title: "Pricing & Segmentation"
+subtitle: "*Pricing*"
 author: "BOUSSENGUI François"
-date: "2024-04-21"
-date-modified: ""
 image: "mco.png"
 categories: [Pricing]
 fields: [reading-time]
@@ -44,7 +43,7 @@ Nous nous sommes placés dans le contexte d'un cinéma en situation de monopole 
 
 # Méthodologie
 
-Pour atteindre notre objectif, nous nous sommes placés dans un cadre paramétrique. Cela nous a offert plus de flexibilité et la possibilité d'explorer tous les cas de figures possibles.
+Pour atteindre notre objectif, nous nous sommes placés dans le cadre d'une modélisation paramétrique. Cela nous a offert plus de flexibilité et la possibilité d'explorer tous les cas de figures possibles.
 
 Sachant une fonction de demande dépendant d'un paramètre $\theta$, nous nous sommes placés dans 2 cas de figure :
 
@@ -54,9 +53,9 @@ Sachant une fonction de demande dépendant d'un paramètre $\theta$, nous nous s
 
 Dans un premier temps, pour chacun de ces cas nous avons étudié l'mpact d'une stratégie de vente à l'unité, celle d'une stratégie de vente forfaitaire et celle ou les deux stratégies sont appliquées en même temps.
 
-Concernant les consommateurs, nous avons quantifié les impacts de ces stratégies sur la *demande individuelle*, sur la *demande indirecte* et sur le *surplus individuel* des consommateurs. Ensuite, nous avons comparé les résultats obtenus dans les 2 cas de figure pour savoir quelle stratégie est la plus optimale, si le monopole décide de les appliquer séparément. Puis, nous avons étudié la situation dans laquelle le monopole donne la possibilité au consommateur de choisir entre les 2 formules.
+Concernant les consommateurs, nous avons quantifié les impacts de ces stratégies sur la *demande individuelle*, sur la *demande indirecte* et sur le *surplus individuel* des consommateurs. Ensuite, nous avons comparé les résultats obtenus dans les 2 cas de figure pour savoir quelle stratégie est la plus optimale dans le cas ou le monopole décide de les appliquer séparément. Puis, nous avons étudié la situation dans laquelle le monopole donne la possibilité au consommateur de choisir entre les 2 formules simultanément.
 
-Pour finir, dans chacun des cas nous avons quantifié l'impact de ces stratégies sur le monopole.
+Pour finir, dans chacun des cas nous avons quantifié l'impact de ces stratégies sur le profit et le surplus du monopole.
 
 <iframe src="PRICING_BOUSSENGUI_LEGER.html" width="100%" height="700px">
 

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
-<meta name="dcterms.date" content="2024-04-21">
 
-<title>BOUSSENGUI François - Statistiquement, peut-on prévenir les défauts de paiement ?</title>
+<title>BOUSSENGUI François - Statistiquement, peut-on prévoir les défauts de paiement bancaire?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,14 +130,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  <li><a href="#principaux-résultats" id="toc-principaux-résultats" class="nav-link" data-scroll-target="#principaux-résultats">Principaux résultats</a></li>
+  <li><a href="#conclusions-et-perspective" id="toc-conclusions-et-perspective" class="nav-link" data-scroll-target="#conclusions-et-perspective">Conclusions et perspective</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistiquement, peut-on prévenir les défauts de paiement ?</h1>
+<h1 class="title">Statistiquement, peut-on prévoir les défauts de paiement bancaire?</h1>
+<p class="subtitle lead"><em>Classification supervisée</em></p>
   <div class="quarto-categories">
     <div class="quarto-category">Classification</div>
   </div>
@@ -155,12 +165,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 21, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -170,17 +174,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Contexte général</strong></p>
-<p>La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces dangers. La classification supervisée regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable.</p>
-<p><strong>Objectifs du travail</strong></p>
+<section id="contexte-général" class="level1">
+<h1>Contexte général</h1>
+<p>La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La classification supervisée regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable. Nous sommes ici dans le cas d’un banque qui souhaite attribuer un score ou probabilité de risque à ses clients.</p>
+</section>
+<section id="objectifs-du-travail" class="level1">
+<h1>Objectifs du travail</h1>
 <p>Ainsi, dans le cas des défauts de paiement bancaire, l’objectif est de pouvoir modéliser l’appartenance d’un individu à l’une des classes suivantes :</p>
 <ol type="1">
 <li><p><strong>Oui</strong>, l’individu est en défaut de paiement ;</p></li>
 <li><p><strong>Non</strong>, l’individu n’est pas en défaut de paiement ;</p></li>
 </ol>
-<p>L’application de ces méthodes de classification supervisée aboutira à l’attribution d’un score ou probabilité de risque de défauts de paiement.</p>
-<p><strong>Méthodologie</strong></p>
-<p>Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont), nous avons procédé comme suit :</p>
+<p>L’application des méthodes de classification supervisée aboutira à l’attribution d’un score ou probabilité de risque de défauts de paiement.</p>
+</section>
+<section id="méthodologie" class="level1">
+<h1>Méthodologie</h1>
+<p>Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont). Cela nous a donc conduit a procédé comme suit :</p>
 <ul>
 <li><p>Découpage de la population en 2 sous-groupes :</p>
 <ul>
@@ -192,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Sous-échantillonnage</p></li>
 <li><p>Sur-échantillognnage</p></li>
-<li><p>SMOTE, qui est une combinaison des 2 méthodes précédentes</p></li>
+<li><p>SMOTE (qui est une combinaison des 2 méthodes précédentes)</p></li>
 </ul></li>
 <li><p>Les modèles utilisés sont les suivants :</p>
 <ul>
@@ -203,9 +212,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Forêts aléatoires</p></li>
 </ul></li>
 </ul>
-<p><strong>Principaux résultats</strong></p>
+</section>
+<section id="principaux-résultats" class="level1">
+<h1>Principaux résultats</h1>
 <p>Après avoir entraîné les modèles sur l’échantillon d’entraînement, nous avons appliqué les modèles sur les données test. Plus précisément, nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l’ayant pas pris en compte. Il s’avère que le modèle que nous avons retenu sur la base des métriques d’évaluation est une <strong>Forêt Aléatoire</strong> sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.</p>
-<p><strong>Conclusions et perspective</strong></p>
+</section>
+<section id="conclusions-et-perspective" class="level1">
+<h1>Conclusions et perspective</h1>
 <p>Il est fort probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. C’est un aspect qui biaise fortement les résultats d’estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour résoudre le problème. Au sortir de là, nous avons un modèle qui nous permet de prédire l’appartenance à l’une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l’intérêt de ce genre de méthodes est qu’elle donne la possibilité de mettre en place de moyens de prévention pour se protéger des risques des personnes qui sont en défauts de paiement.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -221,6 +234,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
