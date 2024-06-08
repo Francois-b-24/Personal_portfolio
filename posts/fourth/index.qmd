@@ -10,11 +10,7 @@ categories: [Économétrie]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
-# Contexte et objectifs
-
-L'objectif de se travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain.
-
-# Méthodologie
+# Contexte général
 
 L'analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).
 
@@ -40,7 +36,31 @@ Nous supposons que $TE_i$ est également une variable stochastique, avec une fon
 
 L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. "L'analyse de la frontière du profit" examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
 
-L'analyse des frontières stochastiques a également été appliquée aux microdonnées de la demande des consommateurs dans le but de comparer la consommation et de segmenter les consommateurs. Dans une approche en deux étapes, un modèle de frontière stochastique est estimé, puis les écarts par rapport à la frontière sont régressés sur les caractéristiques des consommateurs (Baltas 2005).
+# Objectifs du travail 
+
+L'objectif de se travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :
+
+-   Le coût total
+
+-   La quantité produite
+
+-   Le prix du travail
+
+-   Le prix du capital
+
+-   Le prix du carburant
+
+-   La part du coût du travail dans le coût total
+
+-   La part du coût du capital dans le coût total
+
+-   La part du coût du carburant dans le coût total
+
+# Méthodologie 
+
+Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui se dégagent. En d'autres termes, nous avons réalisé une analyse des coûts, des quantités et de la productivité des entreprises. 
+
+Ensuite, nous avons réalisé une analyse de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d'apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles. 
 
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 

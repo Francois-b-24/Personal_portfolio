@@ -163,7 +163,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contexte-et-objectifs" id="toc-contexte-et-objectifs" class="nav-link active" data-scroll-target="#contexte-et-objectifs">Contexte et objectifs</a></li>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
   </ul>
 </nav>
@@ -200,12 +201,8 @@ window.Quarto = {
 </header>
 
 
-<section id="contexte-et-objectifs" class="level1">
-<h1>Contexte et objectifs</h1>
-<p>L’objectif de se travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain.</p>
-</section>
-<section id="méthodologie" class="level1">
-<h1>Méthodologie</h1>
+<section id="contexte-général" class="level1">
+<h1>Contexte général</h1>
 <p>L’analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).</p>
 <p>Le modèle de frontière de production sans composante aléatoire peut s’écrire :</p>
 <p><span class="math inline">\(y_i = f(x_i, \beta)\times TE_i\)</span></p>
@@ -220,7 +217,25 @@ window.Quarto = {
 <p><span class="math inline">\(y_i = f(x_i, \beta) \times TE_i \times (v_i)\)</span></p>
 <p>Nous supposons que <span class="math inline">\(TE_i\)</span> est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.</p>
 <p>L’analyse des frontières stochastiques a également examiné l’efficacité du « coût » et du « profit » (voir Kumbhakar &amp; Lovell 2003). L’approche de la « frontière des coûts » tente de mesurer dans quelle mesure l’entreprise se trouve loin de la minimisation totale des coûts (c’est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d’inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. “L’analyse de la frontière du profit” examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l’entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».</p>
-<p>L’analyse des frontières stochastiques a également été appliquée aux microdonnées de la demande des consommateurs dans le but de comparer la consommation et de segmenter les consommateurs. Dans une approche en deux étapes, un modèle de frontière stochastique est estimé, puis les écarts par rapport à la frontière sont régressés sur les caractéristiques des consommateurs (Baltas 2005).</p>
+</section>
+<section id="objectifs-du-travail" class="level1">
+<h1>Objectifs du travail</h1>
+<p>L’objectif de se travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d’une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :</p>
+<ul>
+<li><p>Le coût total</p></li>
+<li><p>La quantité produite</p></li>
+<li><p>Le prix du travail</p></li>
+<li><p>Le prix du capital</p></li>
+<li><p>Le prix du carburant</p></li>
+<li><p>La part du coût du travail dans le coût total</p></li>
+<li><p>La part du coût du capital dans le coût total</p></li>
+<li><p>La part du coût du carburant dans le coût total</p></li>
+</ul>
+</section>
+<section id="méthodologie" class="level1">
+<h1>Méthodologie</h1>
+<p>Pour atteindre notre objectif, nous avons tout d’abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d’observer les tendances générales qui se dégagent. En d’autres termes, nous avons réalisé une analyse des coûts, des quantités et de la productivité des entreprises.</p>
+<p>Ensuite, nous avons réalisé une analyse de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d’apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles.</p>
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 </iframe>
 

@@ -1,5 +1,5 @@
 ---
-title: "Statistiquement, peut-on prévoir les défauts de paiement bancaire?"
+title: "La prévision des défauts de paiement bancaire"
 subtitle: "*Classification supervisée*"
 author: "BOUSSENGUI François"
 image: "classification.png"
