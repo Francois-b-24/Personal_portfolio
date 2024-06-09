@@ -11,7 +11,7 @@ fields: [reading-time]
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 ```
 
-# Contexte général
+# Contexte général  
 
 Dans le cadre d'un projet réalisé dans l'apperentissage de méthodes de datamining, il a été question d'appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur *1728* biens immobiliers de la ville de Saratoga, en Californie.
 
@@ -37,7 +37,7 @@ Pour ce faire, nous avons appliquer des méthodes de classification non supervis
 
     -   K-Means (K plus proches voisins)
 
-# Principaux résultats 
+# Principaux résultats
 
 L'analyse des composantes principales nous a permis de déterminer les 2 grandes classes homogènes suivantes :
 
@@ -51,8 +51,6 @@ L'analyse des composantes multiples nous a permis quant à elle de classifier le
 
 -   Inversement, les biens possédant au minimum une cheminée et chauffés à l'air chaud ou à l'eau chaude
 
-
-
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/second/Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf")
 ```
@@ -60,3 +58,5 @@ knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_p
 ::: {style="text-align:center;"}
 [<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
 :::
+
+

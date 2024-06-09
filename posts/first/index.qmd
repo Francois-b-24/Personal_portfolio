@@ -60,3 +60,4 @@ knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_p
 ::: {style="text-align:center;"}
 [<img src="down.png" width="100"/>](https://drive.google.com/file/d/1ztrNRPl6e0PET4KJlCsIvQOV-YAQ6EfB/view?usp=sharing)
 :::
+

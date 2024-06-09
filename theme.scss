@@ -64,16 +64,23 @@ div.quarto-post .listing-categories .listing-category {
 }
 
 body {
-  background-color: #b2e0fd; /* Couleur de fond principale */
+  background-color: #eaf7ff; /* Couleur de fond principale */
 }
 
 header, footer {
-  background-color: #b2e0fd; /* Couleur de fond pour le header et le footer */
-  color: white; /* Couleur du texte pour le header et le footer */
+  background-color: #eaf7ff !important; /* Couleur de fond pour le header et le footer */
+  color: rgb(2, 2, 2) !important; /* Couleur du texte pour le header et le footer */
 }
 
 .main-content {
-  background-color: #b2e0fd; /* Couleur de fond pour la zone principale */
+  background-color: #eaf7ff; /* Couleur de fond pour la zone principale */
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+ 
