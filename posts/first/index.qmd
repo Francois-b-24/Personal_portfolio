@@ -15,17 +15,17 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 
 Les moindres carrés ordinaires (MCO), ou en anglais Ordinary Least Squares (OLS), est une méthode statistique utilisée pour estimer les coefficients d'une équation de régression linéaire. La méthode des moindres carrés vise à minimiser la somme des carrés des résidus (différences entre les valeurs observées et les valeurs prédites par le modèle).
 
-L'économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données à disposition ainsi que de la problématique à résoudre. Ainsi, ces travaux de s'inscrivent dans le cadre de recherches réalisées durant ma seconde année de Master en économétrie.
+L'économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données ainsi que de la problématique à résoudre. Ainsi, ces travaux de s'inscrivent dans le cadre de travaux de recherches réalisées durant ma seconde année de Master en économétrie.
 
 # Objectifs du travail
 
-Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. L'objectif était d'aboutir à représentation visuelle des principaux résultats d'une régression linéaire simple. Dans un second temps, nous présentons les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.
+Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a donc été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.
 
 # Méthodologie 
 
-Pour atteindre ces objectifs, nous avons effectué des recherches bibliographiques et nous avons travaillé en étroite collaboration avec notre professeur référent en économétrie.
+Pour atteindre ces objectifs, nous avons analysé les travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
 
-Nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple.
+Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple : $y = \beta_0 + \beta_1X + \epsilon$
 
 Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :
 
@@ -43,6 +43,11 @@ Pour chacune des méthodes, nous avons mis en évidence :
 
 -   Leur application dans le logiciel R
 
+# Outils techniques 
+
+- Logiciel R
+
+- Latex 
 
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }

@@ -138,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
   <li><a href="#principaux-résultats" id="toc-principaux-résultats" class="nav-link" data-scroll-target="#principaux-résultats">Principaux résultats</a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique">Outil technique</a></li>
   </ul>
 </nav>
     </div>
@@ -175,11 +176,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contexte-général" class="level1">
 <h1>Contexte général</h1>
-<p>Dans le cadre d’un projet réalisé dans l’apperentissage de méthodes de datamining, il a été question d’appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
+<p>Dans le cadre d’un projet réalisé dans l’apprentissage de méthodes de datamining, il a été question d’appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partont du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.</p>
+<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
@@ -200,15 +201,21 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="principaux-résultats" class="level1">
 <h1>Principaux résultats</h1>
-<p>L’analyse des composantes principales nous a permis de déterminer les 2 grandes classes homogènes suivantes :</p>
+<p>L’analyse des composantes principales (ACP) nous a permis de déterminer les 2 grandes classes de biens homogènes suivantes :</p>
 <ul>
 <li><p>Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.</p></li>
 <li><p>Inverserment, les biens immobiliers présentant des prix relativement élevés, une surface habitable relativement élevée et qui sont plus anciens.</p></li>
 </ul>
-<p>L’analyse des composantes multiples nous a permis quant à elle de classifier les biens comme suit :</p>
+<p>L’analyse des composantes multiples (ACM) nous a permis quant à elle de classifier les biens comme suit :</p>
 <ul>
-<li><p>Les biens chauffés à l’electrique et n’ayant pas de cheminée</p></li>
+<li><p>Les biens chauffés à l’électrique et n’ayant pas de cheminée</p></li>
 <li><p>Inversement, les biens possédant au minimum une cheminée et chauffés à l’air chaud ou à l’eau chaude</p></li>
+</ul>
+</section>
+<section id="outil-technique" class="level1">
+<h1>Outil technique</h1>
+<ul>
+<li>Logiciel R</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">

@@ -17,7 +17,7 @@ website:
 
   navbar:
     right:
-      - text: Dive in it
+      - text: Dive in it 🏊🏾
         menu:      
           - text: Curriculum vitae - Français
             href: about-cv.qmd

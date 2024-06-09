@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -137,6 +166,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
   <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  <li><a href="#outils-techniques" id="toc-outils-techniques" class="nav-link" data-scroll-target="#outils-techniques">Outils techniques</a></li>
   </ul>
 </nav>
     </div>
@@ -175,16 +205,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="contexte-général" class="level1">
 <h1>Contexte général</h1>
 <p>Les moindres carrés ordinaires (MCO), ou en anglais Ordinary Least Squares (OLS), est une méthode statistique utilisée pour estimer les coefficients d’une équation de régression linéaire. La méthode des moindres carrés vise à minimiser la somme des carrés des résidus (différences entre les valeurs observées et les valeurs prédites par le modèle).</p>
-<p>L’économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données à disposition ainsi que de la problématique à résoudre. Ainsi, ces travaux de s’inscrivent dans le cadre de recherches réalisées durant ma seconde année de Master en économétrie.</p>
+<p>L’économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données ainsi que de la problématique à résoudre. Ainsi, ces travaux de s’inscrivent dans le cadre de travaux de recherches réalisées durant ma seconde année de Master en économétrie.</p>
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. L’objectif était d’aboutir à représentation visuelle des principaux résultats d’une régression linéaire simple. Dans un second temps, nous présentons les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.</p>
+<p>Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a donc été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
-<p>Pour atteindre ces objectifs, nous avons effectué des recherches bibliographiques et nous avons travaillé en étroite collaboration avec notre professeur référent en économétrie.</p>
-<p>Nos recherches nous ont permis d’aboutir à la proposition d’une représentation graphique des principaux résultats d’une régression linéaire simple.</p>
+<p>Pour atteindre ces objectifs, nous avons analysé les travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.</p>
+<p>Ainsi, nos recherches nous ont permis d’aboutir à la proposition d’une représentation graphique des principaux résultats d’une régression linéaire simple : <span class="math inline">\(y = \beta_0 + \beta_1X + \epsilon\)</span></p>
 <p>Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :</p>
 <ul>
 <li><p>Moindres carrés ordinaires</p></li>
@@ -196,6 +226,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>La forme fonctionnelle du modèle</p></li>
 <li><p>Les principales hypothèses associées au modèle</p></li>
 <li><p>Leur application dans le logiciel R</p></li>
+</ul>
+</section>
+<section id="outils-techniques" class="level1">
+<h1>Outils techniques</h1>
+<ul>
+<li><p>Logiciel R</p></li>
+<li><p>Latex</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">

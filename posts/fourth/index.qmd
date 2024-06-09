@@ -38,7 +38,7 @@ L'analyse des frontières stochastiques a également examiné l'efficacité du �
 
 # Objectifs du travail 
 
-L'objectif de se travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :
+L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :
 
 -   Le coût total
 
@@ -58,9 +58,13 @@ L'objectif de se travail est d'appliquer les techniques d'analyse des frontière
 
 # Méthodologie 
 
-Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui se dégagent. En d'autres termes, nous avons réalisé une analyse des coûts, des quantités et de la productivité des entreprises. 
+Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui s'y dégagent. En d'autres termes, nous avons réalisé une analyse des coûts, des quantités produites et de la productivité des entreprises. 
 
 Ensuite, nous avons réalisé une analyse de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d'apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles. 
+
+# Outil technique
+
+- Logiciel R
 
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 
