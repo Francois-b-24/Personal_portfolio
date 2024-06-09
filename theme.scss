@@ -62,3 +62,18 @@ div.quarto-post .listing-categories .listing-category {
     border: solid 1px var(--bs-gray-400);
     font-size: .8em;
 }
+
+body {
+  background-color: #b2e0fd; /* Couleur de fond principale */
+}
+
+header, footer {
+  background-color: #b2e0fd; /* Couleur de fond pour le header et le footer */
+  color: white; /* Couleur du texte pour le header et le footer */
+}
+
+.main-content {
+  background-color: #b2e0fd; /* Couleur de fond pour la zone principale */
+}
+
+
