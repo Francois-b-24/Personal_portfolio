@@ -32,6 +32,9 @@ website:
     right:
       - text: "Presentation"
         href: index.qmd
+        
+      - text: "Compétences"
+
       - text: "Travaux"
         href: posts/index.qmd
     
@@ -39,6 +42,7 @@ website:
 format:
   html:
     theme: theme.scss
+    extensions: [fontawesome]
     googlefonts: 
       - family: "Roboto"
         weights: [400, 700]
@@ -51,7 +55,7 @@ format:
       body-width: 1200px
       margin-width: 200px
       gutter-width: 1.5rem
-
+    
 
 editor: visual
 

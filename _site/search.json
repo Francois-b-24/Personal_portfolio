@@ -87,14 +87,14 @@
     "objectID": "index.html#expérience-professionnelle",
     "href": "index.html#expérience-professionnelle",
     "title": "Curriculum Vitae",
-    "section": "{{< fa briefcase >}} Expérience professionnelle",
-    "text": "{{&lt; fa briefcase &gt;}} Expérience professionnelle\n\nChargé d’etudes statistiques | (Février 2023 – ) | AON France\nData analyst | (Novembre 2021 – février 2023) | Ascential group\nData analyst | (Avril 2021 – Septembre 2021) | April Moto"
+    "section": " Expérience professionnelle",
+    "text": "Expérience professionnelle\n\nChargé d’etudes statistiques | (Février 2023 – ) | AON France\nData analyst | (Novembre 2021 – février 2023) | Ascential group\nData analyst | (Avril 2021 – Septembre 2021) | April Moto"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Curriculum Vitae",
-    "section": "{{< fa graduation-cap >}} Education",
-    "text": "{{&lt; fa graduation-cap &gt;}} Education\n\nMaster Data Science / Business Econ. (2019 – 2021) Université de Tours\nLicence d’économie d’entreprise (2016 – 2019) Université de Tours"
+    "section": " Education",
+    "text": "Education\n\nMaster Data Science / Business Econ. (2019 – 2021) Université de Tours\nLicence d’économie d’entreprise (2016 – 2019) Université de Tours"
   }
 ]

@@ -8,7 +8,7 @@ about:
      - icon: github
        href: https://github.com/Francois-b-24
      - icon: linkedin
-       href: www.linkedin.com/in/fboussengui
+       href: https://www.linkedin.com/in/fboussengui/
      - icon: envelope
        href: mailto:f.boussengui@gmail.com
 ---
