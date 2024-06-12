@@ -1,9 +1,9 @@
 ---
 title: "Prévision des défauts de paiement bancaire"
-subtitle: "*Classification supervisée*"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "classification.png"
-categories: [Classification]
+categories: [Machine Learning]
 fields: [reading-time]
 ---
 

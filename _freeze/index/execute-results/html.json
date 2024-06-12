@@ -1,0 +1,15 @@
+{
+  "hash": "0755173cf9c8794f91736a7cd87379bd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Curriculum Vitae\"\ncomments: false\nimage: moi.jpg\nabout:\n  template: trestles\n  links: \n     - icon: github\n       href: https://github.com/\n     - icon: linkedin\n       href: https://www.linkedin.com/feed/\n     - icon: envelope\n       href: mailto:f.boussengui@gmail.com\n---\n\n\n**Résumé Professionnel**\n\nTitulaire d’un Master en Économétrie, je possède une solide formation en statistiques, mathématiques appliquées et analyse de données. Avec une expertise approfondie dans la modélisation économique et la prévision, je suis capable de transformer des données complexes en informations exploitables pour soutenir la prise de décision stratégique. \n\nAu cours de mes études, j'ai développé des compétences avancées en utilisant des logiciels d'analyse tels que R, Python, SQL et SAS  pour mener des analyses quantitatives rigoureuses. J'ai également acquis une expérience pratique grâce à des projets académiques et des stages, notamment dans la réalisation de projets de machine learning (allant de la récupération des données à la mise en production du modèle), dans l’analyse des tendances économiques et la mise en place d'outil d'aide à la décision. \n\nFort d’une capacité analytique exceptionnelle et d’un grand souci du détail, j'excelle dans l’identification des variables clés influençant les marchés et les comportements économiques. Je suis également habile à communiquer des résultats complexes à des publics non techniques, facilitant ainsi une compréhension claire et une mise en œuvre efficace des recommandations.\n\nPassionné par l’économie et les données, je consacre beaucoup de mon temps libre à me documenter sur divers sujets à caractère économique. \nPar ailleurs, je fais partie de l'American Economic Association. C'est une association à but non lucratif qui publie des travaux de recherche en microéconomie, macroéconomie, économie appliqué et sur les politiques économiques. \n\nAprès une expérience enrichissante en tant que Data analyst chez LSA Courtage au sein de la Direction de l'Offre et de la Rentabilité, j'ai par la suite intégré le groupe Aon en tant Chargé d'études statistiques au sein de la direction technique automobile, poste que j'occupe actuellement.\n\nVous trouverez-ci joint mon CV :\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](FRANCOIS_BOUSSENGUI_CV.pdf)\n:::\n:::\n\n\n<div style=\"text-align:center;\">\n[<img src=\"down.png\" width=\"100\">](https://drive.google.com/file/d/1BRthhuI_sx2a047TWS4Pf3bHlPgC-0GE/view?usp=sharing)\n</div>\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

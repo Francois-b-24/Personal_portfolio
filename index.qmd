@@ -1,16 +1,31 @@
 ---
-title: "*Le travail éloigne de nous trois grands maux : l'ennui, le vice et le besoin.*"
+title: "Curriculum Vitae"
 comments: false
-listing:
-  - id : posts
-    contents: "posts/**/*/*.qmd"
-    fields: [image, title, categories, reading-time] 
-    sort: "date desc"
-    type: grid
-    sort-ui: false
-    filter-ui: false
-    page-size: 6
-    categories: true
-page-layout: full
-title-block-banner: true
+image: moi.jpg
+about:
+  template: trestles
+  links: 
+     - icon: github
+       href: https://github.com/Francois-b-24
+     - icon: linkedin
+       href: www.linkedin.com/in/fboussengui
+     - icon: envelope
+       href: mailto:f.boussengui@gmail.com
 ---
+
+## [👋]{.wave} Bonjour, et bienvenue !
+
+
+
+## {{< fa briefcase >}} Expérience professionnelle
+
+- [**Chargé d'etudes statistiques**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Février 2023 -- )*  [ | **AON France**]{class="company"}
+- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Novembre 2021 -- février 2023)* [ | **Ascential group**]{class="company"}
+- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Avril 2021 -- Septembre 2021)* [ | **April Moto**]{class="company"}
+
+
+## {{< fa graduation-cap >}} Education
+
+- **Master Data Science / Business Econ.** [*(2019 -- 2021)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
+
+- **Licence d'économie d'entreprise** [*(2016 -- 2019)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}

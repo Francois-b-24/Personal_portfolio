@@ -1,9 +1,9 @@
 ---
-title: "Pricing & Segmentation"
-subtitle: "*Pricing*"
+title: "Stratégie de fixation des prix"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "mco.png"
-categories: [Pricing]
+categories: [Tarification]
 fields: [reading-time]
 ---
 

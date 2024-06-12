@@ -1,6 +1,6 @@
 ---
-title: "Alternatives aux Moindres Carrés Ordinaires"
-subtitle: "*Travail de recherche en économétrie*"
+title: "Méthodes de prévision économétrique"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "mco.png"
 categories: [Économétrie]

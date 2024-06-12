@@ -1,9 +1,9 @@
 ---
-title: "L'immobilier à Saratoga, CA"
-subtitle: "*Classification non supervisée*"
+title: "L'immobilier à Saratoga ~ Californie"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "classification.png"
-categories: [Classification]
+categories: [Machine Learning]
 fields: [reading-time]
 ---
 

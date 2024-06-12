@@ -1,6 +1,6 @@
 ---
-title: "Analyse des frontières stochastiques"
-subtitle: "*Économétrie*"
+title: "Modélisation de l'efficacité technique d'une entreprise"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "mco.png"
 categories: [Économétrie]

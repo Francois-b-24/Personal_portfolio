@@ -1,6 +1,6 @@
 ---
 title: "Marketing quantitatif au service de la santé"
-subtitle: "*Économétrie*"
+subtitle: ""
 author: "BOUSSENGUI François"
 image: "mco.png"
 categories: [Économétrie]
