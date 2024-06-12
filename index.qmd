@@ -1,5 +1,6 @@
 ---
 title: "Curriculum Vitae"
+back-to-top-navigation: false
 comments: false
 image: moi.jpg
 about:
@@ -16,11 +17,18 @@ about:
 ## [👋]{.wave} Bonjour, et bienvenue !
 
 
+Passionné par l'analyse des données et l'apprentissage automatique, avec une solide expérience dans la création de modèles prédictifs et le traitement de grandes quantités de données. Compétences éprouvées en *Python*, {{< fa brands r-project >}}, *SQL*, et dans l'utilisation de bibliothèques de machine learning telles que TensorFlow, scikit-learn et PyTorch. Expérience dans l'application de techniques de data mining, de modélisation statistique et de deep learning pour résoudre des problèmes complexes et améliorer la prise de décision.
+
+
+Par ailleurs, je suis passionné de sport mécanique ainsi que d'horlogerie. 
+
+[Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn role="button" .center}
+
 
 ## {{< fa briefcase >}} Expérience professionnelle
 
-- [**Chargé d'etudes statistiques**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Février 2023 -- )*  [ | **AON France**]{class="company"}
-- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Novembre 2021 -- février 2023)* [ | **Ascential group**]{class="company"}
+- [**Chargé d'études statistiques**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Février 2023 -- )*  [ | **AON France**]{class="company"}
+- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Novembre 2021 -- Février 2023)* [ | **Ascential group**]{class="company"}
 - [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Avril 2021 -- Septembre 2021)* [ | **April Moto**]{class="company"}
 
 
