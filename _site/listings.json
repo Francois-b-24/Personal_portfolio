@@ -9,16 +9,5 @@
       "/posts/sixth/index.html",
       "/posts/third/index.html"
     ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/fifth/index.html",
-      "/posts/first/index.html",
-      "/posts/fourth/index.html",
-      "/posts/second/index.html",
-      "/posts/sixth/index.html",
-      "/posts/third/index.html"
-    ]
   }
 ]

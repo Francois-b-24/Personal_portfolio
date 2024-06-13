@@ -37,3 +37,5 @@ Par ailleurs, je suis passionné de sport mécanique ainsi que d'horlogerie.
 - **Master Data Science / Business Econ.** [*(2019 -- 2021)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
 
 - **Licence d'économie d'entreprise** [*(2016 -- 2019)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
+
+## {{< iconify simple-icons:powerbi >}} PowerBI
