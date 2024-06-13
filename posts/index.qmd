@@ -1,5 +1,5 @@
 ---
-title: "Tout"
+title: "Travaux"
 listing:
   - id: posts
     contents: "**/*/*.qmd"

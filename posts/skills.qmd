@@ -1,0 +1,45 @@
+---
+title: "Compétences"
+smooth-scroll: true
+comments: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+```
+
+Mes compétences sont multiples et en perpetuelle évolution. 
+
+
+### Langages
+
+***
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa brands python >}} PYTHON
+
+- *Data Wrangling* avec `polars`, `pandas`.
+- *Data Visualisation* avec `plotly` et `seaborn`.
+- *Web Scraping* avec `beautifulsoup` et `selenium`
+- **Développement de code de qualité industrielle** : `mypy` pour le typage statique, `ruff` pour le linting et le formatage du code, `pytest` pour les tests.
+:::
+
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa brands r-project >}} R
+
+- Maîtrise des packages de *Data Manipulation* du **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
+- *Data Visualisation* avec `{ggplot2}` et `{plotly}`.
+- Création d'applications web modernes et robustes en production avec `{shiny}`
+- *Machine Learning* avec `{tidymodels}`.
+- Analyse de données exploratoire et analyse factorielle : ACP -- AFC -- ACM -- AFDM.
+- économétrie et de micro-économétrie : `{micEcon}`, `{sfa}`, etc.
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa database >}} SQL
+- Window Functions.
+- Common Table Expressions (CTE).
+- Création de vues et procédures stockées.
+- **DBT**.
+:::

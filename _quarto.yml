@@ -30,10 +30,11 @@ website:
   navbar:
     background: primary
     right:
-      - text: "Presentation"
+      - text: "Qui suis-je ?"
         href: index.qmd
         
       - text: "Compétences"
+        href: posts/skills.qmd
 
       - text: "Travaux"
         href: posts/index.qmd
