@@ -1,10 +1,13 @@
 ---
-title: "Curriculum Vitae"
-back-to-top-navigation: false
-comments: false
+title: "François BOUSSENGUI"
+subtitle: |
+  Economiste spécialisé en ML 
 image: moi.jpg
+comments: false
+toc: false
 about:
   template: trestles
+  image-width: 20em
   links: 
      - icon: github
        href: https://github.com/Francois-b-24
@@ -16,24 +19,27 @@ about:
 
 ## [👋]{.wave} Bonjour, et bienvenue !
 
+::: {#edu-exp}
+:::
 
-Passionné par l'analyse des données et l'apprentissage automatique, avec une solide expérience dans la création de modèles prédictifs et le traitement de grandes quantités de données. Compétences éprouvées en *Python*, {{< fa brands r-project >}}, *SQL*, et dans l'utilisation de bibliothèques de machine learning telles que TensorFlow, scikit-learn et PyTorch. Expérience dans l'application de techniques de data mining, de modélisation statistique et de deep learning pour résoudre des problèmes complexes et améliorer la prise de décision.
+Après l'obtention d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés** en septembre 2021, j'ai intégré le cabinet [Ascentiel Groupe](https://www.ascentiel-groupe.com/) en qualité de Data analyst au sein de la direction de l'Offre et de la rentabilité en novembre 2021.
 
+Après cette première expérience enrichissante dans le l'univers du courtage en assurance, j'ai décidé de poursuivre l'aventure dans ce secteur mais selon un paradigme différent. Ainsi, j'ai ensuite intégré le cabinet [Aon France](https://www.aon.com/france/default.jsp), en qualité de Chargé d'études statistiques au sein de la Direction Technique Automobile. Poste que j'occupe actuellement.
 
+Je suis principalement passionné par l'analyse des données et l'apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.
 
-[Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn role="button" .center}
-
+[Télécharger mon CV {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
 
 ## {{< fa briefcase >}} Expériences professionnelles
 
-- [**Chargé d'études statistiques**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Février 2023 -- )*  [ | **AON France**]{class="company"}
-- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Novembre 2021 -- Février 2023)* [ | **Ascential Group**]{class="company"}
-- [**Data analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Avril 2021 -- Septembre 2021)* [ | **April Moto**]{class="company"}
+-   [**Chargé d'études statistiques**]{.shiny-color} [\|]{.toggle-invisibility} *(Février 2023 -- )* [\| **AON France**]{.company}
+-   [**Data analyst**]{.shiny-color} [\|]{.toggle-invisibility} *(Novembre 2021 -- Février 2023)* [\| **Ascential Group**]{.company}
+-   [**Data analyst**]{.shiny-color} [\|]{.toggle-invisibility} *(Avril 2021 -- Septembre 2021)* [\| **April Moto**]{.company}
 
+## Centre d'intérets
 
-## {{< fa graduation-cap >}} Education
-
-- **Master Data Science / Business Econ.** [*(2019 -- 2021)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
-
-- **Licence d'économie d'entreprise** [*(2016 -- 2019)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
-
+-   **Intelligence Artificiel, Machine Learning**
+-   **Technologie, innovation**
+-   **Economie et politiques**
+-   **Horlogerie**
+-   **Sports mécaniques (F1, Moto GP, WRC, WEC)**

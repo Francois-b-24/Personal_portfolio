@@ -2,30 +2,30 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Curriculum Vitae",
+    "title": "François BOUSSENGUI",
     "section": "",
-    "text": "Passionné par l’analyse des données et l’apprentissage automatique, avec une solide expérience dans la création de modèles prédictifs et le traitement de grandes quantités de données. Compétences éprouvées en Python, , SQL, et dans l’utilisation de bibliothèques de machine learning telles que TensorFlow, scikit-learn et PyTorch. Expérience dans l’application de techniques de data mining, de modélisation statistique et de deep learning pour résoudre des problèmes complexes et améliorer la prise de décision.\nTélécharger mon CV"
+    "text": "Après l’obtention d’un Master 2 en droit, économie, gestion Mention Economie de l’entreprise et des Marchés en septembre 2021, j’ai intégré le cabinet Ascentiel Groupe en qualité de Data analyst au sein de la direction de l’Offre et de la rentabilité en novembre 2021.\nAprès cette première expérience enrichissante dans le l’univers du courtage en assurance, j’ai décidé de poursuivre l’aventure dans ce secteur mais selon un paradigme différent. Ainsi, j’ai ensuite intégré le cabinet Aon France, en qualité de Chargé d’études statistiques au sein de la Direction Technique Automobile. Poste que j’occupe actuellement.\nJe suis principalement passionné par l’analyse des données et l’apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.\nTélécharger mon CV"
   },
   {
     "objectID": "index.html#bonjour-et-bienvenue",
     "href": "index.html#bonjour-et-bienvenue",
-    "title": "Curriculum Vitae",
+    "title": "François BOUSSENGUI",
     "section": "",
-    "text": "Passionné par l’analyse des données et l’apprentissage automatique, avec une solide expérience dans la création de modèles prédictifs et le traitement de grandes quantités de données. Compétences éprouvées en Python, , SQL, et dans l’utilisation de bibliothèques de machine learning telles que TensorFlow, scikit-learn et PyTorch. Expérience dans l’application de techniques de data mining, de modélisation statistique et de deep learning pour résoudre des problèmes complexes et améliorer la prise de décision.\nTélécharger mon CV"
+    "text": "Après l’obtention d’un Master 2 en droit, économie, gestion Mention Economie de l’entreprise et des Marchés en septembre 2021, j’ai intégré le cabinet Ascentiel Groupe en qualité de Data analyst au sein de la direction de l’Offre et de la rentabilité en novembre 2021.\nAprès cette première expérience enrichissante dans le l’univers du courtage en assurance, j’ai décidé de poursuivre l’aventure dans ce secteur mais selon un paradigme différent. Ainsi, j’ai ensuite intégré le cabinet Aon France, en qualité de Chargé d’études statistiques au sein de la Direction Technique Automobile. Poste que j’occupe actuellement.\nJe suis principalement passionné par l’analyse des données et l’apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.\nTélécharger mon CV"
   },
   {
     "objectID": "index.html#expériences-professionnelles",
     "href": "index.html#expériences-professionnelles",
-    "title": "Curriculum Vitae",
+    "title": "François BOUSSENGUI",
     "section": " Expériences professionnelles",
     "text": "Expériences professionnelles\n\nChargé d’études statistiques | (Février 2023 – ) | AON France\nData analyst | (Novembre 2021 – Février 2023) | Ascential Group\nData analyst | (Avril 2021 – Septembre 2021) | April Moto"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "Curriculum Vitae",
+    "title": "François BOUSSENGUI",
     "section": " Education",
-    "text": "Education\n\nMaster Data Science / Business Econ. (2019 – 2021) Université de Tours\nLicence d’économie d’entreprise (2016 – 2019) Université de Tours"
+    "text": "Education"
   },
   {
     "objectID": "posts/fifth/index.html",
@@ -96,5 +96,12 @@
     "title": "Compétences",
     "section": "",
     "text": "Mes compétences sont multiples et en perpetuelle évolution.\n\nLangages\n\n\n\n\n\n\n\n PYTHON\n\n\n\n\n\n\nData Wrangling avec polars, pandas.\nData Visualisation avec plotly et seaborn.\nWeb Scraping avec beautifulsoup et selenium\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nMaîtrise des packages de Data Manipulation du tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nData Visualisation avec {ggplot2} et {plotly}.\nCréation d’applications web modernes et robustes en production avec {shiny}\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\néconométrie et de micro-économétrie : {micEcon}, {sfa}, etc.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nWindow Functions.\nCommon Table Expressions (CTE).\nCréation de vues et procédures stockées.\nDBT.\n\n\n\n\n\n\n\n\n Retour au sommet"
+  },
+  {
+    "objectID": "index.html#centre-dintérets",
+    "href": "index.html#centre-dintérets",
+    "title": "François BOUSSENGUI",
+    "section": "Centre d’intérets",
+    "text": "Centre d’intérets\n\nIntelligence Artificiel, Machine Learning\nTechnologie, innovation\nEconomie et politiques\nHorlogerie\nSports mécaniques (F1, Moto GP, WRC, WEC)"
   }
 ]
