@@ -1,7 +1,7 @@
 ---
 title: "François BOUSSENGUI"
 subtitle: |
-  Economiste spécialisé en ML 
+  Economiste spécialisé en Machine Learning 
 image: moi.jpg
 comments: false
 toc: false
@@ -17,29 +17,24 @@ about:
        href: mailto:f.boussengui@gmail.com
 ---
 
-## [👋]{.wave} Bonjour, et bienvenue !
-
-::: {#edu-exp}
+::: {style="text-align:center;"}
+## [👋]{.wave} Bienvenue dans mon Portfolio !
 :::
 
-Après l'obtention d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés** en septembre 2021, j'ai intégré le cabinet [Ascentiel Groupe](https://www.ascentiel-groupe.com/) en qualité de Data analyst au sein de la direction de l'Offre et de la rentabilité en novembre 2021.
+Dans un souci de recensement de mes travaux et de partage de connaissances, j'ai décidé de mettre en place ce portfolio. Ce sera le lieu où seront exposés mes travaux réalisés durant mon cursus académique ainsi que mes projets personnels. Etant diplômé d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés**, mes travaux revêtent principalement des aspects économiques et statistiques. 
 
-Après cette première expérience enrichissante dans le l'univers du courtage en assurance, j'ai décidé de poursuivre l'aventure dans ce secteur mais selon un paradigme différent. Ainsi, j'ai ensuite intégré le cabinet [Aon France](https://www.aon.com/france/default.jsp), en qualité de Chargé d'études statistiques au sein de la Direction Technique Automobile. Poste que j'occupe actuellement.
+Je résumerai le rôle d'un économiste en 2 notions :  
 
-Je suis principalement passionné par l'analyse des données et l'apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.
+- **Analyse économique** : Sur la base de données collectées de diverses manières, les économistes analysent des données économiques afin de comprendre les tendances et les phénomènes économiques. L'utilisation de modèles théoriques et des méthodes statistiques sont indispensables pour interpréter les données.
 
+- **Prévision économique**: Il est capable de prédire des tendances économiques futures sur la base de données actuelles et le
+de modèles économiques. 
+
+Pour remplir pleinement son rôle, l'utilisation de logiciels de programmation tels que *Python*, {{< fa brands r-project >}} et *SQL* pour traiter des données en grande quantité est indispensable. 
+
+Sur ces quelques definitions introductives, je vous laisse le soin de parcourir ce Portfolio. Excellente navigation !
+
+
+::: {style="text-align:center;"}
 [Télécharger mon CV {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
-
-## {{< fa briefcase >}} Expériences professionnelles
-
--   [**Chargé d'études statistiques**]{.shiny-color} [\|]{.toggle-invisibility} *(Février 2023 -- )* [\| **AON France**]{.company}
--   [**Data analyst**]{.shiny-color} [\|]{.toggle-invisibility} *(Novembre 2021 -- Février 2023)* [\| **Ascential Group**]{.company}
--   [**Data analyst**]{.shiny-color} [\|]{.toggle-invisibility} *(Avril 2021 -- Septembre 2021)* [\| **April Moto**]{.company}
-
-## Centre d'intérets
-
--   **Intelligence Artificiel, Machine Learning**
--   **Technologie, innovation**
--   **Economie et politiques**
--   **Horlogerie**
--   **Sports mécaniques (F1, Moto GP, WRC, WEC)**
+:::

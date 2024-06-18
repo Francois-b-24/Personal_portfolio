@@ -1,12 +1,12 @@
 ---
 title: "Travaux"
+author: ""
 listing:
   - id: posts
     contents: "**/*/*.qmd"
     type: grid
     fields: [image, date, title, categories, reading-time] 
     sort: "date desc"
-    # categories: cloud
     sort-ui: false
     filter-ui: false
     page-size: 36     

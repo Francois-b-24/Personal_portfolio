@@ -4,28 +4,7 @@
     "href": "index.html",
     "title": "François BOUSSENGUI",
     "section": "",
-    "text": "Après l’obtention d’un Master 2 en droit, économie, gestion Mention Economie de l’entreprise et des Marchés en septembre 2021, j’ai intégré le cabinet Ascentiel Groupe en qualité de Data analyst au sein de la direction de l’Offre et de la rentabilité en novembre 2021.\nAprès cette première expérience enrichissante dans le l’univers du courtage en assurance, j’ai décidé de poursuivre l’aventure dans ce secteur mais selon un paradigme différent. Ainsi, j’ai ensuite intégré le cabinet Aon France, en qualité de Chargé d’études statistiques au sein de la Direction Technique Automobile. Poste que j’occupe actuellement.\nJe suis principalement passionné par l’analyse des données et l’apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.\nTélécharger mon CV"
-  },
-  {
-    "objectID": "index.html#bonjour-et-bienvenue",
-    "href": "index.html#bonjour-et-bienvenue",
-    "title": "François BOUSSENGUI",
-    "section": "",
-    "text": "Après l’obtention d’un Master 2 en droit, économie, gestion Mention Economie de l’entreprise et des Marchés en septembre 2021, j’ai intégré le cabinet Ascentiel Groupe en qualité de Data analyst au sein de la direction de l’Offre et de la rentabilité en novembre 2021.\nAprès cette première expérience enrichissante dans le l’univers du courtage en assurance, j’ai décidé de poursuivre l’aventure dans ce secteur mais selon un paradigme différent. Ainsi, j’ai ensuite intégré le cabinet Aon France, en qualité de Chargé d’études statistiques au sein de la Direction Technique Automobile. Poste que j’occupe actuellement.\nJe suis principalement passionné par l’analyse des données et l’apprentissage automatique, avec une appétence dans la création de modèles prédictifs et le traitement de grandes quantités de données.\nTélécharger mon CV"
-  },
-  {
-    "objectID": "index.html#expériences-professionnelles",
-    "href": "index.html#expériences-professionnelles",
-    "title": "François BOUSSENGUI",
-    "section": " Expériences professionnelles",
-    "text": "Expériences professionnelles\n\nChargé d’études statistiques | (Février 2023 – ) | AON France\nData analyst | (Novembre 2021 – Février 2023) | Ascential Group\nData analyst | (Avril 2021 – Septembre 2021) | April Moto"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "François BOUSSENGUI",
-    "section": " Education",
-    "text": "Education"
+    "text": "Dans un souci de recensement de mes travaux et de partage de connaissances, j’ai décidé de mettre en place ce portfolio. Ce sera le lieu où seront exposés mes travaux réalisés durant mon cursus académique ainsi que mes projets personnels. Etant diplômé d’un Master 2 en droit, économie, gestion Mention Economie de l’entreprise et des Marchés, mes travaux revêtent principalement des aspects économiques et statistiques.\nJe résumerai le rôle d’un économiste en 2 notions :\nPour remplir pleinement son rôle, l’utilisation de logiciels de programmation tels que Python,  et SQL pour traiter des données en grande quantité est indispensable.\nSur ces quelques definitions introductives, je vous laisse le soin de parcourir ce Portfolio. Excellente navigation !"
   },
   {
     "objectID": "posts/fifth/index.html",
@@ -95,13 +74,6 @@
     "href": "posts/skills.html",
     "title": "Compétences",
     "section": "",
-    "text": "Mes compétences sont multiples et en perpetuelle évolution.\n\nLangages\n\n\n\n\n\n\n\n PYTHON\n\n\n\n\n\n\nData Wrangling avec polars, pandas.\nData Visualisation avec plotly et seaborn.\nWeb Scraping avec beautifulsoup et selenium\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nMaîtrise des packages de Data Manipulation du tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nData Visualisation avec {ggplot2} et {plotly}.\nCréation d’applications web modernes et robustes en production avec {shiny}\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\néconométrie et de micro-économétrie : {micEcon}, {sfa}, etc.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nWindow Functions.\nCommon Table Expressions (CTE).\nCréation de vues et procédures stockées.\nDBT.\n\n\n\n\n\n\n\n\n Retour au sommet"
-  },
-  {
-    "objectID": "index.html#centre-dintérets",
-    "href": "index.html#centre-dintérets",
-    "title": "François BOUSSENGUI",
-    "section": "Centre d’intérets",
-    "text": "Centre d’intérets\n\nIntelligence Artificiel, Machine Learning\nTechnologie, innovation\nEconomie et politiques\nHorlogerie\nSports mécaniques (F1, Moto GP, WRC, WEC)"
+    "text": "Vous trouverez sur cette page une présentation de mes compétences.\n\nThéoriques\n\n\nProgrammation\n\n\n\n\n\n\n\n PYTHON\n\n\n\n\n\n\nWeb Scraping (récupération automatique de données) avec beautifulsoup et selenium.\nNettoyage et traitement des données avec polars, pandas, numpy.\nVisualisation des données avec plotly et seaborn.\nMachine learning : Scikit learn, PyTorch.\nApplication web : Streamlit.\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nMaîtrise des packages de Manipulation de données du tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nVisualisatio de données avec {ggplot2} et {plotly}.\nCréation d’applications web modernes et robustes en production avec {shiny}\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\nEconométrie et de micro-économétrie : {micEcon}, {sfa}, etc.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nCommon Table Expressions (CTE).\nCréation de vues et procédures stockées.\n\n\n\n\n\n\nSoft skills\n\n\nCentre d’intérêts\n\n\n\n\n Retour au sommet"
   }
 ]

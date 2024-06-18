@@ -30,7 +30,7 @@ website:
   navbar:
     background: primary
     right:
-      - text: "Qui suis-je ?"
+      - text: "Accueil"
         href: index.qmd
         
       - text: "Compétences"
