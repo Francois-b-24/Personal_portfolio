@@ -9,7 +9,7 @@ author: ""
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
-Vous trouverez sur cette page une présentation de mes compétences. 
+Sur cette page, vous trouverez une présentation de mes compétences. 
 
 ### Théoriques  
 
@@ -17,8 +17,8 @@ Vous trouverez sur cette page une présentation de mes compétences.
 ::: {.callout-important icon=false collapse="true"} 
 ## Économie
 
-- **Micro-économie** : Théorie du consommateur & du producteur, etc.
-- **Théorie des jeux** : Equilibre de nash
+- **Micro-économie** : Théorie du consommateur & du producteur, équilibre de marché en concurrence pure et parfaite.
+- **Théorie des jeux** : Equilibre de nash (Modélisation mathématiques des interactions stratégiques entre les agents économiques).
 - **Économie industrielle** : Equilibre de Nash en situation non concurrentielle (Duopole, Monopole, Oligopole )
 
 :::
@@ -30,11 +30,11 @@ Vous trouverez sur cette page une présentation de mes compétences.
 - **Micro-économétrie** : Modèles à effets fixe ou aléatoires, etc. 
 - **Machine Learning** : Regression, classification supervisée & non supervisée
 - **Deep Learning** : Réseaux de neurones 
+- **Séries temporelles**
 :::
 
-### Programmation
+### Outils techniques
 
-***
 
 ::: {.callout-important icon=false collapse="true"}
 ## {{< fa brands python >}} PYTHON
@@ -54,6 +54,7 @@ Vous trouverez sur cette page une présentation de mes compétences.
 - **Nettoyage et traitement des données** avec **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
 - **Visualisation des données** avec `{ggplot2}` et `{plotly}`.
 - **Création d'application web et tableaux de bord** avec `{shiny}`
+- **Création de site web** avec `Quarto`
 - **Machine Learning** avec `{tidymodels}`.
 - **Analyse de données exploratoire et analyse factorielle** : ACP -- AFC -- ACM -- AFDM.
 - **Econométrie et de micro-économétrie** : `{micEcon}`, `{sfa}`, etc.
@@ -65,9 +66,56 @@ Vous trouverez sur cette page une présentation de mes compétences.
 - Création de vues et procédures stockées.
 :::
 
-### Soft skills & centre d'intérêts
 ::: {.callout-important icon=false collapse="true"}
-## Intérêts 
+## QlikSense
+- **Création de tableaux de bord interactifs**
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa file-excel >}} Excel
+- **Tableaux croisés dynamiques**
+- **Requêtage** par le biais de `PowerQuery`
+- **Automatisation de tâches** par le biais de `VBA`
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa code-compare >}} Git
+- **Gestion de projet**
+- **Versionning**
+:::
+
+### Soft skills & centre d'intérêts
+
+***
+
+::: {.callout-important icon=false collapse="true"}
+## Communication
+Aptitude à partager des resultats techniques à des publics non avisés. 
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## Force de proposition
+Aucune hésitation à proposer de nouvelles solutions. 
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## Gestion du temps & rigourosité
+- Importance de la gestion optimale du temps.
+- Être rigoureux est primordiale afin d'assurer un niveau de résultat de haute qualité. 
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## Curiosité
+- Toujours en veille sur les nouvelles pratiques et différentes évolutions du secteur. 
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## Pragmatisme et adaptabilité
+Facilité à m'adapter à des environnements hétérogènes. 
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## Centre d'intérêts 
 - **Intelligence Artificielle, Machine Learning**
 - **Technologie & Innovation**
 - **Économie & politique**

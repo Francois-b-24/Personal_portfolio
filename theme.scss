@@ -83,4 +83,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', serif;
 }
- 
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top {
+  transition: transform 0.25s ease-in-out;
+}
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top:hover {
+  transform: scale(1.05);
+}
