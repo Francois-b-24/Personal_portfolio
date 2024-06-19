@@ -10,8 +10,27 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
 Vous trouverez sur cette page une présentation de mes compétences. 
- 
+
 ### Théoriques  
+
+***
+::: {.callout-important icon=false collapse="true"} 
+## Économie
+
+- **Micro-économie** : Théorie du consommateur & du producteur, etc.
+- **Théorie des jeux** : Equilibre de nash
+- **Économie industrielle** : Equilibre de Nash en situation non concurrentielle (Duopole, Monopole, Oligopole )
+
+:::
+
+::: {.callout-important icon=false collapse="true"} 
+## Statistiques 
+- **Analyse de données exploratoire** 
+- **Économétrie** : Régression linéaire simple ou multiple, modèles à variable à expliquer dichotomiques, séries-temporelles, etc. 
+- **Micro-économétrie** : Modèles à effets fixe ou aléatoires, etc. 
+- **Machine Learning** : Regression, classification supervisée & non supervisée
+- **Deep Learning** : Réseaux de neurones 
+:::
 
 ### Programmation
 
@@ -24,7 +43,7 @@ Vous trouverez sur cette page une présentation de mes compétences.
 - **Nettoyage et traitement des données** avec `polars`, `pandas`, `numpy`.
 - **Visualisation des données** avec `plotly` et `seaborn`.
 - **Machine learning** : `Scikit learn`, `PyTorch`.
-- **Application web** : `Streamlit`. 
+- **Création d'application web** : `Streamlit`, `Flask` (en apprentissage). 
 - **Développement de code de qualité industrielle** : `mypy` pour le typage statique, `ruff` pour le linting et le formatage du code, `pytest` pour les tests.
 :::
 
@@ -32,9 +51,9 @@ Vous trouverez sur cette page une présentation de mes compétences.
 ::: {.callout-important icon=false collapse="true"}
 ## {{< fa brands r-project >}} R
 
-- Maîtrise des packages de *Manipulation de données* du **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
-- **Visualisatio de données** avec `{ggplot2}` et `{plotly}`.
-- Création d'applications web modernes et robustes en production avec `{shiny}`
+- **Nettoyage et traitement des données** avec **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
+- **Visualisation des données** avec `{ggplot2}` et `{plotly}`.
+- **Création d'application web et tableaux de bord** avec `{shiny}`
 - **Machine Learning** avec `{tidymodels}`.
 - **Analyse de données exploratoire et analyse factorielle** : ACP -- AFC -- ACM -- AFDM.
 - **Econométrie et de micro-économétrie** : `{micEcon}`, `{sfa}`, etc.
@@ -46,6 +65,12 @@ Vous trouverez sur cette page une présentation de mes compétences.
 - Création de vues et procédures stockées.
 :::
 
-### Soft skills 
-
-### Centre d'intérêts
+### Soft skills & centre d'intérêts
+::: {.callout-important icon=false collapse="true"}
+## Intérêts 
+- **Intelligence Artificielle, Machine Learning**
+- **Technologie & Innovation**
+- **Économie & politique**
+- **Horlogerie**
+- **Sports mécaniques (F1, Moto GP, WRC, WEC)**
+:::

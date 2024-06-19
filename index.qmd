@@ -1,7 +1,7 @@
 ---
 title: "François BOUSSENGUI"
 subtitle: |
-  Economiste spécialisé en Machine Learning 
+  Économiste spécialisé en Machine Learning <iconify-icon icon="flag:ga-4x3"></iconify-icon>
 image: moi.jpg
 comments: false
 toc: false
@@ -21,19 +21,20 @@ about:
 ## [👋]{.wave} Bienvenue dans mon Portfolio !
 :::
 
-Dans un souci de recensement de mes travaux et de partage de connaissances, j'ai décidé de mettre en place ce portfolio. Ce sera le lieu où seront exposés mes travaux réalisés durant mon cursus académique ainsi que mes projets personnels. Etant diplômé d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés**, mes travaux revêtent principalement des aspects économiques et statistiques. 
+Dans un souci de recensement de mes travaux et de partage de connaissances, j'ai décidé de mettre en place ce Portfolio. Ce lieu sera la vitrine de mes travaux réalisés durant mon cursus universitaire ainsi que de mes projets personnels. Etant diplômé d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés**, mes travaux revêtent principalement d'un aspect économique et statistiques. 
 
-Je résumerai le rôle d'un économiste en 2 notions :  
+Ainsi, je résumerai le rôle d'un économiste en 2 notions :  
 
-- **Analyse économique** : Sur la base de données collectées de diverses manières, les économistes analysent des données économiques afin de comprendre les tendances et les phénomènes économiques. L'utilisation de modèles théoriques et des méthodes statistiques sont indispensables pour interpréter les données.
+- **Analyse économique** : Sur la base de données collectées selon diverses sources, les économistes analysent des données économiques afin de comprendre les tendances et les phénomènes économiques. L'utilisation de modèles théoriques et des méthodes statistiques sont indispensables pour interpréter les données.
 
 - **Prévision économique**: Il est capable de prédire des tendances économiques futures sur la base de données actuelles et le
 de modèles économiques. 
 
 Pour remplir pleinement son rôle, l'utilisation de logiciels de programmation tels que *Python*, {{< fa brands r-project >}} et *SQL* pour traiter des données en grande quantité est indispensable. 
 
-Sur ces quelques definitions introductives, je vous laisse le soin de parcourir ce Portfolio. Excellente navigation !
+Sur ces quelques definitions introductives, je vous laisse le soin de parcourir ce Portfolio. 
 
+Excellente navigation !
 
 ::: {style="text-align:center;"}
 [Télécharger mon CV {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
