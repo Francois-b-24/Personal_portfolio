@@ -1,7 +1,7 @@
 ---
 title: "Stratégie de fixation des prix"
 subtitle: ""
-author: "BOUSSENGUI François"
+author: ""
 image: "mco.png"
 categories: [Tarification]
 fields: [reading-time]
@@ -59,7 +59,7 @@ Pour finir, dans chacun des cas nous avons quantifié l'impact de ces stratégie
 
 # Outil technique 
 
-- Logiciel R
+- {{< fa brands r-project >}}
 
 <iframe src="PRICING_BOUSSENGUI_LEGER.html" width="100%" height="700px">
 

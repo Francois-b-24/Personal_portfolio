@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="BOUSSENGUI François">
+<meta name="author" content="">
 
 <title>François BOUSSENGUI | Méthodes de prévision économétrique</title>
 <style>
@@ -40,6 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -167,12 +169,6 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Auteur·rice</div>
-    <div class="quarto-title-meta-contents">
-             <p>BOUSSENGUI François </p>
-          </div>
-  </div>
     
   
     
@@ -190,30 +186,31 @@ window.Quarto = {
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a donc été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.</p>
+<p>Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux Moindres Carrés Ordinaires (MCO). Dans un premier temps, il été question d’essayer d’apporter quelque chose de nouveau dans la présentation des principaux résultats d’une régression linéaire simple. Pour ce faire, nous avons proposé une forme diagrammatique (graphique) des principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
-<p>Pour atteindre ces objectifs, nous avons analysé les travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.</p>
+<p>Pour atteindre ces objectifs, nous avons épluché des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.</p>
 <p>Ainsi, nos recherches nous ont permis d’aboutir à la proposition d’une représentation graphique des principaux résultats d’une régression linéaire simple : <span class="math inline">\(y = \beta_0 + \beta_1X + \epsilon\)</span></p>
 <p>Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :</p>
 <ul>
-<li><p>Moindres carrés ordinaires</p></li>
-<li><p>Régression orthogonale</p></li>
-<li><p>Régression non paramétrique</p></li>
+<li><p><strong>Moindres carrés ordinaires</strong> : Elle minimise la somme des carrés des résidus.</p></li>
+<li><p><strong>Régression orthogonale</strong> : Minimise la somme des carrés des distances orthogonales aux points de données.</p></li>
+<li><p><strong>Régression non paramétrique</strong> : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation</p></li>
 </ul>
 <p>Pour chacune des méthodes, nous avons mis en évidence :</p>
 <ul>
-<li><p>La forme fonctionnelle du modèle</p></li>
-<li><p>Les principales hypothèses associées au modèle</p></li>
-<li><p>Leur application dans le logiciel R</p></li>
+<li><p><strong>La forme fonctionnelle du modèle</strong> : La forme fonctionnelle d’un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes</p></li>
+<li><p><strong>Les principales hypothèses associées au modèle</strong> : Les principales hypothèses d’un modèle sont essentielles pour garantir la validité et la fiabilité des estimations des coefficients.</p></li>
+<li><p>Leur application dans <i class="fa-brands fa-r-project" aria-label="r-project"></i> et <i class="fa-brands fa-python" aria-label="python"></i></p></li>
 </ul>
 </section>
 <section id="outils-techniques" class="level1">
 <h1>Outils techniques</h1>
 <ul>
-<li><p>Logiciel R</p></li>
-<li><p>Latex</p></li>
+<li><p><i class="fa-brands fa-r-project" aria-label="r-project"></i></p></li>
+<li><p><i class="fa-brands fa-python" aria-label="python"></i></p></li>
+<li><p>LateX</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -225,7 +222,7 @@ window.Quarto = {
 </div>
 </div>
 <div style="text-align:center;">
-<p><a href="https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing"><img src="down.png" width="100"></a></p>
+<p><a href="AlternativesMCO.pdf" class="btn btn-outline-primary center" role="button">Rapport : Représentation sous forme de diagramme des MCO <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -237,7 +234,7 @@ window.Quarto = {
 </div>
 </div>
 <div style="text-align:center;">
-<p><a href="https://drive.google.com/file/d/1ztrNRPl6e0PET4KJlCsIvQOV-YAQ6EfB/view?usp=sharing"><img src="down.png" width="100"></a></p>
+<p><a href="Alternatives aux MCO.pdf" class="btn btn-outline-primary center" role="button">Présentation : Alternatives aux MCO <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
 </div>
 
 

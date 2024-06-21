@@ -90,12 +90,12 @@ Sur cette page, vous trouverez une présentation de mes compétences.
 
 ::: {.callout-important icon=false collapse="true"}
 ## Communication
-Aptitude à partager des resultats techniques à des publics non avisés. 
+- Aptitude à partager des resultats techniques à des publics non avisés. 
 :::
 
 ::: {.callout-important icon=false collapse="true"}
 ## Force de proposition
-Aucune hésitation à proposer de nouvelles solutions. 
+- Aucune hésitation à proposer de nouvelles solutions. 
 :::
 
 ::: {.callout-important icon=false collapse="true"}
@@ -111,7 +111,7 @@ Aucune hésitation à proposer de nouvelles solutions.
 
 ::: {.callout-important icon=false collapse="true"}
 ## Pragmatisme et adaptabilité
-Facilité à m'adapter à des environnements hétérogènes. 
+- Facilité à m'adapter à des environnements hétérogènes. 
 :::
 
 ::: {.callout-important icon=false collapse="true"}

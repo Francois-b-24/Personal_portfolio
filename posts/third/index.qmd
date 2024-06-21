@@ -1,7 +1,7 @@
 ---
 title: "Prévision des défauts de paiement bancaire"
 subtitle: ""
-author: "BOUSSENGUI François"
+author: ""
 image: "classification.png"
 categories: [Machine Learning]
 fields: [reading-time]
@@ -67,7 +67,7 @@ Il est fort probable de rencontrer un déséquilibre de classes de la variable �
 
 # Outil technique 
 
-- Logiciel R 
+- {{< fa brands r-project >}}
 
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }

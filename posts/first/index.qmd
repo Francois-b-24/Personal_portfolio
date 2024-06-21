@@ -1,7 +1,7 @@
 ---
 title: "Méthodes de prévision économétrique"
 subtitle: ""
-author: "BOUSSENGUI François"
+author: ""
 image: "mco.png"
 categories: [Économétrie]
 fields: [reading-time]
@@ -19,35 +19,37 @@ L'économétrie offre un panel de méthodes de prévision statistique qui dépen
 
 # Objectifs du travail
 
-Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives à celle des Moindres Carrés Ordinaires (MCO). Dans un premier temps, il a donc été question de présenter sous forme de diagramme (graphique) les principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.
+Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux Moindres Carrés Ordinaires (MCO). Dans un premier temps, il été question d'essayer d'apporter quelque chose de nouveau dans la présentation des principaux résultats d'une régression linéaire simple. Pour ce faire, nous avons proposé une forme diagrammatique (graphique) des principaux résultats de la méthode des Moindres Carrés Ordinaires. Dans un second temps, il a été question de présenter les principales méthodes alternatives à la méthode des Moindres Carrés Ordinaires.
 
 # Méthodologie 
 
-Pour atteindre ces objectifs, nous avons analysé les travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
+Pour atteindre ces objectifs, nous avons épluché des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
 
 Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple : $y = \beta_0 + \beta_1X + \epsilon$
 
 Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :
 
--   Moindres carrés ordinaires
+-   **Moindres carrés ordinaires** : Elle minimise la somme des carrés des résidus.
 
--   Régression orthogonale
+-   **Régression orthogonale** : Minimise la somme des carrés des distances orthogonales aux points de données. 
 
--   Régression non paramétrique
+-   **Régression non paramétrique** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation
 
 Pour chacune des méthodes, nous avons mis en évidence :
 
--   La forme fonctionnelle du modèle 
+-   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
 
--   Les principales hypothèses associées au modèle
+-   **Les principales hypothèses associées au modèle** : Les principales hypothèses d'un modèle sont essentielles pour garantir la validité et la fiabilité des estimations des coefficients.
 
--   Leur application dans le logiciel R
+-   Leur application dans {{< fa brands r-project >}} et {{< fa brands python >}}
 
 # Outils techniques 
 
-- Logiciel R
+- {{< fa brands r-project >}}
 
-- Latex 
+- {{< fa brands python >}}
+
+- LateX 
 
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
@@ -55,14 +57,17 @@ knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_p
 ```
 
 ::: {style="text-align:center;"}
-[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+[Rapport : Représentation sous forme de diagramme des MCO {{< fa arrow-up-right-from-square >}}](AlternativesMCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
+
 
 ```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
 ```
 
 ::: {style="text-align:center;"}
-[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1ztrNRPl6e0PET4KJlCsIvQOV-YAQ6EfB/view?usp=sharing)
+[Présentation : Alternatives aux MCO {{< fa arrow-up-right-from-square >}}](Alternatives aux MCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
+
+
 

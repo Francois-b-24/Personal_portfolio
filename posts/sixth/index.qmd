@@ -33,7 +33,7 @@ L'application de cette méthode économétrique a permis de déterminer le type 
 
 # Outil technique
 
--   Logiciel R
+-  {{< fa brands r-project >}}
 
 ```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/sixth/Logit-Probit modelling.pdf")
