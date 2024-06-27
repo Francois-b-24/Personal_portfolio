@@ -7,9 +7,8 @@ categories: [Économétrie]
 fields: [reading-time]
 ---
 
-
 ```{r echo=FALSE}
-knitr::opts_chunk$set(warning = FALSE, echo = FALSE, fig.align = "center", out.width = "100%")
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
 ```
 
 ```{r echo=FALSE}
@@ -27,38 +26,125 @@ L'économétrie offre un panel de méthodes de prévision statistique qui dépen
 
 Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux **Moindres Carrés Ordinaires** (MCO). Dans un premier temps, il été question de proposer une représentation alternatives des principaux résultats d'une régression linéaire simple. Pour ce faire, nous avons proposé une représentation sous forme *diagrammatique* (graphique) des principaux résultats de la méthode des **Moindres Carrés Ordinaires**. Dans un second temps, il a été question de présenter et de classifier les principales méthodes alternatives à celles des **Moindres Carrés Ordinaires**.
 
-# Méthodologie 
+# Méthodologie
 
 Pour atteindre ces objectifs, nous avons analyser des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
 
-Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple : 
+Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple : $y = \beta_0 + \beta_1x + \epsilon$.
 
-* $y = \beta_0 + \beta_1x + \epsilon$.
-
-  + $y$ est la variable dépendante (la réponse)
-  + $x$ est la variable explicative (le prédicteur)
-  + $\beta_0$ est l'ordonnée à l'origine (l'intercept)
-  + $\beta_1$ est le coefficient de regression (la pente)
-  + $\epsilon$ est l'erreur aléatoire
+-   $y$ est la variable dépendante (la réponse)
+-   $x$ est la variable explicative (le prédicteur)
+-   $\beta_0$ est l'ordonnée à l'origine (l'intercept)
+-   $\beta_1$ est le coefficient de regression (la pente)
+-   $\epsilon$ est l'erreur aléatoire
 
 Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision économétrique. Nous pouvons les classer comme suit :
 
-**1**. Les modèles décrivant une **relation linéaire** entre la variable à expliquer et la/les variable(s) explicative(s). 
+**1**. Les modèles décrivant une **relation linéaire** entre la variable à expliquer et la/les variable(s) explicative(s).
 
-*   **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
+-   **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
 
-*   **Régression orthogonale** : Également connue sous le nom de régression des moindres carrés orthogonaux (Orthogonal Least Squares Regression) ou régression de Deming, est une méthode qui prend en compte les erreurs dans les deux variables, à la fois la variable indépendante (x) et la variable dépendante (y). Contrairement à la régression linéaire ordinaire qui minimise uniquement les erreurs en y, la régression orthogonale minimise la somme des distances orthogonales entre les points de données et la ligne de régression.
+```{python, echo=FALSE}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
-## Représentation graphique  :
+# Génération de données aléatoires pour l'exemple
+np.random.seed(0)
+x = 2 * np.random.rand(100, 1)
+y = 4 + 3 * x + np.random.randn(100, 1)
 
-```{python}
+# Ajustement du modèle de régression linéaire
+model = LinearRegression()
+model.fit(x, y)
+y_pred = model.predict(x)
+
+# Affichage des coefficients
+print(f"Ordonnée à l'origine: {model.intercept_[0]}")
+print(f"Coefficient (pente): {model.coef_[0][0]}")
+
+# Tracer les données et la droite de régression
+plt.scatter(x, y, color='blue', label='Observations')
+plt.plot(x, y_pred, color='red', label='Droite de régression')
+
+# Tracer les écarts (résidus)
+for i in range(len(x)):
+    plt.plot([x[i], x[i]], [y[i], y_pred[i]], color='gray', linestyle='--')
+
+# Ajouter les légendes et afficher le graphique
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.title('Régression linéaire par les moindres carrés ordinaires')
+plt.show()
+
+```
+
+-   **Régression orthogonale** : Également connue sous le nom de régression des moindres carrés orthogonaux (Orthogonal Least Squares Regression) ou régression de Deming, est une méthode qui prend en compte les erreurs dans les deux variables, à la fois la variable indépendante (x) et la variable dépendante (y). Contrairement à la régression linéaire ordinaire qui minimise uniquement les erreurs en y, la régression orthogonale minimise la somme des distances orthogonales entre les points de données et la ligne de régression.
+
+```{python, echo=FALSE}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.odr import ODR, Model, Data, RealData
+
+# Génération de données aléatoires pour l'exemple
+np.random.seed(0)
+x = 2 * np.random.rand(100)
+y = 4 + 3 * x + np.random.randn(100)
+
+# Fonction de modèle linéaire
+def linear_model(B, x):
+    return B[0] * x + B[1]
+
+# Création des données pour ODR
+data = RealData(x, y)
+
+# Définition du modèle ODR
+model = Model(linear_model)
+
+# Estimation initiale des paramètres
+beta0 = [1., 1.]
+
+# Création de l'instance ODR
+odr = ODR(data, model, beta0=beta0)
+
+# Ajustement du modèle
+output = odr.run()
+
+# Paramètres ajustés
+beta_hat = output.beta
+print(f"Coefficient (pente): {beta_hat[0]}")
+print(f"Ordonnée à l'origine: {beta_hat[1]}")
+
+# Prédictions
+y_pred = linear_model(beta_hat, x)
+
+# Tracer les données et la droite de régression orthogonale
+plt.scatter(x, y, color='blue', label='Observations')
+plt.plot(x, y_pred, color='red', label='Droite de régression orthogonale')
+
+# Tracer les écarts (résidus orthogonaux)
+for i in range(len(x)):
+    # Projection orthogonale sur la droite de régression
+    x_proj = (x[i] + beta_hat[0] * (y[i] - beta_hat[1])) / (1 + beta_hat[0]**2)
+    y_proj = linear_model(beta_hat, x_proj)
+    plt.plot([x[i], x_proj], [y[i], y_proj], color='gray', linestyle='--')
+
+# Ajouter les légendes et afficher le graphique
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.title('Régression orthogonale par les moindres carrés orthogonaux')
+plt.show()
+```
+
+```{python, echo=FALSE}
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.odr import ODR, Model, RealData
 from sklearn.linear_model import LinearRegression
 
 # Génération de données avec erreurs
-
 np.random.seed(0)
 x = np.linspace(0, 10, 10)
 y = 2 * x + 1 + np.random.normal(size=x.size)
@@ -83,29 +169,166 @@ plt.scatter(x, y, label='Données')
 plt.plot(x, y_mco_pred, label='MCO', color='red')
 plt.plot(x, y_ortho_pred, label='Régression Orthogonale', color='green')
 plt.legend()
+plt.title('Regression MCO et Orthogonale')
+plt.show()
+```
+
+> A travers cette visualisation, on peut voir que les droites de régression des 2 méthodes sont quasiement surperposées. En d'autres termes, les résultats d'estimation fournis par les 2 méthodes sont assez proches.
+
+**2**. Les modèles qui décrivent une **relation non linéaire** entre la variable à expliquer et la/les variable(s) explicative(s).
+
+-   **Régression non paramétrique** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation. Contrairement à la régression paramétrique (comme la régression linéaire), la régression non paramétrique ne nécessite pas d'hypothèses strictes sur la forme de la relation, ce qui permet de capturer des relations plus complexes et non linéaires.
+
+-   **Régression par noyau** : La régression par noyau est une méthode non paramétrique qui utilise une fonction noyau pour estimer la relation entre les variables indépendantes et dépendantes. Une forme courante de régression par noyau est la régression par noyau de [Nadaraya-Watson](https://en.wikipedia.org/wiki/Kernel_regression). Cette méthode consiste à estimer la valeur de la variable dépendante pour une valeur donnée de la variable indépendante en prenant une moyenne pondérée des valeurs observées, les poids étant déterminés par une fonction noyau.
+
+```{python, echo=FALSE}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KernelDensity
+
+# Génération de données
+np.random.seed(0)
+x = np.sort(5 * np.random.rand(80, 1), axis=0)
+y = np.sin(x).ravel()
+
+# Ajout de bruit
+y[::5] += 3 * (0.5 - np.random.rand(16))
+
+# Régression par noyau
+from statsmodels.nonparametric.kernel_regression import KernelReg
+kr = KernelReg(y, x, 'c')
+y_pred, _ = kr.fit(x)
+
+# Visualisation
+plt.scatter(x, y, label='Données')
+plt.plot(x, y_pred, color='red', label='Régression par Noyau')
+plt.legend()
+plt.title('Régression par noyau')
+plt.show()
+plt.close()
+
+```
+
+-   **k-NN (k-plus proches voisin)** : Le k-plus proches voisins (k-NN) est un algorithme d'apprentissage supervisé utilisé pour la classification et la régression. L'idée de base est de prédire la classe ou la valeur d'une observation en utilisant les $k$ observations les plus proches dans l'ensemble d'entraînement.
+
+```{python, echo=FALSE}
+from sklearn.neighbors import KNeighborsRegressor
+
+# Régression KNN
+knn = KNeighborsRegressor(n_neighbors=5)
+knn.fit(x, y)
+y_knn_pred = knn.predict(x)
+
+# Visualisation
+plt.scatter(x, y, label='Données')
+plt.plot(x, y_knn_pred, color='green', label='Régression KNN')
+plt.legend()
+plt.title('k-NN')
 plt.show()
 
 ```
 
-**2**. Les modèles qui décrivent une relation non linéaire entre la variable à expliquer et la/les variable(s) explicative(s). 
+-   **Modèles Additifs Généralisés (GAM)**: Les modèles additifs généralisés (GAM) sont une extension des modèles linéaires généralisés (GLM) qui permettent de modéliser des relations non linéaires. Les GAM utilisent des fonctions lisses (comme les splines) pour modéliser la relation entre chaque prédicteur et la variable réponse.
 
-*   **Régression non paramétrique** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation
+```{python, echo=FALSE}
+#Splines et Modèles Additifs Généralisés (GAM)
 
-Pour chacune des méthodes, nous avons mis en évidence :
+from patsy import dmatrix
+from statsmodels.api import OLS
 
-*   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
+# Génération de splines
+x_basis = dmatrix("bs(x, df=6)", {"x": x}, return_type='dataframe')
+model = OLS(y, x_basis).fit()
+y_spline_pred = model.predict(x_basis)
 
-*  **Les principales hypothèses associées au modèle** : Les principales hypothèses d'un modèle sont essentielles pour garantir la validité et la fiabilité des estimations des coefficients.
+# Visualisation
+plt.scatter(x, y, label='Données')
+plt.plot(x, y_spline_pred, color='purple', label='Splines')
+plt.legend()
+plt.title('Modèle Additif Généralisé')
+plt.show()
 
--   Leur application dans {{< fa brands r-project >}} et {{< fa brands python >}}
+```
 
-# Outils techniques 
+-   **Forêt aléatoire**: Les forêts aléatoires (Random Forests) sont une méthode d'apprentissage supervisé populaire utilisée pour la classification et la régression. Elles fonctionnent en construisant plusieurs arbres de décision pendant la phase d'entraînement et en produisant la classe qui est le mode des classes (classification) ou la moyenne des prédictions (régression) de chaque arbre individuel.
 
-- {{< fa brands r-project >}}
+```{python, echo=FALSE}
+from sklearn.ensemble import RandomForestRegressor
 
-- {{< fa brands python >}}
+# Régression Random Forest
+rf = RandomForestRegressor(n_estimators=100)
+rf.fit(x, y)
+y_rf_pred = rf.predict(x)
 
-- LateX 
+# Visualisation
+plt.scatter(x, y, label='Données')
+plt.plot(x, y_rf_pred, color='orange', label='Forêt Aléatoire')
+plt.legend()
+plt.title('Forêt aléatoire')
+plt.show()
+```
+
+# Comparaison des méthodes et conclusion
+
+En conclusion, nous pouvons dire qu'il existe 2 grandes familles de méthodes de prévision :
+
+-   **Les modèles linéaires** : décrivant une relation linéaire entre la variable dépendante et les variables indépendantes.
+-   **Les modèles non linéaires** : inversement, décrivant une relation non linéaire entre la variable dépendant et les variables indépendantes.
+
+Grâce à des représentations graphiques, nous allons visualiser les différences de résultats entre ces deux familles de méthodes :
+
+```{python, echo=FALSE}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.ensemble import RandomForestRegressor
+
+# Génération de données synthétiques
+np.random.seed(0)
+x = np.sort(5 * np.random.rand(80, 1), axis=0)
+y = 2 * x**2 - 3 * x + 1 + np.random.normal(0, 1, x.shape)
+
+# Modèle Linéaire Simple
+lin_reg = LinearRegression()
+lin_reg.fit(x, y)
+y_lin_pred = lin_reg.predict(x)
+
+# Modèle Polynomial (de degré 2)
+poly = PolynomialFeatures(degree=2)
+x_poly = poly.fit_transform(x)
+poly_reg = LinearRegression()
+poly_reg.fit(x_poly, y)
+y_poly_pred = poly_reg.predict(x_poly)
+
+# Modèle par Forêt Aléatoire
+rf = RandomForestRegressor(n_estimators=100)
+rf.fit(x, y.ravel())
+y_rf_pred = rf.predict(x)
+
+# Visualisation des résultats
+plt.scatter(x, y, label='Données')
+plt.plot(x, y_lin_pred, label='Modèle Linéaire', color='red')
+plt.plot(x, y_poly_pred, label='Modèle Polynomial (degré 2)', color='green')
+plt.plot(x, y_rf_pred, label='Forêt Aléatoire', color='orange')
+plt.legend()
+plt.show()
+```
+
+Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les éléments suivants :
+
+-   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
+
+-   **Les principales hypothèses associées au modèle** : Les principales hypothèses d'un modèle sont essentielles pour garantir la validité et la fiabilité des estimations des coefficients.
+
+-   Leur application dans des outils techniques appropriés : {{< fa brands r-project >}} et {{< fa brands python >}}
+
+# Outils techniques
+
+Pour réaliser ces travaux, nous avons utilisé {{< fa brands r-project >}} et {{< fa brands python >}} pour la partie modélisation. Pour la mise en forme du rapport ainsi que du support de présentation, nous avons utilisé [LateX](https://fr.wikipedia.org/wiki/LaTeX).
+
+> Vous trouverez le rapport ainsi que le support de présentation  ci-dessous :
 
 
 
@@ -117,14 +340,10 @@ knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_p
 [Rapport : Représentation sous forme de diagramme des MCO {{< fa arrow-up-right-from-square >}}](AlternativesMCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
 
-
 ```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 }
 knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
 ```
 
 ::: {style="text-align:center;"}
-[Présentation : Alternatives aux MCO {{< fa arrow-up-right-from-square >}}](Alternatives aux MCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Présentation : Alternatives aux MCO {{< fa arrow-up-right-from-square >}}](Alternatives%20aux%20MCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
-
-
-
