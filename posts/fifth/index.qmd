@@ -19,7 +19,56 @@ Le pricing en économie fait référence à l'ensemble des processus et des stra
 
 1.  **Analyse des Coûts :** Comprendre les coûts fixes et variables associés à la production et à la distribution d'un produit pour s'assurer que le prix couvre ces coûts et permet une marge bénéficiaire.
 
-2.  **Étude de la Demande :** Analyser comment les consommateurs réagissent aux changements de prix, ce qui implique souvent l'étude de l'élasticité-prix de la demande.
+2.  **Étude de la Demande :** Analyser comment les consommateurs réagissent aux changements de prix, ce qui implique souvent l'étude de **l'élasticité-prix de la demande.** 
+
+::: {.callout-tip icon=false collapse="true"}
+## *Elasticité-prix*
+L'élasticité prix-demande mesure la sensibilité de la quantité demandée d'un bien ou service par rapport à une variation de son prix. Elle est définie comme le pourcentage de variation de la quantité demandée divisé par le pourcentage de variation du prix. Voici la formule de l'élasticité prix-demande :
+
+$E_{pd} = \frac{\Delta Q / Q}{\Delta P / P}$
+
+où :
+* $E_{pd}$ est l'élasticité prix-demande,
+
+* $\Delta Q$ est la variation de la quantité demandée,
+
+* $Q$ est la quantité demandée initiale,
+
+* $\Delta P$ est la variation du prix,
+
+* $P$ est le prix initial.
+
+En termes différentiels, cette formule peut être exprimée comme :
+
+$E_{pd} = \frac{dQ}{dP} \times \frac{P}{Q}$
+
+### Interprétation de l'élasticité prix-demande
+
+* **Élasticité unitaire** $(E_{pd} = -1)$ : Une variation de 1% du prix entraîne une variation de 1% de la quantité demandée dans le sens opposé.
+
+* **Demande élastique** $(E_{pd} < -1)$ : La demande est très sensible aux variations de prix. Une variation de 1% du prix entraîne une variation de plus de 1% de la quantité demandée.
+
+* **Demande inélastique** $(-1 < E_{pd} < 0)$ : La demande est peu sensible aux variations de prix. Une variation de 1% du prix entraîne une variation de moins de 1% de la quantité demandée.
+
+* **Demande parfaitement élastique** $(E_{pd} = -\infty)$ : Toute variation de prix entraînera une variation infinie de la quantité demandée.
+
+* **Demande parfaitement inélastique** $(E_{pd} = 0)$ : La quantité demandée reste constante quelle que soit la variation de prix.
+
+### Exemple de calcul
+
+Supposons qu'une augmentation du prix d'un bien de 10% entraîne une diminution de la quantité demandée de 20%.
+
+1. Variation en pourcentage du prix $\Delta P / P$ : 10%
+2. Variation en pourcentage de la quantité demandée $\Delta Q / Q$ : -20%
+
+L'élasticité prix-demande serait alors :
+
+$E_{pd} = \frac{-20\%}{10\%} = -2$
+
+Cela signifie que la demande est élastique : une augmentation de 1% du prix entraîne une diminution de 2% de la quantité demandée.
+:::
+
+
 
 3.  **Concurrence :** Prendre en compte les prix fixés par les concurrents et la position concurrentielle de l'entreprise sur le marché. Cela peut conduire à des stratégies de prix compétitives telles que le prix d'écrémage ou le prix de pénétration.
 
