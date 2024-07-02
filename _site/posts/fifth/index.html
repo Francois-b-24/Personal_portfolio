@@ -154,6 +154,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  <li><a href="#résultats-et-conclusions" id="toc-résultats-et-conclusions" class="nav-link" data-scroll-target="#résultats-et-conclusions">Résultats et conclusions</a></li>
   <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique">Outil technique</a></li>
   </ul>
 </nav>
@@ -206,8 +207,9 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p>L’élasticité prix-demande mesure la sensibilité de la quantité demandée d’un bien ou service par rapport à une variation de son prix. Elle est définie comme le pourcentage de variation de la quantité demandée divisé par le pourcentage de variation du prix. Voici la formule de l’élasticité prix-demande :</p>
 <p><span class="math inline">\(E_{pd} = \frac{\Delta Q / Q}{\Delta P / P}\)</span></p>
-<p>où : * <span class="math inline">\(E_{pd}\)</span> est l’élasticité prix-demande,</p>
+<p>où :</p>
 <ul>
+<li><p><span class="math inline">\(E_{pd}\)</span> est l’élasticité prix-demande,</p></li>
 <li><p><span class="math inline">\(\Delta Q\)</span> est la variation de la quantité demandée,</p></li>
 <li><p><span class="math inline">\(Q\)</span> est la quantité demandée initiale,</p></li>
 <li><p><span class="math inline">\(\Delta P\)</span> est la variation du prix,</p></li>
@@ -259,19 +261,75 @@ window.Quarto = {
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>Nous nous sommes placés dans le contexte d’un cinéma en situation de monopole qui vend des places selon différentes stratégies tarifaires et nous avons étudié l’impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.</p>
+<p>Nous nous sommes placés dans le contexte d’un cinéma. Ce dernier est en situation de monopole etvend des places selon différentes stratégies tarifaires. L’objectif de ce travail est d’étudier l’impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
 <p>Pour atteindre notre objectif, nous nous sommes placés dans le cadre d’une modélisation paramétrique. Cela nous a offert plus de flexibilité et la possibilité d’explorer tous les cas de figures possibles.</p>
-<p>Sachant une fonction de demande dépendant d’un paramètre <span class="math inline">\(\theta\)</span>, nous nous sommes placés dans 2 cas de figure :</p>
+<p>Sachant une fonction de demande dépendant d’un paramètre <span class="math inline">\(\theta\)</span>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nous nous sommes placés dans 2 cas de figure :</p>
 <ol type="1">
-<li><p>Simulation réalisée avec le paramètre <span class="math inline">\(\theta\)</span> suivant une loi uniforme [0,1]</p></li>
-<li><p>Simulation réalisée avec la paramètre <span class="math inline">\(\theta\)</span> suivant une loi Beta (9,2)</p></li>
+<li><p>Simulation réalisée avec le paramètre <span class="math inline">\(\theta\)</span> suivant une <a href="https://fr.wikipedia.org/wiki/Loi_uniforme_continue">loi uniforme continue</a> [0,1]</p></li>
+<li><p>Simulation réalisée avec la paramètre <span class="math inline">\(\theta\)</span> suivant une <a href="https://fr.wikipedia.org/wiki/Loi_b%C3%AAta">loi Beta</a> [9,2]</p></li>
 </ol>
-<p>Dans un premier temps, pour chacun de ces cas nous avons étudié l’mpact d’une stratégie de vente à l’unité, celle d’une stratégie de vente forfaitaire et celle ou les deux stratégies sont appliquées en même temps.</p>
-<p>Concernant les consommateurs, nous avons quantifié les impacts de ces stratégies sur la <em>demande individuelle</em>, sur la <em>demande indirecte</em> et sur le <em>surplus individuel</em> des consommateurs. Ensuite, nous avons comparé les résultats obtenus dans les 2 cas de figure pour savoir quelle stratégie optimale dans le cas ou le monopole décide de les appliquer séparément. Puis, nous avons étudié la situation dans laquelle le monopole donne la possibilité au consommateur de choisir entre les 2 formules simultanément.</p>
-<p>Pour finir, dans chacun des cas nous avons quantifié l’impact de ces stratégies sur le profit et le surplus du monopole.</p>
+<p>Pour chacun de ces cas nous avons étudié l’mpact des stratégies suivantes :</p>
+<ul>
+<li><p><strong>Stratégie de vente à l’unité</strong></p></li>
+<li><p><strong>Vente forfaitaire</strong></p></li>
+<li><p><strong>Application simultanée des 2 stratégies</strong>.</p></li>
+</ul>
+<p>Nous avons étudié et quantifié l’impact sur :</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Surplus des consommateurs</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le surplus des consommateurs est un concept économique qui représente la différence entre le montant que les consommateurs sont prêts à payer pour un bien ou un service et le montant qu’ils paient effectivement. En d’autres termes, c’est la mesure du bénéfice que les consommateurs obtiennent en achetant des produits à un prix inférieur à celui qu’ils seraient prêts à payer.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Surplus des producteurs</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Parallèlement, le surplus des producteurs est un concept économique qui représente la différence entre le montant que les producteurs reçoivent pour un bien ou un service et le montant minimum qu’ils seraient disposés à accepter pour le produire. En d’autres termes, c’est la mesure du bénéfice que les producteurs obtiennent en vendant des produits à un prix supérieur à celui qu’ils seraient prêts à accepter.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Profit du monopole</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le profit du monopole est un concept clé en économie qui illustre comment une entreprise monopolistique maximise son profit en déterminant le prix et la quantité de production optimaux. Contrairement à un marché concurrentiel où de nombreuses entreprises déterminent le prix, un monopole peut influencer le prix du marché en ajustant son niveau de production</p>
+</div>
+</div>
+</div>
+</section>
+<section id="résultats-et-conclusions" class="level1">
+<h1>Résultats et conclusions</h1>
+<p>Ce travail nous a permis de mettre en exergue plusieurs concepts économiques essentiels. Nous avons donc pu modéliser comment les <em>prérogatives</em> d’un monopole (par le biais de son pouvoir de marché), peut avoir un impact à la fois sur le profit de ce même monopole mais aussi et surtout, sur la quantité demandée et la satisfaction retirée par les consommateurs.</p>
 </section>
 <section id="outil-technique" class="level1">
 <h1>Outil technique</h1>
@@ -284,7 +342,13 @@ window.Quarto = {
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
+
+<ol>
+<li id="fn1"><p><span class="math inline">\(\theta\)</span> représente la sensibilité du consommateur.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

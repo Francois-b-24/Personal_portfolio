@@ -62,13 +62,18 @@ Sur cette page, vous trouverez une présentation de mes compétences.
 
 ::: {.callout-important icon=false collapse="true"}
 ## {{< fa database >}} SQL
-- Common Table Expressions (CTE).
-- Création de vues et procédures stockées.
+- Notion sur les bases de données relationnelles
+- Manipulation des données (`SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, etc.)
+- Fonction et opérateurs (`COUNT`, `SUM`,`AVG`, etc.)
+- Jointures
+- Indexation et performance (Création `d'index` pour améliorer les performances de requêtes)
+
 :::
 
 ::: {.callout-important icon=false collapse="true"}
 ## QlikSense
 - **Création de tableaux de bord interactifs**
+- **Gestion des scripts**
 :::
 
 ::: {.callout-important icon=false collapse="true"}
