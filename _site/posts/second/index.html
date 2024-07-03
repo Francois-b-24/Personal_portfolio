@@ -153,28 +153,101 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contexte-général" class="level1">
 <h1>Contexte général</h1>
-<p>Dans le cadre d’un projet réalisé dans l’apprentissage de méthodes de datamining, il a été question d’appliquer des méthodes de classification non supervisée sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
+<p>Dans le cadre d’un projet réalisé dans l’apprentissage de méthodes de <strong>Datamining</strong>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> il a été question d’appliquer des méthodes de <strong>classification non supervisée</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme.</p>
+<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
 <p>Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.</p>
 <ul>
-<li><p>Analyses factorielles</p>
-<ul>
-<li><p>Analyse factorielle des correspondances (AFC)</p></li>
-<li><p>Analyse des composantes principales (ACP)</p></li>
-<li><p>Analyse des composantes multiples (ACM)</p></li>
-</ul></li>
-<li><p>Méthodes de partitionnement</p>
-<ul>
-<li><p>Classification ascendante hiérarchique (CAH)</p></li>
-<li><p>K-Means (K-plus proches voisins)</p></li>
-</ul></li>
+<li><strong>Analyses factorielles</strong></li>
 </ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analyse factorielle des correspondances (AFC)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’Analyse Factorielle des Correspondances (AFC) est une méthode statistique utilisée pour explorer les relations entre des variables qualitatives (catégorielles) dans des tableaux de contingence. Cette méthode permet de réduire la dimensionnalité des données et de représenter graphiquement les associations entre les catégories des variables sous forme de points dans un espace de faible dimension (généralement deux dimensions).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analyse des composantes principales (ACP)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées composantes principales. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analyse des composantes multiples (ACM)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’Analyse des Composantes Multiples (ACM) est une extension de l’Analyse des Composantes Principales (ACP) qui permet de traiter simultanément plusieurs tableaux de données, souvent appelés modalités, lorsqu’il y a plusieurs ensembles de variables à analyser conjointement. Cela peut être particulièrement utile lorsque les données sont organisées en groupes ou en ensembles distincts et que l’on souhaite étudier leurs relations globales.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Méthodes de partitionnement</strong></li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Classification ascendante hiérarchique (CAH)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La Classification Ascendante Hiérarchique (CAH) est une méthode d’analyse statistique utilisée pour regrouper des observations ou des variables en clusters (groupes) homogènes et hétérogènes successivement, de manière ascendante (du bas vers le haut). Cette méthode est non paramétrique et exploratoire, ce qui signifie qu’elle ne nécessite pas d’hypothèses préalables sur la structure des données et qu’elle est utilisée pour explorer la structure intrinsèque des données.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+K-Means (K-plus proches voisins)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le K-means est l’un des algorithmes de clustering les plus populaires en analyse de données non supervisée. Son objectif principal est de partitionner un ensemble de données en K clusters distincts, où chaque observation appartient au cluster avec le centre (centroid) le plus proche</p>
+</div>
+</div>
+</div>
 </section>
 <section id="principaux-résultats" class="level1">
 <h1>Principaux résultats</h1>
@@ -186,8 +259,9 @@ ul.task-list li input[type="checkbox"] {
 <p>L’analyse des composantes multiples (ACM) nous a permis quant à elle de classifier les biens comme suit :</p>
 <ul>
 <li><p>Les biens chauffés à l’électrique et n’ayant pas de cheminée</p></li>
-<li><p>Inversement, les biens possédant au minimum une cheminée et chauffés à l’air chaud ou à l’eau chaude</p></li>
+<li><p>Inversement, les biens possédant au minimum une cheminée et chauffés à l’air chaud ou à l’eau chaude.</p></li>
 </ul>
+<p>En conclusion, l’application des techniques de data mining présentent une utilité non négligeable. En effet, ces dernières nous ont permis de mettre en évidence les biens qui présentent des caractères similaires et qui par conséquent, peuvent être scindés en plusieurs catégories. Dans un but de segmentation du marché ou d’analyse de la clientèle, ces techniques présentent une utilité sans précédente.</p>
 </section>
 <section id="outil-technique" class="level1">
 <h1>Outil technique</h1>
@@ -210,7 +284,15 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
+
+<ol>
+<li id="fn1"><p>La fouille de données (ou “datamining” en anglais) désigne le processus de découverte de motifs, de corrélations ou d’anomalies en analysant de grands ensembles de données à l’aide de diverses techniques computationnelles. Cela implique d’extraire des informations utiles à partir de données brutes pour découvrir des motifs cachés, des relations ou des insights qui peuvent aider à la prise de décision ou à la prédiction.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>La classification non supervisée, également connue sous le nom de clustering, est une méthode de fouille de données qui consiste à regrouper des objets ou des données sans utiliser d’étiquettes ou de catégories prédéfinies.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>L’homogénéité d’une population ou d’une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

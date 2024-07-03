@@ -1,5 +1,5 @@
 ---
-title: "Modélisation de l'efficacité technique d'une entreprise"
+title: "Mesure de l'efficacité technique d'une entreprise"
 subtitle: ""
 author: ""
 image: "mco.png"
@@ -22,11 +22,11 @@ où $y_i$ est la production scalaire observée du producteur $i$ ; $i=1,..I,$ $x
 
 -   $\beta$ est un vecteur de paramètres technologiques à estimer ;
 
--   $f(x_i , \beta)$ est la fonction frontière de production.
+-   $f(x_i , \beta)$ est la fonction frontière de production ;
 
-$TE_i$ désigne l'efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. $TE = (\frac{y}{y*})$. $TE_i = 1$ montre que la ième entreprise obtient la production maximale réalisable, tandis que $TE_i$ \< 1 fournit une mesure de l'écart entre la production observée et la production maximale réalisable. En d'autres, détermine l'utilisation non efficiente des inputs.
+$TE_i$ désigne l'efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. $TE = (\frac{y}{y*})$. $TE_i = 1$ montre que la ième entreprise obtient la production maximale réalisable, tandis que $TE_i$ \< 1 fournit une mesure de l'écart entre la production observée et la production maximale réalisable. En d'autres, $TE_i$ détermine l'utilisation non efficiente des inputs.
 
-Une composante stochastique décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par $exp(v_i)$. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu'ils sont décrits par une distribution commune.
+Une composante [stochastique](https://fr.wikipedia.org/wiki/Processus_stochastique) décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par $exp(v_i)$. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu'ils sont décrits par une distribution commune.
 
 La frontière de production stochastique deviendra :
 
@@ -34,37 +34,37 @@ $y_i = f(x_i, \beta) \times TE_i \times (v_i)$
 
 Nous supposons que $TE_i$ est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.
 
-L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. "L'analyse de la frontière du profit" examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
+L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. « L'analyse de la frontière du profit » examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
 
-# Objectifs du travail 
+# Objectifs du travail
 
-L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :
+L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :
 
--   Le coût total
+| Varibales |
+|:------|
+| `Coût total`| 
+| `Quantité produite`| 
+| `Le prix du travail` |   
+| `Le prix du capital`|
+| `Le prix du carburant`|
+| `Le part du coût du travail dans le coût total`|
+| `Le part du coût du capital dans le coût total`|
+| `Le part du coût du carburant dans le coût total`|
 
--   La quantité produite
 
--   Le prix du travail
+# Méthodologie
 
--   Le prix du capital
+Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui s'y dégagent. En d'autres termes, nous avons réalisé une étude sur :
 
--   Le prix du carburant
+* **Analyse des coûts** 
+* **Quantités produites** 
+* **La productivité des entreprises**
 
--   La part du coût du travail dans le coût total
-
--   La part du coût du capital dans le coût total
-
--   La part du coût du carburant dans le coût total
-
-# Méthodologie 
-
-Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui s'y dégagent. En d'autres termes, nous avons réalisé une analyse des coûts, des quantités produites et de la productivité des entreprises. 
-
-Ensuite, nous avons réalisé une analyse de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d'apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles. 
+Ensuite, nous avons réalisé une modélisation de la frontière stochastique respectivement du point de vue des **coûts** mais aussi de la **production**. Dans les deux cas, nous avons réalisé diverses modélisations afin d'apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles et confronter les résultats obtenus dans le but d'otenir le meilleur. 
 
 # Outil technique
 
-- {{< fa brands r-project >}}
+-   {{< fa brands r-project >}}
 
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 

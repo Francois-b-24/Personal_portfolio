@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>François BOUSSENGUI | Modélisation de l’efficacité technique d’une entreprise</title>
+<title>François BOUSSENGUI | Mesure de l’efficacité technique d’une entreprise</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modélisation de l’efficacité technique d’une entreprise</h1>
+<h1 class="title">Mesure de l’efficacité technique d’une entreprise</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Économétrie</div>
   </div>
@@ -187,33 +187,61 @@ window.Quarto = {
 <p>où <span class="math inline">\(y_i\)</span> est la production scalaire observée du producteur <span class="math inline">\(i\)</span> ; <span class="math inline">\(i=1,..I,\)</span> <span class="math inline">\(x_i\)</span> est un vecteur de <span class="math inline">\(N\)</span> entrées utilisé par le <span class="math inline">\(producteur_i\)</span> ;</p>
 <ul>
 <li><p><span class="math inline">\(\beta\)</span> est un vecteur de paramètres technologiques à estimer ;</p></li>
-<li><p><span class="math inline">\(f(x_i , \beta)\)</span> est la fonction frontière de production.</p></li>
+<li><p><span class="math inline">\(f(x_i , \beta)\)</span> est la fonction frontière de production ;</p></li>
 </ul>
-<p><span class="math inline">\(TE_i\)</span> désigne l’efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. <span class="math inline">\(TE = (\frac{y}{y*})\)</span>. <span class="math inline">\(TE_i = 1\)</span> montre que la ième entreprise obtient la production maximale réalisable, tandis que <span class="math inline">\(TE_i\)</span> &lt; 1 fournit une mesure de l’écart entre la production observée et la production maximale réalisable. En d’autres, détermine l’utilisation non efficiente des inputs.</p>
-<p>Une composante stochastique décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par <span class="math inline">\(exp(v_i)\)</span>. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu’ils sont décrits par une distribution commune.</p>
+<p><span class="math inline">\(TE_i\)</span> désigne l’efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. <span class="math inline">\(TE = (\frac{y}{y*})\)</span>. <span class="math inline">\(TE_i = 1\)</span> montre que la ième entreprise obtient la production maximale réalisable, tandis que <span class="math inline">\(TE_i\)</span> &lt; 1 fournit une mesure de l’écart entre la production observée et la production maximale réalisable. En d’autres, <span class="math inline">\(TE_i\)</span> détermine l’utilisation non efficiente des inputs.</p>
+<p>Une composante <a href="https://fr.wikipedia.org/wiki/Processus_stochastique">stochastique</a> décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par <span class="math inline">\(exp(v_i)\)</span>. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu’ils sont décrits par une distribution commune.</p>
 <p>La frontière de production stochastique deviendra :</p>
 <p><span class="math inline">\(y_i = f(x_i, \beta) \times TE_i \times (v_i)\)</span></p>
 <p>Nous supposons que <span class="math inline">\(TE_i\)</span> est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.</p>
-<p>L’analyse des frontières stochastiques a également examiné l’efficacité du « coût » et du « profit » (voir Kumbhakar &amp; Lovell 2003). L’approche de la « frontière des coûts » tente de mesurer dans quelle mesure l’entreprise se trouve loin de la minimisation totale des coûts (c’est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d’inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. “L’analyse de la frontière du profit” examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l’entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».</p>
+<p>L’analyse des frontières stochastiques a également examiné l’efficacité du « coût » et du « profit » (voir Kumbhakar &amp; Lovell 2003). L’approche de la « frontière des coûts » tente de mesurer dans quelle mesure l’entreprise se trouve loin de la minimisation totale des coûts (c’est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d’inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. « L’analyse de la frontière du profit » examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l’entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».</p>
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
-<p>L’objectif de ce travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d’une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont :</p>
-<ul>
-<li><p>Le coût total</p></li>
-<li><p>La quantité produite</p></li>
-<li><p>Le prix du travail</p></li>
-<li><p>Le prix du capital</p></li>
-<li><p>Le prix du carburant</p></li>
-<li><p>La part du coût du travail dans le coût total</p></li>
-<li><p>La part du coût du capital dans le coût total</p></li>
-<li><p>La part du coût du carburant dans le coût total</p></li>
-</ul>
+<p>L’objectif de ce travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d’une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Varibales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Coût total</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Quantité produite</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Le prix du travail</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Le prix du capital</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Le prix du carburant</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Le part du coût du travail dans le coût total</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Le part du coût du capital dans le coût total</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Le part du coût du carburant dans le coût total</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
-<p>Pour atteindre notre objectif, nous avons tout d’abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d’observer les tendances générales qui s’y dégagent. En d’autres termes, nous avons réalisé une analyse des coûts, des quantités produites et de la productivité des entreprises.</p>
-<p>Ensuite, nous avons réalisé une analyse de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d’apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles.</p>
+<p>Pour atteindre notre objectif, nous avons tout d’abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d’observer les tendances générales qui s’y dégagent. En d’autres termes, nous avons réalisé une étude sur :</p>
+<ul>
+<li><strong>Analyse des coûts</strong></li>
+<li><strong>Quantités produites</strong></li>
+<li><strong>La productivité des entreprises</strong></li>
+</ul>
+<p>Ensuite, nous avons réalisé une modélisation de la frontière stochastique respectivement du point de vue des <strong>coûts</strong> mais aussi de la <strong>production</strong>. Dans les deux cas, nous avons réalisé diverses modélisations afin d’apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles et confronter les résultats obtenus dans le but d’otenir le meilleur.</p>
 </section>
 <section id="outil-technique" class="level1">
 <h1>Outil technique</h1>

@@ -129,7 +129,7 @@ Le profit du monopole est un concept clé en économie qui illustre comment une 
 
 # Résultats et conclusions
 
-Ce travail nous a permis de mettre en exergue plusieurs concepts économiques essentiels. Nous avons donc pu modéliser comment les *prérogatives* d'un monopole (par le biais de son pouvoir de marché), peut avoir un impact à la fois sur le profit de ce même monopole mais aussi et surtout, sur la quantité demandée et la satisfaction retirée par les consommateurs. 
+Ce travail nous a permis de mettre en exergue plusieurs concepts économiques essentiels. En effet, nous avons donc été en mesure de modéliser comment les *prérogatives* d'un monopole (par le biais de son pouvoir de marché), peut avoir un impact à la fois sur le profit de ce même monopole mais aussi et surtout, sur la quantité demandée et la satisfaction retirée par les consommateurs. 
 
 # Outil technique
 
