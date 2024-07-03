@@ -154,20 +154,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contexte-général" class="level1">
 <h1>Contexte général</h1>
-<p>La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La classification supervisée regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable. Nous sommes ici dans le cas d’un banque de détails qui souhaite attribuer un score ou probabilité de risque à ses clients.</p>
+<p>La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La <strong>classification supervisée</strong> regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable. Nous sommes ici dans le cas d’une banque de détails qui souhaite attribuer un <em>score</em> ou <em>probabilité</em> de risque à ses clients.</p>
 </section>
 <section id="objectifs-du-travail" class="level1">
 <h1>Objectifs du travail</h1>
 <p>Ainsi, dans le cas des défauts de paiement bancaire, l’objectif est de pouvoir modéliser l’appartenance d’un individu à l’une des classes suivantes :</p>
 <ol type="1">
-<li><p><strong>Oui</strong> (1), l’individu est en défaut de paiement ;</p></li>
-<li><p><strong>Non</strong> (0), l’individu n’est pas en défaut de paiement ;</p></li>
+<li><p><strong>Oui</strong> [1], l’individu est en défaut de paiement ;</p></li>
+<li><p><strong>Non</strong> [0], l’individu n’est pas en défaut de paiement ;</p></li>
 </ol>
-<p>L’application des méthodes de classification supervisée aboutira à l’attribution d’un score ou probabilité de risque de défauts de paiement.</p>
 </section>
 <section id="méthodologie" class="level1">
 <h1>Méthodologie</h1>
-<p>Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont). Cela nous a donc conduit a procédé comme suit :</p>
+<p>De prime abord, nous avons réalisé une analyse descriptive qui a nous permis de découvrir un <strong>déséquilibre des classes</strong> pour la variable à expliquer. En d’autres termes, nous avons une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont.</p>
+<p>Cela est un fait positif pour une banque en soi.</p>
+<p>Cependant, ce déséquilibre impact négativement la performance et biaise le résultat des modèles.</p>
+<p>Cela nous a donc conduit a procédé comme suit :</p>
 <ul>
 <li><p>Découpage de la population en 2 sous-groupes :</p>
 <ul>
@@ -175,21 +177,139 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Un groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;</p></li>
 </ul></li>
 <li><p>Première application des modèles sans prise en compte du déséquilibre des classes</p></li>
-<li><p>Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d’application de méthode de ré-échantillonnage des classes, à savoir :</p>
-<ul>
-<li><p>Sous-échantillonnage</p></li>
-<li><p>Sur-échantillognnage</p></li>
-<li><p>SMOTE (qui est une combinaison des 2 méthodes précédentes)</p></li>
-</ul></li>
-<li><p>Les modèles utilisés sont les suivants :</p>
-<ul>
-<li><p>Analyse linéaire discriminante</p></li>
-<li><p>Analyse quadratique discriminante</p></li>
-<li><p>Arbres de décisions</p></li>
-<li><p>Bagging, Boosting</p></li>
-<li><p>Forêts aléatoires</p></li>
-</ul></li>
+<li><p>Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d’application de méthode de ré-échantillonnage des classes, à savoir :</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sous-échantillonnage
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Réduit le nombre d’échantillons de la classe majoritaire.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sur-échantillognnage
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Augmente le nombre d’échantillons de la classe minoritaire.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SMOTE
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Génère des exemples synthétiques de la classe minoritaire.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Les modèles utilisés sont les suivants :</li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analyse linéaire discriminante (LDA)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’analyse discriminante linéaire (LDA) est une technique de classification et de réduction de dimension qui vise à séparer les classes en trouvant une projection linéaire des données qui maximise la séparation entre les classes tout en minimisant la variance au sein des classes.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analyse quadratique discriminante (QDA)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’analyse discriminante quadratique (QDA) est une extension de l’analyse discriminante linéaire (LDA) qui permet de modéliser des frontières de décision non linéaires. Contrairement à LDA, qui suppose que les covariances des classes sont identiques, QDA permet à chaque classe d’avoir sa propre matrice de covariance. Cela permet une modélisation plus flexible, mais nécessite plus de paramètres et peut donc être moins efficace avec de petits ensembles de données.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Arbres de décisions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les arbres de décision sont des modèles de machine learning non paramétriques utilisés pour la classification et la régression. Ils apprennent des règles de décision simples déduites des données pour prédire la valeur de la variable cible.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bagging, Boosting
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les termes “Bagging” et “Boosting” sont des techniques utilisées en apprentissage automatique (machine learning) pour améliorer les performances des modèles prédictifs en utilisant des ensembles de modèles plus simples.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Forêts aléatoires
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
 </section>
 <section id="principaux-résultats" class="level1">
 <h1>Principaux résultats</h1>

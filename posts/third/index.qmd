@@ -13,49 +13,87 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
 
 # Contexte général
 
-La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La classification supervisée regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable. Nous sommes ici dans le cas d'un banque de détails qui souhaite attribuer un score ou probabilité de risque à ses clients. 
+La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La **classification supervisée** regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable. Nous sommes ici dans le cas d'une banque de détails qui souhaite attribuer un *score* ou *probabilité* de risque à ses clients. 
 
 # Objectifs du travail
 
 Ainsi, dans le cas des défauts de paiement bancaire, l'objectif est de pouvoir modéliser l'appartenance d'un individu à l'une des classes suivantes :
 
-1.  **Oui** (1), l'individu est en défaut de paiement ;
+1.  **Oui** [1], l'individu est en défaut de paiement ;
 
-2.  **Non** (0), l'individu n'est pas en défaut de paiement ;
+2.  **Non** [0], l'individu n'est pas en défaut de paiement ;
 
-L'application des méthodes de classification supervisée aboutira à l'attribution d'un score ou probabilité de risque de défauts de paiement.
 
 # Méthodologie
 
-Après avoir réalisé une analyse descriptive qui a nous permis de découvrir un déséquilibre des classes pour la variable à expliquer (Une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont). Cela nous a donc conduit a procédé comme suit :
+De prime abord, nous avons réalisé une analyse descriptive qui a nous permis de découvrir un **déséquilibre des classes** pour la variable à expliquer. En d'autres termes, nous avons une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont. 
 
--   Découpage de la population en 2 sous-groupes :
+Cela est un fait positif pour une banque en soi. 
 
-    -   Un groupe dédié à l'apprentissage, autrement dit, le groupe d'entraînement (2/3) ;
+Cependant, ce déséquilibre impact négativement la performance et biaise le résultat des modèles.  
 
-    -   Un groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;
+Cela nous a donc conduit a procédé comme suit :
 
--   Première application des modèles sans prise en compte du déséquilibre des classes
 
--   Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d'application de méthode de ré-échantillonnage des classes, à savoir :
+*   Découpage de la population en 2 sous-groupes :
 
-    -   Sous-échantillonnage
+    +   Un groupe dédié à l'apprentissage, autrement dit, le groupe d'entraînement (2/3) ;
 
-    -   Sur-échantillognnage
+    +   Un groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;
 
-    -   SMOTE (qui est une combinaison des 2 méthodes précédentes)
+*   Première application des modèles sans prise en compte du déséquilibre des classes 
 
--   Les modèles utilisés sont les suivants :
+*   Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d'application de méthode de ré-échantillonnage des classes, à savoir :
 
-    -   Analyse linéaire discriminante
+::: {.callout-tip icon=false collapse="true"}
+## Sous-échantillonnage
 
-    -   Analyse quadratique discriminante
+Réduit le nombre d'échantillons de la classe majoritaire.
 
-    -   Arbres de décisions
+:::
 
-    -   Bagging, Boosting
+::: {.callout-tip icon=false collapse="true"}
+## Sur-échantillognnage
 
-    -   Forêts aléatoires
+Augmente le nombre d'échantillons de la classe minoritaire.
+
+:::
+    
+::: {.callout-tip icon=false collapse="true"}
+##  SMOTE
+Génère des exemples synthétiques de la classe minoritaire.
+:::
+
+* Les modèles utilisés sont les suivants :
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse linéaire discriminante (LDA)
+L'analyse discriminante linéaire (LDA) est une technique de classification et de réduction de dimension qui vise à séparer les classes en trouvant une projection linéaire des données qui maximise la séparation entre les classes tout en minimisant la variance au sein des classes. 
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse quadratique discriminante (QDA)
+
+L'analyse discriminante quadratique (QDA) est une extension de l'analyse discriminante linéaire (LDA) qui permet de modéliser des frontières de décision non linéaires. Contrairement à LDA, qui suppose que les covariances des classes sont identiques, QDA permet à chaque classe d'avoir sa propre matrice de covariance. Cela permet une modélisation plus flexible, mais nécessite plus de paramètres et peut donc être moins efficace avec de petits ensembles de données.
+:::
+ 
+::: {.callout-tip icon=false collapse="true"}   
+## Arbres de décisions
+
+Les arbres de décision sont des modèles de machine learning non paramétriques utilisés pour la classification et la régression. Ils apprennent des règles de décision simples déduites des données pour prédire la valeur de la variable cible.
+
+:::
+  
+::: {.callout-tip icon=false collapse="true"} 
+## Bagging, Boosting
+Les termes "Bagging" et "Boosting" sont des techniques utilisées en apprentissage automatique (machine learning) pour améliorer les performances des modèles prédictifs en utilisant des ensembles de modèles plus simples.
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Forêts aléatoires
+:::   
+
+   
 
 # Principaux résultats
 
