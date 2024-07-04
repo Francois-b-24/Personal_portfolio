@@ -306,18 +306,26 @@ Forêts aléatoires
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>Les forêts aléatoires sont une technique de machine learning utilisée pour la classification et la régression. Elles fonctionnent en combinant plusieurs arbres de décision, chacun construit sur un échantillon différent des données d’entraînement. Le principe de base est le suivant :</p>
+<ol type="1">
+<li><strong>Construction d’arbres</strong> : Un grand nombre d’arbres de décision sont construits, chaque arbre étant entraîné sur un échantillon aléatoire des données d’entraînement.</li>
+<li><strong>Prédiction par vote majoritaire</strong> : Pour la classification, chaque arbre “vote” pour une classe, et la classe la plus souvent choisie par les arbres est la prédiction finale. Pour la régression, la prédiction finale est la moyenne des prédictions de tous les arbres.</li>
+</ol>
+<p>L’utilisation de multiples arbres et l’échantillonnage aléatoire des données permettent de réduire le risque de surapprentissage (overfitting) et d’améliorer la robustesse et la précision des prédictions.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="principaux-résultats" class="level1">
 <h1>Principaux résultats</h1>
-<p>Après avoir entraîné les modèles sur l’échantillon d’entraînement, nous avons appliqué les modèles sur les données test. Plus précisément, nous avons comparé les résultats obtenu en ayant pris en compte le déséquilibre des classes et ceux obtenu en ne l’ayant pas pris en compte. Il s’avère que le modèle que nous avons retenu sur la base des métriques d’évaluation est une <strong>Forêt Aléatoire</strong> sur laquelle nous avons appliqué la méthode SMOTE. Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.</p>
+<p>Après avoir entraîné les modèles sur l’échantillon d’entraînement, nous avons appliqué les modèles sur les données test afin d’en apprécier leur performance. Plus précisément, nous avons comparé les résultats de nos 2 approches. C’est-à-dire l’approche tenant compte du déséquilibre des classes et celle ne la prenant pas en compte.</p>
+<p>Sur la base des différentes métriques d’évaluation que nous avons utilisé, ils s’avère que le modèle le plus performabnt est une <strong>Forêt Aléatoire</strong> sur laquelle nous avons appliqué la méthode <strong>SMOTE</strong>.</p>
+<p>Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.</p>
 </section>
 <section id="conclusions-et-perspective" class="level1">
 <h1>Conclusions et perspective</h1>
-<p>Il est fort probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. C’est un aspect qui biaise fortement les résultats d’estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour résoudre le problème. Au sortir de là, nous obtenons un modèle qui n’est pas biaisé. Ce dernier nous permet donc aisément de prédire l’appartenance à l’une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l’intérêt de ce genre de méthodes est qu’elle donne la possibilité de mettre en place de moyens de prévention pour se protéger des risques des personnes qui sont en défauts de paiement.</p>
+<p>Dans la réalité, il est très probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée.</p>
+<p>C’est un aspect qui biaise fortement les résultats d’estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour résoudre le problème. Au sortir de là, cela nous permet d’obtenir un modèle qui n’est pas biaisé. Ce dernier nous permet donc aisément de prédire l’appartenance à l’une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l’intérêt de ce genre de méthodes est qu’elle donne la possibilité de mettre en place de moyens de prévention pour se protéger des personnes qui présentent un fort risque d’être en défaut de paiement.</p>
 </section>
 <section id="outil-technique" class="level1">
 <h1>Outil technique</h1>
