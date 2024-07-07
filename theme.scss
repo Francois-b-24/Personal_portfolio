@@ -1,7 +1,12 @@
 /*-- scss:defaults --*/
 
-.card-img-top img {
-  height: 175px; /* Réglez la hauteur de l'image selon vos besoins */
+.quarto-title-meta-contents code {
+  color: #003366; /* Couleur de texte en bleu foncé */
+}
+
+
+.listing-author code {
+  color: #003366; /* Couleur bleu foncé */
 }
 
 
@@ -10,16 +15,16 @@
   margin-bottom: 5px; /* Réduit la marge en bas à 5 pixels */
 }
 
-card-img-top {
+.card-img-top {
   display: flex; /* Utilisation de flexbox pour aligner les éléments */
   justify-content: center; /* Centrer horizontalement */
   align-items: center; /* Centrer verticalement */
   height: 150px; /* Hauteur du cadre */
 }
 
-card-img-top img {
-  max-width: 50%; /* Assurer que l'image ne dépasse pas la largeur du cadre */
-  max-height: 50%; /* Assurer que l'image ne dépasse pas la hauteur du cadre */
+.card-img-top img {
+  max-width: 100%; /* Assurer que l'image ne dépasse pas la largeur du cadre */
+  max-height: 100%; /* Assurer que l'image ne dépasse pas la hauteur du cadre */
 }
 
 
@@ -80,6 +85,17 @@ a.nav-link:hover {
   text-transform: uppercase;
   font-size: 1.5rem;
 }
+
+.navbar-title {
+  transition: background-color 0.3s ease; /* Transition fluide pour l'effet */
+  padding: 5px; /* Ajoute de l'espace autour du texte */
+  border-radius: 5px; /* Ajoute des coins arrondis au conteneur */
+}
+
+.navbar-title:hover {
+  background-color: #4a94d9; /* Couleur de fond jaune clair au survol */
+}
+
 
 /* Transforme en majuscule le texte des menus de navigation */
 span.menu-text {
