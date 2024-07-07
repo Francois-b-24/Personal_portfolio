@@ -7,7 +7,7 @@ lang: fr
 number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` ET `LEGER Aline`"
-description: "Application des méthodes de classification non supervisée"
+description: "*Application des méthodes de classification non supervisée*"
 image: "classification.png"
 categories: [Machine Learning]
 format:

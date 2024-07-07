@@ -1,15 +1,25 @@
 /*-- scss:defaults --*/
 
-.card-img-top {
+.card-img-top img {
+  height: 175px; /* Réglez la hauteur de l'image selon vos besoins */
+}
+
+
+.card-attribution.card-text-small.start {
+  margin-top: 5px; /* Réduit la marge en haut à 5 pixels */
+  margin-bottom: 5px; /* Réduit la marge en bas à 5 pixels */
+}
+
+card-img-top {
   display: flex; /* Utilisation de flexbox pour aligner les éléments */
   justify-content: center; /* Centrer horizontalement */
   align-items: center; /* Centrer verticalement */
   height: 150px; /* Hauteur du cadre */
 }
 
-.card-img-top img {
-  max-width: 100%; /* Assurer que l'image ne dépasse pas la largeur du cadre */
-  max-height: 100%; /* Assurer que l'image ne dépasse pas la hauteur du cadre */
+card-img-top img {
+  max-width: 50%; /* Assurer que l'image ne dépasse pas la largeur du cadre */
+  max-height: 50%; /* Assurer que l'image ne dépasse pas la hauteur du cadre */
 }
 
 

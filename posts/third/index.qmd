@@ -7,7 +7,7 @@ lang: fr
 number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` - `BARRE Nicolas` - `LEGER Aline`"
-description: "Application des méthodes de classification supervisée"
+description: "*Application des méthodes de classification supervisée*"
 image: "classification.png"
 categories: [Machine Learning]
 format:
@@ -143,6 +143,7 @@ C'est un aspect qui biaise fortement les résultats d'estimations. Par conséque
 
 
 ::: {style="text-align:center;"}
+
 > Vous trouverez le rapport ici :
 
 ::: chevron-styling

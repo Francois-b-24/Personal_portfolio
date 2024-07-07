@@ -8,7 +8,7 @@ number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` - `BARRE Nicolas` - `SABAYE Fried` "
 image: "mco.png"
-description: "Travaux de recherche en économétrie"
+description: "*Travaux de recherche en économétrie*"
 categories: [Économétrie]
 format:
     html:

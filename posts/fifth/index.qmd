@@ -7,7 +7,7 @@ lang: fr
 number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` - `LEGER Aline`"
-description: "Cas pratique de tarification"
+description: "*Cas pratique de tarification*"
 image: "mco.png"
 categories: [Tarification]
 format:

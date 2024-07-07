@@ -7,7 +7,7 @@ lang: fr
 number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` - `LEGER Aline` - `RIGARDIE Loick`"
-description: "Application de méthodes économétriques"
+description: "*Application de méthodes économétriques*"
 image: "mco.png"
 categories: [Économétrie]
 format:
