@@ -1,10 +1,24 @@
 ---
 title: "Prévision des défauts de paiement bancaire"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
 subtitle: ""
-author: ""
+author: "`BOUSSENGUI François` - `BARRE Nicolas` - `LEGER Aline`"
+description: "Application des méthodes de classification supervisée"
 image: "classification.png"
 categories: [Machine Learning]
-fields: [reading-time]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
 ---
 
 ```{r setup, include=FALSE}
@@ -128,10 +142,15 @@ C'est un aspect qui biaise fortement les résultats d'estimations. Par conséque
 - {{< fa brands r-project >}}
 
 
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
-knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/third/Application de modèles de machine learning.pdf")
-```
+::: {style="text-align:center;"}
+> Vous trouverez le rapport ici :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
 
 ::: {style="text-align:center;"}
-[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](Application de modèles de machine learning.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
+

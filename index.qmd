@@ -33,9 +33,9 @@ Ainsi, je résumerai le rôle d'un économiste en 2 notions :
 - **Prévision économique**: Il est capable de prédire des tendances économiques futures sur la base de données actuelles et le
 de modèles économiques. 
 
-Pour remplir pleinement son rôle, l'utilisation de logiciels de programmation tels que *Python*, {{< fa brands r-project >}} et *SQL* pour traiter des données en grande quantité est indispensable. 
+Pour remplir pleinement ce rôle, l'utilisation de logiciels de programmation tels que *Python*, {{< fa brands r-project >}} et *SQL* pour traiter des données en grande quantité est indispensable. 
 
-Sur ces quelques notes introductives, je vous laisse vous découvir ce Portfolio. 
+Sur ces quelques notes introductives, je vous laisse vous-même découvir ce Portfolio. 
 
 ::: {style="text-align:center;"}
 **Excellente navigation !**

@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-description','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -171,11 +171,11 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Catégories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Tous <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Tarification">Tarification <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Économétrie">Économétrie <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -184,7 +184,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -196,79 +196,14 @@ window.Quarto = {
 </header>
 
 
+<hr>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-posts">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Tarification" data-listing-file-modified-sort="1719934863298" data-listing-reading-time-sort="6" data-listing-word-count-sort="1163">
-<a href="../posts/fifth/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../posts/fifth/mco.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Stratégie de fixation des prix
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min.
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tarification'); return false;">
-Tarification
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Économétrie" data-listing-file-modified-sort="1719556885492" data-listing-reading-time-sort="15" data-listing-word-count-sort="2804">
-<a href="../posts/first/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../posts/first/mco.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Méthodes de prévision
-</h5>
-<div class="listing-reading-time card-text text-muted">
-15 min.
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Économétrie'); return false;">
-Économétrie
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Économétrie" data-listing-file-modified-sort="1719936413452" data-listing-reading-time-sort="4" data-listing-word-count-sort="636">
-<a href="../posts/fourth/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../posts/fourth/mco.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Mesure de l’efficacité technique d’une entreprise
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min.
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Économétrie'); return false;">
-Économétrie
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Machine Learning" data-listing-file-modified-sort="1719989564890" data-listing-reading-time-sort="5" data-listing-word-count-sort="805">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning" data-listing-file-modified-sort="1720350118991" data-listing-reading-time-sort="5" data-listing-word-count-sort="820">
 <a href="../posts/second/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -278,19 +213,24 @@ Mesure de l’efficacité technique d’une entreprise
 <h5 class="no-anchor card-title listing-title">
 L’immobilier à Saratoga ~ Californie
 </h5>
-<div class="listing-reading-time card-text text-muted">
-5 min.
-</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
 Machine Learning
+</div>
+</div>
+<div class="card-text listing-description">
+Application des méthodes de classification non supervisée
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code> ET <code>LEGER Aline</code>
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Économétrie" data-listing-file-modified-sort="1720022703927" data-listing-reading-time-sort="4" data-listing-word-count-sort="768">
+<div class="g-col-1" data-index="1" data-categories="Économétrie" data-listing-file-modified-sort="1720350513448" data-listing-reading-time-sort="4" data-listing-word-count-sort="785">
 <a href="../posts/sixth/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -300,19 +240,78 @@ Machine Learning
 <h5 class="no-anchor card-title listing-title">
 Marketing quantitatif au service de la santé
 </h5>
-<div class="listing-reading-time card-text text-muted">
-4 min.
-</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Économétrie'); return false;">
 Économétrie
+</div>
+</div>
+<div class="card-text listing-description">
+L’économétrie au service de la santé
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code>
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="Machine Learning" data-listing-file-modified-sort="1720108903517" data-listing-reading-time-sort="5" data-listing-word-count-sort="958">
+<div class="g-col-1" data-index="2" data-categories="Économétrie" data-listing-file-modified-sort="1720350367123" data-listing-reading-time-sort="4" data-listing-word-count-sort="650">
+<a href="../posts/fourth/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../posts/fourth/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Mesure de l’efficacité technique d’une entreprise
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Économétrie'); return false;">
+Économétrie
+</div>
+</div>
+<div class="card-text listing-description">
+Application de méthodes économétriques
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code> - <code>LEGER Aline</code> - <code>RIGARDIE Loick</code>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Économétrie" data-listing-file-modified-sort="1720349992349" data-listing-reading-time-sort="15" data-listing-word-count-sort="2808">
+<a href="../posts/first/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../posts/first/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Méthodes de prévision
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Économétrie'); return false;">
+Économétrie
+</div>
+</div>
+<div class="card-text listing-description">
+Travaux de recherche en économétrie
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code> - <code>BARRE Nicolas</code> - <code>SABAYE Fried</code>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Machine Learning" data-listing-file-modified-sort="1720350269849" data-listing-reading-time-sort="5" data-listing-word-count-sort="973">
 <a href="../posts/third/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -322,12 +321,44 @@ Marketing quantitatif au service de la santé
 <h5 class="no-anchor card-title listing-title">
 Prévision des défauts de paiement bancaire
 </h5>
-<div class="listing-reading-time card-text text-muted">
-5 min.
-</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
 Machine Learning
+</div>
+</div>
+<div class="card-text listing-description">
+Application des méthodes de classification supervisée
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code> - <code>BARRE Nicolas</code> - <code>LEGER Aline</code>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="Tarification" data-listing-file-modified-sort="1720350423326" data-listing-reading-time-sort="6" data-listing-word-count-sort="1176">
+<a href="../posts/fifth/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../posts/fifth/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stratégie de fixation des prix
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tarification'); return false;">
+Tarification
+</div>
+</div>
+<div class="card-text listing-description">
+Cas pratique de tarification
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+<code>BOUSSENGUI François</code> - <code>LEGER Aline</code>
 </div>
 </div>
 </div>

@@ -1,9 +1,24 @@
 ---
 title: "Mesure de l'efficacité technique d'une entreprise"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
 subtitle: ""
-author: ""
+author: "`BOUSSENGUI François` - `LEGER Aline` - `RIGARDIE Loick`"
+description: "Application de méthodes économétriques"
 image: "mco.png"
 categories: [Économétrie]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
 ---
 
 ```{r setup, include=FALSE}
@@ -40,7 +55,7 @@ L'analyse des frontières stochastiques a également examiné l'efficacité du �
 
 L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :
 
-| Varibales |
+| Variables |
 |:------|
 | `Coût total`| 
 | `Quantité produite`| 
@@ -65,6 +80,18 @@ Ensuite, nous avons réalisé une modélisation de la frontière stochastique re
 # Outil technique
 
 -   {{< fa brands r-project >}}
+
+
+::: {style="text-align:center;"} 
+> Vous trouverez le rapport ici  :
+
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+
+:::
+
 
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 

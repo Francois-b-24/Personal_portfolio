@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="BOUSSENGUI François - LEGER Aline - RIGARDIE Loick">
+<meta name="description" content="Application de méthodes économétriques">
 
 <title>François BOUSSENGUI | Mesure de l’efficacité technique d’une entreprise</title>
 <style>
@@ -42,6 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -105,7 +108,7 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -139,48 +142,60 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mesure de l’efficacité technique d’une entreprise</h1>
+                  <div>
+        <div class="description">
+          Application de méthodes économétriques
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Économétrie</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p><code>BOUSSENGUI François</code> - <code>LEGER Aline</code> - <code>RIGARDIE Loick</code> </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
+    <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
-  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique">Outil technique</a></li>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général"><span class="header-section-number">1</span> Contexte général</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail"><span class="header-section-number">2</span> Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> Méthodologie</a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">4</span> Outil technique</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Mesure de l’efficacité technique d’une entreprise</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Économétrie</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="contexte-général" class="level1">
-<h1>Contexte général</h1>
+<section id="contexte-général" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Contexte général</h1>
 <p>L’analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).</p>
 <p>Le modèle de frontière de production sans composante aléatoire peut s’écrire :</p>
 <p><span class="math inline">\(y_i = f(x_i, \beta)\times TE_i\)</span></p>
@@ -196,13 +211,13 @@ window.Quarto = {
 <p>Nous supposons que <span class="math inline">\(TE_i\)</span> est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.</p>
 <p>L’analyse des frontières stochastiques a également examiné l’efficacité du « coût » et du « profit » (voir Kumbhakar &amp; Lovell 2003). L’approche de la « frontière des coûts » tente de mesurer dans quelle mesure l’entreprise se trouve loin de la minimisation totale des coûts (c’est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d’inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. « L’analyse de la frontière du profit » examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l’entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».</p>
 </section>
-<section id="objectifs-du-travail" class="level1">
-<h1>Objectifs du travail</h1>
+<section id="objectifs-du-travail" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objectifs du travail</h1>
 <p>L’objectif de ce travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d’une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Varibales</th>
+<th style="text-align: left;">Variables</th>
 </tr>
 </thead>
 <tbody>
@@ -233,8 +248,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="méthodologie" class="level1">
-<h1>Méthodologie</h1>
+<section id="méthodologie" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Méthodologie</h1>
 <p>Pour atteindre notre objectif, nous avons tout d’abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d’observer les tendances générales qui s’y dégagent. En d’autres termes, nous avons réalisé une étude sur :</p>
 <ul>
 <li><strong>Analyse des coûts</strong></li>
@@ -243,11 +258,19 @@ window.Quarto = {
 </ul>
 <p>Ensuite, nous avons réalisé une modélisation de la frontière stochastique respectivement du point de vue des <strong>coûts</strong> mais aussi de la <strong>production</strong>. Dans les deux cas, nous avons réalisé diverses modélisations afin d’apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles et confronter les résultats obtenus dans le but d’otenir le meilleur.</p>
 </section>
-<section id="outil-technique" class="level1">
-<h1>Outil technique</h1>
+<section id="outil-technique" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Outil technique</h1>
 <ul>
 <li><p><i class="fa-brands fa-r-project" aria-label="r-project"></i></p></li>
 </ul>
+<div style="text-align:center;">
+<blockquote class="blockquote">
+<p>Vous trouverez le rapport ici :</p>
+</blockquote>
+<div class="chevron-styling">
+<p><iconify-icon inline="" icon="pixelarticons:chevron-down" style="font-size: 5em;" aria-label="Icon chevron-down from pixelarticons Iconify.design set." title="Icon chevron-down from pixelarticons Iconify.design set."></iconify-icon></p>
+</div>
+</div>
 <iframe src="Stochastic frontier analysis.html" width="100%" height="700px">
 </iframe>
 
@@ -700,4 +723,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

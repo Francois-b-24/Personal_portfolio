@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="BOUSSENGUI François - LEGER Aline">
+<meta name="description" content="Cas pratique de tarification">
 
 <title>François BOUSSENGUI | Stratégie de fixation des prix</title>
 <style>
@@ -42,6 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -105,7 +108,7 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -139,56 +142,68 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Stratégie de fixation des prix</h1>
+                  <div>
+        <div class="description">
+          Cas pratique de tarification
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Tarification</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p><code>BOUSSENGUI François</code> - <code>LEGER Aline</code> </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
+    <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général"><span class="header-section-number">1</span> Contexte général</a>
   <ul class="collapse">
-  <li><a href="#les-principaux-aspects-du-pricing" id="toc-les-principaux-aspects-du-pricing" class="nav-link" data-scroll-target="#les-principaux-aspects-du-pricing">Les principaux aspects du pricing</a></li>
-  <li><a href="#stratégies-de-pricing" id="toc-stratégies-de-pricing" class="nav-link" data-scroll-target="#stratégies-de-pricing">Stratégies de Pricing</a></li>
+  <li><a href="#les-principaux-aspects-du-pricing" id="toc-les-principaux-aspects-du-pricing" class="nav-link" data-scroll-target="#les-principaux-aspects-du-pricing"><span class="header-section-number">1.1</span> Les principaux aspects du pricing</a></li>
+  <li><a href="#stratégies-de-pricing" id="toc-stratégies-de-pricing" class="nav-link" data-scroll-target="#stratégies-de-pricing"><span class="header-section-number">1.2</span> Stratégies de Pricing</a></li>
   </ul></li>
-  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
-  <li><a href="#résultats-et-conclusions" id="toc-résultats-et-conclusions" class="nav-link" data-scroll-target="#résultats-et-conclusions">Résultats et conclusions</a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique">Outil technique</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail"><span class="header-section-number">2</span> Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> Méthodologie</a></li>
+  <li><a href="#résultats-et-conclusions" id="toc-résultats-et-conclusions" class="nav-link" data-scroll-target="#résultats-et-conclusions"><span class="header-section-number">4</span> Résultats et conclusions</a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">5</span> Outil technique</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Stratégie de fixation des prix</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Tarification</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="contexte-général" class="level1">
-<h1>Contexte général</h1>
+<section id="contexte-général" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Contexte général</h1>
 <p>Le pricing en économie fait référence à l’ensemble des processus et des stratégies utilisés par les entreprises pour fixer les prix de leurs produits ou services. Il s’agit d’une composante essentielle du marketing et de la gestion des entreprises, car le prix d’un produit influence directement la demande des consommateurs, la concurrence sur le marché, et la rentabilité de l’entreprise.</p>
-<section id="les-principaux-aspects-du-pricing" class="level2">
-<h2 class="anchored" data-anchor-id="les-principaux-aspects-du-pricing">Les principaux aspects du pricing</h2>
+<section id="les-principaux-aspects-du-pricing" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="les-principaux-aspects-du-pricing"><span class="header-section-number">1.1</span> Les principaux aspects du pricing</h2>
 <ol type="1">
 <li><p><strong>Analyse des Coûts :</strong> Comprendre les coûts fixes et variables associés à la production et à la distribution d’un produit pour s’assurer que le prix couvre ces coûts et permet une marge bénéficiaire.</p></li>
 <li><p><strong>Étude de la Demande :</strong> Analyser comment les consommateurs réagissent aux changements de prix, ce qui implique souvent l’étude de <strong>l’élasticité-prix de la demande.</strong></p></li>
@@ -217,8 +232,8 @@ window.Quarto = {
 </ul>
 <p>En termes différentiels, cette formule peut être exprimée comme :</p>
 <p><span class="math inline">\(E_{pd} = \frac{dQ}{dP} \times \frac{P}{Q}\)</span></p>
-<section id="interprétation-de-lélasticité-prix-demande" class="level3">
-<h3 class="anchored" data-anchor-id="interprétation-de-lélasticité-prix-demande">Interprétation de l’élasticité prix-demande</h3>
+<section id="interprétation-de-lélasticité-prix-demande" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="interprétation-de-lélasticité-prix-demande"><span class="header-section-number">1.1.1</span> Interprétation de l’élasticité prix-demande</h3>
 <ul>
 <li><p><strong>Élasticité unitaire</strong> <span class="math inline">\((E_{pd} = -1)\)</span> : Une variation de 1% du prix entraîne une variation de 1% de la quantité demandée dans le sens opposé.</p></li>
 <li><p><strong>Demande élastique</strong> <span class="math inline">\((E_{pd} &lt; -1)\)</span> : La demande est très sensible aux variations de prix. Une variation de 1% du prix entraîne une variation de plus de 1% de la quantité demandée.</p></li>
@@ -227,8 +242,8 @@ window.Quarto = {
 <li><p><strong>Demande parfaitement inélastique</strong> <span class="math inline">\((E_{pd} = 0)\)</span> : La quantité demandée reste constante quelle que soit la variation de prix.</p></li>
 </ul>
 </section>
-<section id="exemple-de-calcul" class="level3">
-<h3 class="anchored" data-anchor-id="exemple-de-calcul">Exemple de calcul</h3>
+<section id="exemple-de-calcul" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="exemple-de-calcul"><span class="header-section-number">1.1.2</span> Exemple de calcul</h3>
 <p>Supposons qu’une augmentation du prix d’un bien de 10% entraîne une diminution de la quantité demandée de 20%.</p>
 <ol type="1">
 <li>Variation en pourcentage du prix <span class="math inline">\(\Delta P / P\)</span> : 10%</li>
@@ -247,8 +262,8 @@ window.Quarto = {
 <li><p><strong>Valeur Perçue :</strong> Considérer la valeur perçue par les consommateurs, qui peut justifier des prix plus élevés si le produit est perçu comme offrant un bénéfice supérieur ou une qualité supérieure.</p></li>
 </ol>
 </section>
-<section id="stratégies-de-pricing" class="level2">
-<h2 class="anchored" data-anchor-id="stratégies-de-pricing">Stratégies de Pricing</h2>
+<section id="stratégies-de-pricing" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="stratégies-de-pricing"><span class="header-section-number">1.2</span> Stratégies de Pricing</h2>
 <ul>
 <li><strong>Prix de Pénétration :</strong> Fixer un prix bas pour entrer rapidement sur un marché et attirer un large volume de consommateurs.</li>
 <li><strong>Prix d’Écrémage :</strong> Fixer un prix initial élevé pour maximiser les profits des segments de marché moins sensibles au prix, avant de baisser progressivement le prix.</li>
@@ -259,12 +274,12 @@ window.Quarto = {
 <p>Le pricing est donc une discipline complexe qui requiert une compréhension approfondie de nombreux facteurs économiques et comportementaux pour réussir.</p>
 </section>
 </section>
-<section id="objectifs-du-travail" class="level1">
-<h1>Objectifs du travail</h1>
+<section id="objectifs-du-travail" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objectifs du travail</h1>
 <p>Nous nous sommes placés dans le contexte d’un cinéma. Ce dernier est en situation de monopole etvend des places selon différentes stratégies tarifaires. L’objectif de ce travail est d’étudier l’impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.</p>
 </section>
-<section id="méthodologie" class="level1">
-<h1>Méthodologie</h1>
+<section id="méthodologie" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Méthodologie</h1>
 <p>Pour atteindre notre objectif, nous nous sommes placés dans le cadre d’une modélisation paramétrique. Cela nous a offert plus de flexibilité et la possibilité d’explorer tous les cas de figures possibles.</p>
 <p>Sachant une fonction de demande dépendant d’un paramètre <span class="math inline">\(\theta\)</span>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nous nous sommes placés dans 2 cas de figure :</p>
 <ol type="1">
@@ -327,15 +342,23 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="résultats-et-conclusions" class="level1">
-<h1>Résultats et conclusions</h1>
+<section id="résultats-et-conclusions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Résultats et conclusions</h1>
 <p>Ce travail nous a permis de mettre en exergue plusieurs concepts économiques essentiels. En effet, nous avons donc été en mesure de modéliser comment les <em>prérogatives</em> d’un monopole (par le biais de son pouvoir de marché), peut avoir un impact à la fois sur le profit de ce même monopole mais aussi et surtout, sur la quantité demandée et la satisfaction retirée par les consommateurs.</p>
 </section>
-<section id="outil-technique" class="level1">
-<h1>Outil technique</h1>
+<section id="outil-technique" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Outil technique</h1>
 <ul>
 <li><p><i class="fa-brands fa-r-project" aria-label="r-project"></i></p></li>
 </ul>
+<div style="text-align:center;">
+<blockquote class="blockquote">
+<p>Vous trouverez le rapport ici :</p>
+</blockquote>
+<div class="chevron-styling">
+<p><iconify-icon inline="" icon="pixelarticons:chevron-down" style="font-size: 5em;" aria-label="Icon chevron-down from pixelarticons Iconify.design set." title="Icon chevron-down from pixelarticons Iconify.design set."></iconify-icon></p>
+</div>
+</div>
 <iframe src="PRICING_BOUSSENGUI_LEGER.html" width="100%" height="700px">
 </iframe>
 
@@ -794,4 +817,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

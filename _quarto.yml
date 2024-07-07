@@ -16,7 +16,7 @@ website:
     
     left: 
       - icon: wrench-adjustable
-        text: Website made with **Quarto**
+        text: Website made with **Quarto** 🛠️
         href: https://quarto.org/
     
     center:

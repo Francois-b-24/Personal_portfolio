@@ -1,10 +1,24 @@
 ---
 title: "L'immobilier à Saratoga ~ Californie"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
 subtitle: ""
-author: ""
+author: "`BOUSSENGUI François` ET `LEGER Aline`"
+description: "Application des méthodes de classification non supervisée"
 image: "classification.png"
 categories: [Machine Learning]
-fields: [reading-time]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
 ---
 
 ```{r setup, include=FALSE}
@@ -89,12 +103,20 @@ En conclusion, l'application des techniques de data mining présentent une utili
 
 - {{< fa brands r-project >}}
 
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
-knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/second/Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf")
-```
 
 ::: {style="text-align:center;"}
-[<img src="down.png" width="100"/>](https://drive.google.com/file/d/1jjlFMDcByaBqEMHDY7o6BApwaPJE7SG-/view?usp=sharing)
+> Vous trouverez le rapport ici :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
 :::
+:::
+
+
+::: {style="text-align:center;"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf){.btn .btn-outline-primary .btn .center role="button"}
+:::
+
+
 
 

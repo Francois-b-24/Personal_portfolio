@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="BOUSSENGUI François - BARRE Nicolas - SABAYE Fried">
+<meta name="description" content="Travaux de recherche en économétrie">
 
 <title>François BOUSSENGUI | Méthodes de prévision</title>
 <style>
@@ -70,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -106,7 +108,7 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -140,61 +142,73 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Méthodes de prévision</h1>
+                  <div>
+        <div class="description">
+          Travaux de recherche en économétrie
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Économétrie</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p><code>BOUSSENGUI François</code> - <code>BARRE Nicolas</code> - <code>SABAYE Fried</code> </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
+    <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général">Contexte général</a></li>
-  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail">Objectifs du travail</a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
-  <li><a href="#comparaison-des-méthodes-et-conclusion" id="toc-comparaison-des-méthodes-et-conclusion" class="nav-link" data-scroll-target="#comparaison-des-méthodes-et-conclusion">Comparaison des méthodes et conclusion</a></li>
-  <li><a href="#outils-techniques" id="toc-outils-techniques" class="nav-link" data-scroll-target="#outils-techniques">Outils techniques</a></li>
+  <li><a href="#contexte-général" id="toc-contexte-général" class="nav-link active" data-scroll-target="#contexte-général"><span class="header-section-number">1</span> Contexte général</a></li>
+  <li><a href="#objectifs-du-travail" id="toc-objectifs-du-travail" class="nav-link" data-scroll-target="#objectifs-du-travail"><span class="header-section-number">2</span> Objectifs du travail</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> Méthodologie</a></li>
+  <li><a href="#comparaison-des-méthodes-et-conclusion" id="toc-comparaison-des-méthodes-et-conclusion" class="nav-link" data-scroll-target="#comparaison-des-méthodes-et-conclusion"><span class="header-section-number">4</span> Comparaison des méthodes et conclusion</a></li>
+  <li><a href="#outils-techniques" id="toc-outils-techniques" class="nav-link" data-scroll-target="#outils-techniques"><span class="header-section-number">5</span> Outils techniques</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Méthodes de prévision</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Économétrie</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="contexte-général" class="level1">
-<h1>Contexte général</h1>
+<section id="contexte-général" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Contexte général</h1>
 <p>Les <strong>Moindres Carrés Ordinaires</strong> (MCO), ou en anglais Ordinary Least Squares (OLS) est une méthode statistique utilisée pour modéliser la relation entre deux variables quantitatives. Il s’agit de la forme la plus élémentaire de la régression linéaire. En régression linéaire simple, une variable indépendante (ou explicative) <span class="math inline">\(x\)</span>, est utilisée pour prédire une variable dépendante (ou réponse) <span class="math inline">\(y\)</span>. L’objectif de la régression linéaire simple est de trouver les valeurs des coefficients <span class="math inline">\(\beta_0\)</span> et <span class="math inline">\(\beta_1\)</span> qui minimisent la somme des carrés des erreurs entre les valeurs observées et les valeurs prédites par le modèle.</p>
 <p>L’économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données ainsi que de la problématique à résoudre.</p>
 <p>Ainsi, ces résultats s’inscrivent dans le cadre de travaux de recherche en économétrie réalisées durant ma seconde année de Master.</p>
 </section>
-<section id="objectifs-du-travail" class="level1">
-<h1>Objectifs du travail</h1>
+<section id="objectifs-du-travail" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objectifs du travail</h1>
 <p>Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux <strong>Moindres Carrés Ordinaires</strong> (MCO).</p>
 <p>Dans un premier temps, il été question de proposer une représentation alternatives des principaux résultats d’une régression linéaire simple. Pour ce faire, nous avons proposé une représentation sous forme <em>diagrammatique</em> (graphique) des principaux résultats de la méthode des <strong>Moindres Carrés Ordinaires</strong>.</p>
 <p>Puis, dans un second temps, il a été question de présenter et de classifier les principales méthodes alternatives à celles des <strong>Moindres Carrés Ordinaires</strong>.</p>
 </section>
-<section id="méthodologie" class="level1">
-<h1>Méthodologie</h1>
+<section id="méthodologie" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Méthodologie</h1>
 <p>Pour atteindre ces objectifs, nous avons analyser des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.</p>
 <p>Ainsi, nos recherches nous ont permis d’aboutir à la proposition d’une représentation graphique des principaux résultats d’une régression linéaire simple dont la spécification mathématique est : <span class="math inline">\(y = \beta_0 + \beta_1x + \epsilon\)</span>, où : <strong>[Ajouter l’image]</strong></p>
 <ul>
@@ -649,9 +663,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <ul>
 <li><strong>Régression orthogonale</strong> : Également connue sous le nom de régression des <strong>Moindres Carrés Orthogonaux</strong> (Orthogonal Least Squares Regression) ou régression de Deming, est une méthode qui prend en compte les erreurs dans les deux variables, à la fois la variable indépendante (<span class="math inline">\(x\)</span>) et la variable dépendante (<span class="math inline">\(y\)</span>). Contrairement à la régression linéaire ordinaire qui minimise uniquement les erreurs en <span class="math inline">\(y\)</span>, la régression orthogonale minimise la somme des distances orthogonales entre les points de données et la ligne de régression.</li>
 </ul>
@@ -689,9 +700,6 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <ul>
 <li><strong>Moindre Carrés Ordinaires VS Régression orthogonale</strong></li>
 </ul>
@@ -1136,23 +1144,23 @@ NB
 <ol type="1">
 <li>La régression à noyau est une extension de la régression linéaire qui utilise des fonctions de noyau pour permettre la modélisation de relations non linéaires. Une fonction de noyau <span class="math inline">\(K(x, x')\)</span> mesure la similarité entre deux points dans l’espace de caractéristiques.</li>
 </ol>
-<section id="fonction-de-coût" class="level3">
-<h3 class="anchored" data-anchor-id="fonction-de-coût">2. Fonction de Coût</h3>
+<section id="fonction-de-coût" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="fonction-de-coût"><span class="header-section-number">3.0.1</span> 2. Fonction de Coût</h3>
 <p>La fonction de coût pour la régression à noyau est souvent basée sur la perte de Huber, la perte d’epsilon-insensible ou d’autres fonctions de perte robustes. Une fonction de coût typique pour la régression à noyau est la suivante :</p>
 <p><span class="math inline">\(J(\alpha) = \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_i \alpha_j K(x_i, x_j) - \sum_{i=1}^{N} \alpha_i y_i\)</span> <span class="math inline">\(+\)</span> <span class="math inline">\(C \sum_{i=1}^{N} \max(0, |f(x_i) - y_i| - \epsilon)\)</span></p>
 <p>où : - <span class="math inline">\(\alpha_i\)</span> sont les coefficients duals. - <span class="math inline">\(K(x_i, x_j)\)</span>est la fonction de noyau. - <span class="math inline">\(y_i\)</span> sont les valeurs cibles. - <span class="math inline">\(C\)</span>est un paramètre de régularisation. - <span class="math inline">\(\epsilon\)</span> est un paramètre de tolérance pour la perte epsilon-insensible.</p>
 </section>
-<section id="minimisation-de-la-fonction-de-coût" class="level3">
-<h3 class="anchored" data-anchor-id="minimisation-de-la-fonction-de-coût">3. Minimisation de la Fonction de Coût</h3>
+<section id="minimisation-de-la-fonction-de-coût" class="level3" data-number="3.0.2">
+<h3 data-number="3.0.2" class="anchored" data-anchor-id="minimisation-de-la-fonction-de-coût"><span class="header-section-number">3.0.2</span> 3. Minimisation de la Fonction de Coût</h3>
 <p>Pour minimiser cette fonction de coût, nous utilisons des techniques d’optimisation convexes telles que le <strong>Gradient Descent</strong>, le <strong>Coordinate Descent</strong> ou des algorithmes spécialisés comme le <strong>Sequential Minimal Optimization (SMO)</strong>.</p>
-<section id="gradient-descent" class="level4">
-<h4 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h4>
+<section id="gradient-descent" class="level4" data-number="3.0.2.1">
+<h4 data-number="3.0.2.1" class="anchored" data-anchor-id="gradient-descent"><span class="header-section-number">3.0.2.1</span> Gradient Descent</h4>
 <p>L’algorithme de gradient descent ajuste les paramètres <span class="math inline">\(\alpha\)</span> en suivant le gradient de la fonction de coût :</p>
 <p><span class="math inline">\(\alpha_i \leftarrow \alpha_i - \eta \frac{\partial J(\alpha)}{\partial \alpha_i}\)</span></p>
 <p>où <span class="math inline">\(\eta\)</span> est le taux d’apprentissage.</p>
 </section>
-<section id="sequential-minimal-optimization-smo" class="level4">
-<h4 class="anchored" data-anchor-id="sequential-minimal-optimization-smo">Sequential Minimal Optimization (SMO)</h4>
+<section id="sequential-minimal-optimization-smo" class="level4" data-number="3.0.2.2">
+<h4 data-number="3.0.2.2" class="anchored" data-anchor-id="sequential-minimal-optimization-smo"><span class="header-section-number">3.0.2.2</span> Sequential Minimal Optimization (SMO)</h4>
 <p>L’algorithme SMO divise le problème d’optimisation en sous-problèmes plus petits qui peuvent être résolus analytiquement. Ce processus est itératif et continue jusqu’à ce que la convergence soit atteinte.</p>
 </section>
 </section>
@@ -1161,13 +1169,13 @@ NB
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.collections.PathCollection object at 0x114d18730&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection object at 0x115a40730&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x114d194b0&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x115a414b0&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.legend.Legend object at 0x114d19900&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend object at 0x115a41900&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Text(0.5, 1.0, 'Régression par noyau')</code></pre>
@@ -1180,9 +1188,6 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <ul>
 <li><strong>k-NN (k-plus proches voisin)</strong> : Le k-plus proches voisins (k-NN) est un algorithme d’apprentissage supervisé utilisé pour la classification et la régression. L’idée de base est de prédire la classe ou la valeur d’une observation en utilisant les <span class="math inline">\(k\)</span> observations les plus proches dans l’ensemble d’entraînement.</li>
 </ul>
@@ -1199,32 +1204,32 @@ NB
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>La minimisation de la fonction de coût pour les méthodes de <strong>k-plus proches voisins</strong> (K-Nearest Neighbors ou K-NN) diffère des méthodes de régression classiques comme celles utilisant des fonctions de noyau. <strong>k-NN</strong>¨ est un algorithme non paramétrique qui ne construit pas de modèle explicite, mais utilise les données d’apprentissage pour prédire les nouvelles instances directement.</p>
-<section id="introduction-à-k-nn" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-à-k-nn">1. Introduction à K-NN</h3>
+<section id="introduction-à-k-nn" class="level3" data-number="3.0.3">
+<h3 data-number="3.0.3" class="anchored" data-anchor-id="introduction-à-k-nn"><span class="header-section-number">3.0.3</span> 1. Introduction à K-NN</h3>
 <p>K-NN est une méthode basée sur la proximité : pour une nouvelle observation, l’algorithme recherche les <span class="math inline">\(k\)</span> observations les plus proches dans l’ensemble de données d’apprentissage et effectue des prédictions basées sur ces voisins. Pour la régression, la prédiction est généralement la moyenne des valeurs cibles des <span class="math inline">\(k\)</span> plus proches voisins.</p>
 </section>
-<section id="fonction-de-coût-1" class="level3">
-<h3 class="anchored" data-anchor-id="fonction-de-coût-1">2. Fonction de Coût</h3>
+<section id="fonction-de-coût-1" class="level3" data-number="3.0.4">
+<h3 data-number="3.0.4" class="anchored" data-anchor-id="fonction-de-coût-1"><span class="header-section-number">3.0.4</span> 2. Fonction de Coût</h3>
 <p>Dans le contexte de K-NN, la fonction de coût peut être définie comme l’erreur de prédiction globale, typiquement mesurée par l’erreur quadratique moyenne (Mean Squared Error, MSE) ou l’erreur absolue moyenne (Mean Absolute Error, MAE). Pour la minimiser, l’algorithme K-NN cherche à optimiser les choix des hyperparamètres (notamment <span class="math inline">\(k\)</span> et la métrique de distance).</p>
-<section id="erreur-quadratique-moyenne-mse" class="level4">
-<h4 class="anchored" data-anchor-id="erreur-quadratique-moyenne-mse">Erreur Quadratique Moyenne (MSE)</h4>
+<section id="erreur-quadratique-moyenne-mse" class="level4" data-number="3.0.4.1">
+<h4 data-number="3.0.4.1" class="anchored" data-anchor-id="erreur-quadratique-moyenne-mse"><span class="header-section-number">3.0.4.1</span> Erreur Quadratique Moyenne (MSE)</h4>
 <p><span class="math inline">\(J = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2\)</span></p>
 <p>où <span class="math inline">\(y_i\)</span> est la valeur réelle et <span class="math inline">\(\hat{y}_i\)</span> est la valeur prédite.</p>
 </section>
-<section id="erreur-absolue-moyenne-mae" class="level4">
-<h4 class="anchored" data-anchor-id="erreur-absolue-moyenne-mae">Erreur Absolue Moyenne (MAE)</h4>
+<section id="erreur-absolue-moyenne-mae" class="level4" data-number="3.0.4.2">
+<h4 data-number="3.0.4.2" class="anchored" data-anchor-id="erreur-absolue-moyenne-mae"><span class="header-section-number">3.0.4.2</span> Erreur Absolue Moyenne (MAE)</h4>
 <p><span class="math inline">\(J = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i|\)</span></p>
 </section>
 </section>
-<section id="optimisation-des-hyperparamètres" class="level3">
-<h3 class="anchored" data-anchor-id="optimisation-des-hyperparamètres">3. Optimisation des Hyperparamètres</h3>
+<section id="optimisation-des-hyperparamètres" class="level3" data-number="3.0.5">
+<h3 data-number="3.0.5" class="anchored" data-anchor-id="optimisation-des-hyperparamètres"><span class="header-section-number">3.0.5</span> 3. Optimisation des Hyperparamètres</h3>
 <p>L’optimisation dans K-NN consiste principalement à trouver le meilleur nombre de voisins ( k ) et la meilleure métrique de distance. Les approches courantes pour ce faire incluent la validation croisée et les grilles de recherche.</p>
-<section id="validation-croisée" class="level4">
-<h4 class="anchored" data-anchor-id="validation-croisée">Validation Croisée</h4>
+<section id="validation-croisée" class="level4" data-number="3.0.5.1">
+<h4 data-number="3.0.5.1" class="anchored" data-anchor-id="validation-croisée"><span class="header-section-number">3.0.5.1</span> Validation Croisée</h4>
 <p>La validation croisée permet de diviser les données en plusieurs sous-ensembles (folds), en utilisant certains pour entraîner le modèle et les autres pour le tester, et en répétant ce processus plusieurs fois pour réduire la variance des résultats.</p>
 </section>
-<section id="grille-de-recherche-grid-search" class="level4">
-<h4 class="anchored" data-anchor-id="grille-de-recherche-grid-search">Grille de Recherche (Grid Search)</h4>
+<section id="grille-de-recherche-grid-search" class="level4" data-number="3.0.5.2">
+<h4 data-number="3.0.5.2" class="anchored" data-anchor-id="grille-de-recherche-grid-search"><span class="header-section-number">3.0.5.2</span> Grille de Recherche (Grid Search)</h4>
 <p>La grille de recherche explore systématiquement une plage d’hyperparamètres pour trouver la combinaison qui minimise la fonction de coût.</p>
 </section>
 </section>
@@ -1236,13 +1241,13 @@ NB
 <pre><code>KNeighborsRegressor()</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.collections.PathCollection object at 0x114da0c10&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection object at 0x115ac8c10&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x114da1b70&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x115ac9b70&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.legend.Legend object at 0x114da2f50&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend object at 0x115acaf50&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Text(0.5, 1.0, 'k-NN')</code></pre>
@@ -1255,9 +1260,6 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <ul>
 <li><strong>Modèles Additifs Généralisés (GAM)</strong>: Les modèles additifs généralisés (GAM) sont une extension des modèles linéaires généralisés (GLM) qui permettent de modéliser des relations non linéaires. Les GAM utilisent des fonctions lisses (comme les splines) pour modéliser la relation entre chaque prédicteur et la variable réponse.</li>
 </ul>
@@ -1277,14 +1279,14 @@ NB
 <p>Un GAM a la forme suivante :</p>
 <p><span class="math inline">\(g(E(y)) = \beta_0 + f_1(x_1) + f_2(x_2) + \ldots + f_p(x_p)\)</span></p>
 <p>où <span class="math inline">\(g\)</span> est une fonction de lien, <span class="math inline">\((y)\)</span> est l’espérance de <span class="math inline">\(y\)</span>, <span class="math inline">\(\beta_0\)</span> est une constante, et <span class="math inline">\(f_i\)</span> sont des fonctions lisses des variables explicatives <span class="math inline">\(x_i\)</span>.</p>
-<section id="fonction-de-coût-2" class="level3">
-<h3 class="anchored" data-anchor-id="fonction-de-coût-2">2. Fonction de Coût</h3>
+<section id="fonction-de-coût-2" class="level3" data-number="3.0.6">
+<h3 data-number="3.0.6" class="anchored" data-anchor-id="fonction-de-coût-2"><span class="header-section-number">3.0.6</span> 2. Fonction de Coût</h3>
 <p>La fonction de coût pour les GAMs peut être formulée en termes de log-vraisemblance négative pour des distributions spécifiques (par exemple, gaussienne, binomiale, poisson). En plus de la log-vraisemblance, on ajoute souvent des pénalités de lissage pour éviter le surajustement. La fonction de coût typique est :</p>
 <p><span class="math inline">\(J(f_1, f_2, \ldots, f_p) = -\text{log-vraisemblance} + \sum_{i=1}^{p} \lambda_i \int (f_i''(x_i))^2 dx_i\)</span></p>
 <p>où <span class="math inline">\(\lambda_i\)</span> sont des paramètres de régularisation pour les pénalités de lissage.</p>
 </section>
-<section id="minimisation-de-la-fonction-de-coût-1" class="level3">
-<h3 class="anchored" data-anchor-id="minimisation-de-la-fonction-de-coût-1">3. Minimisation de la Fonction de Coût</h3>
+<section id="minimisation-de-la-fonction-de-coût-1" class="level3" data-number="3.0.7">
+<h3 data-number="3.0.7" class="anchored" data-anchor-id="minimisation-de-la-fonction-de-coût-1"><span class="header-section-number">3.0.7</span> 3. Minimisation de la Fonction de Coût</h3>
 <p>La minimisation de cette fonction de coût se fait généralement par des méthodes d’optimisation numériques, telles que :</p>
 <ul>
 <li><strong>Penalized Iteratively Reweighted Least Squares (P-IRLS)</strong> : Une extension de l’algorithme IRLS utilisé pour les modèles linéaires généralisés, adaptée pour inclure les pénalités de lissage.</li>
@@ -1296,13 +1298,13 @@ NB
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.collections.PathCollection object at 0x114dc55d0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection object at 0x115aed5d0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x114dc6260&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x115aee260&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.legend.Legend object at 0x114dc7eb0&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend object at 0x115aefeb0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Text(0.5, 1.0, 'Modèle Additif Généralisé')</code></pre>
@@ -1315,9 +1317,6 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <ul>
 <li><strong>Forêt aléatoire</strong>: Les forêts aléatoires (Random Forests) sont une méthode d’apprentissage supervisé populaire utilisée pour la classification et la régression. Elles fonctionnent en construisant plusieurs arbres de décision pendant la phase d’entraînement et en produisant la classe qui est le mode des classes (classification) ou la moyenne des prédictions (régression) de chaque arbre individuel.</li>
 </ul>
@@ -1334,21 +1333,21 @@ NB
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>La forêt aléatoire (Random Forest) est un ensemble d’arbres de décision entraînés sur des sous-échantillons aléatoires des données. L’idée est de combiner les prédictions de plusieurs arbres pour améliorer la performance et réduire le risque de surajustement. La fonction de coût dans une forêt aléatoire est généralement liée à l’erreur de prédiction des arbres, et l’optimisation consiste à ajuster divers hyperparamètres pour minimiser cette erreur.</p>
-<section id="introduction-à-la-forêt-aléatoire" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-à-la-forêt-aléatoire">1. Introduction à la Forêt Aléatoire</h3>
+<section id="introduction-à-la-forêt-aléatoire" class="level3" data-number="3.0.8">
+<h3 data-number="3.0.8" class="anchored" data-anchor-id="introduction-à-la-forêt-aléatoire"><span class="header-section-number">3.0.8</span> 1. Introduction à la Forêt Aléatoire</h3>
 <p>Une forêt aléatoire est un modèle d’ensemble qui construit plusieurs arbres de décision et combine leurs prédictions. Pour la régression, la prédiction finale est la moyenne des prédictions de tous les arbres.</p>
 </section>
-<section id="fonction-de-coût-3" class="level3">
-<h3 class="anchored" data-anchor-id="fonction-de-coût-3">2. Fonction de Coût</h3>
+<section id="fonction-de-coût-3" class="level3" data-number="3.0.9">
+<h3 data-number="3.0.9" class="anchored" data-anchor-id="fonction-de-coût-3"><span class="header-section-number">3.0.9</span> 2. Fonction de Coût</h3>
 <p>Pour la régression, la fonction de coût est souvent mesurée par l’erreur quadratique moyenne (Mean Squared Error, MSE) ou l’erreur absolue moyenne (Mean Absolute Error, MAE) entre les valeurs réelles et les valeurs prédites :</p>
-<section id="erreur-quadratique-moyenne-mse-1" class="level4">
-<h4 class="anchored" data-anchor-id="erreur-quadratique-moyenne-mse-1">Erreur Quadratique Moyenne (MSE)</h4>
+<section id="erreur-quadratique-moyenne-mse-1" class="level4" data-number="3.0.9.1">
+<h4 data-number="3.0.9.1" class="anchored" data-anchor-id="erreur-quadratique-moyenne-mse-1"><span class="header-section-number">3.0.9.1</span> Erreur Quadratique Moyenne (MSE)</h4>
 <p><span class="math inline">\(J = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2\)</span></p>
 <p>où <span class="math inline">\(y_i\)</span> est la valeur réelle et <span class="math inline">\(\hat{y}_i\)</span> est la valeur prédite.</p>
 </section>
 </section>
-<section id="optimisation-des-hyperparamètres-1" class="level3">
-<h3 class="anchored" data-anchor-id="optimisation-des-hyperparamètres-1">3. Optimisation des Hyperparamètres</h3>
+<section id="optimisation-des-hyperparamètres-1" class="level3" data-number="3.0.10">
+<h3 data-number="3.0.10" class="anchored" data-anchor-id="optimisation-des-hyperparamètres-1"><span class="header-section-number">3.0.10</span> 3. Optimisation des Hyperparamètres</h3>
 <p>La minimisation de la fonction de coût dans une forêt aléatoire passe par l’optimisation des hyperparamètres suivants :</p>
 <ul>
 <li><p><strong>Nombre d’arbres (n_estimators)</strong> : Plus d’arbres peuvent améliorer la performance mais augmentent le temps de calcul.</p></li>
@@ -1366,13 +1365,13 @@ NB
 <pre><code>RandomForestRegressor()</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.collections.PathCollection object at 0x1161977c0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection object at 0x116efb7c0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x1161a8670&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x116f0c670&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.legend.Legend object at 0x1161aa050&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend object at 0x116f0e050&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Text(0.5, 1.0, 'Forêt aléatoire')</code></pre>
@@ -1385,12 +1384,9 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 </section>
-<section id="comparaison-des-méthodes-et-conclusion" class="level1">
-<h1>Comparaison des méthodes et conclusion</h1>
+<section id="comparaison-des-méthodes-et-conclusion" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Comparaison des méthodes et conclusion</h1>
 <p>En conclusion, nous pouvons dire qu’il existe 2 grandes familles de méthodes de prévision :</p>
 <ul>
 <li><strong>Les modèles linéaires</strong> : décrivant une relation linéaire entre la variable dépendante et les variables indépendantes.</li>
@@ -1408,19 +1404,19 @@ NB
 <pre><code>RandomForestRegressor()</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.collections.PathCollection object at 0x1165af1f0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection object at 0x1173171f0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x1165afd00&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x117317d00&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x1165dcc40&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x117340c40&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&lt;matplotlib.lines.Line2D object at 0x1165ddc30&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D object at 0x117341c30&gt;]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.legend.Legend object at 0x114d1a6b0&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend object at 0x115a426b0&gt;</code></pre>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1430,9 +1426,6 @@ NB
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-
-</blockquote>
 <p>Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les éléments suivants :</p>
 <ul>
 <li><p><strong>La forme fonctionnelle du modèle</strong> : La forme fonctionnelle d’un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes</p></li>
@@ -1440,35 +1433,19 @@ NB
 <li><p>Leur application dans des outils techniques appropriés : <i class="fa-brands fa-r-project" aria-label="r-project"></i> et <i class="fa-brands fa-python" aria-label="python"></i></p></li>
 </ul>
 </section>
-<section id="outils-techniques" class="level1">
-<h1>Outils techniques</h1>
+<section id="outils-techniques" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Outils techniques</h1>
 <p>Pour réaliser ces travaux, nous avons utilisé <i class="fa-brands fa-r-project" aria-label="r-project"></i> et <i class="fa-brands fa-python" aria-label="python"></i> pour la partie modélisation. Pour la mise en forme du rapport ainsi que du support de présentation, nous avons utilisé <a href="https://fr.wikipedia.org/wiki/LaTeX">LateX</a>.</p>
+<div style="text-align:center;">
 <blockquote class="blockquote">
-<p>Vous trouverez le rapport ainsi que le support de présentation ci-dessous :</p>
+<p>Vous trouverez le rapport ainsi que le support de présentation ici :</p>
 </blockquote>
 <div class="chevron-styling">
 <p><iconify-icon inline="" icon="pixelarticons:chevron-down" style="font-size: 5em;" aria-label="Icon chevron-down from pixelarticons Iconify.design set." title="Icon chevron-down from pixelarticons Iconify.design set."></iconify-icon></p>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="AlternativesMCO.pdf" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
 </div>
 <div style="text-align:center;">
 <p><a href="AlternativesMCO.pdf" class="btn btn-outline-primary center" role="button">Rapport : Représentation sous forme de diagramme des MCO <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="Alternatives aux MCO.pdf" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
 </div>
 <div style="text-align:center;">
 <p><a href="Alternatives aux MCO.pdf" class="btn btn-outline-primary center" role="button">Présentation : Alternatives aux MCO <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
@@ -1923,4 +1900,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

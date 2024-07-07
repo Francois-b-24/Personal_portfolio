@@ -1,10 +1,24 @@
 ---
 title: "Marketing quantitatif au service de la santé"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
 subtitle: ""
-author: "BOUSSENGUI François"
+author: "`BOUSSENGUI François`"
+description: "L'économétrie au service de la santé"
 image: "mco.png"
 categories: [Économétrie]
-fields: [reading-time]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
 ---
 
 ```{r setup, include=FALSE}
@@ -67,10 +81,16 @@ Par la suite, au vue des résultats obtenus, cela à conduit à des recommandati
 
 -   {{< fa brands r-project >}}
 
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
-knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/sixth/Logit-Probit modelling.pdf")
-```
+::: {style="text-align:center;"} 
+> Vous trouverez le rapport ici  :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
+
 
 ::: {style="text-align:center;"}
-[<img src="down.png" width="100"/>](https://drive.google.com/file/d/10z5FpyIFDDW6iTGgUda4-aNgHK6Nf2yv/view?usp=sharing)
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](Logit-Probit modelling.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
+

@@ -1,10 +1,24 @@
 ---
 title: "Méthodes de prévision"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
 subtitle: ""
-author: ""
+author: "`BOUSSENGUI François` - `BARRE Nicolas` - `SABAYE Fried` "
 image: "mco.png"
+description: "Travaux de recherche en économétrie"
 categories: [Économétrie]
-fields: [reading-time]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
 ---
 
 ```{r echo=FALSE}
@@ -20,15 +34,15 @@ use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
 
 Les **Moindres Carrés Ordinaires** (MCO), ou en anglais Ordinary Least Squares (OLS) est une méthode statistique utilisée pour modéliser la relation entre deux variables quantitatives. Il s'agit de la forme la plus élémentaire de la régression linéaire. En régression linéaire simple, une variable indépendante (ou explicative) $x$, est utilisée pour prédire une variable dépendante (ou réponse) $y$. L'objectif de la régression linéaire simple est de trouver les valeurs des coefficients $\beta_0$ et $\beta_1$ qui minimisent la somme des carrés des erreurs entre les valeurs observées et les valeurs prédites par le modèle.
 
-L'économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données ainsi que de la problématique à résoudre. 
+L'économétrie offre un panel de méthodes de prévision statistique qui dépendent de la nature des données ainsi que de la problématique à résoudre.
 
 Ainsi, ces résultats s'inscrivent dans le cadre de travaux de recherche en économétrie réalisées durant ma seconde année de Master.
 
 # Objectifs du travail
 
-Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux **Moindres Carrés Ordinaires** (MCO). 
+Les objectifs de ces travaux sont divers. Principalement, ces travaux portent sur la présentation des principales méthodes alternatives aux **Moindres Carrés Ordinaires** (MCO).
 
-Dans un premier temps, il été question de proposer une représentation alternatives des principaux résultats d'une régression linéaire simple. Pour ce faire, nous avons proposé une représentation sous forme *diagrammatique* (graphique) des principaux résultats de la méthode des **Moindres Carrés Ordinaires**. 
+Dans un premier temps, il été question de proposer une représentation alternatives des principaux résultats d'une régression linéaire simple. Pour ce faire, nous avons proposé une représentation sous forme *diagrammatique* (graphique) des principaux résultats de la méthode des **Moindres Carrés Ordinaires**.
 
 Puis, dans un second temps, il a été question de présenter et de classifier les principales méthodes alternatives à celles des **Moindres Carrés Ordinaires**.
 
@@ -36,7 +50,7 @@ Puis, dans un second temps, il a été question de présenter et de classifier l
 
 Pour atteindre ces objectifs, nous avons analyser des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
 
-Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple dont la spécification mathématique est : $y = \beta_0 + \beta_1x + \epsilon$, où : **[Ajouter l'image]**
+Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple dont la spécification mathématique est : $y = \beta_0 + \beta_1x + \epsilon$, où : **\[Ajouter l'image\]**
 
 -   $y$ est la variable dépendante (la réponse)
 -   $x$ est la variable explicative (le prédicteur)
@@ -44,19 +58,17 @@ Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représe
 -   $\beta_1$ est le coefficient de regression (la pente)
 -   $\epsilon$ est l'erreur aléatoire
 
-Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision. 
-Nous pouvons les classer comme suit :
+Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision. Nous pouvons les classer comme suit :
 
-* Les méthodes d'estimation décrivant une **relation linéaire** entre la variable à expliquer $y$ et la/les variable(s) explicative(s) $X$.
+-   Les méthodes d'estimation décrivant une **relation linéaire** entre la variable à expliquer $y$ et la/les variable(s) explicative(s) $X$.
 
-  + **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
+    -   **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
 
-::: {.callout-tip icon=false collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
+
 En d'autres termes, l'objectif est de minimiser la fonction de coût suivante : $S(a,b) = \sum_{i=1}^{n} (y_i - (a + bx_i ))^2$.
 :::
-
-
 
 ```{python, echo=FALSE}
 import numpy as np
@@ -94,13 +106,12 @@ plt.show()
 
 ```
 
->
+-   **Régression orthogonale** : Également connue sous le nom de régression des **Moindres Carrés Orthogonaux** (Orthogonal Least Squares Regression) ou régression de Deming, est une méthode qui prend en compte les erreurs dans les deux variables, à la fois la variable indépendante ($x$) et la variable dépendante ($y$). Contrairement à la régression linéaire ordinaire qui minimise uniquement les erreurs en $y$, la régression orthogonale minimise la somme des distances orthogonales entre les points de données et la ligne de régression.
 
-  + **Régression orthogonale** : Également connue sous le nom de régression des **Moindres Carrés Orthogonaux** (Orthogonal Least Squares Regression) ou régression de Deming, est une méthode qui prend en compte les erreurs dans les deux variables, à la fois la variable indépendante ($x$) et la variable dépendante ($y$). Contrairement à la régression linéaire ordinaire qui minimise uniquement les erreurs en $y$, la régression orthogonale minimise la somme des distances orthogonales entre les points de données et la ligne de régression. 
-
-::: {.callout-tip icon=false collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
-En effet, l'erreur orthogonale pour chaque point $(x_i, y_i)$ est définié comme la distance perpendiculaire de ce point à la ligne $(y = a + bx)$. 
+
+En effet, l'erreur orthogonale pour chaque point $(x_i, y_i)$ est définié comme la distance perpendiculaire de ce point à la ligne $(y = a + bx)$.
 
 Cette distance peut être exprimé par la formule : $d_i = \frac{|bx_i - y_i + a|}{1 + b^2}$.
 
@@ -108,7 +119,6 @@ La somme des carrés des distances orthogonales est donc :
 
 $S(a,b) = \sum_{i=1}^{n} \frac{(bx_i + y_i +a)^2}{1+b^2}$.
 :::
-
 
 ```{python, echo=FALSE}
 import numpy as np
@@ -166,11 +176,8 @@ plt.title('Régression orthogonale par les moindres carrés orthogonaux')
 plt.show()
 ```
 
->
+-   **Moindre Carrés Ordinaires VS Régression orthogonale**
 
-
-  + **Moindre Carrés Ordinaires VS Régression orthogonale** 
- 
 ```{python, echo=FALSE}
 import numpy as np
 import matplotlib.pyplot as plt
@@ -208,18 +215,16 @@ plt.show()
 
 > A travers cette visualisation, on peut voir que les droites de régression des 2 méthodes sont quasiement surperposées. En d'autres termes, les résultats d'estimation fournis par les 2 méthodes sont assez proches.
 
-
-
-2. Les modèles qui décrivent une **relation non linéaire** entre la variable à expliquer et la/les variable(s) explicative(s).
+2.  Les modèles qui décrivent une **relation non linéaire** entre la variable à expliquer et la/les variable(s) explicative(s).
 
 Il s'agit de la famille des méthodes de **Régression non paramétrique** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation. Contrairement à la régression paramétrique (comme la régression linéaire), la régression non paramétrique ne nécessite pas d'hypothèses strictes sur la forme de la relation, ce qui permet de capturer des relations plus complexes et non linéaires. Voici quelques exemples de méthodes d'estimation non paramétrique :
 
-  * **Régression par noyau** : La régression par noyau est une méthode non paramétrique qui utilise une fonction noyau pour estimer la relation entre les variables indépendantes et dépendantes. Une forme courante de régression par noyau est la régression par noyau de [Nadaraya-Watson](https://en.wikipedia.org/wiki/Kernel_regression). Cette méthode consiste à estimer la valeur de la variable dépendante pour une valeur donnée de la variable indépendante en prenant une moyenne pondérée des valeurs observées, les poids étant déterminés par une fonction noyau.
+-   **Régression par noyau** : La régression par noyau est une méthode non paramétrique qui utilise une fonction noyau pour estimer la relation entre les variables indépendantes et dépendantes. Une forme courante de régression par noyau est la régression par noyau de [Nadaraya-Watson](https://en.wikipedia.org/wiki/Kernel_regression). Cette méthode consiste à estimer la valeur de la variable dépendante pour une valeur donnée de la variable indépendante en prenant une moyenne pondérée des valeurs observées, les poids étant déterminés par une fonction noyau.
 
-::: {.callout-tip icon=false collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
 
-1. La régression à noyau est une extension de la régression linéaire qui utilise des fonctions de noyau pour permettre la modélisation de relations non linéaires. Une fonction de noyau $K(x, x')$ mesure la similarité entre deux points dans l'espace de caractéristiques.
+1.  La régression à noyau est une extension de la régression linéaire qui utilise des fonctions de noyau pour permettre la modélisation de relations non linéaires. Une fonction de noyau $K(x, x')$ mesure la similarité entre deux points dans l'espace de caractéristiques.
 
 ### 2. Fonction de Coût
 
@@ -227,12 +232,7 @@ La fonction de coût pour la régression à noyau est souvent basée sur la pert
 
 $J(\alpha) = \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_i \alpha_j K(x_i, x_j) - \sum_{i=1}^{N} \alpha_i y_i$ $+$ $C \sum_{i=1}^{N} \max(0, |f(x_i) - y_i| - \epsilon)$
 
-où :
--  $\alpha_i$ sont les coefficients duals.
-- $K(x_i, x_j)$est la fonction de noyau.
-- $y_i$ sont les valeurs cibles.
-- $C$est un paramètre de régularisation.
-- $\epsilon$ est un paramètre de tolérance pour la perte epsilon-insensible.
+où : - $\alpha_i$ sont les coefficients duals. - $K(x_i, x_j)$est la fonction de noyau. - $y_i$ sont les valeurs cibles. - $C$est un paramètre de régularisation. - $\epsilon$ est un paramètre de tolérance pour la perte epsilon-insensible.
 
 ### 3. Minimisation de la Fonction de Coût
 
@@ -249,9 +249,7 @@ où $\eta$ est le taux d'apprentissage.
 #### Sequential Minimal Optimization (SMO)
 
 L'algorithme SMO divise le problème d'optimisation en sous-problèmes plus petits qui peuvent être résolus analytiquement. Ce processus est itératif et continue jusqu'à ce que la convergence soit atteinte.
-
 :::
-
 
 ```{python, echo=FALSE}
 import numpy as np
@@ -282,15 +280,12 @@ plt.close()
 
 ```
 
->
+-   **k-NN (k-plus proches voisin)** : Le k-plus proches voisins (k-NN) est un algorithme d'apprentissage supervisé utilisé pour la classification et la régression. L'idée de base est de prédire la classe ou la valeur d'une observation en utilisant les $k$ observations les plus proches dans l'ensemble d'entraînement.
 
-  * **k-NN (k-plus proches voisin)** : Le k-plus proches voisins (k-NN) est un algorithme d'apprentissage supervisé utilisé pour la classification et la régression. L'idée de base est de prédire la classe ou la valeur d'une observation en utilisant les $k$ observations les plus proches dans l'ensemble d'entraînement.
-
-::: {.callout-tip icon=false collapse="true"}
-
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
 
-La minimisation de la fonction de coût pour les méthodes de **k-plus proches voisins** (K-Nearest Neighbors ou K-NN) diffère des méthodes de régression classiques comme celles utilisant des fonctions de noyau. **k-NN**¨ est un algorithme non paramétrique qui ne construit pas de modèle explicite, mais utilise les données d'apprentissage pour prédire les nouvelles instances directement. 
+La minimisation de la fonction de coût pour les méthodes de **k-plus proches voisins** (K-Nearest Neighbors ou K-NN) diffère des méthodes de régression classiques comme celles utilisant des fonctions de noyau. **k-NN**¨ est un algorithme non paramétrique qui ne construit pas de modèle explicite, mais utilise les données d'apprentissage pour prédire les nouvelles instances directement.
 
 ### 1. Introduction à K-NN
 
@@ -301,16 +296,18 @@ K-NN est une méthode basée sur la proximité : pour une nouvelle observation, 
 Dans le contexte de K-NN, la fonction de coût peut être définie comme l'erreur de prédiction globale, typiquement mesurée par l'erreur quadratique moyenne (Mean Squared Error, MSE) ou l'erreur absolue moyenne (Mean Absolute Error, MAE). Pour la minimiser, l'algorithme K-NN cherche à optimiser les choix des hyperparamètres (notamment $k$ et la métrique de distance).
 
 #### Erreur Quadratique Moyenne (MSE)
+
 $J = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$
 
 où $y_i$ est la valeur réelle et $\hat{y}_i$ est la valeur prédite.
 
 #### Erreur Absolue Moyenne (MAE)
+
 $J = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i|$
 
 ### 3. Optimisation des Hyperparamètres
 
-L'optimisation dans K-NN consiste principalement à trouver le meilleur nombre de voisins \( k \) et la meilleure métrique de distance. Les approches courantes pour ce faire incluent la validation croisée et les grilles de recherche.
+L'optimisation dans K-NN consiste principalement à trouver le meilleur nombre de voisins ( k ) et la meilleure métrique de distance. Les approches courantes pour ce faire incluent la validation croisée et les grilles de recherche.
 
 #### Validation Croisée
 
@@ -319,8 +316,8 @@ La validation croisée permet de diviser les données en plusieurs sous-ensemble
 #### Grille de Recherche (Grid Search)
 
 La grille de recherche explore systématiquement une plage d'hyperparamètres pour trouver la combinaison qui minimise la fonction de coût.
-
 :::
+
 ```{python, echo=FALSE}
 from sklearn.neighbors import KNeighborsRegressor
 
@@ -338,12 +335,9 @@ plt.show()
 
 ```
 
->
+-   **Modèles Additifs Généralisés (GAM)**: Les modèles additifs généralisés (GAM) sont une extension des modèles linéaires généralisés (GLM) qui permettent de modéliser des relations non linéaires. Les GAM utilisent des fonctions lisses (comme les splines) pour modéliser la relation entre chaque prédicteur et la variable réponse.
 
-
-  * **Modèles Additifs Généralisés (GAM)**: Les modèles additifs généralisés (GAM) sont une extension des modèles linéaires généralisés (GLM) qui permettent de modéliser des relations non linéaires. Les GAM utilisent des fonctions lisses (comme les splines) pour modéliser la relation entre chaque prédicteur et la variable réponse.
-
-::: {.callout-tip icon=false collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
 
 Dans un GAM, la fonction de coût est minimisée en ajustant les fonctions lisses pour chaque variable explicative.
@@ -366,9 +360,8 @@ où $\lambda_i$ sont des paramètres de régularisation pour les pénalités de 
 
 La minimisation de cette fonction de coût se fait généralement par des méthodes d'optimisation numériques, telles que :
 
-- **Penalized Iteratively Reweighted Least Squares (P-IRLS)** : Une extension de l'algorithme IRLS utilisé pour les modèles linéaires généralisés, adaptée pour inclure les pénalités de lissage.
-- **Gradient Descent** et ses variantes.
-
+-   **Penalized Iteratively Reweighted Least Squares (P-IRLS)** : Une extension de l'algorithme IRLS utilisé pour les modèles linéaires généralisés, adaptée pour inclure les pénalités de lissage.
+-   **Gradient Descent** et ses variantes.
 :::
 
 ```{python, echo=FALSE}
@@ -391,13 +384,11 @@ plt.show()
 
 ```
 
-> 
+-   **Forêt aléatoire**: Les forêts aléatoires (Random Forests) sont une méthode d'apprentissage supervisé populaire utilisée pour la classification et la régression. Elles fonctionnent en construisant plusieurs arbres de décision pendant la phase d'entraînement et en produisant la classe qui est le mode des classes (classification) ou la moyenne des prédictions (régression) de chaque arbre individuel.
 
-
-  * **Forêt aléatoire**: Les forêts aléatoires (Random Forests) sont une méthode d'apprentissage supervisé populaire utilisée pour la classification et la régression. Elles fonctionnent en construisant plusieurs arbres de décision pendant la phase d'entraînement et en produisant la classe qui est le mode des classes (classification) ou la moyenne des prédictions (régression) de chaque arbre individuel.
-
-::: {.callout-tip icon=false collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## NB
+
 La forêt aléatoire (Random Forest) est un ensemble d'arbres de décision entraînés sur des sous-échantillons aléatoires des données. L'idée est de combiner les prédictions de plusieurs arbres pour améliorer la performance et réduire le risque de surajustement. La fonction de coût dans une forêt aléatoire est généralement liée à l'erreur de prédiction des arbres, et l'optimisation consiste à ajuster divers hyperparamètres pour minimiser cette erreur.
 
 ### 1. Introduction à la Forêt Aléatoire
@@ -409,6 +400,7 @@ Une forêt aléatoire est un modèle d'ensemble qui construit plusieurs arbres d
 Pour la régression, la fonction de coût est souvent mesurée par l'erreur quadratique moyenne (Mean Squared Error, MSE) ou l'erreur absolue moyenne (Mean Absolute Error, MAE) entre les valeurs réelles et les valeurs prédites :
 
 #### Erreur Quadratique Moyenne (MSE)
+
 $J = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$
 
 où $y_i$ est la valeur réelle et $\hat{y}_i$ est la valeur prédite.
@@ -417,17 +409,15 @@ où $y_i$ est la valeur réelle et $\hat{y}_i$ est la valeur prédite.
 
 La minimisation de la fonction de coût dans une forêt aléatoire passe par l'optimisation des hyperparamètres suivants :
 
-* **Nombre d'arbres (n_estimators)** : Plus d'arbres peuvent améliorer la performance mais augmentent le temps de calcul.
+-   **Nombre d'arbres (n_estimators)** : Plus d'arbres peuvent améliorer la performance mais augmentent le temps de calcul.
 
-* **Profondeur maximale des arbres (max_depth)** : Limiter la profondeur peut prévenir le surajustement.
+-   **Profondeur maximale des arbres (max_depth)** : Limiter la profondeur peut prévenir le surajustement.
 
-* **Nombre de caractéristiques considérées pour chaque split (max_features)** : Un bon réglage de ce paramètre peut améliorer la performance.
+-   **Nombre de caractéristiques considérées pour chaque split (max_features)** : Un bon réglage de ce paramètre peut améliorer la performance.
 
-* **Taille minimale des échantillons pour diviser un nœud (min_samples_split)**.
+-   **Taille minimale des échantillons pour diviser un nœud (min_samples_split)**.
 
-* **Taille minimale des échantillons pour une feuille (min_samples_leaf)**.
-
-
+-   **Taille minimale des échantillons pour une feuille (min_samples_leaf)**.
 :::
 
 ```{python, echo=FALSE}
@@ -445,8 +435,6 @@ plt.legend()
 plt.title('Forêt aléatoire')
 plt.show()
 ```
-
->
 
 # Comparaison des méthodes et conclusion
 
@@ -495,9 +483,6 @@ plt.legend()
 plt.show()
 ```
 
-> 
-
-
 Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les éléments suivants :
 
 -   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
@@ -510,24 +495,23 @@ Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les él�
 
 Pour réaliser ces travaux, nous avons utilisé {{< fa brands r-project >}} et {{< fa brands python >}} pour la partie modélisation. Pour la mise en forme du rapport ainsi que du support de présentation, nous avons utilisé [LateX](https://fr.wikipedia.org/wiki/LaTeX).
 
-> Vous trouverez le rapport ainsi que le support de présentation  ci-dessous :
 
-::: {.chevron-styling}
+
+
+::: {style="text-align:center;"}
+
+> Vous trouverez le rapport ainsi que le support de présentation ici :
+
+::: chevron-styling
 {{< iconify pixelarticons:chevron-down size=5x >}}
 :::
+:::
 
-
-```{r include_pdf, echo=FALSE, fig.width=10, fig.height=6 }
-knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/AlternativesMCO.pdf")
-```
 
 ::: {style="text-align:center;"}
 [Rapport : Représentation sous forme de diagramme des MCO {{< fa arrow-up-right-from-square >}}](AlternativesMCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
 
-```{r include_pdf_2, echo=FALSE, fig.width=10, fig.height=6 }
-knitr::include_graphics("/Users/f.b/Desktop/Data_Science/Data_Science/Personal_portfolio/Personal_portfolio/posts/first/Alternatives aux MCO.pdf")
-```
 
 ::: {style="text-align:center;"}
 [Présentation : Alternatives aux MCO {{< fa arrow-up-right-from-square >}}](Alternatives%20aux%20MCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
