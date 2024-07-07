@@ -6,6 +6,12 @@ $bs-btn-hover-bg: $bs-blue !default;
 
 /*-- scss:rules --*/
 
+/* Transforme en majuscule mon nom et prénom */
+span.navbar-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
 .navbar {
   background-color: $bs-blue;
 }

@@ -15,8 +15,7 @@ website:
     foreground: white
     
     left: 
-      - icon: wrench-adjustable
-        text: Website made with **Quarto** 🛠️
+      - text: Website made with **Quarto** 🛠️
         href: https://quarto.org/
     
     center:
@@ -25,6 +24,10 @@ website:
     right: 
       - icon: cc-circle
         text: "Licence : CC BY-NC-SA"
+  
+  search: 
+    location: navbar
+    type: overlay
 
   
   navbar:
@@ -51,6 +54,7 @@ format:
         weights: [400, 700]
     toc: true
     pagetitle: "François BOUSSENGUI | {{< meta title >}}"
+    # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:
       sidebar-width: 0px
       body-width: 1200px
