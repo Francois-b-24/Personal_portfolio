@@ -152,6 +152,6 @@ C'est un aspect qui biaise fortement les résultats d'estimations. Par conséque
 :::
 
 ::: {style="text-align:center;"}
-[Lire le rapport {{< fa arrow-up-right-from-square >}}](mlg.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](ml.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
 
