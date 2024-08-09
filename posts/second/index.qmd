@@ -113,7 +113,7 @@ En conclusion, l'application des techniques de data mining présentent une utili
 
 
 ::: {style="text-align:center;"}
-[Lire le rapport {{< fa arrow-up-right-from-square >}}](Application d'algorithmes de classification non supervisée sur les bien immobiliers de Saratoga, Californie.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](immobilier_saratoga.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
 
 
