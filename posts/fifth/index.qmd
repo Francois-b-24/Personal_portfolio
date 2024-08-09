@@ -102,7 +102,7 @@ Le pricing est donc une discipline complexe qui requiert une compréhension appr
 
 # Objectifs du travail
 
-Nous nous sommes placés dans le contexte d'un cinéma. Ce dernier est en situation de monopole etvend des places selon différentes stratégies tarifaires. L'objectif de ce travail est d'étudier l'impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.
+Nous nous sommes placés dans le contexte d'un cinéma. Ce dernier est en situation de monopole et vend des places selon différentes stratégies tarifaires. L'objectif de ce travail est d'étudier l'impact de ces différentes stratégies tarifaires à la fois sur le consommateurs et sur le monopole.
 
 # Méthodologie
 

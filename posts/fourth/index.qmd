@@ -39,7 +39,7 @@ où $y_i$ est la production scalaire observée du producteur $i$ ; $i=1,..I,$ $x
 
 -   $f(x_i , \beta)$ est la fonction frontière de production ;
 
-$TE_i$ désigne l'efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. $TE = (\frac{y}{y*})$. $TE_i = 1$ montre que la ième entreprise obtient la production maximale réalisable, tandis que $TE_i$ \< 1 fournit une mesure de l'écart entre la production observée et la production maximale réalisable. En d'autres, $TE_i$ détermine l'utilisation non efficiente des inputs.
+$TE_i$ désigne l'efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. $TE = (\frac{y}{y*})$. $TE_i = 1$ montre que la ième entreprise obtient la production maximale réalisable, tandis que $TE_i$ \< 1 fournit une mesure de l'écart entre la production observée et la production maximale réalisable. En d'autres termes, $TE_i$ détermine l'utilisation non efficiente des inputs.
 
 Une composante [stochastique](https://fr.wikipedia.org/wiki/Processus_stochastique) décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par $exp(v_i)$. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu'ils sont décrits par une distribution commune.
 
@@ -53,7 +53,7 @@ L'analyse des frontières stochastiques a également examiné l'efficacité du �
 
 # Objectifs du travail
 
-L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :
+L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de *232* observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :
 
 | Variables |
 |:------|

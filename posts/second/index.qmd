@@ -35,7 +35,7 @@ Dans le cadre d'un projet réalisé dans l'apprentissage de méthodes de **Datam
 
 # Objectifs du travail
 
-Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu'il est tout à fait possible de regrouper ces biens en classes homogènes. En d'autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été donc question de proposer des classes de biens homogènes au sens statistique du terme [^3].
+Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu'il est tout à fait possible de regrouper ces biens en classes homogènes. En d'autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été  question de proposer des classes de biens homogènes au sens statistique du terme [^3].
 
 [^3]: L'homogénéité d'une population ou d'une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.
 
@@ -55,7 +55,7 @@ L'Analyse Factorielle des Correspondances (AFC) est une méthode statistique uti
 ::: {.callout-tip icon=false collapse="true"}
 ## Analyse des composantes principales (ACP)
 
-L'Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées composantes principales. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.
+L'Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées **composantes principales**. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
@@ -79,7 +79,6 @@ La Classification Ascendante Hiérarchique (CAH) est une méthode d'analyse stat
 Le K-means est l'un des algorithmes de clustering les plus populaires en analyse de données non supervisée. Son objectif principal est de partitionner un ensemble de données en K clusters distincts, où chaque observation appartient au cluster avec le centre (centroid) le plus proche
 
 :::
-
 
 
 # Principaux résultats

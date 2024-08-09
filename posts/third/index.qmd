@@ -40,7 +40,7 @@ Ainsi, dans le cas des défauts de paiement bancaire, l'objectif est de pouvoir 
 
 # Méthodologie
 
-De prime abord, nous avons réalisé une analyse descriptive qui a nous permis de découvrir un **déséquilibre des classes** pour la variable à expliquer. En d'autres termes, nous avons une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont. 
+De prime abord, nous avons réalisé une analyse descriptive qui a nous permis de mettre en exergue un **déséquilibre des classes** pour la variable à expliquer. En d'autres termes, nous avons une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont. 
 
 Cela est un fait positif pour une banque en soi. 
 
@@ -55,7 +55,7 @@ Cela nous a donc conduit a procédé comme suit :
 
     +   Un groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;
 
-*   Première application des modèles sans prise en compte du déséquilibre des classes 
+*   Première application des modèles sans prise en compte du déséquilibre des classes. 
 
 *   Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d'application de méthode de ré-échantillonnage des classes, à savoir :
 
@@ -135,7 +135,7 @@ Il présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauva
 
 Dans la réalité, il est très probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. 
 
-C'est un aspect qui biaise fortement les résultats d'estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour résoudre le problème. Au sortir de là, cela nous permet d'obtenir un modèle qui n'est pas biaisé. Ce dernier nous permet donc aisément de prédire l'appartenance à l'une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l'intérêt de ce genre de méthodes est qu'elle donne la possibilité de mettre en place de moyens de prévention pour se protéger des personnes qui présentent un fort risque d'être en défaut de paiement. 
+C'est un aspect qui biaise fortement les résultats d'estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour prendre en compte le problème. Au sortir de là, cela nous permet d'obtenir un modèle qui n'est pas biaisé. Ce dernier nous permet donc aisément de prédire l'appartenance à l'une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l'intérêt de ce genre de méthodes est qu'elle donne la possibilité de mettre en place de moyens de prévention pour se prémunir des personnes qui présentent un fort risque d'être en défaut de paiement. 
 
 # Outil technique 
 

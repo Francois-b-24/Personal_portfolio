@@ -50,7 +50,7 @@ Puis, dans un second temps, il a été question de présenter et de classifier l
 
 Pour atteindre ces objectifs, nous avons analyser des travaux de recherche en économétrie et nous avons travaillé en étroite collaboration avec notre professeur référent en la matière.
 
-Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple dont la spécification mathématique est : $y = \beta_0 + \beta_1x + \epsilon$, où : **\[Ajouter l'image\]**
+Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représentation graphique des principaux résultats d'une régression linéaire simple dont la spécification mathématiques est : $y = \beta_0 + \beta_1x + \epsilon$, où :
 
 -   $y$ est la variable dépendante (la réponse)
 -   $x$ est la variable explicative (le prédicteur)
@@ -60,9 +60,9 @@ Ainsi, nos recherches nous ont permis d'aboutir à la proposition d'une représe
 
 Par ailleurs, nous avons mis en exergue plusieurs familles de méthodes de prévision. Nous pouvons les classer comme suit :
 
--   Les méthodes d'estimation décrivant une **relation linéaire** entre la variable à expliquer $y$ et la/les variable(s) explicative(s) $X$.
+1.  Les méthodes d'estimation décrivant une **relation linéaire** entre la variable à expliquer $y$ et la/les variable(s) explicative(s) $X$.
 
-    -   **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
+-   **Moindres carrés ordinaires** : C'est une méthode utilisée pour estimer les paramètres d'un modèle de régression linéaire. Elle minimise la somme des carrés des différences entre les valeurs observées et les valeurs prédites par le modèle.
 
 ::: {.callout-tip icon="false" collapse="true"}
 ## NB
@@ -217,7 +217,7 @@ plt.show()
 
 2.  Les modèles qui décrivent une **relation non linéaire** entre la variable à expliquer et la/les variable(s) explicative(s).
 
-Il s'agit de la famille des méthodes de **Régression non paramétrique** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation. Contrairement à la régression paramétrique (comme la régression linéaire), la régression non paramétrique ne nécessite pas d'hypothèses strictes sur la forme de la relation, ce qui permet de capturer des relations plus complexes et non linéaires. Voici quelques exemples de méthodes d'estimation non paramétrique :
+Il s'agit de la famille des méthodes de **Régressions non paramétriques** : La régression non paramétrique est une technique statistique qui permet de modéliser les relations entre variables sans supposer de forme paramétrique spécifique pour la relation. Contrairement à la régression paramétrique (comme la régression linéaire), la régression non paramétrique ne nécessite pas d'hypothèses strictes sur la forme de la relation, ce qui permet de capturer des relations plus complexes et non linéaires. Voici quelques exemples de méthodes d'estimation non paramétriques :
 
 -   **Régression par noyau** : La régression par noyau est une méthode non paramétrique qui utilise une fonction noyau pour estimer la relation entre les variables indépendantes et dépendantes. Une forme courante de régression par noyau est la régression par noyau de [Nadaraya-Watson](https://en.wikipedia.org/wiki/Kernel_regression). Cette méthode consiste à estimer la valeur de la variable dépendante pour une valeur donnée de la variable indépendante en prenant une moyenne pondérée des valeurs observées, les poids étant déterminés par une fonction noyau.
 
@@ -226,7 +226,7 @@ Il s'agit de la famille des méthodes de **Régression non paramétrique** : La 
 
 1.  La régression à noyau est une extension de la régression linéaire qui utilise des fonctions de noyau pour permettre la modélisation de relations non linéaires. Une fonction de noyau $K(x, x')$ mesure la similarité entre deux points dans l'espace de caractéristiques.
 
-### 2. Fonction de Coût
+## 2. Fonction de Coût
 
 La fonction de coût pour la régression à noyau est souvent basée sur la perte de Huber, la perte d'epsilon-insensible ou d'autres fonctions de perte robustes. Une fonction de coût typique pour la régression à noyau est la suivante :
 
@@ -234,7 +234,7 @@ $J(\alpha) = \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_i \alpha_j K(x_i, 
 
 où : - $\alpha_i$ sont les coefficients duals. - $K(x_i, x_j)$est la fonction de noyau. - $y_i$ sont les valeurs cibles. - $C$est un paramètre de régularisation. - $\epsilon$ est un paramètre de tolérance pour la perte epsilon-insensible.
 
-### 3. Minimisation de la Fonction de Coût
+## 3. Minimisation de la Fonction de Coût
 
 Pour minimiser cette fonction de coût, nous utilisons des techniques d'optimisation convexes telles que le **Gradient Descent**, le **Coordinate Descent** ou des algorithmes spécialisés comme le **Sequential Minimal Optimization (SMO)**.
 
@@ -285,7 +285,7 @@ plt.close()
 ::: {.callout-tip icon="false" collapse="true"}
 ## NB
 
-La minimisation de la fonction de coût pour les méthodes de **k-plus proches voisins** (K-Nearest Neighbors ou K-NN) diffère des méthodes de régression classiques comme celles utilisant des fonctions de noyau. **k-NN**¨ est un algorithme non paramétrique qui ne construit pas de modèle explicite, mais utilise les données d'apprentissage pour prédire les nouvelles instances directement.
+La minimisation de la fonction de coût pour les méthodes de **k-plus proches voisins** (K-Nearest Neighbors ou K-NN) diffère des méthodes de régression classiques comme celles utilisant des fonctions de noyau. **k-NN** est un algorithme non paramétrique qui ne construit pas de modèle explicite, mais utilise les données d'apprentissage pour prédire les nouvelles instances directement.
 
 ### 1. Introduction à K-NN
 
@@ -307,7 +307,7 @@ $J = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i|$
 
 ### 3. Optimisation des Hyperparamètres
 
-L'optimisation dans K-NN consiste principalement à trouver le meilleur nombre de voisins ( k ) et la meilleure métrique de distance. Les approches courantes pour ce faire incluent la validation croisée et les grilles de recherche.
+L'optimisation dans K-NN consiste principalement à trouver le meilleur nombre de voisins ($k$) et la meilleure métrique de distance. Les approches courantes pour ce faire incluent la validation croisée et les grilles de recherche.
 
 #### Validation Croisée
 
@@ -316,6 +316,7 @@ La validation croisée permet de diviser les données en plusieurs sous-ensemble
 #### Grille de Recherche (Grid Search)
 
 La grille de recherche explore systématiquement une plage d'hyperparamètres pour trouver la combinaison qui minimise la fonction de coût.
+
 :::
 
 ```{python, echo=FALSE}
@@ -346,7 +347,7 @@ Un GAM a la forme suivante :
 
 $g(E(y)) = \beta_0 + f_1(x_1) + f_2(x_2) + \ldots + f_p(x_p)$
 
-où $g$ est une fonction de lien, $(y)$ est l'espérance de $y$, $\beta_0$ est une constante, et $f_i$ sont des fonctions lisses des variables explicatives $x_i$.
+où $g$ est une fonction de lien, $E(y)$ est l'espérance de $y$, $\beta_0$ est une constante, et $f_i$ sont des fonctions lisses des variables explicatives $x_i$.
 
 ### 2. Fonction de Coût
 
@@ -362,6 +363,7 @@ La minimisation de cette fonction de coût se fait généralement par des métho
 
 -   **Penalized Iteratively Reweighted Least Squares (P-IRLS)** : Une extension de l'algorithme IRLS utilisé pour les modèles linéaires généralisés, adaptée pour inclure les pénalités de lissage.
 -   **Gradient Descent** et ses variantes.
+
 :::
 
 ```{python, echo=FALSE}
@@ -441,7 +443,7 @@ plt.show()
 En conclusion, nous pouvons dire qu'il existe 2 grandes familles de méthodes de prévision :
 
 -   **Les modèles linéaires** : décrivant une relation linéaire entre la variable dépendante et les variables indépendantes.
--   **Les modèles non linéaires** : inversement, décrivant une relation non linéaire entre la variable dépendant et les variables indépendantes.
+-   **Les modèles non linéaires** : inversement, décrivant une relation non linéaire entre la variable dépendante et les variables indépendantes.
 
 Grâce à des représentations graphiques, nous allons visualiser les différences de résultats entre ces deux familles de méthodes :
 
@@ -485,7 +487,7 @@ plt.show()
 
 Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les éléments suivants :
 
--   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématique entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
+-   **La forme fonctionnelle du modèle** : La forme fonctionnelle d'un modèle se réfère à la spécification de la relation mathématiques entre les variables indépendantes (ou explicatives) et la variable dépendante (ou à expliquer). Cette spécification définit comment les variables sont liées dans le modèle et peut prendre plusieurs formes selon la nature des données et les hypothèses sous-jacentes
 
 -   **Les principales hypothèses associées au modèle** : Les principales hypothèses d'un modèle sont essentielles pour garantir la validité et la fiabilité des estimations des coefficients.
 
@@ -495,11 +497,7 @@ Par ailleurs, pour chacune de ces méthodes nous avons mis en évidence les él�
 
 Pour réaliser ces travaux, nous avons utilisé {{< fa brands r-project >}} et {{< fa brands python >}} pour la partie modélisation. Pour la mise en forme du rapport ainsi que du support de présentation, nous avons utilisé [LateX](https://fr.wikipedia.org/wiki/LaTeX).
 
-
-
-
 ::: {style="text-align:center;"}
-
 > Vous trouverez le rapport ainsi que le support de présentation ici :
 
 ::: chevron-styling
@@ -507,11 +505,9 @@ Pour réaliser ces travaux, nous avons utilisé {{< fa brands r-project >}} et {
 :::
 :::
 
-
 ::: {style="text-align:center;"}
 [Rapport : Représentation sous forme de diagramme des MCO {{< fa arrow-up-right-from-square >}}](AlternativesMCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
-
 
 ::: {style="text-align:center;"}
 [Présentation : Alternatives aux MCO {{< fa arrow-up-right-from-square >}}](Alternatives%20aux%20MCO.pdf){.btn .btn-outline-primary .btn .center role="button"}
