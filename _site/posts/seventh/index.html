@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="BOUSSENGUI François">
+<meta name="description" content="Qu’est-ce qui détermine le prix d’une montre ?">
+
+<title>François BOUSSENGUI | Analyse du marché horloger de luxe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><em>Portfolio</em> 📊🗂️📈</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/skills.html"> 
+<span class="menu-text">Compétences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html"> 
+<span class="menu-text">Travaux</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Analyse du marché horloger de luxe</h1>
+                  <div>
+        <div class="description">
+          <em>Qu’est-ce qui détermine le prix d’une montre ?</em>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Data science</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p><code>BOUSSENGUI François</code> </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">📚 Table des matières</h2>
+   
+  <ul>
+  <li><a href="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie" id="toc-contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="nav-link active" data-scroll-target="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></a></li>
+  <li><a href="#objectif-de-lanalyse" id="toc-objectif-de-lanalyse" class="nav-link" data-scroll-target="#objectif-de-lanalyse"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> <strong>Méthodologie</strong></a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">6</span> Outil technique</a></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats"><span class="header-section-number">7</span> Résultats</a>
+  <ul class="collapse">
+  <li><a href="#répartition-des-prix-par-provenances" id="toc-répartition-des-prix-par-provenances" class="nav-link" data-scroll-target="#répartition-des-prix-par-provenances"><span class="header-section-number">7.1</span> Répartition des prix par provenances :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-type-de-mouvement" id="toc-répartition-des-prix-selon-le-type-de-mouvement" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-type-de-mouvement"><span class="header-section-number">7.2</span> Répartition des prix selon le type de mouvement :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-sexe" id="toc-répartition-des-prix-selon-le-sexe" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-sexe"><span class="header-section-number">7.3</span> Répartition des prix selon le sexe :</a></li>
+  <li><a href="#répartition-des-prix-selon-la-marque" id="toc-répartition-des-prix-selon-la-marque" class="nav-link" data-scroll-target="#répartition-des-prix-selon-la-marque"><span class="header-section-number">7.4</span> Répartition des prix selon la marque :</a></li>
+  <li><a href="#répartition-des-prix-selon-la-matière-du-boitier" id="toc-répartition-des-prix-selon-la-matière-du-boitier" class="nav-link" data-scroll-target="#répartition-des-prix-selon-la-matière-du-boitier"><span class="header-section-number">7.5</span> Répartition des prix selon la matière du boitier :</a></li>
+  <li><a href="#répartition-des-prix-selon-la-matière-du-bracelet" id="toc-répartition-des-prix-selon-la-matière-du-bracelet" class="nav-link" data-scroll-target="#répartition-des-prix-selon-la-matière-du-bracelet"><span class="header-section-number">7.6</span> Répartition des prix selon la matière du bracelet :</a></li>
+  <li><a href="#répartition-des-prix-selon-létat-de-la-montre" id="toc-répartition-des-prix-selon-létat-de-la-montre" class="nav-link" data-scroll-target="#répartition-des-prix-selon-létat-de-la-montre"><span class="header-section-number">7.7</span> Répartition des prix selon l’état de la montre :</a></li>
+  <li><a href="#répartition-des-prix-selon-la-matière-de-la-lunette" id="toc-répartition-des-prix-selon-la-matière-de-la-lunette" class="nav-link" data-scroll-target="#répartition-des-prix-selon-la-matière-de-la-lunette"><span class="header-section-number">7.8</span> Répartition des prix selon la matière de la lunette :</a></li>
+  <li><a href="#répartition-des-prix-selon-la-matière-de-la-boucle" id="toc-répartition-des-prix-selon-la-matière-de-la-boucle" class="nav-link" data-scroll-target="#répartition-des-prix-selon-la-matière-de-la-boucle"><span class="header-section-number">7.9</span> Répartition des prix selon la matière de la boucle :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-type-de-boucle" id="toc-répartition-des-prix-selon-le-type-de-boucle" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-type-de-boucle"><span class="header-section-number">7.10</span> Répartition des prix selon le type de boucle :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-nombre-de-complications" id="toc-répartition-des-prix-selon-le-nombre-de-complications" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-nombre-de-complications"><span class="header-section-number">7.11</span> Répartition des prix selon le nombre de complications :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-diamètre-de-la-montre" id="toc-répartition-des-prix-selon-le-diamètre-de-la-montre" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-diamètre-de-la-montre"><span class="header-section-number">7.12</span> Répartition des prix selon le diamètre de la montre :</a></li>
+  <li><a href="#répartition-des-prix-selon-le-niveau-détenchéité" id="toc-répartition-des-prix-selon-le-niveau-détenchéité" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-niveau-détenchéité"><span class="header-section-number">7.13</span> Répartition des prix selon le niveau d’étenchéité :</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></h1>
+<p>L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les comportements les variations de prix, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées à partir de Chrono24, l’une des principales plateformes de vente de montres de luxe en ligne.</p>
+</section>
+<section id="objectif-de-lanalyse" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></h1>
+<p>L’objectif principal de cette analyse est de fournir des insights pertinents sur les tendances actuelles du marché des montres en se basant sur des données provenant de Chrono24. À travers le <em>scraping</em> de données en ligne, nous avons extrait des informations détaillées sur un large éventail de montres proposées à la vente, notamment :</p>
+<ul>
+<li><p><strong>Prix des montres</strong> : Données sur les prix demandés pour différentes marques, modèles, et états des montres.</p></li>
+<li><p><strong>Caractéristiques des montres</strong> : Informations sur les spécifications telles que les matériaux utilisés (acier, or, etc.), le type de mouvement, la taille, et les autres caractéristiques techniques.</p></li>
+<li><p><strong>Marques populaires</strong> : Identification des marques les plus recherchées et les plus proposées sur le marché.</p></li>
+<li><p><strong>Évolution des prix</strong> : Analyse des variations de prix des montres selon des critères comme la marque, la matière du boîtier, ou la rareté.</p></li>
+</ul>
+</section>
+<section id="méthodologie" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <strong>Méthodologie</strong></h1>
+<p>Les données ont été collectées par scraping depuis le site web de Chrono24 à l’aide d’outils <strong>Python</strong> tels que <em>BeautifulSoup</em> et <em>Selenium</em>. Ce processus a permis d’extraire un ensemble de données riche et diversifié sur les montres mises en vente, comprenant des informations sur les prix, les marques, les matériaux, les tailles, et bien plus encore. Ces données ont ensuite été nettoyées et préparées pour l’analyse à l’aide de bibliothèques telles que <em>Pandas</em> et <em>NumPy</em>.</p>
+<p>L’analyse s’est articulée autour de plusieurs axes :</p>
+<ul>
+<li><p><strong>Analyse descriptive</strong> : Statistiques de base (moyenne, médiane, écart-type) sur les prix des montres et leurs caractéristiques.</p></li>
+<li><p><strong>Visualisation des données</strong> : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des matériaux, et d’autres caractéristiques pertinentes.</p></li>
+<li><p><strong>Modélisation prédictive</strong> : Développement de modèles permettant de prédire les variations de prix en fonction de certains facteurs comme la marque, le type de mouvement, et l’état de la montre.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Présentation des variables de la base données
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variables</th>
+<th style="text-align: left;">Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Marque</code></td>
+<td style="text-align: left;">Marque de la montre</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Modèle</code></td>
+<td style="text-align: left;">Modèle de la montre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mouvement</code></td>
+<td style="text-align: left;">Type de mouvement (manuel, autmatique, etc. )</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Matiere du boîtier</code></td>
+<td style="text-align: left;">Matière du boîtier (acier, or, etc. )</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Matiere du bracelet</code></td>
+<td style="text-align: left;">Matière du bracelet (or, acier, caoutchouc)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Etat de la montre</code></td>
+<td style="text-align: left;">Etat de la montre (Bon, mauvais, etc. )</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Sexe</code></td>
+<td style="text-align: left;">catégorie de la montre : homme/femme</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>prix</strong></td>
+<td style="text-align: left;">Prix de la montre (en €)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Réserve de macrhe</code></td>
+<td style="text-align: left;">Niveau de réserve de marche de la montre</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Diamètre</code></td>
+<td style="text-align: left;">Diamètre de la montre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Etenchéité</code></td>
+<td style="text-align: left;">Niveau d’étenchéité de la montre</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>matiere de la lunette</code></td>
+<td style="text-align: left;">Matière de la lunette de la montre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>matiere du verre</code></td>
+<td style="text-align: left;">Matière du verre de la montre</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>matiere de la boucle</code></td>
+<td style="text-align: left;">Matière de la boucle de la montre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Pays</code></td>
+<td style="text-align: left;">Pays de provenance de la montre</td>
+</tr>
+</tbody>
+</table>
+<section id="résultats-attendus" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></h1>
+<p>À travers cette analyse, nous cherchons à obtenir une vue d’ensemble des tendances actuelles du marché des montres de luxe. Cela permettra de répondre à plusieurs questions clés :</p>
+<ul>
+<li><p>Quelles sont les marques les plus recherchées et les plus coûteuses ?</p></li>
+<li><p>Comment les caractéristiques (matériaux, type de mouvement, etc.) influent-elles sur le prix des montres ?</p></li>
+<li><p>Existe-t-il des tendances saisonnières ou géographiques influençant les prix ?</p></li>
+<li><p>Quels sont les segments du marché (par exemple, les montres vintage, les éditions limitées) les plus attractifs pour les acheteurs ?</p></li>
+</ul>
+</section>
+<section id="applications-de-lanalyse" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></h1>
+<p>Les résultats de cette analyse peuvent être utilisés pour : - Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.</p>
+<ul>
+<li><p>Les acheteurs : Obtenir une vue d’ensemble des prix moyens et des bonnes affaires dans le marché de l’horlogerie.</p></li>
+<li><p>Les marques et fabricants : Comprendre les attentes des consommateurs et les tendances de demande en matière de modèles spécifiques ou de caractéristiques.</p></li>
+</ul>
+<p>En résumé, cette analyse vise à fournir une compréhension approfondie des dynamiques du marché de l’horlogerie via les données issues de Chrono24, ce qui pourra servir à la fois pour des études de marché, des prévisions de prix, et la définition de stratégies commerciales adaptées.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="outil-technique" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Outil technique</h1>
+<ul>
+<li>Le projet a entièrement été developpé en Python <i class="fa-brands fa-python" aria-label="python"></i></li>
+</ul>
+<div style="text-align:center;">
+<p><a href="https://github.com/Francois-b-24/Clock_industry-second_hand/tree/main"><em>Cliquer ici pour voir le code source.</em></a></p>
+</div>
+</section>
+<section id="résultats" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Résultats</h1>
+<section id="répartition-des-prix-par-provenances" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="répartition-des-prix-par-provenances"><span class="header-section-number">7.1</span> Répartition des prix par provenances :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Provenance des montres               
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃        Pays        ┃ Nombre de montres ┃       % ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│       FRANCE       │             10620 │ 33.37 % │
+│     ALLEMAGNE      │              4292 │ 13.48 % │
+│       ITALIE       │              3470 │ 10.90 % │
+│     ÉTATS-UNIS     │              2931 │  9.21 % │
+│      BELGIQUE      │              2096 │  6.59 % │
+│      PAYS-BAS      │              1318 │  4.14 % │
+│      ESPAGNE       │              1083 │  3.40 % │
+│    ROYAUME-UNI     │              1029 │  3.23 % │
+│       JAPON        │               855 │  2.69 % │
+│      POLOGNE       │               518 │  1.63 % │
+│       SUÈDE        │               382 │  1.20 % │
+│     HONG_KONG      │               375 │  1.18 % │
+│      AUTRICHE      │               349 │  1.10 % │
+│       SUISSE       │               288 │  0.90 % │
+│      DANEMARK      │               199 │  0.63 % │
+│ RÉPUBLIQUE_TCHEQUE │               140 │  0.44 % │
+│       GRÈCE        │               127 │  0.40 % │
+│      LITUANIE      │               110 │  0.35 % │
+│     SINGAPOUR      │                96 │  0.30 % │
+│      ROUMANIE      │                93 │  0.29 % │
+│      PORTUGAL      │                93 │  0.29 % │
+│      INCONNU       │                89 │  0.28 % │
+│ EMIRAT_ARABE_UNIS  │                87 │  0.27 % │
+│      UKRAINE       │                78 │  0.25 % │
+│      MALAISIE      │                71 │  0.22 % │
+│       MONACO       │                70 │  0.22 % │
+│      HONGRIE       │                66 │  0.21 % │
+│       CANADA       │                63 │  0.20 % │
+│     AUSTRALIE      │                55 │  0.17 % │
+│     THAÏLANDE      │                48 │  0.15 % │
+│      TURQUIE       │                46 │  0.14 % │
+│        INDE        │                45 │  0.14 % │
+│     INDONÉSIE      │                43 │  0.14 % │
+│       BRÉSIL       │                41 │  0.13 % │
+│       TAÏWAN       │                37 │  0.12 % │
+│   AFRIQUE_DU_SUD   │                34 │  0.11 % │
+│      BULGARIE      │                32 │  0.10 % │
+│      MEXIQUE       │                31 │  0.10 % │
+│      FINLANDE      │                31 │  0.10 % │
+│     LUXEMBOURG     │                28 │  0.09 % │
+│     SLOVAQUIE      │                27 │  0.08 % │
+│       CORÉE        │                20 │  0.06 % │
+│      SLOVÉNIE      │                19 │  0.06 % │
+│  NOUVELLE-ZÉLANDE  │                18 │  0.06 % │
+│       CHINE        │                18 │  0.06 % │
+│    PHILIPPINES     │                18 │  0.06 % │
+│      LETTONIE      │                18 │  0.06 % │
+│       SERBIE       │                17 │  0.05 % │
+│      ESTONIE       │                17 │  0.05 % │
+│      VIETNAM       │                17 │  0.05 % │
+│       ÉGYPTE       │                16 │  0.05 % │
+│      ALBANIE       │                15 │  0.05 % │
+│    SAINT-MARIN     │                13 │  0.04 % │
+│  ARABIE_SAOUDITE   │                12 │  0.04 % │
+│       MAROC        │                 9 │  0.03 % │
+│       CHYPRE       │                 9 │  0.03 % │
+│       LIBAN        │                 9 │  0.03 % │
+│      ANDORRE       │                 8 │  0.03 % │
+│      GÉORGIE       │                 6 │  0.02 % │
+│       QATAR        │                 6 │  0.02 % │
+│      COLOMBIE      │                 5 │  0.02 % │
+│       ISRAËL       │                 5 │  0.02 % │
+│      NORVÈGE       │                 5 │  0.02 % │
+│       MACAO        │                 4 │  0.01 % │
+│       MALTE        │                 4 │  0.01 % │
+│      CROATIE       │                 4 │  0.01 % │
+│       PANAMA       │                 4 │  0.01 % │
+│   LIECHTENSTEIN    │                 4 │  0.01 % │
+│        OMAN        │                 4 │  0.01 % │
+│       BOSNIE       │                 3 │  0.01 % │
+│      IRLANDE       │                 3 │  0.01 % │
+│     GIBRALTAR      │                 3 │  0.01 % │
+│     ARGENTINE      │                 3 │  0.01 % │
+│    BIÉLORUSSIE     │                 3 │  0.01 % │
+│     KAZAKHSTAN     │                 3 │  0.01 % │
+│      ARMÉNIE       │                 2 │  0.01 % │
+│       CHILI        │                 2 │  0.01 % │
+│      ÉQUATEUR      │                 2 │  0.01 % │
+│     SRI_LANKA      │                 2 │  0.01 % │
+│      MOLDAVIE      │                 2 │  0.01 % │
+│      ALGÉRIE       │                 2 │  0.01 % │
+│        ÎLES        │                 2 │  0.01 % │
+│     HONG KONG      │                 1 │  0.00 % │
+│       LIBYE        │                 1 │  0.00 % │
+│     MACÉDOINE      │                 1 │  0.00 % │
+│ SAINT-CHRISTOPHER  │                 1 │  0.00 % │
+│     VENEZUELA      │                 1 │  0.00 % │
+│      ISLANDE       │                 1 │  0.00 % │
+└────────────────────┴───────────────────┴─────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>                             Statistiques par pays                             
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃        Pays        ┃ Nombre de montres ┃ Prix moyen ┃  Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ SAINT-CHRISTOPHER  │                 1 │  200000.00 │ 200000.00 │ 200000.00 │
+│       MONACO       │                70 │   46088.42 │   1655.00 │ 302100.00 │
+│      NORVÈGE       │                 5 │   31432.40 │   2615.00 │  74048.00 │
+│ EMIRAT_ARABE_UNIS  │                87 │   30750.04 │   1552.00 │ 453273.00 │
+│      AUTRICHE      │               349 │   29773.07 │    169.00 │ 779500.00 │
+│       LIBYE        │                 1 │   25000.00 │  25000.00 │  25000.00 │
+│   LIECHTENSTEIN    │                 4 │   24944.25 │  17786.00 │  33435.00 │
+│      MALAISIE      │                71 │   21534.98 │   1100.00 │ 202217.00 │
+│       CORÉE        │                20 │   21156.37 │   1734.00 │  60931.00 │
+│ RÉPUBLIQUE_TCHEQUE │               140 │   20033.01 │    399.00 │ 330000.00 │
+│       CHINE        │                18 │   17328.53 │   1281.00 │  82813.00 │
+│     HONG_KONG      │               375 │   16353.63 │    344.00 │ 287911.00 │
+│     ÉTATS-UNIS     │              2931 │   15128.74 │   1012.00 │ 339488.00 │
+│    ROYAUME-UNI     │              1029 │   14853.07 │   1080.00 │ 292603.00 │
+│  ARABIE_SAOUDITE   │                12 │   13907.56 │   2032.00 │  79770.00 │
+│      ARMÉNIE       │                 2 │   12763.00 │   6721.00 │  18805.00 │
+│     GIBRALTAR      │                 3 │   12755.00 │   2820.00 │  24168.00 │
+│       SUISSE       │               288 │   12199.42 │    362.00 │  94539.00 │
+│      DANEMARK      │               199 │   12023.65 │    900.00 │  91415.00 │
+│       MALTE        │                 4 │   11837.50 │   6000.00 │  20600.00 │
+│       SUÈDE        │               382 │   10821.71 │    850.00 │ 116003.00 │
+│     ALLEMAGNE      │              4292 │   10616.46 │    110.00 │ 690000.00 │
+│      ROUMANIE      │                93 │   10546.97 │    295.00 │ 175000.00 │
+│      ESPAGNE       │              1083 │   10443.99 │     90.00 │ 440000.00 │
+│       ITALIE       │              3470 │   10433.91 │    130.00 │ 470000.00 │
+│     SLOVAQUIE      │                27 │   10276.81 │    290.00 │  99900.00 │
+│       JAPON        │               855 │   10239.75 │   1008.00 │ 521782.00 │
+│       FRANCE       │             10620 │   10146.47 │     49.00 │ 689000.00 │
+│      POLOGNE       │               518 │   10124.33 │    290.00 │ 245000.00 │
+│       CANADA       │                63 │    9476.18 │   1158.00 │  43856.00 │
+│      BELGIQUE      │              2096 │    8975.80 │    100.00 │ 299000.00 │
+│       QATAR        │                 6 │    8775.00 │   1323.00 │  19766.00 │
+│      PORTUGAL      │                93 │    8644.44 │    240.00 │  39999.00 │
+│      PAYS-BAS      │              1318 │    8624.19 │    120.00 │ 119995.00 │
+│      ESTONIE       │                17 │    8476.00 │   2250.00 │  32000.00 │
+│      TURQUIE       │                46 │    8466.59 │    635.00 │  22730.00 │
+│     AUSTRALIE      │                55 │    8455.12 │   1052.00 │  48346.00 │
+│       CHYPRE       │                 9 │    7802.78 │    420.00 │  26118.00 │
+│      LITUANIE      │               110 │    7742.33 │    330.00 │  99999.00 │
+│      FINLANDE      │                31 │    7545.00 │     90.00 │  89500.00 │
+│      IRLANDE       │                 3 │    7316.67 │    380.00 │  16975.00 │
+│       GRÈCE        │               127 │    7286.08 │    278.00 │  40000.00 │
+│      CROATIE       │                 4 │    6701.75 │    108.00 │  24000.00 │
+│       TAÏWAN       │                37 │    6599.21 │   1010.00 │  46156.00 │
+│     THAÏLANDE      │                48 │    6379.93 │   1127.00 │  44893.00 │
+│    BIÉLORUSSIE     │                 3 │    6311.33 │   4625.00 │   9669.00 │
+│     LUXEMBOURG     │                28 │    6259.86 │    390.00 │  20000.00 │
+│     SINGAPOUR      │                96 │    6136.43 │   1096.00 │  48913.00 │
+│     INDONÉSIE      │                43 │    5918.77 │    150.00 │  37969.00 │
+│       MACAO        │                 4 │    5732.75 │   2588.00 │  15132.00 │
+│       LIBAN        │                 9 │    5635.00 │    600.00 │  18769.00 │
+│      UKRAINE       │                78 │    5541.94 │     65.00 │  23880.00 │
+│    SAINT-MARIN     │                13 │    5537.92 │   3300.00 │   9839.00 │
+│     VENEZUELA      │                 1 │    5162.00 │   5162.00 │   5162.00 │
+│       BRÉSIL       │                41 │    5141.23 │    600.00 │  18138.00 │
+│      ANDORRE       │                 8 │    5049.75 │    637.00 │   7923.00 │
+│   AFRIQUE_DU_SUD   │                34 │    4920.26 │   1354.00 │  14560.00 │
+│      HONGRIE       │                66 │    4919.46 │    175.00 │  21450.00 │
+│      BULGARIE      │                32 │    4427.29 │    450.00 │  26900.00 │
+│      MEXIQUE       │                31 │    4310.61 │   1620.00 │   9449.00 │
+│      INCONNU       │                89 │    4279.00 │   3748.00 │   4810.00 │
+│        INDE        │                45 │    4121.13 │   1039.00 │  14025.00 │
+│       SERBIE       │                17 │    4073.59 │    150.00 │  18718.00 │
+│       ISRAËL       │                 5 │    4066.50 │   3382.00 │   4751.00 │
+│      LETTONIE      │                18 │    3940.39 │    349.00 │  13400.00 │
+│      SLOVÉNIE      │                19 │    3856.21 │    106.00 │  22900.00 │
+│    PHILIPPINES     │                18 │    3701.67 │   1501.00 │   6913.00 │
+│      COLOMBIE      │                 5 │    3500.40 │   1551.00 │   7271.00 │
+│        ÎLES        │                 2 │    3201.00 │   3190.00 │   3212.00 │
+│       CHILI        │                 2 │    3173.00 │   3173.00 │   3173.00 │
+│  NOUVELLE-ZÉLANDE  │                18 │    2898.70 │   1310.00 │   6005.00 │
+│       ÉGYPTE       │                16 │    2781.33 │   1657.00 │   4451.00 │
+│     KAZAKHSTAN     │                 3 │    2745.50 │   2745.00 │   2746.00 │
+│      VIETNAM       │                17 │    2741.50 │   1369.00 │   3029.00 │
+│      MOLDAVIE      │                 2 │    2547.50 │   2541.00 │   2554.00 │
+│      GÉORGIE       │                 6 │    2528.60 │   1126.00 │   5926.00 │
+│      ÉQUATEUR      │                 2 │    2308.50 │   1231.00 │   3386.00 │
+│       PANAMA       │                 4 │    2098.00 │   2098.00 │   2098.00 │
+│      ALBANIE       │                15 │    1785.46 │    140.00 │  15796.00 │
+│        OMAN        │                 4 │    1629.33 │   1056.00 │   2767.00 │
+│     HONG KONG      │                 1 │    1407.00 │   1407.00 │   1407.00 │
+│     ARGENTINE      │                 3 │    1396.00 │   1396.00 │   1396.00 │
+│     SRI_LANKA      │                 2 │    1366.00 │   1360.00 │   1372.00 │
+│       MAROC        │                 9 │    1013.00 │    105.00 │   2509.00 │
+│      ALGÉRIE       │                 2 │     665.00 │    410.00 │    920.00 │
+│     MACÉDOINE      │                 1 │     340.00 │    340.00 │    340.00 │
+│       BOSNIE       │                 3 │        nan │       nan │       nan │
+│      ISLANDE       │                 1 │        nan │       nan │       nan │
+└────────────────────┴───────────────────┴────────────┴───────────┴───────────┘</code></pre>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-type-de-mouvement" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="répartition-des-prix-selon-le-type-de-mouvement"><span class="header-section-number">7.2</span> Répartition des prix selon le type de mouvement :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Statistiques par Mouvement            
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃  Mouvement  ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│ AUTOMATIQUE │   11538.25 │    59.00 │    59.00 │
+│   MANUEL    │    7313.69 │    90.00 │    90.00 │
+│   QUARTZ    │    2945.07 │    49.00 │    49.00 │
+│  BATTERIE   │    2630.00 │  1000.00 │  1000.00 │
+│   SOLAIRE   │    1171.75 │   700.00 │   700.00 │
+└─────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-sexe" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="répartition-des-prix-selon-le-sexe"><span class="header-section-number">7.3</span> Répartition des prix selon le sexe :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Sexe            
+┏━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Sexe  ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│ HOMME │   11909.98 │    49.00 │    49.00 │
+│ FEMME │   10018.34 │    90.00 │    90.00 │
+└───────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-la-marque" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="répartition-des-prix-selon-la-marque"><span class="header-section-number">7.4</span> Répartition des prix selon la marque :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>                  Statistiques par Marque                   
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃        Marque         ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│     RICHARD-MILLE     │  235473.26 │ 99900.00 │ 99900.00 │
+│       FPJOURNE        │  109509.29 │ 51029.00 │ 51029.00 │
+│      DE-BETHUNE       │   69900.00 │ 69900.00 │ 69900.00 │
+│    PATEK-PHILIPPE     │   54576.68 │  2999.00 │  2999.00 │
+│        URWERK         │   46072.00 │ 46072.00 │ 46072.00 │
+│    AUDEMARS-PIGUET    │   45427.53 │  2000.00 │  2000.00 │
+│    A-LANGE-&amp;-SÖHNE    │   40202.17 │ 13300.00 │ 13300.00 │
+│     HARRY-WINSTON     │   39272.50 │ 16946.00 │ 16946.00 │
+│  VAN-CLEEF-&amp;-ARPELS   │   29800.00 │  7500.00 │  7500.00 │
+│   MORITZ-GROSSMANN    │   29701.00 │ 29701.00 │ 29701.00 │
+│         BOVET         │   26825.00 │ 25400.00 │ 25400.00 │
+│  VACHERON-CONSTANTIN  │   23177.34 │  2900.00 │  2900.00 │
+│        BREGUET        │   22043.16 │  4250.00 │  4250.00 │
+│     HMOSER-&amp;-CIE      │   20142.55 │ 11489.00 │ 11489.00 │
+│     ULYSSE-NARDIN     │   18180.34 │  3331.00 │  3331.00 │
+│  PARMIGIANI-FLEURIER  │   17942.04 │  5696.00 │  5696.00 │
+│     ROGER-DUBUIS      │   17034.73 │  5918.00 │  5918.00 │
+│      JAQUET-DROZ      │   14496.92 │  4145.00 │  4145.00 │
+│         ROLEX         │   12966.58 │   250.00 │   250.00 │
+│        HUBLOT         │   12719.31 │  1400.00 │  1400.00 │
+│        PIAGET         │   12358.62 │  1500.00 │  1500.00 │
+│     FRANCK-MULLER     │   11683.68 │  1527.00 │  1527.00 │
+│       BLANCPAIN       │   11144.49 │  1450.00 │  1450.00 │
+│   GIRARD-PERREGAUX    │   11111.31 │  1100.00 │  1100.00 │
+│        CHOPARD        │   11096.54 │   349.00 │   349.00 │
+│     DE-GRISOGONO      │   10199.17 │  6500.00 │  6500.00 │
+│         CORUM         │   10132.53 │  1370.00 │  1370.00 │
+│     LOUIS-MOINET      │   10000.00 │ 10000.00 │ 10000.00 │
+│         DIOR          │    8400.33 │  1200.00 │  1200.00 │
+│      JACOB-&amp;-CO       │    8155.60 │  3990.00 │  3990.00 │
+│        BULGARI        │    8011.38 │   809.00 │   809.00 │
+│   JAEGER-LECOULTRE    │    7774.12 │   550.00 │   550.00 │
+│  GLASHÜTTE-ORIGINAL   │    7693.98 │  2600.00 │  2600.00 │
+│        CARTIER        │    7454.14 │   495.00 │   495.00 │
+│     GÉRALD-GENTA      │    7220.00 │  6900.00 │  6900.00 │
+│          IWC          │    6733.35 │   700.00 │   700.00 │
+│        PANERAI        │    6525.73 │  3446.00 │  3446.00 │
+│        CHANEL         │    6432.64 │  1907.00 │  1907.00 │
+│       PEQUIGNET       │    6415.83 │   700.00 │   700.00 │
+│      GRAND-SEIKO      │    6320.40 │  1308.00 │  1308.00 │
+│       BOUCHERON       │    6190.00 │  1990.00 │  1990.00 │
+│        ZENITH         │    5578.32 │    90.00 │    90.00 │
+│        TIFFANY        │    5448.00 │  5448.00 │  5448.00 │
+│      JORG-HYSEK       │    5296.86 │  2098.00 │  2098.00 │
+│        CHAUMET        │    5203.89 │   895.00 │   895.00 │
+│   UNIVERSAL-GENÈVE    │    5139.97 │  1200.00 │  1200.00 │
+│        GRAHAM         │    4991.00 │  2599.00 │  2599.00 │
+│         OMEGA         │    4955.03 │    90.00 │    90.00 │
+│      BEDAT-&amp;-CO       │    4780.00 │  3567.00 │  3567.00 │
+│       PERRELET        │    4423.00 │  1800.00 │  1800.00 │
+│       BREITLING       │    4394.35 │   400.00 │   400.00 │
+│    CARL-F-BUCHERER    │    4338.63 │  1200.00 │  1200.00 │
+│          BRM          │    4099.67 │  3200.00 │  3200.00 │
+│         TUDOR         │    3666.51 │   450.00 │   450.00 │
+│        VULCAIN        │    3309.95 │  1290.00 │  1290.00 │
+│      BELL-&amp;-ROSS      │    3276.18 │  1250.00 │  1250.00 │
+│    PORSCHE-DESIGN     │    3125.36 │  1250.00 │  1250.00 │
+│       TAG-HEUER       │    3092.63 │   170.00 │   170.00 │
+│         EBEL          │    2986.40 │   490.00 │   490.00 │
+│     EBERHARD-&amp;-CO     │    2733.11 │  1149.00 │  1149.00 │
+│      JEANRICHARD      │    2666.00 │   900.00 │   900.00 │
+│        HERMÈS         │    2534.53 │   650.00 │   650.00 │
+│      CHRONOSWISS      │    2512.07 │  1100.00 │  1100.00 │
+│        BREMONT        │    2500.00 │  2500.00 │  2500.00 │
+│   CUERVO-Y-SOBRINOS   │    2418.40 │  1300.00 │  1300.00 │
+│        TUTIMA         │    2362.83 │  1499.00 │  1499.00 │
+│         BALL          │    2304.50 │  1201.00 │  1201.00 │
+│  FREDERIQUE-CONSTANT  │    2277.71 │   530.00 │   530.00 │
+│       MONTBLANC       │    2171.86 │   450.00 │   450.00 │
+│        ENICAR         │    2169.78 │   108.00 │   108.00 │
+│    MAURICE-LACROIX    │    2145.88 │   299.00 │   299.00 │
+│        HANHART        │    2061.25 │   990.00 │   990.00 │
+│    UNION-GLASHÜTTE    │    2059.23 │  1200.00 │  1200.00 │
+│        CONCORD        │    1999.00 │  1048.00 │  1048.00 │
+│       LONGINES        │    1983.46 │   200.00 │   200.00 │
+│    BAUME-&amp;-MERCIER    │    1949.63 │   390.00 │   390.00 │
+│         SINN          │    1864.46 │   820.00 │   820.00 │
+│    MÜHLE-GLASHÜTTE    │    1834.67 │   850.00 │   850.00 │
+│         NOMOS         │    1832.80 │   895.00 │   895.00 │
+│        U-BOAT         │    1769.50 │   675.00 │   675.00 │
+│         DOXA          │    1752.06 │   720.00 │   720.00 │
+│     MEISTERSINGER     │    1745.00 │   400.00 │   400.00 │
+│         ORIS          │    1726.74 │   350.00 │   350.00 │
+│        MOVADO         │    1680.00 │   360.00 │   360.00 │
+│      PAUL-PICOT       │    1641.43 │   890.00 │   890.00 │
+│        FORTIS         │    1633.89 │   850.00 │   850.00 │
+│      LOUIS-ERARD      │    1631.75 │   637.00 │   637.00 │
+│         RADO          │    1630.21 │   370.00 │   370.00 │
+│      MARCELLO-C       │    1611.00 │  1611.00 │  1611.00 │
+│        ZODIAC         │    1417.12 │   370.00 │   370.00 │
+│         EPOS          │    1390.00 │  1390.00 │  1390.00 │
+│        ETERNA         │    1322.20 │   175.00 │   175.00 │
+│       JUNGHANS        │    1191.87 │   430.00 │   430.00 │
+│   ZENO-WATCH-BASEL    │    1181.20 │   350.00 │   350.00 │
+│     RAYMOND-WEIL      │    1167.62 │   169.00 │   169.00 │
+│       CHARRIOL        │    1125.00 │  1125.00 │  1125.00 │
+│        ALPINA         │    1029.12 │   220.00 │   220.00 │
+│         MIDO          │     993.91 │   367.00 │   367.00 │
+│        CERTINA        │     918.90 │   150.00 │   150.00 │
+│         CASIO         │     901.78 │    49.00 │    49.00 │
+│       AEROWATCH       │     900.00 │   900.00 │   900.00 │
+│         APPLE         │     897.50 │   290.00 │   290.00 │
+│        LOCMAN         │     895.00 │   790.00 │   790.00 │
+│       HAMILTON        │     855.64 │   270.00 │   270.00 │
+│         EDOX          │     838.14 │   389.00 │   389.00 │
+│    MICHEL-HERBELIN    │     832.41 │   220.00 │   220.00 │
+│  TONINO-LAMBORGHINI   │     823.33 │   690.00 │   690.00 │
+│         SEIKO         │     806.82 │    80.00 │    80.00 │
+│         GUCCI         │     761.00 │   300.00 │   300.00 │
+│ VICTORINOX-SWISS-ARMY │     734.46 │   230.00 │   230.00 │
+│        DAVOSA         │     722.50 │   460.00 │   460.00 │
+│        ANONIMO        │     700.00 │   700.00 │   700.00 │
+│        TISSOT         │     585.40 │    70.00 │    70.00 │
+│        GLYCINE        │     572.12 │   260.00 │   260.00 │
+│      SEVENFRIDAY      │     566.00 │   499.00 │   499.00 │
+│        BULOVA         │     536.00 │   150.00 │   150.00 │
+│          LIP          │     464.80 │   160.00 │   160.00 │
+│        SWATCH         │     453.84 │   209.00 │   209.00 │
+│       STEINHART       │     444.00 │   270.00 │   270.00 │
+│        CITIZEN        │     423.30 │   100.00 │   100.00 │
+│     REVUE-THOMMEN     │     416.67 │   400.00 │   400.00 │
+│       MONDAINE        │     400.00 │   250.00 │   250.00 │
+│         GRUEN         │     399.67 │   299.00 │   299.00 │
+│        ROAMER         │     360.50 │   106.00 │   106.00 │
+│         LACO          │     357.25 │   260.00 │   260.00 │
+│        ORIENT         │     350.17 │    65.00 │    65.00 │
+│        WELDER         │     349.00 │   349.00 │   349.00 │
+│        JUNKERS        │     290.00 │   290.00 │   290.00 │
+│         WYLER         │        nan │      nan │      nan │
+└───────────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-la-matière-du-boitier" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-du-boitier"><span class="header-section-number">7.5</span> Répartition des prix selon la matière du boitier :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Matiere_boitier           
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Matiere_boitier ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│     PLATINE     │   75938.82 │  1516.00 │  1516.00 │
+│     OR_ROSE     │   41777.57 │   290.00 │   290.00 │
+│    OR_BLANC     │   28163.81 │   750.00 │   750.00 │
+│     CARBONE     │   25398.11 │   250.00 │   250.00 │
+│    OR_ROUGE     │   19542.16 │  3799.00 │  3799.00 │
+│    OR_JAUNE     │   15789.21 │   160.00 │   160.00 │
+│     TANTALE     │   14655.00 │  7000.00 │  7000.00 │
+│    PALLADIUM    │   11900.00 │ 11900.00 │ 11900.00 │
+│    OR_ACIER     │    9303.73 │    90.00 │    90.00 │
+│     TITANE      │    9272.68 │   234.00 │   234.00 │
+│      ACIER      │    8316.00 │    65.00 │    65.00 │
+│    CÉRAMIQUE    │    7463.14 │   209.00 │   209.00 │
+│     BRONZE      │    4050.21 │   700.00 │   700.00 │
+│    ALUMINIUM    │    3318.33 │   290.00 │   290.00 │
+│     ARGENT      │    2263.75 │   135.00 │   135.00 │
+│   PLAQUÉE_OR    │    1723.49 │   359.00 │   359.00 │
+│  VERRE_SAPHIR   │    1237.00 │  1237.00 │  1237.00 │
+│    PLASTIQUE    │     807.16 │    80.00 │    80.00 │
+└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-la-matière-du-bracelet" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-du-bracelet"><span class="header-section-number">7.6</span> Répartition des prix selon la matière du bracelet :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Matiere_bracelet           
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│     PLATINE      │   83331.30 │  4080.00 │  4080.00 │
+│     OR_ROSE      │   66541.32 │   630.00 │   630.00 │
+│        OR        │   31789.55 │   790.00 │   790.00 │
+│     OR_BLANC     │   20807.53 │   250.00 │   250.00 │
+│      SATIN       │   20088.26 │   750.00 │   750.00 │
+│    CAOUTCHOUC    │   19179.74 │    80.00 │    80.00 │
+│     OR_JAUNE     │   16053.32 │  1195.00 │  1195.00 │
+│     OR_ACIER     │    9535.66 │   169.00 │   169.00 │
+│      ACIER       │    9431.21 │    65.00 │    65.00 │
+│    CÉRAMIQUE     │    8576.80 │   490.00 │   490.00 │
+│      TITANE      │    7386.65 │   234.00 │   234.00 │
+│     OR_ROUGE     │    6966.00 │  4000.00 │  4000.00 │
+│       CUIR       │    6630.74 │    90.00 │    90.00 │
+│    PLASTIQUE     │    5868.15 │   120.00 │   120.00 │
+│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │   200.00 │
+│      ARGENT      │    5266.61 │   240.00 │   240.00 │
+│    ALUMINIUM     │    4950.00 │  4950.00 │  4950.00 │
+│     TEXTILE      │    4178.00 │   118.00 │   118.00 │
+│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   275.00 │
+│     SILICONE     │    3360.60 │   250.00 │   250.00 │
+│      BRONZE      │    1843.00 │  1300.00 │  1300.00 │
+│      REQUIN      │     395.00 │   395.00 │   395.00 │
+└──────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-15-11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-létat-de-la-montre" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="répartition-des-prix-selon-létat-de-la-montre"><span class="header-section-number">7.7</span> Répartition des prix selon l’état de la montre :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Matiere_bracelet           
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│     PLATINE      │   83331.30 │  4080.00 │  4080.00 │
+│     OR_ROSE      │   66541.32 │   630.00 │   630.00 │
+│        OR        │   31789.55 │   790.00 │   790.00 │
+│     OR_BLANC     │   20807.53 │   250.00 │   250.00 │
+│      SATIN       │   20088.26 │   750.00 │   750.00 │
+│    CAOUTCHOUC    │   19179.74 │    80.00 │    80.00 │
+│     OR_JAUNE     │   16053.32 │  1195.00 │  1195.00 │
+│     OR_ACIER     │    9535.66 │   169.00 │   169.00 │
+│      ACIER       │    9431.21 │    65.00 │    65.00 │
+│    CÉRAMIQUE     │    8576.80 │   490.00 │   490.00 │
+│      TITANE      │    7386.65 │   234.00 │   234.00 │
+│     OR_ROUGE     │    6966.00 │  4000.00 │  4000.00 │
+│       CUIR       │    6630.74 │    90.00 │    90.00 │
+│    PLASTIQUE     │    5868.15 │   120.00 │   120.00 │
+│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │   200.00 │
+│      ARGENT      │    5266.61 │   240.00 │   240.00 │
+│    ALUMINIUM     │    4950.00 │  4950.00 │  4950.00 │
+│     TEXTILE      │    4178.00 │   118.00 │   118.00 │
+│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   275.00 │
+│     SILICONE     │    3360.60 │   250.00 │   250.00 │
+│      BRONZE      │    1843.00 │  1300.00 │  1300.00 │
+│      REQUIN      │     395.00 │   395.00 │   395.00 │
+└──────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-17-13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-la-matière-de-la-lunette" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-de-la-lunette"><span class="header-section-number">7.8</span> Répartition des prix selon la matière de la lunette :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Matiere_lunette           
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Matiere_lunette ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│     CARBONE     │   72411.20 │    90.00 │    90.00 │
+│     OR_ROSE     │   27236.14 │   590.00 │   590.00 │
+│     PLATINE     │   25010.12 │  1300.00 │  1300.00 │
+│       OR        │   16523.01 │   160.00 │   160.00 │
+│    CÉRAMIQUE    │   14323.58 │   209.00 │   209.00 │
+│    OR_BLANC     │   12188.44 │   500.00 │   500.00 │
+│     TITANE      │   10200.50 │   234.00 │   234.00 │
+│      LISSE      │    9034.26 │  5499.00 │  5499.00 │
+│    OR_JAUNE     │    8863.47 │   250.00 │   250.00 │
+│      ACIER      │    8117.39 │    65.00 │    65.00 │
+│    OR_ROUGE     │    6292.94 │  2750.00 │  2750.00 │
+│    ALUMINIUM    │    4280.71 │   270.00 │   270.00 │
+│     ARGENT      │    3408.35 │   290.00 │   290.00 │
+│    OR_ACIER     │    3328.99 │   169.00 │   169.00 │
+│     BRONZE      │    3305.61 │   800.00 │   800.00 │
+│    PLASTIQUE    │    1608.46 │    80.00 │    80.00 │
+│    TUNGSTÈNE    │    1591.50 │   370.00 │   370.00 │
+│    PALLADIUM    │     550.00 │   550.00 │   550.00 │
+└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-19-15.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-la-matière-de-la-boucle" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-de-la-boucle"><span class="header-section-number">7.9</span> Répartition des prix selon la matière de la boucle :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Matiere_boucle           
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Matiere_boucle ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│    CARBONE     │   64556.00 │    90.00 │    90.00 │
+│    PLATINE     │   26700.74 │  1516.00 │  1516.00 │
+│       OR       │   14771.20 │   160.00 │   160.00 │
+│   CÉRAMIQUE    │   14668.30 │   209.00 │   209.00 │
+│     TITANE     │   10275.92 │   234.00 │   234.00 │
+│     ACIER      │    7791.52 │    65.00 │    65.00 │
+│    OR_ACIER    │    6557.89 │    90.00 │    90.00 │
+│   ALUMINIUM    │    4603.69 │   270.00 │   270.00 │
+│     BRONZE     │    3525.84 │  1190.00 │  1190.00 │
+│     ARGENT     │    2349.47 │   106.00 │   106.00 │
+│   PLASTIQUE    │    1599.93 │    80.00 │    80.00 │
+│   TUNGSTÈNE    │    1299.75 │   370.00 │   370.00 │
+│   PALLADIUM    │     550.00 │   550.00 │   550.00 │
+└────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-21-17.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-type-de-boucle" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="répartition-des-prix-selon-le-type-de-boucle"><span class="header-section-number">7.10</span> Répartition des prix selon le type de boucle :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Statistiques par Boucle                
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃     Boucle      ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│   DOUBLE_PLIS   │   14109.77 │    65.00 │    65.00 │
+│      PLIS       │   11871.44 │    80.00 │    80.00 │
+│ BOUCLE_ARDILLON │    7419.38 │    70.00 │    70.00 │
+│ FERMOIR_BIJOUX  │    7332.17 │   240.00 │   240.00 │
+│  PAS_DE_BOUCLE  │    2692.00 │   500.00 │   500.00 │
+│ BOUCLE ARDILLON │    1407.00 │  1407.00 │  1407.00 │
+└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-23-19.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-nombre-de-complications" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="répartition-des-prix-selon-le-nombre-de-complications"><span class="header-section-number">7.11</span> Répartition des prix selon le nombre de complications :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>           Statistiques par Comptage_fonctions           
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Comptage_fonctions ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
+│        6.0         │   20433.62 │   299.00 │   299.00 │
+│        2.0         │   12028.13 │    80.00 │    80.00 │
+│        4.0         │   12026.30 │   140.00 │   140.00 │
+│        1.0         │   11536.47 │    70.00 │    70.00 │
+│        5.0         │   11188.42 │   320.00 │   320.00 │
+│        0.0         │   10190.14 │    49.00 │    49.00 │
+│        3.0         │    9629.03 │    80.00 │    80.00 │
+│        7.0         │    6624.26 │   250.00 │   250.00 │
+│        8.0         │    3979.67 │   120.00 │   120.00 │
+│        12.0        │    1950.00 │  1950.00 │  1950.00 │
+│        9.0         │    1750.00 │  1750.00 │  1750.00 │
+│        19.0        │    1468.00 │  1468.00 │  1468.00 │
+│        10.0        │    1190.00 │  1100.00 │  1100.00 │
+└────────────────────┴────────────┴──────────┴──────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-25-21.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-diamètre-de-la-montre" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="répartition-des-prix-selon-le-diamètre-de-la-montre"><span class="header-section-number">7.12</span> Répartition des prix selon le diamètre de la montre :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-26-23.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="répartition-des-prix-selon-le-niveau-détenchéité" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="répartition-des-prix-selon-le-niveau-détenchéité"><span class="header-section-number">7.13</span> Répartition des prix selon le niveau d’étenchéité :</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-27-25.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Website made with <strong>Quarto</strong> 🛠️</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2024, François BOUSSENGUI
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+      <i class="bi bi-cc-circle" role="img">
+</i> 
+ Licence : CC BY-NC-SA
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

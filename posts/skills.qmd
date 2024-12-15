@@ -87,6 +87,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ::: {.callout-tip icon="false" collapse="true"}
 ## {{< fa file-excel >}} Excel
 
+-   **Traitement de données** 
 -   **Tableaux croisés dynamiques**
 -   **Requêtage** par le biais de `PowerQuery`
 -   **Automatisation de tâches** par le biais de `VBA`
