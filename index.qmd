@@ -1,13 +1,14 @@
 ---
 title: "François BOUSSENGUI"
 subtitle: |
-  Économiste spécialisé en Machine Learning 
-image: moi.jpg
+  **Data scientist** 
+image: moi_2.jpg
 comments: false
 toc: false
 about:
   template: trestles
   image-width: 20em
+  image-shape: round
   links: 
      - icon: github
        href: https://github.com/Francois-b-24
@@ -18,28 +19,33 @@ about:
 ---
 
 ::: {style="text-align:center;"}
-## [👋]{.wave} Bienvenue dans mon Portfolio !
+## [👋]{.wave} Bienvenue sur mon Portfolio !
 
 <iconify-icon icon="flag:ga-4x3"></iconify-icon>
-
 :::
 
-Dans un souci de recensement de mes travaux et de partage de connaissances, j'ai décidé de mettre en place ce Portfolio. Ce lieu sera la vitrine de mes travaux réalisés durant mon cursus universitaire ainsi que de mes projets personnels. Etant diplômé d'un **Master 2 en droit, économie, gestion Mention Economie de l'entreprise et des Marchés**, mes travaux revêtent principalement d'un aspect économique et statistiques. 
+Diplômé d'un Master 2 en économétrie et analyse de données, j'accompagne les entreprises et professionnels dans l'exploitation stratégique de leurs données pour prendre des décisions éclairées et améliorer leur performance.
 
-Ainsi, je résumerai le rôle d'un économiste en 2 points :  
+Grâce à ma formation, mes expériences professionnelles et ma détermination, j'ai acquis des compétences solides dans des domaines clés, notamment :
 
-- **Analyse économique** : Sur la base de données collectées selon diverses sources, les économistes analysent des données économiques afin de comprendre les tendances et les phénomènes économiques. L'utilisation de modèles théoriques et des méthodes statistiques sont indispensables pour interpréter les données.
+\- **Collecte et préparation des données**
 
-- **Prévision économique**: Il est capable de prédire des tendances économiques futures sur la base de données actuelles et de modèles économiques. 
+\- **Nettoyage et structuration des données**
 
-Pour remplir pleinement ce rôle, l'utilisation de logiciels de programmation tels que {{< fa brands python >}} [**Python**], {{< fa brands r-project >}} et *SQL* pour traiter des données en grande quantité est indispensable. 
+\- **Analyse statistique et interprétation**
 
-Sur ces quelques notes introductives, je vous laisse vous-même découvir ce Portfolio. 
+\- **Visualisation et représentation graphique**
+
+\- **Conception et mise en œuvre de modèles prédictifs avancés**
+
+Ma curiosité et ma passion pour l'intelligence artificielle me poussent à constamment élargir mes compétences et relever de nouveaux défis.
+
+Ce portfolio est donc une vitrine de mes savoir-faire et de mes réalisations. Parcourez-le pour découvrir mes projets, et n'hésitez pas à me contacter si vous souhaitez collaborer ou en savoir plus !
 
 ::: {style="text-align:center;"}
 **Excellente navigation !**
 :::
 
 ::: {style="text-align:center;"}
-[Télécharger mon CV {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Envie de découvrir mes expériences professionnelles ? {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::
