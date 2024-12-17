@@ -7,7 +7,7 @@ lang: fr
 number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François`"
-description: "*Qu'est-ce qui détermine le prix d'une montre ?*"
+description: "*Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.*"
 image: "CUBITUS.jpg"
 categories: [Data science]
 format:
@@ -32,17 +32,17 @@ use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
 
 # **Contexte général de l’analyse du marché de l’horlogerie**
 
-L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les comportements les variations de prix, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées à partir de Chrono24, l’une des principales plateformes de vente de montres de luxe en ligne.
+L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les variations de prix sur le marché de la seconde main, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées sur le site **Chrono24**, l’une des principales plateformes de vente de montres de luxe en ligne.
 
 # **Objectif de l’analyse**
 
 L’objectif principal de cette analyse est de fournir des insights pertinents sur les tendances actuelles du marché des montres en se basant sur des données provenant de Chrono24. À travers le *scraping* de données en ligne, nous avons extrait des informations détaillées sur un large éventail de montres proposées à la vente, notamment :
 
-- **Prix des montres** : Données sur les prix demandés pour différentes marques, modèles, et états des montres.
+- **Prix des montres** : Données sur les prix pour les différentes marques, modèles, et états des montres.
 
 -	**Caractéristiques des montres** : Informations sur les spécifications telles que les matériaux utilisés (acier, or, etc.), le type de mouvement, la taille, et les autres caractéristiques techniques.
 
-- **Marques populaires** : Identification des marques les plus recherchées et les plus proposées sur le marché.
+- **Marques populaires** : Identification des marques les plus recherchées et les plus proposées sur le marché secondaire.
 
 - **Évolution des prix** : Analyse des variations de prix des montres selon des critères comme la marque, la matière du boîtier, ou la rareté.
 
@@ -54,7 +54,7 @@ L’analyse s’est articulée autour de plusieurs axes :
 
 - **Analyse descriptive** : Statistiques de base (moyenne, médiane, écart-type) sur les prix des montres et leurs caractéristiques.
 
-- **Visualisation des données** : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des matériaux, et d’autres caractéristiques pertinentes.
+- **Visualisation des données** : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des prix selon les matériaux, et d’autres caractéristiques pertinentes.
 
 - **Modélisation prédictive** : Développement de modèles permettant de prédire les variations de prix en fonction de certains facteurs comme la marque, le type de mouvement, et l’état de la montre.
 
@@ -79,6 +79,8 @@ L’analyse s’est articulée autour de plusieurs axes :
 | `matiere de la boucle`  | Matière de la boucle de la montre             |
 | `Pays`                  | Pays de provenance de la montre |
 
+:::
+
 # **Résultats attendus**
 
 À travers cette analyse, nous cherchons à obtenir une vue d’ensemble des tendances actuelles du marché des montres de luxe. Cela permettra de répondre à plusieurs questions clés :
@@ -89,11 +91,11 @@ L’analyse s’est articulée autour de plusieurs axes :
 	
 - Existe-t-il des tendances saisonnières ou géographiques influençant les prix ?
 	
-- Quels sont les segments du marché (par exemple, les montres vintage, les éditions limitées) les plus attractifs pour les acheteurs ?
 
 # **Applications de l’analyse**
 
 Les résultats de cette analyse peuvent être utilisés pour :
+
 - Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.
 	
 - Les acheteurs : Obtenir une vue d’ensemble des prix moyens et des bonnes affaires dans le marché de l’horlogerie.
@@ -102,11 +104,11 @@ Les résultats de cette analyse peuvent être utilisés pour :
 
 En résumé, cette analyse vise à fournir une compréhension approfondie des dynamiques du marché de l’horlogerie via les données issues de Chrono24, ce qui pourra servir à la fois pour des études de marché, des prévisions de prix, et la définition de stratégies commerciales adaptées.
              
-:::
 
-# Outil technique
 
--   Le projet a entièrement été developpé en Python {{< fa brands python >}}
+# **Outil technique**
+
+-   Le projet a entièrement été developpé en *Python*.
 
 ::: {style="text-align:center;"}
 [*Cliquer ici pour voir le code source.*](https://github.com/Francois-b-24/Clock_industry-second_hand/tree/main)
@@ -114,7 +116,7 @@ En résumé, cette analyse vise à fournir une compréhension approfondie des dy
 
 
 
-# Résultats
+# **Analyse descriptive** 
 
 ```{python, echo=FALSE, warning = FALSE}
 
@@ -199,7 +201,7 @@ df['prix_log'] = np.log(df['prix_sc'])
 
 ## Répartition des prix par provenances : 
 
-```{python, echo=FALSE, warning = FALSE, warning = FALSE}
+```{python, echo=FALSE, warning = FALSE, warning = FALSE, width = 3, height =2}
 effectif = rep.effectif_pays()
 rep.tab_pays(effectif)
 ```
@@ -209,17 +211,18 @@ statistic_sorted = rep.stat_pays(effectif)
 rep.tab_pays_2(statistic_sorted)
 ```
 
+
 ## Répartition des prix selon le type de mouvement :
 
 ```{python, echo=FALSE, warning = FALSE}
 rep.tableau('mouvement')
 ```
 
-```{python, echo=FALSE, warning = FALSE}
+```{python, echo=FALSE, warning = FALSE,  width = 3, height =2}
 rep.boxplot('mouvement')
 ```
 
-```{python, echo=FALSE, warning = FALSE}
+```{python, echo=FALSE, warning = FALSE,  width = 3, height =2}
 rep.barres('mouvement')
 ```
 
@@ -327,3 +330,4 @@ sns.scatterplot(x=df.diametre, y=df.prix)
 sns.scatterplot(x=df.etencheite, y=df.prix)
 ```
 
+# **Analyse prédictive**

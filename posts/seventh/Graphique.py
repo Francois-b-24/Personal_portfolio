@@ -94,7 +94,7 @@ class graphique:
         stat.columns = [colonne, 'prix_moyen', 'prix_min', 'prix_max']
         stat['prix_moyen'] = stat['prix_moyen'].round(2)
         stat['prix_min'] = stat['prix_min'].round(2)
-        stat['prix_max'] = stat['prix_min'].round(2)
+        stat['prix_max'] = stat['prix_max'].round(2)
         stat = stat.sort_values(by="prix_moyen", ascending=False).reset_index(drop=True)
 
         # Créer une console pour afficher le tableau

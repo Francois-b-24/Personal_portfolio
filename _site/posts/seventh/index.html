@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
-<meta name="description" content="Qu’est-ce qui détermine le prix d’une montre ?">
+<meta name="description" content="Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.">
 
 <title>François BOUSSENGUI | Analyse du marché horloger de luxe</title>
 <style>
@@ -41,8 +41,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Analyse du marché horloger de luxe</h1>
                   <div>
         <div class="description">
-          <em>Qu’est-ce qui détermine le prix d’une montre ?</em>
+          <em>Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.</em>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -152,8 +150,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie" id="toc-contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="nav-link active" data-scroll-target="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></a></li>
   <li><a href="#objectif-de-lanalyse" id="toc-objectif-de-lanalyse" class="nav-link" data-scroll-target="#objectif-de-lanalyse"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> <strong>Méthodologie</strong></a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">6</span> Outil technique</a></li>
-  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats"><span class="header-section-number">7</span> Résultats</a>
+  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></a></li>
+  <li><a href="#applications-de-lanalyse" id="toc-applications-de-lanalyse" class="nav-link" data-scroll-target="#applications-de-lanalyse"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">6</span> <strong>Outil technique</strong></a></li>
+  <li><a href="#analyse-descriptive" id="toc-analyse-descriptive" class="nav-link" data-scroll-target="#analyse-descriptive"><span class="header-section-number">7</span> <strong>Analyse descriptive</strong></a>
   <ul class="collapse">
   <li><a href="#répartition-des-prix-par-provenances" id="toc-répartition-des-prix-par-provenances" class="nav-link" data-scroll-target="#répartition-des-prix-par-provenances"><span class="header-section-number">7.1</span> Répartition des prix par provenances :</a></li>
   <li><a href="#répartition-des-prix-selon-le-type-de-mouvement" id="toc-répartition-des-prix-selon-le-type-de-mouvement" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-type-de-mouvement"><span class="header-section-number">7.2</span> Répartition des prix selon le type de mouvement :</a></li>
@@ -169,6 +169,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#répartition-des-prix-selon-le-diamètre-de-la-montre" id="toc-répartition-des-prix-selon-le-diamètre-de-la-montre" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-diamètre-de-la-montre"><span class="header-section-number">7.12</span> Répartition des prix selon le diamètre de la montre :</a></li>
   <li><a href="#répartition-des-prix-selon-le-niveau-détenchéité" id="toc-répartition-des-prix-selon-le-niveau-détenchéité" class="nav-link" data-scroll-target="#répartition-des-prix-selon-le-niveau-détenchéité"><span class="header-section-number">7.13</span> Répartition des prix selon le niveau d’étenchéité :</a></li>
   </ul></li>
+  <li><a href="#analyse-prédictive" id="toc-analyse-prédictive" class="nav-link" data-scroll-target="#analyse-prédictive"><span class="header-section-number">8</span> <strong>Analyse prédictive</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -181,15 +182,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></h1>
-<p>L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les comportements les variations de prix, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées à partir de Chrono24, l’une des principales plateformes de vente de montres de luxe en ligne.</p>
+<p>L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les variations de prix sur le marché de la seconde main, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées sur le site <strong>Chrono24</strong>, l’une des principales plateformes de vente de montres de luxe en ligne.</p>
 </section>
 <section id="objectif-de-lanalyse" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></h1>
 <p>L’objectif principal de cette analyse est de fournir des insights pertinents sur les tendances actuelles du marché des montres en se basant sur des données provenant de Chrono24. À travers le <em>scraping</em> de données en ligne, nous avons extrait des informations détaillées sur un large éventail de montres proposées à la vente, notamment :</p>
 <ul>
-<li><p><strong>Prix des montres</strong> : Données sur les prix demandés pour différentes marques, modèles, et états des montres.</p></li>
+<li><p><strong>Prix des montres</strong> : Données sur les prix pour les différentes marques, modèles, et états des montres.</p></li>
 <li><p><strong>Caractéristiques des montres</strong> : Informations sur les spécifications telles que les matériaux utilisés (acier, or, etc.), le type de mouvement, la taille, et les autres caractéristiques techniques.</p></li>
-<li><p><strong>Marques populaires</strong> : Identification des marques les plus recherchées et les plus proposées sur le marché.</p></li>
+<li><p><strong>Marques populaires</strong> : Identification des marques les plus recherchées et les plus proposées sur le marché secondaire.</p></li>
 <li><p><strong>Évolution des prix</strong> : Analyse des variations de prix des montres selon des critères comme la marque, la matière du boîtier, ou la rareté.</p></li>
 </ul>
 </section>
@@ -199,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 <p>L’analyse s’est articulée autour de plusieurs axes :</p>
 <ul>
 <li><p><strong>Analyse descriptive</strong> : Statistiques de base (moyenne, médiane, écart-type) sur les prix des montres et leurs caractéristiques.</p></li>
-<li><p><strong>Visualisation des données</strong> : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des matériaux, et d’autres caractéristiques pertinentes.</p></li>
+<li><p><strong>Visualisation des données</strong> : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des prix selon les matériaux, et d’autres caractéristiques pertinentes.</p></li>
 <li><p><strong>Modélisation prédictive</strong> : Développement de modèles permettant de prédire les variations de prix en fonction de certains facteurs comme la marque, le type de mouvement, et l’état de la montre.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -288,6 +289,10 @@ Présentation des variables de la base données
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</section>
 <section id="résultats-attendus" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></h1>
 <p>À travers cette analyse, nous cherchons à obtenir une vue d’ensemble des tendances actuelles du marché des montres de luxe. Cela permettra de répondre à plusieurs questions clés :</p>
@@ -295,36 +300,32 @@ Présentation des variables de la base données
 <li><p>Quelles sont les marques les plus recherchées et les plus coûteuses ?</p></li>
 <li><p>Comment les caractéristiques (matériaux, type de mouvement, etc.) influent-elles sur le prix des montres ?</p></li>
 <li><p>Existe-t-il des tendances saisonnières ou géographiques influençant les prix ?</p></li>
-<li><p>Quels sont les segments du marché (par exemple, les montres vintage, les éditions limitées) les plus attractifs pour les acheteurs ?</p></li>
 </ul>
 </section>
 <section id="applications-de-lanalyse" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></h1>
-<p>Les résultats de cette analyse peuvent être utilisés pour : - Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.</p>
+<p>Les résultats de cette analyse peuvent être utilisés pour :</p>
 <ul>
+<li><p>Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.</p></li>
 <li><p>Les acheteurs : Obtenir une vue d’ensemble des prix moyens et des bonnes affaires dans le marché de l’horlogerie.</p></li>
 <li><p>Les marques et fabricants : Comprendre les attentes des consommateurs et les tendances de demande en matière de modèles spécifiques ou de caractéristiques.</p></li>
 </ul>
 <p>En résumé, cette analyse vise à fournir une compréhension approfondie des dynamiques du marché de l’horlogerie via les données issues de Chrono24, ce qui pourra servir à la fois pour des études de marché, des prévisions de prix, et la définition de stratégies commerciales adaptées.</p>
 </section>
-</div>
-</div>
-</div>
-</section>
 <section id="outil-technique" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Outil technique</h1>
+<h1 data-number="6"><span class="header-section-number">6</span> <strong>Outil technique</strong></h1>
 <ul>
-<li>Le projet a entièrement été developpé en Python <i class="fa-brands fa-python" aria-label="python"></i></li>
+<li>Le projet a entièrement été developpé en <em>Python</em>.</li>
 </ul>
 <div style="text-align:center;">
 <p><a href="https://github.com/Francois-b-24/Clock_industry-second_hand/tree/main"><em>Cliquer ici pour voir le code source.</em></a></p>
 </div>
 </section>
-<section id="résultats" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Résultats</h1>
+<section id="analyse-descriptive" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <strong>Analyse descriptive</strong></h1>
 <section id="répartition-des-prix-par-provenances" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="répartition-des-prix-par-provenances"><span class="header-section-number">7.1</span> Répartition des prix par provenances :</h2>
-<div class="cell" data-layout-align="center">
+<div class="cell" data-layout-align="center" width="3" height="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>               Provenance des montres               
 ┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
@@ -523,19 +524,19 @@ Présentation des variables de la base données
 <h2 data-number="7.2" class="anchored" data-anchor-id="répartition-des-prix-selon-le-type-de-mouvement"><span class="header-section-number">7.2</span> Répartition des prix selon le type de mouvement :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>            Statistiques par Mouvement            
-┏━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃  Mouvement  ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│ AUTOMATIQUE │   11538.25 │    59.00 │    59.00 │
-│   MANUEL    │    7313.69 │    90.00 │    90.00 │
-│   QUARTZ    │    2945.07 │    49.00 │    49.00 │
-│  BATTERIE   │    2630.00 │  1000.00 │  1000.00 │
-│   SOLAIRE   │    1171.75 │   700.00 │   700.00 │
-└─────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>            Statistiques par Mouvement             
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃  Mouvement  ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│ AUTOMATIQUE │   11538.25 │    59.00 │ 779500.00 │
+│   MANUEL    │    7313.69 │    90.00 │ 326800.00 │
+│   QUARTZ    │    2945.07 │    49.00 │  28000.00 │
+│  BATTERIE   │    2630.00 │  1000.00 │   4260.00 │
+│   SOLAIRE   │    1171.75 │   700.00 │   2300.00 │
+└─────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell" data-layout-align="center" width="3" height="2">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -544,7 +545,7 @@ Présentation des variables de la base données
 </div>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell" data-layout-align="center" width="3" height="2">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -558,13 +559,13 @@ Présentation des variables de la base données
 <h2 data-number="7.3" class="anchored" data-anchor-id="répartition-des-prix-selon-le-sexe"><span class="header-section-number">7.3</span> Répartition des prix selon le sexe :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Sexe            
-┏━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Sexe  ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│ HOMME │   11909.98 │    49.00 │    49.00 │
-│ FEMME │   10018.34 │    90.00 │    90.00 │
-└───────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>            Statistiques par Sexe            
+┏━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Sexe  ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│ HOMME │   11909.98 │    49.00 │ 690000.00 │
+│ FEMME │   10018.34 │    90.00 │ 779500.00 │
+└───────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -590,140 +591,140 @@ Présentation des variables de la base données
 <h2 data-number="7.4" class="anchored" data-anchor-id="répartition-des-prix-selon-la-marque"><span class="header-section-number">7.4</span> Répartition des prix selon la marque :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>                  Statistiques par Marque                   
-┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃        Marque         ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│     RICHARD-MILLE     │  235473.26 │ 99900.00 │ 99900.00 │
-│       FPJOURNE        │  109509.29 │ 51029.00 │ 51029.00 │
-│      DE-BETHUNE       │   69900.00 │ 69900.00 │ 69900.00 │
-│    PATEK-PHILIPPE     │   54576.68 │  2999.00 │  2999.00 │
-│        URWERK         │   46072.00 │ 46072.00 │ 46072.00 │
-│    AUDEMARS-PIGUET    │   45427.53 │  2000.00 │  2000.00 │
-│    A-LANGE-&amp;-SÖHNE    │   40202.17 │ 13300.00 │ 13300.00 │
-│     HARRY-WINSTON     │   39272.50 │ 16946.00 │ 16946.00 │
-│  VAN-CLEEF-&amp;-ARPELS   │   29800.00 │  7500.00 │  7500.00 │
-│   MORITZ-GROSSMANN    │   29701.00 │ 29701.00 │ 29701.00 │
-│         BOVET         │   26825.00 │ 25400.00 │ 25400.00 │
-│  VACHERON-CONSTANTIN  │   23177.34 │  2900.00 │  2900.00 │
-│        BREGUET        │   22043.16 │  4250.00 │  4250.00 │
-│     HMOSER-&amp;-CIE      │   20142.55 │ 11489.00 │ 11489.00 │
-│     ULYSSE-NARDIN     │   18180.34 │  3331.00 │  3331.00 │
-│  PARMIGIANI-FLEURIER  │   17942.04 │  5696.00 │  5696.00 │
-│     ROGER-DUBUIS      │   17034.73 │  5918.00 │  5918.00 │
-│      JAQUET-DROZ      │   14496.92 │  4145.00 │  4145.00 │
-│         ROLEX         │   12966.58 │   250.00 │   250.00 │
-│        HUBLOT         │   12719.31 │  1400.00 │  1400.00 │
-│        PIAGET         │   12358.62 │  1500.00 │  1500.00 │
-│     FRANCK-MULLER     │   11683.68 │  1527.00 │  1527.00 │
-│       BLANCPAIN       │   11144.49 │  1450.00 │  1450.00 │
-│   GIRARD-PERREGAUX    │   11111.31 │  1100.00 │  1100.00 │
-│        CHOPARD        │   11096.54 │   349.00 │   349.00 │
-│     DE-GRISOGONO      │   10199.17 │  6500.00 │  6500.00 │
-│         CORUM         │   10132.53 │  1370.00 │  1370.00 │
-│     LOUIS-MOINET      │   10000.00 │ 10000.00 │ 10000.00 │
-│         DIOR          │    8400.33 │  1200.00 │  1200.00 │
-│      JACOB-&amp;-CO       │    8155.60 │  3990.00 │  3990.00 │
-│        BULGARI        │    8011.38 │   809.00 │   809.00 │
-│   JAEGER-LECOULTRE    │    7774.12 │   550.00 │   550.00 │
-│  GLASHÜTTE-ORIGINAL   │    7693.98 │  2600.00 │  2600.00 │
-│        CARTIER        │    7454.14 │   495.00 │   495.00 │
-│     GÉRALD-GENTA      │    7220.00 │  6900.00 │  6900.00 │
-│          IWC          │    6733.35 │   700.00 │   700.00 │
-│        PANERAI        │    6525.73 │  3446.00 │  3446.00 │
-│        CHANEL         │    6432.64 │  1907.00 │  1907.00 │
-│       PEQUIGNET       │    6415.83 │   700.00 │   700.00 │
-│      GRAND-SEIKO      │    6320.40 │  1308.00 │  1308.00 │
-│       BOUCHERON       │    6190.00 │  1990.00 │  1990.00 │
-│        ZENITH         │    5578.32 │    90.00 │    90.00 │
-│        TIFFANY        │    5448.00 │  5448.00 │  5448.00 │
-│      JORG-HYSEK       │    5296.86 │  2098.00 │  2098.00 │
-│        CHAUMET        │    5203.89 │   895.00 │   895.00 │
-│   UNIVERSAL-GENÈVE    │    5139.97 │  1200.00 │  1200.00 │
-│        GRAHAM         │    4991.00 │  2599.00 │  2599.00 │
-│         OMEGA         │    4955.03 │    90.00 │    90.00 │
-│      BEDAT-&amp;-CO       │    4780.00 │  3567.00 │  3567.00 │
-│       PERRELET        │    4423.00 │  1800.00 │  1800.00 │
-│       BREITLING       │    4394.35 │   400.00 │   400.00 │
-│    CARL-F-BUCHERER    │    4338.63 │  1200.00 │  1200.00 │
-│          BRM          │    4099.67 │  3200.00 │  3200.00 │
-│         TUDOR         │    3666.51 │   450.00 │   450.00 │
-│        VULCAIN        │    3309.95 │  1290.00 │  1290.00 │
-│      BELL-&amp;-ROSS      │    3276.18 │  1250.00 │  1250.00 │
-│    PORSCHE-DESIGN     │    3125.36 │  1250.00 │  1250.00 │
-│       TAG-HEUER       │    3092.63 │   170.00 │   170.00 │
-│         EBEL          │    2986.40 │   490.00 │   490.00 │
-│     EBERHARD-&amp;-CO     │    2733.11 │  1149.00 │  1149.00 │
-│      JEANRICHARD      │    2666.00 │   900.00 │   900.00 │
-│        HERMÈS         │    2534.53 │   650.00 │   650.00 │
-│      CHRONOSWISS      │    2512.07 │  1100.00 │  1100.00 │
-│        BREMONT        │    2500.00 │  2500.00 │  2500.00 │
-│   CUERVO-Y-SOBRINOS   │    2418.40 │  1300.00 │  1300.00 │
-│        TUTIMA         │    2362.83 │  1499.00 │  1499.00 │
-│         BALL          │    2304.50 │  1201.00 │  1201.00 │
-│  FREDERIQUE-CONSTANT  │    2277.71 │   530.00 │   530.00 │
-│       MONTBLANC       │    2171.86 │   450.00 │   450.00 │
-│        ENICAR         │    2169.78 │   108.00 │   108.00 │
-│    MAURICE-LACROIX    │    2145.88 │   299.00 │   299.00 │
-│        HANHART        │    2061.25 │   990.00 │   990.00 │
-│    UNION-GLASHÜTTE    │    2059.23 │  1200.00 │  1200.00 │
-│        CONCORD        │    1999.00 │  1048.00 │  1048.00 │
-│       LONGINES        │    1983.46 │   200.00 │   200.00 │
-│    BAUME-&amp;-MERCIER    │    1949.63 │   390.00 │   390.00 │
-│         SINN          │    1864.46 │   820.00 │   820.00 │
-│    MÜHLE-GLASHÜTTE    │    1834.67 │   850.00 │   850.00 │
-│         NOMOS         │    1832.80 │   895.00 │   895.00 │
-│        U-BOAT         │    1769.50 │   675.00 │   675.00 │
-│         DOXA          │    1752.06 │   720.00 │   720.00 │
-│     MEISTERSINGER     │    1745.00 │   400.00 │   400.00 │
-│         ORIS          │    1726.74 │   350.00 │   350.00 │
-│        MOVADO         │    1680.00 │   360.00 │   360.00 │
-│      PAUL-PICOT       │    1641.43 │   890.00 │   890.00 │
-│        FORTIS         │    1633.89 │   850.00 │   850.00 │
-│      LOUIS-ERARD      │    1631.75 │   637.00 │   637.00 │
-│         RADO          │    1630.21 │   370.00 │   370.00 │
-│      MARCELLO-C       │    1611.00 │  1611.00 │  1611.00 │
-│        ZODIAC         │    1417.12 │   370.00 │   370.00 │
-│         EPOS          │    1390.00 │  1390.00 │  1390.00 │
-│        ETERNA         │    1322.20 │   175.00 │   175.00 │
-│       JUNGHANS        │    1191.87 │   430.00 │   430.00 │
-│   ZENO-WATCH-BASEL    │    1181.20 │   350.00 │   350.00 │
-│     RAYMOND-WEIL      │    1167.62 │   169.00 │   169.00 │
-│       CHARRIOL        │    1125.00 │  1125.00 │  1125.00 │
-│        ALPINA         │    1029.12 │   220.00 │   220.00 │
-│         MIDO          │     993.91 │   367.00 │   367.00 │
-│        CERTINA        │     918.90 │   150.00 │   150.00 │
-│         CASIO         │     901.78 │    49.00 │    49.00 │
-│       AEROWATCH       │     900.00 │   900.00 │   900.00 │
-│         APPLE         │     897.50 │   290.00 │   290.00 │
-│        LOCMAN         │     895.00 │   790.00 │   790.00 │
-│       HAMILTON        │     855.64 │   270.00 │   270.00 │
-│         EDOX          │     838.14 │   389.00 │   389.00 │
-│    MICHEL-HERBELIN    │     832.41 │   220.00 │   220.00 │
-│  TONINO-LAMBORGHINI   │     823.33 │   690.00 │   690.00 │
-│         SEIKO         │     806.82 │    80.00 │    80.00 │
-│         GUCCI         │     761.00 │   300.00 │   300.00 │
-│ VICTORINOX-SWISS-ARMY │     734.46 │   230.00 │   230.00 │
-│        DAVOSA         │     722.50 │   460.00 │   460.00 │
-│        ANONIMO        │     700.00 │   700.00 │   700.00 │
-│        TISSOT         │     585.40 │    70.00 │    70.00 │
-│        GLYCINE        │     572.12 │   260.00 │   260.00 │
-│      SEVENFRIDAY      │     566.00 │   499.00 │   499.00 │
-│        BULOVA         │     536.00 │   150.00 │   150.00 │
-│          LIP          │     464.80 │   160.00 │   160.00 │
-│        SWATCH         │     453.84 │   209.00 │   209.00 │
-│       STEINHART       │     444.00 │   270.00 │   270.00 │
-│        CITIZEN        │     423.30 │   100.00 │   100.00 │
-│     REVUE-THOMMEN     │     416.67 │   400.00 │   400.00 │
-│       MONDAINE        │     400.00 │   250.00 │   250.00 │
-│         GRUEN         │     399.67 │   299.00 │   299.00 │
-│        ROAMER         │     360.50 │   106.00 │   106.00 │
-│         LACO          │     357.25 │   260.00 │   260.00 │
-│        ORIENT         │     350.17 │    65.00 │    65.00 │
-│        WELDER         │     349.00 │   349.00 │   349.00 │
-│        JUNKERS        │     290.00 │   290.00 │   290.00 │
-│         WYLER         │        nan │      nan │      nan │
-└───────────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>                   Statistiques par Marque                   
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃        Marque         ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│     RICHARD-MILLE     │  235473.26 │ 99900.00 │ 689000.00 │
+│       FPJOURNE        │  109509.29 │ 51029.00 │ 299900.00 │
+│      DE-BETHUNE       │   69900.00 │ 69900.00 │  69900.00 │
+│    PATEK-PHILIPPE     │   54576.68 │  2999.00 │ 779500.00 │
+│        URWERK         │   46072.00 │ 46072.00 │  46072.00 │
+│    AUDEMARS-PIGUET    │   45427.53 │  2000.00 │ 521782.00 │
+│    A-LANGE-&amp;-SÖHNE    │   40202.17 │ 13300.00 │ 159000.00 │
+│     HARRY-WINSTON     │   39272.50 │ 16946.00 │  61599.00 │
+│  VAN-CLEEF-&amp;-ARPELS   │   29800.00 │  7500.00 │  59900.00 │
+│   MORITZ-GROSSMANN    │   29701.00 │ 29701.00 │  29701.00 │
+│         BOVET         │   26825.00 │ 25400.00 │  28250.00 │
+│  VACHERON-CONSTANTIN  │   23177.34 │  2900.00 │ 107275.00 │
+│        BREGUET        │   22043.16 │  4250.00 │  63990.00 │
+│     HMOSER-&amp;-CIE      │   20142.55 │ 11489.00 │  26500.00 │
+│     ULYSSE-NARDIN     │   18180.34 │  3331.00 │ 631397.00 │
+│  PARMIGIANI-FLEURIER  │   17942.04 │  5696.00 │  69000.00 │
+│     ROGER-DUBUIS      │   17034.73 │  5918.00 │  38500.00 │
+│      JAQUET-DROZ      │   14496.92 │  4145.00 │  34911.00 │
+│         ROLEX         │   12966.58 │   250.00 │ 549000.00 │
+│        HUBLOT         │   12719.31 │  1400.00 │  45500.00 │
+│        PIAGET         │   12358.62 │  1500.00 │  64220.00 │
+│     FRANCK-MULLER     │   11683.68 │  1527.00 │  59500.00 │
+│       BLANCPAIN       │   11144.49 │  1450.00 │  47950.00 │
+│   GIRARD-PERREGAUX    │   11111.31 │  1100.00 │ 111900.00 │
+│        CHOPARD        │   11096.54 │   349.00 │  73900.00 │
+│     DE-GRISOGONO      │   10199.17 │  6500.00 │  19500.00 │
+│         CORUM         │   10132.53 │  1370.00 │  41950.00 │
+│     LOUIS-MOINET      │   10000.00 │ 10000.00 │  10000.00 │
+│         DIOR          │    8400.33 │  1200.00 │  45810.00 │
+│      JACOB-&amp;-CO       │    8155.60 │  3990.00 │  13500.00 │
+│        BULGARI        │    8011.38 │   809.00 │  33900.00 │
+│   JAEGER-LECOULTRE    │    7774.12 │   550.00 │  55450.00 │
+│  GLASHÜTTE-ORIGINAL   │    7693.98 │  2600.00 │  19500.00 │
+│        CARTIER        │    7454.14 │   495.00 │ 375618.00 │
+│     GÉRALD-GENTA      │    7220.00 │  6900.00 │   7900.00 │
+│          IWC          │    6733.35 │   700.00 │  38200.00 │
+│        PANERAI        │    6525.73 │  3446.00 │  21500.00 │
+│        CHANEL         │    6432.64 │  1907.00 │  14625.00 │
+│       PEQUIGNET       │    6415.83 │   700.00 │  10800.00 │
+│      GRAND-SEIKO      │    6320.40 │  1308.00 │  29990.00 │
+│       BOUCHERON       │    6190.00 │  1990.00 │  22000.00 │
+│        ZENITH         │    5578.32 │    90.00 │  23800.00 │
+│        TIFFANY        │    5448.00 │  5448.00 │   5448.00 │
+│      JORG-HYSEK       │    5296.86 │  2098.00 │   6500.00 │
+│        CHAUMET        │    5203.89 │   895.00 │  17080.00 │
+│   UNIVERSAL-GENÈVE    │    5139.97 │  1200.00 │  18500.00 │
+│        GRAHAM         │    4991.00 │  2599.00 │  10000.00 │
+│         OMEGA         │    4955.03 │    90.00 │  99999.00 │
+│      BEDAT-&amp;-CO       │    4780.00 │  3567.00 │   5993.00 │
+│       PERRELET        │    4423.00 │  1800.00 │  14223.00 │
+│       BREITLING       │    4394.35 │   400.00 │  41069.00 │
+│    CARL-F-BUCHERER    │    4338.63 │  1200.00 │   9500.00 │
+│          BRM          │    4099.67 │  3200.00 │   4600.00 │
+│         TUDOR         │    3666.51 │   450.00 │  35000.00 │
+│        VULCAIN        │    3309.95 │  1290.00 │   8500.00 │
+│      BELL-&amp;-ROSS      │    3276.18 │  1250.00 │   8990.00 │
+│    PORSCHE-DESIGN     │    3125.36 │  1250.00 │   4950.00 │
+│       TAG-HEUER       │    3092.63 │   170.00 │  25500.00 │
+│         EBEL          │    2986.40 │   490.00 │   8500.00 │
+│     EBERHARD-&amp;-CO     │    2733.11 │  1149.00 │   3900.00 │
+│      JEANRICHARD      │    2666.00 │   900.00 │   4432.00 │
+│        HERMÈS         │    2534.53 │   650.00 │  11900.00 │
+│      CHRONOSWISS      │    2512.07 │  1100.00 │   5479.00 │
+│        BREMONT        │    2500.00 │  2500.00 │   2500.00 │
+│   CUERVO-Y-SOBRINOS   │    2418.40 │  1300.00 │   4000.00 │
+│        TUTIMA         │    2362.83 │  1499.00 │   4150.00 │
+│         BALL          │    2304.50 │  1201.00 │   4095.00 │
+│  FREDERIQUE-CONSTANT  │    2277.71 │   530.00 │  19800.00 │
+│       MONTBLANC       │    2171.86 │   450.00 │  10430.00 │
+│        ENICAR         │    2169.78 │   108.00 │  11900.00 │
+│    MAURICE-LACROIX    │    2145.88 │   299.00 │  11490.00 │
+│        HANHART        │    2061.25 │   990.00 │   2940.00 │
+│    UNION-GLASHÜTTE    │    2059.23 │  1200.00 │   2995.00 │
+│        CONCORD        │    1999.00 │  1048.00 │   2950.00 │
+│       LONGINES        │    1983.46 │   200.00 │  10950.00 │
+│    BAUME-&amp;-MERCIER    │    1949.63 │   390.00 │  10000.00 │
+│         SINN          │    1864.46 │   820.00 │   3636.00 │
+│    MÜHLE-GLASHÜTTE    │    1834.67 │   850.00 │   4083.00 │
+│         NOMOS         │    1832.80 │   895.00 │   8000.00 │
+│        U-BOAT         │    1769.50 │   675.00 │   2281.00 │
+│         DOXA          │    1752.06 │   720.00 │   5090.00 │
+│     MEISTERSINGER     │    1745.00 │   400.00 │   2990.00 │
+│         ORIS          │    1726.74 │   350.00 │   5096.00 │
+│        MOVADO         │    1680.00 │   360.00 │   3000.00 │
+│      PAUL-PICOT       │    1641.43 │   890.00 │   3000.00 │
+│        FORTIS         │    1633.89 │   850.00 │   4900.00 │
+│      LOUIS-ERARD      │    1631.75 │   637.00 │   4800.00 │
+│         RADO          │    1630.21 │   370.00 │   5575.00 │
+│      MARCELLO-C       │    1611.00 │  1611.00 │   1611.00 │
+│        ZODIAC         │    1417.12 │   370.00 │   2200.00 │
+│         EPOS          │    1390.00 │  1390.00 │   1390.00 │
+│        ETERNA         │    1322.20 │   175.00 │   4800.00 │
+│       JUNGHANS        │    1191.87 │   430.00 │   1890.00 │
+│   ZENO-WATCH-BASEL    │    1181.20 │   350.00 │   3207.00 │
+│     RAYMOND-WEIL      │    1167.62 │   169.00 │   3100.00 │
+│       CHARRIOL        │    1125.00 │  1125.00 │   1125.00 │
+│        ALPINA         │    1029.12 │   220.00 │   2790.00 │
+│         MIDO          │     993.91 │   367.00 │   7900.00 │
+│        CERTINA        │     918.90 │   150.00 │   3200.00 │
+│         CASIO         │     901.78 │    49.00 │  17317.00 │
+│       AEROWATCH       │     900.00 │   900.00 │    900.00 │
+│         APPLE         │     897.50 │   290.00 │   1950.00 │
+│        LOCMAN         │     895.00 │   790.00 │   1000.00 │
+│       HAMILTON        │     855.64 │   270.00 │   2500.00 │
+│         EDOX          │     838.14 │   389.00 │   1500.00 │
+│    MICHEL-HERBELIN    │     832.41 │   220.00 │   2500.00 │
+│  TONINO-LAMBORGHINI   │     823.33 │   690.00 │    890.00 │
+│         SEIKO         │     806.82 │    80.00 │   8499.00 │
+│         GUCCI         │     761.00 │   300.00 │   1574.00 │
+│ VICTORINOX-SWISS-ARMY │     734.46 │   230.00 │   2150.00 │
+│        DAVOSA         │     722.50 │   460.00 │   1175.00 │
+│        ANONIMO        │     700.00 │   700.00 │    700.00 │
+│        TISSOT         │     585.40 │    70.00 │   4200.00 │
+│        GLYCINE        │     572.12 │   260.00 │   1200.00 │
+│      SEVENFRIDAY      │     566.00 │   499.00 │    649.00 │
+│        BULOVA         │     536.00 │   150.00 │   1516.00 │
+│          LIP          │     464.80 │   160.00 │   1150.00 │
+│        SWATCH         │     453.84 │   209.00 │   1650.00 │
+│       STEINHART       │     444.00 │   270.00 │    655.00 │
+│        CITIZEN        │     423.30 │   100.00 │   1199.00 │
+│     REVUE-THOMMEN     │     416.67 │   400.00 │    450.00 │
+│       MONDAINE        │     400.00 │   250.00 │    550.00 │
+│         GRUEN         │     399.67 │   299.00 │    500.00 │
+│        ROAMER         │     360.50 │   106.00 │    615.00 │
+│         LACO          │     357.25 │   260.00 │    550.00 │
+│        ORIENT         │     350.17 │    65.00 │   1250.00 │
+│        WELDER         │     349.00 │   349.00 │    349.00 │
+│        JUNKERS        │     290.00 │   290.00 │    290.00 │
+│         WYLER         │        nan │      nan │       nan │
+└───────────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 </section>
@@ -731,29 +732,29 @@ Présentation des variables de la base données
 <h2 data-number="7.5" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-du-boitier"><span class="header-section-number">7.5</span> Répartition des prix selon la matière du boitier :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Matiere_boitier           
-┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Matiere_boitier ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│     PLATINE     │   75938.82 │  1516.00 │  1516.00 │
-│     OR_ROSE     │   41777.57 │   290.00 │   290.00 │
-│    OR_BLANC     │   28163.81 │   750.00 │   750.00 │
-│     CARBONE     │   25398.11 │   250.00 │   250.00 │
-│    OR_ROUGE     │   19542.16 │  3799.00 │  3799.00 │
-│    OR_JAUNE     │   15789.21 │   160.00 │   160.00 │
-│     TANTALE     │   14655.00 │  7000.00 │  7000.00 │
-│    PALLADIUM    │   11900.00 │ 11900.00 │ 11900.00 │
-│    OR_ACIER     │    9303.73 │    90.00 │    90.00 │
-│     TITANE      │    9272.68 │   234.00 │   234.00 │
-│      ACIER      │    8316.00 │    65.00 │    65.00 │
-│    CÉRAMIQUE    │    7463.14 │   209.00 │   209.00 │
-│     BRONZE      │    4050.21 │   700.00 │   700.00 │
-│    ALUMINIUM    │    3318.33 │   290.00 │   290.00 │
-│     ARGENT      │    2263.75 │   135.00 │   135.00 │
-│   PLAQUÉE_OR    │    1723.49 │   359.00 │   359.00 │
-│  VERRE_SAPHIR   │    1237.00 │  1237.00 │  1237.00 │
-│    PLASTIQUE    │     807.16 │    80.00 │    80.00 │
-└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Matiere_boitier            
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Matiere_boitier ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│     PLATINE     │   75938.82 │  1516.00 │ 690000.00 │
+│     OR_ROSE     │   41777.57 │   290.00 │ 631397.00 │
+│    OR_BLANC     │   28163.81 │   750.00 │ 779500.00 │
+│     CARBONE     │   25398.11 │   250.00 │ 689000.00 │
+│    OR_ROUGE     │   19542.16 │  3799.00 │  47990.00 │
+│    OR_JAUNE     │   15789.21 │   160.00 │ 392000.00 │
+│     TANTALE     │   14655.00 │  7000.00 │  21120.00 │
+│    PALLADIUM    │   11900.00 │ 11900.00 │  11900.00 │
+│    OR_ACIER     │    9303.73 │    90.00 │ 148000.00 │
+│     TITANE      │    9272.68 │   234.00 │ 390000.00 │
+│      ACIER      │    8316.00 │    65.00 │ 440000.00 │
+│    CÉRAMIQUE    │    7463.14 │   209.00 │ 330000.00 │
+│     BRONZE      │    4050.21 │   700.00 │  46072.00 │
+│    ALUMINIUM    │    3318.33 │   290.00 │  14521.00 │
+│     ARGENT      │    2263.75 │   135.00 │  13580.00 │
+│   PLAQUÉE_OR    │    1723.49 │   359.00 │   5500.00 │
+│  VERRE_SAPHIR   │    1237.00 │  1237.00 │   1237.00 │
+│    PLASTIQUE    │     807.16 │    80.00 │   4499.00 │
+└─────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -770,33 +771,33 @@ Présentation des variables de la base données
 <h2 data-number="7.6" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-du-bracelet"><span class="header-section-number">7.6</span> Répartition des prix selon la matière du bracelet :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Matiere_bracelet           
-┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│     PLATINE      │   83331.30 │  4080.00 │  4080.00 │
-│     OR_ROSE      │   66541.32 │   630.00 │   630.00 │
-│        OR        │   31789.55 │   790.00 │   790.00 │
-│     OR_BLANC     │   20807.53 │   250.00 │   250.00 │
-│      SATIN       │   20088.26 │   750.00 │   750.00 │
-│    CAOUTCHOUC    │   19179.74 │    80.00 │    80.00 │
-│     OR_JAUNE     │   16053.32 │  1195.00 │  1195.00 │
-│     OR_ACIER     │    9535.66 │   169.00 │   169.00 │
-│      ACIER       │    9431.21 │    65.00 │    65.00 │
-│    CÉRAMIQUE     │    8576.80 │   490.00 │   490.00 │
-│      TITANE      │    7386.65 │   234.00 │   234.00 │
-│     OR_ROUGE     │    6966.00 │  4000.00 │  4000.00 │
-│       CUIR       │    6630.74 │    90.00 │    90.00 │
-│    PLASTIQUE     │    5868.15 │   120.00 │   120.00 │
-│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │   200.00 │
-│      ARGENT      │    5266.61 │   240.00 │   240.00 │
-│    ALUMINIUM     │    4950.00 │  4950.00 │  4950.00 │
-│     TEXTILE      │    4178.00 │   118.00 │   118.00 │
-│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   275.00 │
-│     SILICONE     │    3360.60 │   250.00 │   250.00 │
-│      BRONZE      │    1843.00 │  1300.00 │  1300.00 │
-│      REQUIN      │     395.00 │   395.00 │   395.00 │
-└──────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Matiere_bracelet            
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│     PLATINE      │   83331.30 │  4080.00 │ 690000.00 │
+│     OR_ROSE      │   66541.32 │   630.00 │ 521782.00 │
+│        OR        │   31789.55 │   790.00 │ 779500.00 │
+│     OR_BLANC     │   20807.53 │   250.00 │ 113443.00 │
+│      SATIN       │   20088.26 │   750.00 │  93194.00 │
+│    CAOUTCHOUC    │   19179.74 │    80.00 │ 390000.00 │
+│     OR_JAUNE     │   16053.32 │  1195.00 │ 148000.00 │
+│     OR_ACIER     │    9535.66 │   169.00 │  97198.00 │
+│      ACIER       │    9431.21 │    65.00 │ 440000.00 │
+│    CÉRAMIQUE     │    8576.80 │   490.00 │ 107700.00 │
+│      TITANE      │    7386.65 │   234.00 │ 259000.00 │
+│     OR_ROUGE     │    6966.00 │  4000.00 │   9710.00 │
+│       CUIR       │    6630.74 │    90.00 │ 631397.00 │
+│    PLASTIQUE     │    5868.15 │   120.00 │  41191.00 │
+│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │  76800.00 │
+│      ARGENT      │    5266.61 │   240.00 │  29490.00 │
+│    ALUMINIUM     │    4950.00 │  4950.00 │   4950.00 │
+│     TEXTILE      │    4178.00 │   118.00 │ 689000.00 │
+│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   7950.00 │
+│     SILICONE     │    3360.60 │   250.00 │  57500.00 │
+│      BRONZE      │    1843.00 │  1300.00 │   2515.00 │
+│      REQUIN      │     395.00 │   395.00 │    395.00 │
+└──────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -813,33 +814,33 @@ Présentation des variables de la base données
 <h2 data-number="7.7" class="anchored" data-anchor-id="répartition-des-prix-selon-létat-de-la-montre"><span class="header-section-number">7.7</span> Répartition des prix selon l’état de la montre :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Matiere_bracelet           
-┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│     PLATINE      │   83331.30 │  4080.00 │  4080.00 │
-│     OR_ROSE      │   66541.32 │   630.00 │   630.00 │
-│        OR        │   31789.55 │   790.00 │   790.00 │
-│     OR_BLANC     │   20807.53 │   250.00 │   250.00 │
-│      SATIN       │   20088.26 │   750.00 │   750.00 │
-│    CAOUTCHOUC    │   19179.74 │    80.00 │    80.00 │
-│     OR_JAUNE     │   16053.32 │  1195.00 │  1195.00 │
-│     OR_ACIER     │    9535.66 │   169.00 │   169.00 │
-│      ACIER       │    9431.21 │    65.00 │    65.00 │
-│    CÉRAMIQUE     │    8576.80 │   490.00 │   490.00 │
-│      TITANE      │    7386.65 │   234.00 │   234.00 │
-│     OR_ROUGE     │    6966.00 │  4000.00 │  4000.00 │
-│       CUIR       │    6630.74 │    90.00 │    90.00 │
-│    PLASTIQUE     │    5868.15 │   120.00 │   120.00 │
-│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │   200.00 │
-│      ARGENT      │    5266.61 │   240.00 │   240.00 │
-│    ALUMINIUM     │    4950.00 │  4950.00 │  4950.00 │
-│     TEXTILE      │    4178.00 │   118.00 │   118.00 │
-│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   275.00 │
-│     SILICONE     │    3360.60 │   250.00 │   250.00 │
-│      BRONZE      │    1843.00 │  1300.00 │  1300.00 │
-│      REQUIN      │     395.00 │   395.00 │   395.00 │
-└──────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Matiere_bracelet            
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Matiere_bracelet ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│     PLATINE      │   83331.30 │  4080.00 │ 690000.00 │
+│     OR_ROSE      │   66541.32 │   630.00 │ 521782.00 │
+│        OR        │   31789.55 │   790.00 │ 779500.00 │
+│     OR_BLANC     │   20807.53 │   250.00 │ 113443.00 │
+│      SATIN       │   20088.26 │   750.00 │  93194.00 │
+│    CAOUTCHOUC    │   19179.74 │    80.00 │ 390000.00 │
+│     OR_JAUNE     │   16053.32 │  1195.00 │ 148000.00 │
+│     OR_ACIER     │    9535.66 │   169.00 │  97198.00 │
+│      ACIER       │    9431.21 │    65.00 │ 440000.00 │
+│    CÉRAMIQUE     │    8576.80 │   490.00 │ 107700.00 │
+│      TITANE      │    7386.65 │   234.00 │ 259000.00 │
+│     OR_ROUGE     │    6966.00 │  4000.00 │   9710.00 │
+│       CUIR       │    6630.74 │    90.00 │ 631397.00 │
+│    PLASTIQUE     │    5868.15 │   120.00 │  41191.00 │
+│  CUIRE_DE_VACHE  │    5791.45 │   200.00 │  76800.00 │
+│      ARGENT      │    5266.61 │   240.00 │  29490.00 │
+│    ALUMINIUM     │    4950.00 │  4950.00 │   4950.00 │
+│     TEXTILE      │    4178.00 │   118.00 │ 689000.00 │
+│  CUIR_AUTRUCHE   │    4091.45 │   275.00 │   7950.00 │
+│     SILICONE     │    3360.60 │   250.00 │  57500.00 │
+│      BRONZE      │    1843.00 │  1300.00 │   2515.00 │
+│      REQUIN      │     395.00 │   395.00 │    395.00 │
+└──────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -856,29 +857,29 @@ Présentation des variables de la base données
 <h2 data-number="7.8" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-de-la-lunette"><span class="header-section-number">7.8</span> Répartition des prix selon la matière de la lunette :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Matiere_lunette           
-┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Matiere_lunette ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│     CARBONE     │   72411.20 │    90.00 │    90.00 │
-│     OR_ROSE     │   27236.14 │   590.00 │   590.00 │
-│     PLATINE     │   25010.12 │  1300.00 │  1300.00 │
-│       OR        │   16523.01 │   160.00 │   160.00 │
-│    CÉRAMIQUE    │   14323.58 │   209.00 │   209.00 │
-│    OR_BLANC     │   12188.44 │   500.00 │   500.00 │
-│     TITANE      │   10200.50 │   234.00 │   234.00 │
-│      LISSE      │    9034.26 │  5499.00 │  5499.00 │
-│    OR_JAUNE     │    8863.47 │   250.00 │   250.00 │
-│      ACIER      │    8117.39 │    65.00 │    65.00 │
-│    OR_ROUGE     │    6292.94 │  2750.00 │  2750.00 │
-│    ALUMINIUM    │    4280.71 │   270.00 │   270.00 │
-│     ARGENT      │    3408.35 │   290.00 │   290.00 │
-│    OR_ACIER     │    3328.99 │   169.00 │   169.00 │
-│     BRONZE      │    3305.61 │   800.00 │   800.00 │
-│    PLASTIQUE    │    1608.46 │    80.00 │    80.00 │
-│    TUNGSTÈNE    │    1591.50 │   370.00 │   370.00 │
-│    PALLADIUM    │     550.00 │   550.00 │   550.00 │
-└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Matiere_lunette            
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Matiere_lunette ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│     CARBONE     │   72411.20 │    90.00 │ 689000.00 │
+│     OR_ROSE     │   27236.14 │   590.00 │ 521782.00 │
+│     PLATINE     │   25010.12 │  1300.00 │ 690000.00 │
+│       OR        │   16523.01 │   160.00 │ 549000.00 │
+│    CÉRAMIQUE    │   14323.58 │   209.00 │ 390000.00 │
+│    OR_BLANC     │   12188.44 │   500.00 │ 202217.00 │
+│     TITANE      │   10200.50 │   234.00 │ 245000.00 │
+│      LISSE      │    9034.26 │  5499.00 │  13500.00 │
+│    OR_JAUNE     │    8863.47 │   250.00 │ 148000.00 │
+│      ACIER      │    8117.39 │    65.00 │ 779500.00 │
+│    OR_ROUGE     │    6292.94 │  2750.00 │  29701.00 │
+│    ALUMINIUM    │    4280.71 │   270.00 │  24990.00 │
+│     ARGENT      │    3408.35 │   290.00 │  88750.00 │
+│    OR_ACIER     │    3328.99 │   169.00 │  20670.00 │
+│     BRONZE      │    3305.61 │   800.00 │  46072.00 │
+│    PLASTIQUE    │    1608.46 │    80.00 │  13499.00 │
+│    TUNGSTÈNE    │    1591.50 │   370.00 │   3227.00 │
+│    PALLADIUM    │     550.00 │   550.00 │    550.00 │
+└─────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -895,24 +896,24 @@ Présentation des variables de la base données
 <h2 data-number="7.9" class="anchored" data-anchor-id="répartition-des-prix-selon-la-matière-de-la-boucle"><span class="header-section-number">7.9</span> Répartition des prix selon la matière de la boucle :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Matiere_boucle           
-┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Matiere_boucle ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│    CARBONE     │   64556.00 │    90.00 │    90.00 │
-│    PLATINE     │   26700.74 │  1516.00 │  1516.00 │
-│       OR       │   14771.20 │   160.00 │   160.00 │
-│   CÉRAMIQUE    │   14668.30 │   209.00 │   209.00 │
-│     TITANE     │   10275.92 │   234.00 │   234.00 │
-│     ACIER      │    7791.52 │    65.00 │    65.00 │
-│    OR_ACIER    │    6557.89 │    90.00 │    90.00 │
-│   ALUMINIUM    │    4603.69 │   270.00 │   270.00 │
-│     BRONZE     │    3525.84 │  1190.00 │  1190.00 │
-│     ARGENT     │    2349.47 │   106.00 │   106.00 │
-│   PLASTIQUE    │    1599.93 │    80.00 │    80.00 │
-│   TUNGSTÈNE    │    1299.75 │   370.00 │   370.00 │
-│   PALLADIUM    │     550.00 │   550.00 │   550.00 │
-└────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Matiere_boucle            
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Matiere_boucle ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│    CARBONE     │   64556.00 │    90.00 │ 689000.00 │
+│    PLATINE     │   26700.74 │  1516.00 │ 690000.00 │
+│       OR       │   14771.20 │   160.00 │ 779500.00 │
+│   CÉRAMIQUE    │   14668.30 │   209.00 │ 390000.00 │
+│     TITANE     │   10275.92 │   234.00 │ 339488.00 │
+│     ACIER      │    7791.52 │    65.00 │ 440000.00 │
+│    OR_ACIER    │    6557.89 │    90.00 │  68365.00 │
+│   ALUMINIUM    │    4603.69 │   270.00 │  24990.00 │
+│     BRONZE     │    3525.84 │  1190.00 │  46072.00 │
+│     ARGENT     │    2349.47 │   106.00 │  43260.00 │
+│   PLASTIQUE    │    1599.93 │    80.00 │  13499.00 │
+│   TUNGSTÈNE    │    1299.75 │   370.00 │   3227.00 │
+│   PALLADIUM    │     550.00 │   550.00 │    550.00 │
+└────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -929,17 +930,17 @@ Présentation des variables de la base données
 <h2 data-number="7.10" class="anchored" data-anchor-id="répartition-des-prix-selon-le-type-de-boucle"><span class="header-section-number">7.10</span> Répartition des prix selon le type de boucle :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>               Statistiques par Boucle                
-┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃     Boucle      ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│   DOUBLE_PLIS   │   14109.77 │    65.00 │    65.00 │
-│      PLIS       │   11871.44 │    80.00 │    80.00 │
-│ BOUCLE_ARDILLON │    7419.38 │    70.00 │    70.00 │
-│ FERMOIR_BIJOUX  │    7332.17 │   240.00 │   240.00 │
-│  PAS_DE_BOUCLE  │    2692.00 │   500.00 │   500.00 │
-│ BOUCLE ARDILLON │    1407.00 │  1407.00 │  1407.00 │
-└─────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>                Statistiques par Boucle                
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃     Boucle      ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│   DOUBLE_PLIS   │   14109.77 │    65.00 │ 690000.00 │
+│      PLIS       │   11871.44 │    80.00 │ 779500.00 │
+│ BOUCLE_ARDILLON │    7419.38 │    70.00 │ 392000.00 │
+│ FERMOIR_BIJOUX  │    7332.17 │   240.00 │  72500.00 │
+│  PAS_DE_BOUCLE  │    2692.00 │   500.00 │   5500.00 │
+│ BOUCLE ARDILLON │    1407.00 │  1407.00 │   1407.00 │
+└─────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -956,24 +957,24 @@ Présentation des variables de la base données
 <h2 data-number="7.11" class="anchored" data-anchor-id="répartition-des-prix-selon-le-nombre-de-complications"><span class="header-section-number">7.11</span> Répartition des prix selon le nombre de complications :</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>           Statistiques par Comptage_fonctions           
-┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┓
-┃ Comptage_fonctions ┃ Prix moyen ┃ Prix min ┃ Prix max ┃
-┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━┩
-│        6.0         │   20433.62 │   299.00 │   299.00 │
-│        2.0         │   12028.13 │    80.00 │    80.00 │
-│        4.0         │   12026.30 │   140.00 │   140.00 │
-│        1.0         │   11536.47 │    70.00 │    70.00 │
-│        5.0         │   11188.42 │   320.00 │   320.00 │
-│        0.0         │   10190.14 │    49.00 │    49.00 │
-│        3.0         │    9629.03 │    80.00 │    80.00 │
-│        7.0         │    6624.26 │   250.00 │   250.00 │
-│        8.0         │    3979.67 │   120.00 │   120.00 │
-│        12.0        │    1950.00 │  1950.00 │  1950.00 │
-│        9.0         │    1750.00 │  1750.00 │  1750.00 │
-│        19.0        │    1468.00 │  1468.00 │  1468.00 │
-│        10.0        │    1190.00 │  1100.00 │  1100.00 │
-└────────────────────┴────────────┴──────────┴──────────┘</code></pre>
+<pre><code>           Statistiques par Comptage_fonctions            
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Comptage_fonctions ┃ Prix moyen ┃ Prix min ┃  Prix max ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━┩
+│        6.0         │   20433.62 │   299.00 │ 299900.00 │
+│        2.0         │   12028.13 │    80.00 │ 689000.00 │
+│        4.0         │   12026.30 │   140.00 │ 302100.00 │
+│        1.0         │   11536.47 │    70.00 │ 690000.00 │
+│        5.0         │   11188.42 │   320.00 │ 209999.00 │
+│        0.0         │   10190.14 │    49.00 │ 779500.00 │
+│        3.0         │    9629.03 │    80.00 │ 521782.00 │
+│        7.0         │    6624.26 │   250.00 │  52453.00 │
+│        8.0         │    3979.67 │   120.00 │  18450.00 │
+│        12.0        │    1950.00 │  1950.00 │   1950.00 │
+│        9.0         │    1750.00 │  1750.00 │   1750.00 │
+│        19.0        │    1468.00 │  1468.00 │   1468.00 │
+│        10.0        │    1190.00 │  1100.00 │   1280.00 │
+└────────────────────┴────────────┴──────────┴───────────┘</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -1009,9 +1010,12 @@ Présentation des variables de la base données
 </div>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="analyse-prédictive" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> <strong>Analyse prédictive</strong></h1>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a></main> <!-- /main -->
