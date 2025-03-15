@@ -117,6 +117,24 @@ cookieconsent.run({
 });
 </script> 
   
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -227,11 +245,11 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-sections">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning" data-listing-file-modified-sort="1742076935853" data-listing-reading-time-sort="5" data-listing-word-count-sort="807">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning" data-listing-file-modified-sort="1742079749994" data-listing-reading-time-sort="5" data-listing-word-count-sort="807">
 <a href="../sections/projet2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet2/classification.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet2/cns.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -284,11 +302,11 @@ Analyse de données
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Économétrie" data-listing-file-modified-sort="1742077468892" data-listing-reading-time-sort="4" data-listing-word-count-sort="783">
+<div class="g-col-1" data-index="2" data-categories="Économétrie" data-listing-file-modified-sort="1742080653254" data-listing-reading-time-sort="4" data-listing-word-count-sort="783">
 <a href="../sections/projet6/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet6/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet6/eco.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -311,11 +329,11 @@ Marketing quantitatif au service de la santé
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Économétrie" data-listing-file-modified-sort="1742077268086" data-listing-reading-time-sort="4" data-listing-word-count-sort="651">
+<div class="g-col-1" data-index="3" data-categories="Économétrie" data-listing-file-modified-sort="1742080364889" data-listing-reading-time-sort="4" data-listing-word-count-sort="651">
 <a href="../sections/projet4/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet4/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet4/eco.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -338,11 +356,11 @@ Mesure de l’efficacité technique d’une entreprise
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Économétrie" data-listing-file-modified-sort="1742076700008" data-listing-reading-time-sort="14" data-listing-word-count-sort="2800">
+<div class="g-col-1" data-index="4" data-categories="Économétrie" data-listing-file-modified-sort="1742080244819" data-listing-reading-time-sort="14" data-listing-word-count-sort="2800">
 <a href="../sections/projet1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet1/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet1/eco.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -365,11 +383,11 @@ Méthodes de prévision
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="Machine Learning" data-listing-file-modified-sort="1742077141804" data-listing-reading-time-sort="5" data-listing-word-count-sort="984">
+<div class="g-col-1" data-index="5" data-categories="Machine Learning" data-listing-file-modified-sort="1742080099324" data-listing-reading-time-sort="5" data-listing-word-count-sort="984">
 <a href="../sections/projet3/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet3/classification.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet3/cs.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -392,11 +410,11 @@ Machine Learning
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="Tarification" data-listing-file-modified-sort="1742077381430" data-listing-reading-time-sort="6" data-listing-word-count-sort="1177">
+<div class="g-col-1" data-index="6" data-categories="Tarification" data-listing-file-modified-sort="1742080876632" data-listing-reading-time-sort="6" data-listing-word-count-sort="1177">
 <a href="../sections/projet5/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../assets/img/projet5/mco.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="../assets/img/projet5/pricing.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -840,7 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
     <a class="nav-link" href="https://quarto.org/">
-<p>Website made with <strong>Quarto</strong> 🛠️</p>
+<p>Website made with Quarto 🛠️</p>
 </a>
   </li>  
 </ul>
@@ -855,9 +873,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-      <i class="bi bi-cc-circle" role="img">
-</i> 
- Licence : CC BY-NC-SA
+    <a class="nav-link" href="../licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
   </li>  
 </ul>
     </div>

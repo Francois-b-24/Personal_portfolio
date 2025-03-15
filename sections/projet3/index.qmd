@@ -8,7 +8,7 @@ number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François` - `BARRE Nicolas` - `LEGER Aline`"
 description: "*Application des méthodes de classification supervisée*"
-image: /assets/img/projet3/classification.png
+image: /assets/img/projet3/cs.jpg
 categories: [Machine Learning]
 format:
     html:

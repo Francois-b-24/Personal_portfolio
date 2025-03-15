@@ -8,7 +8,7 @@ number-sections: true
 subtitle: ""
 author: "`BOUSSENGUI François`"
 description: "*L'économétrie au service de la santé*"
-image: /assets/img/projet6/mco.png
+image: /assets/img/projet6/eco.jpg
 categories: [Économétrie]
 format:
     html:
