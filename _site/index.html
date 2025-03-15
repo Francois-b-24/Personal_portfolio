@@ -86,6 +86,24 @@ cookieconsent.run({
 });
 </script> 
   
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+</script>
 
 
 <link rel="stylesheet" href="assets/styles.css">
@@ -591,7 +609,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
     <a class="nav-link" href="https://quarto.org/">
-<p>Website made with <strong>Quarto</strong> 🛠️</p>
+<p>Website made with Quarto 🛠️</p>
 </a>
   </li>  
 </ul>
@@ -606,9 +624,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-      <i class="bi bi-cc-circle" role="img">
-</i> 
- Licence : CC BY-NC-SA
+    <a class="nav-link" href="./licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
   </li>  
 </ul>
     </div>

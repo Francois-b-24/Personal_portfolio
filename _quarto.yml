@@ -8,6 +8,9 @@ lang: fr
 execute:
   freeze: auto
 
+include-in-header:
+  file: utils/header.html
+
 website:
   title: "*François B.*"
   back-to-top-navigation: false
@@ -37,7 +40,7 @@ website:
     foreground: white
     
     left: 
-      - text: Website made with **Quarto** 🛠️
+      - text: Website made with Quarto 🛠️
         href: https://quarto.org/
     
     center:
@@ -45,6 +48,7 @@ website:
     
     right: 
       - icon: cc-circle
+        href: licence.qmd
         text: "Licence : CC BY-NC-SA"
   
   search: 

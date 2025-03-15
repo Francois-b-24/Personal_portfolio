@@ -1,0 +1,28 @@
+---
+title: "Licence"
+toc: false
+back-to-top-navigation: false
+comments: false
+---
+
+&#169; 2024 -- *François BOUSSENGUI*   
+
+Le contenu de mon site web est publié sous licence [Creative Commons Attribution 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/){.external target="_blank"}.
+
+{{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}
+
+> Vous êtes autorisés à copier, distribuer et communiquer le matériel par tous moyens et sous tous formats. Vous devez créditer l'Œuvre, intégrer un lien vers la licence et indiquer si des modifications ont été effectuées. Vous n'êtes pas autorisé à faire un usage commercial de cette Oeuvre, tout ou partie du matériel la composant. 
+
+## Logiciels utilisés
+
+Le code source ainsi que l'ensemble des fichiers hostés sur mon site web sont disponibles sur {{< fa brands github >}} **GitHub**.
+
+**Icônes** : [{{< fa brands font-awesome >}}](https://fontawesome.com/) [FontAwesome](https://fontawesome.com/){.external target="_blank"}
+
+**Polices** : [{{< fa brands google >}}](https://fonts.google.com/)   [Google Fonts](https://fonts.google.com/){.external target="_blank"}
+
+**Hébergement** : [{{< iconify simple-icons:netlify >}}](https://www.netlify.com/) [Netlify](https://www.netlify.com/){.external target="_blank"}
+
+**Thème** : [https://github.com/robb0wen/synthwave-vscode](https://github.com/robb0wen/synthwave-vscode){.external target="_blank"}
+
+
