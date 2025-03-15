@@ -1,15 +1,37 @@
 project:
   type: website
 
-#Configuration de la langue 
+# Configuration de la langage
 lang: fr
 
+# Fait en sorte que le code R et Python soient exécutés uniquement en local
 execute:
   freeze: auto
 
 website:
-  title: "*Portfolio* 📊🗂️📈"
-  back-to-top-navigation: true
+  title: "*François B.*"
+  back-to-top-navigation: false
+  cookie-consent:
+    type: express # GDPR Compliant - Bloque les cookies jusqu'à ce que l'utilisateur les accepte, ou non
+    style: simple
+    palette: light
+    prefs-text: "🍪 Gérer les cookies"
+  
+  navbar:
+    background: primary
+    right:
+      - text: "Accueil"
+        href: index.qmd
+
+      - text: "Parcours"
+        href: sections/xp.qmd  
+        
+      - text: "Compétences"
+        href: sections/skills.qmd
+
+      - text: "Travaux"
+        href: sections/index.qmd
+  
   page-footer:
     background: primary
     foreground: white
@@ -28,32 +50,15 @@ website:
   search: 
     location: navbar
     type: overlay
-
-  
-  navbar:
-    background: primary
-    right:
-      - text: "Accueil"
-        href: index.qmd
-        
-      - text: "Compétences"
-        href: posts/skills.qmd
-
-      - text: "Travaux"
-        href: posts/index.qmd
     
 
 format:
   html:
-    theme: theme.scss
-    extensions: [fontawesome]
-    googlefonts: 
-      - family: "Roboto"
-        weights: [400, 700]
-      - family: "Merriweather"
-        weights: [400, 700]
+    theme: [cosmo, assets/custom.scss]
+    css: assets/styles.css
     toc: true
     pagetitle: "François BOUSSENGUI | {{< meta title >}}"
+    
     # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:
       sidebar-width: 0px

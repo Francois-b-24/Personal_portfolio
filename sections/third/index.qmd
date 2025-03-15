@@ -1,0 +1,157 @@
+---
+title: "Prévision des défauts de paiement bancaire"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: ""
+author: "`BOUSSENGUI François` - `BARRE Nicolas` - `LEGER Aline`"
+description: "*Application des méthodes de classification supervisée*"
+image: "classification.png"
+categories: [Machine Learning]
+format:
+    html:
+        code-fold: true 
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+# Contexte 
+
+La détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d'avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La **classification supervisée** regroupe l'ensemble des méthodes statistiques dont l'objectif principal est de prédire pour un individu donné l'appartenance à une classe connue au préalable. Nous sommes ici dans le cas d'une banque de détails qui souhaite attribuer un *score* ou *probabilité* de risque à ses clients. 
+
+# Objectifs
+
+Ainsi, dans le cas des défauts de paiement bancaire, l'objectif est de pouvoir modéliser l'appartenance d'un individu à l'une des classes suivantes :
+
+1.  **Oui** [1], l'individu est en défaut de paiement ;
+
+2.  **Non** [0], l'individu n'est pas en défaut de paiement ;
+
+
+# Méthodologie
+
+De prime abord, nous avons réalisé une analyse descriptive qui a nous permis de mettre en exergue un **déséquilibre des classes** pour la variable à expliquer. En d'autres termes, nous avons une présence élevée de personne n'étant pas en défaut de paiement contrairement à celles qui le sont. 
+
+Cela est un fait positif pour une banque en soi. 
+
+Cependant, ce déséquilibre impact négativement la performance et biaise le résultat des modèles.  
+
+Cela nous a donc conduit a procédé comme suit :
+
+
+*   Découpage de la population en 2 sous-groupes :
+
+    +   Un groupe dédié à l'apprentissage, autrement dit, le groupe d'entraînement (2/3) ;
+
+    +   Un groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;
+
+*   Première application des modèles sans prise en compte du déséquilibre des classes. 
+
+*   Seconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d'application de méthode de ré-échantillonnage des classes, à savoir :
+
+::: {.callout-tip icon=false collapse="true"}
+## Sous-échantillonnage
+
+Réduit le nombre d'échantillons de la classe majoritaire.
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Sur-échantillognnage
+
+Augmente le nombre d'échantillons de la classe minoritaire.
+
+:::
+    
+::: {.callout-tip icon=false collapse="true"}
+##  SMOTE
+
+Génère des exemples synthétiques de la classe minoritaire.
+
+:::
+
+* Les modèles utilisés sont les suivants :
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse linéaire discriminante (LDA)
+
+L'analyse discriminante linéaire (LDA) est une technique de classification et de réduction de dimension qui vise à séparer les classes en trouvant une projection linéaire des données qui maximise la séparation entre les classes tout en minimisant la variance au sein des classes. 
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse quadratique discriminante (QDA)
+
+L'analyse discriminante quadratique (QDA) est une extension de l'analyse discriminante linéaire (LDA) qui permet de modéliser des frontières de décision non linéaires. Contrairement à LDA, qui suppose que les covariances des classes sont identiques, QDA permet à chaque classe d'avoir sa propre matrice de covariance. Cela permet une modélisation plus flexible, mais nécessite plus de paramètres et peut donc être moins efficace avec de petits ensembles de données.
+:::
+ 
+::: {.callout-tip icon=false collapse="true"}   
+## Arbres de décisions
+
+Les arbres de décision sont des modèles de machine learning non paramétriques utilisés pour la classification et la régression. Ils apprennent des règles de décision simples déduites des données pour prédire la valeur de la variable cible.
+
+:::
+  
+::: {.callout-tip icon=false collapse="true"} 
+## Bagging, Boosting
+
+Les termes "Bagging" et "Boosting" sont des techniques utilisées en apprentissage automatique (machine learning) pour améliorer les performances des modèles prédictifs en utilisant des ensembles de modèles plus simples.
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Forêts aléatoires
+
+Les forêts aléatoires sont une technique de machine learning utilisée pour la classification et la régression. Elles fonctionnent en combinant plusieurs arbres de décision, chacun construit sur un échantillon différent des données d'entraînement. Le principe de base est le suivant :
+
+1. **Construction d'arbres** : Un grand nombre d'arbres de décision sont construits, chaque arbre étant entraîné sur un échantillon aléatoire des données d'entraînement.
+2. **Prédiction par vote majoritaire** : Pour la classification, chaque arbre "vote" pour une classe, et la classe la plus souvent choisie par les arbres est la prédiction finale. Pour la régression, la prédiction finale est la moyenne des prédictions de tous les arbres.
+
+L'utilisation de multiples arbres et l'échantillonnage aléatoire des données permettent de réduire le risque de surapprentissage (overfitting) et d'améliorer la robustesse et la précision des prédictions.
+
+:::   
+
+   
+
+# Principaux 
+
+Après avoir entraîné les modèles sur l'échantillon d'entraînement, nous avons appliqué les modèles sur les données test afin d'en apprécier leur performance. Plus précisément, nous avons comparé les résultats de nos 2 approches. C'est-à-dire l'approche tenant compte du déséquilibre des classes et celle ne la prenant pas en compte.
+
+Sur la base des différentes métriques d'évaluation que nous avons utilisé, ils s'avère que le modèle le plus performabnt est une **Forêt Aléatoire** sur laquelle nous avons appliqué la méthode **SMOTE**. 
+
+Le modèle retenu présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.
+
+# Conclusions et perspective
+
+Dans la réalité, il est très probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. Surtout dans le milieu bancaire. 
+
+C'est un aspect qui biaise fortement les résultats d'estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour prendre en compte le problème. Au sortir de là, cela nous permet d'obtenir un modèle qui n'est pas biaisé. Ce dernier nous permet donc aisément de prédire, pour un individu donné, sa probabilité d'appartenance à l'une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l'intérêt de ce genre de méthodes est qu'elle donne la possibilité de mettre en place de moyens de prévention pour se prémunir des personnes qui présentent un fort risque d'être en défaut de paiement. 
+
+# Outil technique 
+
+- **Logiciel** {{< fa brands r-project >}}
+
+
+::: {style="text-align:center;"}
+
+> Vous trouverez le rapport ici :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
+
+::: {style="text-align:center;"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](ml.pdf){.btn .btn-outline-primary .btn .center role="button"}
+:::
+

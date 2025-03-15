@@ -1,0 +1,290 @@
+/*-- css:defaults --*/
+
+.quarto-title-meta-contents code {
+  color: #003366; /* Couleur de texte en bleu foncé */
+}
+
+
+.listing-author code {
+  color: #003366; /* Couleur bleu foncé */
+}
+
+
+.card-attribution.card-text-small.start {
+  margin-top: 5px; /* Réduit la marge en haut à 5 pixels */
+  margin-bottom: 5px; /* Réduit la marge en bas à 5 pixels */
+}
+
+.card-img-top {
+  display: flex; /* Utilisation de flexbox pour aligner les éléments */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  height: 150px; /* Hauteur du cadre */
+}
+
+.card-img-top img {
+  max-width: 100%; /* Assurer que l'image ne dépasse pas la largeur du cadre */
+  max-height: 100%; /* Assurer que l'image ne dépasse pas la hauteur du cadre */
+}
+
+/* Customisation du back-to-top */
+a#quarto-back-to-top:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Ajout d'une plus grande marge entre le titre des projets et les catégories */
+.quarto-grid-item .card-title {
+  margin-bottom: 0.5em;
+}
+
+/* Ajoute de la marge en haut du footer central (copyright) */
+.nav-footer-center {
+  margin-top: 1em;
+}
+
+
+.navbar-toggler:focus {
+  display: inline-block;
+  padding: 1%;
+  border-radius: 75%;
+}
+
+/* Gère le soulignement du texte des menus de navigation (1) */
+a.nav-link {
+  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+/* Gère le soulignement du texte des menus de navigation (2) */
+a.nav-link:hover {
+  text-decoration-color: rgb(247, 233, 206);
+  text-underline-offset: 0.4em;
+}
+
+/* Ajout d'une plus grande marge pour la sidebar de marge du site */
+#quarto-margin-sidebar {
+  padding-top: 35%;
+}
+/* Transforme en majuscule mon nom et prénom */
+.navbar-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease; /* Transition fluide pour l'effet */
+  padding: 5px; /* Ajoute de l'espace autour du texte */
+  border-radius: 5px; /* Ajoute des coins arrondis au conteneur */
+}
+
+.navbar-title:hover {
+  background-color: #4a94d9; /* Couleur de fond bleu clair au survol */
+}
+
+
+/* Transforme en majuscule le texte des menus de navigation */
+span.menu-text {
+  text-transform: uppercase;
+}
+
+.navbar {
+  background-color: #06436e;
+}
+
+.quarto-title-banner{
+  background-color: #0c2e42 ;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #06436e;
+    border-color: #06436e;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #06436e;
+    border-color: #06436e;
+}
+
+.quarto-title-banner {
+    margin-bottom: 1em;
+    color: rgba(255,255,255,.7);
+    background: #06436e;
+}
+
+
+.page-link {
+      color: #06436e;
+}
+
+
+.page-link:hover {
+    z-index: 2;
+    color: #06436e;
+    background-color: #06436e;
+    border-color: #06436e;
+}
+
+a{
+  color: #06436e;
+}
+
+b, strong {
+    color: #06436e;
+    font-weight: bolder;
+}
+
+div.quarto-post .listing-categories .listing-category {
+    color: #06436e;
+    border: solid 1px var(--bs-gray-400);
+    font-size: .8em;
+}
+
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top {
+  transition: transform 0.25s ease-in-out;
+}
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+/* Gère l'animation de la main */
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+/* Change mon image de côté et ajoute une bordure et effet de transparence */
+.about-image.round {
+  transform: scaleX(-1);
+  box-shadow: 0 5px 15px 0px;
+  border: 5px solid transparent;
+}
+
+/* Gère l'animation du chevron */
+.chevron-styling {
+  text-align: center;
+  animation: chevron-animation 2s ease-in-out infinite;
+  color: #00439add;
+}
+
+/* Définition des keyframes */
+@keyframes wave-animation {
+  0% {
+      transform: rotate(0.0deg)
+  }
+
+  10% {
+      transform: rotate(14.0deg)
+  }
+
+  20% {
+      transform: rotate(-8.0deg)
+  }
+
+  30% {
+      transform: rotate(14.0deg)
+  }
+
+  40% {
+      transform: rotate(-4.0deg)
+  }
+
+  50% {
+      transform: rotate(10.0deg)
+  }
+
+  60% {
+      transform: rotate(0.0deg)
+  }
+
+  100% {
+      transform: rotate(0.0deg)
+  }
+}
+
+@keyframes chevron-animation {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(0.75em);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+* ---- MEDIA QUERIES ---- */
+
+/* Ajoute de la margin-top à ma tronche quand le contenu est visualisé sur un écran de - de 1000px */
+@media only screen and (max-width: 992px) {
+    img.about-image.round {
+        margin-top: 2.5em;
+    }
+}
+
+/* Change la hauteur de la classe slide-deck (pour visualiser les presentations reveal.js) sur téléphone */
+@media only screen and (max-width: 600px) {
+    .slide-deck {
+        height: 400px;
+    }
+}
+
+/* Change l'affichage de la timeline sur téléphone */
+@media only screen and (max-width: 600px) {
+    .timeline-description {
+        font-size: 0.8em;
+    }
+
+    .timeline-description p a.btn.btn-outline-primary.center {
+        font-size: 0.95em;
+        padding: 3%;
+    }
+
+    .timeline-description p {
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Overwrite une media query bootstrap pour mon footer */
+@media (max-width: 767.98px) {
+    .nav-footer-center {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+/* Réduit la taille de la police de mon nom et prénom quand écran < 650px */
+/* Permet de gérer la responsiveness des expériences pros quand l'écran est < 650px */
+/* Même chose pour la partie Education */
+@media (max-width: 650px) {
+    span.navbar-title {
+        font-size: 1.15rem;
+    }
+
+    span.toggle-invisibility {
+        display: inline;
+    }
+
+    span.shiny-color {
+        display: block;
+    }
+
+    span.education-dates {
+        display: block;
+    }
+
+    span.company {
+        display: block;
+    }
+}

@@ -1,0 +1,17 @@
+---
+title: "Travaux"
+author: ""
+listing:
+  - id : sections
+    contents: "**/*/*.qmd"
+    type: grid
+    fields: [image, date, title, categories, description, author] 
+    sort: title
+    categories:  true
+    page-size: 36     
+page-layout: full
+title-block-banner: false
+comments: false
+toc: true
+---
+***

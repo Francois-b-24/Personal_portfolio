@@ -1,51 +1,41 @@
 ---
 title: "François BOUSSENGUI"
-subtitle: |
-  **Data scientist** 
-image: moi_2.jpg
+image: assets/img/moi.jpg
 comments: false
 toc: false
 about:
+  id: hero-heading
   template: trestles
   image-width: 20em
   image-shape: round
-  links: 
-     - icon: github
-       href: https://github.com/Francois-b-24
+  links:
      - icon: linkedin
-       href: https://www.linkedin.com/in/fboussengui/
+       text: LinkedIn 
+       href: https://www.linkedin.com/in/fboussengui/ 
+     - icon: github
+       text: Github
+       href: https://github.com/Francois-b-24
      - icon: envelope
+       text: Email    
        href: mailto:f.boussengui@gmail.com
 ---
 
 ::: {style="text-align:center;"}
-## [👋]{.wave} Bienvenue sur mon Portfolio !
+## Bienvenue sur mon Portfolio [👋]{.wave}
 
 <iconify-icon icon="flag:ga-4x3"></iconify-icon>
 :::
 
-Diplômé d'un Master 2 en économétrie et analyse de données, j'accompagne les entreprises et professionnels dans l'exploitation stratégique de leurs données pour prendre des décisions éclairées et améliorer leur performance.
+**Data Scientist**, je suis passionné par les statistiques et de tout ce qui touche à la donnée.
 
-Grâce à ma formation, mes expériences professionnelles et ma détermination, j'ai acquis des compétences solides dans des domaines clés, notamment :
+***Mon rôle*** : Accompagner les entreprises dans la valorisation de leurs données, permettant ainsi une prise de décisions stratégiques éclairées.
 
-\- **Collecte et préparation des données**
-
-\- **Nettoyage et structuration des données**
-
-\- **Analyse statistique et interprétation**
-
-\- **Visualisation et représentation graphique**
-
-\- **Conception et mise en œuvre de modèles prédictifs avancés**
-
-Ma curiosité et ma passion pour l'intelligence artificielle me poussent à constamment élargir mes compétences et relever de nouveaux défis.
-
-Ce portfolio est donc une vitrine de mes savoir-faire et de mes réalisations. Parcourez-le pour découvrir mes projets, et n'hésitez pas à me contacter si vous souhaitez collaborer ou en savoir plus !
+Sur ce site, vous découvrirez mon parcours académique et professionnel, un aperçu de mes compétences -- acquises et en cours de développement -- ainsi que des projets que j'ai réalisés.
 
 ::: {style="text-align:center;"}
 **Excellente navigation !**
 :::
 
 ::: {style="text-align:center;"}
-[Envie de découvrir mes expériences professionnelles ? {{< fa arrow-up-right-from-square >}}](FRANCOIS_BOUSSENGUI_CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Télécharger mon CV {{< fa arrow-up-right-from-square >}}](assets/CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
 :::

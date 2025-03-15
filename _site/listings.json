@@ -10,5 +10,17 @@
       "/posts/third/index.html",
       "/posts/fifth/index.html"
     ]
+  },
+  {
+    "listing": "/sections/index.html",
+    "items": [
+      "/sections/second/index.html",
+      "/sections/seventh/index.html",
+      "/sections/sixth/index.html",
+      "/sections/fourth/index.html",
+      "/sections/first/index.html",
+      "/sections/third/index.html",
+      "/sections/fifth/index.html"
+    ]
   }
 ]
