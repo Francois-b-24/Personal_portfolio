@@ -1,5 +1,17 @@
-# Personal_portfolio
+#  🌐 `https://bfrancois.netlify.app`
 
-[Portfolio](https://bfrancois.netlify.app/)
+> Repository **Github** de mon site web **Quarto** : (https://bfrancois.netlify.app/)
 
-Portfolio personnel crée avec [Quarto](https://quarto.org/)
+## Commandes à éxécuter avant de commit
+
+```powershell
+quarto render
+```
+
+```powershell
+quarto publish netlify
+```
+
+## Statisticien `Aon France`
+
+
