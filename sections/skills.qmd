@@ -46,6 +46,24 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 
 ::: {.callout-note icon="false" collapse="true"}
 ## Assurances
+
+J'ai pu apporter mon expertise en Data Science en l'appliquant à l’Assurance IARD et Flotte Automobile. 
+
+**Assurance IARD :**
+
+- Maîtrise des principes de tarification en assurance automobile, habitation, Responsabilité Civile Décennale et chiens-chats
+- Analyse des tendances de sinistralité et évaluation des facteurs de risque pour optimiser la tarification
+
+**Assurance Flotte Automobile :**
+
+- Compréhension des principes assurantiels spécifiques aux contrats flottes (mutualisation des risques, franchises)
+- Développement d’outils de prévision du coût des sinistres pour accompagner les courtiers et gestionnaires de flotte
+
+**Exploitation des données pour la prise de décision :**
+
+- Mise en place de tableaux de bord pour le suivi de KPIs et une prise de décision éclairée
+- Construction de modèles prédictifs pour améliorer la gestion des contrats et ajuster les stratégies tarifaires
+- Analyse des comportements sinistres pour identifier les leviers d’optimisation et de prévention
 :::
 
 ### Langages

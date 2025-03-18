@@ -90,6 +90,24 @@ cookieconsent.run({
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+</script>
 
 
 <link rel="stylesheet" href="../assets/styles.css">
@@ -237,7 +255,23 @@ Assurances
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>J’ai pu apporter mon expertise en Data Science en l’appliquant à l’Assurance IARD et Flotte Automobile.</p>
+<p><strong>Assurance IARD :</strong></p>
+<ul>
+<li>Maîtrise des principes de tarification en assurance automobile, habitation, Responsabilité Civile Décennale et chiens-chats</li>
+<li>Analyse des tendances de sinistralité et évaluation des facteurs de risque pour optimiser la tarification</li>
+</ul>
+<p><strong>Assurance Flotte Automobile :</strong></p>
+<ul>
+<li>Compréhension des principes assurantiels spécifiques aux contrats flottes (mutualisation des risques, franchises)</li>
+<li>Développement d’outils de prévision du coût des sinistres pour accompagner les courtiers et gestionnaires de flotte</li>
+</ul>
+<p><strong>Exploitation des données pour la prise de décision :</strong></p>
+<ul>
+<li>Mise en place de tableaux de bord pour le suivi de KPIs et une prise de décision éclairée</li>
+<li>Construction de modèles prédictifs pour améliorer la gestion des contrats et ajuster les stratégies tarifaires</li>
+<li>Analyse des comportements sinistres pour identifier les leviers d’optimisation et de prévention</li>
+</ul>
 </div>
 </div>
 </div>
@@ -512,7 +546,7 @@ Centre d’intérêts
 </section>
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
 
 <ol>
 <li id="fn1"><p>J’ai par exemple créé ce site avec <strong>Quarto</strong>, tout en tirant profit de <code>SASS</code> et de <code>CSS</code> pour en améliorer le rendu.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -934,7 +968,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
     <a class="nav-link" href="https://quarto.org/">
-<p>Website made with <strong>Quarto</strong> 🛠️</p>
+<p>Website made with Quarto 🛠️</p>
 </a>
   </li>  
 </ul>
@@ -949,9 +983,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-      <i class="bi bi-cc-circle" role="img">
-</i> 
- Licence : CC BY-NC-SA
+    <a class="nav-link" href="../licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
   </li>  
 </ul>
     </div>
