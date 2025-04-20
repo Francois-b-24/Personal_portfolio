@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
-<meta name="description" content="Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.">
 
-<title>François BOUSSENGUI | L’Univers de l’Horlogerie de Seconde Main</title>
+<title>François BOUSSENGUI | Microéconomie - Leçon 1 : Théorie du consommateur</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,6 +106,35 @@ cookieconsent.run({
 });
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -155,13 +183,8 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">L’Univers de l’Horlogerie de Seconde Main</h1>
-                  <div>
-        <div class="description">
-          <em>Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.</em>
-        </div>
-      </div>
-                          <div class="quarto-categories">
+      <h1 class="title">Microéconomie - Leçon 1 : Théorie du consommateur</h1>
+                                <div class="quarto-categories">
                 <div class="quarto-category">Analyse de données</div>
               </div>
                   </div>
@@ -180,7 +203,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">25 décembre 2024</p>
+        <p class="date">4 octobre 2025</p>
       </div>
     </div>
     
@@ -196,13 +219,19 @@ cookieconsent.run({
     <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie" id="toc-contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="nav-link active" data-scroll-target="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></a></li>
-  <li><a href="#objectif-de-lanalyse" id="toc-objectif-de-lanalyse" class="nav-link" data-scroll-target="#objectif-de-lanalyse"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> <strong>Méthodologie</strong></a></li>
-  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></a></li>
-  <li><a href="#applications-de-lanalyse" id="toc-applications-de-lanalyse" class="nav-link" data-scroll-target="#applications-de-lanalyse"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">6</span> <strong>Outil technique</strong></a></li>
-  <li><a href="#application-pour-visualiser-les-statistiques" id="toc-application-pour-visualiser-les-statistiques" class="nav-link" data-scroll-target="#application-pour-visualiser-les-statistiques"><span class="header-section-number">7</span> <strong>Application pour visualiser les statistiques :</strong></a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#préférences-du-consommateur" id="toc-préférences-du-consommateur" class="nav-link" data-scroll-target="#préférences-du-consommateur"><span class="header-section-number">2</span> 1. Préférences du consommateur</a>
+  <ul class="collapse">
+  <li><a href="#hypothèses-fondamentales" id="toc-hypothèses-fondamentales" class="nav-link" data-scroll-target="#hypothèses-fondamentales"><span class="header-section-number">2.1</span> 1.1 Hypothèses fondamentales</a></li>
+  <li><a href="#représentation-par-une-fonction-dutilité" id="toc-représentation-par-une-fonction-dutilité" class="nav-link" data-scroll-target="#représentation-par-une-fonction-dutilité"><span class="header-section-number">2.2</span> 1.2 Représentation par une fonction d’utilité</a></li>
+  </ul></li>
+  <li><a href="#contrainte-budgétaire" id="toc-contrainte-budgétaire" class="nav-link" data-scroll-target="#contrainte-budgétaire"><span class="header-section-number">3</span> 2. Contrainte budgétaire</a>
+  <ul class="collapse">
+  <li><a href="#illustration-droite-budgétaire" id="toc-illustration-droite-budgétaire" class="nav-link" data-scroll-target="#illustration-droite-budgétaire"><span class="header-section-number">3.0.1</span> Illustration : Droite budgétaire</a></li>
+  </ul></li>
+  <li><a href="#paramètres" id="toc-paramètres" class="nav-link" data-scroll-target="#paramètres"><span class="header-section-number">4</span> Paramètres</a></li>
+  <li><a href="#valeurs-pour-x1" id="toc-valeurs-pour-x1" class="nav-link" data-scroll-target="#valeurs-pour-x1"><span class="header-section-number">5</span> Valeurs pour x1</a></li>
+  <li><a href="#tracé" id="toc-tracé" class="nav-link" data-scroll-target="#tracé"><span class="header-section-number">6</span> Tracé</a></li>
   </ul>
 </nav>
     </div>
@@ -213,152 +242,157 @@ cookieconsent.run({
 
 
 
-<section id="contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></h1>
-<p>L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les variations de prix sur le marché de la seconde main, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées sur le site <strong>Chrono24</strong>, l’une des principales plateformes de vente de montres de luxe en ligne.</p>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Cette leçon introduit la <strong>théorie du consommateur</strong>, qui cherche à modéliser les choix d’un individu confronté à une contrainte de revenu et plusieurs combinaisons possibles de biens à consommer.</p>
+<hr>
 </section>
-<section id="objectif-de-lanalyse" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></h1>
-<p>L’objectif principal de cette analyse est de fournir des insights pertinents sur les tendances actuelles du marché des montres en se basant sur des données provenant de Chrono24. À travers le <em>scraping</em> de données en ligne, nous avons extrait des informations détaillées sur un large éventail de montres proposées à la vente, notamment :</p>
+<section id="préférences-du-consommateur" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 1. Préférences du consommateur</h1>
+<section id="hypothèses-fondamentales" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="hypothèses-fondamentales"><span class="header-section-number">2.1</span> 1.1 Hypothèses fondamentales</h2>
+<p>Soit un panier de consommation noté <span class="math inline">\(x = (x_1, x_2) \in \mathbb{R}_+^2\)</span>, représentant deux biens.</p>
+<p>Les préférences du consommateur sont modélisées par une relation binaire <span class="math inline">\(\succeq\)</span> telle que :</p>
 <ul>
-<li><p><strong>Prix des montres</strong> : Données sur les prix pour les différentes marques, modèles, et états des montres.</p></li>
-<li><p><strong>Caractéristiques des montres</strong> : Informations sur les spécifications telles que les matériaux utilisés (acier, or, etc.), le type de mouvement, la taille, et les autres caractéristiques techniques.</p></li>
-<li><p><strong>Marques populaires</strong> : Identification des marques les plus recherchées et les plus proposées sur le marché secondaire.</p></li>
-<li><p><strong>Évolution des prix</strong> : Analyse des variations de prix des montres selon des critères comme la marque, la matière du boîtier, ou la rareté.</p></li>
+<li><strong>Complétude</strong> : <span class="math inline">\(\forall x, y\)</span>, <span class="math inline">\(x \succeq y\)</span> ou <span class="math inline">\(y \succeq x\)</span></li>
+<li><strong>Réflexivité</strong> : <span class="math inline">\(x \succeq x\)</span></li>
+<li><strong>Transitivité</strong> : <span class="math inline">\(x \succeq y\)</span> et <span class="math inline">\(y \succeq z \Rightarrow x \succeq z\)</span></li>
+<li><strong>Monotonie</strong> : Si <span class="math inline">\(x_1 \geq y_1\)</span> et <span class="math inline">\(x_2 \geq y_2\)</span> avec au moins une inégalité stricte, alors <span class="math inline">\(x \succ y\)</span></li>
+<li><strong>Convexité</strong> : Le consommateur préfère les combinaisons de paniers aux paniers extrêmes</li>
 </ul>
 </section>
-<section id="méthodologie" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> <strong>Méthodologie</strong></h1>
-<p>Les données ont été collectées par scraping depuis le site web de Chrono24 à l’aide d’outils <strong>Python</strong> tels que <em>BeautifulSoup</em> et <em>Selenium</em>. Ce processus a permis d’extraire un ensemble de données riche et diversifié sur les montres mises en vente, comprenant des informations sur les prix, les marques, les matériaux, les tailles, et bien plus encore. Ces données ont ensuite été nettoyées et préparées pour l’analyse à l’aide de bibliothèques telles que <em>Pandas</em> et <em>NumPy</em>.</p>
-<p>L’analyse s’est articulée autour de plusieurs axes :</p>
-<ul>
-<li><p><strong>Analyse descriptive</strong> : Statistiques de base (moyenne, médiane, écart-type) sur les prix des montres et leurs caractéristiques.</p></li>
-<li><p><strong>Visualisation des données</strong> : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des prix selon les matériaux, et d’autres caractéristiques pertinentes.</p></li>
-<li><p><strong>Modélisation prédictive</strong> : Développement de modèles permettant de prédire les variations de prix en fonction de certains facteurs comme la marque, le type de mouvement, et l’état de la montre.</p></li>
-</ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Présentation des variables de la base données
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="table">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Variables</th>
-<th style="text-align: left;">Interprétation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>Marque</code></td>
-<td style="text-align: left;">Marque de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Modèle</code></td>
-<td style="text-align: left;">Modèle de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>mouvement</code></td>
-<td style="text-align: left;">Type de mouvement (manuel, autmatique, etc. )</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Matiere du boîtier</code></td>
-<td style="text-align: left;">Matière du boîtier (acier, or, etc. )</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Matiere du bracelet</code></td>
-<td style="text-align: left;">Matière du bracelet (or, acier, caoutchouc)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Etat de la montre</code></td>
-<td style="text-align: left;">Etat de la montre (Bon, mauvais, etc. )</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Sexe</code></td>
-<td style="text-align: left;">catégorie de la montre : homme/femme</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>prix</strong></td>
-<td style="text-align: left;">Prix de la montre (en €)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Réserve de macrhe</code></td>
-<td style="text-align: left;">Niveau de réserve de marche de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Diamètre</code></td>
-<td style="text-align: left;">Diamètre de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Etenchéité</code></td>
-<td style="text-align: left;">Niveau d’étenchéité de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>matiere de la lunette</code></td>
-<td style="text-align: left;">Matière de la lunette de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>matiere du verre</code></td>
-<td style="text-align: left;">Matière du verre de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>matiere de la boucle</code></td>
-<td style="text-align: left;">Matière de la boucle de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Pays</code></td>
-<td style="text-align: left;">Pays de provenance de la montre</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<section id="représentation-par-une-fonction-dutilité" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="représentation-par-une-fonction-dutilité"><span class="header-section-number">2.2</span> 1.2 Représentation par une fonction d’utilité</h2>
+<p>Si les préférences sont continues et convexes, il existe une fonction d’utilité <span class="math inline">\(u(x_1, x_2)\)</span> telle que :</p>
+<p><span class="math display">\[
+x \succeq y \Leftrightarrow u(x_1, x_2) \geq u(y_1, y_2)
+\]</span></p>
+<p>L’utilité est une représentation <strong>ordinale</strong> : seules les préférences relatives importent.</p>
+<hr>
 </section>
-<section id="résultats-attendus" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></h1>
-<p>À travers cette analyse, nous cherchons à obtenir une vue d’ensemble des tendances actuelles du marché des montres de luxe. Cela permettra de répondre à plusieurs questions clés :</p>
-<ul>
-<li><p>Quelles sont les marques les plus recherchées et les plus coûteuses ?</p></li>
-<li><p>Comment les caractéristiques (matériaux, type de mouvement, etc.) influent-elles sur le prix des montres ?</p></li>
-<li><p>Existe-t-il des tendances saisonnières ou géographiques influençant les prix ?</p></li>
-</ul>
 </section>
-<section id="applications-de-lanalyse" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></h1>
-<p>Les résultats de cette analyse peuvent être utilisés pour :</p>
-<ul>
-<li><p>Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.</p></li>
-<li><p>Les acheteurs : Obtenir une vue d’ensemble des prix moyens et des bonnes affaires dans le marché de l’horlogerie.</p></li>
-<li><p>Les marques et fabricants : Comprendre les attentes des consommateurs et les tendances de demande en matière de modèles spécifiques ou de caractéristiques.</p></li>
-</ul>
-<p>En résumé, cette analyse vise à fournir une compréhension approfondie des dynamiques du marché de l’horlogerie via les données issues de Chrono24, ce qui pourra servir à la fois pour des études de marché, des prévisions de prix, et la définition de stratégies commerciales adaptées.</p>
+<section id="contrainte-budgétaire" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 2. Contrainte budgétaire</h1>
+<p>Le consommateur a un revenu <span class="math inline">\(R &gt; 0\)</span> et fait face à des prix <span class="math inline">\(p_1\)</span> et <span class="math inline">\(p_2\)</span>.</p>
+<p>La contrainte budgétaire est donnée par :</p>
+<p><span class="math display">\[
+p_1 x_1 + p_2 x_2 \leq R
+\]</span></p>
+<p>L’ensemble des paniers accessibles (ensemble budgétaire) est :</p>
+<p><span class="math display">\[
+B = \left\{ (x_1, x_2) \in \mathbb{R}_+^2 \, | \, p_1 x_1 + p_2 x_2 \leq R \right\}
+\]</span></p>
+<blockquote class="blockquote">
+<p>💡 La droite budgétaire correspond à l’égalité <span class="math inline">\(p_1 x_1 + p_2 x_2 = R\)</span>.</p>
+</blockquote>
+<section id="illustration-droite-budgétaire" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="illustration-droite-budgétaire"><span class="header-section-number">3.0.1</span> Illustration : Droite budgétaire</h3>
+<pre><code>2.  Deuxième partie (Le bloc Python et le reste du document) :</code></pre>
+<p>import matplotlib.pyplot as plt import numpy as np</p>
 </section>
-<section id="outil-technique" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> <strong>Outil technique</strong></h1>
-<ul>
-<li>Le projet a entièrement été developpé en <em>Python</em>.</li>
-</ul>
-<div style="text-align:center;">
-<p><a href="https://github.com/Francois-b-24/Clock_industry-second_hand/tree/main"><em>Cliquer ici pour voir le code source.</em></a></p>
-</div>
 </section>
-<section id="application-pour-visualiser-les-statistiques" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> <strong>Application pour visualiser les statistiques :</strong></h1>
-<div style="text-align:center;">
-<p><a href="https://watchapp.streamlit.app/">Lancer l’application</a></p>
-</div>
+<section id="paramètres" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Paramètres</h1>
+<p>R = 100 p1 = 2 p2 = 5</p>
+</section>
+<section id="valeurs-pour-x1" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Valeurs pour x1</h1>
+<p>x1 = np.linspace(0, R/p1, 100) x2 = (R - p1 * x1) / p2</p>
+</section>
+<section id="tracé" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Tracé</h1>
+<p>plt.figure(figsize=(6,4)) plt.plot(x1, x2, label=“Droite budgétaire”, linewidth=2) plt.fill_between(x1, x2, color=“gray”, alpha=0.2, label=“Ensemble budgétaire”) plt.xlabel(“Bien 1 (x₁)”) plt.ylabel(“Bien 2 (x₂)”) plt.title(“Contrainte budgétaire : <span class="math inline">\(p_1 x_1 + p_2 x_2 = R\)</span>”) plt.legend() plt.grid(True) plt.show()</p>
+<p>````</p>
+<p>⸻</p>
+<ol start="3" type="1">
+<li>Maximisation de l’utilité</li>
+</ol>
+<p>Le consommateur choisit le panier <span class="math inline">\((x_1^, x_2^)\)</span> qui maximise son utilité sous la contrainte budgétaire.</p>
+<p>3.1 Programme du consommateur</p>
+<p><span class="math display">\[
+\max_{x_1, x_2} u(x_1, x_2) \quad \text{sous la contrainte} \quad p_1 x_1 + p_2 x_2 \leq R
+\]</span></p>
+<p>3.2 Méthode du Lagrangien</p>
+<p>Définissons le Lagrangien :</p>
+<p><span class="math display">\[
+\mathcal{L}(x_1, x_2, \lambda) = u(x_1, x_2) - \lambda , (p_1 x_1 + p_2 x_2 - R)
+\]</span></p>
+<p>Les conditions du premier ordre (CPO) sont :</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial x_1} &amp;= \frac{\partial u}{\partial x_1} - \lambda p_1 = 0 \quad \Rightarrow \quad \frac{\partial u}{\partial x_1} = \lambda p_1, \\
+\frac{\partial \mathcal{L}}{\partial x_2} &amp;= \frac{\partial u}{\partial x_2} - \lambda p_2 = 0 \quad \Rightarrow \quad \frac{\partial u}{\partial x_2} = \lambda p_2, \\
+\frac{\partial \mathcal{L}}{\partial \lambda} &amp;= R - p_1 x_1 - p_2 x_2 = 0 \quad \Rightarrow \quad p_1 x_1 + p_2 x_2 = R.
+\end{aligned}
+\]</span></p>
+<p>La condition d’optimalité qui en découle est :</p>
+<p><span class="math display">\[
+\frac{\frac{\partial u}{\partial x_1}}{\frac{\partial u}{\partial x_2}} = \frac{p_1}{p_2},
+\]</span></p>
+<p>ce qui signifie que le taux marginal de substitution (TMS) doit être égal au rapport des prix.</p>
+<p>⸻</p>
+<ol start="4" type="1">
+<li>Exemples types</li>
+</ol>
+<p>4.1 Fonction Cobb-Douglas</p>
+<p>Soit <span class="math inline">\(u(x_1, x_2) = x_1^\alpha x_2^{1-\alpha}\)</span> avec <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>.</p>
+<p>Demande optimale :</p>
+<p><span class="math display">\[
+x_1^* = \alpha \frac{R}{p_1}, \quad x_2^* = (1 - \alpha) \frac{R}{p_2}.
+\]</span></p>
+<p>Démonstration détaillée : 1. Formulation du Lagrangien :</p>
+<p><span class="math display">\[
+\mathcal{L}(x_1, x_2, \lambda) = x_1^\alpha x_2^{1-\alpha} - \lambda (p_1 x_1 + p_2 x_2 - R).
+\]</span> 2. Conditions du premier ordre :</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial x_1} &amp;= \alpha x_1^{\alpha-1} x_2^{1-\alpha} - \lambda p_1 = 0, \\
+\frac{\partial \mathcal{L}}{\partial x_2} &amp;= (1-\alpha)x_1^\alpha x_2^{-\alpha} - \lambda p_2 = 0, \\
+\frac{\partial \mathcal{L}}{\partial \lambda} &amp;= R - p_1 x_1 - p_2 x_2 = 0.
+\end{aligned}
+\]</span> 3. En divisant les deux premières équations pour éliminer <span class="math inline">\(\lambda\)</span> :</p>
+<p><span class="math display">\[
+\frac{\alpha x_1^{\alpha-1} x_2^{1-\alpha}}{(1-\alpha)x_1^\alpha x_2^{-\alpha}} = \frac{p_1}{p_2} \quad \Rightarrow \quad \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
+\]</span> 4. On obtient :</p>
+<p><span class="math display">\[
+\frac{x_2}{x_1} = \frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}.
+\]</span> 5. En substituant dans la contrainte budgétaire, on en déduit :</p>
+<p><span class="math display">\[
+x_1^* = \alpha \frac{R}{p_1} \quad \text{et} \quad x_2^* = (1-\alpha) \frac{R}{p_2}.
+\]</span></p>
+<p>4.2 Biens parfaits substituts</p>
+<p>Pour une fonction d’utilité du type :</p>
+<p><span class="math display">\[
+u(x_1, x_2) = a x_1 + b x_2,
+\]</span></p>
+<p>le consommateur achètera uniquement le bien ayant le meilleur rapport utilité-prix, c’est-à-dire en comparant <span class="math inline">\(\frac{a}{p_1}\)</span> et <span class="math inline">\(\frac{b}{p_2}\)</span>.</p>
+<p>4.3 Biens parfaits compléments</p>
+<p>Pour une fonction d’utilité :</p>
+<p><span class="math display">\[
+u(x_1, x_2) = \min{a x_1, b x_2},
+\]</span></p>
+<p>la demande optimale se détermine en imposant :</p>
+<p><span class="math display">\[
+a x_1 = b x_2 \quad \text{et} \quad p_1 x_1 + p_2 x_2 = R.
+\]</span></p>
+<p>⸻</p>
+<ol start="5" type="1">
+<li>Exercices corrigés</li>
+</ol>
+<p>Exercice 1 — Fonction Cobb-Douglas</p>
+<p>Soit <span class="math inline">\(u(x_1, x_2) = x_1^{0.5} x_2^{0.5}\)</span>, <span class="math inline">\(R = 100\)</span>, <span class="math inline">\(p_1 = 2\)</span>, <span class="math inline">\(p_2 = 5\)</span>.</p>
+<p>Calculs : • Ici, <span class="math inline">\(\alpha = 0.5\)</span>. • <span class="math inline">\(x_1^* = 0.5 \cdot \frac{100}{2} = 25\)</span>. • <span class="math inline">\(x_2^* = 0.5 \cdot \frac{100}{5} = 10\)</span>.</p>
+<p>Réponse : <span class="math inline">\(x_1^* = 25\)</span>, <span class="math inline">\(x_2^* = 10\)</span>.</p>
+<p>Exercice 2 — Biens parfaits compléments</p>
+<p>Soit <span class="math inline">\(u(x_1, x_2) = \min{x_1, 2x_2}\)</span>, <span class="math inline">\(R = 120\)</span>, <span class="math inline">\(p_1 = 4\)</span>, <span class="math inline">\(p_2 = 6\)</span>.</p>
+<p>Étapes de résolution : 1. Condition de complémentarité : pour maximiser l’utilité, il faut que <span class="math inline">\(x_1 = 2x_2\)</span>. 2. Substitution dans la contrainte budgétaire :</p>
+<p><span class="math display">\[
+4(2x_2) + 6x_2 = 8x_2 + 6x_2 = 14x_2 = 120.
+\]</span> 3. Résolution :</p>
+<p><span class="math display">\[
+x_2^* = \frac{120}{14} = \frac{60}{7}, \quad x_1^* = 2 \cdot \frac{60}{7} = \frac{120}{7}.
+\]</span></p>
+<p>Réponse : <span class="math inline">\(x_1^* = \frac{120}{7}\)</span>, <span class="math inline">\(x_2^* = \frac{60}{7}\)</span>.</p>
 
 
 </section>

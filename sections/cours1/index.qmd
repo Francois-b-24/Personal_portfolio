@@ -1,0 +1,247 @@
+---
+title: "Microéconomie - Leçon 1 : Théorie du consommateur"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: ""
+author: "`BOUSSENGUI François`"
+description: ""
+image: ""
+date: "10/04/2025"
+categories: [Analyse de données]
+format:
+  html:
+    code-fold: true
+    code-line-numbers: false
+    anchor-sections: true
+    smooth-scroll: true
+    citations-hover: true
+    footnotes-hover: true
+    html-math-method: mathjax
+---
+# Introduction
+
+Cette leçon introduit la **théorie du consommateur**, qui cherche à modéliser les choix d’un individu confronté à une contrainte de revenu et plusieurs combinaisons possibles de biens à consommer.
+
+---
+
+# 1. Préférences du consommateur
+
+## 1.1 Hypothèses fondamentales
+
+Soit un panier de consommation noté $x = (x_1, x_2) \in \mathbb{R}_+^2$, représentant deux biens.
+
+Les préférences du consommateur sont modélisées par une relation binaire $\succeq$ telle que :
+
+- **Complétude** : $\forall x, y$, $x \succeq y$ ou $y \succeq x$
+- **Réflexivité** : $x \succeq x$
+- **Transitivité** : $x \succeq y$ et $y \succeq z \Rightarrow x \succeq z$
+- **Monotonie** : Si $x_1 \geq y_1$ et $x_2 \geq y_2$ avec au moins une inégalité stricte, alors $x \succ y$
+- **Convexité** : Le consommateur préfère les combinaisons de paniers aux paniers extrêmes
+
+## 1.2 Représentation par une fonction d’utilité
+
+Si les préférences sont continues et convexes, il existe une fonction d'utilité $u(x_1, x_2)$ telle que :
+
+$$
+x \succeq y \Leftrightarrow u(x_1, x_2) \geq u(y_1, y_2)
+$$
+
+L'utilité est une représentation **ordinale** : seules les préférences relatives importent.
+
+---
+
+# 2. Contrainte budgétaire
+
+Le consommateur a un revenu $R > 0$ et fait face à des prix $p_1$ et $p_2$.
+
+La contrainte budgétaire est donnée par :
+
+$$
+p_1 x_1 + p_2 x_2 \leq R
+$$
+
+L’ensemble des paniers accessibles (ensemble budgétaire) est :
+
+$$
+B = \left\{ (x_1, x_2) \in \mathbb{R}_+^2 \, | \, p_1 x_1 + p_2 x_2 \leq R \right\}
+$$
+
+> 💡 La droite budgétaire correspond à l’égalité $p_1 x_1 + p_2 x_2 = R$.
+
+### Illustration : Droite budgétaire
+
+	2.	Deuxième partie (Le bloc Python et le reste du document) :
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Paramètres
+R = 100
+p1 = 2
+p2 = 5
+
+# Valeurs pour x1
+x1 = np.linspace(0, R/p1, 100)
+x2 = (R - p1 * x1) / p2
+
+# Tracé
+plt.figure(figsize=(6,4))
+plt.plot(x1, x2, label="Droite budgétaire", linewidth=2)
+plt.fill_between(x1, x2, color="gray", alpha=0.2, label="Ensemble budgétaire")
+plt.xlabel("Bien 1 (x₁)")
+plt.ylabel("Bien 2 (x₂)")
+plt.title("Contrainte budgétaire : $p_1 x_1 + p_2 x_2 = R$")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+````
+
+
+⸻
+
+3. Maximisation de l’utilité
+
+Le consommateur choisit le panier $(x_1^, x_2^)$ qui maximise son utilité sous la contrainte budgétaire.
+
+3.1 Programme du consommateur
+
+$$
+\max_{x_1, x_2} u(x_1, x_2) \quad \text{sous la contrainte} \quad p_1 x_1 + p_2 x_2 \leq R
+$$
+
+3.2 Méthode du Lagrangien
+
+Définissons le Lagrangien :
+
+$$
+\mathcal{L}(x_1, x_2, \lambda) = u(x_1, x_2) - \lambda , (p_1 x_1 + p_2 x_2 - R)
+$$
+
+Les conditions du premier ordre (CPO) sont :
+
+$$
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial x_1} &= \frac{\partial u}{\partial x_1} - \lambda p_1 = 0 \quad \Rightarrow \quad \frac{\partial u}{\partial x_1} = \lambda p_1, \\
+\frac{\partial \mathcal{L}}{\partial x_2} &= \frac{\partial u}{\partial x_2} - \lambda p_2 = 0 \quad \Rightarrow \quad \frac{\partial u}{\partial x_2} = \lambda p_2, \\
+\frac{\partial \mathcal{L}}{\partial \lambda} &= R - p_1 x_1 - p_2 x_2 = 0 \quad \Rightarrow \quad p_1 x_1 + p_2 x_2 = R.
+\end{aligned}
+$$
+
+La condition d’optimalité qui en découle est :
+
+$$
+\frac{\frac{\partial u}{\partial x_1}}{\frac{\partial u}{\partial x_2}} = \frac{p_1}{p_2},
+$$
+
+ce qui signifie que le taux marginal de substitution (TMS) doit être égal au rapport des prix.
+
+⸻
+
+4. Exemples types
+
+4.1 Fonction Cobb-Douglas
+
+Soit $u(x_1, x_2) = x_1^\alpha x_2^{1-\alpha}$ avec $0 < \alpha < 1$.
+
+Demande optimale :
+
+$$
+x_1^* = \alpha \frac{R}{p_1}, \quad x_2^* = (1 - \alpha) \frac{R}{p_2}.
+$$
+
+Démonstration détaillée :
+	1.	Formulation du Lagrangien :
+
+$$
+\mathcal{L}(x_1, x_2, \lambda) = x_1^\alpha x_2^{1-\alpha} - \lambda (p_1 x_1 + p_2 x_2 - R).
+$$
+	2.	Conditions du premier ordre :
+
+$$
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial x_1} &= \alpha x_1^{\alpha-1} x_2^{1-\alpha} - \lambda p_1 = 0, \\
+\frac{\partial \mathcal{L}}{\partial x_2} &= (1-\alpha)x_1^\alpha x_2^{-\alpha} - \lambda p_2 = 0, \\
+\frac{\partial \mathcal{L}}{\partial \lambda} &= R - p_1 x_1 - p_2 x_2 = 0.
+\end{aligned}
+$$
+	3.	En divisant les deux premières équations pour éliminer $\lambda$ :
+
+$$
+\frac{\alpha x_1^{\alpha-1} x_2^{1-\alpha}}{(1-\alpha)x_1^\alpha x_2^{-\alpha}} = \frac{p_1}{p_2} \quad \Rightarrow \quad \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
+$$
+	4.	On obtient :
+
+$$
+\frac{x_2}{x_1} = \frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}.
+$$
+	5.	En substituant dans la contrainte budgétaire, on en déduit :
+
+$$
+x_1^* = \alpha \frac{R}{p_1} \quad \text{et} \quad x_2^* = (1-\alpha) \frac{R}{p_2}.
+$$
+
+4.2 Biens parfaits substituts
+
+Pour une fonction d’utilité du type :
+
+$$
+u(x_1, x_2) = a x_1 + b x_2,
+$$
+
+le consommateur achètera uniquement le bien ayant le meilleur rapport utilité-prix, c’est-à-dire en comparant $\frac{a}{p_1}$ et $\frac{b}{p_2}$.
+
+4.3 Biens parfaits compléments
+
+Pour une fonction d’utilité :
+
+$$
+u(x_1, x_2) = \min{a x_1, b x_2},
+$$
+
+la demande optimale se détermine en imposant :
+
+$$
+a x_1 = b x_2 \quad \text{et} \quad p_1 x_1 + p_2 x_2 = R.
+$$
+
+⸻
+
+5. Exercices corrigés
+
+Exercice 1 — Fonction Cobb-Douglas
+
+Soit $u(x_1, x_2) = x_1^{0.5} x_2^{0.5}$, $R = 100$, $p_1 = 2$, $p_2 = 5$.
+
+Calculs :
+	•	Ici, $\alpha = 0.5$.
+	•	$x_1^* = 0.5 \cdot \frac{100}{2} = 25$.
+	•	$x_2^* = 0.5 \cdot \frac{100}{5} = 10$.
+
+Réponse : $x_1^* = 25$, $x_2^* = 10$.
+
+Exercice 2 — Biens parfaits compléments
+
+Soit $u(x_1, x_2) = \min{x_1, 2x_2}$, $R = 120$, $p_1 = 4$, $p_2 = 6$.
+
+Étapes de résolution :
+	1.	Condition de complémentarité : pour maximiser l’utilité, il faut que $x_1 = 2x_2$.
+	2.	Substitution dans la contrainte budgétaire :
+
+$$
+4(2x_2) + 6x_2 = 8x_2 + 6x_2 = 14x_2 = 120.
+$$
+	3.	Résolution :
+
+$$
+x_2^* = \frac{120}{14} = \frac{60}{7}, \quad x_1^* = 2 \cdot \frac{60}{7} = \frac{120}{7}.
+$$
+
+Réponse : $x_1^* = \frac{120}{7}$, $x_2^* = \frac{60}{7}$.
+
+
+
