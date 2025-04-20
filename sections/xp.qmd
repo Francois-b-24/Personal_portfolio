@@ -88,7 +88,7 @@ author: ""
 
 - **Majeure Data Science** : apprentissage approfondi en statistiques, machine learning, séries temporelles et bases de données.  
 - **Projet clé** : mise en place d'un modèle de machine learning pour prédire le prix de vente de véhicules d'occasion en France. 
-- **Mémoire stage de fin d'étude** : optimisation du scraper d'un tarifaire en assurance pour deux-roues ; Mise en place d'un modèle prédictif de résiliation.
+- **Mémoire stage de fin d'étude** : optimisation d'un scraper tarifaire en assurance pour deux-roues ; Mise en place d'un modèle prédictif de résiliation.
 - **Outils & langages** : maîtrise de Python (Numpy, Pandas, scikit‑learn), R, SQL, Git, Jupyter, présentation de résultats avec PowerPoint, Beamer et outils BI.
 
 ::: {style="text-align:center;"}
