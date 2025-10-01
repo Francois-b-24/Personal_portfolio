@@ -12,6 +12,4 @@ quarto render
 quarto publish netlify
 ```
 
-## Statisticien `Aon France`
-
 
