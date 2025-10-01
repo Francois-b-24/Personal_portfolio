@@ -20,10 +20,11 @@ author: ""
 {{< fa calendar-days >}} 02/2023 - Présent  
 {{< fa location-dot >}} *35 rue de la fédérarion, 75015, Paris, France*  
 
-- **Industrialisation Python & automatisation** : création d'applications python **Streamlit** destinées aux équipes métiers → Gain de temps conséquent dans la réalisation de tâches répétitives. 
-- **Migration SAP BO → MyReport** : pilotage de la migration (recueil des besoins, cartographie des rapports, formation des utilisateurs). 
-- **Outils d’aide au pilotage** : développement d'applications python **Streamlit** internes dédiées aux brokers pour le pilotage de leur activité.
-- **Tableaux de bord suivi de la sinistralité** : création de tableaux de bord interactifs **Qlik Sense** à destination des clients, avec KPI : taux de fréquence, coût moyen, répartition de la charge sinistralité.
+- Conception et automatisation de reportings de sinistralité (Excel, VBA, MyReport), améliorant la fiabilité et la rapidité de diffusion auprès des clients.
+- Développement de tableaux de bord interactifs sous Qlik Sense pour le suivi de la sinistralité et le pilotage interne.
+- Réalisation d’analyses statistiques afin d’optimiser les offres et d’adapter les solutions aux besoins des flottes automobiles.
+- Introduction de Python au sein de l’équipe, avec la mise en place d’un GitHub interne et le développement d’applications métiers dédiées.
+- Contribution à la migration des outils de reporting de Business Objects vers MyReport : recettage, formation des utilisateurs et accompagnement au changement.
 :::  
 :::  
 :::
