@@ -165,5 +165,10 @@ GitHub*](https://github.com/Francois-b-24/f1-analytics)
 
 ::: {style="text-align:center;"}
 [🚀 Ouvrir F1 Analytics
-Dashboard](https://f1-fastanalytics.streamlit.app/)
+Dashboard ~ Streamlit](https://f1-fastanalytics.streamlit.app/)
+:::
+
+::: {style="text-align:center;"}
+[🚀 Ouvrir F1 Analytics
+Dashboard ~ Reverse proxy](http://f1analytics.duckdns.org/)
 :::
