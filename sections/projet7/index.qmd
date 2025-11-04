@@ -10,7 +10,7 @@ author: "`BOUSSENGUI François`"
 description: "*Une application interactive pour explorer les données de Formule 1 : chronos, télémétrie, météo et stratégies de course.*"
 image: /assets/img/projet7/lewis_2.jpg
 date: "11/04/2025"
-categories: [Analyse de données, Data Science, Sport Analytics]
+categories: [Analyse de données, Data Science]
 format:
     html:
         code-fold: true 
@@ -124,7 +124,7 @@ performances en Formule 1 :
 
 \- Visualiser l'influence des conditions de piste
 
- - Comprendre l'impact des stratégies pneus
+\- Comprendre l'impact des stratégies pneus
 
 \- Étudier les différences de performance entre écuries
 
@@ -149,7 +149,7 @@ d'exploration et d'analyse de la performance.
 
 ------------------------------------------------------------------------
 
-**Figure 1 : Aperçu du tableau de bord F1 Analytics**
+**Figure 1 : Aperçu du tableau de bord**
 :::
 
 
@@ -164,11 +164,11 @@ GitHub*](https://github.com/Francois-b-24/f1-analytics)
 # **Lancer l'application**
 
 ::: {style="text-align:center;"}
-[🚀 Ouvrir F1 Analytics
+[🚀 Open F1 Analytics
 Dashboard ~ Streamlit](https://f1-fastanalytics.streamlit.app/)
 :::
 
 ::: {style="text-align:center;"}
-[🚀 Ouvrir F1 Analytics
+[🚀 Open F1 Analytics
 Dashboard ~ Reverse proxy](http://f1analytics.duckdns.org/)
 :::

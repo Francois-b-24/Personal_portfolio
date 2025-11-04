@@ -1,0 +1,125 @@
+---
+title: "⌚ Watch Analytics"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: "Analyse interactive du marché des montres d'occasion (Chrono24)"
+author: "`BOUSSENGUI François`"
+description: "*Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.*"
+image: /assets/img/projet8/CUBITUS.jpg
+date: "2025-11-04"
+categories: [Data Science, Analyse de marché, Horlogerie, Streamlit, Machine learning]
+format:
+  html:
+    code-fold: true 
+    code-line-numbers: false
+    anchor-sections: true
+    smooth-scroll: true
+    citations-hover: true
+    footnotes-hover: true
+    html-math-method: mathjax
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# **Contexte général du projet**
+
+Le marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme **Chrono24**.  
+Chaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.
+
+Afin d’explorer et d’analyser ces données, j’ai développé **Watchs Analystics Dashboard**, une application interactive construite avec **Streamlit**, permettant de **visualiser, segmenter et modéliser les prix des montres de luxe**.
+
+Cette application s’adresse aussi bien aux **passionnés d’horlogerie** qu’aux **analystes de données** ou **acteurs du marché** souhaitant identifier des tendances et des opportunités d’achat.
+
+---
+
+# **Objectif du projet**
+
+L’objectif principal est de fournir une plateforme analytique complète permettant de :
+
+- **Analyser les tendances du marché** : prix moyens, marques dominantes, matériaux, pays vendeurs  
+- **Segmenter le marché** selon des critères techniques ou esthétiques  
+- **Identifier les montres sous-évaluées** grâce à des modèles de détection d’anomalies  
+- **Estimer le prix optimal d’une montre** selon ses caractéristiques  
+
+---
+
+# **Méthodologie et technologies**
+
+L’application repose sur une base de plus de **30 000 montres issues de Chrono24**, nettoyée, standardisée et enrichie à l’aide de scripts Python.
+
+Les principales technologies utilisées :
+
+- **Python 3.11**
+- **Streamlit** pour l’interface interactive  
+- **Plotly** pour les visualisations dynamiques  
+- **Pandas / NumPy** pour la préparation et l’analyse des données  
+- **Scikit-learn** pour la modélisation (régression, clustering, détection d’anomalies)  
+- **Docker** pour le déploiement  
+- **streamlit-extras** pour l’esthétique et les interactions avancées  
+---
+
+# **Fonctionnalités principales**
+
+- 💎 **Analyse du marché** : visualisation interactive des prix par marque, modèle ou matériau  
+- 🔍 **Segmentation** : regroupement automatique des montres selon leurs caractéristiques (clustering)  
+- 🕵️ **Détection d’anomalies** : identification des montres sous-évaluées via des modèles comme **Isolation Forest**  
+- 💰 **Estimation du prix** : prédiction du prix attendu à partir des variables techniques  
+- 📊 **Exports de données** : téléchargement des résultats pour analyses complémentaires  
+
+---
+
+# **Exemples d'onglets**
+
+- **Accueil** : présentation du marché global et des principales tendances  
+- **Analyse des prix** : distribution et comparaison entre marques et modèles  
+- **Segmentation** : visualisation des clusters selon les caractéristiques  
+- **Anomalies** : mise en évidence des montres dont le prix s’écarte des tendances  
+- **Modélisation** : estimation du prix prédit pour une montre sélectionnée  
+- **Exports** : téléchargement au format CSV ou Excel  
+
+---
+
+# **Résultats attendus**
+
+Cette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :
+
+- Identifier les **tendances de prix** selon les marques et matériaux  
+- Détecter les **opportunités d’achat** grâce aux anomalies de prix  
+- Comprendre la **structure du marché secondaire**  
+- Offrir une **estimation cohérente du prix** d’une montre donnée  
+
+En combinant **analyse statistique** et **interface interactive**,  
+**Montre Analytics Dashboard** devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.
+
+---
+
+# **Outil technique**
+
+- Développé entièrement en **Python**  
+- Interface construite avec **Streamlit**  
+- Conteneurisé avec **Docker**  
+- Compatible avec **Streamlit Cloud** pour un déploiement en ligne  
+
+---
+
+::: {style="text-align:center;"}
+![](/assets/img/projet8/app.jpg){fig-alt="Aperçu du tableau de bord" width="80%"}
+
+**Figure 1 : Aperçu du tableau de bord**
+:::
+
+::: {style="text-align:center;"}
+[*Voir le code source sur GitHub*](https://github.com/Francois-b-24/analyse_marche_montres.git)
+:::
+
+---
+
+# **Lancer l’application**
+
+::: {style="text-align:center;"}
+[🚀 Open Watch Analytics Dashboard ~ Streamlit](https://watchanalytics.streamlit.app/)
+:::

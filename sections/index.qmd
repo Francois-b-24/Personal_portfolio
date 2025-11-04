@@ -6,7 +6,7 @@ listing:
     contents: "**/*/*.qmd"
     type: grid
     fields: [image, date, title, categories, description, author] 
-    sort: title
+    sort: date
     categories:  true
     page-size: 36     
 page-layout: full
