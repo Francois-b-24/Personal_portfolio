@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
-<meta name="description" content="Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.">
+<meta name="description" content="Une application interactive pour explorer les données de Formule 1 : chronos, télémétrie, météo et stratégies de course.">
 
-<title>François BOUSSENGUI | L’Univers de l’Horlogerie de Seconde Main</title>
+<title>François BOUSSENGUI | F1 Analytics Dashboard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,7 +142,7 @@ cookieconsent.run({
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../sections/index.html"> 
-<span class="menu-text">Travaux</span></a>
+<span class="menu-text">Projets</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -155,14 +155,17 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">L’Univers de l’Horlogerie de Seconde Main</h1>
+      <h1 class="title">F1 Analytics Dashboard</h1>
+            <p class="subtitle lead">Analyse et visualisation des performances en Formule 1</p>
                   <div>
         <div class="description">
-          <em>Pourquoi certaines montres valent-elles plus cher que d’autres ? Une analyse des facteurs de valorisation.</em>
+          <em>Une application interactive pour explorer les données de Formule 1 : chronos, télémétrie, météo et stratégies de course.</em>
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">Analyse de données</div>
+                <div class="quarto-category">Data Science</div>
+                <div class="quarto-category">Sport Analytics</div>
               </div>
                   </div>
   </div>
@@ -180,7 +183,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">25 décembre 2024</p>
+        <p class="date">4 novembre 2025</p>
       </div>
     </div>
     
@@ -196,13 +199,14 @@ cookieconsent.run({
     <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie" id="toc-contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="nav-link active" data-scroll-target="#contexte-général-de-lanalyse-du-marché-de-lhorlogerie"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></a></li>
-  <li><a href="#objectif-de-lanalyse" id="toc-objectif-de-lanalyse" class="nav-link" data-scroll-target="#objectif-de-lanalyse"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> <strong>Méthodologie</strong></a></li>
-  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></a></li>
-  <li><a href="#applications-de-lanalyse" id="toc-applications-de-lanalyse" class="nav-link" data-scroll-target="#applications-de-lanalyse"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">6</span> <strong>Outil technique</strong></a></li>
-  <li><a href="#application-pour-visualiser-les-statistiques" id="toc-application-pour-visualiser-les-statistiques" class="nav-link" data-scroll-target="#application-pour-visualiser-les-statistiques"><span class="header-section-number">7</span> <strong>Application pour visualiser les statistiques :</strong></a></li>
+  <li><a href="#contexte-général-du-projet" id="toc-contexte-général-du-projet" class="nav-link active" data-scroll-target="#contexte-général-du-projet"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></a></li>
+  <li><a href="#objectif-du-projet" id="toc-objectif-du-projet" class="nav-link" data-scroll-target="#objectif-du-projet"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></a></li>
+  <li><a href="#fonctionnalités-principales" id="toc-fonctionnalités-principales" class="nav-link" data-scroll-target="#fonctionnalités-principales"><span class="header-section-number">3</span> <strong>Fonctionnalités principales</strong></a></li>
+  <li><a href="#méthodologie-et-technologies" id="toc-méthodologie-et-technologies" class="nav-link" data-scroll-target="#méthodologie-et-technologies"><span class="header-section-number">4</span> <strong>Méthodologie et technologies</strong></a></li>
+  <li><a href="#exemples-de-pages" id="toc-exemples-de-pages" class="nav-link" data-scroll-target="#exemples-de-pages"><span class="header-section-number">5</span> <strong>Exemples de pages</strong></a></li>
+  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">7</span> <strong>Outil technique</strong></a></li>
+  <li><a href="#lancer-lapplication" id="toc-lancer-lapplication" class="nav-link" data-scroll-target="#lancer-lapplication"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -213,151 +217,100 @@ cookieconsent.run({
 
 
 
-<section id="contexte-général-de-lanalyse-du-marché-de-lhorlogerie" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général de l’analyse du marché de l’horlogerie</strong></h1>
-<p>L’industrie horlogère est un secteur dynamique et hautement concurrentiel, où les tendances de prix et les préférences des consommateurs évoluent constamment. Afin de mieux comprendre les variations de prix sur le marché de la seconde main, et les caractéristiques des montres proposées sur le marché, cette analyse se concentre sur l’exploration des données collectées sur le site <strong>Chrono24</strong>, l’une des principales plateformes de vente de montres de luxe en ligne.</p>
+<section id="contexte-général-du-projet" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></h1>
+<p>La Formule 1 est un sport où les données jouent un rôle clé. Chaque tour, chaque virage et chaque changement de pneu génèrent une quantité massive d’informations permettant d’analyser les performances des pilotes, des écuries et des monoplaces.</p>
+<p>Pour explorer cette richesse de données, j’ai développé <strong>F1 Analytics Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong> et <strong>FastF1</strong>, permettant de visualiser les chronos, la télémétrie, la météo et les stratégies de course de manière claire et intuitive.</p>
+<hr>
 </section>
-<section id="objectif-de-lanalyse" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif de l’analyse</strong></h1>
-<p>L’objectif principal de cette analyse est de fournir des insights pertinents sur les tendances actuelles du marché des montres en se basant sur des données provenant de Chrono24. À travers le <em>scraping</em> de données en ligne, nous avons extrait des informations détaillées sur un large éventail de montres proposées à la vente, notamment :</p>
-<ul>
-<li><p><strong>Prix des montres</strong> : Données sur les prix pour les différentes marques, modèles, et états des montres.</p></li>
-<li><p><strong>Caractéristiques des montres</strong> : Informations sur les spécifications telles que les matériaux utilisés (acier, or, etc.), le type de mouvement, la taille, et les autres caractéristiques techniques.</p></li>
-<li><p><strong>Marques populaires</strong> : Identification des marques les plus recherchées et les plus proposées sur le marché secondaire.</p></li>
-<li><p><strong>Évolution des prix</strong> : Analyse des variations de prix des montres selon des critères comme la marque, la matière du boîtier, ou la rareté.</p></li>
-</ul>
+<section id="objectif-du-projet" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></h1>
+<p>L’objectif principal de cette application est d’offrir un outil simple, moderne et interactif pour :</p>
+<p>- <strong>Comparer les performances des pilotes</strong></p>
+<p>- <strong>Analyser les chronos et la régularité des tours</strong></p>
+<p>- <strong>Explorer les données de télémétrie</strong> (vitesse, freinage, accélération)</p>
+<p>- <strong>Étudier les conditions météo et leur impact</strong></p>
+<p>- <strong>Observer les choix de pneus et stratégies de course</strong></p>
+<p>L’application s’adresse aussi bien aux passionnés de Formule 1 qu’aux analystes de données souhaitant explorer les performances sous un angle statistique.</p>
+<hr>
 </section>
-<section id="méthodologie" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> <strong>Méthodologie</strong></h1>
-<p>Les données ont été collectées par scraping depuis le site web de Chrono24 à l’aide d’outils <strong>Python</strong> tels que <em>BeautifulSoup</em> et <em>Selenium</em>. Ce processus a permis d’extraire un ensemble de données riche et diversifié sur les montres mises en vente, comprenant des informations sur les prix, les marques, les matériaux, les tailles, et bien plus encore. Ces données ont ensuite été nettoyées et préparées pour l’analyse à l’aide de bibliothèques telles que <em>Pandas</em> et <em>NumPy</em>.</p>
-<p>L’analyse s’est articulée autour de plusieurs axes :</p>
+<section id="fonctionnalités-principales" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <strong>Fonctionnalités principales</strong></h1>
 <ul>
-<li><p><strong>Analyse descriptive</strong> : Statistiques de base (moyenne, médiane, écart-type) sur les prix des montres et leurs caractéristiques.</p></li>
-<li><p><strong>Visualisation des données</strong> : Utilisation de graphiques pour représenter la distribution des prix par marque, la répartition des prix selon les matériaux, et d’autres caractéristiques pertinentes.</p></li>
-<li><p><strong>Modélisation prédictive</strong> : Développement de modèles permettant de prédire les variations de prix en fonction de certains facteurs comme la marque, le type de mouvement, et l’état de la montre.</p></li>
+<li>📈 <strong>Analyse des tours et chronos</strong> : évolution des temps au tour, comparaison de pilotes<br>
+</li>
+<li>⚙️ <strong>Télémétrie</strong> : visualisation des vitesses, freinages et accélérations sur la piste<br>
+</li>
+<li>🌡️ <strong>Météo</strong> : températures, vent et conditions de piste<br>
+</li>
+<li>🛞 <strong>Pneus et stratégies</strong> : répartition des composés, gestion des relais et arrêts aux stands<br>
+</li>
+<li>🏁 <strong>Résultats officiels</strong> : classement final et tours les plus rapides<br>
+</li>
+<li>💾 <strong>Export des données</strong> : téléchargement au format CSV pour analyses complémentaires</li>
 </ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Présentation des variables de la base données
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="table">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Variables</th>
-<th style="text-align: left;">Interprétation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>Marque</code></td>
-<td style="text-align: left;">Marque de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Modèle</code></td>
-<td style="text-align: left;">Modèle de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>mouvement</code></td>
-<td style="text-align: left;">Type de mouvement (manuel, autmatique, etc. )</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Matiere du boîtier</code></td>
-<td style="text-align: left;">Matière du boîtier (acier, or, etc. )</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Matiere du bracelet</code></td>
-<td style="text-align: left;">Matière du bracelet (or, acier, caoutchouc)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Etat de la montre</code></td>
-<td style="text-align: left;">Etat de la montre (Bon, mauvais, etc. )</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Sexe</code></td>
-<td style="text-align: left;">catégorie de la montre : homme/femme</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>prix</strong></td>
-<td style="text-align: left;">Prix de la montre (en €)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Réserve de macrhe</code></td>
-<td style="text-align: left;">Niveau de réserve de marche de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Diamètre</code></td>
-<td style="text-align: left;">Diamètre de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Etenchéité</code></td>
-<td style="text-align: left;">Niveau d’étenchéité de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>matiere de la lunette</code></td>
-<td style="text-align: left;">Matière de la lunette de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>matiere du verre</code></td>
-<td style="text-align: left;">Matière du verre de la montre</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>matiere de la boucle</code></td>
-<td style="text-align: left;">Matière de la boucle de la montre</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Pays</code></td>
-<td style="text-align: left;">Pays de provenance de la montre</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<hr>
 </section>
-<section id="résultats-attendus" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> <strong>Résultats attendus</strong></h1>
-<p>À travers cette analyse, nous cherchons à obtenir une vue d’ensemble des tendances actuelles du marché des montres de luxe. Cela permettra de répondre à plusieurs questions clés :</p>
-<ul>
-<li><p>Quelles sont les marques les plus recherchées et les plus coûteuses ?</p></li>
-<li><p>Comment les caractéristiques (matériaux, type de mouvement, etc.) influent-elles sur le prix des montres ?</p></li>
-<li><p>Existe-t-il des tendances saisonnières ou géographiques influençant les prix ?</p></li>
-</ul>
+<section id="méthodologie-et-technologies" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <strong>Méthodologie et technologies</strong></h1>
+<p>L’application repose sur la bibliothèque <strong>FastF1</strong>, qui met à disposition les données officielles de la Formule 1 via l’API Ergast et des fichiers de télémétrie.</p>
+<p>Les principales technologies utilisées :</p>
+<p>- <strong>Python 3.11</strong></p>
+<p>- <strong>Streamlit</strong> pour l’interface utilisateur</p>
+<p>- <strong>Plotly</strong> pour la visualisation interactive</p>
+<p>- <strong>Pandas / NumPy</strong> pour le traitement des données</p>
+<p>- <strong>Docker</strong> pour le déploiement</p>
+<p>- <strong>streamlit-extras</strong> pour l’esthétique et les interactions</p>
+<p>L’architecture du projet est modulaire : les pages, les fonctions et la configuration sont séparées dans des dossiers dédiés (<code>scr/</code>, <code>pages/</code>, <code>data/</code>, etc.), facilitant la maintenance et l’évolution du projet.</p>
+<hr>
 </section>
-<section id="applications-de-lanalyse" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> <strong>Applications de l’analyse</strong></h1>
-<p>Les résultats de cette analyse peuvent être utilisés pour :</p>
+<section id="exemples-de-pages" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Exemples de pages</strong></h1>
 <ul>
-<li><p>Les revendeurs : Affiner leur stratégie de tarification en fonction des tendances observées sur le marché.</p></li>
-<li><p>Les acheteurs : Obtenir une vue d’ensemble des prix moyens et des bonnes affaires dans le marché de l’horlogerie.</p></li>
-<li><p>Les marques et fabricants : Comprendre les attentes des consommateurs et les tendances de demande en matière de modèles spécifiques ou de caractéristiques.</p></li>
+<li><strong>Home</strong> : Sélection de la saison, du Grand Prix et du type de session (Essais, Qualifs, Course)</li>
+<li><strong>Tours &amp; Chronos</strong> : Graphiques comparatifs des temps au tour</li>
+<li><strong>Télémétrie</strong> : Analyse des vitesses et écarts entre deux pilotes</li>
+<li><strong>Météo</strong> : Évolution des températures et du vent pendant la session</li>
+<li><strong>Résultats</strong> : Classements et statistiques clés</li>
+<li><strong>Exports</strong> : Téléchargement des données au format CSV</li>
 </ul>
-<p>En résumé, cette analyse vise à fournir une compréhension approfondie des dynamiques du marché de l’horlogerie via les données issues de Chrono24, ce qui pourra servir à la fois pour des études de marché, des prévisions de prix, et la définition de stratégies commerciales adaptées.</p>
+<hr>
 </section>
-<section id="outil-technique" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> <strong>Outil technique</strong></h1>
+<section id="résultats-attendus" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></h1>
+<p>Cette application permet d’obtenir une vision claire et dynamique des performances en Formule 1 :</p>
+<p>- Identifier les pilotes les plus réguliers</p>
+<p>- Visualiser l’influence des conditions de piste</p>
 <ul>
-<li>Le projet a entièrement été developpé en <em>Python</em>.</li>
+<li>Comprendre l’impact des stratégies pneus</li>
 </ul>
+<p>- Étudier les différences de performance entre écuries</p>
+<p>En combinant la puissance des données FastF1 avec une interface interactive, <strong>F1 Analytics Dashboard</strong> devient un véritable outil d’exploration et d’analyse de la performance.</p>
+<hr>
+</section>
+<section id="outil-technique" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <strong>Outil technique</strong></h1>
+<ul>
+<li>Développé entièrement en <strong>Python</strong></li>
+<li>Interface construite avec <strong>Streamlit</strong></li>
+<li>Conteneurisé avec <strong>Docker</strong></li>
+<li>Compatible avec <strong>Streamlit Cloud</strong> pour un déploiement en ligne</li>
+</ul>
+<hr>
 <div style="text-align:center;">
-<p><a href="https://github.com/Francois-b-24/Clock_industry-second_hand/tree/main"><em>Cliquer ici pour voir le code source.</em></a></p>
+<p><img src="../../assets/img/projet7/app.jpg" class="img-fluid" style="width:80.0%" alt="Aperçu du tableau de bord F1 Analytics"></p>
+<hr>
+<p><strong>Figure 1 : Aperçu du tableau de bord F1 Analytics</strong></p>
 </div>
-</section>
-<section id="application-pour-visualiser-les-statistiques" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> <strong>Application pour visualiser les statistiques :</strong></h1>
 <div style="text-align:center;">
-<p><a href="https://watchapp.streamlit.app/">Lancer l’application</a></p>
+<p><a href="https://github.com/Francois-b-24/f1-analytics"><em>Voir le code source sur GitHub</em></a></p>
+</div>
+<hr>
+</section>
+<section id="lancer-lapplication" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></h1>
+<div style="text-align:center;">
+<p><a href="https://f1-fastanalytics.streamlit.app/">🚀 Ouvrir F1 Analytics Dashboard</a></p>
 </div>
 
 

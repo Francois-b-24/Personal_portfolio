@@ -32,7 +32,7 @@ website:
       - text: "Compétences"
         href: sections/skills.qmd
 
-      - text: "Travaux"
+      - text: "Projets"
         href: sections/index.qmd
   
   page-footer:
