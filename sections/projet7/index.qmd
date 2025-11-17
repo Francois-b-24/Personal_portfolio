@@ -20,155 +20,161 @@ format:
         citations-hover: true
         footnotes-hover: true
         html-math-method: mathjax
-editor: 
-  markdown: 
+editor:
+  markdown:
     wrap: 72
 ---
 
 # **Contexte général du projet**
 
-La Formule 1 est un sport où les données jouent un rôle clé. Chaque
-tour, chaque virage et chaque changement de pneu génèrent une quantité
-massive d'informations permettant d'analyser les performances des
-pilotes, des écuries et des monoplaces.
+La Formule 1 occupe une place particulière dans ma vie. Depuis des années, j’avais envie d’allier cette passion à celle que j’ai pour la data. Avant l’arrivée des LLM et de l’IA générative, j’avais déjà tenté de me lancer dans un projet d’analyse F1 en utilisant l’API Ergast. Mais l’API étant devenue obsolète, mes premières tentatives se sont révélées complexes et limitées.
 
-Pour explorer cette richesse de données, j'ai développé **F1 Analytics
-Dashboard**, une application interactive construite avec **Streamlit**
-et **FastF1**, permettant de visualiser les chronos, la télémétrie, la
-météo et les stratégies de course de manière claire et intuitive.
+C’est finalement en découvrant **FastF1**, une API moderne, fiable et totalement opérationnelle, que tout s’est réellement débloqué. À partir de là, je me suis plongé dans le projet avec passion et détermination. Des heures de questions, de tests, d’itérations, parfois même de doutes… mais surtout un apprentissage incroyable.
 
-------------------------------------------------------------------------
+Ce projet, **F1 Analytics Dashboard**, est l’aboutissement de ce chemin. Aujourd’hui, j’en suis fier. Il est le résultat d’un travail patient, parfois ardu, mais toujours motivé par l’envie de comprendre, visualiser et raconter la Formule 1 autrement.
+
+Et ce que je vous présente ici n’est qu’un début.
+
+---
+
+## **Déploiement : Docker, reverse proxy… puis GitHub Actions**
+
+Comme tout projet web, l’enjeu n’était pas seulement de développer l’application, mais aussi de la rendre accessible en ligne, de façon fiable et stable.
+
+Dans un premier temps, j’ai expérimenté un déploiement **via un Dockerfile**, accompagné d’un **reverse proxy (Nginx)** pour exposer proprement l’application à travers un nom de domaine.  
+Cette méthode fonctionnait : l’application tournait dans un conteneur isolé, le reverse proxy redirigeait le trafic, et le tout offrait une architecture robuste et configurable.
+
+Cependant, ce type de déploiement nécessitait :
+
+- de mettre à jour manuellement l’image Docker,  
+- de redéployer à chaque modification du code,  
+- de maintenir l’infrastructure serveur,  
+- et de surveiller les éventuels dysfonctionnements.
+
+Très vite, j’ai réalisé que pour un projet évolutif, cette méthode devenait lourde.
+
+C’est alors que j’ai mis en place une solution bien plus fluide et professionnelle : **GitHub Actions**.
+
+---
+
+## **Automatisation & CI/CD : GitHub Actions comme solution idéale**
+
+Grâce à GitHub Actions, j’ai pu mettre en place un véritable pipeline CI/CD qui :
+
+- teste automatiquement l’application,  
+- construit l’environnement,  
+- et la déploie directement en ligne.
+
+Tout se déclenche **à chaque commit**, sans aucune intervention manuelle.
+
+⚡ **Résultat :**  
+le déploiement est désormais plus léger, plus propre, plus rapide… et totalement automatisé.
+
+L’approche Docker + reverse proxy reste une excellente solution pour un hébergement à long terme ou une architecture auto-hébergée, mais pour ce projet précis – qui évolue fréquemment – **GitHub Actions s’est avéré être la méthode la plus efficace et la plus souple**.
+
+Cette transition marque un tournant :  
+le dashboard n’est plus seulement un outil que je maintiens “à la main”, mais un véritable produit capable de s’auto-déployer en continu, dans un esprit DevOps/MLOps moderne.
+
+---
+
+Je compte bien continuer à enrichir, améliorer et étendre cet outil. Et naturellement, le projet reste ouvert à toutes contributions de passionnés ou de spécialistes souhaitant participer à cette aventure data & F1.
+
+Pour explorer toute la richesse des données de la discipline, j’ai donc développé **F1 Analytics Dashboard**, une application interactive construite avec **Streamlit** et **FastF1**, permettant de visualiser les chronos, la télémétrie, la météo et les stratégies de course de manière claire, moderne et intuitive.
+
+---
 
 # **Objectif du projet**
 
-L'objectif principal de cette application est d'offrir un outil simple,
-moderne et interactif pour :
+L’objectif principal de cette application est d’offrir un outil simple et interactif pour :
 
-\- **Comparer les performances des pilotes**
+- **Comparer les performances des pilotes**
+- **Analyser les chronos et la régularité des tours**
+- **Explorer les données de télémétrie** (vitesse, freinage, accélération)
+- **Étudier les conditions météo et leur impact**
+- **Observer les choix de pneus et stratégies de course**
 
-\- **Analyser les chronos et la régularité des tours**
+L’application s’adresse aussi bien aux passionnés de Formule 1 qu’aux analystes de données souhaitant explorer les performances sous un angle statistique.
 
-\- **Explorer les données de télémétrie** (vitesse, freinage,
-accélération)
-
-\- **Étudier les conditions météo et leur impact**
-
-\- **Observer les choix de pneus et stratégies de course**
-
-L'application s'adresse aussi bien aux passionnés de Formule 1 qu'aux
-analystes de données souhaitant explorer les performances sous un angle
-statistique.
-
-------------------------------------------------------------------------
+---
 
 # **Fonctionnalités principales**
 
--   📈 **Analyse des tours et chronos** : évolution des temps au tour,
-    comparaison de pilotes\
--   ⚙️ **Télémétrie** : visualisation des vitesses, freinages et
-    accélérations sur la piste\
--   🌡️ **Météo** : températures, vent et conditions de piste\
--   🛞 **Pneus et stratégies** : répartition des composés, gestion des
-    relais et arrêts aux stands\
--   🏁 **Résultats officiels** : classement final et tours les plus
-    rapides\
--   💾 **Export des données** : téléchargement au format CSV pour
-    analyses complémentaires
+- 📈 **Analyse des tours et chronos**  
+- ⚙️ **Télémétrie avancée**  
+- 🌡️ **Suivi météo session par session**  
+- 🛞 **Analyse des stratégies pneus**  
+- 🏁 **Résultats officiels**  
+- 💾 **Exports CSV**  
 
-------------------------------------------------------------------------
+---
 
 # **Méthodologie et technologies**
 
-L'application repose sur la bibliothèque **FastF1**, qui met à
-disposition les données officielles de la Formule 1 via l'API Ergast et
-des fichiers de télémétrie.
+Le projet repose sur la bibliothèque **FastF1**, qui fournit les données officielles issues des sessions de Formule 1.
 
-Les principales technologies utilisées :
+Technologies principales :
 
-\- **Python 3.11**
+- **Python 3.11**
+- **Streamlit**
+- **Plotly**
+- **Pandas / NumPy**
+- **Docker** (pour tests et déploiements précédents)
+- **GitHub Actions** (méthode de déploiement actuelle)
+- **streamlit-extras**
 
-\- **Streamlit** pour l'interface utilisateur
+L’architecture est modulaire (`src/`, `pages/`, `data/`), facilitant la maintenance et l’évolution.
 
-\- **Plotly** pour la visualisation interactive
-
-\- **Pandas / NumPy** pour le traitement des données
-
-\- **Docker** pour le déploiement
-
-\- **streamlit-extras** pour l'esthétique et les interactions
-
-L'architecture du projet est modulaire : les pages, les fonctions et la
-configuration sont séparées dans des dossiers dédiés (`scr/`, `pages/`,
-`data/`, etc.), facilitant la maintenance et l'évolution du projet.
-
-------------------------------------------------------------------------
+---
 
 # **Exemples de pages**
 
--   **Home** : Sélection de la saison, du Grand Prix et du type de
-    session (Essais, Qualifs, Course)
--   **Tours & Chronos** : Graphiques comparatifs des temps au tour
--   **Télémétrie** : Analyse des vitesses et écarts entre deux pilotes
--   **Météo** : Évolution des températures et du vent pendant la session
--   **Résultats** : Classements et statistiques clés
--   **Exports** : Téléchargement des données au format CSV
+- Page d’accueil : sélection des saisons et sessions  
+- Tours & Chronos  
+- Télémétrie  
+- Conditions météo  
+- Résultats officiels  
+- Export de données  
 
-------------------------------------------------------------------------
+---
 
 # **Résultats attendus**
 
-Cette application permet d'obtenir une vision claire et dynamique des
-performances en Formule 1 :
+L’application permet :
 
-\- Identifier les pilotes les plus réguliers
+- d’identifier les pilotes les plus réguliers  
+- de comprendre l’impact des conditions de piste  
+- d’analyser les stratégies pneus  
+- de comparer les performances entre écuries  
 
-\- Visualiser l'influence des conditions de piste
-
-\- Comprendre l'impact des stratégies pneus
-
-\- Étudier les différences de performance entre écuries
-
-En combinant la puissance des données FastF1 avec une interface
-interactive, **F1 Analytics Dashboard** devient un véritable outil
-d'exploration et d'analyse de la performance.
-
-------------------------------------------------------------------------
+---
 
 # **Outil technique**
 
--   Développé entièrement en **Python**
--   Interface construite avec **Streamlit**
--   Conteneurisé avec **Docker**
--   Compatible avec **Streamlit Cloud** pour un déploiement en ligne
+- 100% Python  
+- Streamlit pour l’interface  
+- Docker (ancien déploiement)  
+- GitHub Actions (déploiement actuel recommandé)  
 
-------------------------------------------------------------------------
-
+---
 
 ::: {style="text-align:center;"}
 ![](/assets/img/projet7/app.jpg){fig-alt="Aperçu du tableau de bord F1 Analytics" width="80%"}
 
-------------------------------------------------------------------------
-
 **Figure 1 : Aperçu du tableau de bord**
 :::
 
-
 ::: {style="text-align:center;"}
-[*Voir le code source sur
-GitHub*](https://github.com/Francois-b-24/f1-analytics)
+[*Voir le code source sur GitHub*](https://github.com/Francois-b-24/f1-analytics)
 :::
 
-------------------------------------------------------------------------
+---
 
-
-# **Lancer l'application**
+# **Lancer l’application**
 
 ::: {style="text-align:center;"}
-[🚀 Open F1 Analytics
-Dashboard ~ Streamlit](https://f1-fastanalytics.streamlit.app/)
+[🚀 Open F1 Analytics Dashboard ~ Streamlit](https://f1-fastanalytics.streamlit.app/)
 :::
 
 ::: {style="text-align:center;"}
-[🚀 Open F1 Analytics
-Dashboard ~ Reverse proxy](http://f1analytics.duckdns.org/)
+[🚀 Open F1 Analytics Dashboard ~ Reverse proxy](http://f1analytics.duckdns.org/)
 :::

@@ -198,7 +198,11 @@ cookieconsent.run({
     <h2 id="toc-title">📚 Table des matières</h2>
    
   <ul>
-  <li><a href="#contexte-général-du-projet" id="toc-contexte-général-du-projet" class="nav-link active" data-scroll-target="#contexte-général-du-projet"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></a></li>
+  <li><a href="#contexte-général-du-projet" id="toc-contexte-général-du-projet" class="nav-link active" data-scroll-target="#contexte-général-du-projet"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></a>
+  <ul class="collapse">
+  <li><a href="#déploiement-docker-reverse-proxy-puis-github-actions" id="toc-déploiement-docker-reverse-proxy-puis-github-actions" class="nav-link" data-scroll-target="#déploiement-docker-reverse-proxy-puis-github-actions"><span class="header-section-number">1.1</span> <strong>Déploiement : Docker, reverse proxy… puis GitHub Actions</strong></a></li>
+  <li><a href="#automatisation-cicd-github-actions-comme-solution-idéale" id="toc-automatisation-cicd-github-actions-comme-solution-idéale" class="nav-link" data-scroll-target="#automatisation-cicd-github-actions-comme-solution-idéale"><span class="header-section-number">1.2</span> <strong>Automatisation &amp; CI/CD : GitHub Actions comme solution idéale</strong></a></li>
+  </ul></li>
   <li><a href="#objectif-du-projet" id="toc-objectif-du-projet" class="nav-link" data-scroll-target="#objectif-du-projet"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></a></li>
   <li><a href="#fonctionnalités-principales" id="toc-fonctionnalités-principales" class="nav-link" data-scroll-target="#fonctionnalités-principales"><span class="header-section-number">3</span> <strong>Fonctionnalités principales</strong></a></li>
   <li><a href="#méthodologie-et-technologies" id="toc-méthodologie-et-technologies" class="nav-link" data-scroll-target="#méthodologie-et-technologies"><span class="header-section-number">4</span> <strong>Méthodologie et technologies</strong></a></li>
@@ -218,85 +222,143 @@ cookieconsent.run({
 
 <section id="contexte-général-du-projet" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></h1>
-<p>La Formule 1 est un sport où les données jouent un rôle clé. Chaque tour, chaque virage et chaque changement de pneu génèrent une quantité massive d’informations permettant d’analyser les performances des pilotes, des écuries et des monoplaces.</p>
-<p>Pour explorer cette richesse de données, j’ai développé <strong>F1 Analytics Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong> et <strong>FastF1</strong>, permettant de visualiser les chronos, la télémétrie, la météo et les stratégies de course de manière claire et intuitive.</p>
+<p>La Formule 1 occupe une place particulière dans ma vie. Depuis des années, j’avais envie d’allier cette passion à celle que j’ai pour la data. Avant l’arrivée des LLM et de l’IA générative, j’avais déjà tenté de me lancer dans un projet d’analyse F1 en utilisant l’API Ergast. Mais l’API étant devenue obsolète, mes premières tentatives se sont révélées complexes et limitées.</p>
+<p>C’est finalement en découvrant <strong>FastF1</strong>, une API moderne, fiable et totalement opérationnelle, que tout s’est réellement débloqué. À partir de là, je me suis plongé dans le projet avec passion et détermination. Des heures de questions, de tests, d’itérations, parfois même de doutes… mais surtout un apprentissage incroyable.</p>
+<p>Ce projet, <strong>F1 Analytics Dashboard</strong>, est l’aboutissement de ce chemin. Aujourd’hui, j’en suis fier. Il est le résultat d’un travail patient, parfois ardu, mais toujours motivé par l’envie de comprendre, visualiser et raconter la Formule 1 autrement.</p>
+<p>Et ce que je vous présente ici n’est qu’un début.</p>
 <hr>
+<section id="déploiement-docker-reverse-proxy-puis-github-actions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="déploiement-docker-reverse-proxy-puis-github-actions"><span class="header-section-number">1.1</span> <strong>Déploiement : Docker, reverse proxy… puis GitHub Actions</strong></h2>
+<p>Comme tout projet web, l’enjeu n’était pas seulement de développer l’application, mais aussi de la rendre accessible en ligne, de façon fiable et stable.</p>
+<p>Dans un premier temps, j’ai expérimenté un déploiement <strong>via un Dockerfile</strong>, accompagné d’un <strong>reverse proxy (Nginx)</strong> pour exposer proprement l’application à travers un nom de domaine.<br>
+Cette méthode fonctionnait : l’application tournait dans un conteneur isolé, le reverse proxy redirigeait le trafic, et le tout offrait une architecture robuste et configurable.</p>
+<p>Cependant, ce type de déploiement nécessitait :</p>
+<ul>
+<li>de mettre à jour manuellement l’image Docker,<br>
+</li>
+<li>de redéployer à chaque modification du code,<br>
+</li>
+<li>de maintenir l’infrastructure serveur,<br>
+</li>
+<li>et de surveiller les éventuels dysfonctionnements.</li>
+</ul>
+<p>Très vite, j’ai réalisé que pour un projet évolutif, cette méthode devenait lourde.</p>
+<p>C’est alors que j’ai mis en place une solution bien plus fluide et professionnelle : <strong>GitHub Actions</strong>.</p>
+<hr>
+</section>
+<section id="automatisation-cicd-github-actions-comme-solution-idéale" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="automatisation-cicd-github-actions-comme-solution-idéale"><span class="header-section-number">1.2</span> <strong>Automatisation &amp; CI/CD : GitHub Actions comme solution idéale</strong></h2>
+<p>Grâce à GitHub Actions, j’ai pu mettre en place un véritable pipeline CI/CD qui :</p>
+<ul>
+<li>teste automatiquement l’application,<br>
+</li>
+<li>construit l’environnement,<br>
+</li>
+<li>et la déploie directement en ligne.</li>
+</ul>
+<p>Tout se déclenche <strong>à chaque commit</strong>, sans aucune intervention manuelle.</p>
+<p>⚡ <strong>Résultat :</strong><br>
+le déploiement est désormais plus léger, plus propre, plus rapide… et totalement automatisé.</p>
+<p>L’approche Docker + reverse proxy reste une excellente solution pour un hébergement à long terme ou une architecture auto-hébergée, mais pour ce projet précis – qui évolue fréquemment – <strong>GitHub Actions s’est avéré être la méthode la plus efficace et la plus souple</strong>.</p>
+<p>Cette transition marque un tournant :<br>
+le dashboard n’est plus seulement un outil que je maintiens “à la main”, mais un véritable produit capable de s’auto-déployer en continu, dans un esprit DevOps/MLOps moderne.</p>
+<hr>
+<p>Je compte bien continuer à enrichir, améliorer et étendre cet outil. Et naturellement, le projet reste ouvert à toutes contributions de passionnés ou de spécialistes souhaitant participer à cette aventure data &amp; F1.</p>
+<p>Pour explorer toute la richesse des données de la discipline, j’ai donc développé <strong>F1 Analytics Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong> et <strong>FastF1</strong>, permettant de visualiser les chronos, la télémétrie, la météo et les stratégies de course de manière claire, moderne et intuitive.</p>
+<hr>
+</section>
 </section>
 <section id="objectif-du-projet" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></h1>
-<p>L’objectif principal de cette application est d’offrir un outil simple, moderne et interactif pour :</p>
-<p>- <strong>Comparer les performances des pilotes</strong></p>
-<p>- <strong>Analyser les chronos et la régularité des tours</strong></p>
-<p>- <strong>Explorer les données de télémétrie</strong> (vitesse, freinage, accélération)</p>
-<p>- <strong>Étudier les conditions météo et leur impact</strong></p>
-<p>- <strong>Observer les choix de pneus et stratégies de course</strong></p>
+<p>L’objectif principal de cette application est d’offrir un outil simple et interactif pour :</p>
+<ul>
+<li><strong>Comparer les performances des pilotes</strong></li>
+<li><strong>Analyser les chronos et la régularité des tours</strong></li>
+<li><strong>Explorer les données de télémétrie</strong> (vitesse, freinage, accélération)</li>
+<li><strong>Étudier les conditions météo et leur impact</strong></li>
+<li><strong>Observer les choix de pneus et stratégies de course</strong></li>
+</ul>
 <p>L’application s’adresse aussi bien aux passionnés de Formule 1 qu’aux analystes de données souhaitant explorer les performances sous un angle statistique.</p>
 <hr>
 </section>
 <section id="fonctionnalités-principales" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> <strong>Fonctionnalités principales</strong></h1>
 <ul>
-<li>📈 <strong>Analyse des tours et chronos</strong> : évolution des temps au tour, comparaison de pilotes<br>
+<li>📈 <strong>Analyse des tours et chronos</strong><br>
 </li>
-<li>⚙️ <strong>Télémétrie</strong> : visualisation des vitesses, freinages et accélérations sur la piste<br>
+<li>⚙️ <strong>Télémétrie avancée</strong><br>
 </li>
-<li>🌡️ <strong>Météo</strong> : températures, vent et conditions de piste<br>
+<li>🌡️ <strong>Suivi météo session par session</strong><br>
 </li>
-<li>🛞 <strong>Pneus et stratégies</strong> : répartition des composés, gestion des relais et arrêts aux stands<br>
+<li>🛞 <strong>Analyse des stratégies pneus</strong><br>
 </li>
-<li>🏁 <strong>Résultats officiels</strong> : classement final et tours les plus rapides<br>
+<li>🏁 <strong>Résultats officiels</strong><br>
 </li>
-<li>💾 <strong>Export des données</strong> : téléchargement au format CSV pour analyses complémentaires</li>
+<li>💾 <strong>Exports CSV</strong></li>
 </ul>
 <hr>
 </section>
 <section id="méthodologie-et-technologies" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> <strong>Méthodologie et technologies</strong></h1>
-<p>L’application repose sur la bibliothèque <strong>FastF1</strong>, qui met à disposition les données officielles de la Formule 1 via l’API Ergast et des fichiers de télémétrie.</p>
-<p>Les principales technologies utilisées :</p>
-<p>- <strong>Python 3.11</strong></p>
-<p>- <strong>Streamlit</strong> pour l’interface utilisateur</p>
-<p>- <strong>Plotly</strong> pour la visualisation interactive</p>
-<p>- <strong>Pandas / NumPy</strong> pour le traitement des données</p>
-<p>- <strong>Docker</strong> pour le déploiement</p>
-<p>- <strong>streamlit-extras</strong> pour l’esthétique et les interactions</p>
-<p>L’architecture du projet est modulaire : les pages, les fonctions et la configuration sont séparées dans des dossiers dédiés (<code>scr/</code>, <code>pages/</code>, <code>data/</code>, etc.), facilitant la maintenance et l’évolution du projet.</p>
+<p>Le projet repose sur la bibliothèque <strong>FastF1</strong>, qui fournit les données officielles issues des sessions de Formule 1.</p>
+<p>Technologies principales :</p>
+<ul>
+<li><strong>Python 3.11</strong></li>
+<li><strong>Streamlit</strong></li>
+<li><strong>Plotly</strong></li>
+<li><strong>Pandas / NumPy</strong></li>
+<li><strong>Docker</strong> (pour tests et déploiements précédents)</li>
+<li><strong>GitHub Actions</strong> (méthode de déploiement actuelle)</li>
+<li><strong>streamlit-extras</strong></li>
+</ul>
+<p>L’architecture est modulaire (<code>src/</code>, <code>pages/</code>, <code>data/</code>), facilitant la maintenance et l’évolution.</p>
 <hr>
 </section>
 <section id="exemples-de-pages" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> <strong>Exemples de pages</strong></h1>
 <ul>
-<li><strong>Home</strong> : Sélection de la saison, du Grand Prix et du type de session (Essais, Qualifs, Course)</li>
-<li><strong>Tours &amp; Chronos</strong> : Graphiques comparatifs des temps au tour</li>
-<li><strong>Télémétrie</strong> : Analyse des vitesses et écarts entre deux pilotes</li>
-<li><strong>Météo</strong> : Évolution des températures et du vent pendant la session</li>
-<li><strong>Résultats</strong> : Classements et statistiques clés</li>
-<li><strong>Exports</strong> : Téléchargement des données au format CSV</li>
+<li>Page d’accueil : sélection des saisons et sessions<br>
+</li>
+<li>Tours &amp; Chronos<br>
+</li>
+<li>Télémétrie<br>
+</li>
+<li>Conditions météo<br>
+</li>
+<li>Résultats officiels<br>
+</li>
+<li>Export de données</li>
 </ul>
 <hr>
 </section>
 <section id="résultats-attendus" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></h1>
-<p>Cette application permet d’obtenir une vision claire et dynamique des performances en Formule 1 :</p>
-<p>- Identifier les pilotes les plus réguliers</p>
-<p>- Visualiser l’influence des conditions de piste</p>
-<p>- Comprendre l’impact des stratégies pneus</p>
-<p>- Étudier les différences de performance entre écuries</p>
-<p>En combinant la puissance des données FastF1 avec une interface interactive, <strong>F1 Analytics Dashboard</strong> devient un véritable outil d’exploration et d’analyse de la performance.</p>
+<p>L’application permet :</p>
+<ul>
+<li>d’identifier les pilotes les plus réguliers<br>
+</li>
+<li>de comprendre l’impact des conditions de piste<br>
+</li>
+<li>d’analyser les stratégies pneus<br>
+</li>
+<li>de comparer les performances entre écuries</li>
+</ul>
 <hr>
 </section>
 <section id="outil-technique" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> <strong>Outil technique</strong></h1>
 <ul>
-<li>Développé entièrement en <strong>Python</strong></li>
-<li>Interface construite avec <strong>Streamlit</strong></li>
-<li>Conteneurisé avec <strong>Docker</strong></li>
-<li>Compatible avec <strong>Streamlit Cloud</strong> pour un déploiement en ligne</li>
+<li>100% Python<br>
+</li>
+<li>Streamlit pour l’interface<br>
+</li>
+<li>Docker (ancien déploiement)<br>
+</li>
+<li>GitHub Actions (déploiement actuel recommandé)</li>
 </ul>
 <hr>
 <div style="text-align:center;">
 <p><img src="../../assets/img/projet7/app.jpg" class="img-fluid" style="width:80.0%" alt="Aperçu du tableau de bord F1 Analytics"></p>
-<hr>
 <p><strong>Figure 1 : Aperçu du tableau de bord</strong></p>
 </div>
 <div style="text-align:center;">
