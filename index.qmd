@@ -6,7 +6,7 @@ toc: false
 about:
   id: hero-heading
   template: trestles
-  image-width: 16em
+  image-width: 16.5em
   #image-shape: round
   links:
      - icon: linkedin

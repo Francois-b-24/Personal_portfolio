@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="François BOUSSENGUI">
+<meta name="description" content="Découvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore.">
 
-<title>François BOUSSENGUI | François BOUSSENGUI</title>
+<title>François BOUSSENGUI | Introduction à FastF1 : Analyser les données de Formule 1 avec Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -171,8 +206,8 @@ cookieconsent.run({
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | François BOUSSENGUI">
-<meta property="og:description" content="">
+<meta property="og:title" content="François BOUSSENGUI | Introduction à FastF1 : Analyser les données de Formule 1 avec Python">
+<meta property="og:description" content="Découvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore.">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -180,8 +215,8 @@ cookieconsent.run({
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | François BOUSSENGUI">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="François BOUSSENGUI | Introduction à FastF1 : Analyser les données de Formule 1 avec Python">
+<meta name="twitter:description" content="Découvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore.">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -254,7 +289,7 @@ cookieconsent.run({
 <link rel="canonical" href="https://bfrancois.netlify.app/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/x-icon" href="../../favicon.ico">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
@@ -405,17 +440,17 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 -->
 
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><em>François B.</em></span>
     </a>
   </div>
@@ -426,27 +461,27 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/xp.html"> 
+    <a class="nav-link" href="../../sections/xp.html"> 
 <span class="menu-text">Parcours</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/skills.html"> 
+    <a class="nav-link" href="../../sections/skills.html"> 
 <span class="menu-text">Compétences</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/index.html"> 
+    <a class="nav-link" href="../../sections/index.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
+    <a class="nav-link" href="../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
@@ -460,88 +495,175 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#premier-exemple-récupérer-les-chronos-dune-session" id="toc-premier-exemple-récupérer-les-chronos-dune-session" class="nav-link" data-scroll-target="#premier-exemple-récupérer-les-chronos-dune-session">Premier exemple : Récupérer les chronos d’une session</a></li>
+  <li><a href="#analyse-de-la-télémétrie" id="toc-analyse-de-la-télémétrie" class="nav-link" data-scroll-target="#analyse-de-la-télémétrie">Analyse de la télémétrie</a></li>
+  <li><a href="#visualisation-comparative" id="toc-visualisation-comparative" class="nav-link" data-scroll-target="#visualisation-comparative">Visualisation comparative</a></li>
+  <li><a href="#cas-dusage-avancés" id="toc-cas-dusage-avancés" class="nav-link" data-scroll-target="#cas-dusage-avancés">Cas d’usage avancés</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles content">
-  <div class="about-entity">
-    <img src="assets/img/moi.jpg" class="about-image
-  rounded " style="width: 16.5em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">François BOUSSENGUI</h1>
+<h1 class="title">Introduction à FastF1 : Analyser les données de Formule 1 avec Python</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Data Science</div>
+    <div class="quarto-category">F1</div>
+    <div class="quarto-category">Tutoriel</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Découvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore.
+  </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>François BOUSSENGUI </p>
+          </div>
   </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">5 janvier 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/fboussengui/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/Francois-b-24" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:f.boussengui@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<section id="bienvenue-sur-mon-portfolio" class="level2" style="text-align:center;">
-<h2 data-anchor-id="bienvenue-sur-mon-portfolio">Bienvenue sur mon Portfolio <span class="wave">👋</span></h2>
-<p><iconify-icon icon="flag:ga-4x3"></iconify-icon></p>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>La Formule 1 génère une quantité impressionnante de données à chaque Grand Prix : chronos au tour, télémétrie des voitures, données météo, stratégies pneumatiques… Autant d’informations qui peuvent être analysées pour comprendre les performances et les stratégies des équipes.</p>
+<p><strong>FastF1</strong> est une librairie Python moderne qui permet d’accéder facilement à toutes ces données via l’API officielle de la F1.</p>
 </section>
-<p><strong>Data Scientist</strong>, je suis passionné par les statistiques et de tout ce qui touche à la donnée.</p>
-<p><strong><em>Mon rôle</em></strong> : Accompagner les entreprises dans la valorisation de leurs données, permettant ainsi une prise de décisions stratégiques éclairées.</p>
-<p>Sur ce site, vous découvrirez mon parcours académique et professionnel, un aperçu de mes compétences – acquises et en cours de développement – ainsi que des projets que j’ai réalisés.</p>
-<div class="stats-container" style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;">
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #f8d65c; margin-bottom: 0.5rem;">
-3+
-</div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Années d’expérience
-</div>
-</div>
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #72f1b8; margin-bottom: 0.5rem;">
-8
-</div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Projets réalisés
-</div>
-</div>
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #ffbc8c; margin-bottom: 0.5rem;">
-10+
-</div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Technologies maîtrisées
-</div>
-</div>
-</div>
-<div style="text-align:center; margin-top: 2rem;">
-<p><strong>Excellente navigation !</strong></p>
-</div>
-<div style="text-align:center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-<p><a href="assets/CV.pdf" class="btn btn-outline-primary center" role="button">Voir mon CV <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-<p><a href="https://bfrancois.netlify.app/sections/" class="btn btn-outline-primary center" role="button">Projets <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-</div>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>L’installation de FastF1 est simple avec pip :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install fastf1</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour les visualisations, je recommande également d’installer :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install plotly matplotlib seaborn</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="premier-exemple-récupérer-les-chronos-dune-session" class="level2">
+<h2 class="anchored" data-anchor-id="premier-exemple-récupérer-les-chronos-dune-session">Premier exemple : Récupérer les chronos d’une session</h2>
+<p>Voici un exemple basique pour récupérer les temps au tour d’une session de qualification :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastf1</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Activer le cache pour accélérer les requêtes</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fastf1.Cache.enable_cache(<span class="st">'cache/'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger la session de qualification du GP de Monaco 2024</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>session <span class="op">=</span> fastf1.get_session(<span class="dv">2024</span>, <span class="st">'Monaco'</span>, <span class="st">'Q'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>session.load()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Récupérer les meilleurs temps de chaque pilote</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>best_laps <span class="op">=</span> session.laps.pick_quicklaps()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le top 10</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>top_10 <span class="op">=</span> best_laps.groupby(<span class="st">'Driver'</span>)[<span class="st">'LapTime'</span>].<span class="bu">min</span>().sort_values().head(<span class="dv">10</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top_10)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analyse-de-la-télémétrie" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-de-la-télémétrie">Analyse de la télémétrie</h2>
+<p>L’un des points forts de FastF1 est l’accès à la télémétrie détaillée :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Récupérer le tour le plus rapide de Verstappen</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ver_fastest <span class="op">=</span> session.laps.pick_driver(<span class="st">'VER'</span>).pick_fastest()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données télémétrique</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>telemetry <span class="op">=</span> ver_fastest.get_telemetry()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher la vitesse, throttle, brake</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(telemetry[[<span class="st">'Speed'</span>, <span class="st">'Throttle'</span>, <span class="st">'Brake'</span>, <span class="st">'Distance'</span>]])</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="visualisation-comparative" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-comparative">Visualisation comparative</h2>
+<p>Comparons maintenant deux pilotes sur un même tour :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tours les plus rapides de deux pilotes</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ver_lap <span class="op">=</span> session.laps.pick_driver(<span class="st">'VER'</span>).pick_fastest()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ham_lap <span class="op">=</span> session.laps.pick_driver(<span class="st">'HAM'</span>).pick_fastest()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ver_tel <span class="op">=</span> ver_lap.get_telemetry()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ham_tel <span class="op">=</span> ham_lap.get_telemetry()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer le graphique</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ver_tel[<span class="st">'Distance'</span>],</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>ver_tel[<span class="st">'Speed'</span>],</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Verstappen'</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#0600EF'</span>, width<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter(</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ham_tel[<span class="st">'Distance'</span>],</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>ham_tel[<span class="st">'Speed'</span>],</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Hamilton'</span>,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#00D2BE'</span>, width<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Comparaison de vitesse - Monaco 2024'</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Distance (m)'</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Vitesse (km/h)'</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    hovermode<span class="op">=</span><span class="st">'x unified'</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cas-dusage-avancés" class="level2">
+<h2 class="anchored" data-anchor-id="cas-dusage-avancés">Cas d’usage avancés</h2>
+<p>FastF1 permet également de :</p>
+<ul>
+<li>Analyser les stratégies pneumatiques</li>
+<li>Récupérer les données météo en temps réel</li>
+<li>Comparer les performances sur plusieurs saisons</li>
+<li>Créer des heatmaps de performance par secteur</li>
+<li>Analyser l’évolution des temps au tour durant une course</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>FastF1 est un outil puissant pour tout passionné de F1 et de data science. La documentation est excellente et la communauté très active.</p>
+<p>Pour aller plus loin, je vous invite à consulter :</p>
+<ul>
+<li><a href="https://docs.fastf1.dev/">Documentation officielle FastF1</a></li>
+<li><a href="../../sections/projet7/">Mon projet F1 Analytics Dashboard</a> pour voir une application complète</li>
+<li><a href="https://github.com/theOehrly/Fast-F1">Repo GitHub FastF1</a></li>
+</ul>
+<p>N’hésitez pas à partager vos propres analyses !</p>
 <hr>
-<section id="activité-github" class="level2" style="text-align:center; margin-top: 3rem;">
-<h2 data-anchor-id="activité-github"><i class="fa-brands fa-github" aria-label="github"></i> Activité GitHub</h2>
-<p>Retrouvez tous mes projets open-source et contributions sur GitHub.</p>
+<p><strong>Tags :</strong> <code>#Python</code> <code>#DataScience</code> <code>#F1</code> <code>#FastF1</code> <code>#Analytics</code></p>
+
+
 </section>
-<div id="github-stats-container">
-</div>
-<script src="utils/github-stats.html"></script>
 
-
-</main></div>
-</div>
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -562,6 +684,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -944,6 +1073,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -966,7 +1097,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./licence.html">
+    <a class="nav-link" href="../../licence.html">
 <p>Licence : CC BY-NC-SA</p>
 </a>
   </li>  
