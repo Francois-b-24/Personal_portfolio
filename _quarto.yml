@@ -1,0 +1,90 @@
+project:
+  type: website
+
+# Configuration de la langage
+lang: fr
+
+# Fait en sorte que le code R et Python soient exécutés uniquement en local
+execute:
+  freeze: auto
+
+include-in-header:
+  - file: utils/header.html
+  - file: utils/seo-meta.html
+  - file: utils/analytics.html
+  - file: utils/github-stats.html
+
+website:
+  title: "*François B.*"
+  back-to-top-navigation: false
+  cookie-consent:
+    type: express # GDPR Compliant - Bloque les cookies jusqu'à ce que l'utilisateur les accepte, ou non
+    style: simple
+    palette: light
+    prefs-text: "🍪 Gérer les cookies"
+  
+  navbar:
+    background: primary
+    right:
+      - text: "Accueil"
+        href: index.qmd
+
+      - text: "Parcours"
+        href: sections/xp.qmd
+
+      - text: "Compétences"
+        href: sections/skills.qmd
+
+      - text: "Projets"
+        href: sections/index.qmd
+
+      - text: "Blog"
+        href: blog/index.qmd
+
+      - text: "Contact"
+        href: contact.qmd
+  
+  page-footer:
+    background: primary
+    foreground: white
+    
+    left: 
+      - text: Website made with Quarto 🛠️
+        href: https://quarto.org/
+    
+    center:
+      - text: "© 2024, François BOUSSENGUI"
+    
+    right: 
+      - icon: cc-circle
+        href: licence.qmd
+        text: "Licence : CC BY-NC-SA"
+  
+  search: 
+    location: navbar
+    type: overlay
+    
+
+format:
+  html:
+    theme: [cosmo, assets/custom.scss]
+    css: assets/styles.css
+    toc: true
+    pagetitle: "François BOUSSENGUI | {{< meta title >}}"
+    
+    # le paramétrage de la grid permet d'éviter la sidebar et la margin 
+    grid:
+      sidebar-width: 0px
+      body-width: 1200px
+      margin-width: 200px
+      gutter-width: 1.5rem
+    
+
+editor: visual
+
+
+comments:
+  utterances:
+    repo: francois-b-24/utterance
+
+

@@ -1,0 +1,318 @@
+---
+title: "Compétences"
+title-block-banner: true
+toc: true
+toc-title: 📋 Compétences
+lang: fr
+smooth-scroll: true
+comments: false
+author: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+library(plotly)
+library(dplyr)
+```
+
+::: {style="text-align:center;"}
+*Vous trouverez ci-dessous une présentation de mes compétences.*
+
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
+
+## Vue d'ensemble des compétences
+
+```{r}
+#| fig-width: 10
+#| fig-height: 6
+
+# Données pour le graphique radar
+competences <- data.frame(
+  categorie = c("Python", "R", "SQL", "Machine Learning",
+                "Économétrie", "Visualisation", "Web Apps",
+                "Git/GitHub", "Excel", "Qlik Sense"),
+  niveau = c(90, 85, 75, 85, 80, 90, 85, 80, 75, 70),
+  experience = c(3, 3, 3, 3, 2, 3, 2, 3, 3, 3)
+)
+
+# Créer le graphique radar
+fig <- plot_ly(
+  type = 'scatterpolar',
+  mode = 'lines+markers',
+  fill = 'toself'
+) %>%
+  add_trace(
+    r = competences$niveau,
+    theta = competences$categorie,
+    name = 'Niveau de maîtrise',
+    fillcolor = 'rgba(6, 67, 110, 0.5)',
+    line = list(color = '#06436e', width = 2),
+    marker = list(
+      size = 8,
+      color = '#f8d65c',
+      line = list(color = '#06436e', width = 2)
+    )
+  ) %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = TRUE,
+        range = c(0, 100),
+        tickfont = list(size = 12),
+        gridcolor = 'rgba(200, 200, 200, 0.4)'
+      ),
+      angularaxis = list(
+        tickfont = list(size = 13, color = '#06436e')
+      ),
+      bgcolor = 'rgba(255, 255, 255, 0.9)'
+    ),
+    showlegend = FALSE,
+    paper_bgcolor = 'rgba(0,0,0,0)',
+    plot_bgcolor = 'rgba(0,0,0,0)',
+    margin = list(l = 80, r = 80, t = 50, b = 80)
+  )
+
+fig
+```
+
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
+# Graphique à barres des années d'expérience par technologie
+competences_exp <- data.frame(
+  technologie = c("Python", "R", "SQL", "Machine Learning",
+                  "Qlik Sense", "Excel", "Git/GitHub", "Streamlit"),
+  annees = c(3, 3, 3, 3, 3, 3, 3, 2),
+  categorie = c("Langage", "Langage", "Langage", "Méthode",
+                "Outil", "Outil", "Outil", "Framework")
+)
+
+# Définir les couleurs par catégorie
+couleurs <- c(
+  "Langage" = "#06436e",
+  "Méthode" = "#72f1b8",
+  "Outil" = "#ffbc8c",
+  "Framework" = "#a97eff"
+)
+
+fig2 <- plot_ly(
+  data = competences_exp,
+  x = ~annees,
+  y = ~reorder(technologie, annees),
+  type = 'bar',
+  orientation = 'h',
+  color = ~categorie,
+  colors = couleurs,
+  marker = list(
+    line = list(color = 'white', width = 1.5)
+  ),
+  text = ~paste(annees, "ans"),
+  textposition = 'outside',
+  hovertemplate = paste(
+    '<b>%{y}</b><br>',
+    'Expérience: %{x} ans<br>',
+    'Catégorie: %{customdata}<br>',
+    '<extra></extra>'
+  ),
+  customdata = ~categorie
+) %>%
+  layout(
+    title = list(
+      text = "Années d'expérience par technologie",
+      font = list(size = 16, color = '#06436e', family = 'Montserrat')
+    ),
+    xaxis = list(
+      title = "Années d'expérience",
+      range = c(0, 3.5),
+      tickfont = list(size = 12),
+      gridcolor = 'rgba(200, 200, 200, 0.3)'
+    ),
+    yaxis = list(
+      title = "",
+      tickfont = list(size = 12, color = '#06436e')
+    ),
+    paper_bgcolor = 'rgba(0,0,0,0)',
+    plot_bgcolor = 'rgba(255, 255, 255, 0.95)',
+    margin = list(l = 120, r = 50, t = 80, b = 50),
+    bargap = 0.15,
+    legend = list(
+      title = list(text = "Catégorie"),
+      orientation = "h",
+      y = -0.25,
+      x = 0.5,
+      xanchor = "center"
+    )
+  )
+
+fig2
+```
+
+---
+
+### Théories
+
+------------------------------------------------------------------------
+
+::: {.callout-note icon="false" collapse="true"}
+## Économie
+
+-   ***Micro-économie*** : Théorie du consommateur et du producteur, équilibre de marché en concurrence pure et parfaite.
+-   ***Théorie des jeux*** : Equilibre de nash (Modélisation mathématiques des interactions stratégiques entre les agents économiques).
+-   ***Économie industrielle*** : Equilibre de Nash en situation non concurrentielle (Duopole, Monopole, Oligopole).
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Statistiques
+
+-   Statistiques élémentaires.
+-   ***Économétrie*** : Régression linéaire simple ou multiple, modèles à variable à expliquer dichotomiques, séries-temporelles.
+-   ***Micro-économétrie*** : Modèles à effets fixe ou aléatoires.
+-   ***Machine Learning*** : Regression, classification supervisée & non supervisée.
+-   ***Deep Learning*** : Réseaux de neurones.
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Assurances
+
+J'ai pu apporter mon expertise en Data Science en l'appliquant à l’Assurance IARD et Flotte Automobile. 
+
+**Assurance IARD :**
+
+- Maîtrise des principes de tarification en assurance automobile, habitation, Responsabilité Civile Décennale et chiens-chats
+- Analyse des tendances de sinistralité et évaluation des facteurs de risque pour optimiser la tarification
+
+**Assurance Flotte Automobile :**
+
+- Compréhension des principes assurantiels spécifiques aux contrats flottes (mutualisation des risques, franchises)
+- Développement d’outils de prévision du coût des sinistres pour accompagner les courtiers et gestionnaires de flotte
+
+**Exploitation des données pour la prise de décision :**
+
+- Mise en place de tableaux de bord pour le suivi de KPIs et une prise de décision éclairée
+- Construction de modèles prédictifs pour améliorer la gestion des contrats et ajuster les stratégies tarifaires
+- Analyse des comportements sinistres pour identifier les leviers d’optimisation et de prévention
+:::
+
+### Langages
+
+------------------------------------------------------------------------
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa brands python >}} PYTHON
+
+-   Web Scraping (récupération automatique de données) avec `beautifulsoup` et `selenium`.
+-   Nettoyage et traitement des données avec `polars`, `pandas`, `numpy`.
+-   Visualisation des données avec `plotly` et `seaborn`.
+-   Machine learning : `Scikit learn`, `PyTorch`.
+-   Création d'application web : `Streamlit`, `Flask`.
+-   Développement de code de qualité industrielle : `mypy` pour le typage statique, `ruff` pour le linting et le formatage du code, `pytest` pour les tests.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa brands r-project >}} R
+
+-   Nettoyage et traitement des données avec tidyverse : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
+-  Visualisation des données avec `{ggplot2}` et `{plotly}`.
+-   Création d'application web et tableaux de bord avec `{shiny}`
+-   Création de site web avec `Quarto`
+-   Machine Learning avec `{tidymodels}`.
+-   Analyse de données exploratoire et analyse factorielle : ACP -- AFC -- ACM -- AFDM.
+-   Econométrie et de micro-économétrie.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa database >}} SQL
+
+-   Notion sur les bases de données relationnelles
+-   Manipulation des données (`SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, etc.)
+-   Fonction et opérateurs (`COUNT`, `SUM`,`AVG`, etc.)
+-   Jointures
+-   Indexation et performance (Création `d'index` pour améliorer les performances de requêtes)
+:::
+
+### Outils
+
+------------------------------------------------------------------------
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa book >}} Quarto
+- Production de documents paramétrables et automatisés (HTML, PDF).
+- Création de sites webs.^[J'ai par exemple créé ce site avec **Quarto**, tout en tirant profit de `SASS` et de `CSS` pour en améliorer le rendu.]
+:::
+
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa book >}} QlikSense
+
+-   Création de tableaux de bord interactifs
+-   Gestion des scripts
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa file-excel >}} Excel
+
+-   Traitement de données
+-   Tableaux croisés dynamiques
+-   *Requêtage* par le biais de `PowerQuery`
+-   Automatisation de tâches par le biais de `VBA`
+- Manipulations avancée des fonctions Excel
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## {{< fa code-compare >}} Git
+
+Ce site ainsi qu'une majeure partie de mes projets sont hebergés et disponible sur Github.
+
+-   Gestion de projet
+-   Versionning
+:::
+
+### Soft skills 
+
+------------------------------------------------------------------------
+
+::: {.callout-warning icon="false" collapse="true"}
+## Communication
+
+Aptitude à partager des resultats techniques à des publics non avisés.
+:::
+
+::: {.callout-warning icon="false" collapse="true"}
+## Force de proposition
+
+Toujours en quête d'amélioration  je n'hésite pas à proposer de nouvelles solutions.
+:::
+
+::: {.callout-warning icon="false" collapse="true"}
+## Gestion du temps & rigourosité
+
+-   Importance de la gestion optimale du temps.
+-   Être rigoureux est primordiale afin d'assurer un niveau de résultat de haute qualité.
+:::
+
+::: {.callout-warning icon="false" collapse="true"}
+## Curiosité
+
+Toujours en veille sur les nouvelles pratiques et différentes évolutions du secteur.
+:::
+
+::: {.callout-warning icon="false" collapse="true"}
+## Pragmatisme et adaptabilité
+
+ Facilité à m'adapter à des environnements hétérogènes.
+:::
+
+::: {.callout-warning icon="false" collapse="true"}
+## Centre d'intérêts
+
+-   **Intelligence Artificielle, Machine Learning**
+-   **Technologie & Innovation**
+-   **Économie & politique**
+-   **Horlogerie**
+-   **Sports mécaniques (F1, Moto GP, WRC, WEC)**
+:::

@@ -1,0 +1,133 @@
+---
+title: "L'immobilier à Saratoga ~ Californie"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: ""
+author: "`BOUSSENGUI François` & `LEGER Aline`"
+description: "*Application des méthodes de classification non supervisée*"
+image: /assets/img/projet2/cns.jpg
+categories: [Machine Learning]
+format:
+    html:
+        code-fold: true
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
+---
+
+::: {.tech-badges}
+::: {.tech-badge .badge-r}
+{{< fa brands r-project >}} R
+:::
+::: {.tech-badge .badge-ml}
+{{< fa brain >}} Machine Learning
+:::
+::: {.tech-badge .badge-datascience}
+{{< fa chart-bar >}} Clustering
+:::
+:::
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+# Contexte  
+
+Dans le cadre d'un projet réalisé dans l'apprentissage de méthodes de **Datamining**, [^1] il a été question d'appliquer des méthodes de **classification non supervisée** [^2] sur une base de données contenant des informations sur *1728* biens immobiliers de la ville de Saratoga, en Californie.
+
+[^1]: La fouille de données (ou "datamining" en anglais) désigne le processus de découverte de motifs, de corrélations ou d'anomalies en analysant de grands ensembles de données à l'aide de diverses techniques computationnelles. Cela implique d'extraire des informations utiles à partir de données brutes pour découvrir des motifs cachés, des relations ou des insights qui peuvent aider à la prise de décision ou à la prédiction.
+
+[^2]: La classification non supervisée, également connue sous le nom de clustering, est une méthode de fouille de données qui consiste à regrouper des objets ou des données sans utiliser d'étiquettes ou de catégories prédéfinies.
+
+# Objectifs 
+
+Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu'il est tout à fait possible de regrouper ces biens en classes homogènes. En d'autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été  question de proposer des classes de biens homogènes au sens statistique du terme [^3].
+
+[^3]: L'homogénéité d'une population ou d'une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.
+
+# Méthodologie
+
+Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.
+
+* **Analyses factorielles**
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse factorielle des correspondances (AFC)
+
+L'Analyse Factorielle des Correspondances (AFC) est une méthode statistique utilisée pour explorer les relations entre des variables qualitatives (catégorielles) dans des tableaux de contingence. Cette méthode permet de réduire la dimensionnalité des données et de représenter graphiquement les associations entre les catégories des variables sous forme de points dans un espace de faible dimension (généralement deux dimensions).
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse des composantes principales (ACP)
+
+L'Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées **composantes principales**. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## Analyse des composantes multiples (ACM)
+
+L'Analyse des Composantes Multiples (ACM) est une extension de l'Analyse des Composantes Principales (ACP) qui permet de traiter simultanément plusieurs tableaux de données, souvent appelés modalités, lorsqu'il y a plusieurs ensembles de variables à analyser conjointement. Cela peut être particulièrement utile lorsque les données sont organisées en groupes ou en ensembles distincts et que l'on souhaite étudier leurs relations globales.
+:::
+
+* **Méthodes de partitionnement**
+
+::: {.callout-tip icon=false collapse="true"}
+## Classification ascendante hiérarchique (CAH)
+
+La Classification Ascendante Hiérarchique (CAH) est une méthode d'analyse statistique utilisée pour regrouper des observations ou des variables en clusters (groupes) homogènes et hétérogènes successivement, de manière ascendante (du bas vers le haut). Cette méthode est non paramétrique et exploratoire, ce qui signifie qu'elle ne nécessite pas d'hypothèses préalables sur la structure des données et qu'elle est utilisée pour explorer la structure intrinsèque des données.
+
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+##  K-Means (K-plus proches voisins)
+
+Le K-means est l'un des algorithmes de clustering les plus populaires en analyse de données non supervisée. Son objectif principal est de partitionner un ensemble de données en K clusters distincts, où chaque observation appartient au cluster avec le centre (centroid) le plus proche
+
+:::
+
+
+# Résultats
+
+L'analyse des composantes principales (ACP) nous a permis de déterminer les 2 grandes classes de biens homogènes suivantes :
+
+-   Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.
+
+-   Inverserment, les biens immobiliers présentant des prix relativement élevés, une surface habitable relativement élevée et qui sont plus anciens.
+
+L'analyse des composantes multiples (ACM) nous a permis quant à elle de classifier les biens comme suit :
+
+-   Les biens chauffés à l'électrique et n'ayant pas de cheminée
+
+-   Inversement, les biens possédant au minimum une cheminée et chauffés à l'air chaud ou à l'eau chaude.
+
+En conclusion, l'application des techniques de data mining présentent une utilité non négligeable. En effet, ces dernières nous ont permis de mettre en évidence les biens qui présentent des caractères similaires et qui par conséquent, peuvent être scindés en plusieurs catégories. Dans un but de segmentation du marché ou d'analyse de la clientèle, ces techniques présentent une utilité sans précédente. 
+
+
+# Outil technique 
+
+- **Logiciel** {{< fa brands r-project >}}
+
+
+::: {style="text-align:center;"}
+> Vous trouverez le rapport ici :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
+
+
+::: {style="text-align:center;"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](/assets/img/projet2/immobilier_saratoga.pdf){.btn .btn-outline-primary .btn .center role="button"}
+:::
+
+
+
+

@@ -1,0 +1,34 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Alternative: Plausible Analytics (Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Plausible à Google Analytics -->
+<!--
+<script defer data-domain="bfrancois.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+
+<!-- Alternative: Umami Analytics (Self-hosted, Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Umami -->
+<!--
+<script async defer data-website-id="your-website-id" src="https://analytics.umami.is/script.js"></script>
+-->
+
+<!-- Note:
+Pour activer Google Analytics :
+1. Créez un compte sur https://analytics.google.com/
+2. Créez une propriété pour votre site
+3. Remplacez 'G-XXXXXXXXXX' par votre ID de mesure Google Analytics
+4. Mettez à jour _quarto.yml pour inclure ce fichier
+
+Pour une alternative respectueuse de la vie privée, considérez:
+- Plausible (https://plausible.io/)
+- Umami (https://umami.is/)
+- Fathom (https://usefathom.com/)
+-->

@@ -1,0 +1,82 @@
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+
+    // Theme Toggle System
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Create theme toggle button
+        const navbar = document.querySelector('.navbar-nav');
+        if (navbar) {
+            const themeToggle = document.createElement('li');
+            themeToggle.className = 'nav-item';
+            themeToggle.innerHTML = `
+                <button id="theme-toggle" class="nav-link btn btn-link" aria-label="Toggle theme">
+                    <i class="fa-solid fa-${currentTheme === 'dark' ? 'sun' : 'moon'}"></i>
+                </button>
+            `;
+            navbar.appendChild(themeToggle);
+
+            // Theme toggle functionality
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Update icon
+                this.innerHTML = `<i class="fa-solid fa-${newTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+            });
+        }
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+
+        // Lazy loading for iframes (PDFs)
+        const iframes = document.querySelectorAll('iframe:not([loading])');
+        iframes.forEach(iframe => {
+            iframe.setAttribute('loading', 'lazy');
+        });
+
+        // Add IntersectionObserver for additional optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    });
+</script>

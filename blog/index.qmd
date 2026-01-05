@@ -1,0 +1,23 @@
+---
+title: "Blog & Articles"
+author: ""
+listing:
+  contents: posts
+  sort: date desc
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  fields: [image, date, title, author, categories, description, reading-time]
+  feed: true
+page-layout: full
+title-block-banner: true
+comments: false
+---
+
+::: {style="text-align:center; margin-bottom: 2rem;"}
+Bienvenue sur mon blog !
+
+Retrouvez ici mes articles, tutoriels et réflexions sur la **Data Science**, l'**économétrie**,
+et les **technologies** que j'utilise au quotidien.
+:::

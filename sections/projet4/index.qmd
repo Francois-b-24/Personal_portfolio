@@ -1,0 +1,110 @@
+---
+title: "Mesure de l'efficacité technique d'une entreprise"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: ""
+author: "`BOUSSENGUI François` - `LEGER Aline` - `RIGARDIE Loick`"
+description: "*Application de méthodes économétriques*"
+image: /assets/img/projet4/eco.jpg
+categories: [Économétrie]
+format:
+    html:
+        code-fold: true
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
+---
+
+::: {.tech-badges}
+::: {.tech-badge .badge-r}
+{{< fa brands r-project >}} R
+:::
+::: {.tech-badge .badge-econometrie}
+{{< fa chart-line >}} Économétrie
+:::
+::: {.tech-badge .badge-datascience}
+{{< fa chart-area >}} Frontières Stochastiques
+:::
+:::
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+```
+
+# Contexte 
+
+L'analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).
+
+Le modèle de frontière de production sans composante aléatoire peut s'écrire :
+
+$y_i = f(x_i, \beta)\times TE_i$
+
+où $y_i$ est la production scalaire observée du producteur $i$ ; $i=1,..I,$ $x_i$ est un vecteur de $N$ entrées utilisé par le $producteur_i$ ;
+
+-   $\beta$ est un vecteur de paramètres technologiques à estimer ;
+
+-   $f(x_i , \beta)$ est la fonction frontière de production ;
+
+$TE_i$ désigne l'efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. $TE = (\frac{y}{y*})$. $TE_i = 1$ montre que la ième entreprise obtient la production maximale réalisable, tandis que $TE_i$ \< 1 fournit une mesure de l'écart entre la production observée et la production maximale réalisable. En d'autres termes, $TE_i$ détermine l'utilisation non efficiente des inputs.
+
+Une composante [stochastique](https://fr.wikipedia.org/wiki/Processus_stochastique) décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par $exp(v_i)$. Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu'ils sont décrits par une distribution commune.
+
+La frontière de production stochastique deviendra :
+
+$y_i = f(x_i, \beta) \times TE_i \times (v_i)$
+
+Nous supposons que $TE_i$ est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.
+
+L'analyse des frontières stochastiques a également examiné l'efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L'approche de la « frontière des coûts » tente de mesurer dans quelle mesure l'entreprise se trouve loin de la minimisation totale des coûts (c'est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d'inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. « L'analyse de la frontière du profit » examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l'entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».
+
+# Objectifs 
+
+L'objectif de ce travail est d'appliquer les techniques d'analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d'une base de données de *232* observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :
+
+| Variables |
+|:------|
+| `Coût total`| 
+| `Quantité produite`| 
+| `Le prix du travail` |   
+| `Le prix du capital`|
+| `Le prix du carburant`|
+| `Le part du coût du travail dans le coût total`|
+| `Le part du coût du capital dans le coût total`|
+| `Le part du coût du carburant dans le coût total`|
+
+
+# Méthodologie
+
+Pour atteindre notre objectif, nous avons tout d'abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d'observer les tendances générales qui s'y dégagent. En d'autres termes, nous avons réalisé une étude sur :
+
+* **Analyse des coûts** 
+* **Quantités produites** 
+* **La productivité des entreprises**
+
+Ensuite, nous avons réalisé une modélisation de la frontière stochastique respectivement du point de vue des **coûts** mais aussi de la **production**. Dans les deux cas, nous avons réalisé diverses modélisations afin d'apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles et confronter les résultats obtenus dans le but d'otenir le meilleur. 
+
+# Outil technique
+
+-   **Logiciel** {{< fa brands r-project >}}
+
+
+::: {style="text-align:center;"} 
+> Vous trouverez le rapport ici  :
+
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+
+:::
+
+
+<iframe src="/assets/img/projet4/Stochastic frontier analysis.html" width="100%" height="700px">
+
+</iframe>

@@ -1,0 +1,108 @@
+---
+title: "Marketing quantitatif au service de la santé"
+title-block-banner: true
+toc: true
+toc-title: 📚 Table des matières
+lang: fr
+number-sections: true
+subtitle: ""
+author: "`BOUSSENGUI François`"
+description: "*L'économétrie au service de la santé*"
+image: /assets/img/projet6/eco.jpg
+categories: [Économétrie]
+format:
+    html:
+        code-fold: true
+        code-line-numbers: false
+        anchor-sections: true
+        smooth-scroll: true
+        citations-hover: true
+        footnotes-hover: true
+        html-math-method: mathjax
+---
+
+::: {.tech-badges}
+::: {.tech-badge .badge-r}
+{{< fa brands r-project >}} R
+:::
+::: {.tech-badge .badge-econometrie}
+{{< fa chart-line >}} Économétrie
+:::
+::: {.tech-badge .badge-datascience}
+{{< fa hospital >}} Santé
+:::
+:::
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+# Contexte 
+
+Le marketing quantitatif est une approche analytique du marketing qui se concentre sur l'utilisation de données et de statistiques pour prendre des décisions éclairées et mesurer les performances des activités marketing. Les prestataires de services peuvent avoir recours à ce genre de techniques afin de mieux comprendre la demande et ainsi affiner leur propositions.
+
+En l'occurrence, nous sommes dans le cas d'une étude qui concerne le programme d'assurance **Medicare** aux Etats-Unis. C'est un programme d'assurance maladie qui aide les personnes âgées à payer les services de santé. Certaines personnes souscrivent une assurance complémentaire, **Medigap** [^1] qui les aide à payer le reste à charge de Medicare et les autres dépenses médicales qui ne sont pas couvertes par Medicare. Cette assurance est parfois fournie par le dernier employeur de la personne dans le cadre d'une prestation de retraite. D'autres personnes souscrivent une assurance maladie complémentaire auprès de sociétés d'assurances privées.
+
+[^1]: Medigap, également connu sous le nom de "Medicare Supplement Insurance," est une police d'assurance privée qui aide à couvrir certains des coûts de santé non pris en charge par Medicare Original (Parts A et B), tels que les franchises, les copayments et les coinsurances.
+
+# Objectifs 
+
+L'objectif du travail est d'appliquer des méthodes issues de l'économétrie afin de répondre à la problématique suivante : Comment les caratéristiques d'une personnes ayant souscrit à Medicare influence la probabilité de souscrire au programme Medigap ?
+
+# Méthodologie
+
+Pour ce faire, il a été nécessaire de traiter une base données contenant des informations sur des indivudus ayant souscrits au programme d'assurance Medicare. Les caractéristiques à notre disposition sont les suivantes :
+
+::: {.callout-tip icon=false collapse="true"}
+## Présentation des variables 
+
+|       Variables    | Interprétation |
+|:-------------------|:---------------|
+|         `Age`         | Age de l'individu |
+|     `Hispanique`      | 1 si hispanique, 0 sinon |
+|        `Blanc`        | 1 si blanc, 0 sinon |
+|        `Femme`        | 1 si femme, 0 sinon |
+|      `Education`      | Nombre d'années d'éducation |
+| `Statut matrimonial`  | 1 si marié, 0 sinon |
+| `Maladies chroniques` | Nombre de maladie chroniques |
+|         `ADL`         | Nombre de limitations sur les activités quotidiennes. Ce sont les activités quotidiennes que l’on effectue tous les jours sans besoins d’assistance. Ces activités sont : manger, se doucher, s’habiller, se lever et se coucher, marcher ou encore faire sa toilette. |
+|      `Retraité`       | 1 si retraité, 0 sinon |
+| `Statut du conjoint`  | 1 si conjoint marié, 0 | sinon
+|       `Revenu`        | Revenu du ménage en $ |
+|    `Etat de santé`    | Variable indiquant si l’etat de santé est excellent, très bon, bon, moyen ou mauvais ; |
+|    **Assurance**   | 1, si complémentaire, 0 sinon |
+
+:::
+La variable d'intérêt est *Assurance*.
+
+Dans un premier temps, une analyse descriptive de la base de données à été nécessaire pour dégager les tendances primaires de cette base données. Cette analyse descriptive a également permis de déterminer les profils types des individus ayant souscrit à une complémentaire.
+
+Ensuite, afin de répondre à la question soulevée dans la problématique, l'application de méthodes économétriques à été nécessaire.
+
+Plus précisément, la réponse à la question à nécéssité l'application de modèles dont la variable à expliquer est binaire (dichotomique).
+
+Dans. notre cas, il s'agit d'un modèle **Logit**. Le modèle Logit, ou modèle de [régression logistique](https://fr.wikipedia.org/wiki/R%C3%A9gression_logistique), est un outil statistique utilisé pour modéliser une variable dépendante binaire (c'est-à-dire une variable qui prend deux valeurs possibles, généralement 0 et 1) en fonction d'une ou plusieurs variables explicatives.
+
+# Résultats
+
+L'application de cette méthode économétrique nous permis de comprendre comment les caractéristiques à notre disposition inflluencent la probabilité de souscrire à une complémentaire privée.
+
+Par la suite, au vue des résultats obtenus, cela à conduit à des recommandations qui peuvent être utiles lors des campagnes de prévention, ou pour mieux cibler les personnes qui sont plausible à la souscription de ce genre de services.
+
+# Outil technique
+
+- **Logiciel**  {{< fa brands r-project >}}
+
+::: {style="text-align:center;"} 
+> Vous trouverez le rapport ici  :
+
+::: chevron-styling
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+:::
+
+
+::: {style="text-align:center;"}
+[Lire le rapport {{< fa arrow-up-right-from-square >}}](/assets/img/projet6/Logit-Probit modelling.pdf){.btn .btn-outline-primary .btn .center role="button"}
+:::
+

@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>François BOUSSENGUI | ?meta:title</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+
+    // Theme Toggle System
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Create theme toggle button
+        const navbar = document.querySelector('.navbar-nav');
+        if (navbar) {
+            const themeToggle = document.createElement('li');
+            themeToggle.className = 'nav-item';
+            themeToggle.innerHTML = `
+                <button id="theme-toggle" class="nav-link btn btn-link" aria-label="Toggle theme">
+                    <i class="fa-solid fa-${currentTheme === 'dark' ? 'sun' : 'moon'}"></i>
+                </button>
+            `;
+            navbar.appendChild(themeToggle);
+
+            // Theme toggle functionality
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Update icon
+                this.innerHTML = `<i class="fa-solid fa-${newTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+            });
+        }
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+
+        // Lazy loading for iframes (PDFs)
+        const iframes = document.querySelectorAll('iframe:not([loading])');
+        iframes.forEach(iframe => {
+            iframe.setAttribute('loading', 'lazy');
+        });
+
+        // Add IntersectionObserver for additional optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    });
+</script>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bfrancois.netlify.app/">
+<meta property="og:title" content="François BOUSSENGUI | ?meta:title">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="François B. Portfolio">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://bfrancois.netlify.app/">
+<meta name="twitter:title" content="François BOUSSENGUI | ?meta:title">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "François BOUSSENGUI",
+  "url": "https://bfrancois.netlify.app/",
+  "image": "https://bfrancois.netlify.app/assets/img/moi.jpg",
+  "jobTitle": "Data Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Aon France"
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "Gabon"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Université de Tours",
+      "department": "Master 2 Économétrie, Data Science & Business Economics"
+    }
+  ],
+  "knowsAbout": [
+    "Data Science",
+    "Machine Learning",
+    "Économétrie",
+    "Python",
+    "R",
+    "SQL",
+    "Statistiques",
+    "Assurance",
+    "Analyse de données"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/fboussengui/",
+    "https://github.com/Francois-b-24"
+  ],
+  "email": "f.boussengui@gmail.com"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "François BOUSSENGUI Portfolio",
+  "url": "https://bfrancois.netlify.app/",
+  "description": "Portfolio professionnel de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données.",
+  "author": {
+    "@type": "Person",
+    "name": "François BOUSSENGUI"
+  },
+  "inLanguage": "fr-FR"
+}
+</script>
+
+<!-- Additional SEO Meta Tags -->
+<meta name="description" content="Portfolio de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données. 3+ années d'expérience, 8 projets réalisés.">
+<meta name="keywords" content="Data Science, Machine Learning, Économétrie, Python, R, SQL, Portfolio, François BOUSSENGUI, Statistiques, Analyse de données, Streamlit, Qlik Sense">
+<meta name="author" content="François BOUSSENGUI">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://bfrancois.netlify.app/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Alternative: Plausible Analytics (Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Plausible à Google Analytics -->
+<!--
+<script defer data-domain="bfrancois.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+
+<!-- Alternative: Umami Analytics (Self-hosted, Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Umami -->
+<!--
+<script async defer data-website-id="your-website-id" src="https://analytics.umami.is/script.js"></script>
+-->
+
+<!-- Note:
+Pour activer Google Analytics :
+1. Créez un compte sur https://analytics.google.com/
+2. Créez une propriété pour votre site
+3. Remplacez 'G-XXXXXXXXXX' par votre ID de mesure Google Analytics
+4. Mettez à jour _quarto.yml pour inclure ce fichier
+
+Pour une alternative respectueuse de la vie privée, considérez:
+- Plausible (https://plausible.io/)
+- Umami (https://umami.is/)
+- Fathom (https://usefathom.com/)
+-->
+<!-- GitHub Stats Widget -->
+<script>
+// Fonction pour récupérer les stats GitHub
+async function fetchGitHubStats() {
+    const username = 'Francois-b-24';
+
+    try {
+        // Récupérer les infos du profil
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+
+        // Récupérer les repos
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposResponse.json();
+
+        // Calculer les stats
+        const totalRepos = userData.public_repos;
+        const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
+        const followers = userData.followers;
+
+        // Mettre à jour le DOM
+        updateStatsDisplay(totalRepos, totalStars, totalForks, followers);
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des stats GitHub:', error);
+    }
+}
+
+function updateStatsDisplay(repos, stars, forks, followers) {
+    // Créer ou mettre à jour le widget de stats
+    const statsContainer = document.getElementById('github-stats-container');
+    if (statsContainer) {
+        statsContainer.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #f8d65c;">${repos}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Repositories</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #72f1b8;">${stars}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Stars</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #ffbc8c;">${forks}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Forks</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #a97eff;">${followers}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Followers</div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Charger les stats au chargement de la page
+if (document.getElementById('github-stats-container')) {
+    document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+}
+</script>
+
+<style>
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(6, 67, 110, 0.4) !important;
+}
+</style>
+
+<!-- Widget GitHub Profile Card (Alternative avec GitHub README Stats) -->
+<script>
+function addGitHubProfileCard() {
+    const profileCardContainer = document.getElementById('github-profile-card');
+    if (profileCardContainer) {
+        profileCardContainer.innerHTML = `
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="https://github-readme-stats.vercel.app/api?username=Francois-b-24&show_icons=true&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff&icon_color=72f1b8"
+                     alt="GitHub Stats"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Francois-b-24&layout=compact&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff"
+                     alt="Top Languages"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-top: 1rem;">
+            </div>
+        `;
+    }
+}
+
+if (document.getElementById('github-profile-card')) {
+    document.addEventListener('DOMContentLoaded', addGitHubProfileCard);
+}
+</script>
+
+<!-- Instructions d'utilisation :
+
+Pour afficher les statistiques GitHub dans une page, ajoutez simplement :
+
+1. Stats simples :
+   <div id="github-stats-container"></div>
+
+2. Cartes GitHub complètes :
+   <div id="github-profile-card"></div>
+
+3. Les deux en même temps :
+   <div id="github-stats-container"></div>
+   <div id="github-profile-card"></div>
+
+Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentification).
+Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
+-->
+
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><em>François B.</em></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sections/xp.html"> 
+<span class="menu-text">Parcours</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sections/skills.html"> 
+<span class="menu-text">Compétences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sections/index.html"> 
+<span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#améliorations-du-portfolio---janvier-2026" id="toc-améliorations-du-portfolio---janvier-2026" class="nav-link active" data-scroll-target="#améliorations-du-portfolio---janvier-2026">Améliorations du Portfolio - Janvier 2026</a>
+  <ul class="collapse">
+  <li><a href="#vue-densemble" id="toc-vue-densemble" class="nav-link" data-scroll-target="#vue-densemble">📊 Vue d’ensemble</a></li>
+  <li><a href="#amélioration-visuelle-ux" id="toc-amélioration-visuelle-ux" class="nav-link" data-scroll-target="#amélioration-visuelle-ux">✅ 1. Amélioration Visuelle &amp; UX</a>
+  <ul class="collapse">
+  <li><a href="#page-daccueil-plus-impactante" id="toc-page-daccueil-plus-impactante" class="nav-link" data-scroll-target="#page-daccueil-plus-impactante">1.1 Page d’accueil plus impactante</a></li>
+  <li><a href="#badges-technologiques-sur-les-projets" id="toc-badges-technologiques-sur-les-projets" class="nav-link" data-scroll-target="#badges-technologiques-sur-les-projets">1.2 Badges technologiques sur les projets</a></li>
+  <li><a href="#graphiques-interactifs-des-compétences" id="toc-graphiques-interactifs-des-compétences" class="nav-link" data-scroll-target="#graphiques-interactifs-des-compétences">1.3 Graphiques interactifs des compétences</a></li>
+  <li><a href="#mode-sombreclair" id="toc-mode-sombreclair" class="nav-link" data-scroll-target="#mode-sombreclair">1.4 Mode sombre/clair</a></li>
+  </ul></li>
+  <li><a href="#performance-seo" id="toc-performance-seo" class="nav-link" data-scroll-target="#performance-seo">⚡ 2. Performance &amp; SEO</a>
+  <ul class="collapse">
+  <li><a href="#lazy-loading-images-et-pdfs" id="toc-lazy-loading-images-et-pdfs" class="nav-link" data-scroll-target="#lazy-loading-images-et-pdfs">2.1 Lazy loading images et PDFs</a></li>
+  <li><a href="#métadonnées-seo" id="toc-métadonnées-seo" class="nav-link" data-scroll-target="#métadonnées-seo">2.2 Métadonnées SEO</a></li>
+  <li><a href="#optimisations-lighthouse" id="toc-optimisations-lighthouse" class="nav-link" data-scroll-target="#optimisations-lighthouse">2.3 Optimisations Lighthouse</a></li>
+  </ul></li>
+  <li><a href="#contenu-interactivité" id="toc-contenu-interactivité" class="nav-link" data-scroll-target="#contenu-interactivité">🎯 3. Contenu &amp; Interactivité</a>
+  <ul class="collapse">
+  <li><a href="#filtrage-des-projets" id="toc-filtrage-des-projets" class="nav-link" data-scroll-target="#filtrage-des-projets">3.1 Filtrage des projets</a></li>
+  <li><a href="#section-blogarticles" id="toc-section-blogarticles" class="nav-link" data-scroll-target="#section-blogarticles">3.2 Section Blog/Articles</a></li>
+  <li><a href="#démos-streamlit-interactives" id="toc-démos-streamlit-interactives" class="nav-link" data-scroll-target="#démos-streamlit-interactives">3.3 Démos Streamlit interactives</a></li>
+  <li><a href="#google-analytics" id="toc-google-analytics" class="nav-link" data-scroll-target="#google-analytics">3.4 Google Analytics</a></li>
+  </ul></li>
+  <li><a href="#fonctionnalités-avancées" id="toc-fonctionnalités-avancées" class="nav-link" data-scroll-target="#fonctionnalités-avancées">🚀 4. Fonctionnalités Avancées</a>
+  <ul class="collapse">
+  <li><a href="#formulaire-de-contact" id="toc-formulaire-de-contact" class="nav-link" data-scroll-target="#formulaire-de-contact">4.1 Formulaire de contact</a></li>
+  <li><a href="#newsletter" id="toc-newsletter" class="nav-link" data-scroll-target="#newsletter">4.2 Newsletter</a></li>
+  <li><a href="#intégration-apis-github" id="toc-intégration-apis-github" class="nav-link" data-scroll-target="#intégration-apis-github">4.3 Intégration APIs GitHub</a></li>
+  </ul></li>
+  <li><a href="#structure-des-fichiers-créésmodifiés" id="toc-structure-des-fichiers-créésmodifiés" class="nav-link" data-scroll-target="#structure-des-fichiers-créésmodifiés">📦 Structure des fichiers créés/modifiés</a>
+  <ul class="collapse">
+  <li><a href="#nouveaux-fichiers" id="toc-nouveaux-fichiers" class="nav-link" data-scroll-target="#nouveaux-fichiers">Nouveaux fichiers</a></li>
+  <li><a href="#fichiers-modifiés" id="toc-fichiers-modifiés" class="nav-link" data-scroll-target="#fichiers-modifiés">Fichiers modifiés</a></li>
+  </ul></li>
+  <li><a href="#palette-de-couleurs-utilisée" id="toc-palette-de-couleurs-utilisée" class="nav-link" data-scroll-target="#palette-de-couleurs-utilisée">🎨 Palette de couleurs utilisée</a>
+  <ul class="collapse">
+  <li><a href="#couleurs-principales" id="toc-couleurs-principales" class="nav-link" data-scroll-target="#couleurs-principales">Couleurs principales</a></li>
+  <li><a href="#mode-sombre" id="toc-mode-sombre" class="nav-link" data-scroll-target="#mode-sombre">Mode sombre</a></li>
+  </ul></li>
+  <li><a href="#configuration-nécessaire" id="toc-configuration-nécessaire" class="nav-link" data-scroll-target="#configuration-nécessaire">🔧 Configuration nécessaire</a>
+  <ul class="collapse">
+  <li><a href="#à-activer-par-lutilisateur" id="toc-à-activer-par-lutilisateur" class="nav-link" data-scroll-target="#à-activer-par-lutilisateur">À activer par l’utilisateur :</a></li>
+  </ul></li>
+  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus">📊 Résultats attendus</a>
+  <ul class="collapse">
+  <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a></li>
+  <li><a href="#seo" id="toc-seo" class="nav-link" data-scroll-target="#seo">SEO</a></li>
+  <li><a href="#ux" id="toc-ux" class="nav-link" data-scroll-target="#ux">UX</a></li>
+  <li><a href="#engagement" id="toc-engagement" class="nav-link" data-scroll-target="#engagement">Engagement</a></li>
+  </ul></li>
+  <li><a href="#prochaines-étapes-recommandées" id="toc-prochaines-étapes-recommandées" class="nav-link" data-scroll-target="#prochaines-étapes-recommandées">🚀 Prochaines étapes recommandées</a></li>
+  <li><a href="#commandes-quarto" id="toc-commandes-quarto" class="nav-link" data-scroll-target="#commandes-quarto">📝 Commandes Quarto</a>
+  <ul class="collapse">
+  <li><a href="#build-local" id="toc-build-local" class="nav-link" data-scroll-target="#build-local">Build local</a></li>
+  <li><a href="#preview-local" id="toc-preview-local" class="nav-link" data-scroll-target="#preview-local">Preview local</a></li>
+  <li><a href="#check" id="toc-check" class="nav-link" data-scroll-target="#check">Check</a></li>
+  </ul></li>
+  <li><a href="#crédits" id="toc-crédits" class="nav-link" data-scroll-target="#crédits">🙏 Crédits</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="améliorations-du-portfolio---janvier-2026" class="level1">
+<h1>Améliorations du Portfolio - Janvier 2026</h1>
+<p>Ce document récapitule toutes les améliorations apportées au portfolio de François BOUSSENGUI.</p>
+<section id="vue-densemble" class="level2">
+<h2 class="anchored" data-anchor-id="vue-densemble">📊 Vue d’ensemble</h2>
+<p><strong>Date des améliorations :</strong> 5 janvier 2026 <strong>Nombre total d’améliorations :</strong> 14 fonctionnalités majeures <strong>Catégories :</strong> UX/UI, Performance, SEO, Contenu, Fonctionnalités avancées</p>
+<hr>
+</section>
+<section id="amélioration-visuelle-ux" class="level2">
+<h2 class="anchored" data-anchor-id="amélioration-visuelle-ux">✅ 1. Amélioration Visuelle &amp; UX</h2>
+<section id="page-daccueil-plus-impactante" class="level3">
+<h3 class="anchored" data-anchor-id="page-daccueil-plus-impactante">1.1 Page d’accueil plus impactante</h3>
+<p><strong>Fichier modifié :</strong> <code>index.qmd</code>, <code>assets/styles.css</code></p>
+<p><strong>Ajouts :</strong> - ✨ Statistiques clés en cartes animées (3+ années d’expérience, 8 projets, 10+ technologies) - 🎨 Dégradés de couleurs professionnels avec palette cohérente - 🔄 Animations fadeInUp au chargement - 📱 Responsive design avec flexbox</p>
+<p><strong>Code clé :</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"stats-container"</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"stat-box"</span><span class="dt">&gt;</span>3+ Années d'expérience<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"stat-box"</span><span class="dt">&gt;</span>8 Projets réalisés<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"stat-box"</span><span class="dt">&gt;</span>10+ Technologies maîtrisées<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="badges-technologiques-sur-les-projets" class="level3">
+<h3 class="anchored" data-anchor-id="badges-technologiques-sur-les-projets">1.2 Badges technologiques sur les projets</h3>
+<p><strong>Fichiers modifiés :</strong> Tous les <code>sections/projet*/index.qmd</code>, <code>assets/styles.css</code></p>
+<p><strong>Ajouts :</strong> - 🏷️ Badges visuels pour chaque technologie (Python, R, Streamlit, Docker, etc.) - 🎨 Couleurs distinctes par catégorie (Langage, Framework, Outil, Méthode) - 🖱️ Effets hover avec élévation et ombre - 📦 12 badges technologiques différents</p>
+<p><strong>Technologies représentées :</strong> - Python, R, SQL, Streamlit, Docker, Machine Learning - Git/GitHub Actions, Tableau, Excel, Quarto - Économétrie, Data Science</p>
+</section>
+<section id="graphiques-interactifs-des-compétences" class="level3">
+<h3 class="anchored" data-anchor-id="graphiques-interactifs-des-compétences">1.3 Graphiques interactifs des compétences</h3>
+<p><strong>Fichier modifié :</strong> <code>sections/skills.qmd</code></p>
+<p><strong>Ajouts :</strong> - 📊 Graphique radar Plotly (10 compétences principales) - 📈 Graphique en barres des années d’expérience par technologie - 🎨 Palette de couleurs cohérente avec le site - 🖱️ Interactivité complète (hover, zoom, pan)</p>
+<p><strong>Visualisations :</strong> 1. <strong>Radar Chart :</strong> Niveau de maîtrise sur 100 pour chaque compétence 2. <strong>Bar Chart :</strong> Années d’expérience par technologie avec code couleur par catégorie</p>
+</section>
+<section id="mode-sombreclair" class="level3">
+<h3 class="anchored" data-anchor-id="mode-sombreclair">1.4 Mode sombre/clair</h3>
+<p><strong>Fichiers modifiés :</strong> <code>utils/header.html</code>, <code>assets/styles.css</code></p>
+<p><strong>Ajouts :</strong> - 🌓 Toggle manuel dans la navbar (icône lune/soleil) - 💾 Sauvegarde préférence dans localStorage - 🎨 Variables CSS pour transition fluide - 🌈 Palette sombre complète (fond, texte, bordures)</p>
+<p><strong>Éléments adaptés au mode sombre :</strong> - Body, navbar, cards, timeline, stat-box - Callouts, code blocks, footer - Transitions CSS smooth (0.3s)</p>
+<hr>
+</section>
+</section>
+<section id="performance-seo" class="level2">
+<h2 class="anchored" data-anchor-id="performance-seo">⚡ 2. Performance &amp; SEO</h2>
+<section id="lazy-loading-images-et-pdfs" class="level3">
+<h3 class="anchored" data-anchor-id="lazy-loading-images-et-pdfs">2.1 Lazy loading images et PDFs</h3>
+<p><strong>Fichier modifié :</strong> <code>utils/header.html</code></p>
+<p><strong>Ajouts :</strong> - 🖼️ Attribut <code>loading="lazy"</code> automatique sur toutes les images - 📄 Lazy loading des iframes (PDFs) - 👁️ IntersectionObserver pour chargement progressif - 🚀 Amélioration temps de chargement initial</p>
+</section>
+<section id="métadonnées-seo" class="level3">
+<h3 class="anchored" data-anchor-id="métadonnées-seo">2.2 Métadonnées SEO</h3>
+<p><strong>Fichier créé :</strong> <code>utils/seo-meta.html</code></p>
+<p><strong>Ajouts complets :</strong> - 📱 <strong>Open Graph</strong> (Facebook, LinkedIn) - og:type, og:url, og:title, og:description, og:image - og:locale, og:site_name - 🐦 <strong>Twitter Cards</strong> - twitter:card (summary_large_image) - twitter:title, twitter:description, twitter:image - 🔍 <strong>Schema.org JSON-LD</strong> - Person schema (nom, métier, compétences, éducation) - WebSite schema (description, auteur, langue) - 🏷️ <strong>Meta tags classiques</strong> - description, keywords, author, robots - language, revisit-after - 🔗 <strong>Canonical URL</strong></p>
+</section>
+<section id="optimisations-lighthouse" class="level3">
+<h3 class="anchored" data-anchor-id="optimisations-lighthouse">2.3 Optimisations Lighthouse</h3>
+<p><strong>Fichier modifié :</strong> <code>assets/styles.css</code></p>
+<p><strong>Ajouts :</strong> - ✨ Font smoothing (antialiased) - ♿ Respect <code>prefers-reduced-motion</code> (accessibilité) - 🎯 Optimisations CSS pour performance</p>
+<hr>
+</section>
+</section>
+<section id="contenu-interactivité" class="level2">
+<h2 class="anchored" data-anchor-id="contenu-interactivité">🎯 3. Contenu &amp; Interactivité</h2>
+<section id="filtrage-des-projets" class="level3">
+<h3 class="anchored" data-anchor-id="filtrage-des-projets">3.1 Filtrage des projets</h3>
+<p><strong>Fichier modifié :</strong> <code>sections/index.qmd</code>, <code>assets/styles.css</code></p>
+<p><strong>Ajouts :</strong> - 🔍 <code>filter-ui: true</code> dans Quarto listing - 🔤 <code>sort-ui: [date, title]</code> pour tri personnalisé - 🎨 Styles CSS pour catégories cliquables - 🖱️ Effet hover sur les filtres avec élévation - 📦 Enhanced card styling avec transition 3D</p>
+</section>
+<section id="section-blogarticles" class="level3">
+<h3 class="anchored" data-anchor-id="section-blogarticles">3.2 Section Blog/Articles</h3>
+<p><strong>Fichiers créés :</strong> - <code>blog/index.qmd</code> (page principale) - <code>blog/posts/fastf1-introduction.qmd</code> (premier article)</p>
+<p><strong>Structure du blog :</strong> - 📝 Listing automatique des articles - 🏷️ Catégories et tags - 🔍 Filtres et recherche - 📅 Tri par date - 🔔 Support RSS feed - ⏱️ Reading time estimé</p>
+<p><strong>Premier article :</strong> “Introduction à FastF1” - 📊 Tutoriel complet Python - 💻 Exemples de code commentés - 📈 Visualisations Plotly - 🔗 Liens vers documentation et projet</p>
+</section>
+<section id="démos-streamlit-interactives" class="level3">
+<h3 class="anchored" data-anchor-id="démos-streamlit-interactives">3.3 Démos Streamlit interactives</h3>
+<p><strong>Fichiers modifiés :</strong> <code>sections/projet7/index.qmd</code>, <code>sections/projet8/index.qmd</code></p>
+<p><strong>Ajouts :</strong> - 🚀 Callout “Application Interactive” en haut de chaque projet - 🔗 Boutons CTA vers applications Streamlit déployées - 📝 Note sur le temps de démarrage (cold start) - 🎨 Styling cohérent avec boutons primaires</p>
+<p><strong>Projets concernés :</strong> 1. F1 Analytics Dashboard 2. Watch Analytics</p>
+</section>
+<section id="google-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="google-analytics">3.4 Google Analytics</h3>
+<p><strong>Fichier créé :</strong> <code>utils/analytics.html</code></p>
+<p><strong>Alternatives proposées :</strong> 1. <strong>Google Analytics</strong> (gtag.js) 2. <strong>Plausible</strong> (privacy-friendly) 3. <strong>Umami</strong> (self-hosted)</p>
+<p><strong>Instructions complètes pour activation</strong></p>
+<hr>
+</section>
+</section>
+<section id="fonctionnalités-avancées" class="level2">
+<h2 class="anchored" data-anchor-id="fonctionnalités-avancées">🚀 4. Fonctionnalités Avancées</h2>
+<section id="formulaire-de-contact" class="level3">
+<h3 class="anchored" data-anchor-id="formulaire-de-contact">4.1 Formulaire de contact</h3>
+<p><strong>Fichier créé :</strong> <code>contact.qmd</code></p>
+<p><strong>Composants :</strong> - 📧 Formulaire complet (nom, email, sujet, message) - 🔗 Intégration Formspree (prêt à activer) - 📱 Grid responsive (coordonnées + formulaire) - 🏷️ Domaines d’intérêt listés - ⏱️ Temps de réponse estimé</p>
+<p><strong>Alternatives proposées :</strong> - Formspree (gratuit 50 soumissions/mois) - Mailchimp - Netlify Forms</p>
+</section>
+<section id="newsletter" class="level3">
+<h3 class="anchored" data-anchor-id="newsletter">4.2 Newsletter</h3>
+<p><strong>Fichier créé :</strong> <code>utils/newsletter.html</code></p>
+<p><strong>Features :</strong> - 📬 Section newsletter dans footer - 🎨 Design gradient bleu/jaune cohérent - 📱 Formulaire responsive - 🔗 Intégration Buttondown (prête à activer)</p>
+<p><strong>Alternatives proposées :</strong> - Buttondown (gratuit 100 abonnés) - Mailchimp - Revue (Twitter/X) - Substack - ConvertKit - EmailOctopus</p>
+</section>
+<section id="intégration-apis-github" class="level3">
+<h3 class="anchored" data-anchor-id="intégration-apis-github">4.3 Intégration APIs GitHub</h3>
+<p><strong>Fichier créé :</strong> <code>utils/github-stats.html</code></p>
+<p><strong>Features :</strong> - 📊 Stats dynamiques via GitHub API - Nombre de repositories - Total stars - Total forks - Nombre de followers - 🎨 Cartes animées avec code couleur - 🖱️ Effet hover avec élévation - 📈 Alternative avec GitHub README Stats (cartes Vercel)</p>
+<p><strong>Widgets disponibles :</strong> 1. <code>&lt;div id="github-stats-container"&gt;&lt;/div&gt;</code> - Stats simples 2. <code>&lt;div id="github-profile-card"&gt;&lt;/div&gt;</code> - Cartes complètes</p>
+<p><strong>Ajouté à :</strong> Page d’accueil (<code>index.qmd</code>)</p>
+<hr>
+</section>
+</section>
+<section id="structure-des-fichiers-créésmodifiés" class="level2">
+<h2 class="anchored" data-anchor-id="structure-des-fichiers-créésmodifiés">📦 Structure des fichiers créés/modifiés</h2>
+<section id="nouveaux-fichiers" class="level3">
+<h3 class="anchored" data-anchor-id="nouveaux-fichiers">Nouveaux fichiers</h3>
+<pre><code>utils/
+├── seo-meta.html          # Métadonnées SEO complètes
+├── analytics.html         # Google Analytics + alternatives
+├── newsletter.html        # Widget newsletter
+└── github-stats.html      # Stats GitHub dynamiques
+
+blog/
+├── index.qmd             # Page principale blog
+└── posts/
+    └── fastf1-introduction.qmd  # Premier article
+
+contact.qmd               # Page de contact
+AMELIORATIONS.md          # Ce fichier</code></pre>
+</section>
+<section id="fichiers-modifiés" class="level3">
+<h3 class="anchored" data-anchor-id="fichiers-modifiés">Fichiers modifiés</h3>
+<pre><code>index.qmd                 # Statistiques + GitHub stats
+_quarto.yml              # Configuration (navbar, includes)
+assets/styles.css        # Tous les nouveaux styles
+assets/custom.scss       # Styles existants
+utils/header.html        # Theme toggle + lazy loading
+
+sections/
+├── index.qmd            # Filtres projets
+├── skills.qmd           # Graphiques interactifs
+└── projet*/index.qmd    # Badges technologiques (×8)</code></pre>
+<hr>
+</section>
+</section>
+<section id="palette-de-couleurs-utilisée" class="level2">
+<h2 class="anchored" data-anchor-id="palette-de-couleurs-utilisée">🎨 Palette de couleurs utilisée</h2>
+<section id="couleurs-principales" class="level3">
+<h3 class="anchored" data-anchor-id="couleurs-principales">Couleurs principales</h3>
+<ul>
+<li><code>#06436e</code> - Bleu foncé primaire (navbar, boutons)</li>
+<li><code>#f8d65c</code> - Jaune accent (statistiques)</li>
+<li><code>#72f1b8</code> - Vert menthe (data science)</li>
+<li><code>#ffbc8c</code> - Orange (outils)</li>
+<li><code>#a97eff</code> - Violet (frameworks)</li>
+</ul>
+</section>
+<section id="mode-sombre" class="level3">
+<h3 class="anchored" data-anchor-id="mode-sombre">Mode sombre</h3>
+<ul>
+<li><code>#1a1a1a</code> - Fond primaire</li>
+<li><code>#2d2d2d</code> - Fond secondaire</li>
+<li><code>#0a1929</code> - Navbar sombre</li>
+<li><code>#e9ecef</code> - Texte clair</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="configuration-nécessaire" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-nécessaire">🔧 Configuration nécessaire</h2>
+<section id="à-activer-par-lutilisateur" class="level3">
+<h3 class="anchored" data-anchor-id="à-activer-par-lutilisateur">À activer par l’utilisateur :</h3>
+<ol type="1">
+<li><strong>Google Analytics</strong>
+<ul>
+<li>Remplacer <code>G-XXXXXXXXXX</code> dans <code>utils/analytics.html</code></li>
+</ul></li>
+<li><strong>Formulaire de contact</strong>
+<ul>
+<li>Créer compte Formspree</li>
+<li>Remplacer <code>YOUR_FORM_ID</code> dans <code>contact.qmd</code></li>
+</ul></li>
+<li><strong>Newsletter</strong>
+<ul>
+<li>Créer compte Buttondown</li>
+<li>Remplacer <code>YOUR_USERNAME</code> dans <code>utils/newsletter.html</code></li>
+</ul></li>
+<li><strong>URLs Streamlit</strong>
+<ul>
+<li>Vérifier/mettre à jour les URLs dans <code>sections/projet7/index.qmd</code> et <code>sections/projet8/index.qmd</code></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="résultats-attendus" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-attendus">📊 Résultats attendus</h2>
+<section id="performance" class="level3">
+<h3 class="anchored" data-anchor-id="performance">Performance</h3>
+<ul>
+<li>⚡ Temps de chargement réduit (lazy loading)</li>
+<li>🎯 Score Lighthouse amélioré</li>
+<li>📱 Responsive parfait sur tous devices</li>
+</ul>
+</section>
+<section id="seo" class="level3">
+<h3 class="anchored" data-anchor-id="seo">SEO</h3>
+<ul>
+<li>🔍 Meilleur référencement Google</li>
+<li>📱 Previews sociaux optimisés</li>
+<li>🏷️ Rich snippets (Schema.org)</li>
+</ul>
+</section>
+<section id="ux" class="level3">
+<h3 class="anchored" data-anchor-id="ux">UX</h3>
+<ul>
+<li>🎨 Design moderne et professionnel</li>
+<li>🌓 Mode sombre pour confort visuel</li>
+<li>🖱️ Interactions fluides et intuitives</li>
+</ul>
+</section>
+<section id="engagement" class="level3">
+<h3 class="anchored" data-anchor-id="engagement">Engagement</h3>
+<ul>
+<li>📝 Blog pour partage de contenu</li>
+<li>📧 Contact facile</li>
+<li>📬 Newsletter pour fidélisation</li>
+<li>📊 Transparence via stats GitHub</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prochaines-étapes-recommandées" class="level2">
+<h2 class="anchored" data-anchor-id="prochaines-étapes-recommandées">🚀 Prochaines étapes recommandées</h2>
+<ol type="1">
+<li><strong>Tests</strong>
+<ul>
+<li>Tester le site sur différents navigateurs</li>
+<li>Vérifier le responsive sur mobile/tablet</li>
+<li>Valider le mode sombre</li>
+</ul></li>
+<li><strong>Activation</strong>
+<ul>
+<li>Configurer Google Analytics</li>
+<li>Activer le formulaire de contact</li>
+<li>Configurer la newsletter</li>
+</ul></li>
+<li><strong>Contenu</strong>
+<ul>
+<li>Rédiger plus d’articles de blog</li>
+<li>Mettre à jour les URLs Streamlit réelles</li>
+<li>Ajouter plus de projets</li>
+</ul></li>
+<li><strong>Déploiement</strong>
+<ul>
+<li>Rebuild avec Quarto</li>
+<li>Deploy sur Netlify</li>
+<li>Tester en production</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="commandes-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="commandes-quarto">📝 Commandes Quarto</h2>
+<section id="build-local" class="level3">
+<h3 class="anchored" data-anchor-id="build-local">Build local</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="preview-local" class="level3">
+<h3 class="anchored" data-anchor-id="preview-local">Preview local</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check" class="level3">
+<h3 class="anchored" data-anchor-id="check">Check</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="crédits" class="level2">
+<h2 class="anchored" data-anchor-id="crédits">🙏 Crédits</h2>
+<p><strong>Améliorations réalisées par :</strong> Claude (Anthropic) <strong>Date :</strong> 5 janvier 2026 <strong>Portfolio de :</strong> François BOUSSENGUI <strong>Technologies :</strong> Quarto, R, Python, HTML/CSS/JavaScript</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Website made with Quarto 🛠️</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2024, François BOUSSENGUI
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">🍪 Gérer les cookies</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

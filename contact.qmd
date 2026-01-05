@@ -1,0 +1,92 @@
+---
+title: "Contact"
+title-block-banner: true
+comments: false
+toc: false
+---
+
+::: {style="text-align:center; margin-bottom: 2rem;"}
+## Prenons contact !
+
+Vous avez un projet, une opportunité ou simplement une question ?
+
+N'hésitez pas à me contacter via le formulaire ci-dessous ou directement par email.
+:::
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 2rem;">
+
+<div style="background: rgba(6, 67, 110, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid #06436e;">
+
+### {{< fa envelope >}} Coordonnées
+
+**Email :** [f.boussengui@gmail.com](mailto:f.boussengui@gmail.com)
+
+**LinkedIn :** [François BOUSSENGUI](https://www.linkedin.com/in/fboussengui/)
+
+**GitHub :** [@Francois-b-24](https://github.com/Francois-b-24)
+
+---
+
+**Domaines d'intérêt :**
+
+- Data Science & Machine Learning
+- Économétrie & Statistiques
+- Assurance & Actuariat
+- Projets Python/R
+- Collaborations professionnelles
+
+</div>
+
+<div style="background: rgba(6, 67, 110, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid #06436e;">
+
+### {{< fa paper-plane >}} Formulaire de contact
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="width: 100%;">
+<div style="margin-bottom: 1.5rem;">
+<label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #06436e;">Nom</label>
+<input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='#06436e'" onblur="this.style.borderColor='#ddd'">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #06436e;">Email</label>
+<input type="email" id="email" name="_replyto" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='#06436e'" onblur="this.style.borderColor='#ddd'">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #06436e;">Sujet</label>
+<input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='#06436e'" onblur="this.style.borderColor='#ddd'">
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #06436e;">Message</label>
+<textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='#06436e'" onblur="this.style.borderColor='#ddd'"></textarea>
+</div>
+<button type="submit" style="width: 100%; padding: 0.875rem 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(6, 67, 110, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+{{< fa paper-plane >}} Envoyer
+</button>
+</form>
+
+::: {.callout-note collapse="true" style="margin-top: 1.5rem;"}
+## Note sur le formulaire
+
+Ce formulaire utilise **Formspree** pour l'envoi des messages.
+
+**Pour activer le formulaire :**
+1. Créez un compte gratuit sur [Formspree.io](https://formspree.io/)
+2. Créez un nouveau formulaire
+3. Remplacez `YOUR_FORM_ID` dans le code par votre ID Formspree
+4. Le formulaire sera opérationnel !
+
+**Alternative :** Vous pouvez également me contacter directement par [email](mailto:f.boussengui@gmail.com).
+:::
+
+</div>
+
+</div>
+
+---
+
+::: {style="text-align:center; margin-top: 3rem;"}
+### {{< fa clock >}} Disponibilité
+
+Je réponds généralement sous **24-48 heures** aux messages reçus.
+
+Pour les demandes urgentes, privilégiez un contact direct par email ou LinkedIn.
+:::

@@ -1,0 +1,26 @@
+---
+title: "Travaux"
+author: ""
+listing:
+  - id : sections
+    contents: "**/*/*.qmd"
+    type: grid
+    fields: [image, date, title, categories, description, author]
+    sort: date
+    categories:  true
+    page-size: 36
+    filter-ui: true
+    sort-ui: [date, title]
+page-layout: full
+title-block-banner: false
+comments: false
+toc: true
+---
+
+::: {style="text-align:center; margin-bottom: 2rem;"}
+Explorez mes projets en **Data Science**, **Économétrie** et **Machine Learning**.
+
+Utilisez les filtres ci-dessous pour naviguer par catégorie ou technologie.
+:::
+
+***

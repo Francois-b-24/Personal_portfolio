@@ -1,0 +1,72 @@
+---
+title: "François BOUSSENGUI"
+image: assets/img/moi.jpg
+comments: false
+toc: false
+about:
+  id: hero-heading
+  template: trestles
+  image-width: 16em
+  #image-shape: round
+  links:
+     - icon: linkedin
+       text: LinkedIn 
+       href: https://www.linkedin.com/in/fboussengui/ 
+     - icon: github
+       text: Github
+       href: https://github.com/Francois-b-24
+     - icon: envelope
+       text: Email    
+       href: mailto:f.boussengui@gmail.com
+---
+
+::: {style="text-align:center;"}
+## Bienvenue sur mon Portfolio [👋]{.wave}
+
+<iconify-icon icon="flag:ga-4x3"></iconify-icon>
+:::
+
+**Data Scientist**, je suis passionné par les statistiques et de tout ce qui touche à la donnée.
+
+***Mon rôle*** : Accompagner les entreprises dans la valorisation de leurs données, permettant ainsi une prise de décisions stratégiques éclairées.
+
+Sur ce site, vous découvrirez mon parcours académique et professionnel, un aperçu de mes compétences -- acquises et en cours de développement -- ainsi que des projets que j'ai réalisés.
+
+::: {.stats-container style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;"}
+::: {.stat-box style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);"}
+<div style="font-size: 2.5rem; font-weight: bold; color: #f8d65c; margin-bottom: 0.5rem;">3+</div>
+<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Années d'expérience</div>
+:::
+
+::: {.stat-box style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);"}
+<div style="font-size: 2.5rem; font-weight: bold; color: #72f1b8; margin-bottom: 0.5rem;">8</div>
+<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Projets réalisés</div>
+:::
+
+::: {.stat-box style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);"}
+<div style="font-size: 2.5rem; font-weight: bold; color: #ffbc8c; margin-bottom: 0.5rem;">10+</div>
+<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Technologies maîtrisées</div>
+:::
+:::
+
+::: {style="text-align:center; margin-top: 2rem;"}
+**Excellente navigation !**
+:::
+
+::: {style="text-align:center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"}
+[Voir mon CV {{< fa arrow-up-right-from-square >}}](assets/CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
+
+[Projets {{< fa arrow-up-right-from-square >}}](https://bfrancois.netlify.app/sections/){.btn .btn-outline-primary .btn .center role="button"}
+:::
+
+---
+
+::: {style="text-align:center; margin-top: 3rem;"}
+## {{< fa brands github >}} Activité GitHub
+
+Retrouvez tous mes projets open-source et contributions sur GitHub.
+:::
+
+<div id="github-stats-container"></div>
+
+<script src="utils/github-stats.html"></script>

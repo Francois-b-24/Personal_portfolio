@@ -1,0 +1,387 @@
+[
+  {
+    "objectID": "AMELIORATIONS.html",
+    "href": "AMELIORATIONS.html",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Ce document récapitule toutes les améliorations apportées au portfolio de François BOUSSENGUI.\n\n\nDate des améliorations : 5 janvier 2026 Nombre total d’améliorations : 14 fonctionnalités majeures Catégories : UX/UI, Performance, SEO, Contenu, Fonctionnalités avancées\n\n\n\n\n\n\nFichier modifié : index.qmd, assets/styles.css\nAjouts : - ✨ Statistiques clés en cartes animées (3+ années d’expérience, 8 projets, 10+ technologies) - 🎨 Dégradés de couleurs professionnels avec palette cohérente - 🔄 Animations fadeInUp au chargement - 📱 Responsive design avec flexbox\nCode clé :\n&lt;div class=\"stats-container\"&gt;\n  &lt;div class=\"stat-box\"&gt;3+ Années d'expérience&lt;/div&gt;\n  &lt;div class=\"stat-box\"&gt;8 Projets réalisés&lt;/div&gt;\n  &lt;div class=\"stat-box\"&gt;10+ Technologies maîtrisées&lt;/div&gt;\n&lt;/div&gt;\n\n\n\nFichiers modifiés : Tous les sections/projet*/index.qmd, assets/styles.css\nAjouts : - 🏷️ Badges visuels pour chaque technologie (Python, R, Streamlit, Docker, etc.) - 🎨 Couleurs distinctes par catégorie (Langage, Framework, Outil, Méthode) - 🖱️ Effets hover avec élévation et ombre - 📦 12 badges technologiques différents\nTechnologies représentées : - Python, R, SQL, Streamlit, Docker, Machine Learning - Git/GitHub Actions, Tableau, Excel, Quarto - Économétrie, Data Science\n\n\n\nFichier modifié : sections/skills.qmd\nAjouts : - 📊 Graphique radar Plotly (10 compétences principales) - 📈 Graphique en barres des années d’expérience par technologie - 🎨 Palette de couleurs cohérente avec le site - 🖱️ Interactivité complète (hover, zoom, pan)\nVisualisations : 1. Radar Chart : Niveau de maîtrise sur 100 pour chaque compétence 2. Bar Chart : Années d’expérience par technologie avec code couleur par catégorie\n\n\n\nFichiers modifiés : utils/header.html, assets/styles.css\nAjouts : - 🌓 Toggle manuel dans la navbar (icône lune/soleil) - 💾 Sauvegarde préférence dans localStorage - 🎨 Variables CSS pour transition fluide - 🌈 Palette sombre complète (fond, texte, bordures)\nÉléments adaptés au mode sombre : - Body, navbar, cards, timeline, stat-box - Callouts, code blocks, footer - Transitions CSS smooth (0.3s)\n\n\n\n\n\n\n\nFichier modifié : utils/header.html\nAjouts : - 🖼️ Attribut loading=\"lazy\" automatique sur toutes les images - 📄 Lazy loading des iframes (PDFs) - 👁️ IntersectionObserver pour chargement progressif - 🚀 Amélioration temps de chargement initial\n\n\n\nFichier créé : utils/seo-meta.html\nAjouts complets : - 📱 Open Graph (Facebook, LinkedIn) - og:type, og:url, og:title, og:description, og:image - og:locale, og:site_name - 🐦 Twitter Cards - twitter:card (summary_large_image) - twitter:title, twitter:description, twitter:image - 🔍 Schema.org JSON-LD - Person schema (nom, métier, compétences, éducation) - WebSite schema (description, auteur, langue) - 🏷️ Meta tags classiques - description, keywords, author, robots - language, revisit-after - 🔗 Canonical URL\n\n\n\nFichier modifié : assets/styles.css\nAjouts : - ✨ Font smoothing (antialiased) - ♿ Respect prefers-reduced-motion (accessibilité) - 🎯 Optimisations CSS pour performance\n\n\n\n\n\n\n\nFichier modifié : sections/index.qmd, assets/styles.css\nAjouts : - 🔍 filter-ui: true dans Quarto listing - 🔤 sort-ui: [date, title] pour tri personnalisé - 🎨 Styles CSS pour catégories cliquables - 🖱️ Effet hover sur les filtres avec élévation - 📦 Enhanced card styling avec transition 3D\n\n\n\nFichiers créés : - blog/index.qmd (page principale) - blog/posts/fastf1-introduction.qmd (premier article)\nStructure du blog : - 📝 Listing automatique des articles - 🏷️ Catégories et tags - 🔍 Filtres et recherche - 📅 Tri par date - 🔔 Support RSS feed - ⏱️ Reading time estimé\nPremier article : “Introduction à FastF1” - 📊 Tutoriel complet Python - 💻 Exemples de code commentés - 📈 Visualisations Plotly - 🔗 Liens vers documentation et projet\n\n\n\nFichiers modifiés : sections/projet7/index.qmd, sections/projet8/index.qmd\nAjouts : - 🚀 Callout “Application Interactive” en haut de chaque projet - 🔗 Boutons CTA vers applications Streamlit déployées - 📝 Note sur le temps de démarrage (cold start) - 🎨 Styling cohérent avec boutons primaires\nProjets concernés : 1. F1 Analytics Dashboard 2. Watch Analytics\n\n\n\nFichier créé : utils/analytics.html\nAlternatives proposées : 1. Google Analytics (gtag.js) 2. Plausible (privacy-friendly) 3. Umami (self-hosted)\nInstructions complètes pour activation\n\n\n\n\n\n\n\nFichier créé : contact.qmd\nComposants : - 📧 Formulaire complet (nom, email, sujet, message) - 🔗 Intégration Formspree (prêt à activer) - 📱 Grid responsive (coordonnées + formulaire) - 🏷️ Domaines d’intérêt listés - ⏱️ Temps de réponse estimé\nAlternatives proposées : - Formspree (gratuit 50 soumissions/mois) - Mailchimp - Netlify Forms\n\n\n\nFichier créé : utils/newsletter.html\nFeatures : - 📬 Section newsletter dans footer - 🎨 Design gradient bleu/jaune cohérent - 📱 Formulaire responsive - 🔗 Intégration Buttondown (prête à activer)\nAlternatives proposées : - Buttondown (gratuit 100 abonnés) - Mailchimp - Revue (Twitter/X) - Substack - ConvertKit - EmailOctopus\n\n\n\nFichier créé : utils/github-stats.html\nFeatures : - 📊 Stats dynamiques via GitHub API - Nombre de repositories - Total stars - Total forks - Nombre de followers - 🎨 Cartes animées avec code couleur - 🖱️ Effet hover avec élévation - 📈 Alternative avec GitHub README Stats (cartes Vercel)\nWidgets disponibles : 1. &lt;div id=\"github-stats-container\"&gt;&lt;/div&gt; - Stats simples 2. &lt;div id=\"github-profile-card\"&gt;&lt;/div&gt; - Cartes complètes\nAjouté à : Page d’accueil (index.qmd)\n\n\n\n\n\n\n\nutils/\n├── seo-meta.html          # Métadonnées SEO complètes\n├── analytics.html         # Google Analytics + alternatives\n├── newsletter.html        # Widget newsletter\n└── github-stats.html      # Stats GitHub dynamiques\n\nblog/\n├── index.qmd             # Page principale blog\n└── posts/\n    └── fastf1-introduction.qmd  # Premier article\n\ncontact.qmd               # Page de contact\nAMELIORATIONS.md          # Ce fichier\n\n\n\nindex.qmd                 # Statistiques + GitHub stats\n_quarto.yml              # Configuration (navbar, includes)\nassets/styles.css        # Tous les nouveaux styles\nassets/custom.scss       # Styles existants\nutils/header.html        # Theme toggle + lazy loading\n\nsections/\n├── index.qmd            # Filtres projets\n├── skills.qmd           # Graphiques interactifs\n└── projet*/index.qmd    # Badges technologiques (×8)\n\n\n\n\n\n\n\n\n#06436e - Bleu foncé primaire (navbar, boutons)\n#f8d65c - Jaune accent (statistiques)\n#72f1b8 - Vert menthe (data science)\n#ffbc8c - Orange (outils)\n#a97eff - Violet (frameworks)\n\n\n\n\n\n#1a1a1a - Fond primaire\n#2d2d2d - Fond secondaire\n#0a1929 - Navbar sombre\n#e9ecef - Texte clair\n\n\n\n\n\n\n\n\n\nGoogle Analytics\n\nRemplacer G-XXXXXXXXXX dans utils/analytics.html\n\nFormulaire de contact\n\nCréer compte Formspree\nRemplacer YOUR_FORM_ID dans contact.qmd\n\nNewsletter\n\nCréer compte Buttondown\nRemplacer YOUR_USERNAME dans utils/newsletter.html\n\nURLs Streamlit\n\nVérifier/mettre à jour les URLs dans sections/projet7/index.qmd et sections/projet8/index.qmd\n\n\n\n\n\n\n\n\n\n\n⚡ Temps de chargement réduit (lazy loading)\n🎯 Score Lighthouse amélioré\n📱 Responsive parfait sur tous devices\n\n\n\n\n\n🔍 Meilleur référencement Google\n📱 Previews sociaux optimisés\n🏷️ Rich snippets (Schema.org)\n\n\n\n\n\n🎨 Design moderne et professionnel\n🌓 Mode sombre pour confort visuel\n🖱️ Interactions fluides et intuitives\n\n\n\n\n\n📝 Blog pour partage de contenu\n📧 Contact facile\n📬 Newsletter pour fidélisation\n📊 Transparence via stats GitHub\n\n\n\n\n\n\n\nTests\n\nTester le site sur différents navigateurs\nVérifier le responsive sur mobile/tablet\nValider le mode sombre\n\nActivation\n\nConfigurer Google Analytics\nActiver le formulaire de contact\nConfigurer la newsletter\n\nContenu\n\nRédiger plus d’articles de blog\nMettre à jour les URLs Streamlit réelles\nAjouter plus de projets\n\nDéploiement\n\nRebuild avec Quarto\nDeploy sur Netlify\nTester en production\n\n\n\n\n\n\n\n\nquarto render\n\n\n\nquarto preview\n\n\n\nquarto check\n\n\n\n\n\nAméliorations réalisées par : Claude (Anthropic) Date : 5 janvier 2026 Portfolio de : François BOUSSENGUI Technologies : Quarto, R, Python, HTML/CSS/JavaScript"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#vue-densemble",
+    "href": "AMELIORATIONS.html#vue-densemble",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Date des améliorations : 5 janvier 2026 Nombre total d’améliorations : 14 fonctionnalités majeures Catégories : UX/UI, Performance, SEO, Contenu, Fonctionnalités avancées"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#amélioration-visuelle-ux",
+    "href": "AMELIORATIONS.html#amélioration-visuelle-ux",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Fichier modifié : index.qmd, assets/styles.css\nAjouts : - ✨ Statistiques clés en cartes animées (3+ années d’expérience, 8 projets, 10+ technologies) - 🎨 Dégradés de couleurs professionnels avec palette cohérente - 🔄 Animations fadeInUp au chargement - 📱 Responsive design avec flexbox\nCode clé :\n&lt;div class=\"stats-container\"&gt;\n  &lt;div class=\"stat-box\"&gt;3+ Années d'expérience&lt;/div&gt;\n  &lt;div class=\"stat-box\"&gt;8 Projets réalisés&lt;/div&gt;\n  &lt;div class=\"stat-box\"&gt;10+ Technologies maîtrisées&lt;/div&gt;\n&lt;/div&gt;\n\n\n\nFichiers modifiés : Tous les sections/projet*/index.qmd, assets/styles.css\nAjouts : - 🏷️ Badges visuels pour chaque technologie (Python, R, Streamlit, Docker, etc.) - 🎨 Couleurs distinctes par catégorie (Langage, Framework, Outil, Méthode) - 🖱️ Effets hover avec élévation et ombre - 📦 12 badges technologiques différents\nTechnologies représentées : - Python, R, SQL, Streamlit, Docker, Machine Learning - Git/GitHub Actions, Tableau, Excel, Quarto - Économétrie, Data Science\n\n\n\nFichier modifié : sections/skills.qmd\nAjouts : - 📊 Graphique radar Plotly (10 compétences principales) - 📈 Graphique en barres des années d’expérience par technologie - 🎨 Palette de couleurs cohérente avec le site - 🖱️ Interactivité complète (hover, zoom, pan)\nVisualisations : 1. Radar Chart : Niveau de maîtrise sur 100 pour chaque compétence 2. Bar Chart : Années d’expérience par technologie avec code couleur par catégorie\n\n\n\nFichiers modifiés : utils/header.html, assets/styles.css\nAjouts : - 🌓 Toggle manuel dans la navbar (icône lune/soleil) - 💾 Sauvegarde préférence dans localStorage - 🎨 Variables CSS pour transition fluide - 🌈 Palette sombre complète (fond, texte, bordures)\nÉléments adaptés au mode sombre : - Body, navbar, cards, timeline, stat-box - Callouts, code blocks, footer - Transitions CSS smooth (0.3s)"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#performance-seo",
+    "href": "AMELIORATIONS.html#performance-seo",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Fichier modifié : utils/header.html\nAjouts : - 🖼️ Attribut loading=\"lazy\" automatique sur toutes les images - 📄 Lazy loading des iframes (PDFs) - 👁️ IntersectionObserver pour chargement progressif - 🚀 Amélioration temps de chargement initial\n\n\n\nFichier créé : utils/seo-meta.html\nAjouts complets : - 📱 Open Graph (Facebook, LinkedIn) - og:type, og:url, og:title, og:description, og:image - og:locale, og:site_name - 🐦 Twitter Cards - twitter:card (summary_large_image) - twitter:title, twitter:description, twitter:image - 🔍 Schema.org JSON-LD - Person schema (nom, métier, compétences, éducation) - WebSite schema (description, auteur, langue) - 🏷️ Meta tags classiques - description, keywords, author, robots - language, revisit-after - 🔗 Canonical URL\n\n\n\nFichier modifié : assets/styles.css\nAjouts : - ✨ Font smoothing (antialiased) - ♿ Respect prefers-reduced-motion (accessibilité) - 🎯 Optimisations CSS pour performance"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#contenu-interactivité",
+    "href": "AMELIORATIONS.html#contenu-interactivité",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Fichier modifié : sections/index.qmd, assets/styles.css\nAjouts : - 🔍 filter-ui: true dans Quarto listing - 🔤 sort-ui: [date, title] pour tri personnalisé - 🎨 Styles CSS pour catégories cliquables - 🖱️ Effet hover sur les filtres avec élévation - 📦 Enhanced card styling avec transition 3D\n\n\n\nFichiers créés : - blog/index.qmd (page principale) - blog/posts/fastf1-introduction.qmd (premier article)\nStructure du blog : - 📝 Listing automatique des articles - 🏷️ Catégories et tags - 🔍 Filtres et recherche - 📅 Tri par date - 🔔 Support RSS feed - ⏱️ Reading time estimé\nPremier article : “Introduction à FastF1” - 📊 Tutoriel complet Python - 💻 Exemples de code commentés - 📈 Visualisations Plotly - 🔗 Liens vers documentation et projet\n\n\n\nFichiers modifiés : sections/projet7/index.qmd, sections/projet8/index.qmd\nAjouts : - 🚀 Callout “Application Interactive” en haut de chaque projet - 🔗 Boutons CTA vers applications Streamlit déployées - 📝 Note sur le temps de démarrage (cold start) - 🎨 Styling cohérent avec boutons primaires\nProjets concernés : 1. F1 Analytics Dashboard 2. Watch Analytics\n\n\n\nFichier créé : utils/analytics.html\nAlternatives proposées : 1. Google Analytics (gtag.js) 2. Plausible (privacy-friendly) 3. Umami (self-hosted)\nInstructions complètes pour activation"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#fonctionnalités-avancées",
+    "href": "AMELIORATIONS.html#fonctionnalités-avancées",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Fichier créé : contact.qmd\nComposants : - 📧 Formulaire complet (nom, email, sujet, message) - 🔗 Intégration Formspree (prêt à activer) - 📱 Grid responsive (coordonnées + formulaire) - 🏷️ Domaines d’intérêt listés - ⏱️ Temps de réponse estimé\nAlternatives proposées : - Formspree (gratuit 50 soumissions/mois) - Mailchimp - Netlify Forms\n\n\n\nFichier créé : utils/newsletter.html\nFeatures : - 📬 Section newsletter dans footer - 🎨 Design gradient bleu/jaune cohérent - 📱 Formulaire responsive - 🔗 Intégration Buttondown (prête à activer)\nAlternatives proposées : - Buttondown (gratuit 100 abonnés) - Mailchimp - Revue (Twitter/X) - Substack - ConvertKit - EmailOctopus\n\n\n\nFichier créé : utils/github-stats.html\nFeatures : - 📊 Stats dynamiques via GitHub API - Nombre de repositories - Total stars - Total forks - Nombre de followers - 🎨 Cartes animées avec code couleur - 🖱️ Effet hover avec élévation - 📈 Alternative avec GitHub README Stats (cartes Vercel)\nWidgets disponibles : 1. &lt;div id=\"github-stats-container\"&gt;&lt;/div&gt; - Stats simples 2. &lt;div id=\"github-profile-card\"&gt;&lt;/div&gt; - Cartes complètes\nAjouté à : Page d’accueil (index.qmd)"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#structure-des-fichiers-créésmodifiés",
+    "href": "AMELIORATIONS.html#structure-des-fichiers-créésmodifiés",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "utils/\n├── seo-meta.html          # Métadonnées SEO complètes\n├── analytics.html         # Google Analytics + alternatives\n├── newsletter.html        # Widget newsletter\n└── github-stats.html      # Stats GitHub dynamiques\n\nblog/\n├── index.qmd             # Page principale blog\n└── posts/\n    └── fastf1-introduction.qmd  # Premier article\n\ncontact.qmd               # Page de contact\nAMELIORATIONS.md          # Ce fichier\n\n\n\nindex.qmd                 # Statistiques + GitHub stats\n_quarto.yml              # Configuration (navbar, includes)\nassets/styles.css        # Tous les nouveaux styles\nassets/custom.scss       # Styles existants\nutils/header.html        # Theme toggle + lazy loading\n\nsections/\n├── index.qmd            # Filtres projets\n├── skills.qmd           # Graphiques interactifs\n└── projet*/index.qmd    # Badges technologiques (×8)"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#palette-de-couleurs-utilisée",
+    "href": "AMELIORATIONS.html#palette-de-couleurs-utilisée",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "#06436e - Bleu foncé primaire (navbar, boutons)\n#f8d65c - Jaune accent (statistiques)\n#72f1b8 - Vert menthe (data science)\n#ffbc8c - Orange (outils)\n#a97eff - Violet (frameworks)\n\n\n\n\n\n#1a1a1a - Fond primaire\n#2d2d2d - Fond secondaire\n#0a1929 - Navbar sombre\n#e9ecef - Texte clair"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#configuration-nécessaire",
+    "href": "AMELIORATIONS.html#configuration-nécessaire",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Google Analytics\n\nRemplacer G-XXXXXXXXXX dans utils/analytics.html\n\nFormulaire de contact\n\nCréer compte Formspree\nRemplacer YOUR_FORM_ID dans contact.qmd\n\nNewsletter\n\nCréer compte Buttondown\nRemplacer YOUR_USERNAME dans utils/newsletter.html\n\nURLs Streamlit\n\nVérifier/mettre à jour les URLs dans sections/projet7/index.qmd et sections/projet8/index.qmd"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#résultats-attendus",
+    "href": "AMELIORATIONS.html#résultats-attendus",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "⚡ Temps de chargement réduit (lazy loading)\n🎯 Score Lighthouse amélioré\n📱 Responsive parfait sur tous devices\n\n\n\n\n\n🔍 Meilleur référencement Google\n📱 Previews sociaux optimisés\n🏷️ Rich snippets (Schema.org)\n\n\n\n\n\n🎨 Design moderne et professionnel\n🌓 Mode sombre pour confort visuel\n🖱️ Interactions fluides et intuitives\n\n\n\n\n\n📝 Blog pour partage de contenu\n📧 Contact facile\n📬 Newsletter pour fidélisation\n📊 Transparence via stats GitHub"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#prochaines-étapes-recommandées",
+    "href": "AMELIORATIONS.html#prochaines-étapes-recommandées",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Tests\n\nTester le site sur différents navigateurs\nVérifier le responsive sur mobile/tablet\nValider le mode sombre\n\nActivation\n\nConfigurer Google Analytics\nActiver le formulaire de contact\nConfigurer la newsletter\n\nContenu\n\nRédiger plus d’articles de blog\nMettre à jour les URLs Streamlit réelles\nAjouter plus de projets\n\nDéploiement\n\nRebuild avec Quarto\nDeploy sur Netlify\nTester en production"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#commandes-quarto",
+    "href": "AMELIORATIONS.html#commandes-quarto",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "quarto render\n\n\n\nquarto preview\n\n\n\nquarto check"
+  },
+  {
+    "objectID": "AMELIORATIONS.html#crédits",
+    "href": "AMELIORATIONS.html#crédits",
+    "title": "Améliorations du Portfolio - Janvier 2026",
+    "section": "",
+    "text": "Améliorations réalisées par : Claude (Anthropic) Date : 5 janvier 2026 Portfolio de : François BOUSSENGUI Technologies : Quarto, R, Python, HTML/CSS/JavaScript"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html",
+    "href": "blog/posts/fastf1-introduction.html",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "",
+    "text": "La Formule 1 génère une quantité impressionnante de données à chaque Grand Prix : chronos au tour, télémétrie des voitures, données météo, stratégies pneumatiques… Autant d’informations qui peuvent être analysées pour comprendre les performances et les stratégies des équipes.\nFastF1 est une librairie Python moderne qui permet d’accéder facilement à toutes ces données via l’API officielle de la F1."
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#introduction",
+    "href": "blog/posts/fastf1-introduction.html#introduction",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "",
+    "text": "La Formule 1 génère une quantité impressionnante de données à chaque Grand Prix : chronos au tour, télémétrie des voitures, données météo, stratégies pneumatiques… Autant d’informations qui peuvent être analysées pour comprendre les performances et les stratégies des équipes.\nFastF1 est une librairie Python moderne qui permet d’accéder facilement à toutes ces données via l’API officielle de la F1."
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#installation",
+    "href": "blog/posts/fastf1-introduction.html#installation",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Installation",
+    "text": "Installation\nL’installation de FastF1 est simple avec pip :\npip install fastf1\nPour les visualisations, je recommande également d’installer :\npip install plotly matplotlib seaborn"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#premier-exemple-récupérer-les-chronos-dune-session",
+    "href": "blog/posts/fastf1-introduction.html#premier-exemple-récupérer-les-chronos-dune-session",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Premier exemple : Récupérer les chronos d’une session",
+    "text": "Premier exemple : Récupérer les chronos d’une session\nVoici un exemple basique pour récupérer les temps au tour d’une session de qualification :\nimport fastf1\n\n# Activer le cache pour accélérer les requêtes\nfastf1.Cache.enable_cache('cache/')\n\n# Charger la session de qualification du GP de Monaco 2024\nsession = fastf1.get_session(2024, 'Monaco', 'Q')\nsession.load()\n\n# Récupérer les meilleurs temps de chaque pilote\nbest_laps = session.laps.pick_quicklaps()\n\n# Afficher le top 10\ntop_10 = best_laps.groupby('Driver')['LapTime'].min().sort_values().head(10)\nprint(top_10)"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#analyse-de-la-télémétrie",
+    "href": "blog/posts/fastf1-introduction.html#analyse-de-la-télémétrie",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Analyse de la télémétrie",
+    "text": "Analyse de la télémétrie\nL’un des points forts de FastF1 est l’accès à la télémétrie détaillée :\n# Récupérer le tour le plus rapide de Verstappen\nver_fastest = session.laps.pick_driver('VER').pick_fastest()\n\n# Charger les données télémétrique\ntelemetry = ver_fastest.get_telemetry()\n\n# Afficher la vitesse, throttle, brake\nprint(telemetry[['Speed', 'Throttle', 'Brake', 'Distance']])"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#visualisation-comparative",
+    "href": "blog/posts/fastf1-introduction.html#visualisation-comparative",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Visualisation comparative",
+    "text": "Visualisation comparative\nComparons maintenant deux pilotes sur un même tour :\nimport plotly.graph_objects as go\n\n# Tours les plus rapides de deux pilotes\nver_lap = session.laps.pick_driver('VER').pick_fastest()\nham_lap = session.laps.pick_driver('HAM').pick_fastest()\n\nver_tel = ver_lap.get_telemetry()\nham_tel = ham_lap.get_telemetry()\n\n# Créer le graphique\nfig = go.Figure()\n\nfig.add_trace(go.Scatter(\n    x=ver_tel['Distance'],\n    y=ver_tel['Speed'],\n    name='Verstappen',\n    line=dict(color='#0600EF', width=2)\n))\n\nfig.add_trace(go.Scatter(\n    x=ham_tel['Distance'],\n    y=ham_tel['Speed'],\n    name='Hamilton',\n    line=dict(color='#00D2BE', width=2)\n))\n\nfig.update_layout(\n    title='Comparaison de vitesse - Monaco 2024',\n    xaxis_title='Distance (m)',\n    yaxis_title='Vitesse (km/h)',\n    hovermode='x unified'\n)\n\nfig.show()"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#cas-dusage-avancés",
+    "href": "blog/posts/fastf1-introduction.html#cas-dusage-avancés",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Cas d’usage avancés",
+    "text": "Cas d’usage avancés\nFastF1 permet également de :\n\nAnalyser les stratégies pneumatiques\nRécupérer les données météo en temps réel\nComparer les performances sur plusieurs saisons\nCréer des heatmaps de performance par secteur\nAnalyser l’évolution des temps au tour durant une course"
+  },
+  {
+    "objectID": "blog/posts/fastf1-introduction.html#conclusion",
+    "href": "blog/posts/fastf1-introduction.html#conclusion",
+    "title": "Introduction à FastF1 : Analyser les données de Formule 1 avec Python",
+    "section": "Conclusion",
+    "text": "Conclusion\nFastF1 est un outil puissant pour tout passionné de F1 et de data science. La documentation est excellente et la communauté très active.\nPour aller plus loin, je vous invite à consulter :\n\nDocumentation officielle FastF1\nMon projet F1 Analytics Dashboard pour voir une application complète\nRepo GitHub FastF1\n\nN’hésitez pas à partager vos propres analyses !\n\nTags : #Python #DataScience #F1 #FastF1 #Analytics"
+  },
+  {
+    "objectID": "licence.html",
+    "href": "licence.html",
+    "title": "Licence",
+    "section": "",
+    "text": "© 2024 – François BOUSSENGUI\nLe contenu de mon site web est publié sous licence Creative Commons Attribution 4.0 International (CC BY-NC-SA)."
+  },
+  {
+    "objectID": "licence.html#logiciels-utilisés",
+    "href": "licence.html#logiciels-utilisés",
+    "title": "Licence",
+    "section": "Logiciels utilisés",
+    "text": "Logiciels utilisés\nLe code source ainsi que l’ensemble des fichiers hostés sur mon site web sont disponibles sur  GitHub.\nIcônes :  FontAwesome\nPolices :  Google Fonts\nHébergement :  Netlify\nThème : https://github.com/robb0wen/synthwave-vscode"
+  },
+  {
+    "objectID": "sections/skills.html",
+    "href": "sections/skills.html",
+    "title": "Compétences",
+    "section": "",
+    "text": "Vous trouverez ci-dessous une présentation de mes compétences."
+  },
+  {
+    "objectID": "sections/skills.html#vue-densemble-des-compétences",
+    "href": "sections/skills.html#vue-densemble-des-compétences",
+    "title": "Compétences",
+    "section": "Vue d’ensemble des compétences",
+    "text": "Vue d’ensemble des compétences\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThéories\n\n\n\n\n\n\n\nÉconomie\n\n\n\n\n\n\nMicro-économie : Théorie du consommateur et du producteur, équilibre de marché en concurrence pure et parfaite.\nThéorie des jeux : Equilibre de nash (Modélisation mathématiques des interactions stratégiques entre les agents économiques).\nÉconomie industrielle : Equilibre de Nash en situation non concurrentielle (Duopole, Monopole, Oligopole).\n\n\n\n\n\n\n\n\n\n\nStatistiques\n\n\n\n\n\n\nStatistiques élémentaires.\nÉconométrie : Régression linéaire simple ou multiple, modèles à variable à expliquer dichotomiques, séries-temporelles.\nMicro-économétrie : Modèles à effets fixe ou aléatoires.\nMachine Learning : Regression, classification supervisée & non supervisée.\nDeep Learning : Réseaux de neurones.\n\n\n\n\n\n\n\n\n\n\nAssurances\n\n\n\n\n\nJ’ai pu apporter mon expertise en Data Science en l’appliquant à l’Assurance IARD et Flotte Automobile.\nAssurance IARD :\n\nMaîtrise des principes de tarification en assurance automobile, habitation, Responsabilité Civile Décennale et chiens-chats\nAnalyse des tendances de sinistralité et évaluation des facteurs de risque pour optimiser la tarification\n\nAssurance Flotte Automobile :\n\nCompréhension des principes assurantiels spécifiques aux contrats flottes (mutualisation des risques, franchises)\nDéveloppement d’outils de prévision du coût des sinistres pour accompagner les courtiers et gestionnaires de flotte\n\nExploitation des données pour la prise de décision :\n\nMise en place de tableaux de bord pour le suivi de KPIs et une prise de décision éclairée\nConstruction de modèles prédictifs pour améliorer la gestion des contrats et ajuster les stratégies tarifaires\nAnalyse des comportements sinistres pour identifier les leviers d’optimisation et de prévention\n\n\n\n\n\n\nLangages\n\n\n\n\n\n\n\n PYTHON\n\n\n\n\n\n\nWeb Scraping (récupération automatique de données) avec beautifulsoup et selenium.\nNettoyage et traitement des données avec polars, pandas, numpy.\nVisualisation des données avec plotly et seaborn.\nMachine learning : Scikit learn, PyTorch.\nCréation d’application web : Streamlit, Flask.\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nNettoyage et traitement des données avec tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nVisualisation des données avec {ggplot2} et {plotly}.\nCréation d’application web et tableaux de bord avec {shiny}\nCréation de site web avec Quarto\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\nEconométrie et de micro-économétrie.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nNotion sur les bases de données relationnelles\nManipulation des données (SELECT, WHERE, ORDER BY, LIMIT, etc.)\nFonction et opérateurs (COUNT, SUM,AVG, etc.)\nJointures\nIndexation et performance (Création d'index pour améliorer les performances de requêtes)\n\n\n\n\n\n\nOutils\n\n\n\n\n\n\n\n Quarto\n\n\n\n\n\n\nProduction de documents paramétrables et automatisés (HTML, PDF).\nCréation de sites webs.1\n\n\n\n\n\n\n\n\n\n\n QlikSense\n\n\n\n\n\n\nCréation de tableaux de bord interactifs\nGestion des scripts\n\n\n\n\n\n\n\n\n\n\n Excel\n\n\n\n\n\n\nTraitement de données\nTableaux croisés dynamiques\nRequêtage par le biais de PowerQuery\nAutomatisation de tâches par le biais de VBA\nManipulations avancée des fonctions Excel\n\n\n\n\n\n\n\n\n\n\n Git\n\n\n\n\n\nCe site ainsi qu’une majeure partie de mes projets sont hebergés et disponible sur Github.\n\nGestion de projet\nVersionning\n\n\n\n\n\n\nSoft skills\n\n\n\n\n\n\n\nCommunication\n\n\n\n\n\nAptitude à partager des resultats techniques à des publics non avisés.\n\n\n\n\n\n\n\n\n\nForce de proposition\n\n\n\n\n\nToujours en quête d’amélioration je n’hésite pas à proposer de nouvelles solutions.\n\n\n\n\n\n\n\n\n\nGestion du temps & rigourosité\n\n\n\n\n\n\nImportance de la gestion optimale du temps.\nÊtre rigoureux est primordiale afin d’assurer un niveau de résultat de haute qualité.\n\n\n\n\n\n\n\n\n\n\nCuriosité\n\n\n\n\n\nToujours en veille sur les nouvelles pratiques et différentes évolutions du secteur.\n\n\n\n\n\n\n\n\n\nPragmatisme et adaptabilité\n\n\n\n\n\nFacilité à m’adapter à des environnements hétérogènes.\n\n\n\n\n\n\n\n\n\nCentre d’intérêts\n\n\n\n\n\n\nIntelligence Artificielle, Machine Learning\nTechnologie & Innovation\nÉconomie & politique\nHorlogerie\nSports mécaniques (F1, Moto GP, WRC, WEC)"
+  },
+  {
+    "objectID": "sections/skills.html#footnotes",
+    "href": "sections/skills.html#footnotes",
+    "title": "Compétences",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nJ’ai par exemple créé ce site avec Quarto, tout en tirant profit de SASS et de CSS pour en améliorer le rendu.↩︎"
+  },
+  {
+    "objectID": "sections/projet5/index.html",
+    "href": "sections/projet5/index.html",
+    "title": "Stratégie de fixation des prix",
+    "section": "",
+    "text": "R\n\n\n Pricing\n\n\n Élasticité"
+  },
+  {
+    "objectID": "sections/projet5/index.html#les-principaux-aspects-du-pricing",
+    "href": "sections/projet5/index.html#les-principaux-aspects-du-pricing",
+    "title": "Stratégie de fixation des prix",
+    "section": "1.1 Les principaux aspects du pricing",
+    "text": "1.1 Les principaux aspects du pricing\n\nAnalyse des Coûts : Comprendre les coûts fixes et variables associés à la production et à la distribution d’un produit pour s’assurer que le prix couvre ces coûts et permet une marge bénéficiaire.\nÉtude de la Demande : Analyser comment les consommateurs réagissent aux changements de prix, ce qui implique souvent l’étude de l’élasticité-prix de la demande.\n\n\n\n\n\n\n\nElasticité-prix\n\n\n\n\n\nL’élasticité prix-demande mesure la sensibilité de la quantité demandée d’un bien ou service par rapport à une variation de son prix. Elle est définie comme le pourcentage de variation de la quantité demandée divisé par le pourcentage de variation du prix. Voici la formule de l’élasticité prix-demande :\n\\(E_{pd} = \\frac{\\Delta Q / Q}{\\Delta P / P}\\)\noù :\n\n\\(E_{pd}\\) est l’élasticité prix-demande,\n\\(\\Delta Q\\) est la variation de la quantité demandée,\n\\(Q\\) est la quantité demandée initiale,\n\\(\\Delta P\\) est la variation du prix,\n\\(P\\) est le prix initial.\n\nEn termes différentiels, cette formule peut être exprimée comme :\n\\(E_{pd} = \\frac{dQ}{dP} \\times \\frac{P}{Q}\\)\n\n1.1.1 Interprétation de l’élasticité prix-demande\n\nÉlasticité unitaire \\((E_{pd} = -1)\\) : Une variation de 1% du prix entraîne une variation de 1% de la quantité demandée dans le sens opposé.\nDemande élastique \\((E_{pd} &lt; -1)\\) : La demande est très sensible aux variations de prix. Une variation de 1% du prix entraîne une variation de plus de 1% de la quantité demandée.\nDemande inélastique \\((-1 &lt; E_{pd} &lt; 0)\\) : La demande est peu sensible aux variations de prix. Une variation de 1% du prix entraîne une variation de moins de 1% de la quantité demandée.\nDemande parfaitement élastique \\((E_{pd} = -\\infty)\\) : Toute variation de prix entraînera une variation infinie de la quantité demandée.\nDemande parfaitement inélastique \\((E_{pd} = 0)\\) : La quantité demandée reste constante quelle que soit la variation de prix.\n\n\n\n1.1.2 Exemple de calcul\nSupposons qu’une augmentation du prix d’un bien de 10% entraîne une diminution de la quantité demandée de 20%.\n\nVariation en pourcentage du prix \\(\\Delta P / P\\) : 10%\nVariation en pourcentage de la quantité demandée \\(\\Delta Q / Q\\) : -20%\n\nL’élasticité prix-demande serait alors :\n\\(E_{pd} = \\frac{-20\\%}{10\\%} = -2\\)\nCela signifie que la demande est élastique : une augmentation de 1% du prix entraîne une diminution de 2% de la quantité demandée.\n\n\n\n\n\nConcurrence : Prendre en compte les prix fixés par les concurrents et la position concurrentielle de l’entreprise sur le marché. Cela peut conduire à des stratégies de prix compétitives telles que le prix d’écrémage ou le prix de pénétration.\nObjectifs de l’Entreprise : Fixer les prix en fonction des objectifs stratégiques de l’entreprise, qui peuvent inclure la maximisation des profits, la part de marché, la survie sur le marché, ou le leadership en termes de qualité.\nValeur Perçue : Considérer la valeur perçue par les consommateurs, qui peut justifier des prix plus élevés si le produit est perçu comme offrant un bénéfice supérieur ou une qualité supérieure."
+  },
+  {
+    "objectID": "sections/projet5/index.html#stratégies-de-pricing",
+    "href": "sections/projet5/index.html#stratégies-de-pricing",
+    "title": "Stratégie de fixation des prix",
+    "section": "1.2 Stratégies de Pricing",
+    "text": "1.2 Stratégies de Pricing\n\nPrix de Pénétration : Fixer un prix bas pour entrer rapidement sur un marché et attirer un large volume de consommateurs.\nPrix d’Écrémage : Fixer un prix initial élevé pour maximiser les profits des segments de marché moins sensibles au prix, avant de baisser progressivement le prix.\nPrix Psychologique : Utiliser des techniques de fixation des prix qui influencent la perception du consommateur, comme fixer un prix à 9,99 € au lieu de 10 €.\nPrix de Groupe : Offrir des prix différents à différents segments de marché en fonction de leur disposition à payer.\nPrix de Prestiges : Fixer un prix élevé pour donner une image de qualité supérieure ou de luxe.\n\nLe pricing est donc une discipline complexe qui requiert une compréhension approfondie de nombreux facteurs économiques et comportementaux pour réussir."
+  },
+  {
+    "objectID": "sections/projet5/index.html#footnotes",
+    "href": "sections/projet5/index.html#footnotes",
+    "title": "Stratégie de fixation des prix",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\n\\(\\theta\\) représente la sensibilité du consommateur.↩︎"
+  },
+  {
+    "objectID": "sections/projet3/index.html",
+    "href": "sections/projet3/index.html",
+    "title": "Prévision des défauts de paiement bancaire",
+    "section": "",
+    "text": "R\n\n\n Machine Learning\n\n\n Classification\n\n\n\n1 Contexte\nLa détection des défauts de paiements des crédits bancaires est un enjeu majeur pour les banques. Une gestion rigoureuse, permet d’avoir un recouvrement de créance efficace et maintenir des flux de trésorerie solides. De ce fait, il est essentiel de minimmiser ces pertes. La classification supervisée regroupe l’ensemble des méthodes statistiques dont l’objectif principal est de prédire pour un individu donné l’appartenance à une classe connue au préalable. Nous sommes ici dans le cas d’une banque de détails qui souhaite attribuer un score ou probabilité de risque à ses clients.\n\n\n2 Objectifs\nAinsi, dans le cas des défauts de paiement bancaire, l’objectif est de pouvoir modéliser l’appartenance d’un individu à l’une des classes suivantes :\n\nOui [1], l’individu est en défaut de paiement ;\nNon [0], l’individu n’est pas en défaut de paiement ;\n\n\n\n3 Méthodologie\nDe prime abord, nous avons réalisé une analyse descriptive qui a nous permis de mettre en exergue un déséquilibre des classes pour la variable à expliquer. En d’autres termes, nous avons une présence élevée de personne n’étant pas en défaut de paiement contrairement à celles qui le sont.\nCela est un fait positif pour une banque en soi.\nCependant, ce déséquilibre impact négativement la performance et biaise le résultat des modèles.\nCela nous a donc conduit a procédé comme suit :\n\nDécoupage de la population en 2 sous-groupes :\n\nUn groupe dédié à l’apprentissage, autrement dit, le groupe d’entraînement (2/3) ;\nUn groupe dédié à la validation des modèles, autrement dit, le groupe test (1/3) ;\n\nPremière application des modèles sans prise en compte du déséquilibre des classes.\nSeconde à application des modèles en prenant en compte le déséquilibre des classes par le biais d’application de méthode de ré-échantillonnage des classes, à savoir :\n\n\n\n\n\n\n\nSous-échantillonnage\n\n\n\n\n\nRéduit le nombre d’échantillons de la classe majoritaire.\n\n\n\n\n\n\n\n\n\nSur-échantillognnage\n\n\n\n\n\nAugmente le nombre d’échantillons de la classe minoritaire.\n\n\n\n\n\n\n\n\n\nSMOTE\n\n\n\n\n\nGénère des exemples synthétiques de la classe minoritaire.\n\n\n\n\nLes modèles utilisés sont les suivants :\n\n\n\n\n\n\n\nAnalyse linéaire discriminante (LDA)\n\n\n\n\n\nL’analyse discriminante linéaire (LDA) est une technique de classification et de réduction de dimension qui vise à séparer les classes en trouvant une projection linéaire des données qui maximise la séparation entre les classes tout en minimisant la variance au sein des classes.\n\n\n\n\n\n\n\n\n\nAnalyse quadratique discriminante (QDA)\n\n\n\n\n\nL’analyse discriminante quadratique (QDA) est une extension de l’analyse discriminante linéaire (LDA) qui permet de modéliser des frontières de décision non linéaires. Contrairement à LDA, qui suppose que les covariances des classes sont identiques, QDA permet à chaque classe d’avoir sa propre matrice de covariance. Cela permet une modélisation plus flexible, mais nécessite plus de paramètres et peut donc être moins efficace avec de petits ensembles de données.\n\n\n\n\n\n\n\n\n\nArbres de décisions\n\n\n\n\n\nLes arbres de décision sont des modèles de machine learning non paramétriques utilisés pour la classification et la régression. Ils apprennent des règles de décision simples déduites des données pour prédire la valeur de la variable cible.\n\n\n\n\n\n\n\n\n\nBagging, Boosting\n\n\n\n\n\nLes termes “Bagging” et “Boosting” sont des techniques utilisées en apprentissage automatique (machine learning) pour améliorer les performances des modèles prédictifs en utilisant des ensembles de modèles plus simples.\n\n\n\n\n\n\n\n\n\nForêts aléatoires\n\n\n\n\n\nLes forêts aléatoires sont une technique de machine learning utilisée pour la classification et la régression. Elles fonctionnent en combinant plusieurs arbres de décision, chacun construit sur un échantillon différent des données d’entraînement. Le principe de base est le suivant :\n\nConstruction d’arbres : Un grand nombre d’arbres de décision sont construits, chaque arbre étant entraîné sur un échantillon aléatoire des données d’entraînement.\nPrédiction par vote majoritaire : Pour la classification, chaque arbre “vote” pour une classe, et la classe la plus souvent choisie par les arbres est la prédiction finale. Pour la régression, la prédiction finale est la moyenne des prédictions de tous les arbres.\n\nL’utilisation de multiples arbres et l’échantillonnage aléatoire des données permettent de réduire le risque de surapprentissage (overfitting) et d’améliorer la robustesse et la précision des prédictions.\n\n\n\n\n\n4 Principaux\nAprès avoir entraîné les modèles sur l’échantillon d’entraînement, nous avons appliqué les modèles sur les données test afin d’en apprécier leur performance. Plus précisément, nous avons comparé les résultats de nos 2 approches. C’est-à-dire l’approche tenant compte du déséquilibre des classes et celle ne la prenant pas en compte.\nSur la base des différentes métriques d’évaluation que nous avons utilisé, ils s’avère que le modèle le plus performabnt est une Forêt Aléatoire sur laquelle nous avons appliqué la méthode SMOTE.\nLe modèle retenu présente un taux de bonne prédictions de 94,6% contre 5,4% de taux de mauvaises prédictions.\n\n\n5 Conclusions et perspective\nDans la réalité, il est très probable de rencontrer un déséquilibre de classes de la variable à expliquer pour les problèmes de classification supervisée. Surtout dans le milieu bancaire.\nC’est un aspect qui biaise fortement les résultats d’estimations. Par conséquent, il est important de pouvoir le détecter assez tôt et appliquer les méthodes adéquates pour prendre en compte le problème. Au sortir de là, cela nous permet d’obtenir un modèle qui n’est pas biaisé. Ce dernier nous permet donc aisément de prédire, pour un individu donné, sa probabilité d’appartenance à l’une des classes de la variable à expliquer. Dans le cas des défauts de paiement bancaire, l’intérêt de ce genre de méthodes est qu’elle donne la possibilité de mettre en place de moyens de prévention pour se prémunir des personnes qui présentent un fort risque d’être en défaut de paiement.\n\n\n6 Outil technique\n\nLogiciel \n\n\n\nVous trouverez le rapport ici :\n\n\n\n\n\n\nLire le rapport"
+  },
+  {
+    "objectID": "sections/xp.html",
+    "href": "sections/xp.html",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "Aon France\n 02/2023 – Présent\n 35 rue de la Fédération, 75015, Paris, France\n\nConception, automatisation et industrialisation de reportings de sinistralité flotte automobile (Excel, VBA, MyReport).\n\nDéveloppement de tableaux de bord dynamiques Qlik Sense pour le suivi du coût des sinistres, des fréquences et du pilotage interne.\n\nRéalisation d’analyses statistiques et modélisations prédictives pour optimiser la tarification et identifier les tendances de sinistralité.\n\nIntroduction de Python au sein du service : mise en place d’un GitHub interne, développement d’outils de reporting automatisés et d’applications Streamlit métiers.\n\nMigration d’outils de reporting Business Objects → MyReport : recette, formation des utilisateurs et accompagnement au changement.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Ascentiel Group\n 11/2021 – 02/2023\n Rueil-Malmaison, France\n\nConception d’un robot de scraping tarifaire (Python/Selenium) pour le suivi des concurrents (assurance chiens/chats), fiabilité de collecte &gt; 95 %.\n\nAnalyse des résultats techniques des produits d’assurance et restitution mensuelle aux équipes marketing et actuariat.\n\nRecettage et simulations tarifaires sur MySQL : scénarios de tarification et contrôle qualité avant mise en production.\n\nConception de dashboards Tableau pour le suivi des souscriptions, résiliations et affaires nouvelles.\n\nÉtudes statistiques sur la sensibilité prix / ventes, modélisation des sinistres graves (GLM, régression logistique).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n April Moto\n 04/2021 – 09/2021\n Tours, France\n\nRefonte du scraper Python pour la veille concurrentielle tarifaire, amélioration du taux de collecte de 70 % → 92 %.\n\nConception de dashboards Qlik Sense pour la surveillance des prix et parts de marché.\n\nDéveloppement d’un modèle de machine learning (XGBoost) pour prédire la résiliation client (85 % de précision).\n\nCalcul de la Customer Lifetime Value (CLV) intégrant churn, valeur moyenne et coût d’acquisition.\n\nAmélioration continue des KPI et reporting commerciaux.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 2019 – 2021\n Université de Tours\n\nMajeure Data Science : statistiques avancées, machine learning, économétrie appliquée, bases de données et modélisation prédictive.\n\nProjet de fin d’études : prédiction du prix de vente des véhicules d’occasion en France.\n\nMémoire : optimisation d’un scraper tarifaire et modélisation du risque de résiliation en assurance deux-roues.\n\nOutils : Python (NumPy, Pandas, scikit-learn), R, SQL, Git, Jupyter, Power BI, Qlik Sense.\n\n\nMémoire de fin d’études \nProjet GitHub \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 2016 – 2019\n Université de Tours\n\nFondamentaux : microéconomie, macroéconomie, économétrie, statistiques et analyse de données.\n\nDéveloppement des compétences analytiques et quantitatives appliquées à l’économie et à la data."
+  },
+  {
+    "objectID": "sections/xp.html#chargé-détudes-statistiques-data-analyst",
+    "href": "sections/xp.html#chargé-détudes-statistiques-data-analyst",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "Aon France\n 02/2023 – Présent\n 35 rue de la Fédération, 75015, Paris, France\n\nConception, automatisation et industrialisation de reportings de sinistralité flotte automobile (Excel, VBA, MyReport).\n\nDéveloppement de tableaux de bord dynamiques Qlik Sense pour le suivi du coût des sinistres, des fréquences et du pilotage interne.\n\nRéalisation d’analyses statistiques et modélisations prédictives pour optimiser la tarification et identifier les tendances de sinistralité.\n\nIntroduction de Python au sein du service : mise en place d’un GitHub interne, développement d’outils de reporting automatisés et d’applications Streamlit métiers.\n\nMigration d’outils de reporting Business Objects → MyReport : recette, formation des utilisateurs et accompagnement au changement."
+  },
+  {
+    "objectID": "sections/xp.html#data-analyst",
+    "href": "sections/xp.html#data-analyst",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "Ascentiel Group\n 11/2021 – 02/2023\n Rueil-Malmaison, France\n\nConception d’un robot de scraping tarifaire (Python/Selenium) pour le suivi des concurrents (assurance chiens/chats), fiabilité de collecte &gt; 95 %.\n\nAnalyse des résultats techniques des produits d’assurance et restitution mensuelle aux équipes marketing et actuariat.\n\nRecettage et simulations tarifaires sur MySQL : scénarios de tarification et contrôle qualité avant mise en production.\n\nConception de dashboards Tableau pour le suivi des souscriptions, résiliations et affaires nouvelles.\n\nÉtudes statistiques sur la sensibilité prix / ventes, modélisation des sinistres graves (GLM, régression logistique)."
+  },
+  {
+    "objectID": "sections/xp.html#data-analyst-1",
+    "href": "sections/xp.html#data-analyst-1",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "April Moto\n 04/2021 – 09/2021\n Tours, France\n\nRefonte du scraper Python pour la veille concurrentielle tarifaire, amélioration du taux de collecte de 70 % → 92 %.\n\nConception de dashboards Qlik Sense pour la surveillance des prix et parts de marché.\n\nDéveloppement d’un modèle de machine learning (XGBoost) pour prédire la résiliation client (85 % de précision).\n\nCalcul de la Customer Lifetime Value (CLV) intégrant churn, valeur moyenne et coût d’acquisition.\n\nAmélioration continue des KPI et reporting commerciaux."
+  },
+  {
+    "objectID": "sections/xp.html#master-2-économétrie-data-science-business-economics",
+    "href": "sections/xp.html#master-2-économétrie-data-science-business-economics",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "2019 – 2021\n Université de Tours\n\nMajeure Data Science : statistiques avancées, machine learning, économétrie appliquée, bases de données et modélisation prédictive.\n\nProjet de fin d’études : prédiction du prix de vente des véhicules d’occasion en France.\n\nMémoire : optimisation d’un scraper tarifaire et modélisation du risque de résiliation en assurance deux-roues.\n\nOutils : Python (NumPy, Pandas, scikit-learn), R, SQL, Git, Jupyter, Power BI, Qlik Sense.\n\n\nMémoire de fin d’études \nProjet GitHub"
+  },
+  {
+    "objectID": "sections/xp.html#licence-déconomie",
+    "href": "sections/xp.html#licence-déconomie",
+    "title": "Mon parcours",
+    "section": "",
+    "text": "2016 – 2019\n Université de Tours\n\nFondamentaux : microéconomie, macroéconomie, économétrie, statistiques et analyse de données.\n\nDéveloppement des compétences analytiques et quantitatives appliquées à l’économie et à la data."
+  },
+  {
+    "objectID": "sections/projet1/index.html",
+    "href": "sections/projet1/index.html",
+    "title": "Méthodes de prévision",
+    "section": "",
+    "text": "R\n\n\n Python\n\n\n Économétrie\n\n\n Machine Learning"
+  },
+  {
+    "objectID": "sections/projet1/index.html#fonction-de-coût",
+    "href": "sections/projet1/index.html#fonction-de-coût",
+    "title": "Méthodes de prévision",
+    "section": "3.1 2. Fonction de Coût",
+    "text": "3.1 2. Fonction de Coût\nLa fonction de coût pour la régression à noyau est souvent basée sur la perte de Huber, la perte d’epsilon-insensible ou d’autres fonctions de perte robustes. Une fonction de coût typique pour la régression à noyau est la suivante :\n\\(J(\\alpha) = \\frac{1}{2} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\alpha_i \\alpha_j K(x_i, x_j) - \\sum_{i=1}^{N} \\alpha_i y_i\\) \\(+\\) \\(C \\sum_{i=1}^{N} \\max(0, |f(x_i) - y_i| - \\epsilon)\\)\noù : - \\(\\alpha_i\\) sont les coefficients duals. - \\(K(x_i, x_j)\\)est la fonction de noyau. - \\(y_i\\) sont les valeurs cibles. - \\(C\\)est un paramètre de régularisation. - \\(\\epsilon\\) est un paramètre de tolérance pour la perte epsilon-insensible."
+  },
+  {
+    "objectID": "sections/projet1/index.html#minimisation-de-la-fonction-de-coût",
+    "href": "sections/projet1/index.html#minimisation-de-la-fonction-de-coût",
+    "title": "Méthodes de prévision",
+    "section": "3.2 3. Minimisation de la Fonction de Coût",
+    "text": "3.2 3. Minimisation de la Fonction de Coût\nPour minimiser cette fonction de coût, nous utilisons des techniques d’optimisation convexes telles que le Gradient Descent, le Coordinate Descent ou des algorithmes spécialisés comme le Sequential Minimal Optimization (SMO).\n\n3.2.0.1 Gradient Descent\nL’algorithme de gradient descent ajuste les paramètres \\(\\alpha\\) en suivant le gradient de la fonction de coût :\n\\(\\alpha_i \\leftarrow \\alpha_i - \\eta \\frac{\\partial J(\\alpha)}{\\partial \\alpha_i}\\)\noù \\(\\eta\\) est le taux d’apprentissage.\n\n\n3.2.0.2 Sequential Minimal Optimization (SMO)\nL’algorithme SMO divise le problème d’optimisation en sous-problèmes plus petits qui peuvent être résolus analytiquement. Ce processus est itératif et continue jusqu’à ce que la convergence soit atteinte."
+  },
+  {
+    "objectID": "sections/projet7/index.html",
+    "href": "sections/projet7/index.html",
+    "title": "F1 Analytics Dashboard",
+    "section": "",
+    "text": "Python\n\n\n Streamlit\n\n\n Docker\n\n\n GitHub Actions\n\n\n FastF1 API"
+  },
+  {
+    "objectID": "sections/projet7/index.html#déploiement-docker-reverse-proxy-puis-github-actions",
+    "href": "sections/projet7/index.html#déploiement-docker-reverse-proxy-puis-github-actions",
+    "title": "F1 Analytics Dashboard",
+    "section": "1.1 Déploiement : Docker, reverse proxy… puis GitHub Actions",
+    "text": "1.1 Déploiement : Docker, reverse proxy… puis GitHub Actions\nComme tout projet web, l’enjeu n’était pas seulement de développer l’application, mais aussi de la rendre accessible en ligne, de façon fiable et stable.\nDans un premier temps, j’ai expérimenté un déploiement via un Dockerfile, accompagné d’un reverse proxy (Nginx) pour exposer proprement l’application à travers un nom de domaine.\nCette méthode fonctionnait : l’application tournait dans un conteneur isolé, le reverse proxy redirigeait le trafic, et le tout offrait une architecture robuste et configurable.\nCependant, ce type de déploiement nécessitait :\n\nde mettre à jour manuellement l’image Docker,\n\nde redéployer à chaque modification du code,\n\nde maintenir l’infrastructure serveur,\n\net de surveiller les éventuels dysfonctionnements.\n\nTrès vite, j’ai réalisé que pour un projet évolutif, cette méthode devenait lourde.\nC’est alors que j’ai mis en place une solution bien plus fluide et professionnelle : GitHub Actions."
+  },
+  {
+    "objectID": "sections/projet7/index.html#automatisation-cicd-github-actions-comme-solution-idéale",
+    "href": "sections/projet7/index.html#automatisation-cicd-github-actions-comme-solution-idéale",
+    "title": "F1 Analytics Dashboard",
+    "section": "1.2 Automatisation & CI/CD : GitHub Actions comme solution idéale",
+    "text": "1.2 Automatisation & CI/CD : GitHub Actions comme solution idéale\nGrâce à GitHub Actions, j’ai pu mettre en place un véritable pipeline CI/CD qui :\n\nteste automatiquement l’application,\n\nconstruit l’environnement,\n\net la déploie directement en ligne.\n\nTout se déclenche à chaque commit, sans aucune intervention manuelle.\n⚡ Résultat :\nle déploiement est désormais plus léger, plus propre, plus rapide… et totalement automatisé.\nL’approche Docker + reverse proxy reste une excellente solution pour un hébergement à long terme ou une architecture auto-hébergée, mais pour ce projet précis – qui évolue fréquemment – GitHub Actions s’est avéré être la méthode la plus efficace et la plus souple.\nCette transition marque un tournant :\nle dashboard n’est plus seulement un outil que je maintiens “à la main”, mais un véritable produit capable de s’auto-déployer en continu, dans un esprit DevOps/MLOps moderne.\n\nJe compte bien continuer à enrichir, améliorer et étendre cet outil. Et naturellement, le projet reste ouvert à toutes contributions de passionnés ou de spécialistes souhaitant participer à cette aventure data & F1.\nPour explorer toute la richesse des données de la discipline, j’ai donc développé F1 Analytics Dashboard, une application interactive construite avec Streamlit et FastF1, permettant de visualiser les chronos, la télémétrie, la météo et les stratégies de course de manière claire, moderne et intuitive."
+  },
+  {
+    "objectID": "sections/projet8/index.html",
+    "href": "sections/projet8/index.html",
+    "title": "⌚ Watch Analytics",
+    "section": "",
+    "text": "Python\n\n\n Streamlit\n\n\n Machine Learning\n\n\n Docker\n\n\n Scikit-learn\n\n\n\n\n\n\n\n\n Application Interactive\n\n\n\n\n\nExplorez l’application Watch Analytics Dashboard en ligne :\n\nLancer l’application Streamlit \n\nNote : L’application peut prendre quelques secondes à démarrer si elle est en veille. Si vous avez l’URL réelle de déploiement, remplacez le lien ci-dessus.\n\n\n\n\n1 Contexte général du projet\nLe marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme Chrono24.\nChaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.\nAfin d’explorer et d’analyser ces données, j’ai développé Watchs Analystics Dashboard, une application interactive construite avec Streamlit, permettant de visualiser, segmenter et modéliser les prix des montres de luxe.\nCette application s’adresse aussi bien aux passionnés d’horlogerie qu’aux analystes de données ou acteurs du marché souhaitant identifier des tendances et des opportunités d’achat.\n\n\n\n2 Objectif du projet\nL’objectif principal est de fournir une plateforme analytique complète permettant de :\n\nAnalyser les tendances du marché : prix moyens, marques dominantes, matériaux, pays vendeurs\n\nSegmenter le marché selon des critères techniques ou esthétiques\n\nIdentifier les montres sous-évaluées grâce à des modèles de détection d’anomalies\n\nEstimer le prix optimal d’une montre selon ses caractéristiques\n\n\n\n\n3 Méthodologie et technologies\nL’application repose sur une base de plus de 30 000 montres issues de Chrono24, nettoyée, standardisée et enrichie à l’aide de scripts Python.\nLes principales technologies utilisées :\n\nPython 3.11\nStreamlit pour l’interface interactive\n\nPlotly pour les visualisations dynamiques\n\nPandas / NumPy pour la préparation et l’analyse des données\n\nScikit-learn pour la modélisation (régression, clustering, détection d’anomalies)\n\nDocker pour le déploiement\n\nstreamlit-extras pour l’esthétique et les interactions avancées\n\n\n\n\n4 Fonctionnalités principales\n\n💎 Analyse du marché : visualisation interactive des prix par marque, modèle ou matériau\n\n🔍 Segmentation : regroupement automatique des montres selon leurs caractéristiques (clustering)\n\n🕵️ Détection d’anomalies : identification des montres sous-évaluées via des modèles comme Isolation Forest\n\n💰 Estimation du prix : prédiction du prix attendu à partir des variables techniques\n\n📊 Exports de données : téléchargement des résultats pour analyses complémentaires\n\n\n\n\n5 Exemples d’onglets\n\nAccueil : présentation du marché global et des principales tendances\n\nAnalyse des prix : distribution et comparaison entre marques et modèles\n\nSegmentation : visualisation des clusters selon les caractéristiques\n\nAnomalies : mise en évidence des montres dont le prix s’écarte des tendances\n\nModélisation : estimation du prix prédit pour une montre sélectionnée\n\nExports : téléchargement au format CSV ou Excel\n\n\n\n\n6 Résultats attendus\nCette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :\n\nIdentifier les tendances de prix selon les marques et matériaux\n\nDétecter les opportunités d’achat grâce aux anomalies de prix\n\nComprendre la structure du marché secondaire\n\nOffrir une estimation cohérente du prix d’une montre donnée\n\nEn combinant analyse statistique et interface interactive,\nMontre Analytics Dashboard devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.\n\n\n\n7 Outil technique\n\nDéveloppé entièrement en Python\n\nInterface construite avec Streamlit\n\nConteneurisé avec Docker\n\nCompatible avec Streamlit Cloud pour un déploiement en ligne\n\n\n\n\nFigure 1 : Aperçu du tableau de bord\n\n\nVoir le code source sur GitHub\n\n\n\n\n8 Lancer l’application\n\n🚀 Open Watch Analytics Dashboard ~ Streamlit"
+  },
+  {
+    "objectID": "sections/projet6/index.html",
+    "href": "sections/projet6/index.html",
+    "title": "Marketing quantitatif au service de la santé",
+    "section": "",
+    "text": "R\n\n\n Économétrie\n\n\n Santé"
+  },
+  {
+    "objectID": "sections/projet6/index.html#footnotes",
+    "href": "sections/projet6/index.html#footnotes",
+    "title": "Marketing quantitatif au service de la santé",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nMedigap, également connu sous le nom de “Medicare Supplement Insurance,” est une police d’assurance privée qui aide à couvrir certains des coûts de santé non pris en charge par Medicare Original (Parts A et B), tels que les franchises, les copayments et les coinsurances.↩︎"
+  },
+  {
+    "objectID": "sections/index.html",
+    "href": "sections/index.html",
+    "title": "Travaux",
+    "section": "",
+    "text": "Explorez mes projets en Data Science, Économétrie et Machine Learning.\nUtilisez les filtres ci-dessous pour naviguer par catégorie ou technologie.\n\n\n\n\n\n\n\n\n   \n     \n     \n       Trier par\n       Ordre par défaut\n         \n          Date - Le plus ancien\n        \n         \n          Date - Le plus récent\n        \n         \n          Titre\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nF1 Analytics Dashboard\n\n\n\nAnalyse de données\n\n\nData Science\n\n\n\nUne application interactive pour explorer les données de Formule 1 : chronos, télémétrie, météo et stratégies de course.\n\n\n\nBOUSSENGUI François\n\n\n4 nov. 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n⌚ Watch Analytics\n\n\n\nData Science\n\n\nAnalyse de marché\n\n\nHorlogerie\n\n\nStreamlit\n\n\nMachine learning\n\n\n\nUne application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.\n\n\n\nBOUSSENGUI François\n\n\n4 nov. 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMéthodes de prévision\n\n\n\nÉconométrie\n\n\n\nTravaux de recherche en économétrie\n\n\n\nBOUSSENGUI François - BARRE Nicolas - SABAYE Fried\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nL’immobilier à Saratoga ~ Californie\n\n\n\nMachine Learning\n\n\n\nApplication des méthodes de classification non supervisée\n\n\n\nBOUSSENGUI François & LEGER Aline\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrévision des défauts de paiement bancaire\n\n\n\nMachine Learning\n\n\n\nApplication des méthodes de classification supervisée\n\n\n\nBOUSSENGUI François - BARRE Nicolas - LEGER Aline\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMesure de l’efficacité technique d’une entreprise\n\n\n\nÉconométrie\n\n\n\nApplication de méthodes économétriques\n\n\n\nBOUSSENGUI François - LEGER Aline - RIGARDIE Loick\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStratégie de fixation des prix\n\n\n\nTarification\n\n\n\nCas pratique de tarification\n\n\n\nBOUSSENGUI François - LEGER Aline\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarketing quantitatif au service de la santé\n\n\n\nÉconométrie\n\n\n\nL’économétrie au service de la santé\n\n\n\nBOUSSENGUI François\n\n\n\n\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "sections/projet4/index.html",
+    "href": "sections/projet4/index.html",
+    "title": "Mesure de l’efficacité technique d’une entreprise",
+    "section": "",
+    "text": "R\n\n\n Économétrie\n\n\n Frontières Stochastiques\n\n\n\n1 Contexte\nL’analyse des frontières stochastiques (SFA) est une méthode de modélisation économique. Elle trouve son point de départ dans les modèles stochastiques de production frontière introduits simultanément par Aigner, Lovell et Schmidt (1977) et Meeusen et Van den Broeck (1977).\nLe modèle de frontière de production sans composante aléatoire peut s’écrire :\n\\(y_i = f(x_i, \\beta)\\times TE_i\\)\noù \\(y_i\\) est la production scalaire observée du producteur \\(i\\) ; \\(i=1,..I,\\) \\(x_i\\) est un vecteur de \\(N\\) entrées utilisé par le \\(producteur_i\\) ;\n\n\\(\\beta\\) est un vecteur de paramètres technologiques à estimer ;\n\\(f(x_i , \\beta)\\) est la fonction frontière de production ;\n\n\\(TE_i\\) désigne l’efficacité technique définie comme le rapport entre la production observée et la production maximale réalisable. \\(TE = (\\frac{y}{y*})\\). \\(TE_i = 1\\) montre que la ième entreprise obtient la production maximale réalisable, tandis que \\(TE_i\\) &lt; 1 fournit une mesure de l’écart entre la production observée et la production maximale réalisable. En d’autres termes, \\(TE_i\\) détermine l’utilisation non efficiente des inputs.\nUne composante stochastique décrivant les chocs aléatoires affectant le processus de production est ajoutée. Ces chocs ne sont pas directement imputables au producteur ou à la technologie sous-jacente. Ces chocs peuvent provenir de changements climatiques, de difficultés économiques ou simplement de chance. Nous notons ces effets par \\(exp(v_i)\\). Chaque producteur est confronté à un choc différent, mais nous supposons que les chocs sont aléatoires et qu’ils sont décrits par une distribution commune.\nLa frontière de production stochastique deviendra :\n\\(y_i = f(x_i, \\beta) \\times TE_i \\times (v_i)\\)\nNous supposons que \\(TE_i\\) est également une variable stochastique, avec une fonction de distribution spécifique, commune à tous les producteurs.\nL’analyse des frontières stochastiques a également examiné l’efficacité du « coût » et du « profit » (voir Kumbhakar & Lovell 2003). L’approche de la « frontière des coûts » tente de mesurer dans quelle mesure l’entreprise se trouve loin de la minimisation totale des coûts (c’est-à-dire du rapport coût-efficacité). Du point de vue de la modélisation, la composante non négative d’inefficacité des coûts est ajoutée plutôt que soustraite dans la spécification stochastique. « L’analyse de la frontière du profit » examine le cas où les producteurs sont traités comme ceux qui maximisent le profit (la production et les intrants doivent être décidés par l’entreprise) et non comme ceux qui minimisent les coûts (où le niveau de production est considéré comme étant donné de manière exogène). La spécification ici est similaire à celle de la « frontière de production ».\n\n\n2 Objectifs\nL’objectif de ce travail est d’appliquer les techniques d’analyse des frontières de production sur des données de transport aérien américain. Pour ce faire, nous disposions d’une base de données de 232 observations de sociétés issues du transport aérien américain. Les variables présentes dans le jeu de données sont les suivantes :\n\n\n\nVariables\n\n\n\n\nCoût total\n\n\nQuantité produite\n\n\nLe prix du travail\n\n\nLe prix du capital\n\n\nLe prix du carburant\n\n\nLe part du coût du travail dans le coût total\n\n\nLe part du coût du capital dans le coût total\n\n\nLe part du coût du carburant dans le coût total\n\n\n\n\n\n3 Méthodologie\nPour atteindre notre objectif, nous avons tout d’abord procédé à une analyse descriptive de notre jeu de données qui nous a permis d’observer les tendances générales qui s’y dégagent. En d’autres termes, nous avons réalisé une étude sur :\n\nAnalyse des coûts\nQuantités produites\nLa productivité des entreprises\n\nEnsuite, nous avons réalisé une modélisation de la frontière stochastique respectivement du point de vue des coûts mais aussi de la production. Dans les deux cas, nous avons réalisé diverses modélisations afin d’apprécier les résultats des différentes formes fonctionnelles que peuvent prendre ces modèles et confronter les résultats obtenus dans le but d’otenir le meilleur.\n\n\n4 Outil technique\n\nLogiciel \n\n\n\nVous trouverez le rapport ici :"
+  },
+  {
+    "objectID": "sections/projet2/index.html",
+    "href": "sections/projet2/index.html",
+    "title": "L’immobilier à Saratoga ~ Californie",
+    "section": "",
+    "text": "R\n\n\n Machine Learning\n\n\n Clustering"
+  },
+  {
+    "objectID": "sections/projet2/index.html#footnotes",
+    "href": "sections/projet2/index.html#footnotes",
+    "title": "L’immobilier à Saratoga ~ Californie",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nLa fouille de données (ou “datamining” en anglais) désigne le processus de découverte de motifs, de corrélations ou d’anomalies en analysant de grands ensembles de données à l’aide de diverses techniques computationnelles. Cela implique d’extraire des informations utiles à partir de données brutes pour découvrir des motifs cachés, des relations ou des insights qui peuvent aider à la prise de décision ou à la prédiction.↩︎\nLa classification non supervisée, également connue sous le nom de clustering, est une méthode de fouille de données qui consiste à regrouper des objets ou des données sans utiliser d’étiquettes ou de catégories prédéfinies.↩︎\nL’homogénéité d’une population ou d’une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.↩︎"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Vous avez un projet, une opportunité ou simplement une question ?\nN’hésitez pas à me contacter via le formulaire ci-dessous ou directement par email."
+  },
+  {
+    "objectID": "contact.html#prenons-contact",
+    "href": "contact.html#prenons-contact",
+    "title": "Contact",
+    "section": "",
+    "text": "Vous avez un projet, une opportunité ou simplement une question ?\nN’hésitez pas à me contacter via le formulaire ci-dessous ou directement par email."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "François BOUSSENGUI",
+    "section": "",
+    "text": "Data Scientist, je suis passionné par les statistiques et de tout ce qui touche à la donnée.\nMon rôle : Accompagner les entreprises dans la valorisation de leurs données, permettant ainsi une prise de décisions stratégiques éclairées.\nSur ce site, vous découvrirez mon parcours académique et professionnel, un aperçu de mes compétences – acquises et en cours de développement – ainsi que des projets que j’ai réalisés."
+  },
+  {
+    "objectID": "index.html#activité-github",
+    "href": "index.html#activité-github",
+    "title": "François BOUSSENGUI",
+    "section": " Activité GitHub",
+    "text": "Activité GitHub\nRetrouvez tous mes projets open-source et contributions sur GitHub."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog & Articles",
+    "section": "",
+    "text": "Bienvenue sur mon blog !\nRetrouvez ici mes articles, tutoriels et réflexions sur la Data Science, l’économétrie, et les technologies que j’utilise au quotidien.\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nIntroduction à FastF1 : Analyser les données de Formule 1 avec Python\n\n\n\n\n\n\nPython\n\n\nData Science\n\n\nF1\n\n\nTutoriel\n\n\n\nDécouvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore.\n\n\n\n\n\n5 janv. 2025\n\n\nFrançois BOUSSENGUI\n\n\n2 min.\n\n\n\n\n\n\nAucun article correspondant"
+  }
+]

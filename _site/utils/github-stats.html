@@ -1,0 +1,114 @@
+<!-- GitHub Stats Widget -->
+<script>
+// Fonction pour récupérer les stats GitHub
+async function fetchGitHubStats() {
+    const username = 'Francois-b-24';
+
+    try {
+        // Récupérer les infos du profil
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+
+        // Récupérer les repos
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposResponse.json();
+
+        // Calculer les stats
+        const totalRepos = userData.public_repos;
+        const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
+        const followers = userData.followers;
+
+        // Mettre à jour le DOM
+        updateStatsDisplay(totalRepos, totalStars, totalForks, followers);
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des stats GitHub:', error);
+    }
+}
+
+function updateStatsDisplay(repos, stars, forks, followers) {
+    // Créer ou mettre à jour le widget de stats
+    const statsContainer = document.getElementById('github-stats-container');
+    if (statsContainer) {
+        statsContainer.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #f8d65c;">${repos}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Repositories</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #72f1b8;">${stars}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Stars</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #ffbc8c;">${forks}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Forks</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #a97eff;">${followers}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Followers</div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Charger les stats au chargement de la page
+if (document.getElementById('github-stats-container')) {
+    document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+}
+</script>
+
+<style>
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(6, 67, 110, 0.4) !important;
+}
+</style>
+
+<!-- Widget GitHub Profile Card (Alternative avec GitHub README Stats) -->
+<script>
+function addGitHubProfileCard() {
+    const profileCardContainer = document.getElementById('github-profile-card');
+    if (profileCardContainer) {
+        profileCardContainer.innerHTML = `
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="https://github-readme-stats.vercel.app/api?username=Francois-b-24&show_icons=true&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff&icon_color=72f1b8"
+                     alt="GitHub Stats"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Francois-b-24&layout=compact&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff"
+                     alt="Top Languages"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-top: 1rem;">
+            </div>
+        `;
+    }
+}
+
+if (document.getElementById('github-profile-card')) {
+    document.addEventListener('DOMContentLoaded', addGitHubProfileCard);
+}
+</script>
+
+<!-- Instructions d'utilisation :
+
+Pour afficher les statistiques GitHub dans une page, ajoutez simplement :
+
+1. Stats simples :
+   <div id="github-stats-container"></div>
+
+2. Cartes GitHub complètes :
+   <div id="github-profile-card"></div>
+
+3. Les deux en même temps :
+   <div id="github-stats-container"></div>
+   <div id="github-profile-card"></div>
+
+Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentification).
+Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
+-->

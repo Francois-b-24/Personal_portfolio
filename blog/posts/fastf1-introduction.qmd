@@ -1,0 +1,133 @@
+---
+title: "Introduction à FastF1 : Analyser les données de Formule 1 avec Python"
+description: "Découvrez FastF1, la librairie Python pour récupérer et analyser les données de Formule 1 : télémétrie, chronos, stratégies de course et plus encore."
+author: "François BOUSSENGUI"
+date: "2025-01-05"
+categories: [Python, Data Science, F1, Tutoriel]
+image: /assets/img/projet7/lewis_2.jpg
+draft: false
+---
+
+## Introduction
+
+La Formule 1 génère une quantité impressionnante de données à chaque Grand Prix : chronos au tour, télémétrie des voitures, données météo, stratégies pneumatiques... Autant d'informations qui peuvent être analysées pour comprendre les performances et les stratégies des équipes.
+
+**FastF1** est une librairie Python moderne qui permet d'accéder facilement à toutes ces données via l'API officielle de la F1.
+
+## Installation
+
+L'installation de FastF1 est simple avec pip :
+
+```python
+pip install fastf1
+```
+
+Pour les visualisations, je recommande également d'installer :
+
+```python
+pip install plotly matplotlib seaborn
+```
+
+## Premier exemple : Récupérer les chronos d'une session
+
+Voici un exemple basique pour récupérer les temps au tour d'une session de qualification :
+
+```python
+import fastf1
+
+# Activer le cache pour accélérer les requêtes
+fastf1.Cache.enable_cache('cache/')
+
+# Charger la session de qualification du GP de Monaco 2024
+session = fastf1.get_session(2024, 'Monaco', 'Q')
+session.load()
+
+# Récupérer les meilleurs temps de chaque pilote
+best_laps = session.laps.pick_quicklaps()
+
+# Afficher le top 10
+top_10 = best_laps.groupby('Driver')['LapTime'].min().sort_values().head(10)
+print(top_10)
+```
+
+## Analyse de la télémétrie
+
+L'un des points forts de FastF1 est l'accès à la télémétrie détaillée :
+
+```python
+# Récupérer le tour le plus rapide de Verstappen
+ver_fastest = session.laps.pick_driver('VER').pick_fastest()
+
+# Charger les données télémétrique
+telemetry = ver_fastest.get_telemetry()
+
+# Afficher la vitesse, throttle, brake
+print(telemetry[['Speed', 'Throttle', 'Brake', 'Distance']])
+```
+
+## Visualisation comparative
+
+Comparons maintenant deux pilotes sur un même tour :
+
+```python
+import plotly.graph_objects as go
+
+# Tours les plus rapides de deux pilotes
+ver_lap = session.laps.pick_driver('VER').pick_fastest()
+ham_lap = session.laps.pick_driver('HAM').pick_fastest()
+
+ver_tel = ver_lap.get_telemetry()
+ham_tel = ham_lap.get_telemetry()
+
+# Créer le graphique
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=ver_tel['Distance'],
+    y=ver_tel['Speed'],
+    name='Verstappen',
+    line=dict(color='#0600EF', width=2)
+))
+
+fig.add_trace(go.Scatter(
+    x=ham_tel['Distance'],
+    y=ham_tel['Speed'],
+    name='Hamilton',
+    line=dict(color='#00D2BE', width=2)
+))
+
+fig.update_layout(
+    title='Comparaison de vitesse - Monaco 2024',
+    xaxis_title='Distance (m)',
+    yaxis_title='Vitesse (km/h)',
+    hovermode='x unified'
+)
+
+fig.show()
+```
+
+## Cas d'usage avancés
+
+FastF1 permet également de :
+
+- Analyser les stratégies pneumatiques
+- Récupérer les données météo en temps réel
+- Comparer les performances sur plusieurs saisons
+- Créer des heatmaps de performance par secteur
+- Analyser l'évolution des temps au tour durant une course
+
+## Conclusion
+
+FastF1 est un outil puissant pour tout passionné de F1 et de data science. La documentation est excellente et la communauté très active.
+
+Pour aller plus loin, je vous invite à consulter :
+
+- [Documentation officielle FastF1](https://docs.fastf1.dev/)
+- [Mon projet F1 Analytics Dashboard](/sections/projet7/) pour voir une application complète
+- [Repo GitHub FastF1](https://github.com/theOehrly/Fast-F1)
+
+N'hésitez pas à partager vos propres analyses !
+
+---
+
+**Tags :** `#Python` `#DataScience` `#F1` `#FastF1` `#Analytics`
