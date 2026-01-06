@@ -1,0 +1,407 @@
+---
+title: "Formation Expert Assurance Non-Vie & Data"
+subtitle: "Un parcours structuré pour maîtriser le pilotage de la rentabilité assurantielle"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: false
+page-layout: full
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+
+```{=html}
+<style>
+.formation-hero {
+    background: linear-gradient(135deg, #06436e 0%, #0a5a94 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formation-hero h2 {
+    color: rgb(251, 225, 174);
+    margin-bottom: 1rem;
+}
+
+.formation-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(251, 225, 174);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.bloc-card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.bloc-card:hover {
+    transform: translateY(-3px);
+}
+
+.bloc-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.bloc-icon {
+    font-size: 1.8rem;
+}
+
+.bloc-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.bloc-modules {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+.section-title {
+    color: #06436e;
+    border-bottom: 3px solid #06436e;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.axes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.axe-column h3 {
+    color: #06436e;
+    margin-bottom: 1.5rem;
+}
+
+.semaine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.semaine-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #06436e;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.semaine-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+.semaine-card.active {
+    border-left-color: #72f1b8;
+    background: linear-gradient(135deg, #f0fff4 0%, white 100%);
+}
+
+.semaine-card.locked {
+    opacity: 0.6;
+    border-left-color: #ccc;
+    pointer-events: none;
+}
+
+.semaine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.semaine-title {
+    font-weight: bold;
+    color: #06436e;
+}
+
+.semaine-status {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.status-current {
+    background: #72f1b8;
+    color: #065f46;
+}
+
+.status-locked {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.projet-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.projet-section h2 {
+    color: #06436e;
+    margin-top: 0;
+}
+
+.projet-section blockquote {
+    font-size: 1.2rem;
+    color: #06436e;
+    font-weight: bold;
+    border: none;
+    margin: 1rem 0;
+    padding: 0;
+    background: none;
+}
+
+.projet-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.projet-feature {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.semaine-link {
+    color: #06436e;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.semaine-link:hover {
+    text-decoration: underline;
+}
+</style>
+
+<!-- Hero Section -->
+<div class="formation-hero">
+    <h2>🎯 Objectif</h2>
+    <p>Maîtriser le pilotage de la rentabilité d'un portefeuille d'assurance non-vie,<br>de la théorie à la mise en production d'outils data.</p>
+    
+    <div class="formation-stats">
+        <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">semaines</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10</div>
+            <div class="stat-label">modules métier</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">projet central</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">certification AWS</div>
+        </div>
+    </div>
+</div>
+
+<!-- Structure du parcours -->
+<h2 class="section-title">📚 Structure du parcours</h2>
+
+<p>Le parcours s'articule autour de <strong>deux axes parallèles</strong> qui convergent vers un projet intégrateur :</p>
+
+<div class="axes-grid">
+    <!-- Axe Métier -->
+    <div class="axe-column">
+        <h3>🏢 Axe Métier — Assurance Non-Vie</h3>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #fff9e6 0%, white 100%); border-left: 4px solid #f8d65c;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🧱</span>
+                <span class="bloc-title">Bloc I — Fondements</span>
+            </div>
+            <p class="bloc-modules">Modules 1-3 : Économie de l'assurance, Produits, Exposition</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #fff0e6 0%, white 100%); border-left: 4px solid #ffbc8c;">
+            <div class="bloc-header">
+                <span class="bloc-icon">📊</span>
+                <span class="bloc-title">Bloc II — Sinistralité</span>
+            </div>
+            <p class="bloc-modules">Modules 4-5bis : Fréquence/Sévérité, Évolution, Provisionnement</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #e6ffff 0%, white 100%); border-left: 4px solid #2fe8f0;">
+            <div class="bloc-header">
+                <span class="bloc-icon">💰</span>
+                <span class="bloc-title">Bloc III — Tarification</span>
+            </div>
+            <p class="bloc-modules">Modules 6-7 : Principes tarifaires, Comportements, Anti-sélection</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #e6fff0 0%, white 100%); border-left: 4px solid #72f1b8;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🎯</span>
+                <span class="bloc-title">Bloc IV — Pilotage</span>
+            </div>
+            <p class="bloc-modules">Module 8 : Rentabilité, Indicateurs, Solvabilité II</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #f3e6ff 0%, white 100%); border-left: 4px solid #a97eff;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🤖</span>
+                <span class="bloc-title">Bloc V — Data Science</span>
+            </div>
+            <p class="bloc-modules">Modules 9-9bis : Données assurance, MLOps, Industrialisation</p>
+        </div>
+    </div>
+    
+    <!-- Axe Technique -->
+    <div class="axe-column">
+        <h3>🛠️ Axe Technique — MLOps & Cloud</h3>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #e6f3ff 0%, white 100%); border-left: 4px solid #06436e;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🐳</span>
+                <span class="bloc-title">Docker & Conteneurisation</span>
+            </div>
+            <p class="bloc-modules">Semaines 1-2 : Images, conteneurs, Dockerfile, Docker Compose</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #e6f3ff 0%, white 100%); border-left: 4px solid #06436e;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🔄</span>
+                <span class="bloc-title">Git & CI/CD</span>
+            </div>
+            <p class="bloc-modules">Semaines 3-4 : Workflows Git, GitHub Actions, automatisation</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #fff4e6 0%, white 100%); border-left: 4px solid #ff9900;">
+            <div class="bloc-header">
+                <span class="bloc-icon">☁️</span>
+                <span class="bloc-title">AWS Cloud</span>
+            </div>
+            <p class="bloc-modules">Semaines 5-10 : S3, EC2, RDS, Lambda + Certification SAA</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #e6f3ff 0%, white 100%); border-left: 4px solid #06436e;">
+            <div class="bloc-header">
+                <span class="bloc-icon">📈</span>
+                <span class="bloc-title">MLflow & FastAPI</span>
+            </div>
+            <p class="bloc-modules">Semaines 11-12 : Tracking, versionnement, API de scoring</p>
+        </div>
+        
+        <div class="bloc-card" style="background: linear-gradient(135deg, #ffe6e9 0%, white 100%); border-left: 4px solid #fe4454;">
+            <div class="bloc-header">
+                <span class="bloc-icon">🚀</span>
+                <span class="bloc-title">Projet Central</span>
+            </div>
+            <p class="bloc-modules">Semaines 13-24 : Pilotage rentabilité portefeuille assurantiel</p>
+        </div>
+    </div>
+</div>
+
+<!-- Progression par semaine -->
+<h2 class="section-title">📅 Progression par semaine</h2>
+
+<div class="semaine-grid">
+    <a href="semaine-01/index.html" class="semaine-card active">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 1</span>
+            <span class="semaine-status status-current">En cours</span>
+        </div>
+        <p><strong>Métier</strong> : Fondements économiques<br>
+        <strong>Technique</strong> : Docker - Installation & concepts</p>
+        <span class="semaine-link">Accéder →</span>
+    </a>
+    
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 2</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Produits d'assurance<br>
+        <strong>Technique</strong> : Docker - Mise en pratique</p>
+    </div>
+    
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 3</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Exposition au risque<br>
+        <strong>Technique</strong> : Git avancé</p>
+    </div>
+    
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 4</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Sinistralité I<br>
+        <strong>Technique</strong> : CI/CD GitHub Actions</p>
+    </div>
+</div>
+
+<!-- Projet Central -->
+<div class="projet-section">
+    <h2>🎯 Projet Central</h2>
+    <blockquote>Pilotage de la rentabilité d'un portefeuille assurantiel</blockquote>
+    <p>Ce projet fil rouge intègre l'ensemble des compétences acquises :</p>
+    
+    <div class="projet-features">
+        <span class="projet-feature">📊 Analyse de sinistralité</span>
+        <span class="projet-feature">🧮 Modélisation GLM et ML</span>
+        <span class="projet-feature">💹 Calcul de CLV</span>
+        <span class="projet-feature">🐳 Conteneurisation Docker</span>
+        <span class="projet-feature">☁️ Déploiement AWS</span>
+        <span class="projet-feature">📈 Dashboard interactif</span>
+    </div>
+</div>
+```

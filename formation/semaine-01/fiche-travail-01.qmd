@@ -1,0 +1,610 @@
+---
+title: "Fiche de travail — Semaine 1"
+subtitle: "Exercices pratiques et livrables à produire"
+author: "François Boussengui"
+date: last-modified
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+
+```{=html}
+<style>
+.livrable-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #06436e;
+}
+
+.livrable-card.done {
+    border-left-color: #72f1b8;
+    background: linear-gradient(135deg, #f0fdf4 0%, white 100%);
+}
+
+.livrable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.livrable-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #06436e;
+}
+
+.livrable-status {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.livrable-status.required {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.livrable-status.bonus {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.exercice-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.exercice-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #06436e;
+    font-weight: bold;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.checklist li.checked::before {
+    content: "☑";
+    color: #72f1b8;
+}
+
+.planning-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.jour-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+}
+
+.jour-card h4 {
+    color: #06436e;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.jour-card .metier {
+    color: #92400e;
+    background: #fef3c7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+}
+
+.jour-card .technique {
+    color: #1e40af;
+    background: #dbeafe;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.75rem;
+}
+
+.hint-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.solution-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.reflexion-box {
+    background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%);
+    border-left: 4px solid #f8d65c;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.code-filename {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    border-radius: 8px 8px 0 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    margin-bottom: -0.5rem;
+}
+
+@media (max-width: 768px) {
+    .planning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+```
+
+Cette fiche de travail t'accompagne tout au long de la Semaine 1. Elle contient les exercices pratiques, les livrables à produire, et des pistes de réflexion pour faire le lien entre théorie et pratique.
+
+---
+
+## 📅 Planning de la semaine
+
+:::{.planning-grid}
+
+:::{.jour-card}
+#### Jour 1
+:::{.metier}Métier:::
+Sections 1-2 du Module 1
+
+:::{.technique}Tech:::
+Installation Docker
+:::
+
+:::{.jour-card}
+#### Jour 2
+:::{.metier}Métier:::
+Sections 3-4 du Module 1
+
+:::{.technique}Tech:::
+Concepts & commandes
+:::
+
+:::{.jour-card}
+#### Jour 3
+:::{.metier}Métier:::
+Section 5 + Auto-éval
+
+:::{.technique}Tech:::
+Premier Dockerfile
+:::
+
+:::{.jour-card}
+#### Jour 4
+:::{.metier}Métier:::
+Révision & questions
+
+:::{.technique}Tech:::
+Exercices pratiques
+:::
+
+:::{.jour-card}
+#### Jour 5
+:::{.metier}Métier:::
+Débriefing
+
+:::{.technique}Tech:::
+Livrable final
+:::
+
+:::
+
+---
+
+## 📦 Livrables à produire
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📝 Livrable 1 — Fiche de synthèse Module Métier:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+**Objectif** : Résumer les concepts clés du Module 1 dans tes propres mots.
+
+**Format** : Document Markdown, Quarto ou PDF (1-2 pages max)
+
+**Contenu attendu** :
+
+1. **Les 5 concepts clés** résumés en tes propres mots (pas de copier-coller !)
+2. **Un schéma de ton cru** illustrant un concept au choix (spirale de dégradation, mutualisation, décomposition de la prime...)
+3. **Un exemple de ton expérience** : relie un concept à une situation vécue chez AON, ASCENTIEL ou APRIL
+
+:::{.hint-box}
+**💡 Conseil**
+
+Pense à la fois où tu as vu un portefeuille se dégrader, ou un cas d'anti-sélection, ou un arbitrage entre volume et rentabilité. C'est ce genre de lien théorie-pratique qui ancre vraiment les concepts.
+:::
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🐳 Livrable 2 — Docker opérationnel:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+**Objectif** : Prouver que Docker est installé et fonctionnel sur ta machine.
+
+**Format** : Capture d'écran
+
+**Contenu attendu** :
+
+Capture d'écran montrant le résultat des commandes :
+
+```bash
+docker --version
+docker run hello-world
+```
+
+:::{.hint-box}
+**💡 Conseil**
+
+Si tu rencontres des problèmes d'installation, note les erreurs et on en discutera au débriefing. Les problèmes courants sont : WSL2 non activé sur Windows, permissions sur Linux, ou espace disque insuffisant.
+:::
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 3 — Script Python dockerisé:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+**Objectif** : Créer et conteneuriser un script Python qui calcule des indicateurs simples.
+
+**Format** : Dossier contenant Dockerfile, requirements.txt, et script Python
+
+**Contenu attendu** :
+
+Un projet avec cette structure :
+
+```
+livrable-semaine-01/
+├── Dockerfile
+├── requirements.txt
+└── calcul_prime.py
+```
+
+Le script doit calculer et afficher :
+
+- Une **prime pure** à partir de données simulées
+- La **fréquence** et la **sévérité**
+- Un message de confirmation que le calcul s'est bien exécuté
+
+Tu peux t'inspirer du script fourni dans le Module Technique 1, ou créer le tien.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🌟 Livrable 4 — Questions et réflexions:::
+:::{.livrable-status .bonus}Bonus:::
+:::
+
+**Objectif** : Préparer le débriefing avec des questions pertinentes.
+
+**Format** : Liste de 2-3 questions
+
+**Contenu suggéré** :
+
+- Points du module métier que tu voudrais approfondir
+- Difficultés rencontrées avec Docker
+- Idées de lien entre les concepts et ton projet central
+:::
+
+---
+
+## 🏋️ Exercices pratiques
+
+### Exercices Métier
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Calcul de prime
+:::
+
+Un assureur couvre 5 000 véhicules. Les données historiques montrent :
+
+- Probabilité de sinistre par véhicule : 8% par an
+- Coût moyen d'un sinistre : 2 500 €
+- Frais de gestion : 15% de la prime pure
+- Frais d'acquisition : 10% de la prime pure
+- Marge souhaitée : 5% de la prime commerciale
+
+**Questions** :
+
+1. Calcule la prime pure par véhicule
+2. Calcule la prime commerciale
+3. Quel serait le S/P (ratio sinistres sur primes) si l'année suivante, 450 sinistres surviennent avec un coût moyen de 2 800 € ?
+
+::: {.callout-note collapse="true"}
+## Voir la solution
+
+**1. Prime pure**
+
+$$\text{Prime pure} = \text{Fréquence} \times \text{Sévérité} = 0.08 \times 2500 = 200 \text{ €}$$
+
+**2. Prime commerciale**
+
+Soit $P_c$ la prime commerciale :
+
+$$P_c = \text{Prime pure} + \text{Frais gestion} + \text{Frais acquisition} + \text{Marge}$$
+
+$$P_c = 200 + 0.15 \times 200 + 0.10 \times 200 + 0.05 \times P_c$$
+
+$$P_c = 200 + 30 + 20 + 0.05 \times P_c$$
+
+$$0.95 \times P_c = 250$$
+
+$$P_c = 263.16 \text{ €}$$
+
+**3. S/P réalisé**
+
+- Primes encaissées : $5000 \times 263.16 = 1\,315\,800$ €
+- Sinistres payés : $450 \times 2800 = 1\,260\,000$ €
+- S/P = $1\,260\,000 / 1\,315\,800 = 95.8\%$
+
+Le S/P est élevé (>90%), ce qui laisse peu de marge pour les frais. L'année a été défavorable car la fréquence réelle (450/5000 = 9%) et la sévérité (2800€) ont dépassé les hypothèses.
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M2 — Analyse de spirale
+:::
+
+Un portefeuille auto présente l'évolution suivante sur 3 ans :
+
+| Année | Nb contrats | Nouvelles affaires | Résiliations | S/P |
+|-------|-------------|-------------------|--------------|-----|
+| N | 10 000 | - | - | 75% |
+| N+1 | 9 500 | 800 | 1 300 | 82% |
+| N+2 | 8 800 | 600 | 1 300 | 91% |
+
+**Questions** :
+
+1. Que s'est-il passé entre N et N+2 ?
+2. Quelles hypothèses peux-tu formuler sur le profil des clients qui partent vs ceux qui restent ?
+3. Que conseillerais-tu à l'assureur ?
+
+:::{.reflexion-box}
+**🤔 Piste de réflexion**
+
+Pense à la spirale de dégradation vue dans le module. Les chiffres racontent une histoire : regarde l'évolution du S/P, du taux de résiliation, et du volume de nouvelles affaires.
+:::
+:::
+
+### Exercices Techniques
+
+:::{.exercice-box}
+:::{.exercice-header}
+🐳 Exercice T1 — Exploration Docker Hub
+:::
+
+Rends-toi sur [Docker Hub](https://hub.docker.com) et recherche les images suivantes :
+
+1. `python` — Note les différentes variantes (slim, alpine, bullseye...)
+2. `jupyter/scipy-notebook` — Image pour la data science
+3. `postgres` — Base de données
+
+**Questions** :
+
+1. Quelle est la différence de taille entre `python:3.10` et `python:3.10-slim` ?
+2. Pourquoi utiliserait-on `python:3.10-alpine` ? Quel est l'inconvénient ?
+3. Combien de pulls (téléchargements) a l'image `python` officielle ?
+
+::: {.callout-note collapse="true"}
+## Éléments de réponse
+
+1. `python:3.10` fait environ **900 Mo**, `python:3.10-slim` environ **150 Mo**. La version slim ne contient pas les outils de compilation et les headers de développement.
+
+2. `python:3.10-alpine` est basée sur Alpine Linux (très léger, ~50 Mo). L'inconvénient : certains packages Python (numpy, pandas) sont difficiles à installer car ils nécessitent une compilation avec des dépendances qui ne sont pas présentes par défaut sur Alpine.
+
+3. L'image Python officielle a **plus d'un milliard de pulls** — c'est l'une des images les plus utilisées !
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+🐳 Exercice T2 — Manipulation de conteneurs
+:::
+
+Effectue les manipulations suivantes et note les commandes utilisées :
+
+1. Lance un conteneur Python en mode interactif
+2. Dans le conteneur, exécute `import sys; print(sys.version)`
+3. Sors du conteneur
+4. Liste tous les conteneurs (y compris arrêtés)
+5. Supprime le conteneur que tu viens de créer
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```bash
+# 1. Lancer Python interactif
+docker run -it python:3.10 python
+
+# 2. Dans Python
+>>> import sys; print(sys.version)
+3.10.x (...)
+>>> exit()
+
+# 3. Tu es sorti automatiquement avec exit()
+
+# 4. Lister tous les conteneurs
+docker ps -a
+
+# 5. Supprimer le conteneur (remplace CONTAINER_ID par l'ID affiché)
+docker rm CONTAINER_ID
+
+# Astuce : pour éviter d'avoir à supprimer, utilise --rm
+docker run -it --rm python:3.10 python
+```
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+🐳 Exercice T3 — Dockerfile personnalisé
+:::
+
+Crée un Dockerfile qui :
+
+1. Part de l'image `python:3.10-slim`
+2. Installe `pandas` et `numpy`
+3. Copie un script `hello.py` qui affiche "Bonjour depuis Docker !"
+4. Exécute ce script au démarrage
+
+**Fichier `hello.py`** :
+
+```python
+import pandas as pd
+import numpy as np
+
+print("=" * 40)
+print("🐳 Bonjour depuis Docker !")
+print(f"   pandas version: {pd.__version__}")
+print(f"   numpy version: {np.__version__}")
+print("=" * 40)
+```
+
+::: {.callout-note collapse="true"}
+## Solution
+
+**requirements.txt** :
+```text
+pandas==2.0.3
+numpy==1.24.3
+```
+
+**Dockerfile** :
+```dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY hello.py .
+
+CMD ["python", "hello.py"]
+```
+
+**Commandes** :
+```bash
+docker build -t hello-docker:v1 .
+docker run --rm hello-docker:v1
+```
+:::
+:::
+
+---
+
+## 🔗 Faire le pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Questions de réflexion
+
+Ces questions n'ont pas de "bonne réponse" unique. Elles sont là pour t'aider à connecter les deux volets de la formation.
+
+1. **En quoi Docker peut-il aider à éviter des erreurs dans les calculs de sinistralité ?**
+   
+   Pense à la reproductibilité : si ton modèle de tarification donne des résultats différents selon la machine, quelles conséquences pour l'assureur ?
+
+2. **Comment pourrais-tu utiliser Docker pour ton projet central de pilotage de portefeuille ?**
+   
+   Imagine l'architecture : une API de scoring, un dashboard, une base de données... Comment Docker faciliterait le déploiement ?
+
+3. **Dans ton expérience chez AON ou ASCENTIEL, as-tu rencontré des problèmes de reproductibilité ou de "ça marche sur ma machine" ?**
+   
+   Comment Docker aurait-il pu aider ?
+:::
+
+---
+
+## ✅ Checklist de fin de semaine
+
+Avant de passer à la Semaine 2, vérifie que tu as :
+
+:::{.checklist}
+- Terminé la lecture du Module Métier 1
+- Répondu aux 4 questions d'auto-évaluation du Module Métier
+- Terminé la lecture du Module Technique 1
+- Installé Docker et vérifié son fonctionnement
+- Produit le Livrable 1 (fiche de synthèse)
+- Produit le Livrable 2 (capture d'écran Docker)
+- Produit le Livrable 3 (script dockerisé)
+- Réalisé au moins 2 exercices métier
+- Réalisé au moins 2 exercices techniques
+:::
+
+---
+
+## 📬 Pour le débriefing
+
+Quand tu auras terminé, envoie-moi :
+
+1. Ta **fiche de synthèse** (Livrable 1)
+2. Ta **capture d'écran Docker** (Livrable 2)
+3. Ton **projet dockerisé** (Livrable 3) — tu peux partager le code directement ou via GitHub
+4. Tes **questions** éventuelles
+
+Je te ferai un retour et on validera ensemble avant de passer à la Semaine 2 !
+
+---
+
+[← Retour à la Semaine 1](index.html){.btn .btn-secondary}
+[Module Métier 1](module-metier-01.html){.btn .btn-outline-primary}
+[Module Technique 1](module-technique-01.html){.btn .btn-outline-primary}

@@ -1,7 +1,7 @@
 project:
   type: website
 
-# Configuration de la langage
+# Configuration de la langue
 lang: fr
 
 # Fait en sorte que le code R et Python soient exécutés uniquement en local
@@ -18,7 +18,7 @@ website:
   title: "*François B.*"
   back-to-top-navigation: false
   cookie-consent:
-    type: express # GDPR Compliant - Bloque les cookies jusqu'à ce que l'utilisateur les accepte, ou non
+    type: express
     style: simple
     palette: light
     prefs-text: "🍪 Gérer les cookies"
@@ -38,6 +38,9 @@ website:
       - text: "Projets"
         href: sections/index.qmd
 
+      - text: "Formation"
+        href: formation/index.qmd
+
       - text: "Blog"
         href: blog/index.qmd
 
@@ -49,7 +52,7 @@ website:
     foreground: white
     
     left: 
-      - text: Website made with Quarto 🛠️
+      - text: "Website made with Quarto 🛠️"
         href: https://quarto.org/
     
     center:
@@ -63,7 +66,6 @@ website:
   search: 
     location: navbar
     type: overlay
-    
 
 format:
   html:
@@ -72,19 +74,14 @@ format:
     toc: true
     pagetitle: "François BOUSSENGUI | {{< meta title >}}"
     
-    # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:
       sidebar-width: 0px
       body-width: 1200px
       margin-width: 200px
       gutter-width: 1.5rem
-    
 
 editor: visual
-
 
 comments:
   utterances:
     repo: francois-b-24/utterance
-
-

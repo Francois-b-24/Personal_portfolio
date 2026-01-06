@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="BOUSSENGUI François &amp; LEGER Aline">
-<meta name="description" content="Application des méthodes de classification non supervisée">
+<meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | L’immobilier à Saratoga ~ Californie</title>
+<title>François BOUSSENGUI | Module 1 — Fondements économiques de l’assurance non-vie</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,9 +42,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,7 +86,26 @@ cookieconsent.run({
 });
 </script> 
   
-<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: rgb(251, 225, 174);
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: rgb(251, 225, 174);
+background: #06436e;
+      }
+</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -176,8 +191,8 @@ cookieconsent.run({
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | L’immobilier à Saratoga ~ Californie">
-<meta property="og:description" content="Application des méthodes de classification non supervisée">
+<meta property="og:title" content="François BOUSSENGUI | Module 1 — Fondements économiques de l’assurance non-vie">
+<meta property="og:description" content="Comprendre pourquoi l’assurance existe et comment elle crée de la valeur">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -185,8 +200,8 @@ cookieconsent.run({
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | L’immobilier à Saratoga ~ Californie">
-<meta name="twitter:description" content="Application des méthodes de classification non supervisée">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 1 — Fondements économiques de l’assurance non-vie">
+<meta name="twitter:description" content="Comprendre pourquoi l’assurance existe et comment elle crée de la valeur">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -409,6 +424,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -469,14 +513,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">L’immobilier à Saratoga ~ Californie</h1>
-                  <div>
-        <div class="description">
-          <em>Application des méthodes de classification non supervisée</em>
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">Machine Learning</div>
+      <h1 class="title">Module 1 — Fondements économiques de l’assurance non-vie</h1>
+            <p class="subtitle lead">Comprendre pourquoi l’assurance existe et comment elle crée de la valeur</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">assurance</div>
+                <div class="quarto-category">fondamentaux</div>
+                <div class="quarto-category">économie</div>
               </div>
                   </div>
   </div>
@@ -487,10 +529,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p><code>BOUSSENGUI François</code> &amp; <code>LEGER Aline</code> </p>
+               <p>François Boussengui </p>
             </div>
     </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 janvier 2026</p>
+      </div>
+    </div>
     
       
     </div>
@@ -501,14 +549,42 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">📚 Table des matières</h2>
+    <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte"><span class="header-section-number">1</span> Contexte</a></li>
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">2</span> Objectifs</a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> Méthodologie</a></li>
-  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats"><span class="header-section-number">4</span> Résultats</a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">5</span> Outil technique</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#pourquoi-lassurance-existe-t-elle" id="toc-pourquoi-lassurance-existe-t-elle" class="nav-link" data-scroll-target="#pourquoi-lassurance-existe-t-elle"><span class="header-section-number">1</span> Pourquoi l’assurance existe-t-elle ?</a>
+  <ul class="collapse">
+  <li><a href="#le-problème-fondamental-lincertitude" id="toc-le-problème-fondamental-lincertitude" class="nav-link" data-scroll-target="#le-problème-fondamental-lincertitude"><span class="header-section-number">1.1</span> Le problème fondamental : l’incertitude</a></li>
+  <li><a href="#laversion-au-risque" id="toc-laversion-au-risque" class="nav-link" data-scroll-target="#laversion-au-risque"><span class="header-section-number">1.2</span> L’aversion au risque</a></li>
+  <li><a href="#le-rôle-de-lassureur-transformer-le-risque" id="toc-le-rôle-de-lassureur-transformer-le-risque" class="nav-link" data-scroll-target="#le-rôle-de-lassureur-transformer-le-risque"><span class="header-section-number">1.3</span> Le rôle de l’assureur : transformer le risque</a></li>
+  </ul></li>
+  <li><a href="#la-mutualisation-le-cœur-du-mécanisme" id="toc-la-mutualisation-le-cœur-du-mécanisme" class="nav-link" data-scroll-target="#la-mutualisation-le-cœur-du-mécanisme"><span class="header-section-number">2</span> La mutualisation : le cœur du mécanisme</a>
+  <ul class="collapse">
+  <li><a href="#le-principe-de-base" id="toc-le-principe-de-base" class="nav-link" data-scroll-target="#le-principe-de-base"><span class="header-section-number">2.1</span> Le principe de base</a></li>
+  <li><a href="#conditions-de-la-mutualisation-efficace" id="toc-conditions-de-la-mutualisation-efficace" class="nav-link" data-scroll-target="#conditions-de-la-mutualisation-efficace"><span class="header-section-number">2.2</span> Conditions de la mutualisation efficace</a></li>
+  </ul></li>
+  <li><a href="#la-prime-anatomie-et-construction" id="toc-la-prime-anatomie-et-construction" class="nav-link" data-scroll-target="#la-prime-anatomie-et-construction"><span class="header-section-number">3</span> La prime : anatomie et construction</a>
+  <ul class="collapse">
+  <li><a href="#de-quoi-est-faite-une-prime" id="toc-de-quoi-est-faite-une-prime" class="nav-link" data-scroll-target="#de-quoi-est-faite-une-prime"><span class="header-section-number">3.1</span> De quoi est faite une prime ?</a></li>
+  </ul></li>
+  <li><a href="#le-portefeuille-un-système-dynamique" id="toc-le-portefeuille-un-système-dynamique" class="nav-link" data-scroll-target="#le-portefeuille-un-système-dynamique"><span class="header-section-number">4</span> Le portefeuille : un système dynamique</a>
+  <ul class="collapse">
+  <li><a href="#flux-entrants-et-sortants" id="toc-flux-entrants-et-sortants" class="nav-link" data-scroll-target="#flux-entrants-et-sortants"><span class="header-section-number">4.1</span> Flux entrants et sortants</a></li>
+  <li><a href="#léquilibre-fragile" id="toc-léquilibre-fragile" class="nav-link" data-scroll-target="#léquilibre-fragile"><span class="header-section-number">4.2</span> L’équilibre fragile</a></li>
+  </ul></li>
+  <li><a href="#création-et-destruction-de-valeur" id="toc-création-et-destruction-de-valeur" class="nav-link" data-scroll-target="#création-et-destruction-de-valeur"><span class="header-section-number">5</span> Création et destruction de valeur</a>
+  <ul class="collapse">
+  <li><a href="#les-leviers-de-création-de-valeur" id="toc-les-leviers-de-création-de-valeur" class="nav-link" data-scroll-target="#les-leviers-de-création-de-valeur"><span class="header-section-number">5.1</span> Les leviers de création de valeur</a></li>
+  <li><a href="#les-mécanismes-de-destruction-de-valeur" id="toc-les-mécanismes-de-destruction-de-valeur" class="nav-link" data-scroll-target="#les-mécanismes-de-destruction-de-valeur"><span class="header-section-number">5.2</span> Les mécanismes de destruction de valeur</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-concepts-fondamentaux-à-retenir" id="toc-les-5-concepts-fondamentaux-à-retenir" class="nav-link" data-scroll-target="#les-5-concepts-fondamentaux-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts fondamentaux à retenir</a></li>
+  </ul></li>
+  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glossaire" id="toc-glossaire" class="nav-link" data-scroll-target="#glossaire">Glossaire</a></li>
+  <li><a href="#ressources-complémentaires" id="toc-ressources-complémentaires" class="nav-link" data-scroll-target="#ressources-complémentaires">Ressources complémentaires</a></li>
   </ul>
 </nav>
     </div>
@@ -519,158 +595,625 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<div class="tech-badges">
-<div class="tech-badge badge-r">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</p>
-</div>
-<div class="tech-badge badge-ml">
-<p><i class="fa-solid fa-brain" aria-label="brain"></i> Machine Learning</p>
-</div>
-<div class="tech-badge badge-datascience">
-<p><i class="fa-solid fa-chart-bar" aria-label="chart-bar"></i> Clustering</p>
-</div>
-</div>
-<section id="contexte" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Contexte</h1>
-<p>Dans le cadre d’un projet réalisé dans l’apprentissage de méthodes de <strong>Datamining</strong>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> il a été question d’appliquer des méthodes de <strong>classification non supervisée</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
+<style>
+.objectifs-box {
+    background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%);
+    border-left: 4px solid #f8d65c;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin: 1.5rem 0;
+}
+
+.objectifs-box h3 {
+    color: #92400e;
+    margin-top: 0;
+}
+
+.concept-cle {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.concept-cle strong {
+    color: #06436e;
+}
+
+.attention-box {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left: 4px solid #fe4454;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.exemple-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.synthese-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.glossaire-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.glossaire-table th {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.glossaire-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.glossaire-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.question-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.question-header {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.question-content {
+    padding: 1rem;
+    display: none;
+}
+
+.question-card.open .question-content {
+    display: block;
+}
+
+.prerequis-temps {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.prerequis-temps > div {
+    background: #f1f5f9;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+}
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<p>À l’issue de ce module, tu seras capable de :</p>
+<ol type="1">
+<li><strong>Expliquer</strong> le rôle économique fondamental de l’assurance</li>
+<li><strong>Définir</strong> les concepts de mutualisation et d’aléa moral</li>
+<li><strong>Comprendre</strong> la logique de construction d’une prime d’assurance</li>
+<li><strong>Analyser</strong> un portefeuille comme un système dynamique</li>
+<li><strong>Identifier</strong> les mécanismes de création et destruction de valeur</li>
+</ol>
 </section>
-<section id="objectifs" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Objectifs</h1>
-<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été question de proposer des classes de biens homogènes au sens statistique du terme <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Aucun prérequis technique. Ce module pose les fondations conceptuelles.</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 2 à 3 heures de lecture active, plus les exercices.</p>
+</div>
+</div>
+<hr>
+<section id="pourquoi-lassurance-existe-t-elle" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi l’assurance existe-t-elle ?</h1>
+<section id="le-problème-fondamental-lincertitude" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="le-problème-fondamental-lincertitude"><span class="header-section-number">1.1</span> Le problème fondamental : l’incertitude</h2>
+<p>Imaginons un propriétaire de maison. Sa maison vaut 300 000 €. Chaque année, il existe une probabilité — disons 0,1% — qu’un incendie détruise totalement sa maison.</p>
+<p>Sans assurance, ce propriétaire fait face à deux scénarios possibles :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scénario</th>
+<th>Probabilité</th>
+<th>Perte financière</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pas d’incendie</td>
+<td>99,9%</td>
+<td>0 €</td>
+</tr>
+<tr class="even">
+<td>Incendie</td>
+<td>0,1%</td>
+<td>300 000 €</td>
+</tr>
+</tbody>
+</table>
+<p>L’<strong>espérance de perte</strong> est de : <span class="math inline">\(0.001 \times 300\,000 = 300\)</span> €</p>
+<p>En moyenne, sur une très longue période, ce propriétaire “perdrait” 300 € par an. Mais le problème n’est pas la moyenne — c’est la <strong>variance</strong>. Une perte de 300 000 € serait catastrophique, même si elle est rare.</p>
 </section>
-<section id="méthodologie" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Méthodologie</h1>
-<p>Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.</p>
+<section id="laversion-au-risque" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="laversion-au-risque"><span class="header-section-number">1.2</span> L’aversion au risque</h2>
+<p>Les êtres humains sont généralement <strong>averses au risque</strong>. Cela signifie qu’ils préfèrent une perte certaine et modérée à une perte incertaine mais potentiellement catastrophique.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 400000.0)</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-utilite" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-utilite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-01_files/figure-html/fig-utilite-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-utilite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Fonction d’utilité concave illustrant l’aversion au risque
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le graphique ci-dessus illustre un concept clé : l’<strong>équivalent certain</strong>. C’est le montant qu’une personne accepterait avec certitude plutôt que de faire face à un risque. Pour notre propriétaire, même si son espérance de perte n’est que de 300 €, il serait prêt à payer davantage pour éliminer le risque.</p>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>L’assurance existe parce que les individus sont prêts à payer <strong>plus</strong> que l’espérance mathématique de leur perte pour éliminer l’incertitude. Cette différence est la source de valeur pour l’assureur.</p>
+</div>
+</section>
+<section id="le-rôle-de-lassureur-transformer-le-risque" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="le-rôle-de-lassureur-transformer-le-risque"><span class="header-section-number">1.3</span> Le rôle de l’assureur : transformer le risque</h2>
+<p>L’assureur ne fait pas disparaître le risque — il le <strong>transforme</strong>. Comment ?</p>
+<p>En regroupant un grand nombre de risques similaires mais <strong>indépendants</strong>, l’assureur peut prédire avec une grande précision le montant total des sinistres, même s’il ne peut pas prédire quels assurés spécifiques subiront un sinistre.</p>
+<hr>
+</section>
+</section>
+<section id="la-mutualisation-le-cœur-du-mécanisme" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> La mutualisation : le cœur du mécanisme</h1>
+<section id="le-principe-de-base" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="le-principe-de-base"><span class="header-section-number">2.1</span> Le principe de base</h2>
+<p>Reprenons notre exemple. Un assureur couvre 10 000 maisons similaires, chacune avec 0,1% de risque d’incendie par an.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-mutualisation" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mutualisation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-01_files/figure-html/fig-mutualisation-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mutualisation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Effet de la mutualisation sur la variabilité du coût moyen
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ce graphique est fondamental. Il montre que :</p>
 <ul>
-<li><strong>Analyses factorielles</strong></li>
+<li>Avec <strong>100 assurés</strong>, le coût moyen par assuré varie énormément (de 0 à plusieurs milliers d’euros)</li>
+<li>Avec <strong>100 000 assurés</strong>, le coût moyen se concentre très étroitement autour de l’espérance (300 €)</li>
 </ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<p>C’est la <strong>loi des grands nombres</strong> : plus le portefeuille est grand, plus la moyenne observée converge vers l’espérance théorique.</p>
+</section>
+<section id="conditions-de-la-mutualisation-efficace" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="conditions-de-la-mutualisation-efficace"><span class="header-section-number">2.2</span> Conditions de la mutualisation efficace</h2>
+<p>Pour que la mutualisation fonctionne, plusieurs conditions doivent être réunies :</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Description</th>
+<th>Conséquence si non respectée</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Indépendance</strong></td>
+<td>Les sinistres ne doivent pas être corrélés</td>
+<td>Risque de cumul (ex: catastrophe naturelle)</td>
+</tr>
+<tr class="even">
+<td><strong>Homogénéité</strong></td>
+<td>Les risques doivent être de nature comparable</td>
+<td>Difficulté à établir une prime juste</td>
+</tr>
+<tr class="odd">
+<td><strong>Volume suffisant</strong></td>
+<td>Le nombre d’assurés doit être grand</td>
+<td>Variance trop élevée</td>
+</tr>
+<tr class="even">
+<td><strong>Aléa</strong></td>
+<td>L’événement doit être incertain</td>
+<td>Si certain, ce n’est plus de l’assurance</td>
+</tr>
+</tbody>
+</table>
+<div class="attention-box">
+<p><strong>⚠️ Attention</strong></p>
+<p>La mutualisation ne fonctionne pas pour les risques <strong>systémiques</strong> (qui affectent tout le monde en même temps). C’est pourquoi les pandémies, guerres ou crises économiques sont généralement exclues des contrats d’assurance.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="la-prime-anatomie-et-construction" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> La prime : anatomie et construction</h1>
+<section id="de-quoi-est-faite-une-prime" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="de-quoi-est-faite-une-prime"><span class="header-section-number">3.1</span> De quoi est faite une prime ?</h2>
+<p>La prime que paie l’assuré se décompose en plusieurs éléments :</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 550.0)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-decomposition-prime" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-decomposition-prime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-01_files/figure-html/fig-decomposition-prime-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decomposition-prime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Décomposition de la prime commerciale
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Détaillons chaque composante :</p>
+<p><strong>Prime pure</strong> : C’est l’espérance mathématique des sinistres. Dans notre exemple : <span class="math inline">\(0.001 \times 300\,000 = 300\)</span> €. C’est le strict minimum pour couvrir les sinistres en moyenne.</p>
+<p><strong>Chargement de sécurité</strong> : La prime pure ne suffit pas car elle ne couvre que la moyenne. Les années “mauvaises”, les sinistres dépasseront cette moyenne. Le chargement de sécurité constitue une marge pour absorber cette volatilité.</p>
+<p><strong>Frais de gestion</strong> : Coûts de fonctionnement (salaires, IT, locaux, gestion des sinistres).</p>
+<p><strong>Frais d’acquisition</strong> : Commissions des intermédiaires, coûts marketing.</p>
+<p><strong>Marge bénéficiaire</strong> : Rémunération des actionnaires pour le capital qu’ils immobilisent.</p>
+<div class="exemple-box">
+<p><strong>📝 Terminologie</strong></p>
+<ul>
+<li><strong>Prime pure</strong> = espérance des sinistres</li>
+<li><strong>Prime technique</strong> = prime pure + chargement de sécurité</li>
+<li><strong>Prime commerciale</strong> = prime technique + frais + marge</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="le-portefeuille-un-système-dynamique" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Le portefeuille : un système dynamique</h1>
+<section id="flux-entrants-et-sortants" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="flux-entrants-et-sortants"><span class="header-section-number">4.1</span> Flux entrants et sortants</h2>
+<p>Un portefeuille d’assurance n’est pas statique. Il évolue constamment avec des flux entrants (nouvelles affaires) et sortants (résiliations, non-renouvellements).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(9000.0, 13000.0)</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-dynamique-portefeuille" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dynamique-portefeuille-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-01_files/figure-html/fig-dynamique-portefeuille-7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dynamique-portefeuille-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Dynamique d’un portefeuille d’assurance sur 5 ans
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="léquilibre-fragile" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="léquilibre-fragile"><span class="header-section-number">4.2</span> L’équilibre fragile</h2>
+<p>La santé d’un portefeuille dépend de l’équilibre entre plusieurs forces :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-equilibre" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-equilibre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-equilibre">flowchart TD
+    subgraph ENTREES["📈 ENTRÉES"]
+        A[Nouvelles affaires]
+        B[Renouvellements]
+    end
+    
+    subgraph PORTEFEUILLE["🏦 PORTEFEUILLE"]
+        C[Stock de contrats]
+        D[Qualité du risque]
+        E[Rentabilité]
+    end
+    
+    subgraph SORTIES["📉 SORTIES"]
+        F[Résiliations]
+        G[Non-renouvellements]
+        H[Sinistres graves]
+    end
+    
+    A --&gt; C
+    B --&gt; C
+    C --&gt; F
+    C --&gt; G
+    C --&gt; H
+    
+    D --&gt; E
+    C --&gt; D
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-equilibre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Forces agissant sur l’équilibre d’un portefeuille
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Un portefeuille n’est rentable que si le flux de primes excède durablement le flux de sinistres et de frais. Cette rentabilité peut se dégrader progressivement sans que les indicateurs classiques ne l’alertent immédiatement.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="création-et-destruction-de-valeur" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Création et destruction de valeur</h1>
+<section id="les-leviers-de-création-de-valeur" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="les-leviers-de-création-de-valeur"><span class="header-section-number">5.1</span> Les leviers de création de valeur</h2>
+<p>Un assureur crée de la valeur de plusieurs manières :</p>
+<p><strong>1. La sélection des risques (souscription)</strong></p>
+<p>Accepter les “bons” risques et refuser ou tarifer correctement les “mauvais” risques. C’est un exercice délicat car une sélection trop stricte réduit le volume, tandis qu’une sélection trop lâche dégrade la rentabilité.</p>
+<p><strong>2. La tarification technique</strong></p>
+<p>Fixer des primes qui reflètent correctement le risque de chaque segment. Une tarification trop basse attire les mauvais risques (anti-sélection), une tarification trop haute fait fuir les bons risques.</p>
+<p><strong>3. La gestion des sinistres</strong></p>
+<p>Payer les sinistres légitimes rapidement et au juste coût. Détecter les fraudes. Optimiser les processus.</p>
+<p><strong>4. Les produits financiers</strong></p>
+<p>L’assureur encaisse les primes avant de payer les sinistres. Cet argent peut être placé et générer des revenus financiers.</p>
+</section>
+<section id="les-mécanismes-de-destruction-de-valeur" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="les-mécanismes-de-destruction-de-valeur"><span class="header-section-number">5.2</span> Les mécanismes de destruction de valeur</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 1.0)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 1.0)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(np.float64(0.0), np.float64(1.0), np.float64(0.0), np.float64(1.0))</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-spirale" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spirale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-01_files/figure-html/fig-spirale-9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spirale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: La spirale de dégradation d’un portefeuille
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Attention</strong></p>
+<p>Cette spirale est insidieuse car chaque étape semble rationnelle isolément. Augmenter les tarifs après une mauvaise sinistralité est logique. Mais si l’augmentation est uniforme (pas ciblée), elle accélère la fuite des bons risques et aggrave le problème.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="synthèse" class="level1 unnumbered">
+<h1 class="unnumbered">Synthèse</h1>
+<section id="les-5-concepts-fondamentaux-à-retenir" class="level3 synthese-card" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="les-5-concepts-fondamentaux-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts fondamentaux à retenir</h3>
+<ol type="1">
+<li><p><strong>L’assurance transforme l’incertitude</strong> — Elle ne fait pas disparaître le risque, elle le mutualise</p></li>
+<li><p><strong>La mutualisation repose sur les grands nombres</strong> — Plus le portefeuille est grand et diversifié, plus le risque devient prévisible</p></li>
+<li><p><strong>La prime a une structure</strong> — Prime pure + chargements + frais + marge</p></li>
+<li><p><strong>Le portefeuille est dynamique</strong> — Il évolue constamment avec des flux entrants et sortants</p></li>
+<li><p><strong>L’équilibre est fragile</strong> — Une erreur de tarification ou de sélection peut déclencher une spirale de dégradation</p></li>
+</ol>
+</section>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-synthese" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-synthese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-synthese">flowchart LR
+    subgraph ASSURES["👥 ASSURÉS"]
+        R[Risque individuel&lt;br&gt;élevé, imprévisible]
+    end
+    
+    subgraph ASSUREUR["🏢 ASSUREUR"]
+        M[Mutualisation]
+        T[Tarification]
+        G[Gestion]
+    end
+    
+    subgraph RESULTAT["📊 RÉSULTAT"]
+        P[Risque collectif&lt;br&gt;faible, prévisible]
+        V[Création de valeur&lt;br&gt;pour tous]
+    end
+    
+    R --&gt;|Primes| M
+    M --&gt; T
+    T --&gt; G
+    G --&gt;|Indemnités| R
+    M --&gt; P
+    P --&gt; V
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-synthese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Vue d’ensemble du modèle économique de l’assurance
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="auto-évaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-évaluation</h1>
+<p>Teste ta compréhension avec ces questions. Clique sur chaque question pour révéler la réponse.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse factorielle des correspondances (AFC)
+Question 1 : Pourquoi un individu accepte-t-il de payer plus que l’espérance de sa perte ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse Factorielle des Correspondances (AFC) est une méthode statistique utilisée pour explorer les relations entre des variables qualitatives (catégorielles) dans des tableaux de contingence. Cette méthode permet de réduire la dimensionnalité des données et de représenter graphiquement les associations entre les catégories des variables sous forme de points dans un espace de faible dimension (généralement deux dimensions).</p>
+<p><strong>Réponse</strong> : À cause de l’aversion au risque. Les individus préfèrent une perte certaine et modérée (la prime) à une perte incertaine mais potentiellement catastrophique (le sinistre). La différence entre ce qu’ils sont prêts à payer et l’espérance mathématique s’appelle la “prime de risque” du point de vue de l’assuré.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse des composantes principales (ACP)
+Question 2 : Pourquoi la mutualisation ne fonctionne-t-elle pas pour les pandémies ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées <strong>composantes principales</strong>. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.</p>
+<p><strong>Réponse</strong> : La mutualisation nécessite l’indépendance des risques. Une pandémie touche simultanément un très grand nombre d’assurés — les sinistres sont corrélés. L’assureur ne peut plus compter sur la compensation entre “chanceux” et “malchanceux” puisque presque tout le monde est “malchanceux” en même temps.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse des composantes multiples (ACM)
+Question 3 : Qu’est-ce qui différencie la prime pure de la prime commerciale ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse des Composantes Multiples (ACM) est une extension de l’Analyse des Composantes Principales (ACP) qui permet de traiter simultanément plusieurs tableaux de données, souvent appelés modalités, lorsqu’il y a plusieurs ensembles de variables à analyser conjointement. Cela peut être particulièrement utile lorsque les données sont organisées en groupes ou en ensembles distincts et que l’on souhaite étudier leurs relations globales.</p>
+<p><strong>Réponse</strong> : La prime pure correspond uniquement à l’espérance des sinistres. La prime commerciale y ajoute le chargement de sécurité (pour la volatilité), les frais de gestion, les frais d’acquisition et la marge bénéficiaire. C’est la prime réellement payée par l’assuré.</p>
 </div>
 </div>
 </div>
-<ul>
-<li><strong>Méthodes de partitionnement</strong></li>
-</ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Classification ascendante hiérarchique (CAH)
+Question 4 : Décrivez le mécanisme de la spirale de dégradation d’un portefeuille.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La Classification Ascendante Hiérarchique (CAH) est une méthode d’analyse statistique utilisée pour regrouper des observations ou des variables en clusters (groupes) homogènes et hétérogènes successivement, de manière ascendante (du bas vers le haut). Cette méthode est non paramétrique et exploratoire, ce qui signifie qu’elle ne nécessite pas d’hypothèses préalables sur la structure des données et qu’elle est utilisée pour explorer la structure intrinsèque des données.</p>
+<p><strong>Réponse</strong> : Un tarif trop bas ou mal segmenté attire les mauvais risques (anti-sélection). La sinistralité augmente. L’assureur réagit en augmentant les tarifs. Mais une hausse uniforme fait fuir les bons risques (qui trouvent moins cher ailleurs) tout en retenant les mauvais (qui ne trouvent pas mieux). Le portefeuille se dégrade encore plus, nécessitant de nouvelles hausses. C’est un cercle vicieux.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-K-Means (K-plus proches voisins)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Le K-means est l’un des algorithmes de clustering les plus populaires en analyse de données non supervisée. Son objectif principal est de partitionner un ensemble de données en K clusters distincts, où chaque observation appartient au cluster avec le centre (centroid) le plus proche</p>
-</div>
-</div>
-</div>
+<hr>
 </section>
-<section id="résultats" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Résultats</h1>
-<p>L’analyse des composantes principales (ACP) nous a permis de déterminer les 2 grandes classes de biens homogènes suivantes :</p>
-<ul>
-<li><p>Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.</p></li>
-<li><p>Inverserment, les biens immobiliers présentant des prix relativement élevés, une surface habitable relativement élevée et qui sont plus anciens.</p></li>
-</ul>
-<p>L’analyse des composantes multiples (ACM) nous a permis quant à elle de classifier les biens comme suit :</p>
-<ul>
-<li><p>Les biens chauffés à l’électrique et n’ayant pas de cheminée</p></li>
-<li><p>Inversement, les biens possédant au minimum une cheminée et chauffés à l’air chaud ou à l’eau chaude.</p></li>
-</ul>
-<p>En conclusion, l’application des techniques de data mining présentent une utilité non négligeable. En effet, ces dernières nous ont permis de mettre en évidence les biens qui présentent des caractères similaires et qui par conséquent, peuvent être scindés en plusieurs catégories. Dans un but de segmentation du marché ou d’analyse de la clientèle, ces techniques présentent une utilité sans précédente.</p>
+<section id="glossaire" class="level1 unnumbered">
+<h1 class="unnumbered">Glossaire</h1>
+<div class="glossaire-table">
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Aléa</strong></td>
+<td>Caractère incertain d’un événement. Condition nécessaire à l’assurabilité.</td>
+</tr>
+<tr class="even">
+<td><strong>Anti-sélection</strong></td>
+<td>Tendance des individus à haut risque à rechercher davantage d’assurance.</td>
+</tr>
+<tr class="odd">
+<td><strong>Aversion au risque</strong></td>
+<td>Préférence pour un résultat certain plutôt qu’un résultat incertain de même espérance.</td>
+</tr>
+<tr class="even">
+<td><strong>Chargement de sécurité</strong></td>
+<td>Supplément ajouté à la prime pure pour couvrir la volatilité des sinistres.</td>
+</tr>
+<tr class="odd">
+<td><strong>Équivalent certain</strong></td>
+<td>Montant certain qu’un individu accepterait à la place d’une loterie risquée.</td>
+</tr>
+<tr class="even">
+<td><strong>Mutualisation</strong></td>
+<td>Répartition du risque entre un grand nombre d’assurés.</td>
+</tr>
+<tr class="odd">
+<td><strong>Prime pure</strong></td>
+<td>Espérance mathématique des sinistres. Coût technique minimal.</td>
+</tr>
+<tr class="even">
+<td><strong>Prime commerciale</strong></td>
+<td>Prime effectivement payée par l’assuré, incluant tous les chargements.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
 </section>
-<section id="outil-technique" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Outil technique</h1>
+<section id="ressources-complémentaires" class="level1 unnumbered">
+<h1 class="unnumbered">Ressources complémentaires</h1>
+<p>Pour approfondir les concepts de ce module :</p>
 <ul>
-<li><strong>Logiciel</strong> <i class="fa-brands fa-r-project" aria-label="r-project"></i></li>
+<li><strong>Bowers et al.</strong> — <em>Actuarial Mathematics</em> (référence académique)</li>
+<li><strong>Denuit &amp; Charpentier</strong> — <em>Mathématiques de l’assurance non-vie</em> (en français)</li>
+<li><strong>Cours en ligne</strong> : Introduction to Actuarial Science (Coursera / edX)</li>
 </ul>
-<div style="text-align:center;">
-<blockquote class="blockquote">
-<p>Vous trouverez le rapport ici :</p>
-</blockquote>
-<div class="chevron-styling">
-<p><iconify-icon inline="" icon="pixelarticons:chevron-down" style="font-size: 5em;" aria-label="Icon chevron-down from pixelarticons Iconify.design set." title="Icon chevron-down from pixelarticons Iconify.design set."></iconify-icon></p>
+<hr>
+<div class="exemple-box">
+<p><strong>📘 Prochain module</strong></p>
+<p><strong>Module 2 — Produits d’assurance non-vie</strong> : Nous verrons concrètement comment sont structurés les contrats, les garanties, et ce qui est réellement assuré.</p>
 </div>
-</div>
-<div style="text-align:center;">
-<p><a href="../../assets/img/projet2/immobilier_saratoga.pdf" class="btn btn-outline-primary center" role="button">Lire le rapport <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-</div>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 1</a> <a href="module-technique-01.html" class="btn btn-primary">Voir le Module Technique 1 →</a></p>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
-
-<ol>
-<li id="fn1"><p>La fouille de données (ou “datamining” en anglais) désigne le processus de découverte de motifs, de corrélations ou d’anomalies en analysant de grands ensembles de données à l’aide de diverses techniques computationnelles. Cela implique d’extraire des informations utiles à partir de données brutes pour découvrir des motifs cachés, des relations ou des insights qui peuvent aider à la prise de décision ou à la prédiction.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>La classification non supervisée, également connue sous le nom de clustering, est une méthode de fouille de données qui consiste à regrouper des objets ou des données sans utiliser d’étiquettes ou de catégories prédéfinies.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>L’homogénéité d’une population ou d’une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1116,5 +1659,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

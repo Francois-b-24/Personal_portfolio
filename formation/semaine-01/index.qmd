@@ -1,0 +1,317 @@
+---
+title: "Semaine 1"
+subtitle: "Fondements économiques de l'assurance & Introduction à Docker"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.week-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.track-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.track-card.metier {
+    border-top: 4px solid #f8d65c;
+}
+
+.track-card.technique {
+    border-top: 4px solid #06436e;
+}
+
+.track-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.track-icon {
+    font-size: 1.5rem;
+}
+
+.track-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #06436e;
+}
+
+.track-time {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.track-topics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.track-topics li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.track-topics li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #06436e;
+}
+
+.objectives-box {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin: 2rem 0;
+}
+
+.objectives-box h3 {
+    color: #06436e;
+    margin-top: 0;
+}
+
+.deliverables-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin: 2rem 0;
+}
+
+.deliverables-box h3 {
+    color: #065f46;
+    margin-top: 0;
+}
+
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-card {
+    display: block;
+    background: white;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-decoration: none;
+}
+
+.nav-card-title {
+    font-weight: bold;
+    color: #06436e;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card-desc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.planning-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.planning-table th {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.planning-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.planning-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+</style>
+```
+
+## 🎯 Vue d'ensemble
+
+Cette première semaine pose les **fondations** sur lesquelles tout le reste du parcours sera construit. Tu vas découvrir pourquoi l'assurance existe d'un point de vue économique, et en parallèle, tu vas installer et maîtriser Docker — l'outil de base pour industrialiser tes futurs projets.
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header">
+            <span class="track-icon">🏢</span>
+            <span class="track-title">Volet Métier</span>
+        </div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module 1 — Fondements économiques de l'assurance</strong></p>
+        <ul class="track-topics">
+            <li>Rôle économique de l'assurance</li>
+            <li>Mutualisation et loi des grands nombres</li>
+            <li>Anatomie d'une prime</li>
+            <li>Le portefeuille comme système dynamique</li>
+            <li>Création et destruction de valeur</li>
+        </ul>
+    </div>
+    
+    <div class="track-card technique">
+        <div class="track-header">
+            <span class="track-icon">🛠️</span>
+            <span class="track-title">Volet Technique</span>
+        </div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 1 — Introduction à Docker</strong></p>
+        <ul class="track-topics">
+            <li>Pourquoi Docker en Data Science</li>
+            <li>Concepts : images, conteneurs, volumes</li>
+            <li>Installation et configuration</li>
+            <li>Premier Dockerfile</li>
+            <li>Commandes essentielles</li>
+        </ul>
+    </div>
+</div>
+```
+
+---
+
+## 📋 Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Expliquer pourquoi les individus acceptent de payer plus que l'espérance de leur perte</li>
+        <li>Décrire le mécanisme de mutualisation et ses conditions de fonctionnement</li>
+        <li>Décomposer une prime commerciale en ses différents éléments</li>
+        <li>Identifier les mécanismes de création et destruction de valeur d'un portefeuille</li>
+    </ol>
+    
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Expliquer la différence entre une image et un conteneur Docker</li>
+        <li>Écrire un Dockerfile basique pour une application Python</li>
+        <li>Construire et exécuter un conteneur à partir d'une image</li>
+        <li>Utiliser les commandes Docker essentielles (build, run, ps, logs, exec)</li>
+    </ol>
+</div>
+```
+
+---
+
+## 📅 Planning suggéré
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Sections 1-2 : Pourquoi l'assurance existe, Mutualisation | Installation Docker, Concepts de base |
+| **Jour 2** | Sections 3-4 : La prime, Le portefeuille dynamique | Premier Dockerfile, Commandes essentielles |
+| **Jour 3** | Section 5 : Création/destruction de valeur + Auto-évaluation | Exercices pratiques Docker |
+| **Jour 4** | Révision + Questions | Conteneuriser une app Python simple |
+| **Jour 5** | **Débriefing & validation** | **Livrable : App dockerisée** |
+
+---
+
+## 📦 Livrables attendus
+
+```{=html}
+<div class="deliverables-box">
+    <h3>À rendre en fin de semaine :</h3>
+    
+    <ol>
+        <li><strong>Fiche de synthèse Module 1</strong> (format libre : Quarto, Markdown, ou notes manuscrites)
+            <ul>
+                <li>Résumé des 5 concepts clés en tes propres mots</li>
+                <li>1 schéma de ton cru illustrant un concept</li>
+                <li>Lien avec ton expérience professionnelle (1 exemple vécu)</li>
+            </ul>
+        </li>
+        
+        <li><strong>Docker opérationnel</strong>
+            <ul>
+                <li>Docker installé et fonctionnel sur ta machine</li>
+                <li>Capture d'écran de <code>docker --version</code> et <code>docker run hello-world</code></li>
+            </ul>
+        </li>
+        
+        <li><strong>Premier conteneur Python</strong>
+            <ul>
+                <li>Un Dockerfile qui conteneurise un script Python simple</li>
+                <li>Le script peut être basique (ex: calcul de prime pure)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+```
+
+---
+
+## 📚 Accès aux modules
+
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-01.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 1</div>
+        <div class="nav-card-desc">Fondements économiques de l'assurance<br><small>→ Comprendre pourquoi l'assurance existe</small></div>
+    </a>
+    
+    <a href="module-technique-01.html" class="nav-card">
+        <div class="nav-card-title">🐳 Module Technique 1</div>
+        <div class="nav-card-desc">Introduction à Docker<br><small>→ Installer et maîtriser les bases</small></div>
+    </a>
+    
+    <a href="fiche-travail-01.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables<br><small>→ Valider tes acquis</small></div>
+    </a>
+</div>
+```
+
+---
+
+## 💡 Conseils pour bien démarrer
+
+::: {.callout-tip}
+## Articulation métier/technique
+
+Ne vois pas les deux volets comme séparés ! Pendant que tu lis le module métier, réfléchis déjà à comment tu pourrais coder les concepts. Par exemple :
+
+- La simulation de la mutualisation (Module 1) → sera conteneurisée plus tard
+- Le calcul de prime pure → peut être ton premier script Docker
+:::
+
+::: {.callout-note}
+## Rythme
+
+Le planning suggéré est indicatif. Adapte-le à ton rythme. L'important est de **comprendre en profondeur**, pas d'aller vite.
+:::
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

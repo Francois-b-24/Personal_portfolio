@@ -1,0 +1,749 @@
+---
+title: "Module 1 — Fondements économiques de l'assurance non-vie"
+subtitle: "Comprendre pourquoi l'assurance existe et comment elle crée de la valeur"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, fondamentaux, économie]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+
+
+```{=html}
+<style>
+.objectifs-box {
+    background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%);
+    border-left: 4px solid #f8d65c;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin: 1.5rem 0;
+}
+
+.objectifs-box h3 {
+    color: #92400e;
+    margin-top: 0;
+}
+
+.concept-cle {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.concept-cle strong {
+    color: #06436e;
+}
+
+.attention-box {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left: 4px solid #fe4454;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.exemple-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.synthese-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.glossaire-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.glossaire-table th {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.glossaire-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.glossaire-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.question-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.question-header {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.question-content {
+    padding: 1rem;
+    display: none;
+}
+
+.question-card.open .question-content {
+    display: block;
+}
+
+.prerequis-temps {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.prerequis-temps > div {
+    background: #f1f5f9;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+}
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+À l'issue de ce module, tu seras capable de :
+
+1. **Expliquer** le rôle économique fondamental de l'assurance
+2. **Définir** les concepts de mutualisation et d'aléa moral
+3. **Comprendre** la logique de construction d'une prime d'assurance
+4. **Analyser** un portefeuille comme un système dynamique
+5. **Identifier** les mécanismes de création et destruction de valeur
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Aucun prérequis technique. Ce module pose les fondations conceptuelles.
+:::
+:::{div}
+⏱️ **Temps estimé** : 2 à 3 heures de lecture active, plus les exercices.
+:::
+:::
+
+---
+
+# Pourquoi l'assurance existe-t-elle ?
+
+## Le problème fondamental : l'incertitude
+
+Imaginons un propriétaire de maison. Sa maison vaut 300 000 €. Chaque année, il existe une probabilité — disons 0,1% — qu'un incendie détruise totalement sa maison. 
+
+Sans assurance, ce propriétaire fait face à deux scénarios possibles :
+
+| Scénario | Probabilité | Perte financière |
+|----------|-------------|------------------|
+| Pas d'incendie | 99,9% | 0 € |
+| Incendie | 0,1% | 300 000 € |
+
+L'**espérance de perte** est de : $0.001 \times 300\,000 = 300$ €
+
+En moyenne, sur une très longue période, ce propriétaire "perdrait" 300 € par an. Mais le problème n'est pas la moyenne — c'est la **variance**. Une perte de 300 000 € serait catastrophique, même si elle est rare.
+
+## L'aversion au risque
+
+Les êtres humains sont généralement **averses au risque**. Cela signifie qu'ils préfèrent une perte certaine et modérée à une perte incertaine mais potentiellement catastrophique.
+
+```{python}
+#| label: fig-utilite
+#| fig-cap: "Fonction d'utilité concave illustrant l'aversion au risque"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Configuration du style
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['axes.spines.top'] = False
+plt.rcParams['axes.spines.right'] = False
+
+# Fonction d'utilité concave (aversion au risque)
+richesse = np.linspace(0, 500000, 1000)
+utilite = np.sqrt(richesse)
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(richesse, utilite, color='#06436e', linewidth=2.5, label='Utilité')
+
+# Points pour illustrer
+r_initial = 300000
+r_apres_sinistre = 0
+r_avec_prime = 299700
+
+ax.axvline(x=r_initial, color='#72f1b8', linestyle='--', alpha=0.7, linewidth=2, 
+           label=f'Richesse initiale ({r_initial:,} €)')
+ax.axvline(x=r_avec_prime, color='#f8d65c', linestyle='--', alpha=0.7, linewidth=2,
+           label=f'Après prime ({r_avec_prime:,} €)')
+
+# Espérance d'utilité sans assurance
+u_sinistre = np.sqrt(r_apres_sinistre)
+u_normal = np.sqrt(r_initial)
+esperance_u = 0.001 * u_sinistre + 0.999 * u_normal
+
+# Richesse équivalent certain
+richesse_eq_certain = esperance_u ** 2
+
+ax.axhline(y=esperance_u, color='#fe4454', linestyle=':', alpha=0.7, linewidth=1.5)
+ax.axvline(x=richesse_eq_certain, color='#fe4454', linestyle=':', alpha=0.7, linewidth=1.5,
+           label=f'Équivalent certain ({richesse_eq_certain:,.0f} €)')
+
+ax.set_xlabel('Richesse (€)', fontsize=12)
+ax.set_ylabel('Utilité', fontsize=12)
+ax.set_title('Aversion au risque et demande d\'assurance', fontsize=14, fontweight='bold', color='#06436e')
+ax.legend(loc='lower right', frameon=True, fancybox=True, shadow=True)
+ax.grid(True, alpha=0.3)
+ax.set_xlim(0, 400000)
+
+plt.tight_layout()
+plt.show()
+```
+
+Le graphique ci-dessus illustre un concept clé : l'**équivalent certain**. C'est le montant qu'une personne accepterait avec certitude plutôt que de faire face à un risque. Pour notre propriétaire, même si son espérance de perte n'est que de 300 €, il serait prêt à payer davantage pour éliminer le risque.
+
+:::{.concept-cle}
+**💡 Point clé**
+
+L'assurance existe parce que les individus sont prêts à payer **plus** que l'espérance mathématique de leur perte pour éliminer l'incertitude. Cette différence est la source de valeur pour l'assureur.
+:::
+
+## Le rôle de l'assureur : transformer le risque
+
+L'assureur ne fait pas disparaître le risque — il le **transforme**. Comment ?
+
+En regroupant un grand nombre de risques similaires mais **indépendants**, l'assureur peut prédire avec une grande précision le montant total des sinistres, même s'il ne peut pas prédire quels assurés spécifiques subiront un sinistre.
+
+---
+
+# La mutualisation : le cœur du mécanisme
+
+## Le principe de base
+
+Reprenons notre exemple. Un assureur couvre 10 000 maisons similaires, chacune avec 0,1% de risque d'incendie par an.
+
+```{python}
+#| label: fig-mutualisation
+#| fig-cap: "Effet de la mutualisation sur la variabilité du coût moyen"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+# Paramètres
+prob_sinistre = 0.001
+cout_sinistre = 300000
+n_simulations = 10000
+
+def simuler_cout_moyen(n_assures, n_sims):
+    couts_moyens = []
+    for _ in range(n_sims):
+        sinistres = np.random.binomial(n_assures, prob_sinistre)
+        cout_moyen = (sinistres * cout_sinistre) / n_assures
+        couts_moyens.append(cout_moyen)
+    return np.array(couts_moyens)
+
+tailles = [100, 1000, 10000, 100000]
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+esperance = prob_sinistre * cout_sinistre
+
+colors = ['#f8d65c', '#ffbc8c', '#2fe8f0', '#72f1b8']
+
+for ax, n, color in zip(axes.flatten(), tailles, colors):
+    couts = simuler_cout_moyen(n, n_simulations)
+    
+    ax.hist(couts, bins=50, density=True, alpha=0.7, color=color, edgecolor='white')
+    ax.axvline(x=esperance, color='#fe4454', linestyle='--', linewidth=2, 
+               label=f'Espérance = {esperance} €')
+    ax.axvline(x=np.mean(couts), color='#06436e', linestyle='-', linewidth=2,
+               label=f'Moyenne simulée = {np.mean(couts):.0f} €')
+    
+    cv = np.std(couts) / np.mean(couts) * 100 if np.mean(couts) > 0 else 0
+    ax.set_title(f'N = {n:,} assurés\nCoef. de variation = {cv:.1f}%', fontsize=11, fontweight='bold')
+    ax.set_xlabel('Coût moyen par assuré (€)')
+    ax.set_ylabel('Densité')
+    ax.legend(fontsize=9)
+    ax.grid(True, alpha=0.3)
+
+plt.suptitle('Effet de la mutualisation : la loi des grands nombres en action', 
+             fontsize=14, fontweight='bold', color='#06436e', y=1.02)
+plt.tight_layout()
+plt.show()
+```
+
+Ce graphique est fondamental. Il montre que :
+
+- Avec **100 assurés**, le coût moyen par assuré varie énormément (de 0 à plusieurs milliers d'euros)
+- Avec **100 000 assurés**, le coût moyen se concentre très étroitement autour de l'espérance (300 €)
+
+C'est la **loi des grands nombres** : plus le portefeuille est grand, plus la moyenne observée converge vers l'espérance théorique.
+
+## Conditions de la mutualisation efficace
+
+Pour que la mutualisation fonctionne, plusieurs conditions doivent être réunies :
+
+| Condition | Description | Conséquence si non respectée |
+|-----------|-------------|------------------------------|
+| **Indépendance** | Les sinistres ne doivent pas être corrélés | Risque de cumul (ex: catastrophe naturelle) |
+| **Homogénéité** | Les risques doivent être de nature comparable | Difficulté à établir une prime juste |
+| **Volume suffisant** | Le nombre d'assurés doit être grand | Variance trop élevée |
+| **Aléa** | L'événement doit être incertain | Si certain, ce n'est plus de l'assurance |
+
+:::{.attention-box}
+**⚠️ Attention**
+
+La mutualisation ne fonctionne pas pour les risques **systémiques** (qui affectent tout le monde en même temps). C'est pourquoi les pandémies, guerres ou crises économiques sont généralement exclues des contrats d'assurance.
+:::
+
+---
+
+# La prime : anatomie et construction
+
+## De quoi est faite une prime ?
+
+La prime que paie l'assuré se décompose en plusieurs éléments :
+
+```{python}
+#| label: fig-decomposition-prime
+#| fig-cap: "Décomposition de la prime commerciale"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+composantes = {
+    'Prime pure': 300,
+    'Chargement de sécurité': 45,
+    'Frais de gestion': 60,
+    'Frais d\'acquisition': 75,
+    'Marge bénéficiaire': 20
+}
+
+prime_pure = composantes['Prime pure']
+prime_technique = prime_pure + composantes['Chargement de sécurité']
+prime_commerciale = sum(composantes.values())
+
+fig, ax = plt.subplots(figsize=(12, 4))
+
+colors = ['#72f1b8', '#2fe8f0', '#a97eff', '#fe4454', '#f8d65c']
+left = 0
+bars = []
+
+for (label, value), color in zip(composantes.items(), colors):
+    bar = ax.barh(['Prime'], value, left=left, color=color, label=f'{label}: {value} €',
+                  edgecolor='white', linewidth=2)
+    
+    ax.text(left + value/2, 0, f'{value} €', ha='center', va='center',
+            fontsize=10, fontweight='bold', color='white' if color != '#f8d65c' else '#333')
+    
+    left += value
+    bars.append(bar)
+
+ax.axvline(x=prime_pure, color='#06436e', linestyle=':', alpha=0.7, linewidth=2)
+ax.axvline(x=prime_technique, color='#06436e', linestyle='--', alpha=0.7, linewidth=2)
+
+ax.text(prime_pure/2, -0.35, f'Prime pure\n{prime_pure} €', ha='center', fontsize=9, color='#06436e')
+ax.text((prime_pure + prime_technique)/2, -0.35, f'Prime technique\n{prime_technique} €', ha='center', fontsize=9, color='#06436e')
+ax.text(prime_commerciale/2, 0.45, f'Prime commerciale totale: {prime_commerciale} €',
+        ha='center', fontsize=12, fontweight='bold', color='#06436e')
+
+ax.set_xlim(0, prime_commerciale * 1.1)
+ax.set_xlabel('Montant (€)', fontsize=11)
+ax.legend(loc='upper right', bbox_to_anchor=(1.0, -0.2), ncol=3, frameon=True)
+ax.set_yticks([])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+Détaillons chaque composante :
+
+**Prime pure** : C'est l'espérance mathématique des sinistres. Dans notre exemple : $0.001 \times 300\,000 = 300$ €. C'est le strict minimum pour couvrir les sinistres en moyenne.
+
+**Chargement de sécurité** : La prime pure ne suffit pas car elle ne couvre que la moyenne. Les années "mauvaises", les sinistres dépasseront cette moyenne. Le chargement de sécurité constitue une marge pour absorber cette volatilité.
+
+**Frais de gestion** : Coûts de fonctionnement (salaires, IT, locaux, gestion des sinistres).
+
+**Frais d'acquisition** : Commissions des intermédiaires, coûts marketing.
+
+**Marge bénéficiaire** : Rémunération des actionnaires pour le capital qu'ils immobilisent.
+
+:::{.exemple-box}
+**📝 Terminologie**
+
+- **Prime pure** = espérance des sinistres
+- **Prime technique** = prime pure + chargement de sécurité
+- **Prime commerciale** = prime technique + frais + marge
+:::
+
+---
+
+# Le portefeuille : un système dynamique
+
+## Flux entrants et sortants
+
+Un portefeuille d'assurance n'est pas statique. Il évolue constamment avec des flux entrants (nouvelles affaires) et sortants (résiliations, non-renouvellements).
+
+```{python}
+#| label: fig-dynamique-portefeuille
+#| fig-cap: "Dynamique d'un portefeuille d'assurance sur 5 ans"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(42)
+annees = [2020, 2021, 2022, 2023, 2024]
+
+portefeuille_debut = [10000]
+nouvelles_affaires = []
+resiliations = []
+portefeuille_fin = []
+
+for i in range(len(annees)):
+    na = int(portefeuille_debut[i] * np.random.uniform(0.08, 0.15))
+    nouvelles_affaires.append(na)
+    
+    res = int(portefeuille_debut[i] * np.random.uniform(0.05, 0.12))
+    resiliations.append(res)
+    
+    pf_fin = portefeuille_debut[i] + na - res
+    portefeuille_fin.append(pf_fin)
+    
+    if i < len(annees) - 1:
+        portefeuille_debut.append(pf_fin)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+
+# Graphique 1 : Évolution du stock
+ax1.fill_between(annees, portefeuille_debut, alpha=0.3, color='#06436e')
+ax1.plot(annees, portefeuille_debut, 'o-', color='#06436e',
+         linewidth=2, markersize=8, label='Début d\'année')
+ax1.plot(annees, portefeuille_fin, 's--', color='#2fe8f0',
+         linewidth=2, markersize=8, label='Fin d\'année')
+
+ax1.set_xlabel('Année', fontsize=11)
+ax1.set_ylabel('Nombre de contrats', fontsize=11)
+ax1.set_title('Évolution du portefeuille', fontsize=12, fontweight='bold', color='#06436e')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+ax1.set_ylim(9000, 13000)
+ax1.spines['top'].set_visible(False)
+ax1.spines['right'].set_visible(False)
+
+# Graphique 2 : Flux
+x = np.arange(len(annees))
+width = 0.35
+
+bars1 = ax2.bar(x - width/2, nouvelles_affaires, width, label='Nouvelles affaires',
+                color='#72f1b8', edgecolor='white')
+bars2 = ax2.bar(x + width/2, resiliations, width, label='Résiliations',
+                color='#fe4454', edgecolor='white')
+
+for bar in bars1:
+    height = bar.get_height()
+    ax2.annotate(f'{int(height)}', xy=(bar.get_x() + bar.get_width()/2, height),
+                 xytext=(0, 3), textcoords="offset points", ha='center', va='bottom', fontsize=9)
+
+for bar in bars2:
+    height = bar.get_height()
+    ax2.annotate(f'{int(height)}', xy=(bar.get_x() + bar.get_width()/2, height),
+                 xytext=(0, 3), textcoords="offset points", ha='center', va='bottom', fontsize=9)
+
+ax2.set_xlabel('Année', fontsize=11)
+ax2.set_ylabel('Nombre de contrats', fontsize=11)
+ax2.set_title('Flux annuels', fontsize=12, fontweight='bold', color='#06436e')
+ax2.set_xticks(x)
+ax2.set_xticklabels(annees)
+ax2.legend()
+ax2.grid(True, alpha=0.3, axis='y')
+ax2.spines['top'].set_visible(False)
+ax2.spines['right'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+## L'équilibre fragile
+
+La santé d'un portefeuille dépend de l'équilibre entre plusieurs forces :
+
+```{mermaid}
+%%| label: fig-equilibre
+%%| fig-cap: "Forces agissant sur l'équilibre d'un portefeuille"
+
+flowchart TD
+    subgraph ENTREES["📈 ENTRÉES"]
+        A[Nouvelles affaires]
+        B[Renouvellements]
+    end
+    
+    subgraph PORTEFEUILLE["🏦 PORTEFEUILLE"]
+        C[Stock de contrats]
+        D[Qualité du risque]
+        E[Rentabilité]
+    end
+    
+    subgraph SORTIES["📉 SORTIES"]
+        F[Résiliations]
+        G[Non-renouvellements]
+        H[Sinistres graves]
+    end
+    
+    A --> C
+    B --> C
+    C --> F
+    C --> G
+    C --> H
+    
+    D --> E
+    C --> D
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Un portefeuille n'est rentable que si le flux de primes excède durablement le flux de sinistres et de frais. Cette rentabilité peut se dégrader progressivement sans que les indicateurs classiques ne l'alertent immédiatement.
+:::
+
+---
+
+# Création et destruction de valeur
+
+## Les leviers de création de valeur
+
+Un assureur crée de la valeur de plusieurs manières :
+
+**1. La sélection des risques (souscription)**
+
+Accepter les "bons" risques et refuser ou tarifer correctement les "mauvais" risques. C'est un exercice délicat car une sélection trop stricte réduit le volume, tandis qu'une sélection trop lâche dégrade la rentabilité.
+
+**2. La tarification technique**
+
+Fixer des primes qui reflètent correctement le risque de chaque segment. Une tarification trop basse attire les mauvais risques (anti-sélection), une tarification trop haute fait fuir les bons risques.
+
+**3. La gestion des sinistres**
+
+Payer les sinistres légitimes rapidement et au juste coût. Détecter les fraudes. Optimiser les processus.
+
+**4. Les produits financiers**
+
+L'assureur encaisse les primes avant de payer les sinistres. Cet argent peut être placé et générer des revenus financiers.
+
+## Les mécanismes de destruction de valeur
+
+```{python}
+#| label: fig-spirale
+#| fig-cap: "La spirale de dégradation d'un portefeuille"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+etapes = [
+    ("1. Tarif trop bas\nou mal segmenté", 0.8, 0.85),
+    ("2. Afflux de\nmauvais risques", 0.2, 0.75),
+    ("3. Sinistralité\nen hausse", 0.15, 0.45),
+    ("4. Hausse des tarifs\n(réaction tardive)", 0.25, 0.15),
+    ("5. Fuite des\nbons risques", 0.7, 0.1),
+    ("6. Dégradation\naccélérée", 0.85, 0.4),
+]
+
+colors = ['#f8d65c', '#ffbc8c', '#fe4454', '#a97eff', '#2fe8f0', '#72f1b8']
+
+for (texte, x, y), color in zip(etapes, colors):
+    box = mpatches.FancyBboxPatch((x-0.12, y-0.08), 0.24, 0.16,
+                                   boxstyle="round,pad=0.02",
+                                   facecolor=color, edgecolor='white',
+                                   linewidth=2, alpha=0.9)
+    ax.add_patch(box)
+    text_color = 'white' if color in ['#fe4454', '#a97eff'] else '#333'
+    ax.text(x, y, texte, ha='center', va='center', fontsize=10,
+            color=text_color, fontweight='bold', wrap=True)
+
+arrows = [
+    ((0.68, 0.85), (0.32, 0.80)),
+    ((0.20, 0.67), (0.17, 0.53)),
+    ((0.27, 0.37), (0.30, 0.23)),
+    ((0.37, 0.13), (0.58, 0.10)),
+    ((0.82, 0.18), (0.85, 0.32)),
+    ((0.85, 0.48), (0.80, 0.77)),
+]
+
+for (start, end) in arrows:
+    ax.annotate("", xy=end, xytext=start,
+                arrowprops=dict(arrowstyle="->", color="#06436e", lw=2,
+                               connectionstyle="arc3,rad=0.2"))
+
+ax.text(0.5, 0.5, "SPIRALE\nDE\nDÉGRADATION", ha='center', va='center',
+        fontsize=14, fontweight='bold', color='#06436e', alpha=0.3)
+
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.axis('off')
+ax.set_title('Comment un portefeuille peut se dégrader', fontsize=14, fontweight='bold', color='#06436e', pad=20)
+
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Attention**
+
+Cette spirale est insidieuse car chaque étape semble rationnelle isolément. Augmenter les tarifs après une mauvaise sinistralité est logique. Mais si l'augmentation est uniforme (pas ciblée), elle accélère la fuite des bons risques et aggrave le problème.
+:::
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 concepts fondamentaux à retenir
+
+1. **L'assurance transforme l'incertitude** — Elle ne fait pas disparaître le risque, elle le mutualise
+
+2. **La mutualisation repose sur les grands nombres** — Plus le portefeuille est grand et diversifié, plus le risque devient prévisible
+
+3. **La prime a une structure** — Prime pure + chargements + frais + marge
+
+4. **Le portefeuille est dynamique** — Il évolue constamment avec des flux entrants et sortants
+
+5. **L'équilibre est fragile** — Une erreur de tarification ou de sélection peut déclencher une spirale de dégradation
+:::
+
+```{mermaid}
+%%| label: fig-synthese
+%%| fig-cap: "Vue d'ensemble du modèle économique de l'assurance"
+
+flowchart LR
+    subgraph ASSURES["👥 ASSURÉS"]
+        R[Risque individuel<br>élevé, imprévisible]
+    end
+    
+    subgraph ASSUREUR["🏢 ASSUREUR"]
+        M[Mutualisation]
+        T[Tarification]
+        G[Gestion]
+    end
+    
+    subgraph RESULTAT["📊 RÉSULTAT"]
+        P[Risque collectif<br>faible, prévisible]
+        V[Création de valeur<br>pour tous]
+    end
+    
+    R -->|Primes| M
+    M --> T
+    T --> G
+    G -->|Indemnités| R
+    M --> P
+    P --> V
+```
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+Teste ta compréhension avec ces questions. Clique sur chaque question pour révéler la réponse.
+
+::: {.callout-note collapse="true"}
+## Question 1 : Pourquoi un individu accepte-t-il de payer plus que l'espérance de sa perte ?
+
+**Réponse** : À cause de l'aversion au risque. Les individus préfèrent une perte certaine et modérée (la prime) à une perte incertaine mais potentiellement catastrophique (le sinistre). La différence entre ce qu'ils sont prêts à payer et l'espérance mathématique s'appelle la "prime de risque" du point de vue de l'assuré.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Pourquoi la mutualisation ne fonctionne-t-elle pas pour les pandémies ?
+
+**Réponse** : La mutualisation nécessite l'indépendance des risques. Une pandémie touche simultanément un très grand nombre d'assurés — les sinistres sont corrélés. L'assureur ne peut plus compter sur la compensation entre "chanceux" et "malchanceux" puisque presque tout le monde est "malchanceux" en même temps.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Qu'est-ce qui différencie la prime pure de la prime commerciale ?
+
+**Réponse** : La prime pure correspond uniquement à l'espérance des sinistres. La prime commerciale y ajoute le chargement de sécurité (pour la volatilité), les frais de gestion, les frais d'acquisition et la marge bénéficiaire. C'est la prime réellement payée par l'assuré.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : Décrivez le mécanisme de la spirale de dégradation d'un portefeuille.
+
+**Réponse** : Un tarif trop bas ou mal segmenté attire les mauvais risques (anti-sélection). La sinistralité augmente. L'assureur réagit en augmentant les tarifs. Mais une hausse uniforme fait fuir les bons risques (qui trouvent moins cher ailleurs) tout en retenant les mauvais (qui ne trouvent pas mieux). Le portefeuille se dégrade encore plus, nécessitant de nouvelles hausses. C'est un cercle vicieux.
+:::
+
+---
+
+# Glossaire {.unnumbered}
+
+:::{.glossaire-table}
+| Terme | Définition |
+|-------|------------|
+| **Aléa** | Caractère incertain d'un événement. Condition nécessaire à l'assurabilité. |
+| **Anti-sélection** | Tendance des individus à haut risque à rechercher davantage d'assurance. |
+| **Aversion au risque** | Préférence pour un résultat certain plutôt qu'un résultat incertain de même espérance. |
+| **Chargement de sécurité** | Supplément ajouté à la prime pure pour couvrir la volatilité des sinistres. |
+| **Équivalent certain** | Montant certain qu'un individu accepterait à la place d'une loterie risquée. |
+| **Mutualisation** | Répartition du risque entre un grand nombre d'assurés. |
+| **Prime pure** | Espérance mathématique des sinistres. Coût technique minimal. |
+| **Prime commerciale** | Prime effectivement payée par l'assuré, incluant tous les chargements. |
+:::
+
+---
+
+# Ressources complémentaires {.unnumbered}
+
+Pour approfondir les concepts de ce module :
+
+- **Bowers et al.** — *Actuarial Mathematics* (référence académique)
+- **Denuit & Charpentier** — *Mathématiques de l'assurance non-vie* (en français)
+- **Cours en ligne** : Introduction to Actuarial Science (Coursera / edX)
+
+---
+
+:::{.exemple-box}
+**📘 Prochain module**
+
+**Module 2 — Produits d'assurance non-vie** : Nous verrons concrètement comment sont structurés les contrats, les garanties, et ce qui est réellement assuré.
+:::
+
+---
+
+[← Retour à la Semaine 1](index.html){.btn .btn-secondary}
+[Voir le Module Technique 1 →](module-technique-01.html){.btn .btn-primary}

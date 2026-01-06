@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="BOUSSENGUI François &amp; LEGER Aline">
-<meta name="description" content="Application des méthodes de classification non supervisée">
+<meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | L’immobilier à Saratoga ~ Californie</title>
+<title>François BOUSSENGUI | Fiche de travail — Semaine 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -43,9 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,7 +120,23 @@ cookieconsent.run({
 });
 </script> 
   
-<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: rgb(251, 225, 174);
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: rgb(251, 225, 174);
+background: #06436e;
+      }
+</style>
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -176,8 +222,8 @@ cookieconsent.run({
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | L’immobilier à Saratoga ~ Californie">
-<meta property="og:description" content="Application des méthodes de classification non supervisée">
+<meta property="og:title" content="François BOUSSENGUI | Fiche de travail — Semaine 1">
+<meta property="og:description" content="Exercices pratiques et livrables à produire">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -185,8 +231,8 @@ cookieconsent.run({
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | L’immobilier à Saratoga ~ Californie">
-<meta name="twitter:description" content="Application des méthodes de classification non supervisée">
+<meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail — Semaine 1">
+<meta name="twitter:description" content="Exercices pratiques et livrables à produire">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -409,6 +455,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -469,16 +544,9 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">L’immobilier à Saratoga ~ Californie</h1>
-                  <div>
-        <div class="description">
-          <em>Application des méthodes de classification non supervisée</em>
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">Machine Learning</div>
-              </div>
-                  </div>
+      <h1 class="title">Fiche de travail — Semaine 1</h1>
+            <p class="subtitle lead">Exercices pratiques et livrables à produire</p>
+                      </div>
   </div>
     
   
@@ -487,10 +555,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p><code>BOUSSENGUI François</code> &amp; <code>LEGER Aline</code> </p>
+               <p>François Boussengui </p>
             </div>
     </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 janvier 2026</p>
+      </div>
+    </div>
     
       
     </div>
@@ -501,14 +575,15 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">📚 Table des matières</h2>
+    <h2 id="toc-title">Sur cette page</h2>
    
-  <ul>
-  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte"><span class="header-section-number">1</span> Contexte</a></li>
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs"><span class="header-section-number">2</span> Objectifs</a></li>
-  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie"><span class="header-section-number">3</span> Méthodologie</a></li>
-  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats"><span class="header-section-number">4</span> Résultats</a></li>
-  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">5</span> Outil technique</a></li>
+  <ul class="collapse">
+  <li><a href="#planning-de-la-semaine" id="toc-planning-de-la-semaine" class="nav-link active" data-scroll-target="#planning-de-la-semaine">📅 Planning de la semaine</a></li>
+  <li><a href="#livrables-à-produire" id="toc-livrables-à-produire" class="nav-link" data-scroll-target="#livrables-à-produire">📦 Livrables à produire</a></li>
+  <li><a href="#exercices-pratiques" id="toc-exercices-pratiques" class="nav-link" data-scroll-target="#exercices-pratiques">🏋️ Exercices pratiques</a></li>
+  <li><a href="#faire-le-pont-métier-technique" id="toc-faire-le-pont-métier-technique" class="nav-link" data-scroll-target="#faire-le-pont-métier-technique">🔗 Faire le pont métier-technique</a></li>
+  <li><a href="#checklist-de-fin-de-semaine" id="toc-checklist-de-fin-de-semaine" class="nav-link" data-scroll-target="#checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</a></li>
+  <li><a href="#pour-le-débriefing" id="toc-pour-le-débriefing" class="nav-link" data-scroll-target="#pour-le-débriefing">📬 Pour le débriefing</a></li>
   </ul>
 </nav>
     </div>
@@ -519,158 +594,571 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<div class="tech-badges">
-<div class="tech-badge badge-r">
-<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</p>
-</div>
-<div class="tech-badge badge-ml">
-<p><i class="fa-solid fa-brain" aria-label="brain"></i> Machine Learning</p>
-</div>
-<div class="tech-badge badge-datascience">
-<p><i class="fa-solid fa-chart-bar" aria-label="chart-bar"></i> Clustering</p>
-</div>
-</div>
-<section id="contexte" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Contexte</h1>
-<p>Dans le cadre d’un projet réalisé dans l’apprentissage de méthodes de <strong>Datamining</strong>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> il a été question d’appliquer des méthodes de <strong>classification non supervisée</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> sur une base de données contenant des informations sur <em>1728</em> biens immobiliers de la ville de Saratoga, en Californie.</p>
+<style>
+.livrable-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #06436e;
+}
+
+.livrable-card.done {
+    border-left-color: #72f1b8;
+    background: linear-gradient(135deg, #f0fdf4 0%, white 100%);
+}
+
+.livrable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.livrable-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #06436e;
+}
+
+.livrable-status {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.livrable-status.required {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.livrable-status.bonus {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.exercice-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.exercice-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #06436e;
+    font-weight: bold;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.checklist li.checked::before {
+    content: "☑";
+    color: #72f1b8;
+}
+
+.planning-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.jour-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+}
+
+.jour-card h4 {
+    color: #06436e;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.jour-card .metier {
+    color: #92400e;
+    background: #fef3c7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+}
+
+.jour-card .technique {
+    color: #1e40af;
+    background: #dbeafe;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.75rem;
+}
+
+.hint-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.solution-box {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.reflexion-box {
+    background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%);
+    border-left: 4px solid #f8d65c;
+    padding: 1rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
+}
+
+.code-filename {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    border-radius: 8px 8px 0 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    margin-bottom: -0.5rem;
+}
+
+@media (max-width: 768px) {
+    .planning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<p>Cette fiche de travail t’accompagne tout au long de la Semaine 1. Elle contient les exercices pratiques, les livrables à produire, et des pistes de réflexion pour faire le lien entre théorie et pratique.</p>
+<hr>
+<section id="planning-de-la-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="planning-de-la-semaine">📅 Planning de la semaine</h2>
+<div class="planning-grid">
+<section id="jour-1" class="level4 jour-card">
+<h4 class="anchored" data-anchor-id="jour-1">Jour 1</h4>
+<p>:::{.metier}Métier::: Sections 1-2 du Module 1</p>
+<p>:::{.technique}Tech::: Installation Docker</p>
 </section>
-<section id="objectifs" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Objectifs</h1>
-<p>Les biens immobiliers de la ville de Saratoga présentent des caractéristiques qui ont une influence non négligeable sur leur prix. Cependant, malgré ces différence de prix, nous partons du postulat qu’il est tout à fait possible de regrouper ces biens en classes homogènes. En d’autres termes, en groupe de biens présentant des caractéristiques similaires. Par le biais de techniques de classification non supervisée, il a donc été question de proposer des classes de biens homogènes au sens statistique du terme <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<section id="jour-2" class="level4 jour-card">
+<h4 class="anchored" data-anchor-id="jour-2">Jour 2</h4>
+<p>:::{.metier}Métier::: Sections 3-4 du Module 1</p>
+<p>:::{.technique}Tech::: Concepts &amp; commandes</p>
 </section>
-<section id="méthodologie" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Méthodologie</h1>
-<p>Pour ce faire, nous avons appliquer des méthodes de classification non supervisée sur notre jeu de données.</p>
+<section id="jour-3" class="level4 jour-card">
+<h4 class="anchored" data-anchor-id="jour-3">Jour 3</h4>
+<p>:::{.metier}Métier::: Section 5 + Auto-éval</p>
+<p>:::{.technique}Tech::: Premier Dockerfile</p>
+</section>
+<section id="jour-4" class="level4 jour-card">
+<h4 class="anchored" data-anchor-id="jour-4">Jour 4</h4>
+<p>:::{.metier}Métier::: Révision &amp; questions</p>
+<p>:::{.technique}Tech::: Exercices pratiques</p>
+</section>
+<section id="jour-5" class="level4 jour-card">
+<h4 class="anchored" data-anchor-id="jour-5">Jour 5</h4>
+<p>:::{.metier}Métier::: Débriefing</p>
+<p>:::{.technique}Tech::: Livrable final</p>
+</section>
+</div>
+<hr>
+</section>
+<section id="livrables-à-produire" class="level2">
+<h2 class="anchored" data-anchor-id="livrables-à-produire">📦 Livrables à produire</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📝 Livrable 1 — Fiche de synthèse Module Métier::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Résumer les concepts clés du Module 1 dans tes propres mots.</p>
+<p><strong>Format</strong> : Document Markdown, Quarto ou PDF (1-2 pages max)</p>
+<p><strong>Contenu attendu</strong> :</p>
+<ol type="1">
+<li><strong>Les 5 concepts clés</strong> résumés en tes propres mots (pas de copier-coller !)</li>
+<li><strong>Un schéma de ton cru</strong> illustrant un concept au choix (spirale de dégradation, mutualisation, décomposition de la prime…)</li>
+<li><strong>Un exemple de ton expérience</strong> : relie un concept à une situation vécue chez AON, ASCENTIEL ou APRIL</li>
+</ol>
+<div class="hint-box">
+<p><strong>💡 Conseil</strong></p>
+<p>Pense à la fois où tu as vu un portefeuille se dégrader, ou un cas d’anti-sélection, ou un arbitrage entre volume et rentabilité. C’est ce genre de lien théorie-pratique qui ancre vraiment les concepts.</p>
+</div>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🐳 Livrable 2 — Docker opérationnel::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Prouver que Docker est installé et fonctionnel sur ta machine.</p>
+<p><strong>Format</strong> : Capture d’écran</p>
+<p><strong>Contenu attendu</strong> :</p>
+<p>Capture d’écran montrant le résultat des commandes :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="hint-box">
+<p><strong>💡 Conseil</strong></p>
+<p>Si tu rencontres des problèmes d’installation, note les erreurs et on en discutera au débriefing. Les problèmes courants sont : WSL2 non activé sur Windows, permissions sur Linux, ou espace disque insuffisant.</p>
+</div>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📊 Livrable 3 — Script Python dockerisé::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Créer et conteneuriser un script Python qui calcule des indicateurs simples.</p>
+<p><strong>Format</strong> : Dossier contenant Dockerfile, requirements.txt, et script Python</p>
+<p><strong>Contenu attendu</strong> :</p>
+<p>Un projet avec cette structure :</p>
+<pre><code>livrable-semaine-01/
+├── Dockerfile
+├── requirements.txt
+└── calcul_prime.py</code></pre>
+<p>Le script doit calculer et afficher :</p>
 <ul>
-<li><strong>Analyses factorielles</strong></li>
+<li>Une <strong>prime pure</strong> à partir de données simulées</li>
+<li>La <strong>fréquence</strong> et la <strong>sévérité</strong></li>
+<li>Un message de confirmation que le calcul s’est bien exécuté</li>
 </ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<p>Tu peux t’inspirer du script fourni dans le Module Technique 1, ou créer le tien.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🌟 Livrable 4 — Questions et réflexions::: :::{.livrable-status .bonus}Bonus:::</p>
+</div>
+<p><strong>Objectif</strong> : Préparer le débriefing avec des questions pertinentes.</p>
+<p><strong>Format</strong> : Liste de 2-3 questions</p>
+<p><strong>Contenu suggéré</strong> :</p>
+<ul>
+<li>Points du module métier que tu voudrais approfondir</li>
+<li>Difficultés rencontrées avec Docker</li>
+<li>Idées de lien entre les concepts et ton projet central</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="exercices-pratiques" class="level2">
+<h2 class="anchored" data-anchor-id="exercices-pratiques">🏋️ Exercices pratiques</h2>
+<section id="exercices-métier" class="level3">
+<h3 class="anchored" data-anchor-id="exercices-métier">Exercices Métier</h3>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M1 — Calcul de prime</p>
+</div>
+<p>Un assureur couvre 5 000 véhicules. Les données historiques montrent :</p>
+<ul>
+<li>Probabilité de sinistre par véhicule : 8% par an</li>
+<li>Coût moyen d’un sinistre : 2 500 €</li>
+<li>Frais de gestion : 15% de la prime pure</li>
+<li>Frais d’acquisition : 10% de la prime pure</li>
+<li>Marge souhaitée : 5% de la prime commerciale</li>
+</ul>
+<p><strong>Questions</strong> :</p>
+<ol type="1">
+<li>Calcule la prime pure par véhicule</li>
+<li>Calcule la prime commerciale</li>
+<li>Quel serait le S/P (ratio sinistres sur primes) si l’année suivante, 450 sinistres surviennent avec un coût moyen de 2 800 € ?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse factorielle des correspondances (AFC)
+Voir la solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse Factorielle des Correspondances (AFC) est une méthode statistique utilisée pour explorer les relations entre des variables qualitatives (catégorielles) dans des tableaux de contingence. Cette méthode permet de réduire la dimensionnalité des données et de représenter graphiquement les associations entre les catégories des variables sous forme de points dans un espace de faible dimension (généralement deux dimensions).</p>
+<p><strong>1. Prime pure</strong></p>
+<p><span class="math display">\[\text{Prime pure} = \text{Fréquence} \times \text{Sévérité} = 0.08 \times 2500 = 200 \text{ €}\]</span></p>
+<p><strong>2. Prime commerciale</strong></p>
+<p>Soit <span class="math inline">\(P_c\)</span> la prime commerciale :</p>
+<p><span class="math display">\[P_c = \text{Prime pure} + \text{Frais gestion} + \text{Frais acquisition} + \text{Marge}\]</span></p>
+<p><span class="math display">\[P_c = 200 + 0.15 \times 200 + 0.10 \times 200 + 0.05 \times P_c\]</span></p>
+<p><span class="math display">\[P_c = 200 + 30 + 20 + 0.05 \times P_c\]</span></p>
+<p><span class="math display">\[0.95 \times P_c = 250\]</span></p>
+<p><span class="math display">\[P_c = 263.16 \text{ €}\]</span></p>
+<p><strong>3. S/P réalisé</strong></p>
+<ul>
+<li>Primes encaissées : <span class="math inline">\(5000 \times 263.16 = 1\,315\,800\)</span> €</li>
+<li>Sinistres payés : <span class="math inline">\(450 \times 2800 = 1\,260\,000\)</span> €</li>
+<li>S/P = <span class="math inline">\(1\,260\,000 / 1\,315\,800 = 95.8\%\)</span></li>
+</ul>
+<p>Le S/P est élevé (&gt;90%), ce qui laisse peu de marge pour les frais. L’année a été défavorable car la fréquence réelle (450/5000 = 9%) et la sévérité (2800€) ont dépassé les hypothèses.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M2 — Analyse de spirale</p>
+</div>
+<p>Un portefeuille auto présente l’évolution suivante sur 3 ans :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Année</th>
+<th>Nb contrats</th>
+<th>Nouvelles affaires</th>
+<th>Résiliations</th>
+<th>S/P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td>10 000</td>
+<td>-</td>
+<td>-</td>
+<td>75%</td>
+</tr>
+<tr class="even">
+<td>N+1</td>
+<td>9 500</td>
+<td>800</td>
+<td>1 300</td>
+<td>82%</td>
+</tr>
+<tr class="odd">
+<td>N+2</td>
+<td>8 800</td>
+<td>600</td>
+<td>1 300</td>
+<td>91%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Questions</strong> :</p>
+<ol type="1">
+<li>Que s’est-il passé entre N et N+2 ?</li>
+<li>Quelles hypothèses peux-tu formuler sur le profil des clients qui partent vs ceux qui restent ?</li>
+<li>Que conseillerais-tu à l’assureur ?</li>
+</ol>
+<div class="reflexion-box">
+<p><strong>🤔 Piste de réflexion</strong></p>
+<p>Pense à la spirale de dégradation vue dans le module. Les chiffres racontent une histoire : regarde l’évolution du S/P, du taux de résiliation, et du volume de nouvelles affaires.</p>
+</div>
+</div>
+</section>
+<section id="exercices-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="exercices-techniques">Exercices Techniques</h3>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🐳 Exercice T1 — Exploration Docker Hub</p>
+</div>
+<p>Rends-toi sur <a href="https://hub.docker.com">Docker Hub</a> et recherche les images suivantes :</p>
+<ol type="1">
+<li><code>python</code> — Note les différentes variantes (slim, alpine, bullseye…)</li>
+<li><code>jupyter/scipy-notebook</code> — Image pour la data science</li>
+<li><code>postgres</code> — Base de données</li>
+</ol>
+<p><strong>Questions</strong> :</p>
+<ol type="1">
+<li>Quelle est la différence de taille entre <code>python:3.10</code> et <code>python:3.10-slim</code> ?</li>
+<li>Pourquoi utiliserait-on <code>python:3.10-alpine</code> ? Quel est l’inconvénient ?</li>
+<li>Combien de pulls (téléchargements) a l’image <code>python</code> officielle ?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse des composantes principales (ACP)
+Éléments de réponse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse des Composantes Principales (ACP) est une méthode statistique utilisée pour transformer un ensemble de variables potentiellement corrélées en un ensemble de variables non corrélées appelées <strong>composantes principales</strong>. Cette technique permet de réduire la dimensionnalité des données tout en préservant autant que possible leur variance.</p>
+<ol type="1">
+<li><p><code>python:3.10</code> fait environ <strong>900 Mo</strong>, <code>python:3.10-slim</code> environ <strong>150 Mo</strong>. La version slim ne contient pas les outils de compilation et les headers de développement.</p></li>
+<li><p><code>python:3.10-alpine</code> est basée sur Alpine Linux (très léger, ~50 Mo). L’inconvénient : certains packages Python (numpy, pandas) sont difficiles à installer car ils nécessitent une compilation avec des dépendances qui ne sont pas présentes par défaut sur Alpine.</p></li>
+<li><p>L’image Python officielle a <strong>plus d’un milliard de pulls</strong> — c’est l’une des images les plus utilisées !</p></li>
+</ol>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🐳 Exercice T2 — Manipulation de conteneurs</p>
+</div>
+<p>Effectue les manipulations suivantes et note les commandes utilisées :</p>
+<ol type="1">
+<li>Lance un conteneur Python en mode interactif</li>
+<li>Dans le conteneur, exécute <code>import sys; print(sys.version)</code></li>
+<li>Sors du conteneur</li>
+<li>Liste tous les conteneurs (y compris arrêtés)</li>
+<li>Supprime le conteneur que tu viens de créer</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Analyse des composantes multiples (ACM)
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>L’Analyse des Composantes Multiples (ACM) est une extension de l’Analyse des Composantes Principales (ACP) qui permet de traiter simultanément plusieurs tableaux de données, souvent appelés modalités, lorsqu’il y a plusieurs ensembles de variables à analyser conjointement. Cela peut être particulièrement utile lorsque les données sont organisées en groupes ou en ensembles distincts et que l’on souhaite étudier leurs relations globales.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Lancer Python interactif</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> python:3.10 python</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Dans Python</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> import <span class="ex">sys</span><span class="kw">;</span> <span class="ex">print</span><span class="er">(</span><span class="ex">sys.version</span><span class="kw">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">3.10.x</span> <span class="er">(</span><span class="ex">...</span><span class="kw">)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> exit<span class="kw">()</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Tu es sorti automatiquement avec exit()</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Lister tous les conteneurs</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps <span class="at">-a</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Supprimer le conteneur (remplace CONTAINER_ID par l'ID affiché)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> rm CONTAINER_ID</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Astuce : pour éviter d'avoir à supprimer, utilise --rm</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--rm</span> python:3.10 python</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<ul>
-<li><strong>Méthodes de partitionnement</strong></li>
-</ul>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🐳 Exercice T3 — Dockerfile personnalisé</p>
+</div>
+<p>Crée un Dockerfile qui :</p>
+<ol type="1">
+<li>Part de l’image <code>python:3.10-slim</code></li>
+<li>Installe <code>pandas</code> et <code>numpy</code></li>
+<li>Copie un script <code>hello.py</code> qui affiche “Bonjour depuis Docker !”</li>
+<li>Exécute ce script au démarrage</li>
+</ol>
+<p><strong>Fichier <code>hello.py</code></strong> :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🐳 Bonjour depuis Docker !"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"   pandas version: </span><span class="sc">{</span>pd<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"   numpy version: </span><span class="sc">{</span>np<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Classification ascendante hiérarchique (CAH)
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La Classification Ascendante Hiérarchique (CAH) est une méthode d’analyse statistique utilisée pour regrouper des observations ou des variables en clusters (groupes) homogènes et hétérogènes successivement, de manière ascendante (du bas vers le haut). Cette méthode est non paramétrique et exploratoire, ce qui signifie qu’elle ne nécessite pas d’hypothèses préalables sur la structure des données et qu’elle est utilisée pour explorer la structure intrinsèque des données.</p>
+<p><strong>requirements.txt</strong> :</p>
+<pre class="text"><code>pandas==2.0.3
+numpy==1.24.3</code></pre>
+<p><strong>Dockerfile</strong> :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> python:3.10-slim</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WORKDIR</span> /app</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> requirements.txt .</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">pip</span> install <span class="at">--no-cache-dir</span> <span class="at">-r</span> requirements.txt</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> hello.py .</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">CMD</span> [<span class="st">"python"</span>, <span class="st">"hello.py"</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Commandes</strong> :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> hello-docker:v1 .</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> hello-docker:v1</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-K-Means (K-plus proches voisins)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Le K-means est l’un des algorithmes de clustering les plus populaires en analyse de données non supervisée. Son objectif principal est de partitionner un ensemble de données en K clusters distincts, où chaque observation appartient au cluster avec le centre (centroid) le plus proche</p>
-</div>
-</div>
-</div>
+<hr>
 </section>
-<section id="résultats" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Résultats</h1>
-<p>L’analyse des composantes principales (ACP) nous a permis de déterminer les 2 grandes classes de biens homogènes suivantes :</p>
-<ul>
-<li><p>Les biens immobiliers présentant des prix faibles, une petite surface habitable et qui sont récents.</p></li>
-<li><p>Inverserment, les biens immobiliers présentant des prix relativement élevés, une surface habitable relativement élevée et qui sont plus anciens.</p></li>
-</ul>
-<p>L’analyse des composantes multiples (ACM) nous a permis quant à elle de classifier les biens comme suit :</p>
-<ul>
-<li><p>Les biens chauffés à l’électrique et n’ayant pas de cheminée</p></li>
-<li><p>Inversement, les biens possédant au minimum une cheminée et chauffés à l’air chaud ou à l’eau chaude.</p></li>
-</ul>
-<p>En conclusion, l’application des techniques de data mining présentent une utilité non négligeable. En effet, ces dernières nous ont permis de mettre en évidence les biens qui présentent des caractères similaires et qui par conséquent, peuvent être scindés en plusieurs catégories. Dans un but de segmentation du marché ou d’analyse de la clientèle, ces techniques présentent une utilité sans précédente.</p>
 </section>
-<section id="outil-technique" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Outil technique</h1>
-<ul>
-<li><strong>Logiciel</strong> <i class="fa-brands fa-r-project" aria-label="r-project"></i></li>
-</ul>
-<div style="text-align:center;">
-<blockquote class="blockquote">
-<p>Vous trouverez le rapport ici :</p>
-</blockquote>
-<div class="chevron-styling">
-<p><iconify-icon inline="" icon="pixelarticons:chevron-down" style="font-size: 5em;" aria-label="Icon chevron-down from pixelarticons Iconify.design set." title="Icon chevron-down from pixelarticons Iconify.design set."></iconify-icon></p>
-</div>
-</div>
-<div style="text-align:center;">
-<p><a href="../../assets/img/projet2/immobilier_saratoga.pdf" class="btn btn-outline-primary center" role="button">Lire le rapport <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-</div>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
-
-<ol>
-<li id="fn1"><p>La fouille de données (ou “datamining” en anglais) désigne le processus de découverte de motifs, de corrélations ou d’anomalies en analysant de grands ensembles de données à l’aide de diverses techniques computationnelles. Cela implique d’extraire des informations utiles à partir de données brutes pour découvrir des motifs cachés, des relations ou des insights qui peuvent aider à la prise de décision ou à la prédiction.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>La classification non supervisée, également connue sous le nom de clustering, est une méthode de fouille de données qui consiste à regrouper des objets ou des données sans utiliser d’étiquettes ou de catégories prédéfinies.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>L’homogénéité d’une population ou d’une classe, en termes statistiques, se réfère à la similitude ou à la cohérence des individus ou des observations au sein de cette population ou classe. Cela signifie que les membres de cette population ou classe présentent des caractéristiques ou des attributs similaires.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<section id="faire-le-pont-métier-technique" class="level2">
+<h2 class="anchored" data-anchor-id="faire-le-pont-métier-technique">🔗 Faire le pont métier-technique</h2>
+<section id="questions-de-réflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="questions-de-réflexion">🤔 Questions de réflexion</h3>
+<p>Ces questions n’ont pas de “bonne réponse” unique. Elles sont là pour t’aider à connecter les deux volets de la formation.</p>
+<ol type="1">
+<li><p><strong>En quoi Docker peut-il aider à éviter des erreurs dans les calculs de sinistralité ?</strong></p>
+<p>Pense à la reproductibilité : si ton modèle de tarification donne des résultats différents selon la machine, quelles conséquences pour l’assureur ?</p></li>
+<li><p><strong>Comment pourrais-tu utiliser Docker pour ton projet central de pilotage de portefeuille ?</strong></p>
+<p>Imagine l’architecture : une API de scoring, un dashboard, une base de données… Comment Docker faciliterait le déploiement ?</p></li>
+<li><p><strong>Dans ton expérience chez AON ou ASCENTIEL, as-tu rencontré des problèmes de reproductibilité ou de “ça marche sur ma machine” ?</strong></p>
+<p>Comment Docker aurait-il pu aider ?</p></li>
 </ol>
-</section></div></main> <!-- /main -->
+</section>
+<hr>
+</section>
+<section id="checklist-de-fin-de-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</h2>
+<p>Avant de passer à la Semaine 2, vérifie que tu as :</p>
+<div class="checklist">
+<ul>
+<li>Terminé la lecture du Module Métier 1</li>
+<li>Répondu aux 4 questions d’auto-évaluation du Module Métier</li>
+<li>Terminé la lecture du Module Technique 1</li>
+<li>Installé Docker et vérifié son fonctionnement</li>
+<li>Produit le Livrable 1 (fiche de synthèse)</li>
+<li>Produit le Livrable 2 (capture d’écran Docker)</li>
+<li>Produit le Livrable 3 (script dockerisé)</li>
+<li>Réalisé au moins 2 exercices métier</li>
+<li>Réalisé au moins 2 exercices techniques</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="pour-le-débriefing" class="level2">
+<h2 class="anchored" data-anchor-id="pour-le-débriefing">📬 Pour le débriefing</h2>
+<p>Quand tu auras terminé, envoie-moi :</p>
+<ol type="1">
+<li>Ta <strong>fiche de synthèse</strong> (Livrable 1)</li>
+<li>Ta <strong>capture d’écran Docker</strong> (Livrable 2)</li>
+<li>Ton <strong>projet dockerisé</strong> (Livrable 3) — tu peux partager le code directement ou via GitHub</li>
+<li>Tes <strong>questions</strong> éventuelles</li>
+</ol>
+<p>Je te ferai un retour et on validera ensemble avant de passer à la Semaine 2 !</p>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 1</a> <a href="module-metier-01.html" class="btn btn-outline-primary">Module Métier 1</a> <a href="module-technique-01.html" class="btn btn-outline-primary">Module Technique 1</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1116,5 +1604,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

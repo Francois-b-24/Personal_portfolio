@@ -1,0 +1,793 @@
+---
+title: "Module Technique 1 — Introduction à Docker"
+subtitle: "Conteneuriser tes applications pour les rendre portables et reproductibles"
+author: "François Boussengui"
+date: last-modified
+categories: [docker, mlops, technique]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+
+
+```{=html}
+<style>
+.objectifs-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #06436e;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin: 1.5rem 0;
+}
+
+.objectifs-box h3 {
+    color: #06436e;
+    margin-top: 0;
+}
+
+.concept-cle {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 4px solid #72f1b8;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.attention-box {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left: 4px solid #fe4454;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.exemple-box {
+    background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%);
+    border-left: 4px solid #f8d65c;
+    padding: 1.25rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.terminal-box {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.terminal-box .prompt {
+    color: #72f1b8;
+}
+
+.terminal-box .comment {
+    color: #64748b;
+}
+
+.terminal-box .output {
+    color: #f8d65c;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.comparison-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.comparison-card h4 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prerequis-temps {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.prerequis-temps > div {
+    background: #f1f5f9;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+}
+
+.commande-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.commande-table th {
+    background: #06436e;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.commande-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.commande-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.commande-table code {
+    background: #e2e8f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+À l'issue de ce module, tu seras capable de :
+
+1. **Expliquer** pourquoi Docker est essentiel en Data Science et MLOps
+2. **Distinguer** les concepts d'image, conteneur, volume et réseau
+3. **Installer** Docker sur ta machine (Windows, Mac ou Linux)
+4. **Écrire** un Dockerfile basique pour une application Python
+5. **Utiliser** les commandes essentielles pour gérer tes conteneurs
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Notions de base en ligne de commande (terminal/bash)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures (installation incluse)
+:::
+:::
+
+---
+
+# Pourquoi Docker ?
+
+## Le problème du "ça marche sur ma machine"
+
+Tu as sûrement déjà vécu cette situation : tu développes un script Python, tout fonctionne parfaitement sur ton ordinateur, et quand tu le partages avec un collègue ou que tu le déploies en production... rien ne marche.
+
+Les causes possibles sont nombreuses :
+
+- Versions de Python différentes (3.8 vs 3.11)
+- Packages manquants ou versions incompatibles
+- Variables d'environnement absentes
+- Dépendances système (librairies C, drivers...)
+- Différences d'OS (Windows vs Linux)
+
+:::{.exemple-box}
+**🎯 Exemple concret**
+
+Tu as développé un modèle de prédiction de sinistralité avec `scikit-learn 1.3`, `pandas 2.0` et `numpy 1.24`. Ton collègue a des versions différentes → le modèle crashe ou, pire, donne des résultats différents silencieusement.
+:::
+
+## La solution Docker : tout empaqueter
+
+Docker résout ce problème en **empaquetant** ton application avec **tout son environnement** :
+
+```{mermaid}
+%%| fig-cap: "Sans Docker vs Avec Docker"
+
+flowchart LR
+    subgraph SANS["❌ Sans Docker"]
+        A1[Ton code] --> B1[Machine 1<br>Python 3.8]
+        A1 --> C1[Machine 2<br>Python 3.11]
+        A1 --> D1[Serveur<br>Python ???]
+    end
+    
+    subgraph AVEC["✅ Avec Docker"]
+        A2[Ton code<br>+ Dockerfile] --> B2[Conteneur<br>Python 3.10]
+        B2 --> C2[Machine 1]
+        B2 --> D2[Machine 2]
+        B2 --> E2[Serveur]
+    end
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Un conteneur Docker embarque ton code **ET** son environnement complet. Il fonctionnera de façon identique sur n'importe quelle machine où Docker est installé.
+:::
+
+## Docker vs Machines Virtuelles
+
+Tu connais peut-être les machines virtuelles (VM). Docker est différent et plus léger :
+
+:::{.comparison-grid}
+
+:::{.comparison-card}
+#### 🖥️ Machine Virtuelle
+
+- Virtualise **tout le système** (OS complet)
+- Démarre en **minutes**
+- Consomme **beaucoup de ressources** (RAM, disque)
+- Isolation **totale**
+- Taille : **plusieurs Go**
+:::
+
+:::{.comparison-card}
+#### 🐳 Conteneur Docker
+
+- Virtualise **seulement l'application**
+- Démarre en **secondes**
+- Consomme **peu de ressources**
+- Partage le noyau de l'OS hôte
+- Taille : **quelques Mo à centaines de Mo**
+:::
+
+:::
+
+```{mermaid}
+%%| fig-cap: "Architecture VM vs Docker"
+
+flowchart TB
+    subgraph VM["Machine Virtuelle"]
+        direction TB
+        V1[App 1] --> VOS1[OS Guest 1]
+        V2[App 2] --> VOS2[OS Guest 2]
+        VOS1 --> HYP[Hyperviseur]
+        VOS2 --> HYP
+        HYP --> VH[Hardware]
+    end
+    
+    subgraph DOCKER["Conteneurs Docker"]
+        direction TB
+        D1[App 1] --> DE[Docker Engine]
+        D2[App 2] --> DE
+        D3[App 3] --> DE
+        DE --> DOS[OS Hôte]
+        DOS --> DH[Hardware]
+    end
+```
+
+---
+
+# Les concepts fondamentaux
+
+## Image vs Conteneur
+
+C'est LA distinction cruciale à comprendre :
+
+| Concept | Analogie | Description |
+|---------|----------|-------------|
+| **Image** | Recette de cuisine | Template en lecture seule qui définit l'environnement |
+| **Conteneur** | Plat cuisiné | Instance en cours d'exécution d'une image |
+
+:::{.exemple-box}
+**🍳 Analogie culinaire**
+
+- L'**image** c'est la recette du gâteau : les ingrédients, les étapes, les quantités
+- Le **conteneur** c'est le gâteau que tu as préparé à partir de la recette
+- Tu peux faire **plusieurs gâteaux** (conteneurs) à partir de **la même recette** (image)
+:::
+
+```{mermaid}
+%%| fig-cap: "Relation Image → Conteneur"
+
+flowchart LR
+    I[🖼️ Image<br>python:3.10] --> C1[📦 Conteneur 1<br>mon-app-dev]
+    I --> C2[📦 Conteneur 2<br>mon-app-test]
+    I --> C3[📦 Conteneur 3<br>mon-app-prod]
+```
+
+## Dockerfile : la recette
+
+Le **Dockerfile** est un fichier texte qui contient les instructions pour construire une image.
+
+Voici un exemple simple pour une application Python :
+
+```dockerfile
+# Image de base : Python 3.10 sur Linux léger (Alpine)
+FROM python:3.10-slim
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier le fichier des dépendances
+COPY requirements.txt .
+
+# Installer les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier le code de l'application
+COPY . .
+
+# Commande par défaut au démarrage du conteneur
+CMD ["python", "main.py"]
+```
+
+Chaque instruction crée une **couche** (layer) dans l'image :
+
+```{mermaid}
+%%| fig-cap: "Les couches d'une image Docker"
+
+flowchart TB
+    L1[Layer 1: Image de base Python 3.10] --> L2
+    L2[Layer 2: WORKDIR /app] --> L3
+    L3[Layer 3: COPY requirements.txt] --> L4
+    L4[Layer 4: RUN pip install] --> L5
+    L5[Layer 5: COPY . .] --> L6
+    L6[Layer 6: CMD python main.py]
+    
+    style L1 fill:#06436e,color:#fff
+    style L4 fill:#f8d65c,color:#333
+    style L6 fill:#72f1b8,color:#333
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Docker **met en cache** les couches. Si tu modifies seulement ton code (pas les dépendances), seules les dernières couches seront reconstruites. C'est pourquoi on copie `requirements.txt` **avant** le code !
+:::
+
+## Volumes : persister les données
+
+Par défaut, les données dans un conteneur sont **éphémères** : elles disparaissent quand le conteneur s'arrête.
+
+Les **volumes** permettent de persister les données et de les partager entre le conteneur et ta machine :
+
+```{mermaid}
+%%| fig-cap: "Volume Docker"
+
+flowchart LR
+    subgraph HOST["🖥️ Machine hôte"]
+        H1[/home/user/data]
+    end
+    
+    subgraph CONTAINER["📦 Conteneur"]
+        C1[/app/data]
+    end
+    
+    H1 <-->|Volume monté| C1
+```
+
+---
+
+# Installation de Docker
+
+## Sur Windows
+
+1. **Prérequis** : Windows 10/11 64-bit avec WSL2 activé
+
+2. **Télécharger** Docker Desktop : [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+
+3. **Installer** en suivant l'assistant
+
+4. **Vérifier** l'installation :
+
+:::{.terminal-box}
+<span class="prompt">$</span> docker --version<br>
+<span class="output">Docker version 24.0.7, build afdd53b</span><br><br>
+<span class="prompt">$</span> docker run hello-world<br>
+<span class="output">Hello from Docker!</span><br>
+<span class="output">This message shows that your installation appears to be working correctly.</span>
+:::
+
+## Sur macOS
+
+1. **Télécharger** Docker Desktop pour Mac : [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+   - Choisir **Apple Silicon** (M1/M2/M3) ou **Intel** selon ton Mac
+
+2. **Installer** en glissant dans Applications
+
+3. **Lancer** Docker Desktop
+
+4. **Vérifier** dans le terminal
+
+## Sur Linux (Ubuntu/Debian)
+
+:::{.terminal-box}
+<span class="comment"># Mettre à jour les packages</span><br>
+<span class="prompt">$</span> sudo apt update<br><br>
+<span class="comment"># Installer les prérequis</span><br>
+<span class="prompt">$</span> sudo apt install ca-certificates curl gnupg<br><br>
+<span class="comment"># Ajouter la clé GPG officielle de Docker</span><br>
+<span class="prompt">$</span> sudo install -m 0755 -d /etc/apt/keyrings<br>
+<span class="prompt">$</span> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br><br>
+<span class="comment"># Ajouter le repository</span><br>
+<span class="prompt">$</span> echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br><br>
+<span class="comment"># Installer Docker</span><br>
+<span class="prompt">$</span> sudo apt update<br>
+<span class="prompt">$</span> sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<br><br>
+<span class="comment"># Permettre d'utiliser Docker sans sudo</span><br>
+<span class="prompt">$</span> sudo usermod -aG docker $USER<br>
+<span class="comment"># Puis déconnecte-toi et reconnecte-toi</span>
+:::
+
+:::{.attention-box}
+**⚠️ Important**
+
+Après l'installation sur Linux, n'oublie pas de te déconnecter/reconnecter (ou redémarrer) pour que les permissions Docker soient prises en compte.
+:::
+
+---
+
+# Les commandes essentielles
+
+## Cheat sheet
+
+Voici les commandes que tu utiliseras au quotidien :
+
+### Gestion des images
+
+| Commande | Description |
+|----------|-------------|
+| `docker build -t nom:tag .` | Construire une image depuis un Dockerfile |
+| `docker images` | Lister les images locales |
+| `docker pull nom:tag` | Télécharger une image depuis Docker Hub |
+| `docker rmi nom:tag` | Supprimer une image |
+
+### Gestion des conteneurs
+
+| Commande | Description |
+|----------|-------------|
+| `docker run nom:tag` | Créer et démarrer un conteneur |
+| `docker run -it nom:tag bash` | Démarrer en mode interactif |
+| `docker run -d nom:tag` | Démarrer en arrière-plan (detached) |
+| `docker ps` | Lister les conteneurs en cours |
+| `docker ps -a` | Lister tous les conteneurs (y compris arrêtés) |
+| `docker stop id` | Arrêter un conteneur |
+| `docker rm id` | Supprimer un conteneur |
+| `docker logs id` | Voir les logs d'un conteneur |
+| `docker exec -it id bash` | Entrer dans un conteneur en cours |
+
+### Options utiles de `docker run`
+
+| Option | Description |
+|--------|-------------|
+| `-p 8080:80` | Mapper le port 80 du conteneur au port 8080 de l'hôte |
+| `-v /host/path:/container/path` | Monter un volume |
+| `-e VAR=value` | Définir une variable d'environnement |
+| `--name mon-conteneur` | Donner un nom au conteneur |
+| `--rm` | Supprimer le conteneur automatiquement à l'arrêt |
+
+## Exemples pratiques
+
+### Lancer un conteneur Python interactif
+
+:::{.terminal-box}
+<span class="prompt">$</span> docker run -it python:3.10 python<br>
+<span class="output">Python 3.10.13 (main, Nov 15 2023, 03:40:21)</span><br>
+<span class="output">>>> print("Hello depuis Docker!")</span><br>
+<span class="output">Hello depuis Docker!</span><br>
+<span class="output">>>> exit()</span>
+:::
+
+### Construire et lancer ta propre image
+
+:::{.terminal-box}
+<span class="comment"># Se placer dans le dossier contenant le Dockerfile</span><br>
+<span class="prompt">$</span> cd mon-projet<br><br>
+<span class="comment"># Construire l'image (le point = contexte courant)</span><br>
+<span class="prompt">$</span> docker build -t mon-app:v1 .<br><br>
+<span class="comment"># Lancer un conteneur</span><br>
+<span class="prompt">$</span> docker run --rm mon-app:v1<br><br>
+<span class="comment"># Lancer avec un volume pour le développement</span><br>
+<span class="prompt">$</span> docker run --rm -v $(pwd):/app mon-app:v1
+:::
+
+---
+
+# Ton premier Dockerfile Data Science
+
+## Structure du projet
+
+Créons un projet simple qui calcule des indicateurs de sinistralité :
+
+```
+mon-projet/
+├── Dockerfile
+├── requirements.txt
+├── main.py
+└── data/
+    └── sinistres.csv
+```
+
+## Le fichier requirements.txt
+
+```text
+pandas==2.0.3
+numpy==1.24.3
+matplotlib==3.7.2
+```
+
+## Le script main.py
+
+```python
+"""
+Calcul d'indicateurs de sinistralité
+Premier script dockerisé !
+"""
+import pandas as pd
+import numpy as np
+
+def calculer_indicateurs(df: pd.DataFrame) -> dict:
+    """Calcule les indicateurs clés de sinistralité."""
+    
+    # Fréquence = nombre de sinistres / exposition
+    frequence = len(df) / df['exposition'].sum()
+    
+    # Sévérité moyenne = coût total / nombre de sinistres
+    severite = df['cout'].mean()
+    
+    # Prime pure = fréquence × sévérité
+    prime_pure = frequence * severite
+    
+    return {
+        'frequence': frequence,
+        'severite': severite,
+        'prime_pure': prime_pure,
+        'nb_sinistres': len(df),
+        'cout_total': df['cout'].sum()
+    }
+
+def main():
+    print("=" * 50)
+    print("🐳 Script de sinistralité dockerisé")
+    print("=" * 50)
+    
+    # Créer des données d'exemple
+    np.random.seed(42)
+    n_sinistres = 1000
+    
+    df = pd.DataFrame({
+        'id_sinistre': range(n_sinistres),
+        'cout': np.random.lognormal(mean=7, sigma=1, size=n_sinistres),
+        'exposition': np.random.uniform(0.5, 1.0, size=n_sinistres)
+    })
+    
+    # Calculer les indicateurs
+    indicateurs = calculer_indicateurs(df)
+    
+    print("\n📊 Indicateurs calculés :")
+    print(f"   Nombre de sinistres : {indicateurs['nb_sinistres']:,}")
+    print(f"   Coût total         : {indicateurs['cout_total']:,.0f} €")
+    print(f"   Fréquence          : {indicateurs['frequence']:.4f}")
+    print(f"   Sévérité moyenne   : {indicateurs['severite']:,.0f} €")
+    print(f"   Prime pure         : {indicateurs['prime_pure']:,.0f} €")
+    print("\n✅ Calcul terminé avec succès !")
+
+if __name__ == "__main__":
+    main()
+```
+
+## Le Dockerfile
+
+```dockerfile
+# Image de base Python 3.10
+FROM python:3.10-slim
+
+# Métadonnées
+LABEL maintainer="François Boussengui"
+LABEL description="Calcul d'indicateurs de sinistralité"
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier et installer les dépendances (pour profiter du cache Docker)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier le code source
+COPY main.py .
+
+# Commande par défaut
+CMD ["python", "main.py"]
+```
+
+## Build et Run
+
+:::{.terminal-box}
+<span class="comment"># Construire l'image</span><br>
+<span class="prompt">$</span> docker build -t sinistralite:v1 .<br>
+<span class="output">[+] Building 15.3s (9/9) FINISHED</span><br>
+<span class="output"> => [1/4] FROM python:3.10-slim</span><br>
+<span class="output"> => [2/4] WORKDIR /app</span><br>
+<span class="output"> => [3/4] COPY requirements.txt .</span><br>
+<span class="output"> => [4/4] RUN pip install ...</span><br>
+<span class="output"> => [5/5] COPY main.py .</span><br><br>
+<span class="comment"># Lancer le conteneur</span><br>
+<span class="prompt">$</span> docker run --rm sinistralite:v1<br>
+<span class="output">==================================================</span><br>
+<span class="output">🐳 Script de sinistralité dockerisé</span><br>
+<span class="output">==================================================</span><br>
+<span class="output"></span><br>
+<span class="output">📊 Indicateurs calculés :</span><br>
+<span class="output">   Nombre de sinistres : 1,000</span><br>
+<span class="output">   Coût total         : 1,847,293 €</span><br>
+<span class="output">   Fréquence          : 1.3245</span><br>
+<span class="output">   Sévérité moyenne   : 1,847 €</span><br>
+<span class="output">   Prime pure         : 2,447 €</span><br>
+<span class="output"></span><br>
+<span class="output">✅ Calcul terminé avec succès !</span>
+:::
+
+---
+
+# Bonnes pratiques
+
+## Optimiser la taille de l'image
+
+:::{.comparison-grid}
+
+:::{.comparison-card}
+#### ❌ À éviter
+
+```dockerfile
+FROM python:3.10
+RUN apt-get update
+RUN apt-get install -y gcc
+RUN pip install pandas
+RUN pip install numpy
+COPY . .
+```
+
+- Image de base lourde
+- Plusieurs RUN = plusieurs couches
+- Pas de nettoyage du cache
+:::
+
+:::{.comparison-card}
+#### ✅ Recommandé
+
+```dockerfile
+FROM python:3.10-slim
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc && \
+    rm -rf /var/lib/apt/lists/*
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+```
+
+- Image slim (plus légère)
+- Commandes groupées
+- Cache nettoyé
+:::
+
+:::
+
+## Utiliser un .dockerignore
+
+Comme `.gitignore`, le fichier `.dockerignore` exclut des fichiers du contexte de build :
+
+```text
+# .dockerignore
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.env
+*.md
+.vscode/
+.idea/
+data/raw/
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Un bon `.dockerignore` accélère le build et réduit la taille de l'image en évitant de copier des fichiers inutiles.
+:::
+
+## Ne pas lancer en root
+
+Par défaut, les conteneurs s'exécutent en tant que root. En production, c'est un risque de sécurité :
+
+```dockerfile
+FROM python:3.10-slim
+
+# Créer un utilisateur non-root
+RUN useradd --create-home appuser
+WORKDIR /home/appuser/app
+
+# Copier les fichiers
+COPY --chown=appuser:appuser . .
+
+# Passer à l'utilisateur non-root
+USER appuser
+
+# Installer les dépendances pour cet utilisateur
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+CMD ["python", "main.py"]
+```
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels à retenir
+
+1. **Docker résout le "ça marche sur ma machine"** — En empaquetant ton code avec son environnement complet
+
+2. **Image ≠ Conteneur** — L'image est la recette, le conteneur est le plat cuisiné
+
+3. **Le Dockerfile définit l'image** — C'est la recette étape par étape pour construire ton environnement
+
+4. **Les volumes persistent les données** — Sans volume, les données sont perdues à l'arrêt du conteneur
+
+5. **L'ordre des instructions compte** — Mets les éléments qui changent peu (dépendances) avant ceux qui changent souvent (code) pour profiter du cache
+:::
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1 : Quelle est la différence entre une image et un conteneur ?
+
+**Réponse** : Une **image** est un template en lecture seule qui contient l'environnement (OS, dépendances, code). Un **conteneur** est une instance en cours d'exécution de cette image. On peut créer plusieurs conteneurs à partir de la même image.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Pourquoi copie-t-on requirements.txt avant le reste du code dans un Dockerfile ?
+
+**Réponse** : Pour profiter du **cache Docker**. Les dépendances changent rarement, alors que le code change souvent. En copiant requirements.txt d'abord et en installant les dépendances, cette couche sera mise en cache. Les builds suivants seront beaucoup plus rapides car seules les couches après le changement seront reconstruites.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Comment persister des données entre les exécutions d'un conteneur ?
+
+**Réponse** : En utilisant un **volume**. On monte un dossier de la machine hôte dans le conteneur avec l'option `-v` : `docker run -v /chemin/hote:/chemin/conteneur mon-image`. Les données écrites dans `/chemin/conteneur` seront en fait stockées dans `/chemin/hote` et persisteront.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : Quelle commande permet d'entrer dans un conteneur en cours d'exécution ?
+
+**Réponse** : `docker exec -it <container_id> bash` (ou `sh` si bash n'est pas disponible). L'option `-i` garde STDIN ouvert et `-t` alloue un pseudo-TTY pour avoir un terminal interactif.
+:::
+
+---
+
+# Ressources complémentaires {.unnumbered}
+
+- **Documentation officielle** : [https://docs.docker.com](https://docs.docker.com)
+- **Docker Hub** (images publiques) : [https://hub.docker.com](https://hub.docker.com)
+- **Tutoriel interactif** : [https://www.docker.com/play-with-docker](https://www.docker.com/play-with-docker)
+- **Grafikart (FR)** : Excellents tutoriels Docker en français sur YouTube
+
+---
+
+:::{.exemple-box}
+**🐳 Prochaine étape technique**
+
+**Semaine 2** : Nous approfondirons Docker avec Docker Compose pour orchestrer plusieurs conteneurs, et nous dockeriserons ton application Streamlit de prédiction de prix de montres.
+:::
+
+---
+
+[← Retour à la Semaine 1](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-01.html){.btn .btn-primary}
