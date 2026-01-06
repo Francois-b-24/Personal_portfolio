@@ -44,7 +44,7 @@ Sur ce site, vous découvrirez mon parcours académique et professionnel, un ape
 :::
 
 ::: {.stat-box style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);"}
-<div style="font-size: 2.5rem; font-weight: bold; color: #ffbc8c; margin-bottom: 0.5rem;">10+</div>
+<div style="font-size: 2.5rem; font-weight: bold; color: #ffbc8c; margin-bottom: 0.5rem;">4+</div>
 <div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Technologies maîtrisées</div>
 :::
 :::
@@ -58,15 +58,3 @@ Sur ce site, vous découvrirez mon parcours académique et professionnel, un ape
 
 [Projets {{< fa arrow-up-right-from-square >}}](https://bfrancois.netlify.app/sections/){.btn .btn-outline-primary .btn .center role="button"}
 :::
-
----
-
-::: {style="text-align:center; margin-top: 3rem;"}
-## {{< fa brands github >}} Activité GitHub
-
-Retrouvez tous mes projets open-source et contributions sur GitHub.
-:::
-
-<div id="github-stats-container"></div>
-
-<script src="utils/github-stats.html"></script>

@@ -1,5 +1,5 @@
 ---
-title: "Mon parcours"
+title: "Mon parcours professionnelle"
 smooth-scroll: true
 comments: false
 author: ""
@@ -15,9 +15,9 @@ author: ""
 :::
 ::: {.timeline-description}
 
-## {{< fa briefcase >}} Chargé d’études statistiques / Data Analyst  
+## {{< fa briefcase >}} Chargé d’études statistiques
 {{< fa building >}} **Aon France**  
-{{< fa calendar-days >}} 02/2023 – Présent  
+{{< fa calendar-days >}} 02/2023 – 12/2025  
 {{< fa location-dot >}} *35 rue de la Fédération, 75015, Paris, France*  
 
 - Conception, automatisation et industrialisation de reportings de **sinistralité flotte automobile** (Excel, VBA, MyReport).  
