@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="BOUSSENGUI François">
-<meta name="description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
+<meta name="description" content="Une application Streamlit pour modéliser, tarifer et piloter le risque en assurance automobile — GLM, XGBoost, élasticité et pricing commercial.">
 
-<title>François BOUSSENGUI | ⌚ Watch Analytics</title>
+<title>François BOUSSENGUI | 🏎️ Motor Insurance Pricing Dashboard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -175,8 +175,8 @@ cookieconsent.run({
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | ⌚ Watch Analytics">
-<meta property="og:description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
+<meta property="og:title" content="François BOUSSENGUI | 🏎️ Motor Insurance Pricing Dashboard">
+<meta property="og:description" content="Une application Streamlit pour modéliser, tarifer et piloter le risque en assurance automobile — GLM, XGBoost, élasticité et pricing commercial.">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -184,8 +184,8 @@ cookieconsent.run({
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | ⌚ Watch Analytics">
-<meta name="twitter:description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
+<meta name="twitter:title" content="François BOUSSENGUI | 🏎️ Motor Insurance Pricing Dashboard">
+<meta name="twitter:description" content="Une application Streamlit pour modéliser, tarifer et piloter le risque en assurance automobile — GLM, XGBoost, élasticité et pricing commercial.">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -468,19 +468,21 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">⌚ Watch Analytics</h1>
-            <p class="subtitle lead">Analyse interactive du marché des montres d’occasion (Chrono24)</p>
+      <h1 class="title">🏎️ Motor Insurance Pricing Dashboard</h1>
+            <p class="subtitle lead">Tableau de bord actuariel interactif pour la tarification automobile (freMTPL2)</p>
                   <div>
         <div class="description">
-          <em>Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.</em>
+          <em>Une application Streamlit pour modéliser, tarifer et piloter le risque en assurance automobile — GLM, XGBoost, élasticité et pricing commercial.</em>
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">Data Science</div>
-                <div class="quarto-category">Analyse de marché</div>
-                <div class="quarto-category">Horlogerie</div>
+                <div class="quarto-category">Actuariat</div>
+                <div class="quarto-category">Assurance</div>
                 <div class="quarto-category">Streamlit</div>
-                <div class="quarto-category">Machine learning</div>
+                <div class="quarto-category">Machine Learning</div>
+                <div class="quarto-category">GLM</div>
+                <div class="quarto-category">Pricing</div>
               </div>
                   </div>
   </div>
@@ -498,7 +500,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">4 novembre 2025</p>
+        <p class="date">14 février 2026</p>
       </div>
     </div>
     
@@ -518,8 +520,8 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <li><a href="#objectif-du-projet" id="toc-objectif-du-projet" class="nav-link" data-scroll-target="#objectif-du-projet"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></a></li>
   <li><a href="#méthodologie-et-technologies" id="toc-méthodologie-et-technologies" class="nav-link" data-scroll-target="#méthodologie-et-technologies"><span class="header-section-number">3</span> <strong>Méthodologie et technologies</strong></a></li>
   <li><a href="#fonctionnalités-principales" id="toc-fonctionnalités-principales" class="nav-link" data-scroll-target="#fonctionnalités-principales"><span class="header-section-number">4</span> <strong>Fonctionnalités principales</strong></a></li>
-  <li><a href="#exemples-donglets" id="toc-exemples-donglets" class="nav-link" data-scroll-target="#exemples-donglets"><span class="header-section-number">5</span> <strong>Exemples d’onglets</strong></a></li>
-  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></a></li>
+  <li><a href="#détail-des-onglets" id="toc-détail-des-onglets" class="nav-link" data-scroll-target="#détail-des-onglets"><span class="header-section-number">5</span> <strong>Détail des onglets</strong></a></li>
+  <li><a href="#résultats-et-valeur-ajoutée" id="toc-résultats-et-valeur-ajoutée" class="nav-link" data-scroll-target="#résultats-et-valeur-ajoutée"><span class="header-section-number">6</span> <strong>Résultats et valeur ajoutée</strong></a></li>
   <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">7</span> <strong>Outil technique</strong></a></li>
   <li><a href="#lancer-lapplication" id="toc-lancer-lapplication" class="nav-link" data-scroll-target="#lancer-lapplication"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></a></li>
   </ul>
@@ -542,8 +544,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <div class="tech-badge badge-ml">
 <p><i class="fa-solid fa-brain" aria-label="brain"></i> Machine Learning</p>
 </div>
-<div class="tech-badge badge-docker">
-<p><i class="fa-brands fa-docker" aria-label="docker"></i> Docker</p>
+<div class="tech-badge badge-stats">
+<p><i class="fa-solid fa-square-root-variable" aria-label="square-root-variable"></i> Statsmodels</p>
+</div>
+<div class="tech-badge badge-xgboost">
+<p><i class="fa-solid fa-bolt" aria-label="bolt"></i> XGBoost</p>
 </div>
 <div class="tech-badge badge-datascience">
 <p><i class="fa-solid fa-chart-bar" aria-label="chart-bar"></i> Scikit-learn</p>
@@ -561,129 +566,138 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Explorez l’application Watch Analytics Dashboard en ligne :</p>
+<p>Explorez le Motor Insurance Pricing Dashboard en ligne :</p>
 <div style="text-align:center; margin-top: 1rem;">
-<p><a href="https://watch-analytics.streamlit.app/" class="btn btn-primary" target="_blank" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">Lancer l’application Streamlit <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
+<p><a href="https://insuranalytics.streamlit.app/" class="btn btn-primary" target="_blank" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">Lancer l’application Streamlit <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
 </div>
-<p><strong>Note :</strong> L’application peut prendre quelques secondes à démarrer si elle est en veille. Si vous avez l’URL réelle de déploiement, remplacez le lien ci-dessus.</p>
 </div>
 </div>
 </div>
 <section id="contexte-général-du-projet" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></h1>
-<p>Le marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme <strong>Chrono24</strong>.<br>
-Chaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.</p>
-<p>Afin d’explorer et d’analyser ces données, j’ai développé <strong>Watchs Analystics Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong>, permettant de <strong>visualiser, segmenter et modéliser les prix des montres de luxe</strong>.</p>
-<p>Cette application s’adresse aussi bien aux <strong>passionnés d’horlogerie</strong> qu’aux <strong>analystes de données</strong> ou <strong>acteurs du marché</strong> souhaitant identifier des tendances et des opportunités d’achat.</p>
+<p>La tarification en assurance automobile repose sur une chaîne actuarielle complète : analyse du portefeuille, modélisation fréquence/sévérité, calcul de la prime pure, benchmarking des modèles et pilotage continu de leur performance.</p>
+<p>Afin de démontrer cette expertise de bout en bout, j’ai développé <strong>Motor Insurance Pricing Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong>, qui couvre l’intégralité du workflow d’un actuaire pricing — de l’exploration des données jusqu’au pricing commercial en passant par la modélisation <strong>GLM</strong> et <strong>Machine Learning</strong>.</p>
+<p>L’application s’appuie sur les jeux de données de référence <strong>freMTPL2freq</strong> et <strong>freMTPL2sev</strong> (~670 000 polices d’assurance RC automobile française), standards dans la littérature actuarielle et disponibles via OpenML.</p>
 <hr>
 </section>
 <section id="objectif-du-projet" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></h1>
-<p>L’objectif principal est de fournir une plateforme analytique complète permettant de :</p>
+<p>L’objectif est de fournir une plateforme actuarielle complète permettant de :</p>
 <ul>
-<li><strong>Analyser les tendances du marché</strong> : prix moyens, marques dominantes, matériaux, pays vendeurs<br>
-</li>
-<li><strong>Segmenter le marché</strong> selon des critères techniques ou esthétiques<br>
-</li>
-<li><strong>Identifier les montres sous-évaluées</strong> grâce à des modèles de détection d’anomalies<br>
-</li>
-<li><strong>Estimer le prix optimal d’une montre</strong> selon ses caractéristiques</li>
+<li><strong>Analyser le portefeuille</strong> : distribution de l’exposition, fréquence de sinistralité, segmentation par variables de risque (âge conducteur, puissance véhicule, bonus-malus, zone géographique)</li>
+<li><strong>Modéliser la fréquence et la sévérité</strong> via des GLM (Poisson + Gamma) avec analyse des relativités et diagnostics statistiques complets</li>
+<li><strong>Calculer la prime pure</strong> par décomposition Fréquence × Sévérité, avec analyse des risques extrêmes (VaR, TVaR)</li>
+<li><strong>Benchmarker GLM vs XGBoost</strong> avec courbes de lift, double lift et interprétabilité SHAP</li>
+<li><strong>Piloter les modèles</strong> en production via des indicateurs A/E, PSI et analyse des résidus</li>
+<li><strong>Simuler le pricing commercial</strong> : waterfall tarifaire, élasticité-prix, positionnement concurrentiel</li>
 </ul>
 <hr>
 </section>
 <section id="méthodologie-et-technologies" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> <strong>Méthodologie et technologies</strong></h1>
-<p>L’application repose sur une base de plus de <strong>30 000 montres issues de Chrono24</strong>, nettoyée, standardisée et enrichie à l’aide de scripts Python.</p>
+<p>L’application repose sur un pipeline actuariel complet, de l’ingestion des données au monitoring en production.</p>
 <p>Les principales technologies utilisées :</p>
 <ul>
 <li><strong>Python 3.11</strong></li>
-<li><strong>Streamlit</strong> pour l’interface interactive<br>
-</li>
-<li><strong>Plotly</strong> pour les visualisations dynamiques<br>
-</li>
-<li><strong>Pandas / NumPy</strong> pour la préparation et l’analyse des données<br>
-</li>
-<li><strong>Scikit-learn</strong> pour la modélisation (régression, clustering, détection d’anomalies)<br>
-</li>
-<li><strong>Docker</strong> pour le déploiement<br>
-</li>
-<li><strong>streamlit-extras</strong> pour l’esthétique et les interactions avancées</li>
+<li><strong>Streamlit</strong> pour l’interface interactive et le déploiement cloud</li>
+<li><strong>Statsmodels</strong> pour les GLM (Poisson fréquence + Gamma sévérité, méthode IRLS)</li>
+<li><strong>XGBoost</strong> pour le benchmarking ML (objectif Poisson, 300 estimateurs)</li>
+<li><strong>SHAP</strong> pour l’interprétabilité des modèles (TreeExplainer)</li>
+<li><strong>Plotly</strong> pour les visualisations interactives (heatmaps, waterfalls, lift curves)</li>
+<li><strong>Pandas / NumPy / SciPy</strong> pour la préparation des données et les tests statistiques</li>
+<li><strong>Scikit-learn</strong> pour le train/test split stratifié et les métriques d’évaluation</li>
 </ul>
 <hr>
 </section>
 <section id="fonctionnalités-principales" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> <strong>Fonctionnalités principales</strong></h1>
 <ul>
-<li>💎 <strong>Analyse du marché</strong> : visualisation interactive des prix par marque, modèle ou matériau<br>
-</li>
-<li>🔍 <strong>Segmentation</strong> : regroupement automatique des montres selon leurs caractéristiques (clustering)<br>
-</li>
-<li>🕵️ <strong>Détection d’anomalies</strong> : identification des montres sous-évaluées via des modèles comme <strong>Isolation Forest</strong><br>
-</li>
-<li>💰 <strong>Estimation du prix</strong> : prédiction du prix attendu à partir des variables techniques<br>
-</li>
-<li>📊 <strong>Exports de données</strong> : téléchargement des résultats pour analyses complémentaires</li>
+<li>📊 <strong>Analyse du portefeuille</strong> : KPI, distribution de l’exposition, fréquence par segment, heatmap de risque (âge conducteur × bonus-malus), courbes de tendance sinistralité</li>
+<li>🎯 <strong>Modélisation GLM</strong> : relativités fréquence et sévérité (exp(β)), diagnostics statistiques (pseudo R², AIC, BIC, surdispersion, test de Dean), simulateur de prime interactif, génération de tables tarifaires exportables</li>
+<li>💰 <strong>Prime pure</strong> : décomposition Fréquence × Sévérité par segment, heatmap de prime pure, distribution de sévérité avec mesures de risque extrême (VaR 95%/99%, TVaR), analyse des percentiles</li>
+<li>🤖 <strong>GLM vs XGBoost</strong> : comparaison Gini/RMSE, lift curves, double lift, importance SHAP des variables, analyse de dépendance</li>
+<li>📈 <strong>Monitoring</strong> : ratio A/E mensuel, PSI (Population Stability Index), analyse des résidus, suivi par segment</li>
+<li>💼 <strong>Pricing commercial</strong> : waterfall tarifaire complet (risk premium → frais → commission → marge → réassurance → taxes), simulation d’élasticité-prix, benchmark concurrentiel, qualité des données, recommandations stratégiques</li>
 </ul>
 <hr>
 </section>
-<section id="exemples-donglets" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> <strong>Exemples d’onglets</strong></h1>
-<ul>
-<li><strong>Accueil</strong> : présentation du marché global et des principales tendances<br>
-</li>
-<li><strong>Analyse des prix</strong> : distribution et comparaison entre marques et modèles<br>
-</li>
-<li><strong>Segmentation</strong> : visualisation des clusters selon les caractéristiques<br>
-</li>
-<li><strong>Anomalies</strong> : mise en évidence des montres dont le prix s’écarte des tendances<br>
-</li>
-<li><strong>Modélisation</strong> : estimation du prix prédit pour une montre sélectionnée<br>
-</li>
-<li><strong>Exports</strong> : téléchargement au format CSV ou Excel</li>
-</ul>
+<section id="détail-des-onglets" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Détail des onglets</strong></h1>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Onglet</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>📊 Portfolio Overview</strong></td>
+<td>KPI portefeuille, segmentation risque, heatmap fréquence, tendances sinistralité (courbe de trend avec pente), distribution bonus-malus</td>
+</tr>
+<tr class="even">
+<td><strong>🎯 GLM Pricing Model</strong></td>
+<td>Relativités GLM fréquence + sévérité, simulateur de prime, diagnostics statistiques, résidus, tables tarifaires avec chargements</td>
+</tr>
+<tr class="odd">
+<td><strong>💰 Pure Premium</strong></td>
+<td>Décomposition Freq × Sev, heatmap prime pure, distribution sévérité, VaR/TVaR, comparaison modèle vs réel</td>
+</tr>
+<tr class="even">
+<td><strong>🤖 GLM vs XGBoost</strong></td>
+<td>Gini, RMSE, lift curves, double lift, SHAP (feature importance + dependence plots), tableau comparatif</td>
+</tr>
+<tr class="odd">
+<td><strong>📈 Model Monitoring</strong></td>
+<td>A/E mensuel, PSI drift, résidus, monitoring par segment, recommandations</td>
+</tr>
+<tr class="even">
+<td><strong>💼 Commercial Pricing</strong></td>
+<td>Waterfall tarifaire, élasticité-prix, optimisation par segment, positionnement concurrentiel, qualité données</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="résultats-attendus" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></h1>
-<p>Cette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :</p>
+<section id="résultats-et-valeur-ajoutée" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> <strong>Résultats et valeur ajoutée</strong></h1>
+<p>Cette application permet de :</p>
 <ul>
-<li>Identifier les <strong>tendances de prix</strong> selon les marques et matériaux<br>
-</li>
-<li>Détecter les <strong>opportunités d’achat</strong> grâce aux anomalies de prix<br>
-</li>
-<li>Comprendre la <strong>structure du marché secondaire</strong><br>
-</li>
-<li>Offrir une <strong>estimation cohérente du prix</strong> d’une montre donnée</li>
+<li>Disposer d’une <strong>vision complète du portefeuille</strong> avec segmentation multi-critères et suivi de tendance</li>
+<li>Produire des <strong>relativités tarifaires</strong> interprétables et auditables (conformité réglementaire Solvabilité II)</li>
+<li><strong>Simuler l’impact</strong> d’un changement de profil de risque sur la prime en temps réel</li>
+<li><strong>Quantifier le risque extrême</strong> via VaR et TVaR pour les décisions de réassurance</li>
+<li><strong>Comparer objectivement</strong> l’approche actuarielle classique (GLM) avec le Machine Learning (XGBoost)</li>
+<li><strong>Construire un tarif commercial</strong> intégrant frais, marge, réassurance et fiscalité</li>
+<li><strong>Optimiser le positionnement prix</strong> grâce à la modélisation d’élasticité par segment</li>
+<li><strong>Détecter la dérive</strong> des modèles via PSI et ratios A/E pour maintenir l’adéquation tarifaire</li>
 </ul>
-<p>En combinant <strong>analyse statistique</strong> et <strong>interface interactive</strong>,<br>
-<strong>Montre Analytics Dashboard</strong> devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.</p>
+<p>En combinant <strong>rigueur actuarielle</strong>, <strong>Machine Learning</strong> et <strong>interface interactive</strong>, ce dashboard illustre le workflow complet d’un actuaire pricing en assurance automobile.</p>
 <hr>
 </section>
 <section id="outil-technique" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> <strong>Outil technique</strong></h1>
 <ul>
-<li>Développé entièrement en <strong>Python</strong><br>
-</li>
-<li>Interface construite avec <strong>Streamlit</strong><br>
-</li>
-<li>Conteneurisé avec <strong>Docker</strong><br>
-</li>
+<li>Développé entièrement en <strong>Python 3.11</strong></li>
+<li>Interface construite avec <strong>Streamlit</strong> (layout wide, caching optimisé)</li>
+<li>Modèles : <strong>Poisson GLM</strong> (fréquence) + <strong>Gamma GLM</strong> (sévérité) + <strong>XGBoost</strong> (benchmark)</li>
+<li>Données : <strong>freMTPL2freq + freMTPL2sev</strong> (~670 000 polices, OpenML)</li>
 <li>Compatible avec <strong>Streamlit Cloud</strong> pour un déploiement en ligne</li>
 </ul>
 <hr>
 <div style="text-align:center;">
-<p><img src="../../assets/img/projet8/app.jpg" class="img-fluid" style="width:80.0%" alt="Aperçu du tableau de bord"></p>
-<p><strong>Figure 1 : Aperçu du tableau de bord</strong></p>
-</div>
-<div style="text-align:center;">
-<p><a href="https://github.com/Francois-b-24/analyse_marche_montres.git"><em>Voir le code source sur GitHub</em></a></p>
+<p><a href="https://github.com/Francois-b-24/Motor-Insurance-Pricing-Dashboard.git"><em>Voir le code source sur GitHub</em></a></p>
 </div>
 <hr>
 </section>
 <section id="lancer-lapplication" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></h1>
 <div style="text-align:center;">
-<p><a href="https://watchanalytics.streamlit.app/">🚀 Open Watch Analytics Dashboard ~ Streamlit</a></p>
+<p><a href="https://insuranalytics.streamlit.app/">🏎️ Open Motor Insurance Pricing Dashboard ~ Streamlit</a></p>
 </div>
 
 

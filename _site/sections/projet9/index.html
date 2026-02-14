@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="BOUSSENGUI François">
+<meta name="description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
 
-<title>François BOUSSENGUI | François BOUSSENGUI</title>
+<title>François BOUSSENGUI | ⌚ Watch Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,6 +89,7 @@ cookieconsent.run({
 });
 </script> 
   
+<style>html{ scroll-behavior: smooth; }</style>
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -171,8 +175,8 @@ cookieconsent.run({
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | François BOUSSENGUI">
-<meta property="og:description" content="">
+<meta property="og:title" content="François BOUSSENGUI | ⌚ Watch Analytics">
+<meta property="og:description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -180,8 +184,8 @@ cookieconsent.run({
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | François BOUSSENGUI">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="François BOUSSENGUI | ⌚ Watch Analytics">
+<meta name="twitter:description" content="Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -254,7 +258,7 @@ cookieconsent.run({
 <link rel="canonical" href="https://bfrancois.netlify.app/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/x-icon" href="../../favicon.ico">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
@@ -405,17 +409,17 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 -->
 
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><em>François B.</em></span>
     </a>
   </div>
@@ -426,31 +430,31 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/xp.html"> 
+    <a class="nav-link" href="../../sections/xp.html"> 
 <span class="menu-text">Parcours</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/skills.html"> 
+    <a class="nav-link" href="../../sections/skills.html"> 
 <span class="menu-text">Compétences</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sections/index.html"> 
+    <a class="nav-link" href="../../sections/index.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./formation/index.html"> 
+    <a class="nav-link" href="../../formation/index.html"> 
 <span class="menu-text">Formation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
+    <a class="nav-link" href="../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
@@ -461,83 +465,231 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">⌚ Watch Analytics</h1>
+            <p class="subtitle lead">Analyse interactive du marché des montres d’occasion (Chrono24)</p>
+                  <div>
+        <div class="description">
+          <em>Une application Streamlit pour explorer et modéliser le marché des montres d’occasion — analyses, segmentation, anomalies et estimation de prix.</em>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Data Science</div>
+                <div class="quarto-category">Analyse de marché</div>
+                <div class="quarto-category">Horlogerie</div>
+                <div class="quarto-category">Streamlit</div>
+                <div class="quarto-category">Machine learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p><code>BOUSSENGUI François</code> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">4 novembre 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">📚 Table des matières</h2>
+   
+  <ul>
+  <li><a href="#contexte-général-du-projet" id="toc-contexte-général-du-projet" class="nav-link active" data-scroll-target="#contexte-général-du-projet"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></a></li>
+  <li><a href="#objectif-du-projet" id="toc-objectif-du-projet" class="nav-link" data-scroll-target="#objectif-du-projet"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></a></li>
+  <li><a href="#méthodologie-et-technologies" id="toc-méthodologie-et-technologies" class="nav-link" data-scroll-target="#méthodologie-et-technologies"><span class="header-section-number">3</span> <strong>Méthodologie et technologies</strong></a></li>
+  <li><a href="#fonctionnalités-principales" id="toc-fonctionnalités-principales" class="nav-link" data-scroll-target="#fonctionnalités-principales"><span class="header-section-number">4</span> <strong>Fonctionnalités principales</strong></a></li>
+  <li><a href="#exemples-donglets" id="toc-exemples-donglets" class="nav-link" data-scroll-target="#exemples-donglets"><span class="header-section-number">5</span> <strong>Exemples d’onglets</strong></a></li>
+  <li><a href="#résultats-attendus" id="toc-résultats-attendus" class="nav-link" data-scroll-target="#résultats-attendus"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></a></li>
+  <li><a href="#outil-technique" id="toc-outil-technique" class="nav-link" data-scroll-target="#outil-technique"><span class="header-section-number">7</span> <strong>Outil technique</strong></a></li>
+  <li><a href="#lancer-lapplication" id="toc-lancer-lapplication" class="nav-link" data-scroll-target="#lancer-lapplication"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles content">
-  <div class="about-entity">
-    <img src="assets/img/moi.jpg" class="about-image
-  rounded " style="width: 16.5em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">François BOUSSENGUI</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="tech-badges">
+<div class="tech-badge badge-python">
+<p><i class="fa-brands fa-python" aria-label="python"></i> Python</p>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/fboussengui/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/Francois-b-24" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:f.boussengui@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
+<div class="tech-badge badge-streamlit">
+<p><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Streamlit</p>
 </div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<section id="bienvenue-sur-mon-portfolio" class="level2" style="text-align:center;">
-<h2 data-anchor-id="bienvenue-sur-mon-portfolio">Bienvenue sur mon Portfolio <span class="wave">👋</span></h2>
-<p><iconify-icon icon="flag:ga-4x3"></iconify-icon></p>
+<div class="tech-badge badge-ml">
+<p><i class="fa-solid fa-brain" aria-label="brain"></i> Machine Learning</p>
+</div>
+<div class="tech-badge badge-docker">
+<p><i class="fa-brands fa-docker" aria-label="docker"></i> Docker</p>
+</div>
+<div class="tech-badge badge-datascience">
+<p><i class="fa-solid fa-chart-bar" aria-label="chart-bar"></i> Scikit-learn</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-solid fa-rocket" aria-label="rocket"></i> Application Interactive
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Explorez l’application Watch Analytics Dashboard en ligne :</p>
+<div style="text-align:center; margin-top: 1rem;">
+<p><a href="https://watch-analytics.streamlit.app/" class="btn btn-primary" target="_blank" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">Lancer l’application Streamlit <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
+</div>
+<p><strong>Note :</strong> L’application peut prendre quelques secondes à démarrer si elle est en veille. Si vous avez l’URL réelle de déploiement, remplacez le lien ci-dessus.</p>
+</div>
+</div>
+</div>
+<section id="contexte-général-du-projet" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Contexte général du projet</strong></h1>
+<p>Le marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme <strong>Chrono24</strong>.<br>
+Chaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.</p>
+<p>Afin d’explorer et d’analyser ces données, j’ai développé <strong>Watchs Analystics Dashboard</strong>, une application interactive construite avec <strong>Streamlit</strong>, permettant de <strong>visualiser, segmenter et modéliser les prix des montres de luxe</strong>.</p>
+<p>Cette application s’adresse aussi bien aux <strong>passionnés d’horlogerie</strong> qu’aux <strong>analystes de données</strong> ou <strong>acteurs du marché</strong> souhaitant identifier des tendances et des opportunités d’achat.</p>
+<hr>
 </section>
-<p><strong>Data Scientist</strong>, je suis passionné par les statistiques et de tout ce qui touche à la donnée.</p>
-<p><strong><em>Mon rôle</em></strong> : Accompagner les entreprises dans la valorisation de leurs données, permettant ainsi une prise de décisions stratégiques éclairées.</p>
-<p>Sur ce site, vous découvrirez mon parcours académique et professionnel, un aperçu de mes compétences – acquises et en cours de développement – ainsi que des projets que j’ai réalisés.</p>
-<div class="stats-container" style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;">
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #f8d65c; margin-bottom: 0.5rem;">
-4+
+<section id="objectif-du-projet" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Objectif du projet</strong></h1>
+<p>L’objectif principal est de fournir une plateforme analytique complète permettant de :</p>
+<ul>
+<li><strong>Analyser les tendances du marché</strong> : prix moyens, marques dominantes, matériaux, pays vendeurs<br>
+</li>
+<li><strong>Segmenter le marché</strong> selon des critères techniques ou esthétiques<br>
+</li>
+<li><strong>Identifier les montres sous-évaluées</strong> grâce à des modèles de détection d’anomalies<br>
+</li>
+<li><strong>Estimer le prix optimal d’une montre</strong> selon ses caractéristiques</li>
+</ul>
+<hr>
+</section>
+<section id="méthodologie-et-technologies" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <strong>Méthodologie et technologies</strong></h1>
+<p>L’application repose sur une base de plus de <strong>30 000 montres issues de Chrono24</strong>, nettoyée, standardisée et enrichie à l’aide de scripts Python.</p>
+<p>Les principales technologies utilisées :</p>
+<ul>
+<li><strong>Python 3.11</strong></li>
+<li><strong>Streamlit</strong> pour l’interface interactive<br>
+</li>
+<li><strong>Plotly</strong> pour les visualisations dynamiques<br>
+</li>
+<li><strong>Pandas / NumPy</strong> pour la préparation et l’analyse des données<br>
+</li>
+<li><strong>Scikit-learn</strong> pour la modélisation (régression, clustering, détection d’anomalies)<br>
+</li>
+<li><strong>Docker</strong> pour le déploiement<br>
+</li>
+<li><strong>streamlit-extras</strong> pour l’esthétique et les interactions avancées</li>
+</ul>
+<hr>
+</section>
+<section id="fonctionnalités-principales" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <strong>Fonctionnalités principales</strong></h1>
+<ul>
+<li>💎 <strong>Analyse du marché</strong> : visualisation interactive des prix par marque, modèle ou matériau<br>
+</li>
+<li>🔍 <strong>Segmentation</strong> : regroupement automatique des montres selon leurs caractéristiques (clustering)<br>
+</li>
+<li>🕵️ <strong>Détection d’anomalies</strong> : identification des montres sous-évaluées via des modèles comme <strong>Isolation Forest</strong><br>
+</li>
+<li>💰 <strong>Estimation du prix</strong> : prédiction du prix attendu à partir des variables techniques<br>
+</li>
+<li>📊 <strong>Exports de données</strong> : téléchargement des résultats pour analyses complémentaires</li>
+</ul>
+<hr>
+</section>
+<section id="exemples-donglets" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Exemples d’onglets</strong></h1>
+<ul>
+<li><strong>Accueil</strong> : présentation du marché global et des principales tendances<br>
+</li>
+<li><strong>Analyse des prix</strong> : distribution et comparaison entre marques et modèles<br>
+</li>
+<li><strong>Segmentation</strong> : visualisation des clusters selon les caractéristiques<br>
+</li>
+<li><strong>Anomalies</strong> : mise en évidence des montres dont le prix s’écarte des tendances<br>
+</li>
+<li><strong>Modélisation</strong> : estimation du prix prédit pour une montre sélectionnée<br>
+</li>
+<li><strong>Exports</strong> : téléchargement au format CSV ou Excel</li>
+</ul>
+<hr>
+</section>
+<section id="résultats-attendus" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> <strong>Résultats attendus</strong></h1>
+<p>Cette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :</p>
+<ul>
+<li>Identifier les <strong>tendances de prix</strong> selon les marques et matériaux<br>
+</li>
+<li>Détecter les <strong>opportunités d’achat</strong> grâce aux anomalies de prix<br>
+</li>
+<li>Comprendre la <strong>structure du marché secondaire</strong><br>
+</li>
+<li>Offrir une <strong>estimation cohérente du prix</strong> d’une montre donnée</li>
+</ul>
+<p>En combinant <strong>analyse statistique</strong> et <strong>interface interactive</strong>,<br>
+<strong>Montre Analytics Dashboard</strong> devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.</p>
+<hr>
+</section>
+<section id="outil-technique" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <strong>Outil technique</strong></h1>
+<ul>
+<li>Développé entièrement en <strong>Python</strong><br>
+</li>
+<li>Interface construite avec <strong>Streamlit</strong><br>
+</li>
+<li>Conteneurisé avec <strong>Docker</strong><br>
+</li>
+<li>Compatible avec <strong>Streamlit Cloud</strong> pour un déploiement en ligne</li>
+</ul>
+<hr>
+<div style="text-align:center;">
+<p><img src="../../assets/img/projet8/app.jpg" class="img-fluid" style="width:80.0%" alt="Aperçu du tableau de bord"></p>
+<p><strong>Figure 1 : Aperçu du tableau de bord</strong></p>
 </div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Années d’expérience
+<div style="text-align:center;">
+<p><a href="https://github.com/Francois-b-24/analyse_marche_montres.git"><em>Voir le code source sur GitHub</em></a></p>
 </div>
-</div>
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #72f1b8; margin-bottom: 0.5rem;">
-8
-</div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Projets réalisés
-</div>
-</div>
-<div class="stat-box" style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); border-radius: 12px; min-width: 150px; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
-<div style="font-size: 2.5rem; font-weight: bold; color: #ffbc8c; margin-bottom: 0.5rem;">
-4+
-</div>
-<div style="color: white; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-Technologies maîtrisées
-</div>
-</div>
-</div>
-<div style="text-align:center; margin-top: 2rem;">
-<p><strong>Excellente navigation !</strong></p>
-</div>
-<div style="text-align:center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-<p><a href="assets/CV.pdf" class="btn btn-outline-primary center" role="button">Voir mon CV <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
-<p><a href="https://bfrancois.netlify.app/sections/" class="btn btn-outline-primary center" role="button">Projets <i class="fa-solid fa-arrow-up-right-from-square" aria-label="arrow-up-right-from-square"></i></a></p>
+<hr>
+</section>
+<section id="lancer-lapplication" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> <strong>Lancer l’application</strong></h1>
+<div style="text-align:center;">
+<p><a href="https://watchanalytics.streamlit.app/">🚀 Open Watch Analytics Dashboard ~ Streamlit</a></p>
 </div>
 
 
-</main></div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -558,6 +710,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -940,6 +1099,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -962,7 +1123,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./licence.html">
+    <a class="nav-link" href="../../licence.html">
 <p>Licence : CC BY-NC-SA</p>
 </a>
   </li>  
@@ -974,4 +1135,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

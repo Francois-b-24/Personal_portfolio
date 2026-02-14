@@ -1,16 +1,16 @@
 ---
-title: "⌚ Watch Analytics"
+title: "🏎️ Motor Insurance Pricing Dashboard"
 title-block-banner: true
 toc: true
 toc-title: 📚 Table des matières
 lang: fr
 number-sections: true
-subtitle: "Analyse interactive du marché des montres d'occasion (Chrono24)"
+subtitle: "Tableau de bord actuariel interactif pour la tarification automobile (freMTPL2)"
 author: "`BOUSSENGUI François`"
-description: "*Une application Streamlit pour explorer et modéliser le marché des montres d'occasion — analyses, segmentation, anomalies et estimation de prix.*"
-image: /assets/img/projet8/CUBITUS.jpg
-date: "2025-11-04"
-categories: [Data Science, Analyse de marché, Horlogerie, Streamlit, Machine learning]
+description: "*Une application Streamlit pour modéliser, tarifer et piloter le risque en assurance automobile — GLM, XGBoost, élasticité et pricing commercial.*"
+image: /assets/img/projet9/pricing.jpg
+date: "2026-02-14"
+categories: [Data Science, Actuariat, Assurance, Streamlit, Machine Learning, GLM, Pricing]
 format:
   html:
     code-fold: true
@@ -35,8 +35,11 @@ editor:
 ::: {.tech-badge .badge-ml}
 {{< fa brain >}} Machine Learning
 :::
-::: {.tech-badge .badge-docker}
-{{< fa brands docker >}} Docker
+::: {.tech-badge .badge-stats}
+{{< fa square-root-variable >}} Statsmodels
+:::
+::: {.tech-badge .badge-xgboost}
+{{< fa bolt >}} XGBoost
 :::
 ::: {.tech-badge .badge-datascience}
 {{< fa chart-bar >}} Scikit-learn
@@ -46,110 +49,121 @@ editor:
 ::: {.callout-tip icon="true" collapse="false"}
 ## {{< fa rocket >}} Application Interactive
 
-Explorez l'application Watch Analytics Dashboard en ligne :
+Explorez le Motor Insurance Pricing Dashboard en ligne :
 
 ::: {style="text-align:center; margin-top: 1rem;"}
-[Lancer l'application Streamlit {{< fa arrow-up-right-from-square >}}](https://watch-analytics.streamlit.app/){.btn .btn-primary target="_blank" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;"}
+[Lancer l'application Streamlit {{< fa arrow-up-right-from-square >}}](https://insuranalytics.streamlit.app/){.btn .btn-primary target="_blank" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;"}
 :::
 
-**Note :** L'application peut prendre quelques secondes à démarrer si elle est en veille. Si vous avez l'URL réelle de déploiement, remplacez le lien ci-dessus.
 :::
+
 
 # **Contexte général du projet**
 
-Le marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme **Chrono24**.  
-Chaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.
+La tarification en assurance automobile repose sur une chaîne actuarielle complète : analyse du portefeuille, modélisation fréquence/sévérité, calcul de la prime pure, benchmarking des modèles et pilotage continu de leur performance.
 
-Afin d’explorer et d’analyser ces données, j’ai développé **Watchs Analystics Dashboard**, une application interactive construite avec **Streamlit**, permettant de **visualiser, segmenter et modéliser les prix des montres de luxe**.
+Afin de démontrer cette expertise de bout en bout, j'ai développé **Motor Insurance Pricing Dashboard**, une application interactive construite avec **Streamlit**, qui couvre l'intégralité du workflow d'un actuaire pricing — de l'exploration des données jusqu'au pricing commercial en passant par la modélisation **GLM** et **Machine Learning**.
 
-Cette application s’adresse aussi bien aux **passionnés d’horlogerie** qu’aux **analystes de données** ou **acteurs du marché** souhaitant identifier des tendances et des opportunités d’achat.
+L'application s'appuie sur les jeux de données de référence **freMTPL2freq** et **freMTPL2sev** (~670 000 polices d'assurance RC automobile française), standards dans la littérature actuarielle et disponibles via OpenML.
 
 ---
+
 
 # **Objectif du projet**
 
-L’objectif principal est de fournir une plateforme analytique complète permettant de :
+L'objectif est de fournir une plateforme actuarielle complète permettant de :
 
-- **Analyser les tendances du marché** : prix moyens, marques dominantes, matériaux, pays vendeurs  
-- **Segmenter le marché** selon des critères techniques ou esthétiques  
-- **Identifier les montres sous-évaluées** grâce à des modèles de détection d’anomalies  
-- **Estimer le prix optimal d’une montre** selon ses caractéristiques  
+- **Analyser le portefeuille** : distribution de l'exposition, fréquence de sinistralité, segmentation par variables de risque (âge conducteur, puissance véhicule, bonus-malus, zone géographique)
+- **Modéliser la fréquence et la sévérité** via des GLM (Poisson + Gamma) avec analyse des relativités et diagnostics statistiques complets
+- **Calculer la prime pure** par décomposition Fréquence × Sévérité, avec analyse des risques extrêmes (VaR, TVaR)
+- **Benchmarker GLM vs XGBoost** avec courbes de lift, double lift et interprétabilité SHAP
+- **Piloter les modèles** en production via des indicateurs A/E, PSI et analyse des résidus
+- **Simuler le pricing commercial** : waterfall tarifaire, élasticité-prix, positionnement concurrentiel
 
 ---
 
+
 # **Méthodologie et technologies**
 
-L’application repose sur une base de plus de **30 000 montres issues de Chrono24**, nettoyée, standardisée et enrichie à l’aide de scripts Python.
+L'application repose sur un pipeline actuariel complet, de l'ingestion des données au monitoring en production.
 
 Les principales technologies utilisées :
 
 - **Python 3.11**
-- **Streamlit** pour l’interface interactive  
-- **Plotly** pour les visualisations dynamiques  
-- **Pandas / NumPy** pour la préparation et l’analyse des données  
-- **Scikit-learn** pour la modélisation (régression, clustering, détection d’anomalies)  
-- **Docker** pour le déploiement  
-- **streamlit-extras** pour l’esthétique et les interactions avancées  
+- **Streamlit** pour l'interface interactive et le déploiement cloud
+- **Statsmodels** pour les GLM (Poisson fréquence + Gamma sévérité, méthode IRLS)
+- **XGBoost** pour le benchmarking ML (objectif Poisson, 300 estimateurs)
+- **SHAP** pour l'interprétabilité des modèles (TreeExplainer)
+- **Plotly** pour les visualisations interactives (heatmaps, waterfalls, lift curves)
+- **Pandas / NumPy / SciPy** pour la préparation des données et les tests statistiques
+- **Scikit-learn** pour le train/test split stratifié et les métriques d'évaluation
+
 ---
+
 
 # **Fonctionnalités principales**
 
-- 💎 **Analyse du marché** : visualisation interactive des prix par marque, modèle ou matériau  
-- 🔍 **Segmentation** : regroupement automatique des montres selon leurs caractéristiques (clustering)  
-- 🕵️ **Détection d’anomalies** : identification des montres sous-évaluées via des modèles comme **Isolation Forest**  
-- 💰 **Estimation du prix** : prédiction du prix attendu à partir des variables techniques  
-- 📊 **Exports de données** : téléchargement des résultats pour analyses complémentaires  
+- 📊 **Analyse du portefeuille** : KPI, distribution de l'exposition, fréquence par segment, heatmap de risque (âge conducteur × bonus-malus), courbes de tendance sinistralité
+- 🎯 **Modélisation GLM** : relativités fréquence et sévérité (exp(β)), diagnostics statistiques (pseudo R², AIC, BIC, surdispersion, test de Dean), simulateur de prime interactif, génération de tables tarifaires exportables
+- 💰 **Prime pure** : décomposition Fréquence × Sévérité par segment, heatmap de prime pure, distribution de sévérité avec mesures de risque extrême (VaR 95%/99%, TVaR), analyse des percentiles
+- 🤖 **GLM vs XGBoost** : comparaison Gini/RMSE, lift curves, double lift, importance SHAP des variables, analyse de dépendance
+- 📈 **Monitoring** : ratio A/E mensuel, PSI (Population Stability Index), analyse des résidus, suivi par segment
+- 💼 **Pricing commercial** : waterfall tarifaire complet (risk premium → frais → commission → marge → réassurance → taxes), simulation d'élasticité-prix, benchmark concurrentiel, qualité des données, recommandations stratégiques
 
 ---
 
-# **Exemples d'onglets**
 
-- **Accueil** : présentation du marché global et des principales tendances  
-- **Analyse des prix** : distribution et comparaison entre marques et modèles  
-- **Segmentation** : visualisation des clusters selon les caractéristiques  
-- **Anomalies** : mise en évidence des montres dont le prix s’écarte des tendances  
-- **Modélisation** : estimation du prix prédit pour une montre sélectionnée  
-- **Exports** : téléchargement au format CSV ou Excel  
+# **Détail des onglets**
+
+| Onglet | Description |
+|--------|-------------|
+| **📊 Portfolio Overview** | KPI portefeuille, segmentation risque, heatmap fréquence, tendances sinistralité (courbe de trend avec pente), distribution bonus-malus |
+| **🎯 GLM Pricing Model** | Relativités GLM fréquence + sévérité, simulateur de prime, diagnostics statistiques, résidus, tables tarifaires avec chargements |
+| **💰 Pure Premium** | Décomposition Freq × Sev, heatmap prime pure, distribution sévérité, VaR/TVaR, comparaison modèle vs réel |
+| **🤖 GLM vs XGBoost** | Gini, RMSE, lift curves, double lift, SHAP (feature importance + dependence plots), tableau comparatif |
+| **📈 Model Monitoring** | A/E mensuel, PSI drift, résidus, monitoring par segment, recommandations |
+| **💼 Commercial Pricing** | Waterfall tarifaire, élasticité-prix, optimisation par segment, positionnement concurrentiel, qualité données |
+
+---
+
+
+# **Résultats et valeur ajoutée**
+
+Cette application permet de :
+
+- Disposer d'une **vision complète du portefeuille** avec segmentation multi-critères et suivi de tendance
+- Produire des **relativités tarifaires** interprétables et auditables (conformité réglementaire Solvabilité II)
+- **Simuler l'impact** d'un changement de profil de risque sur la prime en temps réel
+- **Quantifier le risque extrême** via VaR et TVaR pour les décisions de réassurance
+- **Comparer objectivement** l'approche actuarielle classique (GLM) avec le Machine Learning (XGBoost)
+- **Construire un tarif commercial** intégrant frais, marge, réassurance et fiscalité
+- **Optimiser le positionnement prix** grâce à la modélisation d'élasticité par segment
+- **Détecter la dérive** des modèles via PSI et ratios A/E pour maintenir l'adéquation tarifaire
+
+En combinant **rigueur actuarielle**, **Machine Learning** et **interface interactive**, ce dashboard illustre le workflow complet d'un actuaire pricing en assurance automobile.
 
 ---
 
-# **Résultats attendus**
-
-Cette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :
-
-- Identifier les **tendances de prix** selon les marques et matériaux  
-- Détecter les **opportunités d’achat** grâce aux anomalies de prix  
-- Comprendre la **structure du marché secondaire**  
-- Offrir une **estimation cohérente du prix** d’une montre donnée  
-
-En combinant **analyse statistique** et **interface interactive**,  
-**Montre Analytics Dashboard** devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.
-
----
 
 # **Outil technique**
 
-- Développé entièrement en **Python**  
-- Interface construite avec **Streamlit**  
-- Conteneurisé avec **Docker**  
-- Compatible avec **Streamlit Cloud** pour un déploiement en ligne  
+- Développé entièrement en **Python 3.11**
+- Interface construite avec **Streamlit** (layout wide, caching optimisé)
+- Modèles : **Poisson GLM** (fréquence) + **Gamma GLM** (sévérité) + **XGBoost** (benchmark)
+- Données : **freMTPL2freq + freMTPL2sev** (~670 000 polices, OpenML)
+- Compatible avec **Streamlit Cloud** pour un déploiement en ligne
 
 ---
 
 ::: {style="text-align:center;"}
-![](/assets/img/projet8/app.jpg){fig-alt="Aperçu du tableau de bord" width="80%"}
-
-**Figure 1 : Aperçu du tableau de bord**
-:::
-
-::: {style="text-align:center;"}
-[*Voir le code source sur GitHub*](https://github.com/Francois-b-24/analyse_marche_montres.git)
+[*Voir le code source sur GitHub*](https://github.com/Francois-b-24/Motor-Insurance-Pricing-Dashboard.git)
 :::
 
 ---
 
-# **Lancer l’application**
+
+# **Lancer l'application**
 
 ::: {style="text-align:center;"}
-[🚀 Open Watch Analytics Dashboard ~ Streamlit](https://watchanalytics.streamlit.app/)
+[🏎️ Open Motor Insurance Pricing Dashboard ~ Streamlit](https://insuranalytics.streamlit.app/)
 :::
