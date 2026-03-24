@@ -1,0 +1,53 @@
+---
+title: "Semaine 23"
+subtitle: "Préparation soutenance & Projet Central — Documentation"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 23 — Préparation soutenance</strong></p>
+        <ul>
+            <li>Structurer présentation</li>
+            <li>Storytelling données</li>
+            <li>Adapter discours</li>
+            <li>Gérer questions</li>
+            <li>Répétitions timing</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 23 — Projet Central — Documentation</strong></p>
+        <ul>
+            <li>README professionnel</li>
+            <li>Docstrings type hints</li>
+            <li>Documentation Quarto</li>
+            <li>Packaging Python</li>
+            <li>Release tag final</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Structurer présentation | README professionnel |
+| **Jour 2** | Storytelling données | Docstrings type hints |
+| **Jour 3** | Adapter discours | Documentation Quarto |
+| **Jour 4** | Gérer questions | Packaging Python |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 23](module-metier-23.html)
+- [Module Technique 23](module-technique-23.html)
+- [Fiche de travail](fiche-travail-23.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

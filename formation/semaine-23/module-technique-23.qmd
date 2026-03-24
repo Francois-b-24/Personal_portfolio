@@ -1,0 +1,75 @@
+---
+title: "Module Technique 23 — Projet Central — Documentation"
+subtitle: "README et packaging"
+author: "François Boussengui"
+date: last-modified
+categories: [projet, documentation]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# README professionnel
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Docstrings type hints
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Documentation Quarto
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Packaging Python
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Release tag final
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 23](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-23.html){.btn .btn-primary}

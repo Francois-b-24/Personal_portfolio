@@ -1,0 +1,75 @@
+---
+title: "Module 14 — MLOps appliqué"
+subtitle: "Cycle de vie ML et monitoring"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, mlops, monitoring]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Cycle vie ML
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Monitoring production
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Détection drift
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Réentraînement
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Gouvernance modèles
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 14](index.html){.btn .btn-secondary}
+[Voir le Module Technique 14 →](module-technique-14.html){.btn .btn-primary}

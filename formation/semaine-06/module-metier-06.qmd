@@ -1,0 +1,75 @@
+---
+title: "Module 6 — Évolution des sinistres"
+subtitle: "Triangles de liquidation et Chain Ladder"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, triangles, chain-ladder]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Développement des sinistres
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Triangles de liquidation
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Méthode Chain Ladder
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Facteurs de développement
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Projection des charges ultimes
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 6](index.html){.btn .btn-secondary}
+[Voir le Module Technique 6 →](module-technique-06.html){.btn .btn-primary}

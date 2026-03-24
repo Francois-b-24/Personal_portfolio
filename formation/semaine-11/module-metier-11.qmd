@@ -1,0 +1,75 @@
+---
+title: "Module 11 — Rentabilité et Indicateurs"
+subtitle: "S/P, combined ratio et CLV"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, rentabilité, pilotage]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# S/P net et brut
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Combined ratio
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Customer Lifetime Value
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Tableaux de bord
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Alertes et seuils
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 11](index.html){.btn .btn-secondary}
+[Voir le Module Technique 11 →](module-technique-11.html){.btn .btn-primary}

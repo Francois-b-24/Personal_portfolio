@@ -1,0 +1,53 @@
+---
+title: "Semaine 19"
+subtitle: "Approfondissement tarification & Projet Central — Tarification ML"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 19 — Approfondissement tarification</strong></p>
+        <ul>
+            <li>Micro-segmentation</li>
+            <li>Clustering</li>
+            <li>Arbres et ensembles</li>
+            <li>Régularisation</li>
+            <li>Éthique segmentation</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 19 — Projet Central — Tarification ML</strong></p>
+        <ul>
+            <li>XGBoost tarification</li>
+            <li>Hyperparameter tuning</li>
+            <li>SHAP interprétabilité</li>
+            <li>GLM vs XGBoost</li>
+            <li>Choix modèle final</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Micro-segmentation | XGBoost tarification |
+| **Jour 2** | Clustering | Hyperparameter tuning |
+| **Jour 3** | Arbres et ensembles | SHAP interprétabilité |
+| **Jour 4** | Régularisation | GLM vs XGBoost |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 19](module-metier-19.html)
+- [Module Technique 19](module-technique-19.html)
+- [Fiche de travail](fiche-travail-19.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

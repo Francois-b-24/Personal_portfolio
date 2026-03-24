@@ -1,0 +1,75 @@
+---
+title: "Module 24 — Soutenance et Bilan"
+subtitle: "Présentation finale et compétences"
+author: "François Boussengui"
+date: last-modified
+categories: [bilan, soutenance]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Présentation projet central
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Bilan compétences
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Auto-évaluation finale
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Perspectives
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Plan développement
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 24](index.html){.btn .btn-secondary}
+[Voir le Module Technique 24 →](module-technique-24.html){.btn .btn-primary}

@@ -1,0 +1,75 @@
+---
+title: "Module 9 — Comportements et Anti-sélection"
+subtitle: "Aléa moral et sélection adverse"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, anti-sélection]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Asymétrie information
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Sélection adverse
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Aléa moral
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Mécanismes correctifs
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Impact tarification
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 9](index.html){.btn .btn-secondary}
+[Voir le Module Technique 9 →](module-technique-09.html){.btn .btn-primary}

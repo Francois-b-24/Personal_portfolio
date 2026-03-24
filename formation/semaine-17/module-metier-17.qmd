@@ -1,0 +1,75 @@
+---
+title: "Module 17 — Révision Bloc III"
+subtitle: "Tarification et segmentation"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, révision, tarification]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Synthèse principes tarifaires
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# GLM pratique
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Segmentation anti-sélection
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Exercices intégrés
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Points clés
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 17](index.html){.btn .btn-secondary}
+[Voir le Module Technique 17 →](module-technique-17.html){.btn .btn-primary}

@@ -1,0 +1,53 @@
+---
+title: "Semaine 18"
+subtitle: "Révision Bloc IV-V & Projet Central — Tarification GLM"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 18 — Révision Bloc IV-V</strong></p>
+        <ul>
+            <li>Synthèse pilotage</li>
+            <li>Synthèse data science</li>
+            <li>Exercices intégrés</li>
+            <li>Lien indicateurs-modèles</li>
+            <li>Préparation projet</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 18 — Projet Central — Tarification GLM</strong></p>
+        <ul>
+            <li>Prime pure GLM</li>
+            <li>Intégration fréquence x sévérité</li>
+            <li>Chargements</li>
+            <li>Validation croisée</li>
+            <li>Comparaison tarif actuel</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Synthèse pilotage | Prime pure GLM |
+| **Jour 2** | Synthèse data science | Intégration fréquence x sévérité |
+| **Jour 3** | Exercices intégrés | Chargements |
+| **Jour 4** | Lien indicateurs-modèles | Validation croisée |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 18](module-metier-18.html)
+- [Module Technique 18](module-technique-18.html)
+- [Fiche de travail](fiche-travail-18.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

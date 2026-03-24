@@ -1,0 +1,75 @@
+---
+title: "Module 5 — Fréquence et Sévérité"
+subtitle: "Modéliser les composantes de la sinistralité"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, fréquence, sévérité]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Décomposition fréquence x sévérité
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Loi de Poisson
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Loi lognormale et Gamma
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Estimation des paramètres
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Validation et diagnostic
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 5](index.html){.btn .btn-secondary}
+[Voir le Module Technique 5 →](module-technique-05.html){.btn .btn-primary}

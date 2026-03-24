@@ -1,0 +1,53 @@
+---
+title: "Semaine 12"
+subtitle: "Solvabilité II & FastAPI — API de scoring"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 12 — Solvabilité II</strong></p>
+        <ul>
+            <li>Pourquoi Solvabilité II</li>
+            <li>Pilier 1 SCR MCR</li>
+            <li>Pilier 2 gouvernance ORSA</li>
+            <li>Pilier 3 reporting</li>
+            <li>Impact gestion technique</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 12 — FastAPI — API de scoring</strong></p>
+        <ul>
+            <li>FastAPI framework</li>
+            <li>Endpoints et routes</li>
+            <li>Modèles Pydantic</li>
+            <li>Servir un modèle ML</li>
+            <li>Documentation Swagger</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Pourquoi Solvabilité II | FastAPI framework |
+| **Jour 2** | Pilier 1 SCR MCR | Endpoints et routes |
+| **Jour 3** | Pilier 2 gouvernance ORSA | Modèles Pydantic |
+| **Jour 4** | Pilier 3 reporting | Servir un modèle ML |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 12](module-metier-12.html)
+- [Module Technique 12](module-technique-12.html)
+- [Fiche de travail](fiche-travail-12.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

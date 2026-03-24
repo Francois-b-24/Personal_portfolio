@@ -1,0 +1,53 @@
+---
+title: "Semaine 16"
+subtitle: "Révision Bloc I-II & Projet Central — Modélisation fréquence"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 16 — Révision Bloc I-II</strong></p>
+        <ul>
+            <li>Synthèse Bloc I</li>
+            <li>Synthèse Bloc II</li>
+            <li>Exercices croisés</li>
+            <li>QCM validation</li>
+            <li>Points clés</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 16 — Projet Central — Modélisation fréquence</strong></p>
+        <ul>
+            <li>Préparation données GLM</li>
+            <li>Modèle Poisson</li>
+            <li>Sélection variables</li>
+            <li>Validation modèle</li>
+            <li>Interprétation coefficients</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Synthèse Bloc I | Préparation données GLM |
+| **Jour 2** | Synthèse Bloc II | Modèle Poisson |
+| **Jour 3** | Exercices croisés | Sélection variables |
+| **Jour 4** | QCM validation | Validation modèle |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 16](module-metier-16.html)
+- [Module Technique 16](module-technique-16.html)
+- [Fiche de travail](fiche-travail-16.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

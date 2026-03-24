@@ -1,0 +1,53 @@
+---
+title: "Semaine 5"
+subtitle: "Fréquence et Sévérité & AWS — Introduction et S3"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 5 — Fréquence et Sévérité</strong></p>
+        <ul>
+            <li>Décomposition fréquence x sévérité</li>
+            <li>Loi de Poisson</li>
+            <li>Loi lognormale et Gamma</li>
+            <li>Estimation des paramètres</li>
+            <li>Validation et diagnostic</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 5 — AWS — Introduction et S3</strong></p>
+        <ul>
+            <li>Pourquoi le cloud AWS</li>
+            <li>Concepts AWS fondamentaux</li>
+            <li>S3 stockage objet</li>
+            <li>AWS CLI</li>
+            <li>boto3 Python</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Décomposition fréquence x sévérité | Pourquoi le cloud AWS |
+| **Jour 2** | Loi de Poisson | Concepts AWS fondamentaux |
+| **Jour 3** | Loi lognormale et Gamma | S3 stockage objet |
+| **Jour 4** | Estimation des paramètres | AWS CLI |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 5](module-metier-05.html)
+- [Module Technique 5](module-technique-05.html)
+- [Fiche de travail](fiche-travail-05.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

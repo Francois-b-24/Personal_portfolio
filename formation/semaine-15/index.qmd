@@ -1,0 +1,53 @@
+---
+title: "Semaine 15"
+subtitle: "Industrialisation des modèles & Projet Central — Feature engineering"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 15 — Industrialisation des modèles</strong></p>
+        <ul>
+            <li>Du notebook à la production</li>
+            <li>Conteneurisation modèles</li>
+            <li>Scalabilité</li>
+            <li>Maintenance</li>
+            <li>Documentation technique</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 15 — Projet Central — Feature engineering</strong></p>
+        <ul>
+            <li>Feature engineering assurance</li>
+            <li>Variables actuarielles</li>
+            <li>Encodage catégorielles</li>
+            <li>Sélection variables</li>
+            <li>Pipeline features</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Du notebook à la production | Feature engineering assurance |
+| **Jour 2** | Conteneurisation modèles | Variables actuarielles |
+| **Jour 3** | Scalabilité | Encodage catégorielles |
+| **Jour 4** | Maintenance | Sélection variables |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 15](module-metier-15.html)
+- [Module Technique 15](module-technique-15.html)
+- [Fiche de travail](fiche-travail-15.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

@@ -1,0 +1,75 @@
+---
+title: "Module 19 — Approfondissement tarification"
+subtitle: "Segmentation fine et clustering"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, segmentation]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Micro-segmentation
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Clustering
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Arbres et ensembles
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Régularisation
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Éthique segmentation
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 19](index.html){.btn .btn-secondary}
+[Voir le Module Technique 19 →](module-technique-19.html){.btn .btn-primary}

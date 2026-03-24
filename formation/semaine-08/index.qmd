@@ -1,0 +1,53 @@
+---
+title: "Semaine 8"
+subtitle: "Principes tarifaires & AWS — Lambda et Serverless"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 8 — Principes tarifaires</strong></p>
+        <ul>
+            <li>Tarification a priori vs a posteriori</li>
+            <li>Variables tarifaires</li>
+            <li>Introduction aux GLM</li>
+            <li>GLM et tarification</li>
+            <li>Bonus-malus</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 8 — AWS — Lambda et Serverless</strong></p>
+        <ul>
+            <li>Serverless concepts</li>
+            <li>AWS Lambda fonctions</li>
+            <li>Triggers et événements</li>
+            <li>API Gateway + Lambda</li>
+            <li>Cas data science</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Tarification a priori vs a posteriori | Serverless concepts |
+| **Jour 2** | Variables tarifaires | AWS Lambda fonctions |
+| **Jour 3** | Introduction aux GLM | Triggers et événements |
+| **Jour 4** | GLM et tarification | API Gateway + Lambda |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 8](module-metier-08.html)
+- [Module Technique 8](module-technique-08.html)
+- [Fiche de travail](fiche-travail-08.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

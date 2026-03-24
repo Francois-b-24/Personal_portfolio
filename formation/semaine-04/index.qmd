@@ -1,0 +1,53 @@
+---
+title: "Semaine 4"
+subtitle: "Sinistralité — Concepts fondamentaux & CI/CD avec GitHub Actions"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 4 — Sinistralité — Concepts fondamentaux</strong></p>
+        <ul>
+            <li>Le processus sinistre</li>
+            <li>Types de sinistres</li>
+            <li>Indicateurs clés : S/P, fréquence</li>
+            <li>Réserves et IBNR</li>
+            <li>Suivi temporel</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 4 — CI/CD avec GitHub Actions</strong></p>
+        <ul>
+            <li>Concepts CI/CD</li>
+            <li>Workflows GitHub Actions</li>
+            <li>Tests pytest</li>
+            <li>Linting automatique</li>
+            <li>Déploiement continu</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Le processus sinistre | Concepts CI/CD |
+| **Jour 2** | Types de sinistres | Workflows GitHub Actions |
+| **Jour 3** | Indicateurs clés : S/P, fréquence | Tests pytest |
+| **Jour 4** | Réserves et IBNR | Linting automatique |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 4](module-metier-04.html)
+- [Module Technique 4](module-technique-04.html)
+- [Fiche de travail](fiche-travail-04.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

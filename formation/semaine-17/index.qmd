@@ -1,0 +1,53 @@
+---
+title: "Semaine 17"
+subtitle: "Révision Bloc III & Projet Central — Modélisation sévérité"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 17 — Révision Bloc III</strong></p>
+        <ul>
+            <li>Synthèse principes tarifaires</li>
+            <li>GLM pratique</li>
+            <li>Segmentation anti-sélection</li>
+            <li>Exercices intégrés</li>
+            <li>Points clés</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 17 — Projet Central — Modélisation sévérité</strong></p>
+        <ul>
+            <li>Modèle Gamma sévérité</li>
+            <li>Sinistres graves</li>
+            <li>Distributions queue lourde</li>
+            <li>Validation diagnostics</li>
+            <li>Comparaison fréquence</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Synthèse principes tarifaires | Modèle Gamma sévérité |
+| **Jour 2** | GLM pratique | Sinistres graves |
+| **Jour 3** | Segmentation anti-sélection | Distributions queue lourde |
+| **Jour 4** | Exercices intégrés | Validation diagnostics |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 17](module-metier-17.html)
+- [Module Technique 17](module-technique-17.html)
+- [Fiche de travail](fiche-travail-17.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

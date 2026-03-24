@@ -1,0 +1,75 @@
+---
+title: "Module 10 — Tarification avancée"
+subtitle: "GLM Poisson/Gamma et validation"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, tarification, GLM]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# GLM Poisson fréquence
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# GLM Gamma sévérité
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Interactions non-linéaires
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Validation croisée
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# GLM vs Machine Learning
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 10](index.html){.btn .btn-secondary}
+[Voir le Module Technique 10 →](module-technique-10.html){.btn .btn-primary}

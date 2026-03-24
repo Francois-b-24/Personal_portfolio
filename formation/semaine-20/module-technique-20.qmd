@@ -1,0 +1,75 @@
+---
+title: "Module Technique 20 — Projet Central — API et Déploiement"
+subtitle: "FastAPI Docker AWS"
+author: "François Boussengui"
+date: last-modified
+categories: [projet, api, déploiement]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# API FastAPI scoring
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Conteneurisation Docker
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Déploiement AWS
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Tests de charge
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Monitoring API
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 20](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-20.html){.btn .btn-primary}

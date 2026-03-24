@@ -1,0 +1,75 @@
+---
+title: "Module 4 — Sinistralité — Concepts fondamentaux"
+subtitle: "Comprendre le processus sinistre"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, sinistralité]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Le processus sinistre
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Types de sinistres
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Indicateurs clés : S/P, fréquence
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Réserves et IBNR
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Suivi temporel
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 4](index.html){.btn .btn-secondary}
+[Voir le Module Technique 4 →](module-technique-04.html){.btn .btn-primary}

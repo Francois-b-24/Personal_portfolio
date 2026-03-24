@@ -1,0 +1,53 @@
+---
+title: "Semaine 13"
+subtitle: "Données en assurance & Projet Central — Cadrage"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 13 — Données en assurance</strong></p>
+        <ul>
+            <li>Sources de données</li>
+            <li>Qualité des données</li>
+            <li>Gouvernance</li>
+            <li>RGPD</li>
+            <li>Data lineage</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 13 — Projet Central — Cadrage</strong></p>
+        <ul>
+            <li>Cadrage projet</li>
+            <li>Architecture cible</li>
+            <li>Setup repo</li>
+            <li>Environnement Docker</li>
+            <li>Structure données</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Sources de données | Cadrage projet |
+| **Jour 2** | Qualité des données | Architecture cible |
+| **Jour 3** | Gouvernance | Setup repo |
+| **Jour 4** | RGPD | Environnement Docker |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 13](module-metier-13.html)
+- [Module Technique 13](module-technique-13.html)
+- [Fiche de travail](fiche-travail-13.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

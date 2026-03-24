@@ -1,0 +1,53 @@
+---
+title: "Semaine 11"
+subtitle: "Rentabilité et Indicateurs & MLflow — Tracking et Versionnement"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 11 — Rentabilité et Indicateurs</strong></p>
+        <ul>
+            <li>S/P net et brut</li>
+            <li>Combined ratio</li>
+            <li>Customer Lifetime Value</li>
+            <li>Tableaux de bord</li>
+            <li>Alertes et seuils</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 11 — MLflow — Tracking et Versionnement</strong></p>
+        <ul>
+            <li>Pourquoi MLflow</li>
+            <li>Tracking expériences</li>
+            <li>Logging paramètres</li>
+            <li>Model Registry</li>
+            <li>Comparaison de runs</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | S/P net et brut | Pourquoi MLflow |
+| **Jour 2** | Combined ratio | Tracking expériences |
+| **Jour 3** | Customer Lifetime Value | Logging paramètres |
+| **Jour 4** | Tableaux de bord | Model Registry |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 11](module-metier-11.html)
+- [Module Technique 11](module-technique-11.html)
+- [Fiche de travail](fiche-travail-11.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

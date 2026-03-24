@@ -1,0 +1,39 @@
+---
+title: "Fiche de travail — Semaine 22"
+subtitle: "Exercices pratiques et livrables"
+author: "François Boussengui"
+date: last-modified
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+## Livrables
+
+1. **Livrable métier** : Application des concepts du Module 22
+2. **Livrable technique** : Mise en pratique du Module Technique 22
+3. **Livrable intégrateur** : Combinaison métier + technique
+
+## Exercices métier
+
+Applique les concepts du module sur des données simulées ou réelles.
+
+## Exercices techniques
+
+Mets en pratique les outils techniques dans le contexte du projet.
+
+## Pont métier-technique
+
+Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+
+## Checklist
+
+- [ ] Module Métier 22 terminé
+- [ ] Module Technique 22 terminé
+- [ ] Livrables produits
+- [ ] Exercices réalisés
+
+---
+
+[← Retour à la Semaine 22](index.html){.btn .btn-secondary}

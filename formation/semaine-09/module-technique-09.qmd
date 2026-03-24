@@ -1,0 +1,75 @@
+---
+title: "Module Technique 9 — AWS — Architecture et Services"
+subtitle: "VPC, IAM, CloudWatch"
+author: "François Boussengui"
+date: last-modified
+categories: [aws, architecture, vpc]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# VPC réseau privé
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# IAM gestion accès
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# CloudWatch monitoring
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Architecture multi-services
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Bonnes pratiques sécurité
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 9](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-09.html){.btn .btn-primary}

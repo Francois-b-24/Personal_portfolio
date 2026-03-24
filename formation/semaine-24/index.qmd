@@ -1,0 +1,53 @@
+---
+title: "Semaine 24"
+subtitle: "Soutenance et Bilan & Projet Central — Livraison finale"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 24 — Soutenance et Bilan</strong></p>
+        <ul>
+            <li>Présentation projet central</li>
+            <li>Bilan compétences</li>
+            <li>Auto-évaluation finale</li>
+            <li>Perspectives</li>
+            <li>Plan développement</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 24 — Projet Central — Livraison finale</strong></p>
+        <ul>
+            <li>Tag release final</li>
+            <li>Rétrospective technique</li>
+            <li>Lessons learned</li>
+            <li>Portfolio visibilité</li>
+            <li>Prochaines étapes</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Présentation projet central | Tag release final |
+| **Jour 2** | Bilan compétences | Rétrospective technique |
+| **Jour 3** | Auto-évaluation finale | Lessons learned |
+| **Jour 4** | Perspectives | Portfolio visibilité |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 24](module-metier-24.html)
+- [Module Technique 24](module-technique-24.html)
+- [Fiche de travail](fiche-travail-24.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

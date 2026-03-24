@@ -1,0 +1,53 @@
+---
+title: "Semaine 14"
+subtitle: "MLOps appliqué & Projet Central — Pipeline données"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 14 — MLOps appliqué</strong></p>
+        <ul>
+            <li>Cycle vie ML</li>
+            <li>Monitoring production</li>
+            <li>Détection drift</li>
+            <li>Réentraînement</li>
+            <li>Gouvernance modèles</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 14 — Projet Central — Pipeline données</strong></p>
+        <ul>
+            <li>Pipeline ETL Python</li>
+            <li>Nettoyage données</li>
+            <li>Validation données</li>
+            <li>Tests qualité</li>
+            <li>Orchestration</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Cycle vie ML | Pipeline ETL Python |
+| **Jour 2** | Monitoring production | Nettoyage données |
+| **Jour 3** | Détection drift | Validation données |
+| **Jour 4** | Réentraînement | Tests qualité |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 14](module-metier-14.html)
+- [Module Technique 14](module-technique-14.html)
+- [Fiche de travail](fiche-travail-14.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

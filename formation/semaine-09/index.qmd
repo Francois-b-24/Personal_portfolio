@@ -1,0 +1,53 @@
+---
+title: "Semaine 9"
+subtitle: "Comportements et Anti-sélection & AWS — Architecture et Services"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 9 — Comportements et Anti-sélection</strong></p>
+        <ul>
+            <li>Asymétrie information</li>
+            <li>Sélection adverse</li>
+            <li>Aléa moral</li>
+            <li>Mécanismes correctifs</li>
+            <li>Impact tarification</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 9 — AWS — Architecture et Services</strong></p>
+        <ul>
+            <li>VPC réseau privé</li>
+            <li>IAM gestion accès</li>
+            <li>CloudWatch monitoring</li>
+            <li>Architecture multi-services</li>
+            <li>Bonnes pratiques sécurité</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Asymétrie information | VPC réseau privé |
+| **Jour 2** | Sélection adverse | IAM gestion accès |
+| **Jour 3** | Aléa moral | CloudWatch monitoring |
+| **Jour 4** | Mécanismes correctifs | Architecture multi-services |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 9](module-metier-09.html)
+- [Module Technique 9](module-technique-09.html)
+- [Fiche de travail](fiche-travail-09.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

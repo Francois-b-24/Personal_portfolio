@@ -1,0 +1,75 @@
+---
+title: "Module 15 — Industrialisation des modèles"
+subtitle: "Mise en production et scalabilité"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, industrialisation]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Du notebook à la production
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Conteneurisation modèles
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Scalabilité
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Maintenance
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Documentation technique
+
+Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les concepts clés à retenir.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question de compréhension.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question de compréhension.
+:::
+
+---
+
+[← Retour à la Semaine 15](index.html){.btn .btn-secondary}
+[Voir le Module Technique 15 →](module-technique-15.html){.btn .btn-primary}

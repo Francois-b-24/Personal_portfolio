@@ -1,0 +1,75 @@
+---
+title: "Module Technique 7 — AWS — RDS et Bases de données"
+subtitle: "PostgreSQL managé dans le cloud"
+author: "François Boussengui"
+date: last-modified
+categories: [aws, rds, postgresql]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# RDS bases managées
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Création PostgreSQL
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Requêtes SQL
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Backups et maintenance
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Sécurité IAM
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 7](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-07.html){.btn .btn-primary}

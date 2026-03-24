@@ -1,0 +1,53 @@
+---
+title: "Semaine 7"
+subtitle: "Provisionnement & AWS — RDS et Bases de données"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 7 — Provisionnement</strong></p>
+        <ul>
+            <li>Pourquoi provisionner</li>
+            <li>Chain Ladder appliquée</li>
+            <li>Bornhuetter-Ferguson</li>
+            <li>Comparaison des méthodes</li>
+            <li>Impact comptable</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 7 — AWS — RDS et Bases de données</strong></p>
+        <ul>
+            <li>RDS bases managées</li>
+            <li>Création PostgreSQL</li>
+            <li>Requêtes SQL</li>
+            <li>Backups et maintenance</li>
+            <li>Sécurité IAM</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Pourquoi provisionner | RDS bases managées |
+| **Jour 2** | Chain Ladder appliquée | Création PostgreSQL |
+| **Jour 3** | Bornhuetter-Ferguson | Requêtes SQL |
+| **Jour 4** | Comparaison des méthodes | Backups et maintenance |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 7](module-metier-07.html)
+- [Module Technique 7](module-technique-07.html)
+- [Fiche de travail](fiche-travail-07.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

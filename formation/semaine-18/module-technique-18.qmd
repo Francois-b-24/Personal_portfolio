@@ -1,0 +1,75 @@
+---
+title: "Module Technique 18 — Projet Central — Tarification GLM"
+subtitle: "Prime pure et validation"
+author: "François Boussengui"
+date: last-modified
+categories: [projet, tarification, glm]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Prime pure GLM
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Intégration fréquence x sévérité
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Chargements
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Validation croisée
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Comparaison tarif actuel
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 18](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-18.html){.btn .btn-primary}

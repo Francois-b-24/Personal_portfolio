@@ -1,0 +1,53 @@
+---
+title: "Semaine 22"
+subtitle: "Étude de cas intégrée (partie 2) & Projet Central — Tests et CI/CD"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 22 — Étude de cas intégrée (partie 2)</strong></p>
+        <ul>
+            <li>Plan action</li>
+            <li>Chiffrage impacts</li>
+            <li>Priorisation</li>
+            <li>Présentation résultats</li>
+            <li>Suivi indicateurs</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 22 — Projet Central — Tests et CI/CD</strong></p>
+        <ul>
+            <li>Tests unitaires pytest</li>
+            <li>Tests intégration</li>
+            <li>Pipeline CI/CD</li>
+            <li>Coverage qualité</li>
+            <li>Pre-commit hooks</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Plan action | Tests unitaires pytest |
+| **Jour 2** | Chiffrage impacts | Tests intégration |
+| **Jour 3** | Priorisation | Pipeline CI/CD |
+| **Jour 4** | Présentation résultats | Coverage qualité |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 22](module-metier-22.html)
+- [Module Technique 22](module-technique-22.html)
+- [Fiche de travail](fiche-travail-22.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

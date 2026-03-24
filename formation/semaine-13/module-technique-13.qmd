@@ -1,0 +1,75 @@
+---
+title: "Module Technique 13 — Projet Central — Cadrage"
+subtitle: "Architecture et setup du projet"
+author: "François Boussengui"
+date: last-modified
+categories: [projet, cadrage]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# Cadrage projet
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Architecture cible
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Setup repo
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Environnement Docker
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Structure données
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 13](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-13.html){.btn .btn-primary}

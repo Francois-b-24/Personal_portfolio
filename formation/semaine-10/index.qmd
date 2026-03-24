@@ -1,0 +1,53 @@
+---
+title: "Semaine 10"
+subtitle: "Tarification avancée & AWS — Certification SAA"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+        <p><strong>Module 10 — Tarification avancée</strong></p>
+        <ul>
+            <li>GLM Poisson fréquence</li>
+            <li>GLM Gamma sévérité</li>
+            <li>Interactions non-linéaires</li>
+            <li>Validation croisée</li>
+            <li>GLM vs Machine Learning</li>
+        </ul>
+    </div>
+    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+        <p><strong>Module Technique 10 — AWS — Certification SAA</strong></p>
+        <ul>
+            <li>Révision services AWS</li>
+            <li>Architecture Well-Architected</li>
+            <li>Examens blancs</li>
+            <li>Stratégies examen</li>
+            <li>Ressources préparation</li>
+        </ul>
+    </div>
+</div>
+```
+
+## Objectifs
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | GLM Poisson fréquence | Révision services AWS |
+| **Jour 2** | GLM Gamma sévérité | Architecture Well-Architected |
+| **Jour 3** | Interactions non-linéaires | Examens blancs |
+| **Jour 4** | Validation croisée | Stratégies examen |
+| **Jour 5** | **Débriefing** | **Livrable** |
+
+## Accès aux modules
+
+- [Module Métier 10](module-metier-10.html)
+- [Module Technique 10](module-technique-10.html)
+- [Fiche de travail](fiche-travail-10.html)
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

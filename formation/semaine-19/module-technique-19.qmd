@@ -1,0 +1,75 @@
+---
+title: "Module Technique 19 — Projet Central — Tarification ML"
+subtitle: "XGBoost et SHAP"
+author: "François Boussengui"
+date: last-modified
+categories: [projet, xgboost, shap]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+# XGBoost tarification
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Hyperparameter tuning
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# SHAP interprétabilité
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# GLM vs XGBoost
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Choix modèle final
+
+Contenu technique détaillé avec exemples de code et bonnes pratiques.
+
+---
+
+# Synthèse {.unnumbered}
+
+Les points techniques essentiels.
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3
+Question technique.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4
+Question technique.
+:::
+
+---
+
+[← Retour à la Semaine 19](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-19.html){.btn .btn-primary}
