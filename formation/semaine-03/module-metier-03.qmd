@@ -1,0 +1,247 @@
+---
+title: "Module 3 — Exposition au risque"
+subtitle: "Mesurer, segmenter et comprendre la base de toute tarification"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, exposition, segmentation]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Définir** les différentes mesures d'exposition au risque
+2. **Calculer** l'exposition acquise d'un portefeuille
+3. **Identifier** les variables de segmentation pertinentes
+4. **Comprendre** le lien entre exposition et tarification
+5. **Analyser** la composition d'un portefeuille par segment
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 1-2 — Fondements économiques et produits
+:::
+:::{div}
+⏱️ **Temps estimé** : 2 à 3 heures
+:::
+:::
+
+---
+
+# Qu'est-ce que l'exposition au risque ?
+
+## Définition
+
+L'exposition mesure la **quantité de risque** couverte par un portefeuille. C'est le dénominateur de tous les ratios actuariels.
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Sans mesure d'exposition, impossible de comparer des portefeuilles entre eux ou d'évaluer si la sinistralité est "normale". Un portefeuille de 10 000 contrats avec 500 sinistres a-t-il une sinistralité élevée ? Impossible de répondre sans connaître l'exposition.
+:::
+
+## Unités d'exposition
+
+| Branche | Unité d'exposition | Exemple |
+|---------|-------------------|---------|
+| **Auto** | Véhicule-année | 1 véhicule assuré 6 mois = 0.5 |
+| **MRH** | Contrat-année | 1 contrat actif 1 an = 1.0 |
+| **RC Pro** | Chiffre d'affaires | CA déclaré de l'entreprise |
+| **Transport** | Tonnes-km | Volume transporté × distance |
+
+---
+
+# Exposition acquise vs écrite
+
+## La distinction fondamentale
+
+```{python}
+#| label: fig-exposition-acquise
+#| fig-cap: "Exposition acquise vs écrite pour un contrat démarrant en juillet"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+
+fig, ax = plt.subplots(figsize=(12, 4))
+
+ax.barh(['Année N'], [1], left=[0], color='#e5e7eb', height=0.4, label='Non acquise')
+ax.barh(['Année N'], [0.5], left=[0.5], color='#06436e', height=0.4, label='Acquise N')
+ax.barh(['Année N+1'], [0.5], left=[0], color='#2fe8f0', height=0.4, label='Acquise N+1')
+ax.barh(['Année N+1'], [0.5], left=[0.5], color='#e5e7eb', height=0.4)
+
+ax.axvline(x=0.5, color='#fe4454', linestyle='--', linewidth=2, label='Début contrat (1er juillet)')
+ax.set_xlim(0, 1)
+ax.set_xlabel('Fraction d\'année')
+ax.set_title('Exposition acquise : contrat souscrit le 1er juillet', fontsize=13, fontweight='bold', color='#06436e')
+ax.legend(loc='upper right')
+
+months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc']
+ax.set_xticks(np.linspace(0, 1, 13))
+ax.set_xticklabels(['Jan', '', '', '', '', '', 'Jul', '', '', '', '', '', 'Déc'], fontsize=9)
+
+plt.tight_layout()
+plt.show()
+```
+
+- **Exposition écrite** : somme des primes/contrats émis dans la période
+- **Exposition acquise** : fraction effectivement couverte pendant la période d'observation
+
+:::{.exemple-box}
+**📝 Exemple**
+
+Un contrat auto souscrit le 1er juillet N pour 1 an :
+
+- Exposition écrite en N = 1 contrat
+- Exposition acquise en N = 0.5 (6 mois sur 12)
+- Exposition acquise en N+1 = 0.5
+:::
+
+---
+
+# Segmentation du portefeuille
+
+## Variables de segmentation classiques
+
+```{python}
+#| label: fig-segmentation
+#| fig-cap: "Distribution de la fréquence de sinistres par segment d'âge"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(42)
+segments = ['18-25', '26-35', '36-45', '46-55', '56-65', '65+']
+frequences = [0.12, 0.08, 0.06, 0.05, 0.06, 0.09]
+expositions = [800, 2500, 3500, 3000, 2000, 1200]
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+colors = ['#fe4454', '#ffbc8c', '#f8d65c', '#72f1b8', '#2fe8f0', '#a97eff']
+ax1.bar(segments, frequences, color=colors, edgecolor='white', linewidth=2)
+ax1.set_ylabel('Fréquence de sinistres')
+ax1.set_xlabel('Tranche d\'âge')
+ax1.set_title('Fréquence par segment', fontsize=12, fontweight='bold', color='#06436e')
+ax1.grid(axis='y', alpha=0.3)
+
+ax2.bar(segments, expositions, color=colors, edgecolor='white', linewidth=2)
+ax2.set_ylabel('Exposition (véhicules-année)')
+ax2.set_xlabel('Tranche d\'âge')
+ax2.set_title('Exposition par segment', fontsize=12, fontweight='bold', color='#06436e')
+ax2.grid(axis='y', alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Attention**
+
+La segmentation doit être à la fois **pertinente statistiquement** (pouvoir discriminant) et **acceptable légalement** (pas de discrimination). En France, le sexe ne peut plus être utilisé comme variable de tarification en assurance auto depuis 2012 (arrêt Test-Achats).
+:::
+
+---
+
+# Lien exposition-tarification
+
+## La prime pure comme ratio
+
+$$\text{Prime pure} = \frac{\text{Charge sinistres}}{\text{Exposition}} = \text{Fréquence} \times \text{Sévérité}$$
+
+Où :
+
+- Fréquence = Nombre de sinistres / Exposition
+- Sévérité = Charge sinistres / Nombre de sinistres
+
+:::{.concept-cle}
+**💡 Point clé**
+
+La qualité de la mesure d'exposition détermine directement la qualité de la tarification. Une exposition mal mesurée biaise la fréquence estimée et donc la prime.
+:::
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **L'exposition mesure la quantité de risque** — C'est le dénominateur de tous les indicateurs
+2. **Acquise ≠ Écrite** — L'acquise mesure le risque réellement supporté pendant la période
+3. **L'unité d'exposition dépend de la branche** — Véhicule-année, contrat-année, CA...
+4. **La segmentation est la base de la tarification** — Regrouper les risques similaires
+5. **Exposition et prime pure sont liées** — Prime pure = Charge / Exposition
+:::
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1 : Un contrat auto souscrit le 1er avril N, résilié le 30 septembre N. Quelle est l'exposition acquise ?
+
+**Réponse** : 6 mois sur 12 = **0.5 véhicule-année**.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Pourquoi ne peut-on pas simplement compter le nombre de contrats comme mesure d'exposition ?
+
+**Réponse** : Car tous les contrats ne couvrent pas la même durée. Un contrat actif 3 mois ne représente pas le même risque qu'un contrat actif 12 mois. L'exposition acquise pondère par la durée effective de couverture.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Pourquoi la segmentation est-elle essentielle en tarification ?
+
+**Réponse** : Sans segmentation, on appliquerait un tarif moyen identique à tous. Les bons risques (jeunes conducteurs prudents) paieraient trop cher et partiraient (anti-sélection), tandis que les mauvais risques resteraient. La segmentation permet de tarifer au plus juste.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : Quelle contrainte légale limite la segmentation en France ?
+
+**Réponse** : L'arrêt Test-Achats (2012) interdit l'utilisation du sexe comme variable tarifaire. Plus généralement, le RGPD et les principes de non-discrimination limitent les variables utilisables (origine, religion, handicap sont interdits).
+:::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Exposition** | Mesure de la quantité de risque couverte |
+| **Exposition acquise** | Fraction de l'exposition effectivement supportée pendant la période |
+| **Exposition écrite** | Total des contrats/primes émis dans la période |
+| **Segmentation** | Découpage du portefeuille en groupes de risques homogènes |
+| **Variable de tarification** | Critère utilisé pour différencier les primes |
+
+---
+
+[← Retour à la Semaine 3](index.html){.btn .btn-secondary}
+[Voir le Module Technique 3 →](module-technique-03.html){.btn .btn-primary}

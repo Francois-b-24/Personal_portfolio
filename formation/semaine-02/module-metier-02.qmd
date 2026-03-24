@@ -1,0 +1,285 @@
+---
+title: "Module 2 — Produits d'assurance non-vie"
+subtitle: "Comprendre la diversité de l'offre IARD et la structure des contrats"
+author: "François Boussengui"
+date: last-modified
+categories: [assurance, produits, IARD]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.concept-cle strong { color: #06436e; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+À l'issue de ce module, tu seras capable de :
+
+1. **Classifier** les principaux produits d'assurance non-vie par branche
+2. **Décrypter** la structure d'un contrat d'assurance
+3. **Distinguer** garanties, franchises, plafonds et exclusions
+4. **Comprendre** le cycle de vie d'un contrat de la souscription à la résiliation
+5. **Situer** les acteurs de la chaîne de valeur assurantielle
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Module 1 — Fondements économiques de l'assurance
+:::
+:::{div}
+⏱️ **Temps estimé** : 2 à 3 heures de lecture active
+:::
+:::
+
+---
+
+# La classification des produits non-vie
+
+## Les grandes branches IARD
+
+L'assurance non-vie (ou IARD — Incendie, Accidents et Risques Divers) couvre l'ensemble des risques matériels et de responsabilité. Le marché se structure en grandes branches :
+
+```{python}
+#| label: fig-branches-iard
+#| fig-cap: "Répartition du chiffre d'affaires IARD en France (données illustratives)"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+branches = ['Automobile', 'MRH', 'Santé\ncomplémentaire', 'RC Générale', 'Dommages\naux biens pro', 'Construction', 'Transport', 'Autres']
+parts = [22, 18, 25, 8, 12, 6, 4, 5]
+colors = ['#06436e', '#2fe8f0', '#72f1b8', '#f8d65c', '#ffbc8c', '#a97eff', '#fe4454', '#e5e7eb']
+
+fig, ax = plt.subplots(figsize=(10, 7))
+wedges, texts, autotexts = ax.pie(parts, labels=branches, autopct='%1.0f%%', colors=colors, startangle=90, pctdistance=0.85)
+
+for text in texts:
+    text.set_fontsize(10)
+for autotext in autotexts:
+    autotext.set_fontsize(9)
+    autotext.set_fontweight('bold')
+
+ax.set_title('Répartition du marché IARD français', fontsize=14, fontweight='bold', color='#06436e', pad=20)
+plt.tight_layout()
+plt.show()
+```
+
+## Particuliers vs Professionnels
+
+| Segment | Produits phares | Caractéristiques |
+|---------|----------------|------------------|
+| **Particuliers** | Auto, MRH, Santé, GAV | Volume élevé, sinistres fréquents mais modérés |
+| **Professionnels** | RC Pro, Multirisque, Flotte | Risques plus complexes, tarification sur mesure |
+| **Entreprises** | Dommages, RC, D&O, Cyber | Grands risques, courtage, réassurance |
+
+---
+
+# Anatomie d'un contrat d'assurance
+
+## Les éléments constitutifs
+
+Un contrat d'assurance se compose de plusieurs pièces :
+
+```{mermaid}
+%%| fig-cap: "Structure d'un contrat d'assurance"
+
+flowchart TD
+    A[Contrat d'assurance] --> B[Conditions Générales]
+    A --> C[Conditions Particulières]
+    A --> D[Conditions Spéciales]
+    B --> B1[Définitions, règles communes]
+    C --> C1[Identité, garanties choisies, primes]
+    D --> D1[Options, extensions spécifiques]
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Les **Conditions Générales** sont identiques pour tous les assurés d'un même produit. Les **Conditions Particulières** personnalisent le contrat (garanties, franchises, montant de prime). C'est dans les CP que se trouvent les données exploitables en data science.
+:::
+
+## Garanties, franchises et exclusions
+
+**Les garanties** définissent ce qui est couvert :
+
+- **Garantie de base** : couverture minimale obligatoire (ex : RC auto)
+- **Garanties optionnelles** : extensions choisies par l'assuré (bris de glace, vol, etc.)
+
+**Les franchises** représentent la part restant à charge de l'assuré :
+
+| Type de franchise | Fonctionnement | Exemple |
+|-------------------|---------------|---------|
+| **Absolue** | L'assuré paie toujours ce montant | Franchise 300 € → sinistre 1000 € → indemnité 700 € |
+| **Relative** | En dessous, rien. Au-dessus, tout. | Franchise 300 € → sinistre 200 € → 0 €, sinistre 400 € → 400 € |
+| **Proportionnelle** | % du sinistre à charge | 10% du montant du sinistre |
+
+:::{.attention-box}
+**⚠️ Attention**
+
+Les **exclusions** sont les risques non couverts. Elles peuvent être légales (guerre, nucléaire), conventionnelles (vétusté, usure) ou spécifiques au contrat. En data science, il faut les identifier car elles impactent directement le périmètre d'analyse des sinistres.
+:::
+
+---
+
+# Le cycle de vie du contrat
+
+## De la souscription à la résiliation
+
+```{python}
+#| label: fig-cycle-vie
+#| fig-cap: "Cycle de vie d'un contrat d'assurance"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+
+fig, ax = plt.subplots(figsize=(14, 5))
+
+etapes = [
+    ("Devis &\nTarification", 0.08, '#f8d65c'),
+    ("Souscription", 0.22, '#ffbc8c'),
+    ("Émission\ndu contrat", 0.36, '#2fe8f0'),
+    ("Vie du\ncontrat", 0.50, '#72f1b8'),
+    ("Gestion\nsinistres", 0.64, '#a97eff'),
+    ("Renouvellement\nou Résiliation", 0.78, '#fe4454'),
+    ("Archivage", 0.92, '#e5e7eb'),
+]
+
+for texte, x, color in etapes:
+    circle = plt.Circle((x, 0.5), 0.07, color=color, ec='white', linewidth=2)
+    ax.add_patch(circle)
+    ax.text(x, 0.5, texte, ha='center', va='center', fontsize=8, fontweight='bold')
+
+for i in range(len(etapes)-1):
+    ax.annotate("", xy=(etapes[i+1][1]-0.08, 0.5), xytext=(etapes[i][1]+0.08, 0.5),
+                arrowprops=dict(arrowstyle="->", color="#06436e", lw=2))
+
+ax.set_xlim(0, 1)
+ax.set_ylim(0.2, 0.8)
+ax.axis('off')
+ax.set_title('Cycle de vie du contrat d\'assurance', fontsize=14, fontweight='bold', color='#06436e')
+plt.tight_layout()
+plt.show()
+```
+
+## Les données générées à chaque étape
+
+Chaque étape du cycle de vie produit des données exploitables :
+
+| Étape | Données clés | Usage data |
+|-------|-------------|------------|
+| **Tarification** | Variables de risque, segmentation | Modèles de pricing |
+| **Souscription** | Profil assuré, garanties choisies | Analyse du portefeuille |
+| **Sinistres** | Date, nature, coût, réserves | Modèles fréquence/sévérité |
+| **Résiliation** | Motif, ancienneté, historique | Modèles de churn |
+
+---
+
+# La chaîne de valeur
+
+## Les acteurs de l'écosystème
+
+```{mermaid}
+%%| fig-cap: "Chaîne de valeur de l'assurance non-vie"
+
+flowchart LR
+    A[👤 Assuré] -->|Prime| B[🏪 Distributeur]
+    B -->|Contrat| C[🏢 Assureur]
+    C -->|Cession| D[🏦 Réassureur]
+    C -->|Sinistre| E[🔍 Expert]
+    E -->|Rapport| C
+    C -->|Indemnité| A
+```
+
+:::{.exemple-box}
+**📝 Exemple concret**
+
+Dans ton expérience chez un courtier, tu as pu observer cette chaîne : le courtier (distributeur) négocie les conditions avec l'assureur, le client souscrit, et en cas de sinistre, un expert évalue les dommages avant indemnisation.
+:::
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 concepts fondamentaux à retenir
+
+1. **L'IARD couvre les risques matériels et de responsabilité** — Auto, MRH, RC Pro, Dommages...
+2. **Le contrat a une structure normée** — CG + CP + CS définissent garanties, franchises, exclusions
+3. **Les franchises modulent le risque** — Absolue, relative ou proportionnelle
+4. **Le cycle de vie génère des données** — Chaque étape est une source de features pour la data science
+5. **La chaîne de valeur est complexe** — Assurés, distributeurs, assureurs, réassureurs, experts
+:::
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1 : Quelle est la différence entre une franchise absolue et relative ?
+
+**Réponse** : Franchise **absolue** : l'assuré paie toujours le montant de la franchise (sinistre 1000€, franchise 300€ → indemnité 700€). Franchise **relative** : si le sinistre est inférieur à la franchise, rien n'est payé. S'il la dépasse, tout est payé (sinistre 200€, franchise 300€ → 0€ ; sinistre 400€ → indemnité 400€).
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Quelles données sont générées lors de la phase de tarification ?
+
+**Réponse** : Variables de risque (âge, zone géographique, historique sinistres, type de bien), segmentation du client, score de risque, prime technique calculée. Ces données alimentent les modèles de pricing GLM et ML.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Pourquoi les exclusions sont-elles importantes en data science assurantielle ?
+
+**Réponse** : Les exclusions définissent le périmètre réel de couverture. Un sinistre exclu ne génère pas d'indemnisation. En modélisation, il faut s'assurer que les sinistres exclus ne sont pas comptabilisés dans les modèles de fréquence/sévérité, sous peine de biaiser les estimations.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : Quel est le rôle du réassureur dans la chaîne de valeur ?
+
+**Réponse** : Le réassureur est "l'assureur des assureurs". Il prend en charge une partie des risques de l'assureur (cession) en échange d'une prime de réassurance. Cela permet à l'assureur de se protéger contre les sinistres exceptionnels et de respecter ses exigences de solvabilité.
+:::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **IARD** | Incendie, Accidents et Risques Divers — l'ensemble de l'assurance non-vie |
+| **Franchise** | Part du sinistre restant à charge de l'assuré |
+| **Garantie** | Risque couvert par le contrat d'assurance |
+| **Exclusion** | Risque explicitement non couvert |
+| **Conditions Générales** | Clauses communes à tous les contrats d'un même produit |
+| **Conditions Particulières** | Clauses spécifiques à chaque assuré |
+| **Réassurance** | Transfert d'une partie du risque de l'assureur à un réassureur |
+
+---
+
+[← Retour à la Semaine 2](index.html){.btn .btn-secondary}
+[Voir le Module Technique 2 →](module-technique-02.html){.btn .btn-primary}

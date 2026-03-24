@@ -387,6 +387,186 @@ use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
         <p><strong>Métier</strong> : Sinistralité I<br>
         <strong>Technique</strong> : CI/CD GitHub Actions</p>
     </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 5</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Sinistralité II — Fréquence & Sévérité<br>
+        <strong>Technique</strong> : AWS — Introduction & S3</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 6</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Évolution des sinistres<br>
+        <strong>Technique</strong> : AWS — EC2 & Compute</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 7</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Provisionnement<br>
+        <strong>Technique</strong> : AWS — RDS & Bases de données</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 8</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Principes tarifaires<br>
+        <strong>Technique</strong> : AWS — Lambda & Serverless</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 9</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Comportements & Anti-sélection<br>
+        <strong>Technique</strong> : AWS — Architecture & Services</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 10</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Tarification avancée<br>
+        <strong>Technique</strong> : AWS — Certification SAA</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 11</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Rentabilité & Indicateurs<br>
+        <strong>Technique</strong> : MLflow — Tracking & Versionnement</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 12</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Solvabilité II<br>
+        <strong>Technique</strong> : FastAPI — API de scoring</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 13</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Données assurance<br>
+        <strong>Technique</strong> : Projet Central — Cadrage & Setup</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 14</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : MLOps appliqué à l'assurance<br>
+        <strong>Technique</strong> : Projet Central — Pipeline de données</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 15</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Industrialisation<br>
+        <strong>Technique</strong> : Projet Central — Feature engineering</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 16</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Révision Bloc I-II<br>
+        <strong>Technique</strong> : Projet Central — Modélisation fréquence</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 17</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Révision Bloc III<br>
+        <strong>Technique</strong> : Projet Central — Modélisation sévérité</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 18</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Révision Bloc IV-V<br>
+        <strong>Technique</strong> : Projet Central — Tarification GLM</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 19</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Approfondissement tarification<br>
+        <strong>Technique</strong> : Projet Central — Tarification ML</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 20</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Approfondissement pilotage<br>
+        <strong>Technique</strong> : Projet Central — API & Déploiement</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 21</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Étude de cas intégrée<br>
+        <strong>Technique</strong> : Projet Central — Dashboard</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 22</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Étude de cas intégrée (suite)<br>
+        <strong>Technique</strong> : Projet Central — Tests & CI/CD</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 23</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Préparation soutenance<br>
+        <strong>Technique</strong> : Projet Central — Documentation</p>
+    </div>
+
+    <div class="semaine-card locked">
+        <div class="semaine-header">
+            <span class="semaine-title">Semaine 24</span>
+            <span class="semaine-status status-locked">🔒</span>
+        </div>
+        <p><strong>Métier</strong> : Soutenance & Bilan<br>
+        <strong>Technique</strong> : Projet Central — Livraison finale</p>
+    </div>
 </div>
 
 <!-- Projet Central -->

@@ -1,0 +1,186 @@
+---
+title: "Fiche de travail — Semaine 3"
+subtitle: "Exercices pratiques et livrables à produire"
+author: "François Boussengui"
+date: last-modified
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
+
+---
+
+## 📦 Livrables
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Analyse d'exposition:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+Calcul d'exposition acquise sur données simulées avec Python. Produire un tableau par segment.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📋 Livrable 2 — Segmentation portefeuille:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+Identifier 3-5 segments de risque pertinents, justifier les variables choisies.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🔄 Livrable 3 — Repo Git structuré:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+Repo GitHub avec branches, au moins 1 PR mergée, tags, historique propre.
+:::
+
+---
+
+## 🏋️ Exercices
+
+### Exercices Métier
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Calcul d'exposition acquise
+:::
+
+Un portefeuille auto contient 3 contrats :
+
+| Contrat | Début | Fin | Statut |
+|---------|-------|-----|--------|
+| A | 01/01/N | 31/12/N | Actif |
+| B | 01/04/N | 30/09/N | Résilié |
+| C | 01/10/N | 30/09/N+1 | Actif |
+
+Calcule l'exposition acquise totale pour l'année N.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- Contrat A : 12/12 = **1.0**
+- Contrat B : 6/12 = **0.5**
+- Contrat C : 3/12 = **0.25** (oct-déc en année N)
+- **Total : 1.75 véhicules-année**
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M2 — Fréquence par segment
+:::
+
+Avec les données suivantes, calcule la fréquence par tranche d'âge :
+
+| Segment | Exposition | Sinistres |
+|---------|-----------|-----------|
+| 18-25 | 500 | 60 |
+| 26-40 | 3000 | 180 |
+| 41-60 | 4000 | 200 |
+| 60+ | 1500 | 105 |
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- 18-25 : 60/500 = **12.0%**
+- 26-40 : 180/3000 = **6.0%**
+- 41-60 : 200/4000 = **5.0%**
+- 60+ : 105/1500 = **7.0%**
+
+Les jeunes conducteurs ont une fréquence 2.4× supérieure aux 41-60 ans.
+:::
+:::
+
+### Exercices Techniques
+
+:::{.exercice-box}
+:::{.exercice-header}
+🔄 Exercice T1 — Workflow branching
+:::
+
+1. Crée un repo `formation-assurance`
+2. Crée une branche `feature/exposition-calcul`
+3. Ajoute un script Python de calcul d'exposition
+4. Commite, push et crée une PR
+5. Merge la PR dans main
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```bash
+git init formation-assurance && cd formation-assurance
+git checkout -b feature/exposition-calcul
+# ... créer le script ...
+git add . && git commit -m "feat: add exposure calculation"
+git push -u origin feature/exposition-calcul
+gh pr create --title "Add exposure calculation"
+gh pr merge
+```
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+🔄 Exercice T2 — Résolution de conflit
+:::
+
+Simule un conflit en modifiant le même fichier sur deux branches différentes, puis résous-le.
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. Comment versionnerais-tu ton analyse d'exposition pour pouvoir la reproduire ?
+2. Quelle structure de repo Git adopterais-tu pour ton projet de pilotage de portefeuille ?
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Terminé le Module Métier 3
+- Terminé le Module Technique 3
+- Produit le Livrable 1 (exposition)
+- Produit le Livrable 2 (segmentation)
+- Produit le Livrable 3 (repo Git)
+- Réalisé les exercices métier
+- Réalisé les exercices techniques
+:::
+
+---
+
+[← Retour à la Semaine 3](index.html){.btn .btn-secondary}

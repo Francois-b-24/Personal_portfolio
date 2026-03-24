@@ -1,0 +1,308 @@
+---
+title: "Module Technique 2 — Docker Compose"
+subtitle: "Orchestrer plusieurs conteneurs pour des applications complexes"
+author: "François Boussengui"
+date: last-modified
+categories: [docker, compose, mlops]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.comparison-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.comparison-card h4 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+À l'issue de ce module, tu seras capable de :
+
+1. **Expliquer** pourquoi on a besoin d'orchestrer plusieurs conteneurs
+2. **Écrire** un fichier docker-compose.yml complet
+3. **Configurer** services, réseaux et volumes dans Compose
+4. **Déployer** une application multi-conteneurs (API + BDD)
+5. **Maîtriser** les commandes Compose du quotidien
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Module Technique 1 — Docker installé et bases maîtrisées
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
+
+---
+
+# Pourquoi Docker Compose ?
+
+## Le problème des applications multi-services
+
+En pratique, une application Data Science ne tourne jamais seule. Elle a besoin de services complémentaires :
+
+```{mermaid}
+%%| fig-cap: "Architecture typique d'une application Data Science"
+
+flowchart LR
+    A[🐍 API Python<br>FastAPI/Flask] --> B[🗄️ Base de données<br>PostgreSQL]
+    A --> C[📊 Dashboard<br>Streamlit]
+    A --> D[💾 Cache<br>Redis]
+    C --> A
+```
+
+Sans Compose, il faudrait lancer manuellement chaque conteneur avec de longues commandes `docker run`. Compose permet de tout définir dans **un seul fichier YAML**.
+
+## Structure du fichier docker-compose.yml
+
+```yaml
+# docker-compose.yml
+version: "3.8"
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/assurance
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: assurance
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pg_data:
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Dans Compose, les services communiquent entre eux par leur **nom de service**. Ici, l'API accède à la BDD via `db:5432` — pas besoin d'adresse IP. Compose crée automatiquement un réseau interne.
+:::
+
+---
+
+# Les concepts clés de Compose
+
+## Services
+
+Un **service** = un conteneur (ou plusieurs réplicas) défini par une image ou un build context.
+
+| Propriété | Description |
+|-----------|-------------|
+| `image` | Image Docker à utiliser |
+| `build` | Chemin vers un Dockerfile |
+| `ports` | Mapping de ports host:conteneur |
+| `environment` | Variables d'environnement |
+| `depends_on` | Ordre de démarrage |
+| `volumes` | Montages de données |
+| `restart` | Politique de redémarrage |
+
+## Volumes
+
+Les volumes persistent les données au-delà du cycle de vie des conteneurs :
+
+```yaml
+volumes:
+  pg_data:           # Volume nommé (géré par Docker)
+
+services:
+  db:
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Volume nommé
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Bind mount
+```
+
+## Réseaux
+
+Par défaut, Compose crée un réseau pour chaque projet. Tu peux aussi définir des réseaux personnalisés pour isoler certains services.
+
+---
+
+# Application pratique : API + PostgreSQL
+
+## Structure du projet
+
+```
+projet-assurance/
+├── docker-compose.yml
+├── api/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── main.py
+└── db/
+    └── init.sql
+```
+
+## Le Dockerfile de l'API
+
+```dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY main.py .
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+## Le script API (main.py)
+
+```python
+from fastapi import FastAPI
+import psycopg2
+import os
+
+app = FastAPI(title="API Assurance")
+
+@app.get("/contrats")
+def get_contrats():
+    conn = psycopg2.connect(os.environ["DATABASE_URL"])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM contrats LIMIT 10")
+    rows = cur.fetchall()
+    conn.close()
+    return {"contrats": rows}
+```
+
+---
+
+# Les commandes essentielles
+
+| Commande | Description |
+|----------|-------------|
+| `docker compose up` | Démarrer tous les services |
+| `docker compose up -d` | Démarrer en arrière-plan |
+| `docker compose down` | Arrêter et supprimer les conteneurs |
+| `docker compose logs -f` | Suivre les logs en temps réel |
+| `docker compose ps` | Lister les services en cours |
+| `docker compose exec api bash` | Entrer dans un service |
+| `docker compose build` | Reconstruire les images |
+
+:::{.terminal-box}
+<span class="comment"># Lancer l'application</span><br>
+<span class="prompt">$</span> docker compose up -d<br>
+<span class="output">[+] Running 3/3</span><br>
+<span class="output"> ✔ Network projet_default  Created</span><br>
+<span class="output"> ✔ Container projet-db-1   Started</span><br>
+<span class="output"> ✔ Container projet-api-1  Started</span><br><br>
+<span class="comment"># Vérifier que tout tourne</span><br>
+<span class="prompt">$</span> docker compose ps<br>
+<span class="output">NAME             SERVICE   STATUS    PORTS</span><br>
+<span class="output">projet-api-1     api       running   0.0.0.0:8000->8000/tcp</span><br>
+<span class="output">projet-db-1      db        running   0.0.0.0:5432->5432/tcp</span>
+:::
+
+---
+
+# Bonnes pratiques
+
+:::{.comparison-grid}
+:::{.comparison-card}
+#### ❌ À éviter
+
+- Mettre les mots de passe en dur dans le YAML
+- Ne pas utiliser `depends_on`
+- Oublier les volumes pour les données persistantes
+- Utiliser `latest` comme tag d'image
+:::
+
+:::{.comparison-card}
+#### ✅ Recommandé
+
+- Utiliser un fichier `.env` pour les secrets
+- Définir l'ordre de démarrage
+- Toujours persister les données de BDD
+- Fixer les versions d'images
+:::
+:::
+
+:::{.attention-box}
+**⚠️ Important**
+
+`depends_on` ne garantit pas que le service est **prêt**, seulement qu'il est **démarré**. Pour PostgreSQL, utilise un healthcheck ou un script d'attente dans ton API.
+:::
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Compose orchestre plusieurs conteneurs** — Un fichier YAML pour toute l'architecture
+2. **Les services communiquent par nom** — Pas besoin d'IP, Compose gère le réseau
+3. **Les volumes persistent les données** — Indispensable pour les bases de données
+4. **`depends_on` gère l'ordre** — Mais pas la disponibilité réelle du service
+5. **Le fichier .env protège les secrets** — Ne jamais commiter les mots de passe
+:::
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1 : Quelle est la différence entre `docker run` et `docker compose up` ?
+
+**Réponse** : `docker run` lance **un seul conteneur** à partir d'une image. `docker compose up` lance **tous les services** définis dans le fichier `docker-compose.yml`, avec leurs réseaux, volumes et dépendances configurés.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Comment un service accède-t-il à un autre dans Compose ?
+
+**Réponse** : Par le **nom du service** défini dans le YAML. Compose crée automatiquement un réseau interne et un DNS. Exemple : l'API accède à PostgreSQL via `db:5432` (où `db` est le nom du service).
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Pourquoi utiliser un volume nommé plutôt qu'un bind mount pour PostgreSQL ?
+
+**Réponse** : Un **volume nommé** est géré par Docker, offrant de meilleures performances et une portabilité accrue. Un **bind mount** lie un dossier de l'hôte au conteneur — utile en développement, mais moins portable. Pour les données de production (BDD), un volume nommé est préférable.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : `depends_on` garantit-il que PostgreSQL est prêt à recevoir des connexions ?
+
+**Réponse** : Non. `depends_on` garantit uniquement que le **conteneur est démarré**, pas que le service à l'intérieur est opérationnel. PostgreSQL peut prendre quelques secondes pour s'initialiser. Il faut ajouter un **healthcheck** ou un mécanisme de retry dans l'application.
+:::
+
+---
+
+[← Retour à la Semaine 2](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-02.html){.btn .btn-primary}

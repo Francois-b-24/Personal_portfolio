@@ -1,0 +1,163 @@
+---
+title: "Semaine 3"
+subtitle: "Exposition au risque & Git avancé"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "→"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## 🎯 Vue d'ensemble
+
+Cette semaine clôt le Bloc I des fondements métier avec l'**exposition au risque** — la base de toute tarification. Côté technique, tu maîtriseras **Git avancé** pour travailler en équipe sur ton code.
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module 3 — Exposition au risque</strong></p>
+        <ul class="track-topics">
+            <li>Mesures d'exposition (unités de risque)</li>
+            <li>Exposition acquise vs écrite</li>
+            <li>Segmentation et variables de risque</li>
+            <li>Tarification et exposition</li>
+            <li>Impact sur la mutualisation</li>
+        </ul>
+    </div>
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 3 — Git avancé</strong></p>
+        <ul class="track-topics">
+            <li>Branching strategies (Git Flow, trunk-based)</li>
+            <li>Merge vs Rebase</li>
+            <li>Résolution de conflits</li>
+            <li>Pull Requests et code review</li>
+            <li>Tags et releases</li>
+        </ul>
+    </div>
+</div>
+```
+
+---
+
+## 📋 Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Définir et calculer l'exposition acquise d'un portefeuille</li>
+        <li>Identifier les variables de segmentation pertinentes</li>
+        <li>Expliquer le lien entre exposition et tarification</li>
+        <li>Analyser la composition d'un portefeuille par segment</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Créer et gérer des branches Git</li>
+        <li>Résoudre des conflits de merge</li>
+        <li>Utiliser rebase pour un historique propre</li>
+        <li>Créer des Pull Requests et faire du code review</li>
+    </ol>
+</div>
+```
+
+---
+
+## 📅 Planning suggéré
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Mesures d'exposition, unités de risque | Branching strategies |
+| **Jour 2** | Exposition acquise vs écrite | Merge vs Rebase |
+| **Jour 3** | Segmentation et variables de risque | Résolution de conflits |
+| **Jour 4** | Lien exposition-tarification + Auto-éval | Pull Requests, tags |
+| **Jour 5** | **Débriefing** | **Livrable : Repo Git structuré** |
+
+---
+
+## 📦 Livrables attendus
+
+```{=html}
+<div class="deliverables-box">
+    <h3>À rendre en fin de semaine :</h3>
+    <ol>
+        <li><strong>Analyse d'exposition</strong> : Calcul d'exposition acquise sur données simulées</li>
+        <li><strong>Segmentation portefeuille</strong> : Identifier 3-5 segments de risque pertinents</li>
+        <li><strong>Repo Git structuré</strong> : Repo avec branches, PR, et historique propre</li>
+    </ol>
+</div>
+```
+
+---
+
+## 📚 Accès aux modules
+
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-03.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 3</div>
+        <div class="nav-card-desc">Exposition au risque<br><small>→ Mesurer et segmenter</small></div>
+    </a>
+    <a href="module-technique-03.html" class="nav-card">
+        <div class="nav-card-title">🔄 Module Technique 3</div>
+        <div class="nav-card-desc">Git avancé<br><small>→ Collaborer efficacement</small></div>
+    </a>
+    <a href="fiche-travail-03.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables<br><small>→ Valider tes acquis</small></div>
+    </a>
+</div>
+```
+
+---
+
+::: {.callout-tip}
+## Articulation métier/technique
+L'exposition au risque est la brique de base de la tarification. Git te permettra de versionner tes analyses et de collaborer sur les modèles. Pense déjà à structurer ton repo pour le projet central.
+:::
+
+::: {.callout-note}
+## Rythme
+C'est la dernière semaine du Bloc I. Assure-toi de bien maîtriser les fondements avant de passer à la sinistralité.
+:::
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}

@@ -1,0 +1,268 @@
+---
+title: "Module Technique 3 — Git avancé"
+subtitle: "Maîtriser le versionnement pour collaborer efficacement"
+author: "François Boussengui"
+date: last-modified
+categories: [git, collaboration, technique]
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 3
+number-sections: true
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.comparison-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.comparison-card h4 { margin-top: 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Maîtriser** les stratégies de branching (Git Flow, trunk-based)
+2. **Choisir** entre merge et rebase selon le contexte
+3. **Résoudre** des conflits de merge sereinement
+4. **Créer** des Pull Requests et pratiquer le code review
+5. **Utiliser** les tags pour versionner tes releases
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Git de base (add, commit, push, pull)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
+
+---
+
+# Stratégies de branching
+
+## Git Flow
+
+```{mermaid}
+%%| fig-cap: "Git Flow : branches principales et de support"
+
+gitGraph
+    commit id: "init"
+    branch develop
+    commit id: "dev-1"
+    branch feature/model
+    commit id: "feat-1"
+    commit id: "feat-2"
+    checkout develop
+    merge feature/model id: "merge-feat"
+    branch release/v1
+    commit id: "rel-fix"
+    checkout main
+    merge release/v1 id: "v1.0" tag: "v1.0"
+    checkout develop
+    merge release/v1
+```
+
+| Branche | Rôle | Durée de vie |
+|---------|------|-------------|
+| `main` | Code en production | Permanente |
+| `develop` | Intégration des features | Permanente |
+| `feature/*` | Développement d'une fonctionnalité | Temporaire |
+| `release/*` | Préparation d'une release | Temporaire |
+| `hotfix/*` | Correction urgente en production | Temporaire |
+
+## Trunk-based development
+
+Plus simple : tout le monde travaille sur `main` avec des branches très courtes (< 1 jour).
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Pour un projet solo ou une petite équipe data, le **trunk-based** est souvent plus adapté. Git Flow est conçu pour des équipes nombreuses avec des releases planifiées.
+:::
+
+---
+
+# Merge vs Rebase
+
+:::{.comparison-grid}
+:::{.comparison-card}
+#### 🔀 Git Merge
+
+```bash
+git checkout main
+git merge feature/model
+```
+
+- Crée un **commit de merge**
+- Préserve l'historique complet
+- Non destructif
+- Historique plus "branchu"
+:::
+
+:::{.comparison-card}
+#### ↗️ Git Rebase
+
+```bash
+git checkout feature/model
+git rebase main
+```
+
+- **Réécrit** l'historique
+- Historique linéaire et propre
+- Plus risqué (ne jamais rebaser des commits publiés)
+- Idéal avant une PR
+:::
+:::
+
+:::{.attention-box}
+**⚠️ Règle d'or**
+
+Ne jamais rebaser des commits qui ont déjà été poussés et partagés avec d'autres. Le rebase réécrit l'historique — si quelqu'un a basé son travail sur tes commits, ça créera des conflits.
+:::
+
+---
+
+# Résolution de conflits
+
+## Quand surviennent les conflits ?
+
+Un conflit arrive quand deux branches modifient la **même ligne** du même fichier.
+
+:::{.terminal-box}
+<span class="prompt">$</span> git merge feature/pricing<br>
+<span class="output">Auto-merging models/pricing.py</span><br>
+<span class="output">CONFLICT (content): Merge conflict in models/pricing.py</span><br>
+<span class="output">Automatic merge failed; fix conflicts and then commit the result.</span>
+:::
+
+## Comment les résoudre ?
+
+Le fichier en conflit contient des marqueurs :
+
+```python
+<<<<<<< HEAD
+def calculer_prime(exposition, frequence):
+    return exposition * frequence * 1.15
+=======
+def calculer_prime(expo, freq, marge=0.10):
+    return expo * freq * (1 + marge)
+>>>>>>> feature/pricing
+```
+
+Tu choisis quelle version garder (ou combines les deux), supprimes les marqueurs, puis commites.
+
+---
+
+# Pull Requests et Code Review
+
+## Workflow PR
+
+```{mermaid}
+%%| fig-cap: "Workflow d'une Pull Request"
+
+flowchart LR
+    A[Créer branche] --> B[Développer]
+    B --> C[Push]
+    C --> D[Ouvrir PR]
+    D --> E[Code Review]
+    E --> F{Approuvé ?}
+    F -->|Oui| G[Merge]
+    F -->|Non| B
+```
+
+:::{.terminal-box}
+<span class="comment"># Créer et pousser une branche</span><br>
+<span class="prompt">$</span> git checkout -b feature/sinistralite-model<br>
+<span class="comment"># ... développement ...</span><br>
+<span class="prompt">$</span> git add . && git commit -m "feat: add frequency model"<br>
+<span class="prompt">$</span> git push -u origin feature/sinistralite-model<br><br>
+<span class="comment"># Créer la PR avec GitHub CLI</span><br>
+<span class="prompt">$</span> gh pr create --title "Add frequency model" --body "GLM Poisson pour la fréquence"
+:::
+
+---
+
+# Tags et releases
+
+```bash
+# Créer un tag annoté
+git tag -a v1.0.0 -m "Release initiale du modèle de tarification"
+
+# Pousser le tag
+git push origin v1.0.0
+
+# Lister les tags
+git tag -l "v1.*"
+```
+
+Convention de versionnement sémantique : `vMAJEUR.MINEUR.PATCH`
+
+---
+
+# Synthèse {.unnumbered}
+
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Git Flow pour les grands projets, trunk-based pour les petites équipes**
+2. **Merge préserve l'historique, rebase le linéarise** — Choisir selon le contexte
+3. **Ne jamais rebaser des commits publics**
+4. **Les PR structurent la collaboration** — Code review = qualité
+5. **Les tags marquent les versions** — Versionnement sémantique
+:::
+
+---
+
+# Auto-évaluation {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Question 1 : Quand utiliser merge vs rebase ?
+
+**Réponse** : **Merge** pour intégrer une branche dans main (préserve l'historique). **Rebase** pour mettre à jour ta branche de feature avec les derniers changements de main (historique propre). Ne jamais rebaser des commits déjà partagés.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 2 : Comment résoudre un conflit de merge ?
+
+**Réponse** : Ouvrir le fichier en conflit, choisir la bonne version entre les marqueurs `<<<<<<<` et `>>>>>>>`, supprimer les marqueurs, puis `git add` et `git commit`.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 3 : Quelle est la différence entre un tag léger et un tag annoté ?
+
+**Réponse** : Un **tag léger** est juste un pointeur vers un commit. Un **tag annoté** (`git tag -a`) contient un message, l'auteur et la date. Pour les releases, toujours utiliser des tags annotés.
+:::
+
+::: {.callout-note collapse="true"}
+## Question 4 : Pourquoi faire du code review via des PR ?
+
+**Réponse** : Pour attraper les bugs avant qu'ils n'arrivent en production, partager la connaissance du code dans l'équipe, maintenir la qualité et la cohérence du code, et documenter les décisions techniques.
+:::
+
+---
+
+[← Retour à la Semaine 3](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail →](fiche-travail-03.html){.btn .btn-primary}

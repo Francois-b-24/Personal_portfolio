@@ -1,0 +1,171 @@
+---
+title: "Semaine 2"
+subtitle: "Produits d'assurance non-vie & Docker Compose"
+title-block-banner: "#06436e"
+title-block-banner-color: "rgb(251, 225, 174)"
+toc: true
+toc-depth: 2
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "→"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## 🎯 Vue d'ensemble
+
+Cette deuxième semaine explore les **produits concrets** du marché non-vie et te fait découvrir **Docker Compose** pour orchestrer plusieurs conteneurs.
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header">
+            <span class="track-icon">🏢</span>
+            <span class="track-title">Volet Métier</span>
+        </div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module 2 — Produits d'assurance non-vie</strong></p>
+        <ul class="track-topics">
+            <li>Typologie des produits IARD</li>
+            <li>Structure d'un contrat d'assurance</li>
+            <li>Garanties, franchises et exclusions</li>
+            <li>Cycle de vie du contrat</li>
+            <li>Chaîne de valeur de l'assurance</li>
+        </ul>
+    </div>
+    <div class="track-card technique">
+        <div class="track-header">
+            <span class="track-icon">🛠️</span>
+            <span class="track-title">Volet Technique</span>
+        </div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 2 — Docker Compose</strong></p>
+        <ul class="track-topics">
+            <li>Pourquoi orchestrer plusieurs conteneurs</li>
+            <li>Syntaxe du fichier docker-compose.yml</li>
+            <li>Services, réseaux et volumes</li>
+            <li>Application multi-conteneurs</li>
+            <li>Commandes Compose essentielles</li>
+        </ul>
+    </div>
+</div>
+```
+
+---
+
+## 📋 Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Classer les principaux produits d'assurance non-vie par branche</li>
+        <li>Lire et interpréter les éléments clés d'un contrat</li>
+        <li>Distinguer garanties, franchises et exclusions</li>
+        <li>Décrire le cycle de vie complet d'un contrat</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Écrire un fichier docker-compose.yml fonctionnel</li>
+        <li>Orchestrer une application multi-conteneurs</li>
+        <li>Gérer les réseaux et volumes avec Compose</li>
+        <li>Utiliser les commandes Compose essentielles</li>
+    </ol>
+</div>
+```
+
+---
+
+## 📅 Planning suggéré
+
+| Jour | Matin (Métier) | Après-midi (Technique) |
+|------|----------------|------------------------|
+| **Jour 1** | Typologie IARD, branches d'assurance | Introduction Docker Compose, syntaxe YAML |
+| **Jour 2** | Structure du contrat, garanties | Services, réseaux et volumes |
+| **Jour 3** | Franchises, exclusions, cycle de vie | Application multi-conteneurs |
+| **Jour 4** | Chaîne de valeur + Auto-évaluation | Exercices pratiques Compose |
+| **Jour 5** | **Débriefing & validation** | **Livrable : App multi-conteneurs** |
+
+---
+
+## 📦 Livrables attendus
+
+```{=html}
+<div class="deliverables-box">
+    <h3>À rendre en fin de semaine :</h3>
+    <ol>
+        <li><strong>Cartographie des produits non-vie</strong> : Schéma des branches et sous-branches avec exemples</li>
+        <li><strong>Analyse d'un contrat</strong> : Décortiquer un contrat (garanties, franchises, exclusions)</li>
+        <li><strong>Application Docker Compose</strong> : docker-compose.yml orchestrant au moins 2 services</li>
+    </ol>
+</div>
+```
+
+---
+
+## 📚 Accès aux modules
+
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-02.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 2</div>
+        <div class="nav-card-desc">Produits d'assurance non-vie<br><small>→ Comprendre l'offre IARD</small></div>
+    </a>
+    <a href="module-technique-02.html" class="nav-card">
+        <div class="nav-card-title">🐳 Module Technique 2</div>
+        <div class="nav-card-desc">Docker Compose<br><small>→ Orchestrer tes applications</small></div>
+    </a>
+    <a href="fiche-travail-02.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables<br><small>→ Valider tes acquis</small></div>
+    </a>
+</div>
+```
+
+---
+
+## 💡 Conseils
+
+::: {.callout-tip}
+## Articulation métier/technique
+Les produits d'assurance génèrent des données (contrats, sinistres, primes) stockées en base. Docker Compose te permettra d'orchestrer une app avec sa BDD — exactement ce que tu feras dans ton projet central.
+:::
+
+::: {.callout-note}
+## Rythme
+Si tu as pris du retard sur la Semaine 1, consolide avant d'avancer. Les concepts s'appuient sur les fondamentaux.
+:::
+
+---
+
+[← Retour à la formation](../index.html){.btn .btn-secondary}
