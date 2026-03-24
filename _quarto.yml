@@ -41,9 +41,6 @@ website:
       - text: "Formation"
         href: formation/index.qmd
 
-      - text: "Blog"
-        href: blog/index.qmd
-
       - text: "Contact"
         href: contact.qmd
   
