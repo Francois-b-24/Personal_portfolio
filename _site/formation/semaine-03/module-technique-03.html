@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="François Boussengui">
+
+<title>François BOUSSENGUI | Module Technique 3 — Git avancé</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: rgb(251, 225, 174);
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: rgb(251, 225, 174);
+background: #06436e;
+      }
+</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+
+    // Theme Toggle System
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Create theme toggle button
+        const navbar = document.querySelector('.navbar-nav');
+        if (navbar) {
+            const themeToggle = document.createElement('li');
+            themeToggle.className = 'nav-item';
+            themeToggle.innerHTML = `
+                <button id="theme-toggle" class="nav-link btn btn-link" aria-label="Toggle theme">
+                    <i class="fa-solid fa-${currentTheme === 'dark' ? 'sun' : 'moon'}"></i>
+                </button>
+            `;
+            navbar.appendChild(themeToggle);
+
+            // Theme toggle functionality
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Update icon
+                this.innerHTML = `<i class="fa-solid fa-${newTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+            });
+        }
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+
+        // Lazy loading for iframes (PDFs)
+        const iframes = document.querySelectorAll('iframe:not([loading])');
+        iframes.forEach(iframe => {
+            iframe.setAttribute('loading', 'lazy');
+        });
+
+        // Add IntersectionObserver for additional optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    });
+</script>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bfrancois.netlify.app/">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 3 — Git avancé">
+<meta property="og:description" content="Maîtriser le versionnement pour collaborer efficacement">
+<meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="François B. Portfolio">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://bfrancois.netlify.app/">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 3 — Git avancé">
+<meta name="twitter:description" content="Maîtriser le versionnement pour collaborer efficacement">
+<meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "François BOUSSENGUI",
+  "url": "https://bfrancois.netlify.app/",
+  "image": "https://bfrancois.netlify.app/assets/img/moi.jpg",
+  "jobTitle": "Data Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Aon France"
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "Gabon"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Université de Tours",
+      "department": "Master 2 Économétrie, Data Science & Business Economics"
+    }
+  ],
+  "knowsAbout": [
+    "Data Science",
+    "Machine Learning",
+    "Économétrie",
+    "Python",
+    "R",
+    "SQL",
+    "Statistiques",
+    "Assurance",
+    "Analyse de données"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/fboussengui/",
+    "https://github.com/Francois-b-24"
+  ],
+  "email": "f.boussengui@gmail.com"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "François BOUSSENGUI Portfolio",
+  "url": "https://bfrancois.netlify.app/",
+  "description": "Portfolio professionnel de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données.",
+  "author": {
+    "@type": "Person",
+    "name": "François BOUSSENGUI"
+  },
+  "inLanguage": "fr-FR"
+}
+</script>
+
+<!-- Additional SEO Meta Tags -->
+<meta name="description" content="Portfolio de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données. 3+ années d'expérience, 8 projets réalisés.">
+<meta name="keywords" content="Data Science, Machine Learning, Économétrie, Python, R, SQL, Portfolio, François BOUSSENGUI, Statistiques, Analyse de données, Streamlit, Qlik Sense">
+<meta name="author" content="François BOUSSENGUI">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://bfrancois.netlify.app/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Alternative: Plausible Analytics (Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Plausible à Google Analytics -->
+<!--
+<script defer data-domain="bfrancois.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+
+<!-- Alternative: Umami Analytics (Self-hosted, Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Umami -->
+<!--
+<script async defer data-website-id="your-website-id" src="https://analytics.umami.is/script.js"></script>
+-->
+
+<!-- Note:
+Pour activer Google Analytics :
+1. Créez un compte sur https://analytics.google.com/
+2. Créez une propriété pour votre site
+3. Remplacez 'G-XXXXXXXXXX' par votre ID de mesure Google Analytics
+4. Mettez à jour _quarto.yml pour inclure ce fichier
+
+Pour une alternative respectueuse de la vie privée, considérez:
+- Plausible (https://plausible.io/)
+- Umami (https://umami.is/)
+- Fathom (https://usefathom.com/)
+-->
+<!-- GitHub Stats Widget -->
+<script>
+// Fonction pour récupérer les stats GitHub
+async function fetchGitHubStats() {
+    const username = 'Francois-b-24';
+
+    try {
+        // Récupérer les infos du profil
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+
+        // Récupérer les repos
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposResponse.json();
+
+        // Calculer les stats
+        const totalRepos = userData.public_repos;
+        const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
+        const followers = userData.followers;
+
+        // Mettre à jour le DOM
+        updateStatsDisplay(totalRepos, totalStars, totalForks, followers);
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des stats GitHub:', error);
+    }
+}
+
+function updateStatsDisplay(repos, stars, forks, followers) {
+    // Créer ou mettre à jour le widget de stats
+    const statsContainer = document.getElementById('github-stats-container');
+    if (statsContainer) {
+        statsContainer.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #f8d65c;">${repos}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Repositories</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #72f1b8;">${stars}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Stars</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #ffbc8c;">${forks}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Forks</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #a97eff;">${followers}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Followers</div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Charger les stats au chargement de la page
+if (document.getElementById('github-stats-container')) {
+    document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+}
+</script>
+
+<style>
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(6, 67, 110, 0.4) !important;
+}
+</style>
+
+<!-- Widget GitHub Profile Card (Alternative avec GitHub README Stats) -->
+<script>
+function addGitHubProfileCard() {
+    const profileCardContainer = document.getElementById('github-profile-card');
+    if (profileCardContainer) {
+        profileCardContainer.innerHTML = `
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="https://github-readme-stats.vercel.app/api?username=Francois-b-24&show_icons=true&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff&icon_color=72f1b8"
+                     alt="GitHub Stats"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Francois-b-24&layout=compact&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff"
+                     alt="Top Languages"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-top: 1rem;">
+            </div>
+        `;
+    }
+}
+
+if (document.getElementById('github-profile-card')) {
+    document.addEventListener('DOMContentLoaded', addGitHubProfileCard);
+}
+</script>
+
+<!-- Instructions d'utilisation :
+
+Pour afficher les statistiques GitHub dans une page, ajoutez simplement :
+
+1. Stats simples :
+   <div id="github-stats-container"></div>
+
+2. Cartes GitHub complètes :
+   <div id="github-profile-card"></div>
+
+3. Les deux en même temps :
+   <div id="github-stats-container"></div>
+   <div id="github-profile-card"></div>
+
+Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentification).
+Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
+-->
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><em>François B.</em></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/xp.html"> 
+<span class="menu-text">Parcours</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/skills.html"> 
+<span class="menu-text">Compétences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/index.html"> 
+<span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../formation/index.html"> 
+<span class="menu-text">Formation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Module Technique 3 — Git avancé</h1>
+            <p class="subtitle lead">Maîtriser le versionnement pour collaborer efficacement</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">git</div>
+                <div class="quarto-category">collaboration</div>
+                <div class="quarto-category">technique</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p>François Boussengui </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 mars 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#stratégies-de-branching" id="toc-stratégies-de-branching" class="nav-link" data-scroll-target="#stratégies-de-branching"><span class="header-section-number">1</span> Stratégies de branching</a>
+  <ul class="collapse">
+  <li><a href="#git-flow" id="toc-git-flow" class="nav-link" data-scroll-target="#git-flow"><span class="header-section-number">1.1</span> Git Flow</a></li>
+  <li><a href="#trunk-based-development" id="toc-trunk-based-development" class="nav-link" data-scroll-target="#trunk-based-development"><span class="header-section-number">1.2</span> Trunk-based development</a></li>
+  </ul></li>
+  <li><a href="#merge-vs-rebase" id="toc-merge-vs-rebase" class="nav-link" data-scroll-target="#merge-vs-rebase"><span class="header-section-number">2</span> Merge vs Rebase</a></li>
+  <li><a href="#résolution-de-conflits" id="toc-résolution-de-conflits" class="nav-link" data-scroll-target="#résolution-de-conflits"><span class="header-section-number">3</span> Résolution de conflits</a>
+  <ul class="collapse">
+  <li><a href="#quand-surviennent-les-conflits" id="toc-quand-surviennent-les-conflits" class="nav-link" data-scroll-target="#quand-surviennent-les-conflits"><span class="header-section-number">3.1</span> Quand surviennent les conflits ?</a></li>
+  <li><a href="#comment-les-résoudre" id="toc-comment-les-résoudre" class="nav-link" data-scroll-target="#comment-les-résoudre"><span class="header-section-number">3.2</span> Comment les résoudre ?</a></li>
+  </ul></li>
+  <li><a href="#pull-requests-et-code-review" id="toc-pull-requests-et-code-review" class="nav-link" data-scroll-target="#pull-requests-et-code-review"><span class="header-section-number">4</span> Pull Requests et Code Review</a>
+  <ul class="collapse">
+  <li><a href="#workflow-pr" id="toc-workflow-pr" class="nav-link" data-scroll-target="#workflow-pr"><span class="header-section-number">4.1</span> Workflow PR</a></li>
+  </ul></li>
+  <li><a href="#tags-et-releases" id="toc-tags-et-releases" class="nav-link" data-scroll-target="#tags-et-releases"><span class="header-section-number">5</span> Tags et releases</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.comparison-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.comparison-card h4 { margin-top: 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Maîtriser</strong> les stratégies de branching (Git Flow, trunk-based)</li>
+<li><strong>Choisir</strong> entre merge et rebase selon le contexte</li>
+<li><strong>Résoudre</strong> des conflits de merge sereinement</li>
+<li><strong>Créer</strong> des Pull Requests et pratiquer le code review</li>
+<li><strong>Utiliser</strong> les tags pour versionner tes releases</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Git de base (add, commit, push, pull)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="stratégies-de-branching" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Stratégies de branching</h1>
+<section id="git-flow" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="git-flow"><span class="header-section-number">1.1</span> Git Flow</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">gitGraph
+    commit id: "init"
+    branch develop
+    commit id: "dev-1"
+    branch feature/model
+    commit id: "feat-1"
+    commit id: "feat-2"
+    checkout develop
+    merge feature/model id: "merge-feat"
+    branch release/v1
+    commit id: "rel-fix"
+    checkout main
+    merge release/v1 id: "v1.0" tag: "v1.0"
+    checkout develop
+    merge release/v1
+</pre>
+</div>
+<p></p><figcaption> Git Flow : branches principales et de support</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Branche</th>
+<th>Rôle</th>
+<th>Durée de vie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>main</code></td>
+<td>Code en production</td>
+<td>Permanente</td>
+</tr>
+<tr class="even">
+<td><code>develop</code></td>
+<td>Intégration des features</td>
+<td>Permanente</td>
+</tr>
+<tr class="odd">
+<td><code>feature/*</code></td>
+<td>Développement d’une fonctionnalité</td>
+<td>Temporaire</td>
+</tr>
+<tr class="even">
+<td><code>release/*</code></td>
+<td>Préparation d’une release</td>
+<td>Temporaire</td>
+</tr>
+<tr class="odd">
+<td><code>hotfix/*</code></td>
+<td>Correction urgente en production</td>
+<td>Temporaire</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="trunk-based-development" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="trunk-based-development"><span class="header-section-number">1.2</span> Trunk-based development</h2>
+<p>Plus simple : tout le monde travaille sur <code>main</code> avec des branches très courtes (&lt; 1 jour).</p>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Pour un projet solo ou une petite équipe data, le <strong>trunk-based</strong> est souvent plus adapté. Git Flow est conçu pour des équipes nombreuses avec des releases planifiées.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="merge-vs-rebase" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Merge vs Rebase</h1>
+<div class="comparison-grid">
+<section id="git-merge" class="level4 comparison-card" data-number="2.0.0.1">
+<h4 data-number="2.0.0.1" class="anchored" data-anchor-id="git-merge"><span class="header-section-number">2.0.0.1</span> 🔀 Git Merge</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature/model</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Crée un <strong>commit de merge</strong></li>
+<li>Préserve l’historique complet</li>
+<li>Non destructif</li>
+<li>Historique plus “branchu”</li>
+</ul>
+</section>
+<section id="git-rebase" class="level4 comparison-card" data-number="2.0.0.2">
+<h4 data-number="2.0.0.2" class="anchored" data-anchor-id="git-rebase"><span class="header-section-number">2.0.0.2</span> ↗️ Git Rebase</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout feature/model</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Réécrit</strong> l’historique</li>
+<li>Historique linéaire et propre</li>
+<li>Plus risqué (ne jamais rebaser des commits publiés)</li>
+<li>Idéal avant une PR</li>
+</ul>
+</section>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Règle d’or</strong></p>
+<p>Ne jamais rebaser des commits qui ont déjà été poussés et partagés avec d’autres. Le rebase réécrit l’historique — si quelqu’un a basé son travail sur tes commits, ça créera des conflits.</p>
+</div>
+<hr>
+</section>
+<section id="résolution-de-conflits" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Résolution de conflits</h1>
+<section id="quand-surviennent-les-conflits" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="quand-surviennent-les-conflits"><span class="header-section-number">3.1</span> Quand surviennent les conflits ?</h2>
+<p>Un conflit arrive quand deux branches modifient la <strong>même ligne</strong> du même fichier.</p>
+<div class="terminal-box">
+<p><span class="prompt">$</span> git merge feature/pricing<br> <span class="output">Auto-merging models/pricing.py</span><br> <span class="output">CONFLICT (content): Merge conflict in models/pricing.py</span><br> <span class="output">Automatic merge failed; fix conflicts and then commit the result.</span></p>
+</div>
+</section>
+<section id="comment-les-résoudre" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="comment-les-résoudre"><span class="header-section-number">3.2</span> Comment les résoudre ?</h2>
+<p>Le fichier en conflit contient des marqueurs :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculer_prime(exposition, frequence):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> exposition <span class="op">*</span> frequence <span class="op">*</span> <span class="fl">1.15</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">=======</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculer_prime(expo, freq, marge<span class="op">=</span><span class="fl">0.10</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> expo <span class="op">*</span> freq <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> marge)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> feature<span class="op">/</span>pricing</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tu choisis quelle version garder (ou combines les deux), supprimes les marqueurs, puis commites.</p>
+<hr>
+</section>
+</section>
+<section id="pull-requests-et-code-review" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Pull Requests et Code Review</h1>
+<section id="workflow-pr" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="workflow-pr"><span class="header-section-number">4.1</span> Workflow PR</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Créer branche] --&gt; B[Développer]
+    B --&gt; C[Push]
+    C --&gt; D[Ouvrir PR]
+    D --&gt; E[Code Review]
+    E --&gt; F{Approuvé ?}
+    F --&gt;|Oui| G[Merge]
+    F --&gt;|Non| B
+</pre>
+</div>
+<p></p><figcaption> Workflow d’une Pull Request</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="terminal-box">
+<p><span class="comment"># Créer et pousser une branche</span><br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; git checkout -b feature/sinistralite-model&lt;br&gt;
+&lt;span class="comment"&gt;# ... développement ...&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> git add . &amp;&amp; git commit -m “feat: add frequency model”<br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; git push -u origin feature/sinistralite-model&lt;br&gt;&lt;br&gt;
+&lt;span class="comment"&gt;# Créer la PR avec GitHub CLI&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> gh pr create –title “Add frequency model” –body “GLM Poisson pour la fréquence”</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="tags-et-releases" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Tags et releases</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un tag annoté</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"Release initiale du modèle de tarification"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Pousser le tag</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin v1.0.0</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lister les tags</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-l</span> <span class="st">"v1.*"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Convention de versionnement sémantique : <code>vMAJEUR.MINEUR.PATCH</code></p>
+<hr>
+</section>
+<section id="synthèse" class="level1 unnumbered">
+<h1 class="unnumbered">Synthèse</h1>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>Git Flow pour les grands projets, trunk-based pour les petites équipes</strong></li>
+<li><strong>Merge préserve l’historique, rebase le linéarise</strong> — Choisir selon le contexte</li>
+<li><strong>Ne jamais rebaser des commits publics</strong></li>
+<li><strong>Les PR structurent la collaboration</strong> — Code review = qualité</li>
+<li><strong>Les tags marquent les versions</strong> — Versionnement sémantique</li>
+</ol>
+</section>
+<hr>
+</section>
+<section id="auto-évaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-évaluation</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 1 : Quand utiliser merge vs rebase ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : <strong>Merge</strong> pour intégrer une branche dans main (préserve l’historique). <strong>Rebase</strong> pour mettre à jour ta branche de feature avec les derniers changements de main (historique propre). Ne jamais rebaser des commits déjà partagés.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 2 : Comment résoudre un conflit de merge ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Ouvrir le fichier en conflit, choisir la bonne version entre les marqueurs <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> et <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, supprimer les marqueurs, puis <code>git add</code> et <code>git commit</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 3 : Quelle est la différence entre un tag léger et un tag annoté ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Un <strong>tag léger</strong> est juste un pointeur vers un commit. Un <strong>tag annoté</strong> (<code>git tag -a</code>) contient un message, l’auteur et la date. Pour les releases, toujours utiliser des tags annotés.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 4 : Pourquoi faire du code review via des PR ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Pour attraper les bugs avant qu’ils n’arrivent en production, partager la connaissance du code dans l’équipe, maintenir la qualité et la cohérence du code, et documenter les décisions techniques.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 3</a> <a href="fiche-travail-03.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Website made with Quarto 🛠️</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2024, François BOUSSENGUI
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">🍪 Gérer les cookies</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

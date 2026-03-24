@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="François Boussengui">
+
+<title>François BOUSSENGUI | Module Technique 2 — Docker Compose</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"express",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: rgb(251, 225, 174);
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: rgb(251, 225, 174);
+background: #06436e;
+      }
+</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>
+    window.addEventListener('load', function() {
+      document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
+      document.getElementById("cc-nb-text").innerHTML = "Ces cookies sont uniquement destinés à des fins d'analyse du trafic sur mon site, et sont entièrement optionnels.";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarTitle = document.querySelector(".navbar-title");
+    const text = navbarTitle.textContent;
+    navbarTitle.innerHTML = "";
+
+    for (let char of text) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        navbarTitle.appendChild(span);
+    }
+});
+
+    // Theme Toggle System
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Create theme toggle button
+        const navbar = document.querySelector('.navbar-nav');
+        if (navbar) {
+            const themeToggle = document.createElement('li');
+            themeToggle.className = 'nav-item';
+            themeToggle.innerHTML = `
+                <button id="theme-toggle" class="nav-link btn btn-link" aria-label="Toggle theme">
+                    <i class="fa-solid fa-${currentTheme === 'dark' ? 'sun' : 'moon'}"></i>
+                </button>
+            `;
+            navbar.appendChild(themeToggle);
+
+            // Theme toggle functionality
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme');
+                let newTheme = theme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Update icon
+                this.innerHTML = `<i class="fa-solid fa-${newTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+            });
+        }
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+
+        // Lazy loading for iframes (PDFs)
+        const iframes = document.querySelectorAll('iframe:not([loading])');
+        iframes.forEach(iframe => {
+            iframe.setAttribute('loading', 'lazy');
+        });
+
+        // Add IntersectionObserver for additional optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    });
+</script>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bfrancois.netlify.app/">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 2 — Docker Compose">
+<meta property="og:description" content="Orchestrer plusieurs conteneurs pour des applications complexes">
+<meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="François B. Portfolio">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://bfrancois.netlify.app/">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 2 — Docker Compose">
+<meta name="twitter:description" content="Orchestrer plusieurs conteneurs pour des applications complexes">
+<meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "François BOUSSENGUI",
+  "url": "https://bfrancois.netlify.app/",
+  "image": "https://bfrancois.netlify.app/assets/img/moi.jpg",
+  "jobTitle": "Data Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Aon France"
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "Gabon"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Université de Tours",
+      "department": "Master 2 Économétrie, Data Science & Business Economics"
+    }
+  ],
+  "knowsAbout": [
+    "Data Science",
+    "Machine Learning",
+    "Économétrie",
+    "Python",
+    "R",
+    "SQL",
+    "Statistiques",
+    "Assurance",
+    "Analyse de données"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/fboussengui/",
+    "https://github.com/Francois-b-24"
+  ],
+  "email": "f.boussengui@gmail.com"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "François BOUSSENGUI Portfolio",
+  "url": "https://bfrancois.netlify.app/",
+  "description": "Portfolio professionnel de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données.",
+  "author": {
+    "@type": "Person",
+    "name": "François BOUSSENGUI"
+  },
+  "inLanguage": "fr-FR"
+}
+</script>
+
+<!-- Additional SEO Meta Tags -->
+<meta name="description" content="Portfolio de François BOUSSENGUI, Data Scientist spécialisé en économétrie, machine learning et analyse de données. 3+ années d'expérience, 8 projets réalisés.">
+<meta name="keywords" content="Data Science, Machine Learning, Économétrie, Python, R, SQL, Portfolio, François BOUSSENGUI, Statistiques, Analyse de données, Streamlit, Qlik Sense">
+<meta name="author" content="François BOUSSENGUI">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://bfrancois.netlify.app/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Alternative: Plausible Analytics (Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Plausible à Google Analytics -->
+<!--
+<script defer data-domain="bfrancois.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+
+<!-- Alternative: Umami Analytics (Self-hosted, Privacy-friendly) -->
+<!-- Décommentez cette section si vous préférez Umami -->
+<!--
+<script async defer data-website-id="your-website-id" src="https://analytics.umami.is/script.js"></script>
+-->
+
+<!-- Note:
+Pour activer Google Analytics :
+1. Créez un compte sur https://analytics.google.com/
+2. Créez une propriété pour votre site
+3. Remplacez 'G-XXXXXXXXXX' par votre ID de mesure Google Analytics
+4. Mettez à jour _quarto.yml pour inclure ce fichier
+
+Pour une alternative respectueuse de la vie privée, considérez:
+- Plausible (https://plausible.io/)
+- Umami (https://umami.is/)
+- Fathom (https://usefathom.com/)
+-->
+<!-- GitHub Stats Widget -->
+<script>
+// Fonction pour récupérer les stats GitHub
+async function fetchGitHubStats() {
+    const username = 'Francois-b-24';
+
+    try {
+        // Récupérer les infos du profil
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+
+        // Récupérer les repos
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposResponse.json();
+
+        // Calculer les stats
+        const totalRepos = userData.public_repos;
+        const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
+        const followers = userData.followers;
+
+        // Mettre à jour le DOM
+        updateStatsDisplay(totalRepos, totalStars, totalForks, followers);
+
+    } catch (error) {
+        console.error('Erreur lors de la récupération des stats GitHub:', error);
+    }
+}
+
+function updateStatsDisplay(repos, stars, forks, followers) {
+    // Créer ou mettre à jour le widget de stats
+    const statsContainer = document.getElementById('github-stats-container');
+    if (statsContainer) {
+        statsContainer.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #f8d65c;">${repos}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Repositories</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #72f1b8;">${stars}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Stars</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #ffbc8c;">${forks}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Forks</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #06436e 0%, #0a5f99 100%); padding: 1.5rem; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(6, 67, 110, 0.2);">
+                    <div style="font-size: 2rem; font-weight: bold; color: #a97eff;">${followers}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Followers</div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Charger les stats au chargement de la page
+if (document.getElementById('github-stats-container')) {
+    document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+}
+</script>
+
+<style>
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(6, 67, 110, 0.4) !important;
+}
+</style>
+
+<!-- Widget GitHub Profile Card (Alternative avec GitHub README Stats) -->
+<script>
+function addGitHubProfileCard() {
+    const profileCardContainer = document.getElementById('github-profile-card');
+    if (profileCardContainer) {
+        profileCardContainer.innerHTML = `
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="https://github-readme-stats.vercel.app/api?username=Francois-b-24&show_icons=true&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff&icon_color=72f1b8"
+                     alt="GitHub Stats"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Francois-b-24&layout=compact&theme=tokyonight&hide_border=true&bg_color=06436e&title_color=f8d65c&text_color=ffffff"
+                     alt="Top Languages"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-top: 1rem;">
+            </div>
+        `;
+    }
+}
+
+if (document.getElementById('github-profile-card')) {
+    document.addEventListener('DOMContentLoaded', addGitHubProfileCard);
+}
+</script>
+
+<!-- Instructions d'utilisation :
+
+Pour afficher les statistiques GitHub dans une page, ajoutez simplement :
+
+1. Stats simples :
+   <div id="github-stats-container"></div>
+
+2. Cartes GitHub complètes :
+   <div id="github-profile-card"></div>
+
+3. Les deux en même temps :
+   <div id="github-stats-container"></div>
+   <div id="github-profile-card"></div>
+
+Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentification).
+Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
+-->
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><em>François B.</em></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/xp.html"> 
+<span class="menu-text">Parcours</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/skills.html"> 
+<span class="menu-text">Compétences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../sections/index.html"> 
+<span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../formation/index.html"> 
+<span class="menu-text">Formation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Module Technique 2 — Docker Compose</h1>
+            <p class="subtitle lead">Orchestrer plusieurs conteneurs pour des applications complexes</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">docker</div>
+                <div class="quarto-category">compose</div>
+                <div class="quarto-category">mlops</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur·rice</div>
+      <div class="quarto-title-meta-contents">
+               <p>François Boussengui </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Date de publication</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 mars 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#pourquoi-docker-compose" id="toc-pourquoi-docker-compose" class="nav-link" data-scroll-target="#pourquoi-docker-compose"><span class="header-section-number">1</span> Pourquoi Docker Compose ?</a>
+  <ul class="collapse">
+  <li><a href="#le-problème-des-applications-multi-services" id="toc-le-problème-des-applications-multi-services" class="nav-link" data-scroll-target="#le-problème-des-applications-multi-services"><span class="header-section-number">1.1</span> Le problème des applications multi-services</a></li>
+  <li><a href="#structure-du-fichier-docker-compose.yml" id="toc-structure-du-fichier-docker-compose.yml" class="nav-link" data-scroll-target="#structure-du-fichier-docker-compose.yml"><span class="header-section-number">1.2</span> Structure du fichier docker-compose.yml</a></li>
+  </ul></li>
+  <li><a href="#les-concepts-clés-de-compose" id="toc-les-concepts-clés-de-compose" class="nav-link" data-scroll-target="#les-concepts-clés-de-compose"><span class="header-section-number">2</span> Les concepts clés de Compose</a>
+  <ul class="collapse">
+  <li><a href="#services" id="toc-services" class="nav-link" data-scroll-target="#services"><span class="header-section-number">2.1</span> Services</a></li>
+  <li><a href="#volumes" id="toc-volumes" class="nav-link" data-scroll-target="#volumes"><span class="header-section-number">2.2</span> Volumes</a></li>
+  <li><a href="#réseaux" id="toc-réseaux" class="nav-link" data-scroll-target="#réseaux"><span class="header-section-number">2.3</span> Réseaux</a></li>
+  </ul></li>
+  <li><a href="#application-pratique-api-postgresql" id="toc-application-pratique-api-postgresql" class="nav-link" data-scroll-target="#application-pratique-api-postgresql"><span class="header-section-number">3</span> Application pratique : API + PostgreSQL</a>
+  <ul class="collapse">
+  <li><a href="#structure-du-projet" id="toc-structure-du-projet" class="nav-link" data-scroll-target="#structure-du-projet"><span class="header-section-number">3.1</span> Structure du projet</a></li>
+  <li><a href="#le-dockerfile-de-lapi" id="toc-le-dockerfile-de-lapi" class="nav-link" data-scroll-target="#le-dockerfile-de-lapi"><span class="header-section-number">3.2</span> Le Dockerfile de l’API</a></li>
+  <li><a href="#le-script-api-main.py" id="toc-le-script-api-main.py" class="nav-link" data-scroll-target="#le-script-api-main.py"><span class="header-section-number">3.3</span> Le script API (main.py)</a></li>
+  </ul></li>
+  <li><a href="#les-commandes-essentielles" id="toc-les-commandes-essentielles" class="nav-link" data-scroll-target="#les-commandes-essentielles"><span class="header-section-number">4</span> Les commandes essentielles</a></li>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques"><span class="header-section-number">5</span> Bonnes pratiques</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.comparison-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.comparison-card h4 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<p>À l’issue de ce module, tu seras capable de :</p>
+<ol type="1">
+<li><strong>Expliquer</strong> pourquoi on a besoin d’orchestrer plusieurs conteneurs</li>
+<li><strong>Écrire</strong> un fichier docker-compose.yml complet</li>
+<li><strong>Configurer</strong> services, réseaux et volumes dans Compose</li>
+<li><strong>Déployer</strong> une application multi-conteneurs (API + BDD)</li>
+<li><strong>Maîtriser</strong> les commandes Compose du quotidien</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Module Technique 1 — Docker installé et bases maîtrisées</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="pourquoi-docker-compose" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi Docker Compose ?</h1>
+<section id="le-problème-des-applications-multi-services" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="le-problème-des-applications-multi-services"><span class="header-section-number">1.1</span> Le problème des applications multi-services</h2>
+<p>En pratique, une application Data Science ne tourne jamais seule. Elle a besoin de services complémentaires :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[🐍 API Python&lt;br&gt;FastAPI/Flask] --&gt; B[🗄️ Base de données&lt;br&gt;PostgreSQL]
+    A --&gt; C[📊 Dashboard&lt;br&gt;Streamlit]
+    A --&gt; D[💾 Cache&lt;br&gt;Redis]
+    C --&gt; A
+</pre>
+</div>
+<p></p><figcaption> Architecture typique d’une application Data Science</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<p>Sans Compose, il faudrait lancer manuellement chaque conteneur avec de longues commandes <code>docker run</code>. Compose permet de tout définir dans <strong>un seul fichier YAML</strong>.</p>
+</section>
+<section id="structure-du-fichier-docker-compose.yml" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="structure-du-fichier-docker-compose.yml"><span class="header-section-number">1.2</span> Structure du fichier docker-compose.yml</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># docker-compose.yml</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.8"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">build</span><span class="kw">:</span><span class="at"> ./api</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"8000:8000"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_URL=postgresql://user:pass@db:5432/assurance</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres:15</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> user</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> pass</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_DB</span><span class="kw">:</span><span class="at"> assurance</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> pg_data:/var/lib/postgresql/data</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pg_data</span><span class="kw">:</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Dans Compose, les services communiquent entre eux par leur <strong>nom de service</strong>. Ici, l’API accède à la BDD via <code>db:5432</code> — pas besoin d’adresse IP. Compose crée automatiquement un réseau interne.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="les-concepts-clés-de-compose" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Les concepts clés de Compose</h1>
+<section id="services" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="services"><span class="header-section-number">2.1</span> Services</h2>
+<p>Un <strong>service</strong> = un conteneur (ou plusieurs réplicas) défini par une image ou un build context.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Propriété</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>image</code></td>
+<td>Image Docker à utiliser</td>
+</tr>
+<tr class="even">
+<td><code>build</code></td>
+<td>Chemin vers un Dockerfile</td>
+</tr>
+<tr class="odd">
+<td><code>ports</code></td>
+<td>Mapping de ports host:conteneur</td>
+</tr>
+<tr class="even">
+<td><code>environment</code></td>
+<td>Variables d’environnement</td>
+</tr>
+<tr class="odd">
+<td><code>depends_on</code></td>
+<td>Ordre de démarrage</td>
+</tr>
+<tr class="even">
+<td><code>volumes</code></td>
+<td>Montages de données</td>
+</tr>
+<tr class="odd">
+<td><code>restart</code></td>
+<td>Politique de redémarrage</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="volumes" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="volumes"><span class="header-section-number">2.2</span> Volumes</h2>
+<p>Les volumes persistent les données au-delà du cycle de vie des conteneurs :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pg_data</span><span class="kw">:</span><span class="co">           # Volume nommé (géré par Docker)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> pg_data:/var/lib/postgresql/data</span><span class="co">  # Volume nommé</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./init.sql:/docker-entrypoint-initdb.d/init.sql</span><span class="co">  # Bind mount</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="réseaux" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="réseaux"><span class="header-section-number">2.3</span> Réseaux</h2>
+<p>Par défaut, Compose crée un réseau pour chaque projet. Tu peux aussi définir des réseaux personnalisés pour isoler certains services.</p>
+<hr>
+</section>
+</section>
+<section id="application-pratique-api-postgresql" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Application pratique : API + PostgreSQL</h1>
+<section id="structure-du-projet" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="structure-du-projet"><span class="header-section-number">3.1</span> Structure du projet</h2>
+<pre><code>projet-assurance/
+├── docker-compose.yml
+├── api/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── main.py
+└── db/
+    └── init.sql</code></pre>
+</section>
+<section id="le-dockerfile-de-lapi" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="le-dockerfile-de-lapi"><span class="header-section-number">3.2</span> Le Dockerfile de l’API</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> python:3.10-slim</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WORKDIR</span> /app</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> requirements.txt .</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">pip</span> install <span class="at">--no-cache-dir</span> <span class="at">-r</span> requirements.txt</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> main.py .</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="le-script-api-main.py" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="le-script-api-main.py"><span class="header-section-number">3.3</span> Le script API (main.py)</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastapi <span class="im">import</span> FastAPI</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> psycopg2</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> FastAPI(title<span class="op">=</span><span class="st">"API Assurance"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/contrats"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_contrats():</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> psycopg2.<span class="ex">connect</span>(os.environ[<span class="st">"DATABASE_URL"</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">"SELECT * FROM contrats LIMIT 10"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> cur.fetchall()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    conn.close()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"contrats"</span>: rows}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="les-commandes-essentielles" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Les commandes essentielles</h1>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>docker compose up</code></td>
+<td>Démarrer tous les services</td>
+</tr>
+<tr class="even">
+<td><code>docker compose up -d</code></td>
+<td>Démarrer en arrière-plan</td>
+</tr>
+<tr class="odd">
+<td><code>docker compose down</code></td>
+<td>Arrêter et supprimer les conteneurs</td>
+</tr>
+<tr class="even">
+<td><code>docker compose logs -f</code></td>
+<td>Suivre les logs en temps réel</td>
+</tr>
+<tr class="odd">
+<td><code>docker compose ps</code></td>
+<td>Lister les services en cours</td>
+</tr>
+<tr class="even">
+<td><code>docker compose exec api bash</code></td>
+<td>Entrer dans un service</td>
+</tr>
+<tr class="odd">
+<td><code>docker compose build</code></td>
+<td>Reconstruire les images</td>
+</tr>
+</tbody>
+</table>
+<div class="terminal-box">
+<p><span class="comment"># Lancer l’application</span><br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; docker compose up -d&lt;br&gt;
+&lt;span class="output"&gt;[+] Running 3/3&lt;/span&gt;&lt;br&gt;
+&lt;span class="output"&gt; ✔ Network projet_default  Created&lt;/span&gt;&lt;br&gt;
+&lt;span class="output"&gt; ✔ Container projet-db-1   Started&lt;/span&gt;&lt;br&gt;
+&lt;span class="output"&gt; ✔ Container projet-api-1  Started&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+&lt;span class="comment"&gt;# Vérifier que tout tourne&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> docker compose ps<br> <span class="output">NAME SERVICE STATUS PORTS</span><br> <span class="output">projet-api-1 api running 0.0.0.0:8000-&gt;8000/tcp</span><br> <span class="output">projet-db-1 db running 0.0.0.0:5432-&gt;5432/tcp</span></p>
+</div>
+<hr>
+</section>
+<section id="bonnes-pratiques" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Bonnes pratiques</h1>
+<div class="comparison-grid">
+<section id="à-éviter" class="level4 comparison-card" data-number="5.0.0.1">
+<h4 data-number="5.0.0.1" class="anchored" data-anchor-id="à-éviter"><span class="header-section-number">5.0.0.1</span> ❌ À éviter</h4>
+<ul>
+<li>Mettre les mots de passe en dur dans le YAML</li>
+<li>Ne pas utiliser <code>depends_on</code></li>
+<li>Oublier les volumes pour les données persistantes</li>
+<li>Utiliser <code>latest</code> comme tag d’image</li>
+</ul>
+</section>
+<section id="recommandé" class="level4 comparison-card" data-number="5.0.0.2">
+<h4 data-number="5.0.0.2" class="anchored" data-anchor-id="recommandé"><span class="header-section-number">5.0.0.2</span> ✅ Recommandé</h4>
+<ul>
+<li>Utiliser un fichier <code>.env</code> pour les secrets</li>
+<li>Définir l’ordre de démarrage</li>
+<li>Toujours persister les données de BDD</li>
+<li>Fixer les versions d’images</li>
+</ul>
+</section>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Important</strong></p>
+<p><code>depends_on</code> ne garantit pas que le service est <strong>prêt</strong>, seulement qu’il est <strong>démarré</strong>. Pour PostgreSQL, utilise un healthcheck ou un script d’attente dans ton API.</p>
+</div>
+<hr>
+</section>
+<section id="synthèse" class="level1 unnumbered">
+<h1 class="unnumbered">Synthèse</h1>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>Compose orchestre plusieurs conteneurs</strong> — Un fichier YAML pour toute l’architecture</li>
+<li><strong>Les services communiquent par nom</strong> — Pas besoin d’IP, Compose gère le réseau</li>
+<li><strong>Les volumes persistent les données</strong> — Indispensable pour les bases de données</li>
+<li><strong><code>depends_on</code> gère l’ordre</strong> — Mais pas la disponibilité réelle du service</li>
+<li><strong>Le fichier .env protège les secrets</strong> — Ne jamais commiter les mots de passe</li>
+</ol>
+</section>
+<hr>
+</section>
+<section id="auto-évaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-évaluation</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 1 : Quelle est la différence entre <code>docker run</code> et <code>docker compose up</code> ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : <code>docker run</code> lance <strong>un seul conteneur</strong> à partir d’une image. <code>docker compose up</code> lance <strong>tous les services</strong> définis dans le fichier <code>docker-compose.yml</code>, avec leurs réseaux, volumes et dépendances configurés.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 2 : Comment un service accède-t-il à un autre dans Compose ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Par le <strong>nom du service</strong> défini dans le YAML. Compose crée automatiquement un réseau interne et un DNS. Exemple : l’API accède à PostgreSQL via <code>db:5432</code> (où <code>db</code> est le nom du service).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 3 : Pourquoi utiliser un volume nommé plutôt qu’un bind mount pour PostgreSQL ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Un <strong>volume nommé</strong> est géré par Docker, offrant de meilleures performances et une portabilité accrue. Un <strong>bind mount</strong> lie un dossier de l’hôte au conteneur — utile en développement, mais moins portable. Pour les données de production (BDD), un volume nommé est préférable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 4 : <code>depends_on</code> garantit-il que PostgreSQL est prêt à recevoir des connexions ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Réponse</strong> : Non. <code>depends_on</code> garantit uniquement que le <strong>conteneur est démarré</strong>, pas que le service à l’intérieur est opérationnel. PostgreSQL peut prendre quelques secondes pour s’initialiser. Il faut ajouter un <strong>healthcheck</strong> ou un mécanisme de retry dans l’application.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 2</a> <a href="fiche-travail-02.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="francois-b-24/utterance" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Website made with Quarto 🛠️</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2024, François BOUSSENGUI
+  </li>  
+</ul>
+    <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">🍪 Gérer les cookies</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../licence.html">
+<p>Licence : CC BY-NC-SA</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

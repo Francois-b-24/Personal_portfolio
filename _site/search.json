@@ -683,7 +683,7 @@
     "href": "formation/index.html",
     "title": "Formation Expert Assurance Non-Vie & Data",
     "section": "",
-    "text": "🎯 Objectif\n    Maîtriser le pilotage de la rentabilité d'un portefeuille d'assurance non-vie,de la théorie à la mise en production d'outils data.\n    \n    \n        \n            24\n            semaines\n        \n        \n            10\n            modules métier\n        \n        \n            1\n            projet central\n        \n        \n            1\n            certification AWS\n        \n    \n\n\n\n📚 Structure du parcours\n\nLe parcours s'articule autour de deux axes parallèles qui convergent vers un projet intégrateur :\n\n\n    \n    \n        🏢 Axe Métier — Assurance Non-Vie\n        \n        \n            \n                🧱\n                Bloc I — Fondements\n            \n            Modules 1-3 : Économie de l'assurance, Produits, Exposition\n        \n        \n        \n            \n                📊\n                Bloc II — Sinistralité\n            \n            Modules 4-5bis : Fréquence/Sévérité, Évolution, Provisionnement\n        \n        \n        \n            \n                💰\n                Bloc III — Tarification\n            \n            Modules 6-7 : Principes tarifaires, Comportements, Anti-sélection\n        \n        \n        \n            \n                🎯\n                Bloc IV — Pilotage\n            \n            Module 8 : Rentabilité, Indicateurs, Solvabilité II\n        \n        \n        \n            \n                🤖\n                Bloc V — Data Science\n            \n            Modules 9-9bis : Données assurance, MLOps, Industrialisation\n        \n    \n    \n    \n    \n        🛠️ Axe Technique — MLOps & Cloud\n        \n        \n            \n                🐳\n                Docker & Conteneurisation\n            \n            Semaines 1-2 : Images, conteneurs, Dockerfile, Docker Compose\n        \n        \n        \n            \n                🔄\n                Git & CI/CD\n            \n            Semaines 3-4 : Workflows Git, GitHub Actions, automatisation\n        \n        \n        \n            \n                ☁️\n                AWS Cloud\n            \n            Semaines 5-10 : S3, EC2, RDS, Lambda + Certification SAA\n        \n        \n        \n            \n                📈\n                MLflow & FastAPI\n            \n            Semaines 11-12 : Tracking, versionnement, API de scoring\n        \n        \n        \n            \n                🚀\n                Projet Central\n            \n            Semaines 13-24 : Pilotage rentabilité portefeuille assurantiel\n        \n    \n\n\n\n📅 Progression par semaine\n\n\n    \n        \n            Semaine 1\n            En cours\n        \n        Métier : Fondements économiques\n        Technique : Docker - Installation & concepts\n        Accéder →\n    \n    \n    \n        \n            Semaine 2\n            🔒\n        \n        Métier : Produits d'assurance\n        Technique : Docker - Mise en pratique\n    \n    \n    \n        \n            Semaine 3\n            🔒\n        \n        Métier : Exposition au risque\n        Technique : Git avancé\n    \n    \n    \n        \n            Semaine 4\n            🔒\n        \n        Métier : Sinistralité I\n        Technique : CI/CD GitHub Actions\n    \n\n\n\n\n    🎯 Projet Central\n    Pilotage de la rentabilité d'un portefeuille assurantiel\n    Ce projet fil rouge intègre l'ensemble des compétences acquises :\n    \n    \n        📊 Analyse de sinistralité\n        🧮 Modélisation GLM et ML\n        💹 Calcul de CLV\n        🐳 Conteneurisation Docker\n        ☁️ Déploiement AWS\n        📈 Dashboard interactif"
+    "text": "🎯 Objectif\n    Maîtriser le pilotage de la rentabilité d'un portefeuille d'assurance non-vie,de la théorie à la mise en production d'outils data.\n    \n    \n        \n            24\n            semaines\n        \n        \n            10\n            modules métier\n        \n        \n            1\n            projet central\n        \n        \n            1\n            certification AWS\n        \n    \n\n\n\n📚 Structure du parcours\n\nLe parcours s'articule autour de deux axes parallèles qui convergent vers un projet intégrateur :\n\n\n    \n    \n        🏢 Axe Métier — Assurance Non-Vie\n        \n        \n            \n                🧱\n                Bloc I — Fondements\n            \n            Modules 1-3 : Économie de l'assurance, Produits, Exposition\n        \n        \n        \n            \n                📊\n                Bloc II — Sinistralité\n            \n            Modules 4-5bis : Fréquence/Sévérité, Évolution, Provisionnement\n        \n        \n        \n            \n                💰\n                Bloc III — Tarification\n            \n            Modules 6-7 : Principes tarifaires, Comportements, Anti-sélection\n        \n        \n        \n            \n                🎯\n                Bloc IV — Pilotage\n            \n            Module 8 : Rentabilité, Indicateurs, Solvabilité II\n        \n        \n        \n            \n                🤖\n                Bloc V — Data Science\n            \n            Modules 9-9bis : Données assurance, MLOps, Industrialisation\n        \n    \n    \n    \n    \n        🛠️ Axe Technique — MLOps & Cloud\n        \n        \n            \n                🐳\n                Docker & Conteneurisation\n            \n            Semaines 1-2 : Images, conteneurs, Dockerfile, Docker Compose\n        \n        \n        \n            \n                🔄\n                Git & CI/CD\n            \n            Semaines 3-4 : Workflows Git, GitHub Actions, automatisation\n        \n        \n        \n            \n                ☁️\n                AWS Cloud\n            \n            Semaines 5-10 : S3, EC2, RDS, Lambda + Certification SAA\n        \n        \n        \n            \n                📈\n                MLflow & FastAPI\n            \n            Semaines 11-12 : Tracking, versionnement, API de scoring\n        \n        \n        \n            \n                🚀\n                Projet Central\n            \n            Semaines 13-24 : Pilotage rentabilité portefeuille assurantiel\n        \n    \n\n\n\n📅 Progression par semaine\n\n\n    \n        \n            Semaine 1\n            En cours\n        \n        Métier : Fondements économiques\n        Technique : Docker - Installation & concepts\n        Accéder →\n    \n    \n    \n        \n            Semaine 2\n        \n        Métier : Produits d'assurance\n        Technique : Docker - Mise en pratique\n        Accéder →\n    \n\n    \n        \n            Semaine 3\n        \n        Métier : Exposition au risque\n        Technique : Git avancé\n        Accéder →\n    \n\n    \n        \n            Semaine 4\n        \n        Métier : Sinistralité I\n        Technique : CI/CD GitHub Actions\n        Accéder →\n    \n\n    \n        \n            Semaine 5\n        \n        Métier : Sinistralité II — Fréquence & Sévérité\n        Technique : AWS — Introduction & S3\n        Accéder →\n    \n\n    \n        \n            Semaine 6\n        \n        Métier : Évolution des sinistres\n        Technique : AWS — EC2 & Compute\n        Accéder →\n    \n\n    \n        \n            Semaine 7\n        \n        Métier : Provisionnement\n        Technique : AWS — RDS & Bases de données\n        Accéder →\n    \n\n    \n        \n            Semaine 8\n        \n        Métier : Principes tarifaires\n        Technique : AWS — Lambda & Serverless\n        Accéder →\n    \n\n    \n        \n            Semaine 9\n        \n        Métier : Comportements & Anti-sélection\n        Technique : AWS — Architecture & Services\n        Accéder →\n    \n\n    \n        \n            Semaine 10\n        \n        Métier : Tarification avancée\n        Technique : AWS — Certification SAA\n        Accéder →\n    \n\n    \n        \n            Semaine 11\n        \n        Métier : Rentabilité & Indicateurs\n        Technique : MLflow — Tracking & Versionnement\n        Accéder →\n    \n\n    \n        \n            Semaine 12\n        \n        Métier : Solvabilité II\n        Technique : FastAPI — API de scoring\n        Accéder →\n    \n\n    \n        \n            Semaine 13\n        \n        Métier : Données assurance\n        Technique : Projet Central — Cadrage & Setup\n        Accéder →\n    \n\n    \n        \n            Semaine 14\n        \n        Métier : MLOps appliqué à l'assurance\n        Technique : Projet Central — Pipeline de données\n        Accéder →\n    \n\n    \n        \n            Semaine 15\n        \n        Métier : Industrialisation\n        Technique : Projet Central — Feature engineering\n        Accéder →\n    \n\n    \n        \n            Semaine 16\n        \n        Métier : Révision Bloc I-II\n        Technique : Projet Central — Modélisation fréquence\n        Accéder →\n    \n\n    \n        \n            Semaine 17\n        \n        Métier : Révision Bloc III\n        Technique : Projet Central — Modélisation sévérité\n        Accéder →\n    \n\n    \n        \n            Semaine 18\n        \n        Métier : Révision Bloc IV-V\n        Technique : Projet Central — Tarification GLM\n        Accéder →\n    \n\n    \n        \n            Semaine 19\n        \n        Métier : Approfondissement tarification\n        Technique : Projet Central — Tarification ML\n        Accéder →\n    \n\n    \n        \n            Semaine 20\n        \n        Métier : Approfondissement pilotage\n        Technique : Projet Central — API & Déploiement\n        Accéder →\n    \n\n    \n        \n            Semaine 21\n        \n        Métier : Étude de cas intégrée\n        Technique : Projet Central — Dashboard\n        Accéder →\n    \n\n    \n        \n            Semaine 22\n        \n        Métier : Étude de cas intégrée (suite)\n        Technique : Projet Central — Tests & CI/CD\n        Accéder →\n    \n\n    \n        \n            Semaine 23\n        \n        Métier : Préparation soutenance\n        Technique : Projet Central — Documentation\n        Accéder →\n    \n\n    \n        \n            Semaine 24\n        \n        Métier : Soutenance & Bilan\n        Technique : Projet Central — Livraison finale\n        Accéder →\n    \n\n\n\n\n    🎯 Projet Central\n    Pilotage de la rentabilité d'un portefeuille assurantiel\n    Ce projet fil rouge intègre l'ensemble des compétences acquises :\n    \n    \n        📊 Analyse de sinistralité\n        🧮 Modélisation GLM et ML\n        💹 Calcul de CLV\n        🐳 Conteneurisation Docker\n        ☁️ Déploiement AWS\n        📈 Dashboard interactif"
   },
   {
     "objectID": "index.html",
@@ -705,5 +705,1993 @@
     "title": "⌚ Watch Analytics",
     "section": "",
     "text": "Python\n\n\n Streamlit\n\n\n Machine Learning\n\n\n Docker\n\n\n Scikit-learn\n\n\n\n\n\n\n\n\n Application Interactive\n\n\n\n\n\nExplorez l’application Watch Analytics Dashboard en ligne :\n\nLancer l’application Streamlit \n\nNote : L’application peut prendre quelques secondes à démarrer si elle est en veille. Si vous avez l’URL réelle de déploiement, remplacez le lien ci-dessus.\n\n\n\n\n1 Contexte général du projet\nLe marché des montres d’occasion connaît une croissance rapide, soutenue par la digitalisation et la montée des plateformes comme Chrono24.\nChaque annonce — marque, modèle, prix, caractéristiques techniques ou esthétiques — constitue une source précieuse d’informations pour comprendre les dynamiques du marché horloger.\nAfin d’explorer et d’analyser ces données, j’ai développé Watchs Analystics Dashboard, une application interactive construite avec Streamlit, permettant de visualiser, segmenter et modéliser les prix des montres de luxe.\nCette application s’adresse aussi bien aux passionnés d’horlogerie qu’aux analystes de données ou acteurs du marché souhaitant identifier des tendances et des opportunités d’achat.\n\n\n\n2 Objectif du projet\nL’objectif principal est de fournir une plateforme analytique complète permettant de :\n\nAnalyser les tendances du marché : prix moyens, marques dominantes, matériaux, pays vendeurs\n\nSegmenter le marché selon des critères techniques ou esthétiques\n\nIdentifier les montres sous-évaluées grâce à des modèles de détection d’anomalies\n\nEstimer le prix optimal d’une montre selon ses caractéristiques\n\n\n\n\n3 Méthodologie et technologies\nL’application repose sur une base de plus de 30 000 montres issues de Chrono24, nettoyée, standardisée et enrichie à l’aide de scripts Python.\nLes principales technologies utilisées :\n\nPython 3.11\nStreamlit pour l’interface interactive\n\nPlotly pour les visualisations dynamiques\n\nPandas / NumPy pour la préparation et l’analyse des données\n\nScikit-learn pour la modélisation (régression, clustering, détection d’anomalies)\n\nDocker pour le déploiement\n\nstreamlit-extras pour l’esthétique et les interactions avancées\n\n\n\n\n4 Fonctionnalités principales\n\n💎 Analyse du marché : visualisation interactive des prix par marque, modèle ou matériau\n\n🔍 Segmentation : regroupement automatique des montres selon leurs caractéristiques (clustering)\n\n🕵️ Détection d’anomalies : identification des montres sous-évaluées via des modèles comme Isolation Forest\n\n💰 Estimation du prix : prédiction du prix attendu à partir des variables techniques\n\n📊 Exports de données : téléchargement des résultats pour analyses complémentaires\n\n\n\n\n5 Exemples d’onglets\n\nAccueil : présentation du marché global et des principales tendances\n\nAnalyse des prix : distribution et comparaison entre marques et modèles\n\nSegmentation : visualisation des clusters selon les caractéristiques\n\nAnomalies : mise en évidence des montres dont le prix s’écarte des tendances\n\nModélisation : estimation du prix prédit pour une montre sélectionnée\n\nExports : téléchargement au format CSV ou Excel\n\n\n\n\n6 Résultats attendus\nCette application permet d’obtenir une vision claire et dynamique du marché horloger d’occasion :\n\nIdentifier les tendances de prix selon les marques et matériaux\n\nDétecter les opportunités d’achat grâce aux anomalies de prix\n\nComprendre la structure du marché secondaire\n\nOffrir une estimation cohérente du prix d’une montre donnée\n\nEn combinant analyse statistique et interface interactive,\nMontre Analytics Dashboard devient un outil d’aide à la décision pour collectionneurs, revendeurs et analystes.\n\n\n\n7 Outil technique\n\nDéveloppé entièrement en Python\n\nInterface construite avec Streamlit\n\nConteneurisé avec Docker\n\nCompatible avec Streamlit Cloud pour un déploiement en ligne\n\n\n\n\nFigure 1 : Aperçu du tableau de bord\n\n\nVoir le code source sur GitHub\n\n\n\n\n8 Lancer l’application\n\n🚀 Open Watch Analytics Dashboard ~ Streamlit"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html",
+    "href": "formation/semaine-02/index.html",
+    "title": "Semaine 2",
+    "section": "",
+    "text": "Cette deuxième semaine explore les produits concrets du marché non-vie et te fait découvrir Docker Compose pour orchestrer plusieurs conteneurs.\n\n    \n        \n            🏢\n            Volet Métier\n        \n        ⏱️ Environ 3 heures\n        Module 2 — Produits d'assurance non-vie\n        \n            Typologie des produits IARD\n            Structure d'un contrat d'assurance\n            Garanties, franchises et exclusions\n            Cycle de vie du contrat\n            Chaîne de valeur de l'assurance\n        \n    \n    \n        \n            🛠️\n            Volet Technique\n        \n        ⏱️ Environ 3 heures\n        Module Technique 2 — Docker Compose\n        \n            Pourquoi orchestrer plusieurs conteneurs\n            Syntaxe du fichier docker-compose.yml\n            Services, réseaux et volumes\n            Application multi-conteneurs\n            Commandes Compose essentielles"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#vue-densemble",
+    "href": "formation/semaine-02/index.html#vue-densemble",
+    "title": "Semaine 2",
+    "section": "",
+    "text": "Cette deuxième semaine explore les produits concrets du marché non-vie et te fait découvrir Docker Compose pour orchestrer plusieurs conteneurs.\n\n    \n        \n            🏢\n            Volet Métier\n        \n        ⏱️ Environ 3 heures\n        Module 2 — Produits d'assurance non-vie\n        \n            Typologie des produits IARD\n            Structure d'un contrat d'assurance\n            Garanties, franchises et exclusions\n            Cycle de vie du contrat\n            Chaîne de valeur de l'assurance\n        \n    \n    \n        \n            🛠️\n            Volet Technique\n        \n        ⏱️ Environ 3 heures\n        Module Technique 2 — Docker Compose\n        \n            Pourquoi orchestrer plusieurs conteneurs\n            Syntaxe du fichier docker-compose.yml\n            Services, réseaux et volumes\n            Application multi-conteneurs\n            Commandes Compose essentielles"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#objectifs-de-la-semaine",
+    "href": "formation/semaine-02/index.html#objectifs-de-la-semaine",
+    "title": "Semaine 2",
+    "section": "📋 Objectifs de la semaine",
+    "text": "📋 Objectifs de la semaine\n\n    À la fin de cette semaine, tu seras capable de :\n    Côté métier :\n    \n        Classer les principaux produits d'assurance non-vie par branche\n        Lire et interpréter les éléments clés d'un contrat\n        Distinguer garanties, franchises et exclusions\n        Décrire le cycle de vie complet d'un contrat\n    \n    Côté technique :\n    \n        Écrire un fichier docker-compose.yml fonctionnel\n        Orchestrer une application multi-conteneurs\n        Gérer les réseaux et volumes avec Compose\n        Utiliser les commandes Compose essentielles"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#planning-suggéré",
+    "href": "formation/semaine-02/index.html#planning-suggéré",
+    "title": "Semaine 2",
+    "section": "📅 Planning suggéré",
+    "text": "📅 Planning suggéré\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nTypologie IARD, branches d’assurance\nIntroduction Docker Compose, syntaxe YAML\n\n\nJour 2\nStructure du contrat, garanties\nServices, réseaux et volumes\n\n\nJour 3\nFranchises, exclusions, cycle de vie\nApplication multi-conteneurs\n\n\nJour 4\nChaîne de valeur + Auto-évaluation\nExercices pratiques Compose\n\n\nJour 5\nDébriefing & validation\nLivrable : App multi-conteneurs"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#livrables-attendus",
+    "href": "formation/semaine-02/index.html#livrables-attendus",
+    "title": "Semaine 2",
+    "section": "📦 Livrables attendus",
+    "text": "📦 Livrables attendus\n\n    À rendre en fin de semaine :\n    \n        Cartographie des produits non-vie : Schéma des branches et sous-branches avec exemples\n        Analyse d'un contrat : Décortiquer un contrat (garanties, franchises, exclusions)\n        Application Docker Compose : docker-compose.yml orchestrant au moins 2 services"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#accès-aux-modules",
+    "href": "formation/semaine-02/index.html#accès-aux-modules",
+    "title": "Semaine 2",
+    "section": "📚 Accès aux modules",
+    "text": "📚 Accès aux modules\n\n    \n        📖 Module Métier 2\n        Produits d'assurance non-vie→ Comprendre l'offre IARD\n    \n    \n        🐳 Module Technique 2\n        Docker Compose→ Orchestrer tes applications\n    \n    \n        ✅ Fiche de travail\n        Exercices et livrables→ Valider tes acquis"
+  },
+  {
+    "objectID": "formation/semaine-02/index.html#conseils",
+    "href": "formation/semaine-02/index.html#conseils",
+    "title": "Semaine 2",
+    "section": "💡 Conseils",
+    "text": "💡 Conseils\n\n\n\n\n\n\nArticulation métier/technique\n\n\n\nLes produits d’assurance génèrent des données (contrats, sinistres, primes) stockées en base. Docker Compose te permettra d’orchestrer une app avec sa BDD — exactement ce que tu feras dans ton projet central.\n\n\n\n\n\n\n\n\nRythme\n\n\n\nSi tu as pris du retard sur la Semaine 1, consolide avant d’avancer. Les concepts s’appuient sur les fondamentaux.\n\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-21/module-metier-21.html",
+    "href": "formation/semaine-21/module-metier-21.html",
+    "title": "Module 21 — Étude de cas intégrée (partie 1)",
+    "section": "",
+    "text": "1 Présentation du cas\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Analyse exploratoire\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Diagnostic sinistralité\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Segments problématiques\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Premières recommandations\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 21 Voir le Module Technique 21 →"
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html",
+    "href": "formation/semaine-21/fiche-travail-21.html",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 21\nLivrable technique : Mise en pratique du Module Technique 21\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html#livrables",
+    "href": "formation/semaine-21/fiche-travail-21.html#livrables",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 21\nLivrable technique : Mise en pratique du Module Technique 21\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html#exercices-métier",
+    "href": "formation/semaine-21/fiche-travail-21.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html#exercices-techniques",
+    "href": "formation/semaine-21/fiche-travail-21.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html#pont-métier-technique",
+    "href": "formation/semaine-21/fiche-travail-21.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-21/fiche-travail-21.html#checklist",
+    "href": "formation/semaine-21/fiche-travail-21.html#checklist",
+    "title": "Fiche de travail — Semaine 21",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 21 terminé\nModule Technique 21 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 21"
+  },
+  {
+    "objectID": "formation/semaine-19/module-metier-19.html",
+    "href": "formation/semaine-19/module-metier-19.html",
+    "title": "Module 19 — Approfondissement tarification",
+    "section": "",
+    "text": "1 Micro-segmentation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Clustering\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Arbres et ensembles\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Régularisation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Éthique segmentation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 19 Voir le Module Technique 19 →"
+  },
+  {
+    "objectID": "formation/semaine-19/module-technique-19.html",
+    "href": "formation/semaine-19/module-technique-19.html",
+    "title": "Module Technique 19 — Projet Central — Tarification ML",
+    "section": "",
+    "text": "1 XGBoost tarification\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Hyperparameter tuning\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 SHAP interprétabilité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 GLM vs XGBoost\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Choix modèle final\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 19 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html",
+    "href": "formation/semaine-10/fiche-travail-10.html",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 10\nLivrable technique : Mise en pratique du Module Technique 10\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html#livrables",
+    "href": "formation/semaine-10/fiche-travail-10.html#livrables",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 10\nLivrable technique : Mise en pratique du Module Technique 10\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html#exercices-métier",
+    "href": "formation/semaine-10/fiche-travail-10.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html#exercices-techniques",
+    "href": "formation/semaine-10/fiche-travail-10.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html#pont-métier-technique",
+    "href": "formation/semaine-10/fiche-travail-10.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-10/fiche-travail-10.html#checklist",
+    "href": "formation/semaine-10/fiche-travail-10.html#checklist",
+    "title": "Fiche de travail — Semaine 10",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 10 terminé\nModule Technique 10 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 10"
+  },
+  {
+    "objectID": "formation/semaine-10/module-metier-10.html",
+    "href": "formation/semaine-10/module-metier-10.html",
+    "title": "Module 10 — Tarification avancée",
+    "section": "",
+    "text": "1 GLM Poisson fréquence\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 GLM Gamma sévérité\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Interactions non-linéaires\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Validation croisée\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 GLM vs Machine Learning\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 10 Voir le Module Technique 10 →"
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html",
+    "href": "formation/semaine-17/fiche-travail-17.html",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 17\nLivrable technique : Mise en pratique du Module Technique 17\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html#livrables",
+    "href": "formation/semaine-17/fiche-travail-17.html#livrables",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 17\nLivrable technique : Mise en pratique du Module Technique 17\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html#exercices-métier",
+    "href": "formation/semaine-17/fiche-travail-17.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html#exercices-techniques",
+    "href": "formation/semaine-17/fiche-travail-17.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html#pont-métier-technique",
+    "href": "formation/semaine-17/fiche-travail-17.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-17/fiche-travail-17.html#checklist",
+    "href": "formation/semaine-17/fiche-travail-17.html#checklist",
+    "title": "Fiche de travail — Semaine 17",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 17 terminé\nModule Technique 17 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 17"
+  },
+  {
+    "objectID": "formation/semaine-17/index.html",
+    "href": "formation/semaine-17/index.html",
+    "title": "Semaine 17",
+    "section": "",
+    "text": "Module 17 — Révision Bloc III\n        \n            Synthèse principes tarifaires\n            GLM pratique\n            Segmentation anti-sélection\n            Exercices intégrés\n            Points clés\n        \n    \n    \n        Module Technique 17 — Projet Central — Modélisation sévérité\n        \n            Modèle Gamma sévérité\n            Sinistres graves\n            Distributions queue lourde\n            Validation diagnostics\n            Comparaison fréquence"
+  },
+  {
+    "objectID": "formation/semaine-17/index.html#objectifs",
+    "href": "formation/semaine-17/index.html#objectifs",
+    "title": "Semaine 17",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nSynthèse principes tarifaires\nModèle Gamma sévérité\n\n\nJour 2\nGLM pratique\nSinistres graves\n\n\nJour 3\nSegmentation anti-sélection\nDistributions queue lourde\n\n\nJour 4\nExercices intégrés\nValidation diagnostics\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-17/index.html#accès-aux-modules",
+    "href": "formation/semaine-17/index.html#accès-aux-modules",
+    "title": "Semaine 17",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 17\nModule Technique 17\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-16/module-technique-16.html",
+    "href": "formation/semaine-16/module-technique-16.html",
+    "title": "Module Technique 16 — Projet Central — Modélisation fréquence",
+    "section": "",
+    "text": "1 Préparation données GLM\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Modèle Poisson\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Sélection variables\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Validation modèle\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Interprétation coefficients\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 16 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-16/index.html",
+    "href": "formation/semaine-16/index.html",
+    "title": "Semaine 16",
+    "section": "",
+    "text": "Module 16 — Révision Bloc I-II\n        \n            Synthèse Bloc I\n            Synthèse Bloc II\n            Exercices croisés\n            QCM validation\n            Points clés\n        \n    \n    \n        Module Technique 16 — Projet Central — Modélisation fréquence\n        \n            Préparation données GLM\n            Modèle Poisson\n            Sélection variables\n            Validation modèle\n            Interprétation coefficients"
+  },
+  {
+    "objectID": "formation/semaine-16/index.html#objectifs",
+    "href": "formation/semaine-16/index.html#objectifs",
+    "title": "Semaine 16",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nSynthèse Bloc I\nPréparation données GLM\n\n\nJour 2\nSynthèse Bloc II\nModèle Poisson\n\n\nJour 3\nExercices croisés\nSélection variables\n\n\nJour 4\nQCM validation\nValidation modèle\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-16/index.html#accès-aux-modules",
+    "href": "formation/semaine-16/index.html#accès-aux-modules",
+    "title": "Semaine 16",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 16\nModule Technique 16\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-11/module-technique-11.html",
+    "href": "formation/semaine-11/module-technique-11.html",
+    "title": "Module Technique 11 — MLflow — Tracking et Versionnement",
+    "section": "",
+    "text": "1 Pourquoi MLflow\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Tracking expériences\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Logging paramètres\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Model Registry\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Comparaison de runs\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 11 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-11/index.html",
+    "href": "formation/semaine-11/index.html",
+    "title": "Semaine 11",
+    "section": "",
+    "text": "Module 11 — Rentabilité et Indicateurs\n        \n            S/P net et brut\n            Combined ratio\n            Customer Lifetime Value\n            Tableaux de bord\n            Alertes et seuils\n        \n    \n    \n        Module Technique 11 — MLflow — Tracking et Versionnement\n        \n            Pourquoi MLflow\n            Tracking expériences\n            Logging paramètres\n            Model Registry\n            Comparaison de runs"
+  },
+  {
+    "objectID": "formation/semaine-11/index.html#objectifs",
+    "href": "formation/semaine-11/index.html#objectifs",
+    "title": "Semaine 11",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nS/P net et brut\nPourquoi MLflow\n\n\nJour 2\nCombined ratio\nTracking expériences\n\n\nJour 3\nCustomer Lifetime Value\nLogging paramètres\n\n\nJour 4\nTableaux de bord\nModel Registry\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-11/index.html#accès-aux-modules",
+    "href": "formation/semaine-11/index.html#accès-aux-modules",
+    "title": "Semaine 11",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 11\nModule Technique 11\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-18/module-metier-18.html",
+    "href": "formation/semaine-18/module-metier-18.html",
+    "title": "Module 18 — Révision Bloc IV-V",
+    "section": "",
+    "text": "1 Synthèse pilotage\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Synthèse data science\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Exercices intégrés\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Lien indicateurs-modèles\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Préparation projet\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 18 Voir le Module Technique 18 →"
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html",
+    "href": "formation/semaine-18/fiche-travail-18.html",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 18\nLivrable technique : Mise en pratique du Module Technique 18\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html#livrables",
+    "href": "formation/semaine-18/fiche-travail-18.html#livrables",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 18\nLivrable technique : Mise en pratique du Module Technique 18\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html#exercices-métier",
+    "href": "formation/semaine-18/fiche-travail-18.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html#exercices-techniques",
+    "href": "formation/semaine-18/fiche-travail-18.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html#pont-métier-technique",
+    "href": "formation/semaine-18/fiche-travail-18.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-18/fiche-travail-18.html#checklist",
+    "href": "formation/semaine-18/fiche-travail-18.html#checklist",
+    "title": "Fiche de travail — Semaine 18",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 18 terminé\nModule Technique 18 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 18"
+  },
+  {
+    "objectID": "formation/semaine-20/module-metier-20.html",
+    "href": "formation/semaine-20/module-metier-20.html",
+    "title": "Module 20 — Approfondissement pilotage",
+    "section": "",
+    "text": "1 Design tableaux de bord\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 KPIs opérationnels vs stratégiques\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Storytelling data\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Alertes dynamiques\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Communication parties prenantes\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 20 Voir le Module Technique 20 →"
+  },
+  {
+    "objectID": "formation/semaine-20/module-technique-20.html",
+    "href": "formation/semaine-20/module-technique-20.html",
+    "title": "Module Technique 20 — Projet Central — API et Déploiement",
+    "section": "",
+    "text": "1 API FastAPI scoring\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Conteneurisation Docker\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Déploiement AWS\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Tests de charge\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Monitoring API\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 20 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html",
+    "href": "formation/semaine-02/module-technique-02.html",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "",
+    "text": "À l’issue de ce module, tu seras capable de :\n\nExpliquer pourquoi on a besoin d’orchestrer plusieurs conteneurs\nÉcrire un fichier docker-compose.yml complet\nConfigurer services, réseaux et volumes dans Compose\nDéployer une application multi-conteneurs (API + BDD)\nMaîtriser les commandes Compose du quotidien"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#le-problème-des-applications-multi-services",
+    "href": "formation/semaine-02/module-technique-02.html#le-problème-des-applications-multi-services",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "1.1 Le problème des applications multi-services",
+    "text": "1.1 Le problème des applications multi-services\nEn pratique, une application Data Science ne tourne jamais seule. Elle a besoin de services complémentaires :\n\n\n\n\n\nflowchart LR\n    A[🐍 API Python&lt;br&gt;FastAPI/Flask] --&gt; B[🗄️ Base de données&lt;br&gt;PostgreSQL]\n    A --&gt; C[📊 Dashboard&lt;br&gt;Streamlit]\n    A --&gt; D[💾 Cache&lt;br&gt;Redis]\n    C --&gt; A\n\n\n Architecture typique d’une application Data Science \n\n\n\nSans Compose, il faudrait lancer manuellement chaque conteneur avec de longues commandes docker run. Compose permet de tout définir dans un seul fichier YAML."
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#structure-du-fichier-docker-compose.yml",
+    "href": "formation/semaine-02/module-technique-02.html#structure-du-fichier-docker-compose.yml",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "1.2 Structure du fichier docker-compose.yml",
+    "text": "1.2 Structure du fichier docker-compose.yml\n# docker-compose.yml\nversion: \"3.8\"\n\nservices:\n  api:\n    build: ./api\n    ports:\n      - \"8000:8000\"\n    environment:\n      - DATABASE_URL=postgresql://user:pass@db:5432/assurance\n    depends_on:\n      - db\n\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_USER: user\n      POSTGRES_PASSWORD: pass\n      POSTGRES_DB: assurance\n    volumes:\n      - pg_data:/var/lib/postgresql/data\n    ports:\n      - \"5432:5432\"\n\nvolumes:\n  pg_data:\n\n💡 Point clé\nDans Compose, les services communiquent entre eux par leur nom de service. Ici, l’API accède à la BDD via db:5432 — pas besoin d’adresse IP. Compose crée automatiquement un réseau interne."
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#services",
+    "href": "formation/semaine-02/module-technique-02.html#services",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "2.1 Services",
+    "text": "2.1 Services\nUn service = un conteneur (ou plusieurs réplicas) défini par une image ou un build context.\n\n\n\nPropriété\nDescription\n\n\n\n\nimage\nImage Docker à utiliser\n\n\nbuild\nChemin vers un Dockerfile\n\n\nports\nMapping de ports host:conteneur\n\n\nenvironment\nVariables d’environnement\n\n\ndepends_on\nOrdre de démarrage\n\n\nvolumes\nMontages de données\n\n\nrestart\nPolitique de redémarrage"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#volumes",
+    "href": "formation/semaine-02/module-technique-02.html#volumes",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "2.2 Volumes",
+    "text": "2.2 Volumes\nLes volumes persistent les données au-delà du cycle de vie des conteneurs :\nvolumes:\n  pg_data:           # Volume nommé (géré par Docker)\n\nservices:\n  db:\n    volumes:\n      - pg_data:/var/lib/postgresql/data  # Volume nommé\n      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Bind mount"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#réseaux",
+    "href": "formation/semaine-02/module-technique-02.html#réseaux",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "2.3 Réseaux",
+    "text": "2.3 Réseaux\nPar défaut, Compose crée un réseau pour chaque projet. Tu peux aussi définir des réseaux personnalisés pour isoler certains services."
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#structure-du-projet",
+    "href": "formation/semaine-02/module-technique-02.html#structure-du-projet",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "3.1 Structure du projet",
+    "text": "3.1 Structure du projet\nprojet-assurance/\n├── docker-compose.yml\n├── api/\n│   ├── Dockerfile\n│   ├── requirements.txt\n│   └── main.py\n└── db/\n    └── init.sql"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#le-dockerfile-de-lapi",
+    "href": "formation/semaine-02/module-technique-02.html#le-dockerfile-de-lapi",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "3.2 Le Dockerfile de l’API",
+    "text": "3.2 Le Dockerfile de l’API\nFROM python:3.10-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY main.py .\nCMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]"
+  },
+  {
+    "objectID": "formation/semaine-02/module-technique-02.html#le-script-api-main.py",
+    "href": "formation/semaine-02/module-technique-02.html#le-script-api-main.py",
+    "title": "Module Technique 2 — Docker Compose",
+    "section": "3.3 Le script API (main.py)",
+    "text": "3.3 Le script API (main.py)\nfrom fastapi import FastAPI\nimport psycopg2\nimport os\n\napp = FastAPI(title=\"API Assurance\")\n\n@app.get(\"/contrats\")\ndef get_contrats():\n    conn = psycopg2.connect(os.environ[\"DATABASE_URL\"])\n    cur = conn.cursor()\n    cur.execute(\"SELECT * FROM contrats LIMIT 10\")\n    rows = cur.fetchall()\n    conn.close()\n    return {\"contrats\": rows}"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html",
+    "href": "formation/semaine-02/module-metier-02.html",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "",
+    "text": "À l’issue de ce module, tu seras capable de :\n\nClassifier les principaux produits d’assurance non-vie par branche\nDécrypter la structure d’un contrat d’assurance\nDistinguer garanties, franchises, plafonds et exclusions\nComprendre le cycle de vie d’un contrat de la souscription à la résiliation\nSituer les acteurs de la chaîne de valeur assurantielle"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#les-grandes-branches-iard",
+    "href": "formation/semaine-02/module-metier-02.html#les-grandes-branches-iard",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "1.1 Les grandes branches IARD",
+    "text": "1.1 Les grandes branches IARD\nL’assurance non-vie (ou IARD — Incendie, Accidents et Risques Divers) couvre l’ensemble des risques matériels et de responsabilité. Le marché se structure en grandes branches :\n\n\n\n\n\n\n\n\nFigure 1: Répartition du chiffre d’affaires IARD en France (données illustratives)"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#particuliers-vs-professionnels",
+    "href": "formation/semaine-02/module-metier-02.html#particuliers-vs-professionnels",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "1.2 Particuliers vs Professionnels",
+    "text": "1.2 Particuliers vs Professionnels\n\n\n\n\n\n\n\n\nSegment\nProduits phares\nCaractéristiques\n\n\n\n\nParticuliers\nAuto, MRH, Santé, GAV\nVolume élevé, sinistres fréquents mais modérés\n\n\nProfessionnels\nRC Pro, Multirisque, Flotte\nRisques plus complexes, tarification sur mesure\n\n\nEntreprises\nDommages, RC, D&O, Cyber\nGrands risques, courtage, réassurance"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#les-éléments-constitutifs",
+    "href": "formation/semaine-02/module-metier-02.html#les-éléments-constitutifs",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "2.1 Les éléments constitutifs",
+    "text": "2.1 Les éléments constitutifs\nUn contrat d’assurance se compose de plusieurs pièces :\n\n\n\n\n\nflowchart TD\n    A[Contrat d'assurance] --&gt; B[Conditions Générales]\n    A --&gt; C[Conditions Particulières]\n    A --&gt; D[Conditions Spéciales]\n    B --&gt; B1[Définitions, règles communes]\n    C --&gt; C1[Identité, garanties choisies, primes]\n    D --&gt; D1[Options, extensions spécifiques]\n\n\n Structure d’un contrat d’assurance \n\n\n\n\n💡 Point clé\nLes Conditions Générales sont identiques pour tous les assurés d’un même produit. Les Conditions Particulières personnalisent le contrat (garanties, franchises, montant de prime). C’est dans les CP que se trouvent les données exploitables en data science."
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#garanties-franchises-et-exclusions",
+    "href": "formation/semaine-02/module-metier-02.html#garanties-franchises-et-exclusions",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "2.2 Garanties, franchises et exclusions",
+    "text": "2.2 Garanties, franchises et exclusions\nLes garanties définissent ce qui est couvert :\n\nGarantie de base : couverture minimale obligatoire (ex : RC auto)\nGaranties optionnelles : extensions choisies par l’assuré (bris de glace, vol, etc.)\n\nLes franchises représentent la part restant à charge de l’assuré :\n\n\n\n\n\n\n\n\nType de franchise\nFonctionnement\nExemple\n\n\n\n\nAbsolue\nL’assuré paie toujours ce montant\nFranchise 300 € → sinistre 1000 € → indemnité 700 €\n\n\nRelative\nEn dessous, rien. Au-dessus, tout.\nFranchise 300 € → sinistre 200 € → 0 €, sinistre 400 € → 400 €\n\n\nProportionnelle\n% du sinistre à charge\n10% du montant du sinistre\n\n\n\n\n⚠️ Attention\nLes exclusions sont les risques non couverts. Elles peuvent être légales (guerre, nucléaire), conventionnelles (vétusté, usure) ou spécifiques au contrat. En data science, il faut les identifier car elles impactent directement le périmètre d’analyse des sinistres."
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#de-la-souscription-à-la-résiliation",
+    "href": "formation/semaine-02/module-metier-02.html#de-la-souscription-à-la-résiliation",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "3.1 De la souscription à la résiliation",
+    "text": "3.1 De la souscription à la résiliation\n\n\n(0.0, 1.0)\n\n\n(0.2, 0.8)\n\n\n(np.float64(0.0), np.float64(1.0), np.float64(0.2), np.float64(0.8))\n\n\n\n\n\n\n\n\nFigure 2: Cycle de vie d’un contrat d’assurance"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#les-données-générées-à-chaque-étape",
+    "href": "formation/semaine-02/module-metier-02.html#les-données-générées-à-chaque-étape",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "3.2 Les données générées à chaque étape",
+    "text": "3.2 Les données générées à chaque étape\nChaque étape du cycle de vie produit des données exploitables :\n\n\n\n\n\n\n\n\nÉtape\nDonnées clés\nUsage data\n\n\n\n\nTarification\nVariables de risque, segmentation\nModèles de pricing\n\n\nSouscription\nProfil assuré, garanties choisies\nAnalyse du portefeuille\n\n\nSinistres\nDate, nature, coût, réserves\nModèles fréquence/sévérité\n\n\nRésiliation\nMotif, ancienneté, historique\nModèles de churn"
+  },
+  {
+    "objectID": "formation/semaine-02/module-metier-02.html#les-acteurs-de-lécosystème",
+    "href": "formation/semaine-02/module-metier-02.html#les-acteurs-de-lécosystème",
+    "title": "Module 2 — Produits d’assurance non-vie",
+    "section": "4.1 Les acteurs de l’écosystème",
+    "text": "4.1 Les acteurs de l’écosystème\n\n\n\n\n\nflowchart LR\n    A[👤 Assuré] --&gt;|Prime| B[🏪 Distributeur]\n    B --&gt;|Contrat| C[🏢 Assureur]\n    C --&gt;|Cession| D[🏦 Réassureur]\n    C --&gt;|Sinistre| E[🔍 Expert]\n    E --&gt;|Rapport| C\n    C --&gt;|Indemnité| A\n\n\n Chaîne de valeur de l’assurance non-vie \n\n\n\n\n📝 Exemple concret\nDans ton expérience chez un courtier, tu as pu observer cette chaîne : le courtier (distributeur) négocie les conditions avec l’assureur, le client souscrit, et en cas de sinistre, un expert évalue les dommages avant indemnisation."
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html",
+    "href": "formation/semaine-05/fiche-travail-05.html",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 5\nLivrable technique : Mise en pratique du Module Technique 5\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html#livrables",
+    "href": "formation/semaine-05/fiche-travail-05.html#livrables",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 5\nLivrable technique : Mise en pratique du Module Technique 5\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html#exercices-métier",
+    "href": "formation/semaine-05/fiche-travail-05.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html#exercices-techniques",
+    "href": "formation/semaine-05/fiche-travail-05.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html#pont-métier-technique",
+    "href": "formation/semaine-05/fiche-travail-05.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-05/fiche-travail-05.html#checklist",
+    "href": "formation/semaine-05/fiche-travail-05.html#checklist",
+    "title": "Fiche de travail — Semaine 5",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 5 terminé\nModule Technique 5 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 5"
+  },
+  {
+    "objectID": "formation/semaine-05/module-metier-05.html",
+    "href": "formation/semaine-05/module-metier-05.html",
+    "title": "Module 5 — Fréquence et Sévérité",
+    "section": "",
+    "text": "1 Décomposition fréquence x sévérité\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Loi de Poisson\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Loi lognormale et Gamma\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Estimation des paramètres\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Validation et diagnostic\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 5 Voir le Module Technique 5 →"
+  },
+  {
+    "objectID": "formation/semaine-04/module-technique-04.html",
+    "href": "formation/semaine-04/module-technique-04.html",
+    "title": "Module Technique 4 — CI/CD avec GitHub Actions",
+    "section": "",
+    "text": "1 Concepts CI/CD\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Workflows GitHub Actions\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Tests pytest\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Linting automatique\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Déploiement continu\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 4 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html",
+    "href": "formation/semaine-04/index.html",
+    "title": "Semaine 4",
+    "section": "",
+    "text": "🏢Volet Métier\n        ⏱️ Environ 3 heures\n        Module 4 — Sinistralité — Concepts fondamentaux\n        \n            Le processus sinistre (déclaration → règlement)\n            Types de sinistres (attritionnels, graves, catastrophiques)\n            Indicateurs clés : S/P, fréquence, sévérité\n            Réserves et provisions (IBNR, IBNER)\n            Suivi de la sinistralité dans le temps\n        \n    \n    \n        🛠️Volet Technique\n        ⏱️ Environ 3 heures\n        Module Technique 4 — CI/CD avec GitHub Actions\n        \n            Concepts CI/CD et leurs bénéfices\n            Structure d'un workflow GitHub Actions\n            Tests automatisés avec pytest\n            Linting et formatage (black, flake8)\n            Déploiement continu"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html#objectifs",
+    "href": "formation/semaine-04/index.html#objectifs",
+    "title": "Semaine 4",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nLe processus sinistre\nConcepts CI/CD\n\n\nJour 2\nTypes de sinistres\nWorkflows GitHub Actions\n\n\nJour 3\nIndicateurs clés : S/P, fréquence\nTests pytest\n\n\nJour 4\nRéserves et IBNR\nLinting automatique\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html#accès-aux-modules",
+    "href": "formation/semaine-04/index.html#accès-aux-modules",
+    "title": "Semaine 4",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\n    \n        📖 Module Métier 4\n        Sinistralité — Concepts fondamentaux\n    \n    \n        🛠️ Module Technique 4\n        CI/CD avec GitHub Actions\n    \n    \n        ✅ Fiche de travail\n        Exercices et livrables\n    \n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html",
+    "href": "formation/semaine-03/module-technique-03.html",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "",
+    "text": "Maîtriser les stratégies de branching (Git Flow, trunk-based)\nChoisir entre merge et rebase selon le contexte\nRésoudre des conflits de merge sereinement\nCréer des Pull Requests et pratiquer le code review\nUtiliser les tags pour versionner tes releases"
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html#git-flow",
+    "href": "formation/semaine-03/module-technique-03.html#git-flow",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "1.1 Git Flow",
+    "text": "1.1 Git Flow\n\n\n\n\n\ngitGraph\n    commit id: \"init\"\n    branch develop\n    commit id: \"dev-1\"\n    branch feature/model\n    commit id: \"feat-1\"\n    commit id: \"feat-2\"\n    checkout develop\n    merge feature/model id: \"merge-feat\"\n    branch release/v1\n    commit id: \"rel-fix\"\n    checkout main\n    merge release/v1 id: \"v1.0\" tag: \"v1.0\"\n    checkout develop\n    merge release/v1\n\n\n Git Flow : branches principales et de support \n\n\n\n\n\n\nBranche\nRôle\nDurée de vie\n\n\n\n\nmain\nCode en production\nPermanente\n\n\ndevelop\nIntégration des features\nPermanente\n\n\nfeature/*\nDéveloppement d’une fonctionnalité\nTemporaire\n\n\nrelease/*\nPréparation d’une release\nTemporaire\n\n\nhotfix/*\nCorrection urgente en production\nTemporaire"
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html#trunk-based-development",
+    "href": "formation/semaine-03/module-technique-03.html#trunk-based-development",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "1.2 Trunk-based development",
+    "text": "1.2 Trunk-based development\nPlus simple : tout le monde travaille sur main avec des branches très courtes (&lt; 1 jour).\n\n💡 Point clé\nPour un projet solo ou une petite équipe data, le trunk-based est souvent plus adapté. Git Flow est conçu pour des équipes nombreuses avec des releases planifiées."
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html#quand-surviennent-les-conflits",
+    "href": "formation/semaine-03/module-technique-03.html#quand-surviennent-les-conflits",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "3.1 Quand surviennent les conflits ?",
+    "text": "3.1 Quand surviennent les conflits ?\nUn conflit arrive quand deux branches modifient la même ligne du même fichier.\n\n$ git merge feature/pricing Auto-merging models/pricing.py CONFLICT (content): Merge conflict in models/pricing.py Automatic merge failed; fix conflicts and then commit the result."
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html#comment-les-résoudre",
+    "href": "formation/semaine-03/module-technique-03.html#comment-les-résoudre",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "3.2 Comment les résoudre ?",
+    "text": "3.2 Comment les résoudre ?\nLe fichier en conflit contient des marqueurs :\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\ndef calculer_prime(exposition, frequence):\n    return exposition * frequence * 1.15\n=======\ndef calculer_prime(expo, freq, marge=0.10):\n    return expo * freq * (1 + marge)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/pricing\nTu choisis quelle version garder (ou combines les deux), supprimes les marqueurs, puis commites."
+  },
+  {
+    "objectID": "formation/semaine-03/module-technique-03.html#workflow-pr",
+    "href": "formation/semaine-03/module-technique-03.html#workflow-pr",
+    "title": "Module Technique 3 — Git avancé",
+    "section": "4.1 Workflow PR",
+    "text": "4.1 Workflow PR\n\n\n\n\n\nflowchart LR\n    A[Créer branche] --&gt; B[Développer]\n    B --&gt; C[Push]\n    C --&gt; D[Ouvrir PR]\n    D --&gt; E[Code Review]\n    E --&gt; F{Approuvé ?}\n    F --&gt;|Oui| G[Merge]\n    F --&gt;|Non| B\n\n\n Workflow d’une Pull Request \n\n\n\n\n# Créer et pousser une branche \\(&lt;/span&gt; git checkout -b feature/sinistralite-model&lt;br&gt;\n&lt;span class=\"comment\"&gt;# ... développement ...&lt;/span&gt;&lt;br&gt;\n&lt;span class=\"prompt\"&gt;\\) git add . && git commit -m “feat: add frequency model” \\(&lt;/span&gt; git push -u origin feature/sinistralite-model&lt;br&gt;&lt;br&gt;\n&lt;span class=\"comment\"&gt;# Créer la PR avec GitHub CLI&lt;/span&gt;&lt;br&gt;\n&lt;span class=\"prompt\"&gt;\\) gh pr create –title “Add frequency model” –body “GLM Poisson pour la fréquence”"
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html",
+    "href": "formation/semaine-03/module-metier-03.html",
+    "title": "Module 3 — Exposition au risque",
+    "section": "",
+    "text": "Définir les différentes mesures d’exposition au risque\nCalculer l’exposition acquise d’un portefeuille\nIdentifier les variables de segmentation pertinentes\nComprendre le lien entre exposition et tarification\nAnalyser la composition d’un portefeuille par segment"
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html#définition",
+    "href": "formation/semaine-03/module-metier-03.html#définition",
+    "title": "Module 3 — Exposition au risque",
+    "section": "1.1 Définition",
+    "text": "1.1 Définition\nL’exposition mesure la quantité de risque couverte par un portefeuille. C’est le dénominateur de tous les ratios actuariels.\n\n💡 Point clé\nSans mesure d’exposition, impossible de comparer des portefeuilles entre eux ou d’évaluer si la sinistralité est “normale”. Un portefeuille de 10 000 contrats avec 500 sinistres a-t-il une sinistralité élevée ? Impossible de répondre sans connaître l’exposition."
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html#unités-dexposition",
+    "href": "formation/semaine-03/module-metier-03.html#unités-dexposition",
+    "title": "Module 3 — Exposition au risque",
+    "section": "1.2 Unités d’exposition",
+    "text": "1.2 Unités d’exposition\n\n\n\nBranche\nUnité d’exposition\nExemple\n\n\n\n\nAuto\nVéhicule-année\n1 véhicule assuré 6 mois = 0.5\n\n\nMRH\nContrat-année\n1 contrat actif 1 an = 1.0\n\n\nRC Pro\nChiffre d’affaires\nCA déclaré de l’entreprise\n\n\nTransport\nTonnes-km\nVolume transporté × distance"
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html#la-distinction-fondamentale",
+    "href": "formation/semaine-03/module-metier-03.html#la-distinction-fondamentale",
+    "title": "Module 3 — Exposition au risque",
+    "section": "2.1 La distinction fondamentale",
+    "text": "2.1 La distinction fondamentale\n\n\n(0.0, 1.0)\n\n\n\n\n\n\n\n\nFigure 1: Exposition acquise vs écrite pour un contrat démarrant en juillet\n\n\n\n\n\n\nExposition écrite : somme des primes/contrats émis dans la période\nExposition acquise : fraction effectivement couverte pendant la période d’observation\n\n\n📝 Exemple\nUn contrat auto souscrit le 1er juillet N pour 1 an :\n\nExposition écrite en N = 1 contrat\nExposition acquise en N = 0.5 (6 mois sur 12)\nExposition acquise en N+1 = 0.5"
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html#variables-de-segmentation-classiques",
+    "href": "formation/semaine-03/module-metier-03.html#variables-de-segmentation-classiques",
+    "title": "Module 3 — Exposition au risque",
+    "section": "3.1 Variables de segmentation classiques",
+    "text": "3.1 Variables de segmentation classiques\n\n\n\n\n\n\n\n\nFigure 2: Distribution de la fréquence de sinistres par segment d’âge\n\n\n\n\n\n\n⚠️ Attention\nLa segmentation doit être à la fois pertinente statistiquement (pouvoir discriminant) et acceptable légalement (pas de discrimination). En France, le sexe ne peut plus être utilisé comme variable de tarification en assurance auto depuis 2012 (arrêt Test-Achats)."
+  },
+  {
+    "objectID": "formation/semaine-03/module-metier-03.html#la-prime-pure-comme-ratio",
+    "href": "formation/semaine-03/module-metier-03.html#la-prime-pure-comme-ratio",
+    "title": "Module 3 — Exposition au risque",
+    "section": "4.1 La prime pure comme ratio",
+    "text": "4.1 La prime pure comme ratio\n\\[\\text{Prime pure} = \\frac{\\text{Charge sinistres}}{\\text{Exposition}} = \\text{Fréquence} \\times \\text{Sévérité}\\]\nOù :\n\nFréquence = Nombre de sinistres / Exposition\nSévérité = Charge sinistres / Nombre de sinistres\n\n\n💡 Point clé\nLa qualité de la mesure d’exposition détermine directement la qualité de la tarification. Une exposition mal mesurée biaise la fréquence estimée et donc la prime."
+  },
+  {
+    "objectID": "formation/semaine-22/index.html",
+    "href": "formation/semaine-22/index.html",
+    "title": "Semaine 22",
+    "section": "",
+    "text": "Module 22 — Étude de cas intégrée (partie 2)\n        \n            Plan action\n            Chiffrage impacts\n            Priorisation\n            Présentation résultats\n            Suivi indicateurs\n        \n    \n    \n        Module Technique 22 — Projet Central — Tests et CI/CD\n        \n            Tests unitaires pytest\n            Tests intégration\n            Pipeline CI/CD\n            Coverage qualité\n            Pre-commit hooks"
+  },
+  {
+    "objectID": "formation/semaine-22/index.html#objectifs",
+    "href": "formation/semaine-22/index.html#objectifs",
+    "title": "Semaine 22",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nPlan action\nTests unitaires pytest\n\n\nJour 2\nChiffrage impacts\nTests intégration\n\n\nJour 3\nPriorisation\nPipeline CI/CD\n\n\nJour 4\nPrésentation résultats\nCoverage qualité\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-22/index.html#accès-aux-modules",
+    "href": "formation/semaine-22/index.html#accès-aux-modules",
+    "title": "Semaine 22",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 22\nModule Technique 22\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-22/module-technique-22.html",
+    "href": "formation/semaine-22/module-technique-22.html",
+    "title": "Module Technique 22 — Projet Central — Tests et CI/CD",
+    "section": "",
+    "text": "1 Tests unitaires pytest\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Tests intégration\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Pipeline CI/CD\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Coverage qualité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Pre-commit hooks\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 22 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-14/module-technique-14.html",
+    "href": "formation/semaine-14/module-technique-14.html",
+    "title": "Module Technique 14 — Projet Central — Pipeline données",
+    "section": "",
+    "text": "1 Pipeline ETL Python\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Nettoyage données\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Validation données\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Tests qualité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Orchestration\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 14 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-14/module-metier-14.html",
+    "href": "formation/semaine-14/module-metier-14.html",
+    "title": "Module 14 — MLOps appliqué",
+    "section": "",
+    "text": "1 Cycle vie ML\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Monitoring production\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Détection drift\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Réentraînement\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Gouvernance modèles\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 14 Voir le Module Technique 14 →"
+  },
+  {
+    "objectID": "formation/semaine-13/module-technique-13.html",
+    "href": "formation/semaine-13/module-technique-13.html",
+    "title": "Module Technique 13 — Projet Central — Cadrage",
+    "section": "",
+    "text": "1 Cadrage projet\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Architecture cible\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Setup repo\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Environnement Docker\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Structure données\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 13 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-13/module-metier-13.html",
+    "href": "formation/semaine-13/module-metier-13.html",
+    "title": "Module 13 — Données en assurance",
+    "section": "",
+    "text": "1 Sources de données\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Qualité des données\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Gouvernance\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 RGPD\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Data lineage\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 13 Voir le Module Technique 13 →"
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html",
+    "href": "formation/semaine-12/fiche-travail-12.html",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 12\nLivrable technique : Mise en pratique du Module Technique 12\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html#livrables",
+    "href": "formation/semaine-12/fiche-travail-12.html#livrables",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 12\nLivrable technique : Mise en pratique du Module Technique 12\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html#exercices-métier",
+    "href": "formation/semaine-12/fiche-travail-12.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html#exercices-techniques",
+    "href": "formation/semaine-12/fiche-travail-12.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html#pont-métier-technique",
+    "href": "formation/semaine-12/fiche-travail-12.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-12/fiche-travail-12.html#checklist",
+    "href": "formation/semaine-12/fiche-travail-12.html#checklist",
+    "title": "Fiche de travail — Semaine 12",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 12 terminé\nModule Technique 12 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 12"
+  },
+  {
+    "objectID": "formation/semaine-12/module-metier-12.html",
+    "href": "formation/semaine-12/module-metier-12.html",
+    "title": "Module 12 — Solvabilité II",
+    "section": "",
+    "text": "1 Pourquoi Solvabilité II\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Pilier 1 SCR MCR\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Pilier 2 gouvernance ORSA\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Pilier 3 reporting\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Impact gestion technique\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 12 Voir le Module Technique 12 →"
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html",
+    "href": "formation/semaine-15/fiche-travail-15.html",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 15\nLivrable technique : Mise en pratique du Module Technique 15\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html#livrables",
+    "href": "formation/semaine-15/fiche-travail-15.html#livrables",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 15\nLivrable technique : Mise en pratique du Module Technique 15\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html#exercices-métier",
+    "href": "formation/semaine-15/fiche-travail-15.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html#exercices-techniques",
+    "href": "formation/semaine-15/fiche-travail-15.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html#pont-métier-technique",
+    "href": "formation/semaine-15/fiche-travail-15.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-15/fiche-travail-15.html#checklist",
+    "href": "formation/semaine-15/fiche-travail-15.html#checklist",
+    "title": "Fiche de travail — Semaine 15",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 15 terminé\nModule Technique 15 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 15"
+  },
+  {
+    "objectID": "formation/semaine-15/module-metier-15.html",
+    "href": "formation/semaine-15/module-metier-15.html",
+    "title": "Module 15 — Industrialisation des modèles",
+    "section": "",
+    "text": "1 Du notebook à la production\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Conteneurisation modèles\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Scalabilité\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Maintenance\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Documentation technique\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 15 Voir le Module Technique 15 →"
+  },
+  {
+    "objectID": "formation/semaine-23/index.html",
+    "href": "formation/semaine-23/index.html",
+    "title": "Semaine 23",
+    "section": "",
+    "text": "Module 23 — Préparation soutenance\n        \n            Structurer présentation\n            Storytelling données\n            Adapter discours\n            Gérer questions\n            Répétitions timing\n        \n    \n    \n        Module Technique 23 — Projet Central — Documentation\n        \n            README professionnel\n            Docstrings type hints\n            Documentation Quarto\n            Packaging Python\n            Release tag final"
+  },
+  {
+    "objectID": "formation/semaine-23/index.html#objectifs",
+    "href": "formation/semaine-23/index.html#objectifs",
+    "title": "Semaine 23",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nStructurer présentation\nREADME professionnel\n\n\nJour 2\nStorytelling données\nDocstrings type hints\n\n\nJour 3\nAdapter discours\nDocumentation Quarto\n\n\nJour 4\nGérer questions\nPackaging Python\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-23/index.html#accès-aux-modules",
+    "href": "formation/semaine-23/index.html#accès-aux-modules",
+    "title": "Semaine 23",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 23\nModule Technique 23\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html",
+    "href": "formation/semaine-23/fiche-travail-23.html",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 23\nLivrable technique : Mise en pratique du Module Technique 23\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html#livrables",
+    "href": "formation/semaine-23/fiche-travail-23.html#livrables",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 23\nLivrable technique : Mise en pratique du Module Technique 23\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html#exercices-métier",
+    "href": "formation/semaine-23/fiche-travail-23.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html#exercices-techniques",
+    "href": "formation/semaine-23/fiche-travail-23.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html#pont-métier-technique",
+    "href": "formation/semaine-23/fiche-travail-23.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-23/fiche-travail-23.html#checklist",
+    "href": "formation/semaine-23/fiche-travail-23.html#checklist",
+    "title": "Fiche de travail — Semaine 23",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 23 terminé\nModule Technique 23 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 23"
+  },
+  {
+    "objectID": "formation/semaine-24/index.html",
+    "href": "formation/semaine-24/index.html",
+    "title": "Semaine 24",
+    "section": "",
+    "text": "Module 24 — Soutenance et Bilan\n        \n            Présentation projet central\n            Bilan compétences\n            Auto-évaluation finale\n            Perspectives\n            Plan développement\n        \n    \n    \n        Module Technique 24 — Projet Central — Livraison finale\n        \n            Tag release final\n            Rétrospective technique\n            Lessons learned\n            Portfolio visibilité\n            Prochaines étapes"
+  },
+  {
+    "objectID": "formation/semaine-24/index.html#objectifs",
+    "href": "formation/semaine-24/index.html#objectifs",
+    "title": "Semaine 24",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nPrésentation projet central\nTag release final\n\n\nJour 2\nBilan compétences\nRétrospective technique\n\n\nJour 3\nAuto-évaluation finale\nLessons learned\n\n\nJour 4\nPerspectives\nPortfolio visibilité\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-24/index.html#accès-aux-modules",
+    "href": "formation/semaine-24/index.html#accès-aux-modules",
+    "title": "Semaine 24",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 24\nModule Technique 24\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html",
+    "href": "formation/semaine-24/fiche-travail-24.html",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 24\nLivrable technique : Mise en pratique du Module Technique 24\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html#livrables",
+    "href": "formation/semaine-24/fiche-travail-24.html#livrables",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 24\nLivrable technique : Mise en pratique du Module Technique 24\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html#exercices-métier",
+    "href": "formation/semaine-24/fiche-travail-24.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html#exercices-techniques",
+    "href": "formation/semaine-24/fiche-travail-24.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html#pont-métier-technique",
+    "href": "formation/semaine-24/fiche-travail-24.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-24/fiche-travail-24.html#checklist",
+    "href": "formation/semaine-24/fiche-travail-24.html#checklist",
+    "title": "Fiche de travail — Semaine 24",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 24 terminé\nModule Technique 24 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 24"
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html",
+    "href": "formation/semaine-06/fiche-travail-06.html",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 6\nLivrable technique : Mise en pratique du Module Technique 6\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html#livrables",
+    "href": "formation/semaine-06/fiche-travail-06.html#livrables",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 6\nLivrable technique : Mise en pratique du Module Technique 6\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html#exercices-métier",
+    "href": "formation/semaine-06/fiche-travail-06.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html#exercices-techniques",
+    "href": "formation/semaine-06/fiche-travail-06.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html#pont-métier-technique",
+    "href": "formation/semaine-06/fiche-travail-06.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-06/fiche-travail-06.html#checklist",
+    "href": "formation/semaine-06/fiche-travail-06.html#checklist",
+    "title": "Fiche de travail — Semaine 6",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 6 terminé\nModule Technique 6 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 6"
+  },
+  {
+    "objectID": "formation/semaine-06/module-metier-06.html",
+    "href": "formation/semaine-06/module-metier-06.html",
+    "title": "Module 6 — Évolution des sinistres",
+    "section": "",
+    "text": "1 Développement des sinistres\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Triangles de liquidation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Méthode Chain Ladder\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Facteurs de développement\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Projection des charges ultimes\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 6 Voir le Module Technique 6 →"
+  },
+  {
+    "objectID": "formation/semaine-08/index.html",
+    "href": "formation/semaine-08/index.html",
+    "title": "Semaine 8",
+    "section": "",
+    "text": "Module 8 — Principes tarifaires\n        \n            Tarification a priori vs a posteriori\n            Variables tarifaires\n            Introduction aux GLM\n            GLM et tarification\n            Bonus-malus\n        \n    \n    \n        Module Technique 8 — AWS — Lambda et Serverless\n        \n            Serverless concepts\n            AWS Lambda fonctions\n            Triggers et événements\n            API Gateway + Lambda\n            Cas data science"
+  },
+  {
+    "objectID": "formation/semaine-08/index.html#objectifs",
+    "href": "formation/semaine-08/index.html#objectifs",
+    "title": "Semaine 8",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nTarification a priori vs a posteriori\nServerless concepts\n\n\nJour 2\nVariables tarifaires\nAWS Lambda fonctions\n\n\nJour 3\nIntroduction aux GLM\nTriggers et événements\n\n\nJour 4\nGLM et tarification\nAPI Gateway + Lambda\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-08/index.html#accès-aux-modules",
+    "href": "formation/semaine-08/index.html#accès-aux-modules",
+    "title": "Semaine 8",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 8\nModule Technique 8\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-08/module-technique-08.html",
+    "href": "formation/semaine-08/module-technique-08.html",
+    "title": "Module Technique 8 — AWS — Lambda et Serverless",
+    "section": "",
+    "text": "1 Serverless concepts\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 AWS Lambda fonctions\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Triggers et événements\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 API Gateway + Lambda\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Cas data science\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 8 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-09/index.html",
+    "href": "formation/semaine-09/index.html",
+    "title": "Semaine 9",
+    "section": "",
+    "text": "Module 9 — Comportements et Anti-sélection\n        \n            Asymétrie information\n            Sélection adverse\n            Aléa moral\n            Mécanismes correctifs\n            Impact tarification\n        \n    \n    \n        Module Technique 9 — AWS — Architecture et Services\n        \n            VPC réseau privé\n            IAM gestion accès\n            CloudWatch monitoring\n            Architecture multi-services\n            Bonnes pratiques sécurité"
+  },
+  {
+    "objectID": "formation/semaine-09/index.html#objectifs",
+    "href": "formation/semaine-09/index.html#objectifs",
+    "title": "Semaine 9",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nAsymétrie information\nVPC réseau privé\n\n\nJour 2\nSélection adverse\nIAM gestion accès\n\n\nJour 3\nAléa moral\nCloudWatch monitoring\n\n\nJour 4\nMécanismes correctifs\nArchitecture multi-services\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-09/index.html#accès-aux-modules",
+    "href": "formation/semaine-09/index.html#accès-aux-modules",
+    "title": "Semaine 9",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 9\nModule Technique 9\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html",
+    "href": "formation/semaine-09/fiche-travail-09.html",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 9\nLivrable technique : Mise en pratique du Module Technique 9\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html#livrables",
+    "href": "formation/semaine-09/fiche-travail-09.html#livrables",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 9\nLivrable technique : Mise en pratique du Module Technique 9\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html#exercices-métier",
+    "href": "formation/semaine-09/fiche-travail-09.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html#exercices-techniques",
+    "href": "formation/semaine-09/fiche-travail-09.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html#pont-métier-technique",
+    "href": "formation/semaine-09/fiche-travail-09.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-09/fiche-travail-09.html#checklist",
+    "href": "formation/semaine-09/fiche-travail-09.html#checklist",
+    "title": "Fiche de travail — Semaine 9",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 9 terminé\nModule Technique 9 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 9"
+  },
+  {
+    "objectID": "formation/semaine-07/module-technique-07.html",
+    "href": "formation/semaine-07/module-technique-07.html",
+    "title": "Module Technique 7 — AWS — RDS et Bases de données",
+    "section": "",
+    "text": "1 RDS bases managées\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Création PostgreSQL\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Requêtes SQL\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Backups et maintenance\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Sécurité IAM\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 7 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-07/module-metier-07.html",
+    "href": "formation/semaine-07/module-metier-07.html",
+    "title": "Module 7 — Provisionnement",
+    "section": "",
+    "text": "1 Pourquoi provisionner\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Chain Ladder appliquée\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Bornhuetter-Ferguson\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Comparaison des méthodes\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Impact comptable\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 7 Voir le Module Technique 7 →"
+  },
+  {
+    "objectID": "formation/semaine-07/index.html",
+    "href": "formation/semaine-07/index.html",
+    "title": "Semaine 7",
+    "section": "",
+    "text": "Module 7 — Provisionnement\n        \n            Pourquoi provisionner\n            Chain Ladder appliquée\n            Bornhuetter-Ferguson\n            Comparaison des méthodes\n            Impact comptable\n        \n    \n    \n        Module Technique 7 — AWS — RDS et Bases de données\n        \n            RDS bases managées\n            Création PostgreSQL\n            Requêtes SQL\n            Backups et maintenance\n            Sécurité IAM"
+  },
+  {
+    "objectID": "formation/semaine-07/index.html#objectifs",
+    "href": "formation/semaine-07/index.html#objectifs",
+    "title": "Semaine 7",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nPourquoi provisionner\nRDS bases managées\n\n\nJour 2\nChain Ladder appliquée\nCréation PostgreSQL\n\n\nJour 3\nBornhuetter-Ferguson\nRequêtes SQL\n\n\nJour 4\nComparaison des méthodes\nBackups et maintenance\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-07/index.html#accès-aux-modules",
+    "href": "formation/semaine-07/index.html#accès-aux-modules",
+    "title": "Semaine 7",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 7\nModule Technique 7\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html",
+    "href": "formation/semaine-07/fiche-travail-07.html",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 7\nLivrable technique : Mise en pratique du Module Technique 7\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html#livrables",
+    "href": "formation/semaine-07/fiche-travail-07.html#livrables",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 7\nLivrable technique : Mise en pratique du Module Technique 7\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html#exercices-métier",
+    "href": "formation/semaine-07/fiche-travail-07.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html#exercices-techniques",
+    "href": "formation/semaine-07/fiche-travail-07.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html#pont-métier-technique",
+    "href": "formation/semaine-07/fiche-travail-07.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-07/fiche-travail-07.html#checklist",
+    "href": "formation/semaine-07/fiche-travail-07.html#checklist",
+    "title": "Fiche de travail — Semaine 7",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 7 terminé\nModule Technique 7 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 7"
+  },
+  {
+    "objectID": "formation/semaine-09/module-technique-09.html",
+    "href": "formation/semaine-09/module-technique-09.html",
+    "title": "Module Technique 9 — AWS — Architecture et Services",
+    "section": "",
+    "text": "1 VPC réseau privé\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 IAM gestion accès\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 CloudWatch monitoring\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Architecture multi-services\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Bonnes pratiques sécurité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 9 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-09/module-metier-09.html",
+    "href": "formation/semaine-09/module-metier-09.html",
+    "title": "Module 9 — Comportements et Anti-sélection",
+    "section": "",
+    "text": "1 Asymétrie information\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Sélection adverse\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Aléa moral\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Mécanismes correctifs\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Impact tarification\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 9 Voir le Module Technique 9 →"
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html",
+    "href": "formation/semaine-08/fiche-travail-08.html",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 8\nLivrable technique : Mise en pratique du Module Technique 8\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html#livrables",
+    "href": "formation/semaine-08/fiche-travail-08.html#livrables",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 8\nLivrable technique : Mise en pratique du Module Technique 8\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html#exercices-métier",
+    "href": "formation/semaine-08/fiche-travail-08.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html#exercices-techniques",
+    "href": "formation/semaine-08/fiche-travail-08.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html#pont-métier-technique",
+    "href": "formation/semaine-08/fiche-travail-08.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-08/fiche-travail-08.html#checklist",
+    "href": "formation/semaine-08/fiche-travail-08.html#checklist",
+    "title": "Fiche de travail — Semaine 8",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 8 terminé\nModule Technique 8 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 8"
+  },
+  {
+    "objectID": "formation/semaine-08/module-metier-08.html",
+    "href": "formation/semaine-08/module-metier-08.html",
+    "title": "Module 8 — Principes tarifaires",
+    "section": "",
+    "text": "1 Tarification a priori vs a posteriori\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Variables tarifaires\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Introduction aux GLM\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 GLM et tarification\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Bonus-malus\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 8 Voir le Module Technique 8 →"
+  },
+  {
+    "objectID": "formation/semaine-06/index.html",
+    "href": "formation/semaine-06/index.html",
+    "title": "Semaine 6",
+    "section": "",
+    "text": "Module 6 — Évolution des sinistres\n        \n            Développement des sinistres\n            Triangles de liquidation\n            Méthode Chain Ladder\n            Facteurs de développement\n            Projection des charges ultimes\n        \n    \n    \n        Module Technique 6 — AWS — EC2 et Compute\n        \n            Instances EC2\n            Groupes de sécurité\n            Connexion SSH\n            AMI et snapshots\n            Auto Scaling"
+  },
+  {
+    "objectID": "formation/semaine-06/index.html#objectifs",
+    "href": "formation/semaine-06/index.html#objectifs",
+    "title": "Semaine 6",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nDéveloppement des sinistres\nInstances EC2\n\n\nJour 2\nTriangles de liquidation\nGroupes de sécurité\n\n\nJour 3\nMéthode Chain Ladder\nConnexion SSH\n\n\nJour 4\nFacteurs de développement\nAMI et snapshots\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-06/index.html#accès-aux-modules",
+    "href": "formation/semaine-06/index.html#accès-aux-modules",
+    "title": "Semaine 6",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 6\nModule Technique 6\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-06/module-technique-06.html",
+    "href": "formation/semaine-06/module-technique-06.html",
+    "title": "Module Technique 6 — AWS — EC2 et Compute",
+    "section": "",
+    "text": "1 Instances EC2\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Groupes de sécurité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Connexion SSH\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 AMI et snapshots\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Auto Scaling\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 6 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-24/module-technique-24.html",
+    "href": "formation/semaine-24/module-technique-24.html",
+    "title": "Module Technique 24 — Projet Central — Livraison finale",
+    "section": "",
+    "text": "1 Tag release final\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Rétrospective technique\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Lessons learned\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Portfolio visibilité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Prochaines étapes\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 24 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-24/module-metier-24.html",
+    "href": "formation/semaine-24/module-metier-24.html",
+    "title": "Module 24 — Soutenance et Bilan",
+    "section": "",
+    "text": "1 Présentation projet central\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Bilan compétences\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Auto-évaluation finale\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Perspectives\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Plan développement\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 24 Voir le Module Technique 24 →"
+  },
+  {
+    "objectID": "formation/semaine-23/module-technique-23.html",
+    "href": "formation/semaine-23/module-technique-23.html",
+    "title": "Module Technique 23 — Projet Central — Documentation",
+    "section": "",
+    "text": "1 README professionnel\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Docstrings type hints\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Documentation Quarto\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Packaging Python\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Release tag final\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 23 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-23/module-metier-23.html",
+    "href": "formation/semaine-23/module-metier-23.html",
+    "title": "Module 23 — Préparation soutenance",
+    "section": "",
+    "text": "1 Structurer présentation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Storytelling données\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Adapter discours\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Gérer questions\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Répétitions timing\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 23 Voir le Module Technique 23 →"
+  },
+  {
+    "objectID": "formation/semaine-15/index.html",
+    "href": "formation/semaine-15/index.html",
+    "title": "Semaine 15",
+    "section": "",
+    "text": "Module 15 — Industrialisation des modèles\n        \n            Du notebook à la production\n            Conteneurisation modèles\n            Scalabilité\n            Maintenance\n            Documentation technique\n        \n    \n    \n        Module Technique 15 — Projet Central — Feature engineering\n        \n            Feature engineering assurance\n            Variables actuarielles\n            Encodage catégorielles\n            Sélection variables\n            Pipeline features"
+  },
+  {
+    "objectID": "formation/semaine-15/index.html#objectifs",
+    "href": "formation/semaine-15/index.html#objectifs",
+    "title": "Semaine 15",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nDu notebook à la production\nFeature engineering assurance\n\n\nJour 2\nConteneurisation modèles\nVariables actuarielles\n\n\nJour 3\nScalabilité\nEncodage catégorielles\n\n\nJour 4\nMaintenance\nSélection variables\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-15/index.html#accès-aux-modules",
+    "href": "formation/semaine-15/index.html#accès-aux-modules",
+    "title": "Semaine 15",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 15\nModule Technique 15\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-15/module-technique-15.html",
+    "href": "formation/semaine-15/module-technique-15.html",
+    "title": "Module Technique 15 — Projet Central — Feature engineering",
+    "section": "",
+    "text": "1 Feature engineering assurance\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Variables actuarielles\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Encodage catégorielles\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Sélection variables\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Pipeline features\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 15 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-12/index.html",
+    "href": "formation/semaine-12/index.html",
+    "title": "Semaine 12",
+    "section": "",
+    "text": "Module 12 — Solvabilité II\n        \n            Pourquoi Solvabilité II\n            Pilier 1 SCR MCR\n            Pilier 2 gouvernance ORSA\n            Pilier 3 reporting\n            Impact gestion technique\n        \n    \n    \n        Module Technique 12 — FastAPI — API de scoring\n        \n            FastAPI framework\n            Endpoints et routes\n            Modèles Pydantic\n            Servir un modèle ML\n            Documentation Swagger"
+  },
+  {
+    "objectID": "formation/semaine-12/index.html#objectifs",
+    "href": "formation/semaine-12/index.html#objectifs",
+    "title": "Semaine 12",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nPourquoi Solvabilité II\nFastAPI framework\n\n\nJour 2\nPilier 1 SCR MCR\nEndpoints et routes\n\n\nJour 3\nPilier 2 gouvernance ORSA\nModèles Pydantic\n\n\nJour 4\nPilier 3 reporting\nServir un modèle ML\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-12/index.html#accès-aux-modules",
+    "href": "formation/semaine-12/index.html#accès-aux-modules",
+    "title": "Semaine 12",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 12\nModule Technique 12\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-12/module-technique-12.html",
+    "href": "formation/semaine-12/module-technique-12.html",
+    "title": "Module Technique 12 — FastAPI — API de scoring",
+    "section": "",
+    "text": "1 FastAPI framework\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Endpoints et routes\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Modèles Pydantic\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Servir un modèle ML\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Documentation Swagger\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 12 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-13/index.html",
+    "href": "formation/semaine-13/index.html",
+    "title": "Semaine 13",
+    "section": "",
+    "text": "Module 13 — Données en assurance\n        \n            Sources de données\n            Qualité des données\n            Gouvernance\n            RGPD\n            Data lineage\n        \n    \n    \n        Module Technique 13 — Projet Central — Cadrage\n        \n            Cadrage projet\n            Architecture cible\n            Setup repo\n            Environnement Docker\n            Structure données"
+  },
+  {
+    "objectID": "formation/semaine-13/index.html#objectifs",
+    "href": "formation/semaine-13/index.html#objectifs",
+    "title": "Semaine 13",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nSources de données\nCadrage projet\n\n\nJour 2\nQualité des données\nArchitecture cible\n\n\nJour 3\nGouvernance\nSetup repo\n\n\nJour 4\nRGPD\nEnvironnement Docker\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-13/index.html#accès-aux-modules",
+    "href": "formation/semaine-13/index.html#accès-aux-modules",
+    "title": "Semaine 13",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 13\nModule Technique 13\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html",
+    "href": "formation/semaine-13/fiche-travail-13.html",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 13\nLivrable technique : Mise en pratique du Module Technique 13\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html#livrables",
+    "href": "formation/semaine-13/fiche-travail-13.html#livrables",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 13\nLivrable technique : Mise en pratique du Module Technique 13\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html#exercices-métier",
+    "href": "formation/semaine-13/fiche-travail-13.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html#exercices-techniques",
+    "href": "formation/semaine-13/fiche-travail-13.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html#pont-métier-technique",
+    "href": "formation/semaine-13/fiche-travail-13.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-13/fiche-travail-13.html#checklist",
+    "href": "formation/semaine-13/fiche-travail-13.html#checklist",
+    "title": "Fiche de travail — Semaine 13",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 13 terminé\nModule Technique 13 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 13"
+  },
+  {
+    "objectID": "formation/semaine-14/index.html",
+    "href": "formation/semaine-14/index.html",
+    "title": "Semaine 14",
+    "section": "",
+    "text": "Module 14 — MLOps appliqué\n        \n            Cycle vie ML\n            Monitoring production\n            Détection drift\n            Réentraînement\n            Gouvernance modèles\n        \n    \n    \n        Module Technique 14 — Projet Central — Pipeline données\n        \n            Pipeline ETL Python\n            Nettoyage données\n            Validation données\n            Tests qualité\n            Orchestration"
+  },
+  {
+    "objectID": "formation/semaine-14/index.html#objectifs",
+    "href": "formation/semaine-14/index.html#objectifs",
+    "title": "Semaine 14",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nCycle vie ML\nPipeline ETL Python\n\n\nJour 2\nMonitoring production\nNettoyage données\n\n\nJour 3\nDétection drift\nValidation données\n\n\nJour 4\nRéentraînement\nTests qualité\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-14/index.html#accès-aux-modules",
+    "href": "formation/semaine-14/index.html#accès-aux-modules",
+    "title": "Semaine 14",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 14\nModule Technique 14\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html",
+    "href": "formation/semaine-14/fiche-travail-14.html",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 14\nLivrable technique : Mise en pratique du Module Technique 14\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html#livrables",
+    "href": "formation/semaine-14/fiche-travail-14.html#livrables",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 14\nLivrable technique : Mise en pratique du Module Technique 14\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html#exercices-métier",
+    "href": "formation/semaine-14/fiche-travail-14.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html#exercices-techniques",
+    "href": "formation/semaine-14/fiche-travail-14.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html#pont-métier-technique",
+    "href": "formation/semaine-14/fiche-travail-14.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-14/fiche-travail-14.html#checklist",
+    "href": "formation/semaine-14/fiche-travail-14.html#checklist",
+    "title": "Fiche de travail — Semaine 14",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 14 terminé\nModule Technique 14 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 14"
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html",
+    "href": "formation/semaine-22/fiche-travail-22.html",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 22\nLivrable technique : Mise en pratique du Module Technique 22\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html#livrables",
+    "href": "formation/semaine-22/fiche-travail-22.html#livrables",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 22\nLivrable technique : Mise en pratique du Module Technique 22\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html#exercices-métier",
+    "href": "formation/semaine-22/fiche-travail-22.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html#exercices-techniques",
+    "href": "formation/semaine-22/fiche-travail-22.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html#pont-métier-technique",
+    "href": "formation/semaine-22/fiche-travail-22.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-22/fiche-travail-22.html#checklist",
+    "href": "formation/semaine-22/fiche-travail-22.html#checklist",
+    "title": "Fiche de travail — Semaine 22",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 22 terminé\nModule Technique 22 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 22"
+  },
+  {
+    "objectID": "formation/semaine-22/module-metier-22.html",
+    "href": "formation/semaine-22/module-metier-22.html",
+    "title": "Module 22 — Étude de cas intégrée (partie 2)",
+    "section": "",
+    "text": "1 Plan action\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Chiffrage impacts\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Priorisation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Présentation résultats\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Suivi indicateurs\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 22 Voir le Module Technique 22 →"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html",
+    "href": "formation/semaine-03/index.html",
+    "title": "Semaine 3",
+    "section": "",
+    "text": "Cette semaine clôt le Bloc I des fondements métier avec l’exposition au risque — la base de toute tarification. Côté technique, tu maîtriseras Git avancé pour travailler en équipe sur ton code.\n\n    \n        🏢Volet Métier\n        ⏱️ Environ 3 heures\n        Module 3 — Exposition au risque\n        \n            Mesures d'exposition (unités de risque)\n            Exposition acquise vs écrite\n            Segmentation et variables de risque\n            Tarification et exposition\n            Impact sur la mutualisation\n        \n    \n    \n        🛠️Volet Technique\n        ⏱️ Environ 3 heures\n        Module Technique 3 — Git avancé\n        \n            Branching strategies (Git Flow, trunk-based)\n            Merge vs Rebase\n            Résolution de conflits\n            Pull Requests et code review\n            Tags et releases"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html#vue-densemble",
+    "href": "formation/semaine-03/index.html#vue-densemble",
+    "title": "Semaine 3",
+    "section": "",
+    "text": "Cette semaine clôt le Bloc I des fondements métier avec l’exposition au risque — la base de toute tarification. Côté technique, tu maîtriseras Git avancé pour travailler en équipe sur ton code.\n\n    \n        🏢Volet Métier\n        ⏱️ Environ 3 heures\n        Module 3 — Exposition au risque\n        \n            Mesures d'exposition (unités de risque)\n            Exposition acquise vs écrite\n            Segmentation et variables de risque\n            Tarification et exposition\n            Impact sur la mutualisation\n        \n    \n    \n        🛠️Volet Technique\n        ⏱️ Environ 3 heures\n        Module Technique 3 — Git avancé\n        \n            Branching strategies (Git Flow, trunk-based)\n            Merge vs Rebase\n            Résolution de conflits\n            Pull Requests et code review\n            Tags et releases"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html#objectifs-de-la-semaine",
+    "href": "formation/semaine-03/index.html#objectifs-de-la-semaine",
+    "title": "Semaine 3",
+    "section": "📋 Objectifs de la semaine",
+    "text": "📋 Objectifs de la semaine\n\n    À la fin de cette semaine, tu seras capable de :\n    Côté métier :\n    \n        Définir et calculer l'exposition acquise d'un portefeuille\n        Identifier les variables de segmentation pertinentes\n        Expliquer le lien entre exposition et tarification\n        Analyser la composition d'un portefeuille par segment\n    \n    Côté technique :\n    \n        Créer et gérer des branches Git\n        Résoudre des conflits de merge\n        Utiliser rebase pour un historique propre\n        Créer des Pull Requests et faire du code review"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html#planning-suggéré",
+    "href": "formation/semaine-03/index.html#planning-suggéré",
+    "title": "Semaine 3",
+    "section": "📅 Planning suggéré",
+    "text": "📅 Planning suggéré\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nMesures d’exposition, unités de risque\nBranching strategies\n\n\nJour 2\nExposition acquise vs écrite\nMerge vs Rebase\n\n\nJour 3\nSegmentation et variables de risque\nRésolution de conflits\n\n\nJour 4\nLien exposition-tarification + Auto-éval\nPull Requests, tags\n\n\nJour 5\nDébriefing\nLivrable : Repo Git structuré"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html#livrables-attendus",
+    "href": "formation/semaine-03/index.html#livrables-attendus",
+    "title": "Semaine 3",
+    "section": "📦 Livrables attendus",
+    "text": "📦 Livrables attendus\n\n    À rendre en fin de semaine :\n    \n        Analyse d'exposition : Calcul d'exposition acquise sur données simulées\n        Segmentation portefeuille : Identifier 3-5 segments de risque pertinents\n        Repo Git structuré : Repo avec branches, PR, et historique propre"
+  },
+  {
+    "objectID": "formation/semaine-03/index.html#accès-aux-modules",
+    "href": "formation/semaine-03/index.html#accès-aux-modules",
+    "title": "Semaine 3",
+    "section": "📚 Accès aux modules",
+    "text": "📚 Accès aux modules\n\n    \n        📖 Module Métier 3\n        Exposition au risque→ Mesurer et segmenter\n    \n    \n        🔄 Module Technique 3\n        Git avancé→ Collaborer efficacement\n    \n    \n        ✅ Fiche de travail\n        Exercices et livrables→ Valider tes acquis\n    \n\n\n\n\n\n\n\n\nArticulation métier/technique\n\n\n\nL’exposition au risque est la brique de base de la tarification. Git te permettra de versionner tes analyses et de collaborer sur les modèles. Pense déjà à structurer ton repo pour le projet central.\n\n\n\n\n\n\n\n\nRythme\n\n\n\nC’est la dernière semaine du Bloc I. Assure-toi de bien maîtriser les fondements avant de passer à la sinistralité.\n\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-03/fiche-travail-03.html#livrables",
+    "href": "formation/semaine-03/fiche-travail-03.html#livrables",
+    "title": "Fiche de travail — Semaine 3",
+    "section": "📦 Livrables",
+    "text": "📦 Livrables\n\n\n:::{.livrable-title}📊 Livrable 1 — Analyse d’exposition::: :::{.livrable-status .required}Obligatoire:::\n\nCalcul d’exposition acquise sur données simulées avec Python. Produire un tableau par segment.\n\n\n\n:::{.livrable-title}📋 Livrable 2 — Segmentation portefeuille::: :::{.livrable-status .required}Obligatoire:::\n\nIdentifier 3-5 segments de risque pertinents, justifier les variables choisies.\n\n\n\n:::{.livrable-title}🔄 Livrable 3 — Repo Git structuré::: :::{.livrable-status .required}Obligatoire:::\n\nRepo GitHub avec branches, au moins 1 PR mergée, tags, historique propre."
+  },
+  {
+    "objectID": "formation/semaine-03/fiche-travail-03.html#exercices",
+    "href": "formation/semaine-03/fiche-travail-03.html#exercices",
+    "title": "Fiche de travail — Semaine 3",
+    "section": "🏋️ Exercices",
+    "text": "🏋️ Exercices\n\nExercices Métier\n\n\n📝 Exercice M1 — Calcul d’exposition acquise\n\nUn portefeuille auto contient 3 contrats :\n\n\n\nContrat\nDébut\nFin\nStatut\n\n\n\n\nA\n01/01/N\n31/12/N\nActif\n\n\nB\n01/04/N\n30/09/N\nRésilié\n\n\nC\n01/10/N\n30/09/N+1\nActif\n\n\n\nCalcule l’exposition acquise totale pour l’année N.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nContrat A : 12/12 = 1.0\nContrat B : 6/12 = 0.5\nContrat C : 3/12 = 0.25 (oct-déc en année N)\nTotal : 1.75 véhicules-année\n\n\n\n\n\n\n\n📝 Exercice M2 — Fréquence par segment\n\nAvec les données suivantes, calcule la fréquence par tranche d’âge :\n\n\n\nSegment\nExposition\nSinistres\n\n\n\n\n18-25\n500\n60\n\n\n26-40\n3000\n180\n\n\n41-60\n4000\n200\n\n\n60+\n1500\n105\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n18-25 : 60/500 = 12.0%\n26-40 : 180/3000 = 6.0%\n41-60 : 200/4000 = 5.0%\n60+ : 105/1500 = 7.0%\n\nLes jeunes conducteurs ont une fréquence 2.4× supérieure aux 41-60 ans.\n\n\n\n\n\n\nExercices Techniques\n\n\n🔄 Exercice T1 — Workflow branching\n\n\nCrée un repo formation-assurance\nCrée une branche feature/exposition-calcul\nAjoute un script Python de calcul d’exposition\nCommite, push et crée une PR\nMerge la PR dans main\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ngit init formation-assurance && cd formation-assurance\ngit checkout -b feature/exposition-calcul\n# ... créer le script ...\ngit add . && git commit -m \"feat: add exposure calculation\"\ngit push -u origin feature/exposition-calcul\ngh pr create --title \"Add exposure calculation\"\ngh pr merge\n\n\n\n\n\n\n🔄 Exercice T2 — Résolution de conflit\n\nSimule un conflit en modifiant le même fichier sur deux branches différentes, puis résous-le."
+  },
+  {
+    "objectID": "formation/semaine-03/fiche-travail-03.html#pont-métier-technique",
+    "href": "formation/semaine-03/fiche-travail-03.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 3",
+    "section": "🔗 Pont métier-technique",
+    "text": "🔗 Pont métier-technique\n\n🤔 Réflexion\n\nComment versionnerais-tu ton analyse d’exposition pour pouvoir la reproduire ?\nQuelle structure de repo Git adopterais-tu pour ton projet de pilotage de portefeuille ?"
+  },
+  {
+    "objectID": "formation/semaine-03/fiche-travail-03.html#checklist",
+    "href": "formation/semaine-03/fiche-travail-03.html#checklist",
+    "title": "Fiche de travail — Semaine 3",
+    "section": "✅ Checklist",
+    "text": "✅ Checklist\n\n\nTerminé le Module Métier 3\nTerminé le Module Technique 3\nProduit le Livrable 1 (exposition)\nProduit le Livrable 2 (segmentation)\nProduit le Livrable 3 (repo Git)\nRéalisé les exercices métier\nRéalisé les exercices techniques\n\n\n\n← Retour à la Semaine 3"
+  },
+  {
+    "objectID": "formation/semaine-04/module-metier-04.html",
+    "href": "formation/semaine-04/module-metier-04.html",
+    "title": "Module 4 — Sinistralité — Concepts fondamentaux",
+    "section": "",
+    "text": "1 Le processus sinistre\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Types de sinistres\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Indicateurs clés : S/P, fréquence\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Réserves et IBNR\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Suivi temporel\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 4 Voir le Module Technique 4 →"
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html",
+    "href": "formation/semaine-04/fiche-travail-04.html",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 4\nLivrable technique : Mise en pratique du Module Technique 4\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html#livrables",
+    "href": "formation/semaine-04/fiche-travail-04.html#livrables",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 4\nLivrable technique : Mise en pratique du Module Technique 4\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html#exercices-métier",
+    "href": "formation/semaine-04/fiche-travail-04.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html#exercices-techniques",
+    "href": "formation/semaine-04/fiche-travail-04.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html#pont-métier-technique",
+    "href": "formation/semaine-04/fiche-travail-04.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-04/fiche-travail-04.html#checklist",
+    "href": "formation/semaine-04/fiche-travail-04.html#checklist",
+    "title": "Fiche de travail — Semaine 4",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 4 terminé\nModule Technique 4 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 4"
+  },
+  {
+    "objectID": "formation/semaine-05/index.html",
+    "href": "formation/semaine-05/index.html",
+    "title": "Semaine 5",
+    "section": "",
+    "text": "Module 5 — Fréquence et Sévérité\n        \n            Décomposition fréquence x sévérité\n            Loi de Poisson\n            Loi lognormale et Gamma\n            Estimation des paramètres\n            Validation et diagnostic\n        \n    \n    \n        Module Technique 5 — AWS — Introduction et S3\n        \n            Pourquoi le cloud AWS\n            Concepts AWS fondamentaux\n            S3 stockage objet\n            AWS CLI\n            boto3 Python"
+  },
+  {
+    "objectID": "formation/semaine-05/index.html#objectifs",
+    "href": "formation/semaine-05/index.html#objectifs",
+    "title": "Semaine 5",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nDécomposition fréquence x sévérité\nPourquoi le cloud AWS\n\n\nJour 2\nLoi de Poisson\nConcepts AWS fondamentaux\n\n\nJour 3\nLoi lognormale et Gamma\nS3 stockage objet\n\n\nJour 4\nEstimation des paramètres\nAWS CLI\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-05/index.html#accès-aux-modules",
+    "href": "formation/semaine-05/index.html#accès-aux-modules",
+    "title": "Semaine 5",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 5\nModule Technique 5\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-05/module-technique-05.html",
+    "href": "formation/semaine-05/module-technique-05.html",
+    "title": "Module Technique 5 — AWS — Introduction et S3",
+    "section": "",
+    "text": "1 Pourquoi le cloud AWS\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Concepts AWS fondamentaux\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 S3 stockage objet\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 AWS CLI\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 boto3 Python\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 5 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-02/fiche-travail-02.html#livrables-à-produire",
+    "href": "formation/semaine-02/fiche-travail-02.html#livrables-à-produire",
+    "title": "Fiche de travail — Semaine 2",
+    "section": "📦 Livrables à produire",
+    "text": "📦 Livrables à produire\n\n\n:::{.livrable-title}📝 Livrable 1 — Cartographie des produits IARD::: :::{.livrable-status .required}Obligatoire:::\n\nObjectif : Schéma récapitulatif des branches d’assurance non-vie.\nContenu :\n\nLes grandes branches IARD avec leurs sous-branches\nPour chaque branche : 1 exemple de garantie et 1 exclusion typique\nDistinction Particuliers / Professionnels / Entreprises\n\n\n\n\n:::{.livrable-title}📋 Livrable 2 — Analyse d’un contrat::: :::{.livrable-status .required}Obligatoire:::\n\nObjectif : Décortiquer un contrat d’assurance réel ou fictif.\nContenu : Identifier les garanties, franchises, exclusions, limites et conditions.\n\n\n\n:::{.livrable-title}🐳 Livrable 3 — Application Docker Compose::: :::{.livrable-status .required}Obligatoire:::\n\nObjectif : Créer un docker-compose.yml orchestrant au moins 2 services.\nExemple : API Python + PostgreSQL ou App + Redis.\n\n\n\n:::{.livrable-title}🌟 Livrable 4 — Réflexions::: :::{.livrable-status .bonus}Bonus:::\n\nPrépare 2-3 questions pour le débriefing sur le lien produits/données."
+  },
+  {
+    "objectID": "formation/semaine-02/fiche-travail-02.html#exercices-pratiques",
+    "href": "formation/semaine-02/fiche-travail-02.html#exercices-pratiques",
+    "title": "Fiche de travail — Semaine 2",
+    "section": "🏋️ Exercices pratiques",
+    "text": "🏋️ Exercices pratiques\n\nExercices Métier\n\n\n📝 Exercice M1 — Classification des produits\n\nClasse les produits suivants dans la bonne branche IARD : Responsabilité Civile auto, Multirisque habitation, Assurance construction décennale, RC Professionnelle, Assurance flotte auto, Protection juridique.\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nAuto : RC auto, Flotte auto\nHabitation : MRH\nConstruction : Décennale\nResponsabilité : RC Professionnelle\nProtection juridique : Protection juridique (branche à part)\n\n\n\n\n\n\n\n📝 Exercice M2 — Calcul de franchise\n\nUn sinistre auto coûte 2 500 €. Calcule l’indemnité versée pour :\n\nFranchise absolue de 500 €\nFranchise relative de 500 €\nFranchise proportionnelle de 20%\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nAbsolue : 2 500 - 500 = 2 000 €\nRelative : 2 500 &gt; 500, donc indemnité = 2 500 € (tout est couvert)\nProportionnelle : 2 500 × 0.80 = 2 000 € (20% à charge)\n\n\n\n\n\n\n\nExercices Techniques\n\n\n🐳 Exercice T1 — Premier docker-compose.yml\n\nCrée un fichier docker-compose.yml qui lance un serveur PostgreSQL avec :\n\nImage postgres:15\nBase de données assurance_db\nPort 5432 exposé\nVolume nommé pour persister les données\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nversion: \"3.8\"\nservices:\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: assurance_db\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: secret123\n    ports:\n      - \"5432:5432\"\n    volumes:\n      - pg_data:/var/lib/postgresql/data\n\nvolumes:\n  pg_data:\ndocker compose up -d\ndocker compose exec db psql -U admin -d assurance_db\n\n\n\n\n\n\n🐳 Exercice T2 — Multi-services\n\nÉtends l’exercice T1 en ajoutant un service Python qui se connecte à PostgreSQL et crée une table contrats.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nAjoute au docker-compose.yml :\n  app:\n    build: ./app\n    depends_on:\n      - db\n    environment:\n      DATABASE_URL: postgresql://admin:secret123@db:5432/assurance_db\nScript Python app/main.py :\nimport psycopg2, os, time\ntime.sleep(3)  # Attendre que PostgreSQL démarre\nconn = psycopg2.connect(os.environ[\"DATABASE_URL\"])\ncur = conn.cursor()\ncur.execute(\"\"\"\n    CREATE TABLE IF NOT EXISTS contrats (\n        id SERIAL PRIMARY KEY,\n        num_contrat VARCHAR(20),\n        branche VARCHAR(50),\n        prime NUMERIC(10,2)\n    )\n\"\"\")\nconn.commit()\nprint(\"Table contrats créée avec succès !\")"
+  },
+  {
+    "objectID": "formation/semaine-02/fiche-travail-02.html#faire-le-pont-métier-technique",
+    "href": "formation/semaine-02/fiche-travail-02.html#faire-le-pont-métier-technique",
+    "title": "Fiche de travail — Semaine 2",
+    "section": "🔗 Faire le pont métier-technique",
+    "text": "🔗 Faire le pont métier-technique\n\n🤔 Questions de réflexion\n\nComment structurerais-tu une base de données pour stocker les informations d’un contrat d’assurance ? (tables, champs clés)\nQuelles données du cycle de vie du contrat alimenteraient ton projet de pilotage de portefeuille ?\nEn quoi Docker Compose facilite-t-il le travail en équipe sur un projet data assurance ?"
+  },
+  {
+    "objectID": "formation/semaine-02/fiche-travail-02.html#checklist-de-fin-de-semaine",
+    "href": "formation/semaine-02/fiche-travail-02.html#checklist-de-fin-de-semaine",
+    "title": "Fiche de travail — Semaine 2",
+    "section": "✅ Checklist de fin de semaine",
+    "text": "✅ Checklist de fin de semaine\n\n\nTerminé la lecture du Module Métier 2\nRépondu aux 4 questions d’auto-évaluation\nTerminé la lecture du Module Technique 2\nProduit le Livrable 1 (cartographie IARD)\nProduit le Livrable 2 (analyse contrat)\nProduit le Livrable 3 (Docker Compose)\nRéalisé au moins 2 exercices métier\nRéalisé au moins 2 exercices techniques\n\n\n\n← Retour à la Semaine 2 Module Métier 2 Module Technique 2"
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html",
+    "href": "formation/semaine-20/fiche-travail-20.html",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 20\nLivrable technique : Mise en pratique du Module Technique 20\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html#livrables",
+    "href": "formation/semaine-20/fiche-travail-20.html#livrables",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 20\nLivrable technique : Mise en pratique du Module Technique 20\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html#exercices-métier",
+    "href": "formation/semaine-20/fiche-travail-20.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html#exercices-techniques",
+    "href": "formation/semaine-20/fiche-travail-20.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html#pont-métier-technique",
+    "href": "formation/semaine-20/fiche-travail-20.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-20/fiche-travail-20.html#checklist",
+    "href": "formation/semaine-20/fiche-travail-20.html#checklist",
+    "title": "Fiche de travail — Semaine 20",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 20 terminé\nModule Technique 20 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 20"
+  },
+  {
+    "objectID": "formation/semaine-20/index.html",
+    "href": "formation/semaine-20/index.html",
+    "title": "Semaine 20",
+    "section": "",
+    "text": "Module 20 — Approfondissement pilotage\n        \n            Design tableaux de bord\n            KPIs opérationnels vs stratégiques\n            Storytelling data\n            Alertes dynamiques\n            Communication parties prenantes\n        \n    \n    \n        Module Technique 20 — Projet Central — API et Déploiement\n        \n            API FastAPI scoring\n            Conteneurisation Docker\n            Déploiement AWS\n            Tests de charge\n            Monitoring API"
+  },
+  {
+    "objectID": "formation/semaine-20/index.html#objectifs",
+    "href": "formation/semaine-20/index.html#objectifs",
+    "title": "Semaine 20",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nDesign tableaux de bord\nAPI FastAPI scoring\n\n\nJour 2\nKPIs opérationnels vs stratégiques\nConteneurisation Docker\n\n\nJour 3\nStorytelling data\nDéploiement AWS\n\n\nJour 4\nAlertes dynamiques\nTests de charge\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-20/index.html#accès-aux-modules",
+    "href": "formation/semaine-20/index.html#accès-aux-modules",
+    "title": "Semaine 20",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 20\nModule Technique 20\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-18/module-technique-18.html",
+    "href": "formation/semaine-18/module-technique-18.html",
+    "title": "Module Technique 18 — Projet Central — Tarification GLM",
+    "section": "",
+    "text": "1 Prime pure GLM\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Intégration fréquence x sévérité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Chargements\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Validation croisée\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Comparaison tarif actuel\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 18 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-18/index.html",
+    "href": "formation/semaine-18/index.html",
+    "title": "Semaine 18",
+    "section": "",
+    "text": "Module 18 — Révision Bloc IV-V\n        \n            Synthèse pilotage\n            Synthèse data science\n            Exercices intégrés\n            Lien indicateurs-modèles\n            Préparation projet\n        \n    \n    \n        Module Technique 18 — Projet Central — Tarification GLM\n        \n            Prime pure GLM\n            Intégration fréquence x sévérité\n            Chargements\n            Validation croisée\n            Comparaison tarif actuel"
+  },
+  {
+    "objectID": "formation/semaine-18/index.html#objectifs",
+    "href": "formation/semaine-18/index.html#objectifs",
+    "title": "Semaine 18",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nSynthèse pilotage\nPrime pure GLM\n\n\nJour 2\nSynthèse data science\nIntégration fréquence x sévérité\n\n\nJour 3\nExercices intégrés\nChargements\n\n\nJour 4\nLien indicateurs-modèles\nValidation croisée\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-18/index.html#accès-aux-modules",
+    "href": "formation/semaine-18/index.html#accès-aux-modules",
+    "title": "Semaine 18",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 18\nModule Technique 18\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-11/module-metier-11.html",
+    "href": "formation/semaine-11/module-metier-11.html",
+    "title": "Module 11 — Rentabilité et Indicateurs",
+    "section": "",
+    "text": "1 S/P net et brut\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Combined ratio\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Customer Lifetime Value\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Tableaux de bord\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Alertes et seuils\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 11 Voir le Module Technique 11 →"
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html",
+    "href": "formation/semaine-11/fiche-travail-11.html",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 11\nLivrable technique : Mise en pratique du Module Technique 11\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html#livrables",
+    "href": "formation/semaine-11/fiche-travail-11.html#livrables",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 11\nLivrable technique : Mise en pratique du Module Technique 11\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html#exercices-métier",
+    "href": "formation/semaine-11/fiche-travail-11.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html#exercices-techniques",
+    "href": "formation/semaine-11/fiche-travail-11.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html#pont-métier-technique",
+    "href": "formation/semaine-11/fiche-travail-11.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-11/fiche-travail-11.html#checklist",
+    "href": "formation/semaine-11/fiche-travail-11.html#checklist",
+    "title": "Fiche de travail — Semaine 11",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 11 terminé\nModule Technique 11 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 11"
+  },
+  {
+    "objectID": "formation/semaine-16/module-metier-16.html",
+    "href": "formation/semaine-16/module-metier-16.html",
+    "title": "Module 16 — Révision Bloc I-II",
+    "section": "",
+    "text": "1 Synthèse Bloc I\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 Synthèse Bloc II\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Exercices croisés\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 QCM validation\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Points clés\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 16 Voir le Module Technique 16 →"
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html",
+    "href": "formation/semaine-16/fiche-travail-16.html",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 16\nLivrable technique : Mise en pratique du Module Technique 16\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html#livrables",
+    "href": "formation/semaine-16/fiche-travail-16.html#livrables",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 16\nLivrable technique : Mise en pratique du Module Technique 16\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html#exercices-métier",
+    "href": "formation/semaine-16/fiche-travail-16.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html#exercices-techniques",
+    "href": "formation/semaine-16/fiche-travail-16.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html#pont-métier-technique",
+    "href": "formation/semaine-16/fiche-travail-16.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-16/fiche-travail-16.html#checklist",
+    "href": "formation/semaine-16/fiche-travail-16.html#checklist",
+    "title": "Fiche de travail — Semaine 16",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 16 terminé\nModule Technique 16 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 16"
+  },
+  {
+    "objectID": "formation/semaine-17/module-metier-17.html",
+    "href": "formation/semaine-17/module-metier-17.html",
+    "title": "Module 17 — Révision Bloc III",
+    "section": "",
+    "text": "1 Synthèse principes tarifaires\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n2 GLM pratique\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n3 Segmentation anti-sélection\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n4 Exercices intégrés\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\n5 Points clés\nContenu détaillé pour ce concept fondamental de l’assurance non-vie.\n\n\n\nSynthèse\nLes concepts clés à retenir.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion de compréhension.\n\n\n\n\n← Retour à la Semaine 17 Voir le Module Technique 17 →"
+  },
+  {
+    "objectID": "formation/semaine-17/module-technique-17.html",
+    "href": "formation/semaine-17/module-technique-17.html",
+    "title": "Module Technique 17 — Projet Central — Modélisation sévérité",
+    "section": "",
+    "text": "1 Modèle Gamma sévérité\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Sinistres graves\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Distributions queue lourde\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Validation diagnostics\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Comparaison fréquence\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 17 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-10/index.html",
+    "href": "formation/semaine-10/index.html",
+    "title": "Semaine 10",
+    "section": "",
+    "text": "Module 10 — Tarification avancée\n        \n            GLM Poisson fréquence\n            GLM Gamma sévérité\n            Interactions non-linéaires\n            Validation croisée\n            GLM vs Machine Learning\n        \n    \n    \n        Module Technique 10 — AWS — Certification SAA\n        \n            Révision services AWS\n            Architecture Well-Architected\n            Examens blancs\n            Stratégies examen\n            Ressources préparation"
+  },
+  {
+    "objectID": "formation/semaine-10/index.html#objectifs",
+    "href": "formation/semaine-10/index.html#objectifs",
+    "title": "Semaine 10",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nGLM Poisson fréquence\nRévision services AWS\n\n\nJour 2\nGLM Gamma sévérité\nArchitecture Well-Architected\n\n\nJour 3\nInteractions non-linéaires\nExamens blancs\n\n\nJour 4\nValidation croisée\nStratégies examen\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-10/index.html#accès-aux-modules",
+    "href": "formation/semaine-10/index.html#accès-aux-modules",
+    "title": "Semaine 10",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 10\nModule Technique 10\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-10/module-technique-10.html",
+    "href": "formation/semaine-10/module-technique-10.html",
+    "title": "Module Technique 10 — AWS — Certification SAA",
+    "section": "",
+    "text": "1 Révision services AWS\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Architecture Well-Architected\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Examens blancs\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Stratégies examen\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Ressources préparation\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 10 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html",
+    "href": "formation/semaine-19/fiche-travail-19.html",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 19\nLivrable technique : Mise en pratique du Module Technique 19\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html#livrables",
+    "href": "formation/semaine-19/fiche-travail-19.html#livrables",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "",
+    "text": "Livrable métier : Application des concepts du Module 19\nLivrable technique : Mise en pratique du Module Technique 19\nLivrable intégrateur : Combinaison métier + technique"
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html#exercices-métier",
+    "href": "formation/semaine-19/fiche-travail-19.html#exercices-métier",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "Exercices métier",
+    "text": "Exercices métier\nApplique les concepts du module sur des données simulées ou réelles."
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html#exercices-techniques",
+    "href": "formation/semaine-19/fiche-travail-19.html#exercices-techniques",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "Exercices techniques",
+    "text": "Exercices techniques\nMets en pratique les outils techniques dans le contexte du projet."
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html#pont-métier-technique",
+    "href": "formation/semaine-19/fiche-travail-19.html#pont-métier-technique",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "Pont métier-technique",
+    "text": "Pont métier-technique\nComment les concepts de cette semaine s’articulent-ils dans le projet central ?"
+  },
+  {
+    "objectID": "formation/semaine-19/fiche-travail-19.html#checklist",
+    "href": "formation/semaine-19/fiche-travail-19.html#checklist",
+    "title": "Fiche de travail — Semaine 19",
+    "section": "Checklist",
+    "text": "Checklist\n\nModule Métier 19 terminé\nModule Technique 19 terminé\nLivrables produits\nExercices réalisés\n\n\n← Retour à la Semaine 19"
+  },
+  {
+    "objectID": "formation/semaine-19/index.html",
+    "href": "formation/semaine-19/index.html",
+    "title": "Semaine 19",
+    "section": "",
+    "text": "Module 19 — Approfondissement tarification\n        \n            Micro-segmentation\n            Clustering\n            Arbres et ensembles\n            Régularisation\n            Éthique segmentation\n        \n    \n    \n        Module Technique 19 — Projet Central — Tarification ML\n        \n            XGBoost tarification\n            Hyperparameter tuning\n            SHAP interprétabilité\n            GLM vs XGBoost\n            Choix modèle final"
+  },
+  {
+    "objectID": "formation/semaine-19/index.html#objectifs",
+    "href": "formation/semaine-19/index.html#objectifs",
+    "title": "Semaine 19",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nMicro-segmentation\nXGBoost tarification\n\n\nJour 2\nClustering\nHyperparameter tuning\n\n\nJour 3\nArbres et ensembles\nSHAP interprétabilité\n\n\nJour 4\nRégularisation\nGLM vs XGBoost\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-19/index.html#accès-aux-modules",
+    "href": "formation/semaine-19/index.html#accès-aux-modules",
+    "title": "Semaine 19",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 19\nModule Technique 19\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-21/module-technique-21.html",
+    "href": "formation/semaine-21/module-technique-21.html",
+    "title": "Module Technique 21 — Projet Central — Dashboard",
+    "section": "",
+    "text": "1 Introduction Streamlit\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n2 Layout et composants\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n3 Graphiques Plotly\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n4 Filtres et sélecteurs\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\n5 Déploiement dashboard\nContenu technique détaillé avec exemples de code et bonnes pratiques.\n\n\n\nSynthèse\nLes points techniques essentiels.\n\n\n\nAuto-évaluation\n\n\n\n\n\n\nQuestion 1\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 2\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 3\n\n\n\n\n\nQuestion technique.\n\n\n\n\n\n\n\n\n\nQuestion 4\n\n\n\n\n\nQuestion technique.\n\n\n\n\n← Retour à la Semaine 21 Voir la Fiche de travail →"
+  },
+  {
+    "objectID": "formation/semaine-21/index.html",
+    "href": "formation/semaine-21/index.html",
+    "title": "Semaine 21",
+    "section": "",
+    "text": "Module 21 — Étude de cas intégrée (partie 1)\n        \n            Présentation du cas\n            Analyse exploratoire\n            Diagnostic sinistralité\n            Segments problématiques\n            Premières recommandations\n        \n    \n    \n        Module Technique 21 — Projet Central — Dashboard\n        \n            Introduction Streamlit\n            Layout et composants\n            Graphiques Plotly\n            Filtres et sélecteurs\n            Déploiement dashboard"
+  },
+  {
+    "objectID": "formation/semaine-21/index.html#objectifs",
+    "href": "formation/semaine-21/index.html#objectifs",
+    "title": "Semaine 21",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nPrésentation du cas\nIntroduction Streamlit\n\n\nJour 2\nAnalyse exploratoire\nLayout et composants\n\n\nJour 3\nDiagnostic sinistralité\nGraphiques Plotly\n\n\nJour 4\nSegments problématiques\nFiltres et sélecteurs\n\n\nJour 5\nDébriefing\nLivrable"
+  },
+  {
+    "objectID": "formation/semaine-21/index.html#accès-aux-modules",
+    "href": "formation/semaine-21/index.html#accès-aux-modules",
+    "title": "Semaine 21",
+    "section": "Accès aux modules",
+    "text": "Accès aux modules\n\nModule Métier 21\nModule Technique 21\nFiche de travail\n\n\n← Retour à la formation"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html#vue-densemble",
+    "href": "formation/semaine-04/index.html#vue-densemble",
+    "title": "Semaine 4",
+    "section": "",
+    "text": "🏢Volet Métier\n        ⏱️ Environ 3 heures\n        Module 4 — Sinistralité — Concepts fondamentaux\n        \n            Le processus sinistre (déclaration → règlement)\n            Types de sinistres (attritionnels, graves, catastrophiques)\n            Indicateurs clés : S/P, fréquence, sévérité\n            Réserves et provisions (IBNR, IBNER)\n            Suivi de la sinistralité dans le temps\n        \n    \n    \n        🛠️Volet Technique\n        ⏱️ Environ 3 heures\n        Module Technique 4 — CI/CD avec GitHub Actions\n        \n            Concepts CI/CD et leurs bénéfices\n            Structure d'un workflow GitHub Actions\n            Tests automatisés avec pytest\n            Linting et formatage (black, flake8)\n            Déploiement continu"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html#objectifs-de-la-semaine",
+    "href": "formation/semaine-04/index.html#objectifs-de-la-semaine",
+    "title": "Semaine 4",
+    "section": "Objectifs de la semaine",
+    "text": "Objectifs de la semaine\n\n    À la fin de cette semaine, tu seras capable de :\n    Côté métier :\n    \n        Le processus sinistre (déclaration → règlement)\n        Types de sinistres (attritionnels, graves, catastrophiques)\n        Indicateurs clés : S/P, fréquence, sévérité\n        Réserves et provisions (IBNR, IBNER)\n        Suivi de la sinistralité dans le temps\n    \n    Côté technique :\n    \n        Concepts CI/CD et leurs bénéfices\n        Structure d'un workflow GitHub Actions\n        Tests automatisés avec pytest\n        Linting et formatage (black, flake8)\n        Déploiement continu"
+  },
+  {
+    "objectID": "formation/semaine-04/index.html#planning-suggéré",
+    "href": "formation/semaine-04/index.html#planning-suggéré",
+    "title": "Semaine 4",
+    "section": "Planning suggéré",
+    "text": "Planning suggéré\n\n\n\n\n\n\n\n\nJour\nMatin (Métier)\nAprès-midi (Technique)\n\n\n\n\nJour 1\nLe processus sinistre (déclaration → règlement)\nConcepts CI/CD et leurs bénéfices\n\n\nJour 2\nTypes de sinistres (attritionnels, graves, catastrophiques)\nStructure d’un workflow GitHub Actions\n\n\nJour 3\nIndicateurs clés : S/P, fréquence, sévérité\nTests automatisés avec pytest\n\n\nJour 4\nRéserves et provisions (IBNR, IBNER)\nLinting et formatage (black, flake8)\n\n\nJour 5\nDébriefing et validation\nLivrables"
   }
 ]
