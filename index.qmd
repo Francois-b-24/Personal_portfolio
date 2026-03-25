@@ -54,7 +54,7 @@ Sur ce site, vous découvrirez mon parcours académique et professionnel, un ape
 :::
 
 ::: {style="text-align:center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"}
-[Voir mon CV {{< fa arrow-up-right-from-square >}}](assets/CV.pdf){.btn .btn-outline-primary .btn .center role="button"}
+[Voir mon CV {{< fa arrow-up-right-from-square >}}](assets/CV_FB.pdf){.btn .btn-outline-primary .btn .center role="button"}
 
 [Projets {{< fa arrow-up-right-from-square >}}](https://bfrancois.netlify.app/sections/){.btn .btn-outline-primary .btn .center role="button"}
 :::
