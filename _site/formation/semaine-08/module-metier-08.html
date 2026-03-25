@@ -500,7 +500,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +516,41 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#tarification-a-priori-vs-a-posteriori" id="toc-tarification-a-priori-vs-a-posteriori" class="nav-link active" data-scroll-target="#tarification-a-priori-vs-a-posteriori"><span class="header-section-number">1</span> Tarification a priori vs a posteriori</a></li>
-  <li><a href="#variables-tarifaires" id="toc-variables-tarifaires" class="nav-link" data-scroll-target="#variables-tarifaires"><span class="header-section-number">2</span> Variables tarifaires</a></li>
-  <li><a href="#introduction-aux-glm" id="toc-introduction-aux-glm" class="nav-link" data-scroll-target="#introduction-aux-glm"><span class="header-section-number">3</span> Introduction aux GLM</a></li>
-  <li><a href="#glm-et-tarification" id="toc-glm-et-tarification" class="nav-link" data-scroll-target="#glm-et-tarification"><span class="header-section-number">4</span> GLM et tarification</a></li>
-  <li><a href="#bonus-malus" id="toc-bonus-malus" class="nav-link" data-scroll-target="#bonus-malus"><span class="header-section-number">5</span> Bonus-malus</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#tarification-a-priori-estimer-le-risque-théorique" id="toc-tarification-a-priori-estimer-le-risque-théorique" class="nav-link" data-scroll-target="#tarification-a-priori-estimer-le-risque-théorique"><span class="header-section-number">1</span> Tarification a priori : estimer le risque théorique</a>
+  <ul class="collapse">
+  <li><a href="#contexte" id="toc-contexte" class="nav-link" data-scroll-target="#contexte"><span class="header-section-number">1.1</span> Contexte</a></li>
+  <li><a href="#développement" id="toc-développement" class="nav-link" data-scroll-target="#développement"><span class="header-section-number">1.2</span> Développement</a></li>
+  <li><a href="#application-pratique" id="toc-application-pratique" class="nav-link" data-scroll-target="#application-pratique"><span class="header-section-number">1.3</span> Application pratique</a></li>
+  </ul></li>
+  <li><a href="#tarification-a-posteriori-lexpérience-individuelle" id="toc-tarification-a-posteriori-lexpérience-individuelle" class="nav-link" data-scroll-target="#tarification-a-posteriori-lexpérience-individuelle"><span class="header-section-number">2</span> Tarification a posteriori : l’expérience individuelle</a>
+  <ul class="collapse">
+  <li><a href="#contexte-1" id="toc-contexte-1" class="nav-link" data-scroll-target="#contexte-1"><span class="header-section-number">2.1</span> Contexte</a></li>
+  <li><a href="#développement-1" id="toc-développement-1" class="nav-link" data-scroll-target="#développement-1"><span class="header-section-number">2.2</span> Développement</a></li>
+  <li><a href="#application-pratique-1" id="toc-application-pratique-1" class="nav-link" data-scroll-target="#application-pratique-1"><span class="header-section-number">2.3</span> Application pratique</a></li>
+  </ul></li>
+  <li><a href="#variables-tarifaires-et-segmentation" id="toc-variables-tarifaires-et-segmentation" class="nav-link" data-scroll-target="#variables-tarifaires-et-segmentation"><span class="header-section-number">3</span> Variables tarifaires et segmentation</a>
+  <ul class="collapse">
+  <li><a href="#contexte-2" id="toc-contexte-2" class="nav-link" data-scroll-target="#contexte-2"><span class="header-section-number">3.1</span> Contexte</a></li>
+  <li><a href="#développement-2" id="toc-développement-2" class="nav-link" data-scroll-target="#développement-2"><span class="header-section-number">3.2</span> Développement</a></li>
+  <li><a href="#application-pratique-2" id="toc-application-pratique-2" class="nav-link" data-scroll-target="#application-pratique-2"><span class="header-section-number">3.3</span> Application pratique</a></li>
+  </ul></li>
+  <li><a href="#introduction-aux-glm-generalized-linear-models" id="toc-introduction-aux-glm-generalized-linear-models" class="nav-link" data-scroll-target="#introduction-aux-glm-generalized-linear-models"><span class="header-section-number">4</span> Introduction aux GLM (Generalized Linear Models)</a>
+  <ul class="collapse">
+  <li><a href="#contexte-3" id="toc-contexte-3" class="nav-link" data-scroll-target="#contexte-3"><span class="header-section-number">4.1</span> Contexte</a></li>
+  <li><a href="#développement-3" id="toc-développement-3" class="nav-link" data-scroll-target="#développement-3"><span class="header-section-number">4.2</span> Développement</a></li>
+  <li><a href="#application-pratique-3" id="toc-application-pratique-3" class="nav-link" data-scroll-target="#application-pratique-3"><span class="header-section-number">4.3</span> Application pratique</a></li>
+  </ul></li>
+  <li><a href="#bonus-malus-et-crédibilité" id="toc-bonus-malus-et-crédibilité" class="nav-link" data-scroll-target="#bonus-malus-et-crédibilité"><span class="header-section-number">5</span> Bonus-malus et crédibilité</a>
+  <ul class="collapse">
+  <li><a href="#contexte-4" id="toc-contexte-4" class="nav-link" data-scroll-target="#contexte-4"><span class="header-section-number">5.1</span> Contexte</a></li>
+  <li><a href="#développement-4" id="toc-développement-4" class="nav-link" data-scroll-target="#développement-4"><span class="header-section-number">5.2</span> Développement</a></li>
+  <li><a href="#application-pratique-4" id="toc-application-pratique-4" class="nav-link" data-scroll-target="#application-pratique-4"><span class="header-section-number">5.3</span> Application pratique</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-concepts-clés-à-retenir" id="toc-les-concepts-clés-à-retenir" class="nav-link" data-scroll-target="#les-concepts-clés-à-retenir"><span class="header-section-number">5.3.1</span> Les concepts clés à retenir</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +562,207 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="tarification-a-priori-vs-a-posteriori" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Tarification a priori vs a posteriori</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Tarification a priori : estimer le risque théorique</strong></li>
+<li><strong>Tarification a posteriori : l’expérience individuelle</strong></li>
+<li><strong>Variables tarifaires et segmentation</strong></li>
+<li><strong>Introduction aux GLM (Generalized Linear Models)</strong></li>
+<li><strong>Bonus-malus et crédibilité</strong></li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules précédents</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 2 à 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="tarification-a-priori-estimer-le-risque-théorique" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Tarification a priori : estimer le risque théorique</h1>
+<section id="contexte" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="contexte"><span class="header-section-number">1.1</span> Contexte</h2>
+<p>Ce chapitre aborde <strong>tarification a priori : estimer le risque théorique</strong>, un concept essentiel en assurance non-vie. La maîtrise de ce sujet est indispensable pour le pilotage technique d’un portefeuille.</p>
+</section>
+<section id="développement" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="développement"><span class="header-section-number">1.2</span> Développement</h2>
+<p>Les points clés à comprendre :</p>
+<ul>
+<li>La définition précise et les implications pratiques</li>
+<li>Les méthodes de calcul et d’estimation</li>
+<li>Les cas d’usage concrets en assurance IARD</li>
+<li>Les limites et points d’attention</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La compréhension de tarification a priori : estimer le risque théorique est fondamentale pour la tarification et le pilotage de la rentabilité. Ce concept sera directement appliqué dans le projet central.</p>
+</div>
+</section>
+<section id="application-pratique" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="application-pratique"><span class="header-section-number">1.3</span> Application pratique</h2>
+<p>Ce concept s’applique dans les situations suivantes :</p>
+<ol type="1">
+<li>Analyse du portefeuille existant</li>
+<li>Construction de modèles de tarification</li>
+<li>Suivi des indicateurs de performance</li>
+<li>Reporting réglementaire</li>
+</ol>
 <hr>
 </section>
-<section id="variables-tarifaires" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Variables tarifaires</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="tarification-a-posteriori-lexpérience-individuelle" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Tarification a posteriori : l’expérience individuelle</h1>
+<section id="contexte-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="contexte-1"><span class="header-section-number">2.1</span> Contexte</h2>
+<p>Ce chapitre aborde <strong>tarification a posteriori : l’expérience individuelle</strong>, un concept essentiel en assurance non-vie. La maîtrise de ce sujet est indispensable pour le pilotage technique d’un portefeuille.</p>
+</section>
+<section id="développement-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="développement-1"><span class="header-section-number">2.2</span> Développement</h2>
+<p>Les points clés à comprendre :</p>
+<ul>
+<li>La définition précise et les implications pratiques</li>
+<li>Les méthodes de calcul et d’estimation</li>
+<li>Les cas d’usage concrets en assurance IARD</li>
+<li>Les limites et points d’attention</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La compréhension de tarification a posteriori : l’expérience individuelle est fondamentale pour la tarification et le pilotage de la rentabilité. Ce concept sera directement appliqué dans le projet central.</p>
+</div>
+</section>
+<section id="application-pratique-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="application-pratique-1"><span class="header-section-number">2.3</span> Application pratique</h2>
+<p>Ce concept s’applique dans les situations suivantes :</p>
+<ol type="1">
+<li>Analyse du portefeuille existant</li>
+<li>Construction de modèles de tarification</li>
+<li>Suivi des indicateurs de performance</li>
+<li>Reporting réglementaire</li>
+</ol>
 <hr>
 </section>
-<section id="introduction-aux-glm" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Introduction aux GLM</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="variables-tarifaires-et-segmentation" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Variables tarifaires et segmentation</h1>
+<section id="contexte-2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="contexte-2"><span class="header-section-number">3.1</span> Contexte</h2>
+<p>Ce chapitre aborde <strong>variables tarifaires et segmentation</strong>, un concept essentiel en assurance non-vie. La maîtrise de ce sujet est indispensable pour le pilotage technique d’un portefeuille.</p>
+</section>
+<section id="développement-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="développement-2"><span class="header-section-number">3.2</span> Développement</h2>
+<p>Les points clés à comprendre :</p>
+<ul>
+<li>La définition précise et les implications pratiques</li>
+<li>Les méthodes de calcul et d’estimation</li>
+<li>Les cas d’usage concrets en assurance IARD</li>
+<li>Les limites et points d’attention</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La compréhension de variables tarifaires et segmentation est fondamentale pour la tarification et le pilotage de la rentabilité. Ce concept sera directement appliqué dans le projet central.</p>
+</div>
+</section>
+<section id="application-pratique-2" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="application-pratique-2"><span class="header-section-number">3.3</span> Application pratique</h2>
+<p>Ce concept s’applique dans les situations suivantes :</p>
+<ol type="1">
+<li>Analyse du portefeuille existant</li>
+<li>Construction de modèles de tarification</li>
+<li>Suivi des indicateurs de performance</li>
+<li>Reporting réglementaire</li>
+</ol>
 <hr>
 </section>
-<section id="glm-et-tarification" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> GLM et tarification</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="introduction-aux-glm-generalized-linear-models" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Introduction aux GLM (Generalized Linear Models)</h1>
+<section id="contexte-3" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="contexte-3"><span class="header-section-number">4.1</span> Contexte</h2>
+<p>Ce chapitre aborde <strong>introduction aux glm (generalized linear models)</strong>, un concept essentiel en assurance non-vie. La maîtrise de ce sujet est indispensable pour le pilotage technique d’un portefeuille.</p>
+</section>
+<section id="développement-3" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="développement-3"><span class="header-section-number">4.2</span> Développement</h2>
+<p>Les points clés à comprendre :</p>
+<ul>
+<li>La définition précise et les implications pratiques</li>
+<li>Les méthodes de calcul et d’estimation</li>
+<li>Les cas d’usage concrets en assurance IARD</li>
+<li>Les limites et points d’attention</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La compréhension de introduction aux glm (generalized linear models) est fondamentale pour la tarification et le pilotage de la rentabilité. Ce concept sera directement appliqué dans le projet central.</p>
+</div>
+</section>
+<section id="application-pratique-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="application-pratique-3"><span class="header-section-number">4.3</span> Application pratique</h2>
+<p>Ce concept s’applique dans les situations suivantes :</p>
+<ol type="1">
+<li>Analyse du portefeuille existant</li>
+<li>Construction de modèles de tarification</li>
+<li>Suivi des indicateurs de performance</li>
+<li>Reporting réglementaire</li>
+</ol>
 <hr>
 </section>
-<section id="bonus-malus" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Bonus-malus</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="bonus-malus-et-crédibilité" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Bonus-malus et crédibilité</h1>
+<section id="contexte-4" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="contexte-4"><span class="header-section-number">5.1</span> Contexte</h2>
+<p>Ce chapitre aborde <strong>bonus-malus et crédibilité</strong>, un concept essentiel en assurance non-vie. La maîtrise de ce sujet est indispensable pour le pilotage technique d’un portefeuille.</p>
+</section>
+<section id="développement-4" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="développement-4"><span class="header-section-number">5.2</span> Développement</h2>
+<p>Les points clés à comprendre :</p>
+<ul>
+<li>La définition précise et les implications pratiques</li>
+<li>Les méthodes de calcul et d’estimation</li>
+<li>Les cas d’usage concrets en assurance IARD</li>
+<li>Les limites et points d’attention</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La compréhension de bonus-malus et crédibilité est fondamentale pour la tarification et le pilotage de la rentabilité. Ce concept sera directement appliqué dans le projet central.</p>
+</div>
+</section>
+<section id="application-pratique-4" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="application-pratique-4"><span class="header-section-number">5.3</span> Application pratique</h2>
+<p>Ce concept s’applique dans les situations suivantes :</p>
+<ol type="1">
+<li>Analyse du portefeuille existant</li>
+<li>Construction de modèles de tarification</li>
+<li>Suivi des indicateurs de performance</li>
+<li>Reporting réglementaire</li>
+</ol>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="les-concepts-clés-à-retenir" class="level3 synthese-card" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="les-concepts-clés-à-retenir"><span class="header-section-number">5.3.1</span> Les concepts clés à retenir</h3>
+<ol type="1">
+<li><strong>Tarification a priori : estimer le risque théorique</strong></li>
+<li><strong>Tarification a posteriori : l’expérience individuelle</strong></li>
+<li><strong>Variables tarifaires et segmentation</strong></li>
+<li><strong>Introduction aux GLM (Generalized Linear Models)</strong></li>
+<li><strong>Bonus-malus et crédibilité</strong></li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +773,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Tarification a priori : estimer le risque théorique
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique tarification a priori : estimer le risque théorique dans tes propres mots et donne un exemple concret issu de ton expérience professionnelle.</p>
 </div>
 </div>
 </div>
@@ -587,13 +789,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Tarification a posteriori : l’expérience individuelle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique tarification a posteriori : l’expérience individuelle dans tes propres mots et donne un exemple concret issu de ton expérience professionnelle.</p>
 </div>
 </div>
 </div>
@@ -603,13 +805,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Variables tarifaires et segmentation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique variables tarifaires et segmentation dans tes propres mots et donne un exemple concret issu de ton expérience professionnelle.</p>
 </div>
 </div>
 </div>
@@ -619,13 +821,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Introduction aux GLM (Generalized Linear Models)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique introduction aux glm (generalized linear models) dans tes propres mots et donne un exemple concret issu de ton expérience professionnelle.</p>
 </div>
 </div>
 </div>

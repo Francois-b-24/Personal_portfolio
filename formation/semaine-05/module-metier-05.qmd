@@ -1,9 +1,9 @@
 ---
 title: "Module 5 — Fréquence et Sévérité"
-subtitle: "Modéliser les composantes de la sinistralité"
+subtitle: "Modéliser les deux composantes de la sinistralité"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, fréquence, sévérité]
+categories: [assurance, fréquence, sévérité, modélisation]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,63 +11,318 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Décomposition fréquence x sévérité
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Justifier** la décomposition fréquence × sévérité
+2. **Modéliser** la fréquence par une loi de Poisson
+3. **Modéliser** la sévérité par une loi Gamma ou lognormale
+4. **Estimer** les paramètres sur données réelles
+5. **Valider** les modèles avec des diagnostics statistiques
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Module 4 (sinistralité, indicateurs)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Loi de Poisson
+# La décomposition fréquence × sévérité
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Pourquoi séparer les deux ?
+
+La prime pure se décompose en :
+
+$$\text{Prime pure} = \underbrace{f}_{\text{Fréquence}} \times \underbrace{s}_{\text{Sévérité moyenne}}$$
+
+Cette décomposition est fondamentale car **fréquence et sévérité ont des comportements statistiques très différents** :
+
+| | Fréquence | Sévérité |
+|--|-----------|----------|
+| **Nature** | Comptage (0, 1, 2...) | Montant continu (> 0) |
+| **Distribution** | Poisson, Binomiale Négative | Gamma, Lognormale, Pareto |
+| **Variables explicatives** | Âge, zone, CRM, ancienneté | Type de sinistre, garantie |
+| **Modèle GLM** | Lien log, famille Poisson | Lien log, famille Gamma |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Deux segments peuvent avoir la **même prime pure** mais des profils très différents. Exemple : jeunes conducteurs (fréquence élevée, sévérité modérée) vs conducteurs âgés (fréquence modérée, sévérité élevée en corporel). Les séparer permet une tarification plus fine et des actions ciblées.
+:::
 
 ---
 
-# Loi lognormale et Gamma
+# Modélisation de la fréquence
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## La loi de Poisson
+
+Le nombre de sinistres par assuré suit typiquement une **loi de Poisson** :
+
+$$P(N = k) = \frac{\lambda^k \, e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \ldots$$
+
+où $\lambda$ est le paramètre d'intensité (nombre moyen de sinistres par unité d'exposition).
+
+**Propriétés** : $E[N] = \lambda$ et $\text{Var}(N) = \lambda$ (égalité moyenne-variance).
+
+```{python}
+#| label: fig-poisson
+#| fig-cap: "Distribution de Poisson pour différentes valeurs de λ"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import poisson
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+k = np.arange(0, 12)
+lambdas = [0.5, 1.0, 3.0, 5.0]
+colors = ['#06436e', '#2fe8f0', '#f8d65c', '#fe4454']
+
+for lam, col in zip(lambdas, colors):
+    probs = poisson.pmf(k, lam)
+    ax.bar(k + lambdas.index(lam)*0.2 - 0.3, probs, width=0.18, color=col,
+           label=f'λ = {lam}', edgecolor='white')
+
+ax.set_xlabel('Nombre de sinistres (k)', fontsize=11)
+ax.set_ylabel('Probabilité P(N=k)', fontsize=11)
+ax.set_title('Loi de Poisson : distribution du nombre de sinistres', fontsize=14, fontweight='bold', color='#06436e')
+ax.legend()
+ax.grid(axis='y', alpha=0.3)
+ax.set_xticks(k)
+plt.tight_layout()
+plt.show()
+```
+
+## Surdispersion : quand Poisson ne suffit pas
+
+Si la **variance observée est supérieure à la moyenne**, on parle de **surdispersion**. Causes :
+
+- Hétérogénéité non observée dans le portefeuille
+- Corrélation entre sinistres d'un même assuré
+
+:::{.attention-box}
+**⚠️ Solution : la Binomiale Négative**
+
+La loi Binomiale Négative ajoute un paramètre de dispersion qui permet $\text{Var}(N) > E[N]$. En pratique, on teste d'abord Poisson, et on passe à la BN si les résidus montrent de la surdispersion.
+:::
+
+---
+
+# Modélisation de la sévérité
+
+## Distributions classiques
+
+La sévérité (coût individuel d'un sinistre) est **positive et asymétrique à droite** :
+
+| Distribution | Formule | Usage |
+|-------------|---------|-------|
+| **Gamma** | $f(x) = \frac{x^{\alpha-1} e^{-x/\beta}}{\beta^\alpha \Gamma(\alpha)}$ | GLM sévérité, sinistres attritionnels |
+| **Lognormale** | $\ln(X) \sim \mathcal{N}(\mu, \sigma^2)$ | Queue plus lourde que Gamma |
+| **Pareto** | $P(X > x) = (x_m / x)^\alpha$ | Sinistres graves, queues très lourdes |
+
+```{python}
+#| label: fig-severite
+#| fig-cap: "Comparaison des distributions de sévérité"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gamma, lognorm
+
+x = np.linspace(0.01, 15000, 1000)
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Gamma (shape=2, scale=1500 -> mean=3000)
+ax.plot(x, gamma.pdf(x, a=2, scale=1500), color='#06436e', linewidth=2.5, label='Gamma (α=2, β=1500)')
+
+# Lognormale (mu=7.5, sigma=0.8 -> mean≈2400)
+ax.plot(x, lognorm.pdf(x, s=0.8, scale=np.exp(7.5)), color='#f8d65c', linewidth=2.5, label='Lognormale (μ=7.5, σ=0.8)')
+
+# Lognormale queue lourde
+ax.plot(x, lognorm.pdf(x, s=1.2, scale=np.exp(7.0)), color='#fe4454', linewidth=2.5, label='Lognormale queue lourde (σ=1.2)')
+
+ax.set_xlabel('Coût du sinistre (€)', fontsize=11)
+ax.set_ylabel('Densité', fontsize=11)
+ax.set_title('Distributions de sévérité : Gamma vs Lognormale', fontsize=14, fontweight='bold', color='#06436e')
+ax.legend()
+ax.grid(True, alpha=0.3)
+ax.set_xlim(0, 15000)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.exemple-box}
+**📝 Choix de la distribution**
+
+- **Gamma** : adaptée aux sinistres attritionnels, queue modérée. C'est le choix par défaut dans les GLM de sévérité.
+- **Lognormale** : queue plus lourde, adaptée quand il y a des sinistres importants mais pas extrêmes.
+- **Pareto / GPD** : pour les sinistres graves au-delà d'un seuil. On les modélise séparément (théorie des valeurs extrêmes).
+:::
 
 ---
 
 # Estimation des paramètres
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Maximum de vraisemblance
+
+La méthode standard est le **maximum de vraisemblance (MLE)** :
+
+$$\hat{\theta} = \arg\max_\theta \sum_{i=1}^n \ln f(x_i \mid \theta)$$
+
+En Python avec `scipy.stats` :
+
+```python
+from scipy.stats import poisson, gamma
+import numpy as np
+
+# Fréquence : estimation de lambda
+sinistres_par_assure = np.array([0, 0, 1, 0, 2, 0, 1, 0, 0, 1])
+lambda_hat = sinistres_par_assure.mean()  # MLE pour Poisson = moyenne
+print(f"Lambda estimé : {lambda_hat:.3f}")
+
+# Sévérité : estimation Gamma
+couts = np.array([1200, 3500, 800, 5200, 2100, 950, 4300, 1800])
+alpha_hat, loc, beta_hat = gamma.fit(couts, floc=0)
+print(f"Gamma : alpha={alpha_hat:.2f}, beta={beta_hat:.0f}")
+```
 
 ---
 
-# Validation et diagnostic
+# Validation et diagnostics
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## QQ-plot
+
+Le **QQ-plot** compare les quantiles observés aux quantiles théoriques. Si les points s'alignent sur la diagonale, le modèle est adapté.
+
+```{python}
+#| label: fig-qqplot
+#| fig-cap: "QQ-plot : vérification de l'adéquation du modèle Gamma"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+np.random.seed(42)
+data = stats.gamma.rvs(a=2, scale=1500, size=500)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# QQ-plot Gamma (bon ajustement)
+stats.probplot(data, dist=stats.gamma, sparams=(2, 0, 1500), plot=ax1)
+ax1.set_title('QQ-plot Gamma\n(bon ajustement)', fontsize=12, fontweight='bold', color='#06436e')
+ax1.get_lines()[0].set_color('#06436e')
+ax1.get_lines()[1].set_color('#fe4454')
+
+# QQ-plot Normal (mauvais ajustement)
+stats.probplot(data, dist='norm', plot=ax2)
+ax2.set_title('QQ-plot Normal\n(mauvais ajustement)', fontsize=12, fontweight='bold', color='#06436e')
+ax2.get_lines()[0].set_color('#06436e')
+ax2.get_lines()[1].set_color('#fe4454')
+
+plt.tight_layout()
+plt.show()
+```
+
+## Tests statistiques
+
+| Test | Usage | Hypothèse nulle |
+|------|-------|-----------------|
+| **Chi-deux** | Adéquation à une distribution | Les données suivent la loi théorique |
+| **Kolmogorov-Smirnov** | Comparaison de distributions | Les deux distributions sont identiques |
+| **AIC / BIC** | Comparaison de modèles | Le modèle avec le plus petit AIC est préféré |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+La validation est aussi importante que l'estimation. Un modèle avec de bons paramètres mais une mauvaise adéquation produira des primes biaisées. Toujours vérifier avec un QQ-plot et comparer plusieurs distributions avec l'AIC.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **Prime pure = Fréquence × Sévérité** — Deux composantes modélisées séparément
+2. **Poisson pour la fréquence** — Binomiale Négative si surdispersion
+3. **Gamma pour la sévérité** — Lognormale ou Pareto pour les queues lourdes
+4. **Maximum de vraisemblance** — Méthode standard d'estimation
+5. **QQ-plot et AIC** — Toujours valider l'adéquation du modèle
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Pourquoi séparer fréquence et sévérité ?
+
+**Réponse** : Parce qu'elles ont des comportements statistiques différents (comptage vs montant continu), des variables explicatives différentes, et des distributions différentes. Les séparer permet une tarification plus fine et des actions ciblées (réduire la fréquence par la prévention, limiter la sévérité par les franchises).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Qu'est-ce que la surdispersion et comment la traiter ?
+
+**Réponse** : La surdispersion survient quand la variance observée dépasse la moyenne (condition d'égalité de Poisson). Elle indique une hétérogénéité non captée. On la traite en passant à une **Binomiale Négative** qui a un paramètre de dispersion supplémentaire, ou en enrichissant le modèle avec plus de variables explicatives.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Quand utiliser Gamma vs Lognormale pour la sévérité ?
+
+**Réponse** : **Gamma** : choix par défaut pour les GLM, queue modérée, bien adaptée aux sinistres attritionnels. **Lognormale** : queue plus lourde, utile quand il y a quelques sinistres très coûteux. On compare avec l'AIC et les QQ-plots. En pratique, Gamma est préférée car elle s'intègre naturellement dans le framework GLM.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Comment interpréter un QQ-plot ?
+
+**Réponse** : Les points doivent s'aligner sur la droite diagonale. Des écarts systématiques indiquent un mauvais ajustement : points au-dessus de la droite en queue droite = le modèle sous-estime les gros sinistres. Points en S = le modèle a la mauvaise forme. Un bon QQ-plot montre des points proches de la droite avec de légères fluctuations aléatoires.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Fréquence** | Nombre de sinistres par unité d'exposition |
+| **Sévérité** | Coût moyen individuel d'un sinistre |
+| **Poisson** | Distribution classique pour les comptages |
+| **Surdispersion** | Variance > Moyenne dans un modèle de comptage |
+| **Gamma** | Distribution continue positive, asymétrique à droite |
+| **Lognormale** | Distribution dont le log suit une loi normale |
+| **MLE** | Maximum Likelihood Estimation — méthode d'estimation |
+| **QQ-plot** | Graphique quantile-quantile pour vérifier l'adéquation |
 
 ---
 

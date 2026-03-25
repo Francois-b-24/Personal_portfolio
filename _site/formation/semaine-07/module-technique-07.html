@@ -500,7 +500,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +516,41 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#rds-bases-managées" id="toc-rds-bases-managées" class="nav-link active" data-scroll-target="#rds-bases-managées"><span class="header-section-number">1</span> RDS bases managées</a></li>
-  <li><a href="#création-postgresql" id="toc-création-postgresql" class="nav-link" data-scroll-target="#création-postgresql"><span class="header-section-number">2</span> Création PostgreSQL</a></li>
-  <li><a href="#requêtes-sql" id="toc-requêtes-sql" class="nav-link" data-scroll-target="#requêtes-sql"><span class="header-section-number">3</span> Requêtes SQL</a></li>
-  <li><a href="#backups-et-maintenance" id="toc-backups-et-maintenance" class="nav-link" data-scroll-target="#backups-et-maintenance"><span class="header-section-number">4</span> Backups et maintenance</a></li>
-  <li><a href="#sécurité-iam" id="toc-sécurité-iam" class="nav-link" data-scroll-target="#sécurité-iam"><span class="header-section-number">5</span> Sécurité IAM</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#rds-bases-de-données-managées-par-aws" id="toc-rds-bases-de-données-managées-par-aws" class="nav-link" data-scroll-target="#rds-bases-de-données-managées-par-aws"><span class="header-section-number">1</span> RDS : bases de données managées par AWS</a>
+  <ul class="collapse">
+  <li><a href="#présentation" id="toc-présentation" class="nav-link" data-scroll-target="#présentation"><span class="header-section-number">1.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique" id="toc-mise-en-pratique" class="nav-link" data-scroll-target="#mise-en-pratique"><span class="header-section-number">1.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques"><span class="header-section-number">1.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#création-dune-instance-postgresql-rds" id="toc-création-dune-instance-postgresql-rds" class="nav-link" data-scroll-target="#création-dune-instance-postgresql-rds"><span class="header-section-number">2</span> Création d’une instance PostgreSQL RDS</a>
+  <ul class="collapse">
+  <li><a href="#présentation-1" id="toc-présentation-1" class="nav-link" data-scroll-target="#présentation-1"><span class="header-section-number">2.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-1" id="toc-mise-en-pratique-1" class="nav-link" data-scroll-target="#mise-en-pratique-1"><span class="header-section-number">2.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-1" id="toc-bonnes-pratiques-1" class="nav-link" data-scroll-target="#bonnes-pratiques-1"><span class="header-section-number">2.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#connexion-et-requêtes-sql-depuis-python" id="toc-connexion-et-requêtes-sql-depuis-python" class="nav-link" data-scroll-target="#connexion-et-requêtes-sql-depuis-python"><span class="header-section-number">3</span> Connexion et requêtes SQL depuis Python</a>
+  <ul class="collapse">
+  <li><a href="#présentation-2" id="toc-présentation-2" class="nav-link" data-scroll-target="#présentation-2"><span class="header-section-number">3.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-2" id="toc-mise-en-pratique-2" class="nav-link" data-scroll-target="#mise-en-pratique-2"><span class="header-section-number">3.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-2" id="toc-bonnes-pratiques-2" class="nav-link" data-scroll-target="#bonnes-pratiques-2"><span class="header-section-number">3.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#backups-automatiques-et-maintenance" id="toc-backups-automatiques-et-maintenance" class="nav-link" data-scroll-target="#backups-automatiques-et-maintenance"><span class="header-section-number">4</span> Backups automatiques et maintenance</a>
+  <ul class="collapse">
+  <li><a href="#présentation-3" id="toc-présentation-3" class="nav-link" data-scroll-target="#présentation-3"><span class="header-section-number">4.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-3" id="toc-mise-en-pratique-3" class="nav-link" data-scroll-target="#mise-en-pratique-3"><span class="header-section-number">4.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-3" id="toc-bonnes-pratiques-3" class="nav-link" data-scroll-target="#bonnes-pratiques-3"><span class="header-section-number">4.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#sécurité-vpc-groupes-de-sécurité-iam" id="toc-sécurité-vpc-groupes-de-sécurité-iam" class="nav-link" data-scroll-target="#sécurité-vpc-groupes-de-sécurité-iam"><span class="header-section-number">5</span> Sécurité : VPC, groupes de sécurité, IAM</a>
+  <ul class="collapse">
+  <li><a href="#présentation-4" id="toc-présentation-4" class="nav-link" data-scroll-target="#présentation-4"><span class="header-section-number">5.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-4" id="toc-mise-en-pratique-4" class="nav-link" data-scroll-target="#mise-en-pratique-4"><span class="header-section-number">5.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-4" id="toc-bonnes-pratiques-4" class="nav-link" data-scroll-target="#bonnes-pratiques-4"><span class="header-section-number">5.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.3.1</span> Les points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +562,206 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="rds-bases-managées" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> RDS bases managées</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>RDS : bases de données managées par AWS</strong></li>
+<li><strong>Création d’une instance PostgreSQL RDS</strong></li>
+<li><strong>Connexion et requêtes SQL depuis Python</strong></li>
+<li><strong>Backups automatiques et maintenance</strong></li>
+<li><strong>Sécurité : VPC, groupes de sécurité, IAM</strong></li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules techniques précédents</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="rds-bases-de-données-managées-par-aws" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> RDS : bases de données managées par AWS</h1>
+<section id="présentation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="présentation"><span class="header-section-number">1.1</span> Présentation</h2>
+<p><strong>RDS : bases de données managées par AWS</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="mise-en-pratique"><span class="header-section-number">1.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser rds : bases de données managées par aws te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="bonnes-pratiques"><span class="header-section-number">1.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="création-postgresql" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Création PostgreSQL</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="création-dune-instance-postgresql-rds" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Création d’une instance PostgreSQL RDS</h1>
+<section id="présentation-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="présentation-1"><span class="header-section-number">2.1</span> Présentation</h2>
+<p><strong>Création d’une instance PostgreSQL RDS</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mise-en-pratique-1"><span class="header-section-number">2.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser création d’une instance postgresql rds te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="bonnes-pratiques-1"><span class="header-section-number">2.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="requêtes-sql" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Requêtes SQL</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="connexion-et-requêtes-sql-depuis-python" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Connexion et requêtes SQL depuis Python</h1>
+<section id="présentation-2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="présentation-2"><span class="header-section-number">3.1</span> Présentation</h2>
+<p><strong>Connexion et requêtes SQL depuis Python</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="mise-en-pratique-2"><span class="header-section-number">3.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser connexion et requêtes sql depuis python te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-2" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="bonnes-pratiques-2"><span class="header-section-number">3.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="backups-et-maintenance" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Backups et maintenance</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="backups-automatiques-et-maintenance" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Backups automatiques et maintenance</h1>
+<section id="présentation-3" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="présentation-3"><span class="header-section-number">4.1</span> Présentation</h2>
+<p><strong>Backups automatiques et maintenance</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-3" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="mise-en-pratique-3"><span class="header-section-number">4.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser backups automatiques et maintenance te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="bonnes-pratiques-3"><span class="header-section-number">4.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="sécurité-iam" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Sécurité IAM</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="sécurité-vpc-groupes-de-sécurité-iam" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Sécurité : VPC, groupes de sécurité, IAM</h1>
+<section id="présentation-4" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="présentation-4"><span class="header-section-number">5.1</span> Présentation</h2>
+<p><strong>Sécurité : VPC, groupes de sécurité, IAM</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-4" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="mise-en-pratique-4"><span class="header-section-number">5.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser sécurité : vpc, groupes de sécurité, iam te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-4" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="bonnes-pratiques-4"><span class="header-section-number">5.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.3.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>RDS : bases de données managées par AWS</strong></li>
+<li><strong>Création d’une instance PostgreSQL RDS</strong></li>
+<li><strong>Connexion et requêtes SQL depuis Python</strong></li>
+<li><strong>Backups automatiques et maintenance</strong></li>
+<li><strong>Sécurité : VPC, groupes de sécurité, IAM</strong></li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +772,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : RDS : bases de données managées par AWS
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment rds : bases de données managées par aws s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -587,13 +788,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Création d’une instance PostgreSQL RDS
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment création d’une instance postgresql rds s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -603,13 +804,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Connexion et requêtes SQL depuis Python
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment connexion et requêtes sql depuis python s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -619,13 +820,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Backups automatiques et maintenance
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment backups automatiques et maintenance s’applique dans le projet central.</p>
 </div>
 </div>
 </div>

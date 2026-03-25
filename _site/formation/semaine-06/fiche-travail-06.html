@@ -495,7 +495,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -511,11 +511,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">Livrables</a></li>
-  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">Exercices métier</a></li>
-  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">Exercices techniques</a></li>
-  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">Pont métier-technique</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#livrables-à-produire" id="toc-livrables-à-produire" class="nav-link active" data-scroll-target="#livrables-à-produire">📦 Livrables à produire</a></li>
+  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">🏋️ Exercices métier</a></li>
+  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">🏋️ Exercices techniques</a></li>
+  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">🔗 Pont métier-technique</a></li>
+  <li><a href="#checklist-de-fin-de-semaine" id="toc-checklist-de-fin-de-semaine" class="nav-link" data-scroll-target="#checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</a></li>
   </ul>
 </nav>
     </div>
@@ -526,36 +526,188 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="livrables" class="level2">
-<h2 class="anchored" data-anchor-id="livrables">Livrables</h2>
-<ol type="1">
-<li><strong>Livrable métier</strong> : Application des concepts du Module 6</li>
-<li><strong>Livrable technique</strong> : Mise en pratique du Module Technique 6</li>
-<li><strong>Livrable intégrateur</strong> : Combinaison métier + technique</li>
-</ol>
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+.hint-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+<hr>
+<section id="livrables-à-produire" class="level2">
+<h2 class="anchored" data-anchor-id="livrables-à-produire">📦 Livrables à produire</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📝 Livrable 1 — Synthèse métier::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Résumer les concepts clés du Module 6 dans tes propres mots.</p>
+<ul>
+<li>Les 5 concepts clés résumés</li>
+<li>Un schéma illustrant un concept au choix</li>
+<li>Un lien avec ton expérience professionnelle</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🛠️ Livrable 2 — Mise en pratique technique::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Appliquer les outils du Module Technique 6.</p>
+<ul>
+<li>Code fonctionnel et documenté</li>
+<li>Résultat reproductible</li>
+<li>README expliquant la démarche</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🔗 Livrable 3 — Intégration projet::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Intégrer les apprentissages dans le projet central.</p>
+<ul>
+<li>Contribution au repo du projet</li>
+<li>Code commité avec un message clair</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🌟 Livrable 4 — Questions et réflexions::: :::{.livrable-status .bonus}Bonus:::</p>
+</div>
+<p>Prépare 2-3 questions pour le débriefing.</p>
+</div>
+<hr>
 </section>
 <section id="exercices-métier" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-métier">Exercices métier</h2>
-<p>Applique les concepts du module sur des données simulées ou réelles.</p>
+<h2 class="anchored" data-anchor-id="exercices-métier">🏋️ Exercices métier</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M1 — Application des concepts</p>
+</div>
+<p>Applique les concepts du Module Métier 6 sur des données simulées. Calcule les indicateurs clés et interprète les résultats.</p>
+<div class="hint-box">
+<p><strong>💡 Conseil</strong> : Commence par générer des données réalistes avec numpy, puis applique les formules vues dans le module.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Utilise pandas pour structurer tes données et matplotlib pour les visualiser. Compare tes résultats avec les ordres de grandeur vus dans le module.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M2 — Analyse de cas</p>
+</div>
+<p>À partir des données fournies, identifie les tendances et propose des recommandations argumentées.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Structure ton analyse : (1) constat chiffré, (2) causes possibles, (3) recommandations, (4) impact attendu.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercices-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-techniques">Exercices techniques</h2>
-<p>Mets en pratique les outils techniques dans le contexte du projet.</p>
+<h2 class="anchored" data-anchor-id="exercices-techniques">🏋️ Exercices techniques</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🛠️ Exercice T1 — Prise en main</p>
+</div>
+<p>Réalise le tutoriel du Module Technique 6 pas à pas. Documente chaque étape.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suis le module technique section par section. Consulte la documentation officielle en complément.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🛠️ Exercice T2 — Application au projet</p>
+</div>
+<p>Adapte les outils techniques au contexte de ton projet central.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Réfléchis à comment cet outil s’intègre dans l’architecture globale (API + BDD + Dashboard).</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="pont-métier-technique" class="level2">
-<h2 class="anchored" data-anchor-id="pont-métier-technique">Pont métier-technique</h2>
-<p>Comment les concepts de cette semaine s’articulent-ils dans le projet central ?</p>
+<h2 class="anchored" data-anchor-id="pont-métier-technique">🔗 Pont métier-technique</h2>
+<section id="réflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="réflexion">🤔 Réflexion</h3>
+<ol type="1">
+<li><strong>Comment les concepts métier de cette semaine enrichissent-ils ton modèle de données ?</strong></li>
+<li><strong>Comment les outils techniques permettent-ils d’opérationnaliser ces concepts ?</strong></li>
+<li><strong>Quelle fonctionnalité du projet central peux-tu avancer cette semaine ?</strong></li>
+</ol>
 </section>
-<section id="checklist" class="level2">
-<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Module Métier 6 terminé</label></li>
-<li><label><input type="checkbox">Module Technique 6 terminé</label></li>
-<li><label><input type="checkbox">Livrables produits</label></li>
-<li><label><input type="checkbox">Exercices réalisés</label></li>
-</ul>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 6</a></p>
+</section>
+<section id="checklist-de-fin-de-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</h2>
+<div class="checklist">
+<ul>
+<li>Module Métier 6 terminé et auto-évaluation faite</li>
+<li>Module Technique 6 terminé et exercices réalisés</li>
+<li>Livrable 1 produit (synthèse métier)</li>
+<li>Livrable 2 produit (mise en pratique technique)</li>
+<li>Livrable 3 produit (intégration projet)</li>
+<li>Questions préparées pour le débriefing</li>
+</ul>
+</div>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 6</a> <a href="module-metier-06.html" class="btn btn-outline-primary">Module Métier 6</a> <a href="module-technique-06.html" class="btn btn-outline-primary">Module Technique 6</a></p>
 
 
 </section>

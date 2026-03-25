@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 11"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : rentabilité et MLflow"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,30 +9,131 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 11
-2. **Livrable technique** : Mise en pratique du Module Technique 11
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Dashboard de rentabilité:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Script Python qui calcule et visualise : S/P par branche, combined ratio, évolution sur 5 ans, CLV par segment. Produire un mini-rapport avec les KPIs commentés.
+:::
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🔬 Livrable 2 — Expérimentation MLflow:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Checklist
+Entraîner 5+ modèles (GLM avec différents paramètres + 1 XGBoost) en loggant tout dans MLflow. Comparer via l'interface web et documenter le choix du meilleur modèle.
+:::
 
-- [ ] Module Métier 11 terminé
-- [ ] Module Technique 11 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📋 Livrable 3 — Modèle enregistré:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Enregistrer le meilleur modèle dans le Model Registry et le passer en stage "Staging". Documenter la procédure de validation.
+:::
+
+---
+
+## 🏋️ Exercices
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Combined ratio
+:::
+
+Un assureur auto a : Primes acquises = 50 M€, Charge sinistres = 37 M€, Frais de gestion = 4 M€, Commissions = 9 M€. Calcule le S/P, le ratio de frais et le combined ratio. L'activité est-elle rentable ?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- S/P = 37/50 = **74%**
+- Ratio frais gestion = 4/50 = **8%**
+- Ratio commissions = 9/50 = **18%**
+- **Combined ratio = 74 + 8 + 18 = 100%**
+
+L'activité est au **point mort** technique. Pas de marge pour les imprévus. Rentable uniquement grâce aux produits financiers. Actions : réduire le S/P (tarification, sélection) ou les frais (digitalisation, renégociation commissions).
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+🔬 Exercice T1 — Premier run MLflow
+:::
+
+Installe MLflow (`pip install mlflow`) et logge un modèle simple avec paramètres et métriques. Lance l'interface web et vérifie que tout est visible.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```python
+import mlflow
+mlflow.set_experiment("test-mlflow")
+with mlflow.start_run():
+    mlflow.log_param("model", "test")
+    mlflow.log_metric("accuracy", 0.85)
+    mlflow.log_metric("gini", 0.35)
+# Puis : mlflow ui --port 5000
+```
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Comment MLflow t'aide-t-il à justifier ton choix de modèle auprès d'un actuaire ?** (traçabilité, comparaison objective)
+2. **Quels KPIs du dashboard de rentabilité pourraient déclencher un réentraînement du modèle ?** (S/P qui dérive, Gini qui baisse)
+3. **Comment versionner un modèle GLM quand les données changent chaque mois ?**
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 11 terminé (combined ratio, CLV, KPIs)
+- Module Technique 11 terminé (MLflow tracking, registry)
+- Livrable 1 (dashboard rentabilité)
+- Livrable 2 (expérimentation MLflow)
+- Livrable 3 (modèle enregistré)
+- Exercices réalisés
+:::
 
 ---
 

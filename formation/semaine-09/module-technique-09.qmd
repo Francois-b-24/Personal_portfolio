@@ -1,9 +1,9 @@
 ---
-title: "Module Technique 9 — AWS — Architecture et Services"
-subtitle: "VPC, IAM, CloudWatch"
+title: "Module Technique 9 — AWS : Architecture et Services intégrés"
+subtitle: "VPC, IAM, CloudWatch et bonnes pratiques"
 author: "François Boussengui"
 date: last-modified
-categories: [aws, architecture, vpc]
+categories: [aws, architecture, vpc, iam]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,62 +11,239 @@ toc-depth: 3
 number-sections: true
 ---
 
-# VPC réseau privé
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Concevoir** un VPC avec subnets publics et privés
+2. **Configurer** IAM (utilisateurs, rôles, politiques)
+3. **Mettre en place** CloudWatch pour le monitoring
+4. **Architecturer** une application multi-services sur AWS
+5. **Appliquer** les principes du Well-Architected Framework
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules Technique 5-8 (S3, EC2, RDS, Lambda)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# IAM gestion accès
+# VPC : réseau privé virtuel
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Pourquoi un VPC ?
+
+Un VPC (Virtual Private Cloud) est ton **réseau privé** dans AWS. Il isole tes ressources du reste d'Internet et te donne un contrôle total sur le trafic.
+
+```{mermaid}
+%%| fig-cap: "Architecture VPC pour le projet de pilotage assurance"
+
+flowchart TD
+    subgraph VPC["VPC 10.0.0.0/16"]
+        subgraph Public["Subnet Public"]
+            ALB[Load Balancer]
+            NAT[NAT Gateway]
+        end
+        subgraph Private["Subnet Privé"]
+            EC2[EC2 — API FastAPI]
+            Lambda[Lambda — Scoring]
+        end
+        subgraph Data["Subnet Données"]
+            RDS[RDS — PostgreSQL]
+            S3[S3 — Data Lake]
+        end
+    end
+
+    Internet[🌐 Internet] --> ALB
+    ALB --> EC2
+    ALB --> Lambda
+    EC2 --> RDS
+    Lambda --> RDS
+    EC2 --> S3
+```
+
+| Composant | Subnet | Accès Internet |
+|-----------|--------|---------------|
+| Load Balancer | Public | Oui (entrée) |
+| API (EC2) | Privé | Via NAT (sortie uniquement) |
+| Base de données (RDS) | Données | Non |
+| S3 | - | Via VPC Endpoint |
+
+:::{.concept-cle}
+**💡 Principe de base** : les ressources qui n'ont pas besoin d'être accessibles depuis Internet (BDD, services internes) sont dans des **subnets privés**. Seul le point d'entrée (Load Balancer) est dans un subnet public.
+:::
 
 ---
 
-# CloudWatch monitoring
+# IAM : gestion des accès
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Principe du moindre privilège
+
+IAM (Identity and Access Management) contrôle **qui** peut faire **quoi** sur **quelles ressources** :
+
+| Concept | Description | Exemple |
+|---------|-------------|---------|
+| **User** | Personne physique | Toi, ton collègue |
+| **Group** | Ensemble d'utilisateurs | Équipe data science |
+| **Role** | Identité assumable par un service | Lambda qui accède à S3 |
+| **Policy** | Document JSON de permissions | "Lire S3 bucket X" |
+
+## Exemple de policy
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::mon-bucket-assurance/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "rds:Connect",
+            "Resource": "arn:aws:rds:eu-west-1:123456:db:portefeuille"
+        }
+    ]
+}
+```
+
+:::{.attention-box}
+**⚠️ Ne jamais utiliser `*` en production**
+
+`"Action": "*"` et `"Resource": "*"` donnent **tous les droits sur tout**. En cas de fuite de clés, un attaquant peut détruire toute ton infrastructure. Toujours appliquer le **moindre privilège** : chaque service n'a accès qu'à ce dont il a strictement besoin.
+:::
 
 ---
 
-# Architecture multi-services
+# CloudWatch : monitoring
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Métriques et alertes
+
+CloudWatch collecte les métriques de tous tes services AWS :
+
+| Service | Métriques clés | Seuil d'alerte typique |
+|---------|---------------|----------------------|
+| **EC2** | CPU, mémoire, réseau | CPU > 80% pendant 5 min |
+| **RDS** | Connexions, latence, espace disque | Espace < 20% |
+| **Lambda** | Invocations, erreurs, durée | Taux d'erreur > 5% |
+| **S3** | Requêtes, taille stockée | Coût > seuil budgétaire |
+
+## Alertes de coût
+
+```bash
+# Créer une alerte si les coûts dépassent 50$/mois
+aws cloudwatch put-metric-alarm \
+    --alarm-name "budget-alert" \
+    --metric-name EstimatedCharges \
+    --namespace AWS/Billing \
+    --statistic Maximum \
+    --period 86400 \
+    --threshold 50 \
+    --comparison-operator GreaterThanThreshold \
+    --evaluation-periods 1 \
+    --alarm-actions arn:aws:sns:eu-west-1:123456:alerts
+```
+
+:::{.exemple-box}
+**📝 Dashboard CloudWatch pour ton projet**
+
+Crée un dashboard qui affiche en temps réel :
+
+- Nombre de requêtes API de scoring
+- Temps de réponse moyen
+- Taux d'erreur des Lambda
+- Utilisation CPU/mémoire de l'EC2
+- Espace disque RDS
+:::
 
 ---
 
-# Bonnes pratiques sécurité
+# Well-Architected Framework
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Les 6 piliers
+
+| Pilier | Question clé | Exemple projet |
+|--------|-------------|---------------|
+| **Excellence opérationnelle** | Comment améliorer les processus ? | CI/CD, monitoring, logs |
+| **Sécurité** | Comment protéger les données ? | IAM, VPC, chiffrement |
+| **Fiabilité** | Comment résister aux pannes ? | Multi-AZ, backups, auto-scaling |
+| **Performance** | Comment optimiser les ressources ? | Bon type d'instance, cache |
+| **Optimisation des coûts** | Comment réduire les dépenses ? | Spot, reserved, right-sizing |
+| **Durabilité** | Comment réduire l'impact environnemental ? | Right-sizing, régions vertes |
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **VPC isole ton réseau** — Subnets publics/privés, Security Groups
+2. **IAM = moindre privilège** — Chaque service a le minimum de droits nécessaires
+3. **CloudWatch surveille tout** — Métriques, logs, alertes, dashboards
+4. **Architecture en couches** — Public → Privé → Données
+5. **Well-Architected** — 6 piliers pour une infra solide
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Pourquoi mettre RDS dans un subnet privé ?
+
+**Réponse** : Pour empêcher tout accès direct depuis Internet. La base contient des données sensibles (sinistres, clients). Seules les applications dans le même VPC (EC2, Lambda) doivent pouvoir s'y connecter. C'est le principe de **défense en profondeur**.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Qu'est-ce qu'un rôle IAM et quand l'utiliser ?
+
+**Réponse** : Un rôle est une identité **assumable par un service** (pas par une personne). Exemple : un rôle pour Lambda qui lui permet de lire S3 et écrire dans RDS. Avantage : pas de clés d'accès à gérer, les credentials sont temporaires et automatiquement renouvelées.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Comment être alerté si ton budget AWS dépasse un seuil ?
+
+**Réponse** : Avec **CloudWatch Billing Alarms** : créer une alarme sur la métrique `EstimatedCharges` avec un seuil (ex : 50$). Quand le seuil est dépassé, une notification SNS est envoyée (email, SMS). Aussi possible via **AWS Budgets** avec plus d'options.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Quels piliers du Well-Architected sont les plus critiques pour un projet data assurance ?
+
+**Réponse** : **Sécurité** (données personnelles, RGPD, conformité ACPR) et **Fiabilité** (le scoring doit être disponible 24/7 pour le front-office). L'**optimisation des coûts** est aussi importante car les volumes de données peuvent être importants.
 :::
 
 ---

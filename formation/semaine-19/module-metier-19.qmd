@@ -1,9 +1,9 @@
 ---
-title: "Module 19 — Approfondissement tarification"
+title: "Module 19 -- Approfondissement tarification"
 subtitle: "Segmentation fine et clustering"
-author: "François Boussengui"
+author: "Francois Boussengui"
 date: last-modified
-categories: [assurance, segmentation]
+categories: [assurance, segmentation, clustering]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,65 +11,111 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Micro-segmentation
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
----
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
 
-# Clustering
+# Micro-segmentation : aller au-dela des classes
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Micro-segmentation : aller au-dela des classes tarifaires classiques.
 
----
+:::{.concept-cle}
+**Point cle**
 
-# Arbres et ensembles
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Régularisation
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Éthique segmentation
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Synthèse {.unnumbered}
-
-Les concepts clés à retenir.
+Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.
+:::
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Clustering (K-means, DBSCAN) pour identifier des
+
+Clustering (K-means, DBSCAN) pour identifier des segments naturels dans les donnees.
+
+---
+
+# Arbres de decision pour decouvrir des
+
+Arbres de decision pour decouvrir des interactions cachees.
+
+:::{.attention-box}
+**Attention**
+
+Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.
+:::
+
+---
+
+# Regularisation : eviter le surapprentissage avec
+
+Regularisation : eviter le surapprentissage avec des contraintes (min_samples_leaf, max_depth).
+
+---
+
+# Ethique : equite algorithmique, biais dans
+
+Ethique : equite algorithmique, biais dans les donnees historiques, conformite RGPD, explicabilite des decisions.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les concepts cles
+
+1. **Micro-segmentation : aller au-dela des classes tarifaires classiques**
+2. **Clustering (K-means, DBSCAN) pour identifier des segments naturels**
+3. **Arbres de decision pour decouvrir des interactions cachees**
+4. **Regularisation : eviter le surapprentissage avec des contraintes**
+5. **Ethique : equite algorithmique, biais dans les donnees**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ---
 
-[← Retour à la Semaine 19](index.html){.btn .btn-secondary}
-[Voir le Module Technique 19 →](module-technique-19.html){.btn .btn-primary}
+[<- Retour a la Semaine 19](index.html){.btn .btn-secondary}
+[Voir le Module Technique 19 ->](module-technique-19.html){.btn .btn-primary}

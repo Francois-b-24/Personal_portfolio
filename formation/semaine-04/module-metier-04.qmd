@@ -1,9 +1,9 @@
 ---
-title: "Module 4 — Sinistralité — Concepts fondamentaux"
-subtitle: "Comprendre le processus sinistre"
+title: "Module 4 — Sinistralité : Concepts fondamentaux"
+subtitle: "Comprendre le processus sinistre et ses indicateurs clés"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, sinistralité]
+categories: [assurance, sinistralité, indicateurs]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,63 +11,380 @@ toc-depth: 3
 number-sections: true
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+À l'issue de ce module, tu seras capable de :
+
+1. **Décrire** le processus complet de gestion d'un sinistre
+2. **Distinguer** sinistres attritionnels, graves et catastrophiques
+3. **Calculer** les principaux indicateurs (S/P, fréquence, sévérité)
+4. **Comprendre** les réserves IBNR et leur impact comptable
+5. **Analyser** l'évolution de la sinistralité dans le temps
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 1-3 (fondements, produits, exposition)
+:::
+:::{div}
+⏱️ **Temps estimé** : 2 à 3 heures
+:::
+:::
+
+---
+
 # Le processus sinistre
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## De la survenance au règlement
+
+Un sinistre traverse plusieurs étapes avant d'être définitivement réglé :
+
+1. **Survenance** : l'événement dommageable se produit (accident, incendie, dégât des eaux...)
+2. **Déclaration** : l'assuré notifie l'assureur — délai légal de 5 jours en général, 2 jours pour le vol
+3. **Ouverture du dossier** : enregistrement dans le système, première évaluation, mise en réserve
+4. **Instruction** : expertise terrain, collecte des pièces justificatives, évaluation du montant
+5. **Règlement** : paiement de l'indemnité (peut être partiel ou échelonné)
+6. **Clôture** : fermeture du dossier une fois tous les paiements effectués
+
+```{mermaid}
+%%| fig-cap: "Processus de gestion d'un sinistre"
+
+flowchart LR
+    A[🔥 Survenance] --> B[📞 Déclaration]
+    B --> C[📂 Ouverture]
+    C --> D[🔍 Instruction]
+    D --> E[💰 Règlement]
+    E --> F[✅ Clôture]
+
+    style A fill:#fe4454,color:white
+    style F fill:#72f1b8,color:#333
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Le **délai entre survenance et déclaration** est critique. Les sinistres tardifs (IBNR — Incurred But Not Reported) sont survenus mais pas encore déclarés. L'assureur doit les provisionner sans les connaître individuellement — c'est l'un des défis majeurs de l'actuariat.
+:::
+
+## Le coût ultime
+
+Le coût d'un sinistre est rarement connu définitivement à l'ouverture du dossier. Il évolue au fil de l'instruction :
+
+- **Évaluation initiale** : estimation approximative à l'ouverture
+- **Révisions** : ajustements au fil des expertises et des informations
+- **Règlements partiels** : paiements intermédiaires (réparations, indemnités journalières)
+- **Coût ultime** : montant total et définitif une fois le dossier clos
+
+:::{.exemple-box}
+**📝 Exemple concret**
+
+Un dégât des eaux est déclaré et évalué initialement à 5 000 €. Après expertise, on découvre des moisissures cachées : le coût passe à 12 000 €. Six mois plus tard, un recours contre le voisin permet de récupérer 4 000 €. Le coût ultime net est de 8 000 €.
+:::
 
 ---
 
-# Types de sinistres
+# Typologie des sinistres
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Trois catégories fondamentales
+
+| Type | Fréquence | Sévérité | Part de la charge | Exemples |
+|------|-----------|----------|-------------------|----------|
+| **Attritionnels** | Élevée | Faible à modérée | 30-50% | Bris de glace, petits dégâts des eaux |
+| **Graves** | Faible | Élevée | 30-50% | Incendie total, accident corporel grave |
+| **Catastrophiques** | Très faible | Très élevée | 10-30% | Tempête, inondation, séisme |
+
+```{python}
+#| label: fig-typologie-sinistres
+#| fig-cap: "Distribution des sinistres par type : la règle des 80/20"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Nombre de sinistres
+types = ['Attritionnels', 'Graves', 'Catastrophiques']
+nb = [850, 140, 10]
+colors = ['#72f1b8', '#f8d65c', '#fe4454']
+
+ax1.bar(types, nb, color=colors, edgecolor='white', linewidth=2)
+for i, v in enumerate(nb):
+    ax1.text(i, v + 15, str(v), ha='center', fontweight='bold', color='#06436e')
+ax1.set_title('Nombre de sinistres', fontsize=12, fontweight='bold', color='#06436e')
+ax1.set_ylabel('Nombre')
+ax1.grid(axis='y', alpha=0.3)
+ax1.spines['top'].set_visible(False)
+ax1.spines['right'].set_visible(False)
+
+# Charge totale
+charges = [1700, 2100, 1200]
+ax2.bar(types, charges, color=colors, edgecolor='white', linewidth=2)
+for i, v in enumerate(charges):
+    ax2.text(i, v + 30, f'{v} K€', ha='center', fontweight='bold', color='#06436e')
+ax2.set_title('Charge sinistres (K€)', fontsize=12, fontweight='bold', color='#06436e')
+ax2.set_ylabel('Montant (K€)')
+ax2.grid(axis='y', alpha=0.3)
+ax2.spines['top'].set_visible(False)
+ax2.spines['right'].set_visible(False)
+
+plt.suptitle('La règle 80/20 : 15% des sinistres = 66% de la charge', fontsize=13, fontweight='bold', color='#06436e', y=1.02)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Attention**
+
+Les sinistres **graves et catastrophiques**, bien que rares, peuvent représenter plus de la moitié de la charge totale. Leur modélisation nécessite des techniques spécifiques : théorie des valeurs extrêmes, distributions à queue lourde (Pareto, GPD). C'est aussi pourquoi la **réassurance** est indispensable.
+:::
+
+## Le seuil de gravité
+
+Chaque assureur définit un **seuil** au-delà duquel un sinistre est qualifié de "grave". Ce seuil dépend de la branche et du portefeuille :
+
+| Branche | Seuil typique |
+|---------|--------------|
+| Auto matériel | 50 000 € |
+| Auto corporel | 200 000 € |
+| MRH | 100 000 € |
+| RC Professionnelle | 500 000 € |
 
 ---
 
-# Indicateurs clés : S/P, fréquence
+# Indicateurs de sinistralité
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Les quatre indicateurs fondamentaux
+
+### Ratio S/P (Sinistres sur Primes)
+
+$$S/P = \frac{\text{Charge de sinistres}}{\text{Primes acquises}}$$
+
+Un S/P de 70% signifie que 70 centimes de chaque euro de prime servent à payer les sinistres. Un S/P supérieur à 100% indique une **perte technique**.
+
+### Fréquence
+
+$$f = \frac{\text{Nombre de sinistres}}{\text{Exposition}}$$
+
+### Sévérité (coût moyen)
+
+$$s = \frac{\text{Charge de sinistres}}{\text{Nombre de sinistres}}$$
+
+### Relation fondamentale
+
+$$\text{Prime pure} = f \times s = \text{Fréquence} \times \text{Sévérité}$$
+
+C'est la **décomposition fréquence × sévérité**, base de toute la tarification actuarielle.
+
+```{python}
+#| label: fig-sp-evolution
+#| fig-cap: "Évolution du ratio S/P sur 5 ans par branche"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+annees = [2019, 2020, 2021, 2022, 2023]
+sp_auto = [68, 72, 65, 70, 74]
+sp_mrh = [55, 85, 60, 58, 62]
+sp_rc = [75, 78, 80, 82, 79]
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(annees, sp_auto, 'o-', color='#06436e', linewidth=2.5, markersize=8, label='Auto')
+ax.plot(annees, sp_mrh, 's-', color='#f8d65c', linewidth=2.5, markersize=8, label='MRH')
+ax.plot(annees, sp_rc, '^-', color='#fe4454', linewidth=2.5, markersize=8, label='RC Pro')
+ax.axhline(y=100, color='red', linestyle='--', alpha=0.4, label='Seuil de perte')
+ax.axhspan(65, 75, alpha=0.1, color='green', label='Zone cible (65-75%)')
+
+ax.set_xlabel('Année', fontsize=11)
+ax.set_ylabel('S/P (%)', fontsize=11)
+ax.set_title('Évolution du ratio S/P par branche', fontsize=14, fontweight='bold', color='#06436e')
+ax.legend(loc='upper left')
+ax.grid(True, alpha=0.3)
+ax.set_ylim(40, 110)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.exemple-box}
+**📝 Lecture du graphique**
+
+Observe le pic du S/P MRH en 2020 (85%) : il correspond à un événement climatique majeur (tempête Alex). Ce type de pic illustre pourquoi la **réassurance** est indispensable pour lisser la volatilité. L'auto reste plus stable car les sinistres sont moins corrélés.
+:::
 
 ---
 
-# Réserves et IBNR
+# Réserves et provisions
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Pourquoi provisionner ?
+
+L'assureur encaisse les primes **avant** de payer les sinistres. Il doit constituer des **réserves** pour honorer ses engagements futurs :
+
+| Type de réserve | Description | Méthode d'estimation |
+|----------------|-------------|---------------------|
+| **PSAP** | Provision pour Sinistres À Payer (dossiers ouverts) | Évaluation dossier par dossier |
+| **IBNR** | Incurred But Not Reported (survenus, non déclarés) | Chain Ladder, Bornhuetter-Ferguson |
+| **IBNER** | Incurred But Not Enough Reserved (sous-évalués) | Ajustement des réserves existantes |
+
+```{python}
+#| label: fig-reserves
+#| fig-cap: "Décomposition des réserves techniques d'un portefeuille auto"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+
+categories = ['PSAP\n(Dossiers ouverts)', 'IBNR\n(Non déclarés)', 'IBNER\n(Sous-évalués)']
+montants = [4500, 1800, 700]
+colors = ['#06436e', '#2fe8f0', '#f8d65c']
+
+fig, ax = plt.subplots(figsize=(8, 5))
+bars = ax.bar(categories, montants, color=colors, edgecolor='white', linewidth=2, width=0.6)
+
+for bar, val in zip(bars, montants):
+    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 80,
+            f'{val:,} K€', ha='center', fontsize=12, fontweight='bold', color='#06436e')
+
+total = sum(montants)
+ax.axhline(y=0, color='black', linewidth=0.5)
+ax.set_ylabel('Montant (K€)', fontsize=11)
+ax.set_title(f'Réserves techniques — Total : {total:,} K€', fontsize=14, fontweight='bold', color='#06436e')
+ax.grid(axis='y', alpha=0.3)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Impact comptable majeur**
+
+Les réserves impactent directement le résultat de l'assureur. Une **sous-estimation** des IBNR améliore artificiellement le résultat de l'année en cours, mais détériore les résultats futurs quand les sinistres se révèlent. C'est un enjeu de **gouvernance** majeur, surveillé de près par l'ACPR (Autorité de Contrôle Prudentiel et de Résolution).
+:::
+
+## Le triangle de développement (aperçu)
+
+Les IBNR sont estimés à l'aide de **triangles de liquidation** — un tableau qui montre comment les sinistres d'une même année de survenance se développent au fil du temps. Ce sujet sera approfondi dans les modules 6 et 7.
 
 ---
 
-# Suivi temporel
+# Suivi de la sinistralité dans le temps
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Analyse par génération vs par exercice
+
+Deux approches pour suivre la sinistralité :
+
+- **Par exercice** (année comptable) : tous les flux financiers de l'année, quelle que soit l'année de survenance
+- **Par génération** (année de survenance) : tous les sinistres survenus la même année, quel que soit le moment du paiement
+
+:::{.concept-cle}
+**💡 Point clé**
+
+L'analyse par **génération** est plus pertinente car elle isole le risque réel d'une période donnée. L'analyse par exercice mélange les paiements de sinistres anciens et récents, ce qui brouille la lecture des tendances.
+:::
+
+## Signaux d'alerte
+
+Le suivi temporel permet de détecter des tendances inquiétantes :
+
+| Signal | Causes possibles | Action |
+|--------|-----------------|--------|
+| Fréquence en hausse | Changement de comportement, fraude, évolution réglementaire | Resserrer la souscription, revoir les exclusions |
+| Sévérité en hausse | Inflation des coûts, évolution jurisprudentielle | Ajuster les réserves, revoir les franchises |
+| S/P en hausse | Tarification insuffisante, anti-sélection | Augmenter les tarifs, resegmenter |
+
+:::{.exemple-box}
+**📝 Lien avec le projet central**
+
+Dans ton projet de pilotage de portefeuille, le suivi de ces indicateurs dans le temps sera au cœur du dashboard. Tu construiras des vues par génération, par segment et par garantie pour détecter les dérives.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts fondamentaux à retenir
+
+1. **Le sinistre suit un processus** — De la survenance à la clôture, chaque étape génère des données exploitables
+2. **Attritionnels ≠ Graves ≠ Catastrophiques** — Trois dynamiques très différentes à modéliser séparément
+3. **Prime pure = Fréquence × Sévérité** — La décomposition fondamentale de la tarification
+4. **Les IBNR sont un risque caché** — Les sinistres non encore déclarés doivent être provisionnés
+5. **L'analyse par génération est plus fiable** — Elle isole le risque réel d'une période donnée
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Qu'est-ce qu'un sinistre IBNR et pourquoi est-il problématique ?
+
+**Réponse** : Un **IBNR** (Incurred But Not Reported) est un sinistre qui s'est déjà produit mais dont l'assureur n'a pas encore connaissance. Il est problématique car l'assureur doit le provisionner sans connaître ni son existence ni son montant. Les IBNR sont estimés par des méthodes actuarielles (Chain Ladder, Bornhuetter-Ferguson) et leur sous-estimation peut fausser gravement le résultat technique.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Pourquoi le S/P seul ne suffit pas pour juger la rentabilité ?
+
+**Réponse** : Le S/P ne tient compte que des sinistres rapportés aux primes. Il ignore les **frais de gestion**, les **frais d'acquisition** et le **coût du capital**. Le **combined ratio** (S/P + ratio de frais) est plus complet. Un S/P de 70% peut correspondre à une perte si les frais représentent 35% des primes (combined ratio = 105%).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Pourquoi modéliser séparément sinistres attritionnels et graves ?
+
+**Réponse** : Leurs comportements statistiques sont très différents. Les **attritionnels** sont nombreux et prévisibles (loi des grands nombres), modélisables par des distributions classiques (Poisson/Gamma). Les **graves** sont rares et imprévisibles, avec des distributions à queue lourde (Pareto, GPD). Les mélanger dans un même modèle dégrade la qualité des estimations.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Quelle différence entre l'analyse par exercice et par génération ?
+
+**Réponse** : L'analyse par **exercice** prend les flux comptables de l'année (paiements + variations de réserves), toutes générations confondues. L'analyse par **génération** regroupe tous les sinistres survenus la même année. La génération est plus pertinente car elle isole le risque réel : un exercice peut paraître bon simplement parce que des boni sur d'anciennes générations compensent une mauvaise sinistralité courante.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **S/P** | Ratio Sinistres sur Primes — indicateur clé de rentabilité technique |
+| **IBNR** | Incurred But Not Reported — sinistres survenus mais non déclarés |
+| **IBNER** | Incurred But Not Enough Reserved — sinistres connus mais sous-provisionnés |
+| **PSAP** | Provision pour Sinistres À Payer — réserve pour les dossiers ouverts |
+| **Fréquence** | Nombre de sinistres rapporté à l'exposition |
+| **Sévérité** | Coût moyen d'un sinistre |
+| **Combined ratio** | S/P + ratio de frais — mesure complète de la rentabilité technique |
+| **Génération** | Ensemble des sinistres survenus la même année |
+
+---
+
+# Ressources complémentaires {.unnumbered}
+
+- **Denuit & Charpentier** — *Mathématiques de l'assurance non-vie* (tome 1)
+- **Klugman, Panjer & Willmot** — *Loss Models: From Data to Decisions*
+- **ACPR** — Rapports annuels sur la situation des assureurs français
 
 ---
 

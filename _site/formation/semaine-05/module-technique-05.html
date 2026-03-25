@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 5 — AWS — Introduction et S3</title>
+<title>François BOUSSENGUI | Module Technique 5 — AWS : Introduction et S3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,6 +137,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -188,7 +225,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 5 — AWS — Introduction et S3">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 5 — AWS : Introduction et S3">
 <meta property="og:description" content="Découvrir le cloud et le stockage objet">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +234,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 5 — AWS — Introduction et S3">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 5 — AWS : Introduction et S3">
 <meta name="twitter:description" content="Découvrir le cloud et le stockage objet">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -421,6 +458,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -477,7 +543,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 5 — AWS — Introduction et S3</h1>
+      <h1 class="title">Module Technique 5 — AWS : Introduction et S3</h1>
             <p class="subtitle lead">Découvrir le cloud et le stockage objet</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">aws</div>
@@ -500,7 +566,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +582,31 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#pourquoi-le-cloud-aws" id="toc-pourquoi-le-cloud-aws" class="nav-link active" data-scroll-target="#pourquoi-le-cloud-aws"><span class="header-section-number">1</span> Pourquoi le cloud AWS</a></li>
-  <li><a href="#concepts-aws-fondamentaux" id="toc-concepts-aws-fondamentaux" class="nav-link" data-scroll-target="#concepts-aws-fondamentaux"><span class="header-section-number">2</span> Concepts AWS fondamentaux</a></li>
-  <li><a href="#s3-stockage-objet" id="toc-s3-stockage-objet" class="nav-link" data-scroll-target="#s3-stockage-objet"><span class="header-section-number">3</span> S3 stockage objet</a></li>
-  <li><a href="#aws-cli" id="toc-aws-cli" class="nav-link" data-scroll-target="#aws-cli"><span class="header-section-number">4</span> AWS CLI</a></li>
-  <li><a href="#boto3-python" id="toc-boto3-python" class="nav-link" data-scroll-target="#boto3-python"><span class="header-section-number">5</span> boto3 Python</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#pourquoi-le-cloud" id="toc-pourquoi-le-cloud" class="nav-link" data-scroll-target="#pourquoi-le-cloud"><span class="header-section-number">1</span> Pourquoi le cloud ?</a>
+  <ul class="collapse">
+  <li><a href="#comparaison-on-premise-vs-cloud" id="toc-comparaison-on-premise-vs-cloud" class="nav-link" data-scroll-target="#comparaison-on-premise-vs-cloud"><span class="header-section-number">1.1</span> Comparaison on-premise vs cloud</a></li>
+  <li><a href="#les-services-aws-essentiels" id="toc-les-services-aws-essentiels" class="nav-link" data-scroll-target="#les-services-aws-essentiels"><span class="header-section-number">1.2</span> Les services AWS essentiels</a></li>
+  </ul></li>
+  <li><a href="#s3-le-stockage-objet" id="toc-s3-le-stockage-objet" class="nav-link" data-scroll-target="#s3-le-stockage-objet"><span class="header-section-number">2</span> S3 : le stockage objet</a>
+  <ul class="collapse">
+  <li><a href="#concepts-fondamentaux" id="toc-concepts-fondamentaux" class="nav-link" data-scroll-target="#concepts-fondamentaux"><span class="header-section-number">2.1</span> Concepts fondamentaux</a></li>
+  <li><a href="#classes-de-stockage" id="toc-classes-de-stockage" class="nav-link" data-scroll-target="#classes-de-stockage"><span class="header-section-number">2.2</span> Classes de stockage</a></li>
+  </ul></li>
+  <li><a href="#aws-cli" id="toc-aws-cli" class="nav-link" data-scroll-target="#aws-cli"><span class="header-section-number">3</span> AWS CLI</a>
+  <ul class="collapse">
+  <li><a href="#installation-et-configuration" id="toc-installation-et-configuration" class="nav-link" data-scroll-target="#installation-et-configuration"><span class="header-section-number">3.1</span> Installation et configuration</a></li>
+  <li><a href="#opérations-courantes" id="toc-opérations-courantes" class="nav-link" data-scroll-target="#opérations-courantes"><span class="header-section-number">3.2</span> Opérations courantes</a></li>
+  </ul></li>
+  <li><a href="#boto3-s3-en-python" id="toc-boto3-s3-en-python" class="nav-link" data-scroll-target="#boto3-s3-en-python"><span class="header-section-number">4</span> boto3 : S3 en Python</a>
+  <ul class="collapse">
+  <li><a href="#opérations-de-base" id="toc-opérations-de-base" class="nav-link" data-scroll-target="#opérations-de-base"><span class="header-section-number">4.1</span> Opérations de base</a></li>
+  <li><a href="#lire-un-csv-directement-depuis-s3" id="toc-lire-un-csv-directement-depuis-s3" class="nav-link" data-scroll-target="#lire-un-csv-directement-depuis-s3"><span class="header-section-number">4.2</span> Lire un CSV directement depuis S3</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">4.2.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +618,262 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="pourquoi-le-cloud-aws" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi le cloud AWS</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Expliquer</strong> les avantages du cloud pour la data science</li>
+<li><strong>Naviguer</strong> dans l’écosystème AWS (régions, services)</li>
+<li><strong>Créer</strong> et configurer un bucket S3</li>
+<li><strong>Manipuler</strong> des fichiers avec AWS CLI</li>
+<li><strong>Utiliser</strong> boto3 pour interagir avec S3 en Python</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Docker, Git, Python</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="pourquoi-le-cloud" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi le cloud ?</h1>
+<section id="comparaison-on-premise-vs-cloud" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="comparaison-on-premise-vs-cloud"><span class="header-section-number">1.1</span> Comparaison on-premise vs cloud</h2>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 33%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Critère</th>
+<th>On-premise</th>
+<th>Cloud (AWS)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Coût initial</strong></td>
+<td>Élevé (serveurs, infra)</td>
+<td>Faible (pay-as-you-go)</td>
+</tr>
+<tr class="even">
+<td><strong>Scalabilité</strong></td>
+<td>Limitée, délai d’achat</td>
+<td>Quasi-illimitée, instantanée</td>
+</tr>
+<tr class="odd">
+<td><strong>Maintenance</strong></td>
+<td>À ta charge</td>
+<td>Gérée par AWS</td>
+</tr>
+<tr class="even">
+<td><strong>Disponibilité</strong></td>
+<td>Variable</td>
+<td>99.99% (SLA)</td>
+</tr>
+<tr class="odd">
+<td><strong>Sécurité</strong></td>
+<td>Tu gères tout</td>
+<td>Modèle de responsabilité partagée</td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Pour la data science</strong>, le cloud permet de lancer un GPU pour entraîner un modèle en 2 heures, puis de l’éteindre. Pas besoin d’acheter une machine à 10 000 € qui dort 95% du temps.</p>
+</div>
+</section>
+<section id="les-services-aws-essentiels" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="les-services-aws-essentiels"><span class="header-section-number">1.2</span> Les services AWS essentiels</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    subgraph Stockage
+        S3[S3 — Stockage objet]
+    end
+    subgraph Compute
+        EC2[EC2 — Machines virtuelles]
+        Lambda[Lambda — Serverless]
+    end
+    subgraph Base de données
+        RDS[RDS — SQL managé]
+    end
+    subgraph ML
+        SM[SageMaker — ML]
+    end
+
+    S3 --&gt; EC2
+    S3 --&gt; Lambda
+    S3 --&gt; SM
+    EC2 --&gt; RDS
+    Lambda --&gt; RDS
+</pre>
+</div>
+<p></p><figcaption> Services AWS pour la data science</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
 <hr>
 </section>
-<section id="concepts-aws-fondamentaux" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Concepts AWS fondamentaux</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="s3-le-stockage-objet" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> S3 : le stockage objet</h1>
+<section id="concepts-fondamentaux" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="concepts-fondamentaux"><span class="header-section-number">2.1</span> Concepts fondamentaux</h2>
+<p>Amazon S3 (Simple Storage Service) organise les données en <strong>objets</strong> dans des <strong>buckets</strong> :</p>
+<ul>
+<li><strong>Bucket</strong> : conteneur de niveau supérieur (nom unique <strong>globalement</strong> sur tout AWS)</li>
+<li><strong>Objet</strong> : fichier + métadonnées, identifié par une <strong>clé</strong> (chemin)</li>
+<li><strong>Versioning</strong> : garder l’historique des modifications d’un objet</li>
+</ul>
+<div class="exemple-box">
+<p><strong>📝 Cas d’usage en assurance</strong></p>
+<ul>
+<li>Stocker les datasets bruts (CSV, Parquet) des sinistres</li>
+<li>Archiver les modèles entraînés (fichiers .pkl, .joblib)</li>
+<li>Héberger les rapports générés (PDF, HTML)</li>
+<li>Partager des données entre équipes</li>
+</ul>
+</div>
+</section>
+<section id="classes-de-stockage" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="classes-de-stockage"><span class="header-section-number">2.2</span> Classes de stockage</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Classe</th>
+<th>Usage</th>
+<th>Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>S3 Standard</strong></td>
+<td>Accès fréquent</td>
+<td>~0.023 $/Go/mois</td>
+</tr>
+<tr class="even">
+<td><strong>S3 Infrequent Access</strong></td>
+<td>Accès rare</td>
+<td>~0.0125 $/Go/mois</td>
+</tr>
+<tr class="odd">
+<td><strong>S3 Glacier</strong></td>
+<td>Archivage long terme</td>
+<td>~0.004 $/Go/mois</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="s3-stockage-objet" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> S3 stockage objet</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="aws-cli" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> AWS CLI</h1>
+<section id="installation-et-configuration" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="installation-et-configuration"><span class="header-section-number">3.1</span> Installation et configuration</h2>
+<div class="terminal-box">
+<p><span class="comment"># Installer AWS CLI</span><br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; pip install awscli&lt;br&gt;&lt;br&gt;
+&lt;span class="comment"&gt;# Configurer les identifiants&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> aws configure<br> <span class="output">AWS Access Key ID: AKIA…</span><br> <span class="output">AWS Secret Access Key: ****</span><br> <span class="output">Default region name: eu-west-1</span><br> <span class="output">Default output format: json</span></p>
+</div>
+</section>
+<section id="opérations-courantes" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="opérations-courantes"><span class="header-section-number">3.2</span> Opérations courantes</h2>
+<div class="terminal-box">
+<p><span class="comment"># Créer un bucket</span><br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; aws s3 mb s3://mon-portefeuille-assurance&lt;br&gt;&lt;br&gt;
+&lt;span class="comment"&gt;# Uploader un fichier&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> aws s3 cp data/sinistres.csv s3://mon-portefeuille-assurance/data/<br><br> <span class="comment"># Lister le contenu</span><br> <span class="prompt"><span class="math inline">\(&lt;/span&gt; aws s3 ls s3://mon-portefeuille-assurance/data/&lt;br&gt;
+&lt;span class="output"&gt;2024-01-15 10:30:00    2456789 sinistres.csv&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+&lt;span class="comment"&gt;# Synchroniser un dossier entier&lt;/span&gt;&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> aws s3 sync ./data/ s3://mon-portefeuille-assurance/data/<br><br> <span class="comment"># Télécharger</span><br> <span class="prompt">$</span> aws s3 cp s3://mon-portefeuille-assurance/data/sinistres.csv ./local/</p>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Sécurité</strong></p>
+<p>Ne jamais mettre tes clés AWS dans le code source ou sur GitHub. Utiliser <code>aws configure</code> (stocke dans <code>~/.aws/credentials</code>) ou des <strong>variables d’environnement</strong>. En CI/CD, utiliser les GitHub Secrets.</p>
+</div>
 <hr>
 </section>
-<section id="aws-cli" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> AWS CLI</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="boto3-s3-en-python" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> boto3 : S3 en Python</h1>
+<section id="opérations-de-base" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="opérations-de-base"><span class="header-section-number">4.1</span> Opérations de base</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un client S3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> boto3.client(<span class="st">'s3'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Upload un fichier</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>s3.upload_file(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    Filename<span class="op">=</span><span class="st">'data/sinistres.csv'</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    Bucket<span class="op">=</span><span class="st">'mon-portefeuille-assurance'</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    Key<span class="op">=</span><span class="st">'data/sinistres.csv'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Download un fichier</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>s3.download_file(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    Bucket<span class="op">=</span><span class="st">'mon-portefeuille-assurance'</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Key<span class="op">=</span><span class="st">'data/sinistres.csv'</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    Filename<span class="op">=</span><span class="st">'local/sinistres.csv'</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Lister les objets</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> s3.list_objects_v2(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    Bucket<span class="op">=</span><span class="st">'mon-portefeuille-assurance'</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    Prefix<span class="op">=</span><span class="st">'data/'</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> obj <span class="kw">in</span> response.get(<span class="st">'Contents'</span>, []):</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>obj[<span class="st">'Key'</span>]<span class="sc">}</span><span class="ss"> — </span><span class="sc">{</span>obj[<span class="st">'Size'</span>] <span class="op">/</span> <span class="dv">1024</span><span class="sc">:.1f}</span><span class="ss"> Ko"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lire-un-csv-directement-depuis-s3" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="lire-un-csv-directement-depuis-s3"><span class="header-section-number">4.2</span> Lire un CSV directement depuis S3</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> boto3.client(<span class="st">'s3'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> s3.get_object(Bucket<span class="op">=</span><span class="st">'mon-bucket'</span>, Key<span class="op">=</span><span class="st">'data/sinistres.csv'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(StringIO(response[<span class="st">'Body'</span>].read().decode(<span class="st">'utf-8'</span>)))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dataset : </span><span class="sc">{</span><span class="bu">len</span>(df)<span class="sc">}</span><span class="ss"> lignes, </span><span class="sc">{</span><span class="bu">len</span>(df.columns)<span class="sc">}</span><span class="ss"> colonnes"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>En production, les données sont rarement sur ton disque local. Elles sont sur S3 (ou un data lake). Savoir lire/écrire sur S3 avec boto3 est une compétence essentielle pour un data scientist en entreprise.</p>
+</div>
 <hr>
 </section>
-<section id="boto3-python" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> boto3 Python</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
-<hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">4.2.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>Le cloud = flexibilité et scalabilité</strong> — Pay-as-you-go, pas d’investissement matériel</li>
+<li><strong>S3 = stockage objet</strong> — Buckets + objets, pas un système de fichiers classique</li>
+<li><strong>AWS CLI pour les opérations rapides</strong> — cp, sync, ls depuis le terminal</li>
+<li><strong>boto3 pour l’automatisation Python</strong> — Upload, download, listing en script</li>
+<li><strong>Sécurité : jamais de clés dans le code</strong> — aws configure ou variables d’environnement</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +884,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Quels sont les avantages du cloud pour un data scientist ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Scalabilité instantanée (GPU à la demande), pay-as-you-go (pas d’investissement), services managés (pas de maintenance), collaboration facilitée (données centralisées), haute disponibilité (99.99%).</p>
 </div>
 </div>
 </div>
@@ -587,13 +900,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Différence entre un bucket et un objet S3 ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Un <strong>bucket</strong> est un conteneur de niveau supérieur avec un nom unique global. Un <strong>objet</strong> est un fichier stocké dans un bucket, identifié par sa <strong>clé</strong> (chemin). Exemple : bucket <code>mon-projet</code>, objet <code>data/sinistres.csv</code>.</p>
 </div>
 </div>
 </div>
@@ -603,13 +916,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Comment sécuriser ses identifiants AWS ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Utiliser <code>aws configure</code> (stocke dans <code>~/.aws/credentials</code>), des variables d’environnement, ou des GitHub Secrets en CI/CD. Ne <strong>jamais</strong> mettre les clés dans le code source, les commits Git, ou les Dockerfiles.</p>
 </div>
 </div>
 </div>
@@ -619,13 +932,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Comment lire un CSV depuis S3 directement en pandas ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Avec boto3 : récupérer l’objet avec <code>s3.get_object()</code>, lire le body, décoder en UTF-8, et passer à <code>pd.read_csv()</code> via <code>StringIO</code>. Alternative : <code>pd.read_csv('s3://bucket/key')</code> avec le package <code>s3fs</code> installé.</p>
 </div>
 </div>
 </div>

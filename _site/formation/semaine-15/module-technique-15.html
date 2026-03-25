@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 15 — Projet Central — Feature engineering</title>
+<title>François BOUSSENGUI | Module Technique 15 – Projet Central : Feature engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,7 +188,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 15 — Projet Central — Feature engineering">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 15 – Projet Central : Feature engineering">
 <meta property="og:description" content="Variables actuarielles et encodage">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +197,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 15 — Projet Central — Feature engineering">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 15 – Projet Central : Feature engineering">
 <meta name="twitter:description" content="Variables actuarielles et encodage">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -477,11 +477,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 15 — Projet Central — Feature engineering</h1>
+      <h1 class="title">Module Technique 15 – Projet Central : Feature engineering</h1>
             <p class="subtitle lead">Variables actuarielles et encodage</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
                 <div class="quarto-category">features</div>
+                <div class="quarto-category">encodage</div>
               </div>
                   </div>
   </div>
@@ -492,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#feature-engineering-assurance" id="toc-feature-engineering-assurance" class="nav-link active" data-scroll-target="#feature-engineering-assurance"><span class="header-section-number">1</span> Feature engineering assurance</a></li>
-  <li><a href="#variables-actuarielles" id="toc-variables-actuarielles" class="nav-link" data-scroll-target="#variables-actuarielles"><span class="header-section-number">2</span> Variables actuarielles</a></li>
-  <li><a href="#encodage-catégorielles" id="toc-encodage-catégorielles" class="nav-link" data-scroll-target="#encodage-catégorielles"><span class="header-section-number">3</span> Encodage catégorielles</a></li>
-  <li><a href="#sélection-variables" id="toc-sélection-variables" class="nav-link" data-scroll-target="#sélection-variables"><span class="header-section-number">4</span> Sélection variables</a></li>
-  <li><a href="#pipeline-features" id="toc-pipeline-features" class="nav-link" data-scroll-target="#pipeline-features"><span class="header-section-number">5</span> Pipeline features</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#feature-engineering-assurance-anciennete-du" id="toc-feature-engineering-assurance-anciennete-du" class="nav-link active" data-scroll-target="#feature-engineering-assurance-anciennete-du"><span class="header-section-number">1</span> Feature engineering assurance : anciennete du</a></li>
+  <li><a href="#variables-derivees-ratio-sinistresanciennete-densite" id="toc-variables-derivees-ratio-sinistresanciennete-densite" class="nav-link" data-scroll-target="#variables-derivees-ratio-sinistresanciennete-densite"><span class="header-section-number">2</span> Variables derivees : ratio sinistres/anciennete, densite</a></li>
+  <li><a href="#encodage-target-encoding-pour-les" id="toc-encodage-target-encoding-pour-les" class="nav-link" data-scroll-target="#encodage-target-encoding-pour-les"><span class="header-section-number">3</span> Encodage : target encoding pour les</a></li>
+  <li><a href="#selection-importance-par-permutation-vif" id="toc-selection-importance-par-permutation-vif" class="nav-link" data-scroll-target="#selection-importance-par-permutation-vif"><span class="header-section-number">4</span> Selection : importance par permutation, VIF</a></li>
+  <li><a href="#pipeline-scikit-learn-columntransformer-pipeline" id="toc-pipeline-scikit-learn-columntransformer-pipeline" class="nav-link" data-scroll-target="#pipeline-scikit-learn-columntransformer-pipeline"><span class="header-section-number">5</span> Pipeline scikit-learn : ColumnTransformer + Pipeline</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -532,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="feature-engineering-assurance" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Feature engineering assurance</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="feature-engineering-assurance-anciennete-du" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Feature engineering assurance : anciennete du</h1>
+<p>Feature engineering assurance : anciennete du contrat, CRM, zone tarifaire, age du vehicule, puissance, km/an.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="variables-actuarielles" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Variables actuarielles</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="variables-derivees-ratio-sinistresanciennete-densite" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Variables derivees : ratio sinistres/anciennete, densite</h1>
+<p>Variables derivees : ratio sinistres/anciennete, densite de la zone.</p>
 <hr>
 </section>
-<section id="encodage-catégorielles" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Encodage catégorielles</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="encodage-target-encoding-pour-les" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Encodage : target encoding pour les</h1>
+<p>Encodage : target encoding pour les zones (beaucoup de modalites), one-hot pour les categories a peu de modalites.</p>
 <hr>
 </section>
-<section id="sélection-variables" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Sélection variables</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="selection-importance-par-permutation-vif" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Selection : importance par permutation, VIF</h1>
+<p>Selection : importance par permutation, VIF pour la multicolinearite, forward selection.</p>
 <hr>
 </section>
-<section id="pipeline-features" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Pipeline features</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="pipeline-scikit-learn-columntransformer-pipeline" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Pipeline scikit-learn : ColumnTransformer + Pipeline</h1>
+<p>Pipeline scikit-learn : ColumnTransformer + Pipeline pour la reproductibilite.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>Feature engineering assurance : anciennete du contrat, CRM</strong></li>
+<li><strong>Variables derivees : ratio sinistres/anciennete, densite de la</strong></li>
+<li><strong>Encodage : target encoding pour les zones (beaucoup</strong></li>
+<li><strong>Selection : importance par permutation, VIF pour la</strong></li>
+<li><strong>Pipeline scikit-learn : ColumnTransformer + Pipeline pour la</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -576,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -592,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -608,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -624,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 15</a> <a href="fiche-travail-15.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 15</a> <a href="fiche-travail-15.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

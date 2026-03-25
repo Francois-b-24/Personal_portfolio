@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs</title>
+<title>François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs de pilotage</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs">
-<meta property="og:description" content="S/P, combined ratio et CLV">
+<meta property="og:title" content="François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs de pilotage">
+<meta property="og:description" content="S/P, combined ratio, CLV et tableaux de bord">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs">
-<meta name="twitter:description" content="S/P, combined ratio et CLV">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 11 — Rentabilité et Indicateurs de pilotage">
+<meta name="twitter:description" content="S/P, combined ratio, CLV et tableaux de bord">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -421,6 +421,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -477,11 +506,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 11 — Rentabilité et Indicateurs</h1>
-            <p class="subtitle lead">S/P, combined ratio et CLV</p>
+      <h1 class="title">Module 11 — Rentabilité et Indicateurs de pilotage</h1>
+            <p class="subtitle lead">S/P, combined ratio, CLV et tableaux de bord</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">rentabilité</div>
+                <div class="quarto-category">indicateurs</div>
                 <div class="quarto-category">pilotage</div>
               </div>
                   </div>
@@ -500,7 +530,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +546,30 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#sp-net-et-brut" id="toc-sp-net-et-brut" class="nav-link active" data-scroll-target="#sp-net-et-brut"><span class="header-section-number">1</span> S/P net et brut</a></li>
-  <li><a href="#combined-ratio" id="toc-combined-ratio" class="nav-link" data-scroll-target="#combined-ratio"><span class="header-section-number">2</span> Combined ratio</a></li>
-  <li><a href="#customer-lifetime-value" id="toc-customer-lifetime-value" class="nav-link" data-scroll-target="#customer-lifetime-value"><span class="header-section-number">3</span> Customer Lifetime Value</a></li>
-  <li><a href="#tableaux-de-bord" id="toc-tableaux-de-bord" class="nav-link" data-scroll-target="#tableaux-de-bord"><span class="header-section-number">4</span> Tableaux de bord</a></li>
-  <li><a href="#alertes-et-seuils" id="toc-alertes-et-seuils" class="nav-link" data-scroll-target="#alertes-et-seuils"><span class="header-section-number">5</span> Alertes et seuils</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#sp-net-et-brut" id="toc-sp-net-et-brut" class="nav-link" data-scroll-target="#sp-net-et-brut"><span class="header-section-number">1</span> S/P net et brut</a>
+  <ul class="collapse">
+  <li><a href="#les-nuances-du-ratio-de-sinistralité" id="toc-les-nuances-du-ratio-de-sinistralité" class="nav-link" data-scroll-target="#les-nuances-du-ratio-de-sinistralité"><span class="header-section-number">1.1</span> Les nuances du ratio de sinistralité</a></li>
+  </ul></li>
+  <li><a href="#le-combined-ratio" id="toc-le-combined-ratio" class="nav-link" data-scroll-target="#le-combined-ratio"><span class="header-section-number">2</span> Le combined ratio</a>
+  <ul class="collapse">
+  <li><a href="#la-mesure-complète-de-rentabilité" id="toc-la-mesure-complète-de-rentabilité" class="nav-link" data-scroll-target="#la-mesure-complète-de-rentabilité"><span class="header-section-number">2.1</span> La mesure complète de rentabilité</a></li>
+  </ul></li>
+  <li><a href="#customer-lifetime-value-clv" id="toc-customer-lifetime-value-clv" class="nav-link" data-scroll-target="#customer-lifetime-value-clv"><span class="header-section-number">3</span> Customer Lifetime Value (CLV)</a>
+  <ul class="collapse">
+  <li><a href="#valeur-dun-client-dans-le-temps" id="toc-valeur-dun-client-dans-le-temps" class="nav-link" data-scroll-target="#valeur-dun-client-dans-le-temps"><span class="header-section-number">3.1</span> Valeur d’un client dans le temps</a></li>
+  </ul></li>
+  <li><a href="#tableaux-de-bord-de-pilotage" id="toc-tableaux-de-bord-de-pilotage" class="nav-link" data-scroll-target="#tableaux-de-bord-de-pilotage"><span class="header-section-number">4</span> Tableaux de bord de pilotage</a>
+  <ul class="collapse">
+  <li><a href="#kpis-essentiels" id="toc-kpis-essentiels" class="nav-link" data-scroll-target="#kpis-essentiels"><span class="header-section-number">4.1</span> KPIs essentiels</a></li>
+  <li><a href="#alertes-et-gouvernance" id="toc-alertes-et-gouvernance" class="nav-link" data-scroll-target="#alertes-et-gouvernance"><span class="header-section-number">4.2</span> Alertes et gouvernance</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-concepts-à-retenir" id="toc-les-5-concepts-à-retenir" class="nav-link" data-scroll-target="#les-5-concepts-à-retenir"><span class="header-section-number">4.2.1</span> 🎯 Les 5 concepts à retenir</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glossaire" id="toc-glossaire" class="nav-link" data-scroll-target="#glossaire">Glossaire</a></li>
   </ul>
 </nav>
     </div>
@@ -533,34 +580,252 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Distinguer</strong> S/P net et brut et leurs usages</li>
+<li><strong>Calculer</strong> le combined ratio et ses composantes</li>
+<li><strong>Estimer</strong> la Customer Lifetime Value (CLV) en assurance</li>
+<li><strong>Concevoir</strong> un tableau de bord de pilotage technique</li>
+<li><strong>Définir</strong> des alertes et seuils pertinents</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules 4-10 (sinistralité, tarification)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
 <section id="sp-net-et-brut" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> S/P net et brut</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="les-nuances-du-ratio-de-sinistralité" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="les-nuances-du-ratio-de-sinistralité"><span class="header-section-number">1.1</span> Les nuances du ratio de sinistralité</h2>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 39%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ratio</th>
+<th>Formule</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>S/P brut</strong></td>
+<td>Charge brute / Primes brutes</td>
+<td>Performance du portefeuille direct</td>
+</tr>
+<tr class="even">
+<td><strong>S/P net de réassurance</strong></td>
+<td>Charge nette / Primes nettes</td>
+<td>Performance après cession</td>
+</tr>
+<tr class="odd">
+<td><strong>S/P comptable</strong></td>
+<td>Charge exercice / Primes acquises</td>
+<td>Résultat comptable de l’année</td>
+</tr>
+<tr class="even">
+<td><strong>S/P par génération</strong></td>
+<td>Charge ultime / Primes acquises</td>
+<td>Analyse du risque par année de survenance</td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Le S/P brut reflète la qualité technique du portefeuille. Le S/P net mesure le résultat réel après réassurance. Un portefeuille peut avoir un S/P brut de 110% (perte) mais un S/P net de 85% (bénéfice) grâce à la réassurance qui absorbe les sinistres graves.</p>
+</div>
 <hr>
 </section>
-<section id="combined-ratio" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Combined ratio</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="le-combined-ratio" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Le combined ratio</h1>
+<section id="la-mesure-complète-de-rentabilité" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="la-mesure-complète-de-rentabilité"><span class="header-section-number">2.1</span> La mesure complète de rentabilité</h2>
+<p>Le S/P ne suffit pas — il faut aussi intégrer les <strong>frais</strong> :</p>
+<p><span class="math display">\[\text{Combined Ratio} = \underbrace{\frac{\text{Sinistres}}{\text{Primes}}}_{\text{S/P}} + \underbrace{\frac{\text{Frais}}{\text{Primes}}}_{\text{Ratio de frais}}\]</span></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Composante</th>
+<th>Calcul</th>
+<th>Cible</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>S/P</strong></td>
+<td>Charge sinistres / Primes</td>
+<td>65-75%</td>
+</tr>
+<tr class="even">
+<td><strong>Ratio de frais de gestion</strong></td>
+<td>Frais internes / Primes</td>
+<td>5-10%</td>
+</tr>
+<tr class="odd">
+<td><strong>Ratio de frais d’acquisition</strong></td>
+<td>Commissions / Primes</td>
+<td>15-25%</td>
+</tr>
+<tr class="even">
+<td><strong>Combined Ratio</strong></td>
+<td>Total</td>
+<td>&lt; 100%</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 115.0)</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-combined-ratio" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-combined-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-11_files/figure-html/fig-combined-ratio-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Décomposition du combined ratio par branche
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Combined Ratio &gt; 100%</strong></p>
+<p>Un CR &gt; 100% signifie que l’activité technique est <strong>déficitaire</strong> : les primes ne couvrent pas les sinistres + frais. L’assureur peut quand même être rentable grâce aux <strong>produits financiers</strong> (placement des primes encaissées avant paiement des sinistres), mais c’est une situation fragile.</p>
+</div>
 <hr>
 </section>
-<section id="customer-lifetime-value" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Customer Lifetime Value</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="customer-lifetime-value-clv" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Customer Lifetime Value (CLV)</h1>
+<section id="valeur-dun-client-dans-le-temps" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="valeur-dun-client-dans-le-temps"><span class="header-section-number">3.1</span> Valeur d’un client dans le temps</h2>
+<p>La CLV mesure la <strong>valeur totale</strong> qu’un client apporte pendant toute la durée de sa relation :</p>
+<p><span class="math display">\[\text{CLV} = \sum_{t=1}^{T} \frac{\text{Marge}_t}{(1+r)^t} \times p_t\]</span></p>
+<p>où <span class="math inline">\(p_t\)</span> = probabilité que le client soit encore là en année <span class="math inline">\(t\)</span> et <span class="math inline">\(r\)</span> = taux d’actualisation.</p>
+<div class="exemple-box">
+<p><strong>📝 Calcul simplifié</strong></p>
+<p>Un client auto paye 500 €/an de prime, avec un combined ratio de 95% (marge = 5% = 25 €/an) et un taux de rétention de 85% par an :</p>
+<p><span class="math display">\[\text{CLV} = 25 \times \frac{0.85}{1 - 0.85} = 25 \times 5.67 = 142 \text{ €}\]</span></p>
+<p>Ce client vaut 142 € actualisés. Si l’acquisition coûte 100 €, il est rentable. Si elle coûte 200 €, il faut revoir le canal d’acquisition ou la politique de rétention.</p>
+</div>
+<div class="concept-cle">
+<p><strong>💡 La CLV change la perspective</strong></p>
+<p>Sans CLV, un client qui coûte 100 € à acquérir et génère 25 €/an de marge semble peu rentable. Avec CLV, on comprend que sur sa durée de vie (5-7 ans en moyenne), il rapporte bien plus que son coût d’acquisition. C’est un outil de pilotage <strong>stratégique</strong>.</p>
+</div>
 <hr>
 </section>
-<section id="tableaux-de-bord" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Tableaux de bord</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="tableaux-de-bord-de-pilotage" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Tableaux de bord de pilotage</h1>
+<section id="kpis-essentiels" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="kpis-essentiels"><span class="header-section-number">4.1</span> KPIs essentiels</h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 28%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Niveau</th>
+<th>KPI</th>
+<th>Fréquence</th>
+<th>Seuil d’alerte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Portefeuille</strong></td>
+<td>Combined ratio</td>
+<td>Mensuel</td>
+<td>&gt; 100%</td>
+</tr>
+<tr class="even">
+<td><strong>Portefeuille</strong></td>
+<td>S/P par génération</td>
+<td>Trimestriel</td>
+<td>&gt; 80%</td>
+</tr>
+<tr class="odd">
+<td><strong>Commercial</strong></td>
+<td>Taux de résiliation</td>
+<td>Mensuel</td>
+<td>&gt; 15%</td>
+</tr>
+<tr class="even">
+<td><strong>Commercial</strong></td>
+<td>Nouvelles affaires (mix risque)</td>
+<td>Mensuel</td>
+<td>S/P NA &gt; S/P stock</td>
+</tr>
+<tr class="odd">
+<td><strong>Technique</strong></td>
+<td>Fréquence de sinistres</td>
+<td>Mensuel</td>
+<td>Hausse &gt; 5% vs N-1</td>
+</tr>
+<tr class="even">
+<td><strong>Technique</strong></td>
+<td>Sévérité moyenne</td>
+<td>Trimestriel</td>
+<td>Hausse &gt; inflation + 3%</td>
+</tr>
+<tr class="odd">
+<td><strong>Financier</strong></td>
+<td>CLV moyenne</td>
+<td>Trimestriel</td>
+<td>Baisse &gt; 10%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alertes-et-gouvernance" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="alertes-et-gouvernance"><span class="header-section-number">4.2</span> Alertes et gouvernance</h2>
+<p>Un bon système d’alertes :</p>
+<ol type="1">
+<li><strong>Détecte</strong> automatiquement les dépassements de seuil</li>
+<li><strong>Notifie</strong> les bonnes personnes (actuaire, direction technique)</li>
+<li><strong>Documente</strong> l’analyse et les actions prises</li>
+<li><strong>Suit</strong> l’efficacité des actions dans le temps</li>
+</ol>
 <hr>
 </section>
-<section id="alertes-et-seuils" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Alertes et seuils</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
-<hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="les-5-concepts-à-retenir" class="level3 synthese-card" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="les-5-concepts-à-retenir"><span class="header-section-number">4.2.1</span> 🎯 Les 5 concepts à retenir</h3>
+<ol type="1">
+<li><strong>S/P seul ne suffit pas</strong> — Le combined ratio intègre aussi les frais</li>
+<li><strong>CR &lt; 100% = rentable techniquement</strong> — Au-dessus, on dépend des produits financiers</li>
+<li><strong>La CLV valorise la relation client</strong> — Acquisition, rétention, marge dans le temps</li>
+<li><strong>Les KPIs doivent être actionnables</strong> — Pas seulement descriptifs</li>
+<li><strong>Alertes automatiques</strong> — Détecter les dérives avant qu’elles ne soient irréversibles</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +836,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Un assureur a un CR de 103%. Est-il nécessairement en perte ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Non. Le CR ne mesure que la <strong>rentabilité technique</strong>. L’assureur peut être globalement rentable grâce aux <strong>produits financiers</strong> (placement des provisions). Mais c’est une situation fragile : si les taux baissent ou si la sinistralité se dégrade encore, les produits financiers ne compenseront plus.</p>
 </div>
 </div>
 </div>
@@ -587,13 +852,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Pourquoi la CLV est-elle importante pour la politique de rétention ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : La CLV quantifie ce que l’on <strong>perd</strong> quand un client part. Si la CLV d’un bon client est de 500 € et qu’une action de rétention coûte 50 €, l’investissement est largement rentable. Sans CLV, on ne sait pas combien investir pour retenir un client.</p>
 </div>
 </div>
 </div>
@@ -603,13 +868,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Quel KPI surveiller en priorité pour détecter une spirale de dégradation ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Le <strong>taux de résiliation par profil de risque</strong>. Si les bons clients partent (résiliants avec un S/P &lt; moyenne du portefeuille), c’est le signal le plus précoce d’anti-sélection. Le S/P lui-même est un indicateur retardé — il ne se dégrade qu’après le départ des bons risques.</p>
 </div>
 </div>
 </div>
@@ -619,16 +884,54 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Différence entre S/P par exercice et S/P par génération ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : S/P par <strong>exercice</strong> = tous les flux comptables de l’année (paiements + variations réserves de toutes générations). S/P par <strong>génération</strong> = charge ultime des sinistres d’une année de survenance / primes acquises de cette année. La génération isole le risque réel, l’exercice peut être trompeur (boni/mali sur anciennes générations).</p>
 </div>
 </div>
 </div>
+<hr>
+</section>
+<section id="glossaire" class="level1 unnumbered">
+<h1 class="unnumbered">Glossaire</h1>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Combined ratio</strong></td>
+<td>S/P + ratio de frais — mesure de rentabilité technique globale</td>
+</tr>
+<tr class="even">
+<td><strong>CLV</strong></td>
+<td>Customer Lifetime Value — valeur actualisée d’un client</td>
+</tr>
+<tr class="odd">
+<td><strong>Taux de rétention</strong></td>
+<td>% de clients qui renouvellent leur contrat</td>
+</tr>
+<tr class="even">
+<td><strong>KPI</strong></td>
+<td>Key Performance Indicator — indicateur clé de performance</td>
+</tr>
+<tr class="odd">
+<td><strong>Produits financiers</strong></td>
+<td>Revenus des placements des provisions</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 11</a> <a href="module-technique-11.html" class="btn btn-primary">Voir le Module Technique 11 →</a></p>
 

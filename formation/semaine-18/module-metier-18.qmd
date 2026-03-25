@@ -1,9 +1,9 @@
 ---
-title: "Module 18 — Révision Bloc IV-V"
+title: "Module 18 -- Revision Bloc IV-V"
 subtitle: "Pilotage et Data Science"
-author: "François Boussengui"
+author: "Francois Boussengui"
 date: last-modified
-categories: [assurance, révision, pilotage]
+categories: [assurance, revision, pilotage]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,65 +11,111 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Synthèse pilotage
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
----
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
 
-# Synthèse data science
+# Synthese pilotage : S/P, combined ratio
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Synthese pilotage : S/P, combined ratio, CLV, KPIs, alertes.
 
----
+:::{.concept-cle}
+**Point cle**
 
-# Exercices intégrés
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Lien indicateurs-modèles
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Préparation projet
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Synthèse {.unnumbered}
-
-Les concepts clés à retenir.
+Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.
+:::
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Synthese Solvabilite II : 3 piliers
+
+Synthese Solvabilite II : 3 piliers, SCR/MCR, ORSA, impact tarification.
+
+---
+
+# Synthese MLOps : cycle de vie
+
+Synthese MLOps : cycle de vie, monitoring, drift, gouvernance.
+
+:::{.attention-box}
+**Attention**
+
+Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.
+:::
+
+---
+
+# Exercices multi-blocs : a partir d'un
+
+Exercices multi-blocs : a partir d'un portefeuille complet, calculer les indicateurs, identifier les problemes, proposer un plan d'action.
+
+---
+
+# Vision d'ensemble du parcours metier
+
+Vision d'ensemble du parcours metier.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les concepts cles
+
+1. **Synthese pilotage : S/P, combined ratio, CLV, KPIs**
+2. **Synthese Solvabilite II : 3 piliers, SCR/MCR, ORSA**
+3. **Synthese MLOps : cycle de vie, monitoring, drift**
+4. **Exercices multi-blocs : a partir d'un portefeuille complet**
+5. **Vision d'ensemble du parcours metier**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ---
 
-[← Retour à la Semaine 18](index.html){.btn .btn-secondary}
-[Voir le Module Technique 18 →](module-technique-18.html){.btn .btn-primary}
+[<- Retour a la Semaine 18](index.html){.btn .btn-secondary}
+[Voir le Module Technique 18 ->](module-technique-18.html){.btn .btn-primary}

@@ -7,46 +7,130 @@ toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 4 — Sinistralité — Concepts fondamentaux</strong></p>
-        <ul>
-            <li>Le processus sinistre</li>
-            <li>Types de sinistres</li>
-            <li>Indicateurs clés : S/P, fréquence</li>
-            <li>Réserves et IBNR</li>
-            <li>Suivi temporel</li>
+        <ul class="track-topics">
+            <li>Le processus sinistre (déclaration → règlement)</li>
+            <li>Types de sinistres (attritionnels, graves, catastrophiques)</li>
+            <li>Indicateurs clés : S/P, fréquence, sévérité</li>
+            <li>Réserves et provisions (IBNR, IBNER)</li>
+            <li>Suivi de la sinistralité dans le temps</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module Technique 4 — CI/CD avec GitHub Actions</strong></p>
-        <ul>
-            <li>Concepts CI/CD</li>
-            <li>Workflows GitHub Actions</li>
-            <li>Tests pytest</li>
-            <li>Linting automatique</li>
+        <ul class="track-topics">
+            <li>Concepts CI/CD et leurs bénéfices</li>
+            <li>Structure d'un workflow GitHub Actions</li>
+            <li>Tests automatisés avec pytest</li>
+            <li>Linting et formatage (black, flake8)</li>
             <li>Déploiement continu</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Le processus sinistre (déclaration → règlement)</li>
+        <li>Types de sinistres (attritionnels, graves, catastrophiques)</li>
+        <li>Indicateurs clés : S/P, fréquence, sévérité</li>
+        <li>Réserves et provisions (IBNR, IBNER)</li>
+        <li>Suivi de la sinistralité dans le temps</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Concepts CI/CD et leurs bénéfices</li>
+        <li>Structure d'un workflow GitHub Actions</li>
+        <li>Tests automatisés avec pytest</li>
+        <li>Linting et formatage (black, flake8)</li>
+        <li>Déploiement continu</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Le processus sinistre | Concepts CI/CD |
-| **Jour 2** | Types de sinistres | Workflows GitHub Actions |
-| **Jour 3** | Indicateurs clés : S/P, fréquence | Tests pytest |
-| **Jour 4** | Réserves et IBNR | Linting automatique |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Le processus sinistre (déclaration → règlement) | Concepts CI/CD et leurs bénéfices |
+| **Jour 2** | Types de sinistres (attritionnels, graves, catastrophiques) | Structure d'un workflow GitHub Actions |
+| **Jour 3** | Indicateurs clés : S/P, fréquence, sévérité | Tests automatisés avec pytest |
+| **Jour 4** | Réserves et provisions (IBNR, IBNER) | Linting et formatage (black, flake8) |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 4](module-metier-04.html)
-- [Module Technique 4](module-technique-04.html)
-- [Fiche de travail](fiche-travail-04.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-04.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 4</div>
+        <div class="nav-card-desc">Sinistralité — Concepts fondamentaux</div>
+    </a>
+    <a href="module-technique-04.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 4</div>
+        <div class="nav-card-desc">CI/CD avec GitHub Actions</div>
+    </a>
+    <a href="fiche-travail-04.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Module 6 — Évolution des sinistres"
-subtitle: "Triangles de liquidation et Chain Ladder"
+subtitle: "Triangles de liquidation et méthode Chain Ladder"
 author: "François Boussengui"
 date: last-modified
 categories: [assurance, triangles, chain-ladder]
@@ -11,63 +11,250 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Développement des sinistres
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** le développement des sinistres dans le temps
+2. **Construire** un triangle de liquidation
+3. **Appliquer** la méthode Chain Ladder pas à pas
+4. **Calculer** les facteurs de développement
+5. **Projeter** les charges ultimes et identifier les limites
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 4-5 (sinistralité, fréquence/sévérité)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Triangles de liquidation
+# Le développement des sinistres
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Pourquoi les sinistres évoluent-ils ?
+
+Un sinistre n'est presque jamais réglé instantanément. Entre la survenance et le paiement final, il peut s'écouler des mois, voire des années :
+
+| Branche | Délai moyen de règlement | Développement |
+|---------|-------------------------|---------------|
+| Auto matériel | 3-6 mois | Court |
+| Auto corporel | 2-5 ans | Long |
+| MRH | 6-12 mois | Moyen |
+| RC médicale | 5-10 ans | Très long |
+| Construction (décennale) | Jusqu'à 12 ans | Très long |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Plus le développement est long, plus l'incertitude sur la charge ultime est grande. Pour les branches longues (corporel, RC), les réserves à l'ouverture peuvent être très éloignées du coût final — d'où l'importance des triangles de liquidation.
+:::
+
+## Le phénomène de développement
+
+Au fil du temps, la charge cumulée d'une génération de sinistres augmente :
+
+- **Année 1** : déclarations initiales, premières évaluations
+- **Année 2** : expertises, révisions de réserves, premiers paiements importants
+- **Année 3+** : paiements complémentaires, recours, clôture progressive
 
 ---
 
-# Méthode Chain Ladder
+# Le triangle de liquidation
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Construction
+
+Un triangle de liquidation organise les données par **année de survenance** (lignes) et **année de développement** (colonnes) :
+
+```{python}
+#| label: fig-triangle
+#| fig-cap: "Triangle de liquidation — Charges cumulées (K€)"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Triangle de charges cumulées (K€)
+triangle = np.array([
+    [3200, 4100, 4500, 4650, 4700],
+    [3500, 4400, 4850, 5000, np.nan],
+    [3800, 4900, 5350, np.nan, np.nan],
+    [3400, 4300, np.nan, np.nan, np.nan],
+    [3600, np.nan, np.nan, np.nan, np.nan],
+])
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Afficher comme un tableau coloré
+annees_surv = [2019, 2020, 2021, 2022, 2023]
+devs = ['Année 1', 'Année 2', 'Année 3', 'Année 4', 'Année 5']
+
+for i in range(5):
+    for j in range(5):
+        val = triangle[i, j]
+        if not np.isnan(val):
+            color = '#06436e'
+            alpha = 0.1 + 0.15 * j
+            ax.add_patch(plt.Rectangle((j, 4-i), 1, 1, fill=True, color='#06436e', alpha=alpha))
+            ax.text(j+0.5, 4-i+0.5, f'{val:.0f}', ha='center', va='center',
+                    fontsize=11, fontweight='bold', color='white' if j > 1 else '#06436e')
+        else:
+            ax.add_patch(plt.Rectangle((j, 4-i), 1, 1, fill=True, color='#fee2e2', alpha=0.5))
+            ax.text(j+0.5, 4-i+0.5, '?', ha='center', va='center', fontsize=14, color='#fe4454')
+
+ax.set_xlim(0, 5)
+ax.set_ylim(0, 5)
+ax.set_xticks([0.5+i for i in range(5)])
+ax.set_xticklabels(devs)
+ax.set_yticks([0.5+i for i in range(5)])
+ax.set_yticklabels(annees_surv[::-1])
+ax.set_xlabel('Développement', fontsize=11)
+ax.set_ylabel('Année de survenance', fontsize=11)
+ax.set_title('Triangle de liquidation — Charges cumulées (K€)', fontsize=14, fontweight='bold', color='#06436e')
+ax.set_aspect('equal')
+plt.tight_layout()
+plt.show()
+```
+
+Les cases **bleues** contiennent les données observées. Les cases **rouges** (?) sont les valeurs à projeter — c'est l'objectif du Chain Ladder.
 
 ---
 
-# Facteurs de développement
+# La méthode Chain Ladder
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Principe
+
+Chain Ladder suppose que les **facteurs de développement** sont constants d'une génération à l'autre :
+
+$$f_j = \frac{\sum_i C_{i,j+1}}{\sum_i C_{i,j}}$$
+
+où $C_{i,j}$ est la charge cumulée de la génération $i$ au développement $j$.
+
+## Calcul pas à pas
+
+À partir du triangle ci-dessus :
+
+| Développement | Facteur $f_j$ | Interprétation |
+|--------------|---------------|----------------|
+| 1 → 2 | $f_1 = \frac{4100+4400+4900+4300}{3200+3500+3800+3400} = 1.271$ | +27.1% entre année 1 et 2 |
+| 2 → 3 | $f_2 = \frac{4500+4850+5350}{4100+4400+4900} = 1.097$ | +9.7% entre année 2 et 3 |
+| 3 → 4 | $f_3 = \frac{4650+5000}{4500+4850} = 1.032$ | +3.2% entre année 3 et 4 |
+| 4 → 5 | $f_4 = \frac{4700}{4650} = 1.011$ | +1.1% entre année 4 et 5 |
+
+:::{.exemple-box}
+**📝 Projection de la génération 2023**
+
+- Année 1 observée : 3 600 K€
+- Année 2 projetée : 3 600 × 1.271 = **4 576 K€**
+- Année 3 projetée : 4 576 × 1.097 = **5 020 K€**
+- Année 4 projetée : 5 020 × 1.032 = **5 181 K€**
+- **Charge ultime** : 5 181 × 1.011 = **5 238 K€**
+:::
+
+## IBNR estimés
+
+$$\text{IBNR}_i = \text{Charge ultime}_i - \text{Charge observée}_i$$
+
+Pour la génération 2023 : IBNR = 5 238 - 3 600 = **1 638 K€**
 
 ---
 
-# Projection des charges ultimes
+# Limites et alternatives
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+:::{.attention-box}
+**⚠️ Hypothèses du Chain Ladder**
+
+1. **Stabilité des facteurs** : les patterns de développement passés se reproduisent
+2. **Indépendance des générations** : pas de changement structurel
+3. **Volume suffisant** : les facteurs sont estimés sur assez de données
+
+Si une de ces hypothèses est violée (changement de gestion, inflation brutale, changement réglementaire), Chain Ladder peut donner des résultats aberrants.
+:::
+
+**Alternatives** :
+
+- **Bornhuetter-Ferguson** : combine Chain Ladder avec une estimation a priori (module 7)
+- **Mack** : Chain Ladder avec intervalles de confiance
+- **GLM sur triangles** : modélisation statistique plus flexible
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **Les sinistres se développent dans le temps** — Le coût ultime n'est connu qu'après clôture
+2. **Le triangle organise les données** — Lignes = générations, colonnes = développement
+3. **Chain Ladder projette avec des facteurs** — $f_j$ supposés stables dans le temps
+4. **IBNR = Charge ultime - Charge observée** — Ce qu'il reste à payer
+5. **L'hypothèse de stabilité est critique** — À vérifier systématiquement
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Qu'est-ce qu'un triangle de liquidation ?
+
+**Réponse** : Un tableau à double entrée avec en lignes les **années de survenance** (générations) et en colonnes les **années de développement**. Chaque cellule contient la charge cumulée des sinistres de cette génération à ce stade de développement. La partie inférieure droite est vide — c'est elle qu'on cherche à remplir.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Comment calcule-t-on un facteur de développement Chain Ladder ?
+
+**Réponse** : $f_j = \frac{\sum_i C_{i,j+1}}{\sum_i C_{i,j}}$ — c'est le ratio des charges cumulées entre deux périodes successives, moyenné sur toutes les générations disponibles. Il mesure la croissance moyenne de la charge entre le développement $j$ et $j+1$.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Pourquoi Chain Ladder peut-il donner des résultats aberrants ?
+
+**Réponse** : Si les hypothèses sont violées : changement de politique de gestion des sinistres (réserves plus conservatrices), inflation brutale des coûts, changement réglementaire, événement exceptionnel (pandémie). Les facteurs passés ne reflètent plus le développement futur.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Quelle est la différence entre Chain Ladder et Bornhuetter-Ferguson ?
+
+**Réponse** : **Chain Ladder** projette uniquement à partir des données observées (bottom-up). **Bornhuetter-Ferguson** combine les données observées avec une estimation a priori de la charge ultime (ex : prime × S/P attendu). BF est plus robuste quand les premières données de développement sont peu fiables.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Triangle de liquidation** | Tableau charges cumulées par génération × développement |
+| **Facteur de développement** | Ratio de croissance entre deux périodes successives |
+| **Chain Ladder** | Méthode de projection basée sur les facteurs de développement |
+| **Charge ultime** | Coût total et définitif d'une génération de sinistres |
+| **IBNR** | Charge ultime − Charge observée = montant restant à provisionner |
 
 ---
 

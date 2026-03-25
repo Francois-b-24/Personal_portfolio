@@ -1,9 +1,9 @@
 ---
-title: "Module 12 — Solvabilité II"
-subtitle: "Les 3 piliers et cadre réglementaire"
+title: "Module 12 — Solvabilité II et Cadre réglementaire"
+subtitle: "Les 3 piliers, SCR, MCR et ORSA"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, solvabilité]
+categories: [assurance, solvabilité, réglementation]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,62 +11,151 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Pourquoi Solvabilité II
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** pourquoi Solvabilité II existe
+2. **Décrire** les 3 piliers et leurs exigences
+3. **Distinguer** SCR et MCR
+4. **Expliquer** le rôle de l'ORSA
+5. **Mesurer** l'impact sur la gestion technique
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 1-11
+:::
+:::{div}
+⏱️ **Temps estimé** : 2 à 3 heures
+:::
+:::
 
 ---
 
-# Pilier 1 SCR MCR
+# Pourquoi Solvabilité II ?
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Solvabilité I (1973) utilisait des règles simples (% des primes). Solvabilité II (2016) introduit une approche **basée sur les risques** : le capital requis est proportionnel aux risques pris.
 
----
-
-# Pilier 2 gouvernance ORSA
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+:::{.concept-cle}
+**💡 Solvabilité II** protège les assurés en garantissant que l'assureur a assez de capital pour survivre même en cas de scénario défavorable (probabilité 99.5% de survie à 1 an).
+:::
 
 ---
 
-# Pilier 3 reporting
+# Les 3 piliers
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{mermaid}
+%%| fig-cap: "Les 3 piliers de Solvabilité II"
+
+flowchart TD
+    S2[Solvabilité II] --> P1[Pilier 1 — Quantitatif]
+    S2 --> P2[Pilier 2 — Qualitatif]
+    S2 --> P3[Pilier 3 — Reporting]
+    P1 --> P1a[SCR / MCR<br>Provisions Best Estimate]
+    P2 --> P2a[ORSA<br>Gouvernance<br>Fonctions clés]
+    P3 --> P3a[SFCR public<br>RSR régulateur<br>QRT trimestriels]
+```
+
+## Pilier 1 : exigences quantitatives
+
+Le **SCR** (Solvency Capital Requirement) est le capital pour absorber des pertes à 99.5% sur 1 an. Le **MCR** (Minimum Capital Requirement) est le plancher absolu (25-45% du SCR).
+
+| Ratio | Conséquence |
+|-------|-------------|
+| SCR > 100% | Situation normale |
+| SCR < 100% | Plan de redressement sous 3 mois |
+| MCR < 100% | Retrait d'agrément possible |
+
+## Pilier 2 : gouvernance et ORSA
+
+L'**ORSA** est l'auto-évaluation prospective (3-5 ans) des risques. Fonctions clés obligatoires : actuariat, gestion des risques, compliance, audit interne.
+
+## Pilier 3 : reporting
+
+| Rapport | Destinataire | Fréquence |
+|---------|-------------|-----------|
+| **SFCR** | Public | Annuel |
+| **RSR** | ACPR | Annuel |
+| **QRT** | ACPR | Trimestriel/Annuel |
 
 ---
 
-# Impact gestion technique
+# Impact sur la gestion technique
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+| Domaine | Impact |
+|---------|--------|
+| **Provisionnement** | Best Estimate obligatoire + marge de risque |
+| **Tarification** | Le SCR pèse sur le coût du capital → intégré dans la prime |
+| **Réassurance** | Réduit le SCR → optimisation du capital |
+| **Modélisation** | Documentation et validation des modèles exigées |
+| **Data quality** | Qualité des données = exigence réglementaire |
+
+:::{.exemple-box}
+**📝 Lien avec le projet central** : tes modèles de fréquence/sévérité alimentent le Best Estimate (Pilier 1). MLflow assure la traçabilité (Pilier 2). Les KPIs du dashboard contribuent au reporting (Pilier 3).
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **Solvabilité II est basée sur les risques** — Plus de risques = plus de capital
+2. **SCR = capital cible à 99.5%** — MCR = plancher absolu
+3. **3 piliers complémentaires** — Quantitatif + Qualitatif + Reporting
+4. **L'ORSA est l'auto-évaluation** — Vision prospective des risques
+5. **Impact direct sur la tarification** — Le coût du capital entre dans la prime
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Différence SCR vs MCR ?
+
+**Réponse** : Le SCR est le capital cible pour absorber les pertes à 99.5% de confiance. Le MCR est le minimum absolu. En dessous du SCR → plan de redressement. En dessous du MCR → retrait d'agrément.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Qu'est-ce que l'ORSA ?
+
+**Réponse** : L'Own Risk and Solvency Assessment est l'auto-évaluation par l'assureur de ses risques et de l'adéquation de son capital sur 3-5 ans, incluant des scénarios de stress.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Comment Solvabilité II impacte la tarification ?
+
+**Réponse** : L'assureur immobilise du capital (SCR) pour chaque risque souscrit. Ce capital a un coût (rémunération des actionnaires) répercuté dans la prime commerciale.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : En quoi la réassurance optimise le capital ?
+
+**Réponse** : En cédant du risque au réassureur, l'assureur réduit son SCR. Le capital libéré peut servir à souscrire de nouvelles affaires ou rémunérer les actionnaires.
 :::
 
 ---

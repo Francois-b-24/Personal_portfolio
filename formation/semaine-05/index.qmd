@@ -7,46 +7,130 @@ toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 5 — Fréquence et Sévérité</strong></p>
-        <ul>
-            <li>Décomposition fréquence x sévérité</li>
-            <li>Loi de Poisson</li>
-            <li>Loi lognormale et Gamma</li>
-            <li>Estimation des paramètres</li>
-            <li>Validation et diagnostic</li>
+        <ul class="track-topics">
+            <li>Décomposition fréquence × sévérité</li>
+            <li>Modélisation de la fréquence (loi de Poisson)</li>
+            <li>Modélisation de la sévérité (Gamma, lognormale)</li>
+            <li>Estimation par maximum de vraisemblance</li>
+            <li>Validation et diagnostics (QQ-plot, tests)</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module Technique 5 — AWS — Introduction et S3</strong></p>
-        <ul>
-            <li>Pourquoi le cloud AWS</li>
-            <li>Concepts AWS fondamentaux</li>
-            <li>S3 stockage objet</li>
-            <li>AWS CLI</li>
-            <li>boto3 Python</li>
+        <ul class="track-topics">
+            <li>Pourquoi le cloud AWS pour la data science</li>
+            <li>Services fondamentaux (S3, EC2, RDS, Lambda)</li>
+            <li>S3 : buckets, objets et versioning</li>
+            <li>AWS CLI : opérations courantes</li>
+            <li>boto3 : interagir avec S3 en Python</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Décomposition fréquence × sévérité</li>
+        <li>Modélisation de la fréquence (loi de Poisson)</li>
+        <li>Modélisation de la sévérité (Gamma, lognormale)</li>
+        <li>Estimation par maximum de vraisemblance</li>
+        <li>Validation et diagnostics (QQ-plot, tests)</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Pourquoi le cloud AWS pour la data science</li>
+        <li>Services fondamentaux (S3, EC2, RDS, Lambda)</li>
+        <li>S3 : buckets, objets et versioning</li>
+        <li>AWS CLI : opérations courantes</li>
+        <li>boto3 : interagir avec S3 en Python</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Décomposition fréquence x sévérité | Pourquoi le cloud AWS |
-| **Jour 2** | Loi de Poisson | Concepts AWS fondamentaux |
-| **Jour 3** | Loi lognormale et Gamma | S3 stockage objet |
-| **Jour 4** | Estimation des paramètres | AWS CLI |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Décomposition fréquence × sévérité | Pourquoi le cloud AWS pour la data science |
+| **Jour 2** | Modélisation de la fréquence (loi de Poisson) | Services fondamentaux (S3, EC2, RDS, Lambda) |
+| **Jour 3** | Modélisation de la sévérité (Gamma, lognormale) | S3 : buckets, objets et versioning |
+| **Jour 4** | Estimation par maximum de vraisemblance | AWS CLI : opérations courantes |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 5](module-metier-05.html)
-- [Module Technique 5](module-technique-05.html)
-- [Fiche de travail](fiche-travail-05.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-05.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 5</div>
+        <div class="nav-card-desc">Fréquence et Sévérité</div>
+    </a>
+    <a href="module-technique-05.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 5</div>
+        <div class="nav-card-desc">AWS — Introduction et S3</div>
+    </a>
+    <a href="fiche-travail-05.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

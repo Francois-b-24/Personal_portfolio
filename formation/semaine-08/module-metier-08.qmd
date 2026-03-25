@@ -1,6 +1,6 @@
 ---
 title: "Module 8 — Principes tarifaires"
-subtitle: "Tarification a priori, a posteriori et GLM"
+subtitle: "Tarification a priori, a posteriori et introduction aux GLM"
 author: "François Boussengui"
 date: last-modified
 categories: [assurance, tarification, GLM]
@@ -11,63 +11,284 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Tarification a priori vs a posteriori
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Distinguer** tarification a priori et a posteriori
+2. **Identifier** les variables tarifaires pertinentes
+3. **Comprendre** le cadre mathématique des GLM
+4. **Expliquer** le lien entre GLM et tarification
+5. **Décrire** le système bonus-malus et la crédibilité
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 4-7 (sinistralité, fréquence/sévérité, provisionnement)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Variables tarifaires
+# Tarification a priori
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Principe
+
+La tarification **a priori** estime le risque d'un assuré **avant** de l'observer, à partir de ses **caractéristiques observables** :
+
+| Variable | Type | Exemples |
+|----------|------|----------|
+| **Assuré** | Démographique | Âge, sexe (limité), zone géographique |
+| **Véhicule** | Technique | Puissance, carburant, âge du véhicule |
+| **Usage** | Comportemental | Km/an, usage pro/privé, garage |
+| **Historique** | Expérience | CRM (bonus-malus), ancienneté |
+
+La prime a priori est calculée par un **modèle statistique** (GLM) qui relie ces variables au risque :
+
+$$\text{Prime}_i = f(\text{Âge}_i, \text{Zone}_i, \text{Véhicule}_i, \ldots)$$
+
+:::{.concept-cle}
+**💡 Point clé**
+
+La tarification a priori répond à la question : "Quel est le risque attendu pour un assuré avec ces caractéristiques ?" C'est le **prix de base** du contrat, avant tout ajustement individuel.
+:::
+
+---
+
+# Tarification a posteriori
+
+## Le bonus-malus (CRM)
+
+La tarification **a posteriori** ajuste la prime en fonction de l'**expérience individuelle** de l'assuré :
+
+- **Bon conducteur** (pas de sinistre) → bonus : prime réduite
+- **Mauvais conducteur** (sinistres) → malus : prime augmentée
+
+Le système français de CRM (Coefficient de Réduction-Majoration) :
+
+| Situation | Coefficient | Impact |
+|-----------|------------|--------|
+| Pas de sinistre (1 an) | × 0.95 | -5% |
+| Pas de sinistre (13 ans) | × 0.50 | -50% (minimum) |
+| 1 sinistre responsable | × 1.25 | +25% |
+| Maximum | × 3.50 | +250% |
+
+:::{.exemple-box}
+**📝 Exemple**
+
+Un conducteur avec CRM = 0.60 (bon historique) et un autre avec CRM = 1.25 (sinistre récent) ayant le même profil a priori :
+
+- Prime a priori : 500 €
+- Conducteur A : 500 × 0.60 = **300 €**
+- Conducteur B : 500 × 1.25 = **625 €**
+
+La tarification a posteriori multiplie le risque par 2 entre ces deux profils.
+:::
+
+## Théorie de la crédibilité
+
+La crédibilité pondère l'expérience individuelle et l'expérience collective :
+
+$$\text{Prime} = Z \times \text{Expérience individuelle} + (1-Z) \times \text{Expérience collective}$$
+
+- $Z$ proche de 1 : beaucoup d'historique → on fait confiance à l'individu
+- $Z$ proche de 0 : peu d'historique → on se fie au groupe
 
 ---
 
 # Introduction aux GLM
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Pourquoi les GLM ?
+
+Les GLM (Generalized Linear Models) sont le **standard de l'industrie** pour la tarification non-vie car ils :
+
+- Modélisent des distributions non-normales (Poisson, Gamma)
+- Produisent des coefficients **interprétables** (relativités)
+- Permettent la décomposition fréquence × sévérité
+- Satisfont les exigences réglementaires de transparence
+
+## Structure d'un GLM
+
+Un GLM a trois composantes :
+
+1. **Distribution** : famille de la variable réponse (Poisson pour la fréquence, Gamma pour la sévérité)
+2. **Fonction de lien** : transforme la moyenne en prédicteur linéaire (log pour Poisson et Gamma)
+3. **Prédicteur linéaire** : combinaison linéaire des variables
+
+$$g(\mu_i) = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots$$
+
+Pour la fréquence (Poisson, lien log) :
+
+$$\ln(\lambda_i) = \beta_0 + \beta_{\text{âge}} x_{\text{âge}} + \beta_{\text{zone}} x_{\text{zone}} + \ldots$$
+
+$$\lambda_i = \exp(\beta_0 + \beta_{\text{âge}} x_{\text{âge}} + \beta_{\text{zone}} x_{\text{zone}} + \ldots)$$
+
+:::{.concept-cle}
+**💡 Interprétation multiplicative**
+
+Grâce au lien log, les coefficients s'interprètent de manière **multiplicative** : $\exp(\beta_j)$ est le facteur par lequel le risque est multiplié quand $x_j$ augmente d'une unité. C'est exactement ce dont on a besoin pour la tarification : des **relativités** par rapport à un profil de référence.
+:::
+
+## Exemple de relativités
+
+```{python}
+#| label: fig-relativites
+#| fig-cap: "Relativités tarifaires par variable (référence = 1.00)"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Relativités par âge
+ages = ['18-25', '26-35', '36-45', '46-55', '56-65', '65+']
+rel_age = [1.85, 1.15, 1.00, 0.90, 0.95, 1.20]
+colors_age = ['#fe4454' if r > 1.2 else '#f8d65c' if r > 1 else '#72f1b8' for r in rel_age]
+
+ax1.bar(ages, rel_age, color=colors_age, edgecolor='white', linewidth=2)
+ax1.axhline(y=1, color='#06436e', linestyle='--', linewidth=1.5, label='Référence')
+for i, v in enumerate(rel_age):
+    ax1.text(i, v + 0.03, f'{v:.2f}', ha='center', fontsize=10, fontweight='bold')
+ax1.set_title('Relativités par âge', fontsize=12, fontweight='bold', color='#06436e')
+ax1.set_ylabel('Relativité')
+ax1.legend()
+ax1.grid(axis='y', alpha=0.3)
+
+# Relativités par zone
+zones = ['Paris', 'Grande ville', 'Ville moyenne', 'Rural']
+rel_zone = [1.45, 1.20, 1.00, 0.75]
+colors_zone = ['#fe4454' if r > 1.2 else '#f8d65c' if r > 1 else '#72f1b8' for r in rel_zone]
+
+ax2.bar(zones, rel_zone, color=colors_zone, edgecolor='white', linewidth=2)
+ax2.axhline(y=1, color='#06436e', linestyle='--', linewidth=1.5, label='Référence')
+for i, v in enumerate(rel_zone):
+    ax2.text(i, v + 0.03, f'{v:.2f}', ha='center', fontsize=10, fontweight='bold')
+ax2.set_title('Relativités par zone', fontsize=12, fontweight='bold', color='#06436e')
+ax2.set_ylabel('Relativité')
+ax2.legend()
+ax2.grid(axis='y', alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+:::{.exemple-box}
+**📝 Lecture des relativités**
+
+Un jeune conducteur (18-25) à Paris a une relativité de $1.85 \times 1.45 = 2.68$ par rapport à la référence (36-45 ans, ville moyenne). Sa prime sera 2.68 fois plus élevée, toutes choses égales par ailleurs.
+:::
 
 ---
 
-# GLM et tarification
+# Le lien GLM → Tarification
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Du modèle au tarif
 
----
+```{mermaid}
+%%| fig-cap: "De l'estimation GLM au tarif commercial"
 
-# Bonus-malus
+flowchart LR
+    A[Données<br>historiques] --> B[GLM Fréquence<br>Poisson]
+    A --> C[GLM Sévérité<br>Gamma]
+    B --> D[Prime pure<br>= freq × sev]
+    C --> D
+    D --> E[+ Chargements<br>sécurité, frais]
+    E --> F[Prime<br>commerciale]
+    F --> G[× CRM<br>bonus-malus]
+    G --> H[Prime<br>finale]
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+:::{.attention-box}
+**⚠️ Contraintes opérationnelles**
+
+Le tarif issu du GLM est rarement appliqué tel quel. Il faut :
+
+- **Lisser** les écarts trop brutaux entre segments
+- **Respecter** les contraintes commerciales (prix maximum/minimum)
+- **Anticiper** la réaction du marché (élasticité-prix)
+- **Valider** avec la direction technique et le régulateur
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **A priori = caractéristiques** — Le profil de risque estimé avant toute observation
+2. **A posteriori = expérience** — Le bonus-malus ajuste selon l'historique individuel
+3. **GLM = standard de l'industrie** — Poisson (fréquence) + Gamma (sévérité)
+4. **Lien log → relativités multiplicatives** — Interprétation naturelle pour la tarification
+5. **Du modèle au tarif** — GLM + chargements + CRM = prime finale
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Différence a priori vs a posteriori ?
+
+**Réponse** : **A priori** : estimation du risque à partir des caractéristiques observables (âge, zone, véhicule) avant toute observation de sinistres. **A posteriori** : ajustement basé sur l'expérience individuelle (bonus-malus, historique sinistres). La prime finale combine les deux.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Pourquoi le lien log est-il adapté à la tarification ?
+
+**Réponse** : Le lien log produit des coefficients qui s'interprètent de manière **multiplicative** : $\exp(\beta)$ est une relativité. C'est naturel pour la tarification où on raisonne en "facteur multiplicatif par rapport à une référence". De plus, il garantit que la prédiction est toujours **positive** (une prime ne peut pas être négative).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Comment interpréter un coefficient GLM de 0.20 pour une variable "zone urbaine" ?
+
+**Réponse** : La relativité est $\exp(0.20) = 1.22$. Un assuré en zone urbaine a un risque **22% plus élevé** que la référence (zone rurale par exemple), toutes choses égales par ailleurs. Sa prime sera multipliée par 1.22.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Pourquoi ne peut-on pas appliquer le tarif GLM brut ?
+
+**Réponse** : Contraintes opérationnelles : lissage des écarts trop brutaux (un conducteur ne peut pas voir sa prime doubler d'un an sur l'autre), plafonds commerciaux, élasticité-prix (si le tarif est trop élevé, le client part), conformité réglementaire (non-discrimination), et validation par la direction technique.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Tarification a priori** | Estimation du risque avant observation, basée sur les caractéristiques |
+| **Tarification a posteriori** | Ajustement selon l'expérience individuelle (bonus-malus) |
+| **CRM** | Coefficient de Réduction-Majoration (bonus-malus français) |
+| **GLM** | Generalized Linear Model — modèle linéaire généralisé |
+| **Fonction de lien** | Transformation reliant la moyenne au prédicteur linéaire |
+| **Relativité** | Facteur multiplicatif du risque par rapport à une référence |
+| **Crédibilité** | Pondération entre expérience individuelle et collective |
 
 ---
 

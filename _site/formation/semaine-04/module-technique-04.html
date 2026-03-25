@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -103,6 +137,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -189,7 +226,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Module Technique 4 — CI/CD avec GitHub Actions">
-<meta property="og:description" content="Automatiser tests et déploiements">
+<meta property="og:description" content="Automatiser tests et déploiements pour fiabiliser tes projets">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -198,7 +235,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Module Technique 4 — CI/CD avec GitHub Actions">
-<meta name="twitter:description" content="Automatiser tests et déploiements">
+<meta name="twitter:description" content="Automatiser tests et déploiements pour fiabiliser tes projets">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -478,10 +515,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Module Technique 4 — CI/CD avec GitHub Actions</h1>
-            <p class="subtitle lead">Automatiser tests et déploiements</p>
+            <p class="subtitle lead">Automatiser tests et déploiements pour fiabiliser tes projets</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">ci-cd</div>
                 <div class="quarto-category">github-actions</div>
+                <div class="quarto-category">automatisation</div>
               </div>
                   </div>
   </div>
@@ -499,7 +537,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,12 +553,19 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#concepts-cicd" id="toc-concepts-cicd" class="nav-link active" data-scroll-target="#concepts-cicd"><span class="header-section-number">1</span> Concepts CI/CD</a></li>
-  <li><a href="#workflows-github-actions" id="toc-workflows-github-actions" class="nav-link" data-scroll-target="#workflows-github-actions"><span class="header-section-number">2</span> Workflows GitHub Actions</a></li>
-  <li><a href="#tests-pytest" id="toc-tests-pytest" class="nav-link" data-scroll-target="#tests-pytest"><span class="header-section-number">3</span> Tests pytest</a></li>
-  <li><a href="#linting-automatique" id="toc-linting-automatique" class="nav-link" data-scroll-target="#linting-automatique"><span class="header-section-number">4</span> Linting automatique</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#pourquoi-automatiser" id="toc-pourquoi-automatiser" class="nav-link" data-scroll-target="#pourquoi-automatiser"><span class="header-section-number">1</span> Pourquoi automatiser ?</a></li>
+  <li><a href="#structure-dun-workflow-github-actions" id="toc-structure-dun-workflow-github-actions" class="nav-link" data-scroll-target="#structure-dun-workflow-github-actions"><span class="header-section-number">2</span> Structure d’un workflow GitHub Actions</a></li>
+  <li><a href="#tests-automatisés-avec-pytest" id="toc-tests-automatisés-avec-pytest" class="nav-link" data-scroll-target="#tests-automatisés-avec-pytest"><span class="header-section-number">3</span> Tests automatisés avec pytest</a>
+  <ul class="collapse">
+  <li><a href="#écrire-des-tests-pour-lassurance" id="toc-écrire-des-tests-pour-lassurance" class="nav-link" data-scroll-target="#écrire-des-tests-pour-lassurance"><span class="header-section-number">3.1</span> Écrire des tests pour l’assurance</a></li>
+  </ul></li>
+  <li><a href="#linting-et-formatage" id="toc-linting-et-formatage" class="nav-link" data-scroll-target="#linting-et-formatage"><span class="header-section-number">4</span> Linting et formatage</a></li>
   <li><a href="#déploiement-continu" id="toc-déploiement-continu" class="nav-link" data-scroll-target="#déploiement-continu"><span class="header-section-number">5</span> Déploiement continu</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -532,34 +577,238 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="concepts-cicd" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Concepts CI/CD</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Expliquer</strong> les concepts de CI et CD et leurs bénéfices</li>
+<li><strong>Écrire</strong> un workflow GitHub Actions complet</li>
+<li><strong>Configurer</strong> des tests automatisés avec pytest</li>
+<li><strong>Mettre en place</strong> du linting et formatage automatique</li>
+<li><strong>Comprendre</strong> le déploiement continu</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Git, Docker, Python</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="pourquoi-automatiser" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi automatiser ?</h1>
+<p>Sans CI/CD, chaque développeur doit manuellement lancer les tests, vérifier le formatage, et déployer. Résultat : des oublis, des bugs en production, des déploiements risqués.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>CI (Intégration Continue)</th>
+<th>CD (Déploiement Continu)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Quand</strong></td>
+<td>À chaque push ou PR</td>
+<td>Après validation CI</td>
+</tr>
+<tr class="even">
+<td><strong>Quoi</strong></td>
+<td>Tests, linting, build</td>
+<td>Déploiement staging/prod</td>
+</tr>
+<tr class="odd">
+<td><strong>Objectif</strong></td>
+<td>Détecter les bugs tôt</td>
+<td>Livrer rapidement</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[📝 Push] --&gt; B[🔍 Lint]
+    B --&gt; C[🧪 Tests]
+    C --&gt; D{Tout passe ?}
+    D --&gt;|Oui| E[📦 Build]
+    D --&gt;|Non| F[❌ Alerte]
+    E --&gt; G[🚀 Deploy]
+</pre>
+</div>
+<p></p><figcaption> Pipeline CI/CD typique</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="concept-cle">
+<p><strong>💡 En data science</strong>, le CI/CD sert à valider que les modèles se chargent, que les prédictions sont cohérentes, et à déployer automatiquement les APIs de scoring.</p>
+</div>
 <hr>
 </section>
-<section id="workflows-github-actions" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Workflows GitHub Actions</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="structure-dun-workflow-github-actions" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Structure d’un workflow GitHub Actions</h1>
+<p>Un workflow est un fichier <code>.yml</code> dans <code>.github/workflows/</code> :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .github/workflows/ci.yml</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> CI Pipeline</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">,</span><span class="at"> develop</span><span class="kw">]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout code</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Setup Python</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3.10'</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>          pip install -r requirements.txt</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>          pip install pytest black flake8</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run linting</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>          black --check .</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          flake8 . --max-line-length 120</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Run tests</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pytest tests/ -v --tb=short</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Trigger</strong> (<code>on</code>)</td>
+<td>Événement déclencheur (push, PR, schedule)</td>
+</tr>
+<tr class="even">
+<td><strong>Job</strong></td>
+<td>Groupe de tâches sur une VM dédiée</td>
+</tr>
+<tr class="odd">
+<td><strong>Step</strong></td>
+<td>Étape individuelle dans un job</td>
+</tr>
+<tr class="even">
+<td><strong>Action</strong></td>
+<td>Module réutilisable (<code>actions/checkout@v4</code>)</td>
+</tr>
+<tr class="odd">
+<td><strong>Secret</strong></td>
+<td>Variable chiffrée pour données sensibles</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="tests-pytest" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Tests pytest</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="tests-automatisés-avec-pytest" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Tests automatisés avec pytest</h1>
+<section id="écrire-des-tests-pour-lassurance" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="écrire-des-tests-pour-lassurance"><span class="header-section-number">3.1</span> Écrire des tests pour l’assurance</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tests/test_sinistralite.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> models.sinistralite <span class="im">import</span> calculer_frequence, calculer_sp</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_frequence_normale():</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fréquence = nb_sinistres / exposition"""</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_frequence(<span class="dv">100</span>, <span class="dv">1000</span>) <span class="op">==</span> <span class="fl">0.1</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_frequence_zero_exposition():</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ZeroDivisionError</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        calculer_frequence(<span class="dv">10</span>, <span class="dv">0</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sp_normal():</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_sp(<span class="dv">70000</span>, <span class="dv">100000</span>) <span class="op">==</span> <span class="fl">0.7</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">"nb_sin,expo,expected"</span>, [</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">50</span>, <span class="dv">1000</span>, <span class="fl">0.05</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">100</span>, <span class="dv">1000</span>, <span class="fl">0.10</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">200</span>, <span class="dv">1000</span>, <span class="fl">0.20</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_frequence_parametrique(nb_sin, expo, expected):</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_frequence(nb_sin, expo) <span class="op">==</span> expected</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="terminal-box">
+<p><span class="prompt">$</span> pytest tests/ -v<br> <span class="output">tests/test_sinistralite.py::test_frequence_normale PASSED</span><br> <span class="output">tests/test_sinistralite.py::test_frequence_zero_exposition PASSED</span><br> <span class="output">tests/test_sinistralite.py::test_sp_normal PASSED</span><br> <span class="output">tests/test_sinistralite.py::test_frequence_parametrique[50-1000-0.05] PASSED</span><br> <span class="output">tests/test_sinistralite.py::test_frequence_parametrique[100-1000-0.1] PASSED</span><br> <span class="output">tests/test_sinistralite.py::test_frequence_parametrique[200-1000-0.2] PASSED</span><br><br> <span class="output">============ 6 passed in 0.08s ============</span></p>
+</div>
+<div class="exemple-box">
+<p><strong>📝 Bonnes pratiques</strong></p>
+<ul>
+<li>Un test par comportement, pas par fonction</li>
+<li>Noms descriptifs (<code>test_frequence_zero_exposition</code>)</li>
+<li><code>@pytest.mark.parametrize</code> pour tester plusieurs cas</li>
+<li>Toujours tester les cas limites et erreurs</li>
+</ul>
+</div>
 <hr>
 </section>
-<section id="linting-automatique" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Linting automatique</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="linting-et-formatage" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Linting et formatage</h1>
+<p><strong>Black</strong> formate le code automatiquement — plus de débats de style :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">black</span> <span class="at">--check</span> .   <span class="co"># Vérifier</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">black</span> .           <span class="co"># Formater</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Flake8</strong> détecte les erreurs de style et bugs potentiels :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flake8</span> . <span class="at">--max-line-length</span> 120 <span class="at">--ignore</span><span class="op">=</span>E203,W503</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="déploiement-continu" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Déploiement continu</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">deploy</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">needs</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">test</span><span class="kw">,</span><span class="at"> lint</span><span class="kw">]</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">if</span><span class="kw">:</span><span class="at"> github.ref == 'refs/heads/main'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> docker build -t mon-api:${{ github.sha }} .</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> docker push mon-registry/mon-api:${{ github.sha }}</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="attention-box">
+<p><strong>⚠️ Sécurité</strong> — Ne jamais stocker de secrets dans le code. Utiliser les GitHub Secrets :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">AWS_ACCESS_KEY</span><span class="kw">:</span><span class="at"> ${{ secrets.AWS_ACCESS_KEY }}</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>CI détecte les bugs tôt</strong> — Tests et linting à chaque push</li>
+<li><strong>CD accélère la livraison</strong> — Déploiement automatique après validation</li>
+<li><strong>GitHub Actions = YAML</strong> — Triggers, jobs, steps</li>
+<li><strong>pytest est le standard</strong> — Tests paramétriques, fixtures, markers</li>
+<li><strong>Les secrets restent secrets</strong> — GitHub Secrets, jamais en dur</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -570,13 +819,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Différence CI vs CD ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : <strong>CI</strong> automatise tests et validation à chaque changement. <strong>CD</strong> automatise le déploiement après validation. La CI est un prérequis au CD.</p>
 </div>
 </div>
 </div>
@@ -586,13 +835,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Pourquoi GitHub Secrets plutôt que des variables en dur ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Les secrets dans le code sont visibles dans l’historique Git. GitHub Secrets les chiffre et les injecte uniquement pendant l’exécution du workflow.</p>
 </div>
 </div>
 </div>
@@ -602,13 +851,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Quand utiliser pytest.raises ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Pour vérifier qu’une fonction lève bien une exception dans un cas d’erreur (ex: division par zéro). C’est un test de robustesse.</p>
 </div>
 </div>
 </div>
@@ -618,13 +867,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Avantage de black ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Déterministe et non configurable : élimine les débats de style, garantit un code homogène, permet de se concentrer sur la logique métier.</p>
 </div>
 </div>
 </div>

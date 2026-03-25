@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -189,7 +223,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Module 5 — Fréquence et Sévérité">
-<meta property="og:description" content="Modéliser les composantes de la sinistralité">
+<meta property="og:description" content="Modéliser les deux composantes de la sinistralité">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -198,7 +232,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Module 5 — Fréquence et Sévérité">
-<meta name="twitter:description" content="Modéliser les composantes de la sinistralité">
+<meta name="twitter:description" content="Modéliser les deux composantes de la sinistralité">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -421,6 +455,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -478,11 +541,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Module 5 — Fréquence et Sévérité</h1>
-            <p class="subtitle lead">Modéliser les composantes de la sinistralité</p>
+            <p class="subtitle lead">Modéliser les deux composantes de la sinistralité</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">fréquence</div>
                 <div class="quarto-category">sévérité</div>
+                <div class="quarto-category">modélisation</div>
               </div>
                   </div>
   </div>
@@ -500,7 +564,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +580,35 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#décomposition-fréquence-x-sévérité" id="toc-décomposition-fréquence-x-sévérité" class="nav-link active" data-scroll-target="#décomposition-fréquence-x-sévérité"><span class="header-section-number">1</span> Décomposition fréquence x sévérité</a></li>
-  <li><a href="#loi-de-poisson" id="toc-loi-de-poisson" class="nav-link" data-scroll-target="#loi-de-poisson"><span class="header-section-number">2</span> Loi de Poisson</a></li>
-  <li><a href="#loi-lognormale-et-gamma" id="toc-loi-lognormale-et-gamma" class="nav-link" data-scroll-target="#loi-lognormale-et-gamma"><span class="header-section-number">3</span> Loi lognormale et Gamma</a></li>
-  <li><a href="#estimation-des-paramètres" id="toc-estimation-des-paramètres" class="nav-link" data-scroll-target="#estimation-des-paramètres"><span class="header-section-number">4</span> Estimation des paramètres</a></li>
-  <li><a href="#validation-et-diagnostic" id="toc-validation-et-diagnostic" class="nav-link" data-scroll-target="#validation-et-diagnostic"><span class="header-section-number">5</span> Validation et diagnostic</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#la-décomposition-fréquence-sévérité" id="toc-la-décomposition-fréquence-sévérité" class="nav-link" data-scroll-target="#la-décomposition-fréquence-sévérité"><span class="header-section-number">1</span> La décomposition fréquence × sévérité</a>
+  <ul class="collapse">
+  <li><a href="#pourquoi-séparer-les-deux" id="toc-pourquoi-séparer-les-deux" class="nav-link" data-scroll-target="#pourquoi-séparer-les-deux"><span class="header-section-number">1.1</span> Pourquoi séparer les deux ?</a></li>
+  </ul></li>
+  <li><a href="#modélisation-de-la-fréquence" id="toc-modélisation-de-la-fréquence" class="nav-link" data-scroll-target="#modélisation-de-la-fréquence"><span class="header-section-number">2</span> Modélisation de la fréquence</a>
+  <ul class="collapse">
+  <li><a href="#la-loi-de-poisson" id="toc-la-loi-de-poisson" class="nav-link" data-scroll-target="#la-loi-de-poisson"><span class="header-section-number">2.1</span> La loi de Poisson</a></li>
+  <li><a href="#surdispersion-quand-poisson-ne-suffit-pas" id="toc-surdispersion-quand-poisson-ne-suffit-pas" class="nav-link" data-scroll-target="#surdispersion-quand-poisson-ne-suffit-pas"><span class="header-section-number">2.2</span> Surdispersion : quand Poisson ne suffit pas</a></li>
+  </ul></li>
+  <li><a href="#modélisation-de-la-sévérité" id="toc-modélisation-de-la-sévérité" class="nav-link" data-scroll-target="#modélisation-de-la-sévérité"><span class="header-section-number">3</span> Modélisation de la sévérité</a>
+  <ul class="collapse">
+  <li><a href="#distributions-classiques" id="toc-distributions-classiques" class="nav-link" data-scroll-target="#distributions-classiques"><span class="header-section-number">3.1</span> Distributions classiques</a></li>
+  </ul></li>
+  <li><a href="#estimation-des-paramètres" id="toc-estimation-des-paramètres" class="nav-link" data-scroll-target="#estimation-des-paramètres"><span class="header-section-number">4</span> Estimation des paramètres</a>
+  <ul class="collapse">
+  <li><a href="#maximum-de-vraisemblance" id="toc-maximum-de-vraisemblance" class="nav-link" data-scroll-target="#maximum-de-vraisemblance"><span class="header-section-number">4.1</span> Maximum de vraisemblance</a></li>
+  </ul></li>
+  <li><a href="#validation-et-diagnostics" id="toc-validation-et-diagnostics" class="nav-link" data-scroll-target="#validation-et-diagnostics"><span class="header-section-number">5</span> Validation et diagnostics</a>
+  <ul class="collapse">
+  <li><a href="#qq-plot" id="toc-qq-plot" class="nav-link" data-scroll-target="#qq-plot"><span class="header-section-number">5.1</span> QQ-plot</a></li>
+  <li><a href="#tests-statistiques" id="toc-tests-statistiques" class="nav-link" data-scroll-target="#tests-statistiques"><span class="header-section-number">5.2</span> Tests statistiques</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-concepts-à-retenir" id="toc-les-5-concepts-à-retenir" class="nav-link" data-scroll-target="#les-5-concepts-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts à retenir</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glossaire" id="toc-glossaire" class="nav-link" data-scroll-target="#glossaire">Glossaire</a></li>
   </ul>
 </nav>
     </div>
@@ -533,34 +619,782 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="décomposition-fréquence-x-sévérité" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Décomposition fréquence x sévérité</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Justifier</strong> la décomposition fréquence × sévérité</li>
+<li><strong>Modéliser</strong> la fréquence par une loi de Poisson</li>
+<li><strong>Modéliser</strong> la sévérité par une loi Gamma ou lognormale</li>
+<li><strong>Estimer</strong> les paramètres sur données réelles</li>
+<li><strong>Valider</strong> les modèles avec des diagnostics statistiques</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Module 4 (sinistralité, indicateurs)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="la-décomposition-fréquence-sévérité" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> La décomposition fréquence × sévérité</h1>
+<section id="pourquoi-séparer-les-deux" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="pourquoi-séparer-les-deux"><span class="header-section-number">1.1</span> Pourquoi séparer les deux ?</h2>
+<p>La prime pure se décompose en :</p>
+<p><span class="math display">\[\text{Prime pure} = \underbrace{f}_{\text{Fréquence}} \times \underbrace{s}_{\text{Sévérité moyenne}}\]</span></p>
+<p>Cette décomposition est fondamentale car <strong>fréquence et sévérité ont des comportements statistiques très différents</strong> :</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 47%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Fréquence</th>
+<th>Sévérité</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nature</strong></td>
+<td>Comptage (0, 1, 2…)</td>
+<td>Montant continu (&gt; 0)</td>
+</tr>
+<tr class="even">
+<td><strong>Distribution</strong></td>
+<td>Poisson, Binomiale Négative</td>
+<td>Gamma, Lognormale, Pareto</td>
+</tr>
+<tr class="odd">
+<td><strong>Variables explicatives</strong></td>
+<td>Âge, zone, CRM, ancienneté</td>
+<td>Type de sinistre, garantie</td>
+</tr>
+<tr class="even">
+<td><strong>Modèle GLM</strong></td>
+<td>Lien log, famille Poisson</td>
+<td>Lien log, famille Gamma</td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Deux segments peuvent avoir la <strong>même prime pure</strong> mais des profils très différents. Exemple : jeunes conducteurs (fréquence élevée, sévérité modérée) vs conducteurs âgés (fréquence modérée, sévérité élevée en corporel). Les séparer permet une tarification plus fine et des actions ciblées.</p>
+</div>
 <hr>
 </section>
-<section id="loi-de-poisson" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Loi de Poisson</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="modélisation-de-la-fréquence" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Modélisation de la fréquence</h1>
+<section id="la-loi-de-poisson" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="la-loi-de-poisson"><span class="header-section-number">2.1</span> La loi de Poisson</h2>
+<p>Le nombre de sinistres par assuré suit typiquement une <strong>loi de Poisson</strong> :</p>
+<p><span class="math display">\[P(N = k) = \frac{\lambda^k \, e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \ldots\]</span></p>
+<p>où <span class="math inline">\(\lambda\)</span> est le paramètre d’intensité (nombre moyen de sinistres par unité d’exposition).</p>
+<p><strong>Propriétés</strong> : <span class="math inline">\(E[N] = \lambda\)</span> et <span class="math inline">\(\text{Var}(N) = \lambda\)</span> (égalité moyenne-variance).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-poisson" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poisson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-05_files/figure-html/fig-poisson-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poisson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distribution de Poisson pour différentes valeurs de λ
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="surdispersion-quand-poisson-ne-suffit-pas" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="surdispersion-quand-poisson-ne-suffit-pas"><span class="header-section-number">2.2</span> Surdispersion : quand Poisson ne suffit pas</h2>
+<p>Si la <strong>variance observée est supérieure à la moyenne</strong>, on parle de <strong>surdispersion</strong>. Causes :</p>
+<ul>
+<li>Hétérogénéité non observée dans le portefeuille</li>
+<li>Corrélation entre sinistres d’un même assuré</li>
+</ul>
+<div class="attention-box">
+<p><strong>⚠️ Solution : la Binomiale Négative</strong></p>
+<p>La loi Binomiale Négative ajoute un paramètre de dispersion qui permet <span class="math inline">\(\text{Var}(N) &gt; E[N]\)</span>. En pratique, on teste d’abord Poisson, et on passe à la BN si les résidus montrent de la surdispersion.</p>
+</div>
 <hr>
 </section>
-<section id="loi-lognormale-et-gamma" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Loi lognormale et Gamma</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="modélisation-de-la-sévérité" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modélisation de la sévérité</h1>
+<section id="distributions-classiques" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="distributions-classiques"><span class="header-section-number">3.1</span> Distributions classiques</h2>
+<p>La sévérité (coût individuel d’un sinistre) est <strong>positive et asymétrique à droite</strong> :</p>
+<table class="table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 31%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>Formule</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Gamma</strong></td>
+<td><span class="math inline">\(f(x) = \frac{x^{\alpha-1} e^{-x/\beta}}{\beta^\alpha \Gamma(\alpha)}\)</span></td>
+<td>GLM sévérité, sinistres attritionnels</td>
+</tr>
+<tr class="even">
+<td><strong>Lognormale</strong></td>
+<td><span class="math inline">\(\ln(X) \sim \mathcal{N}(\mu, \sigma^2)\)</span></td>
+<td>Queue plus lourde que Gamma</td>
+</tr>
+<tr class="odd">
+<td><strong>Pareto</strong></td>
+<td><span class="math inline">\(P(X &gt; x) = (x_m / x)^\alpha\)</span></td>
+<td>Sinistres graves, queues très lourdes</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.0, 15000.0)</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-severite" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-severite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-05_files/figure-html/fig-severite-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-severite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Comparaison des distributions de sévérité
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="exemple-box">
+<p><strong>📝 Choix de la distribution</strong></p>
+<ul>
+<li><strong>Gamma</strong> : adaptée aux sinistres attritionnels, queue modérée. C’est le choix par défaut dans les GLM de sévérité.</li>
+<li><strong>Lognormale</strong> : queue plus lourde, adaptée quand il y a des sinistres importants mais pas extrêmes.</li>
+<li><strong>Pareto / GPD</strong> : pour les sinistres graves au-delà d’un seuil. On les modélise séparément (théorie des valeurs extrêmes).</li>
+</ul>
+</div>
 <hr>
+</section>
 </section>
 <section id="estimation-des-paramètres" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Estimation des paramètres</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="maximum-de-vraisemblance" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="maximum-de-vraisemblance"><span class="header-section-number">4.1</span> Maximum de vraisemblance</h2>
+<p>La méthode standard est le <strong>maximum de vraisemblance (MLE)</strong> :</p>
+<p><span class="math display">\[\hat{\theta} = \arg\max_\theta \sum_{i=1}^n \ln f(x_i \mid \theta)\]</span></p>
+<p>En Python avec <code>scipy.stats</code> :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> poisson, gamma</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fréquence : estimation de lambda</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sinistres_par_assure <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>lambda_hat <span class="op">=</span> sinistres_par_assure.mean()  <span class="co"># MLE pour Poisson = moyenne</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lambda estimé : </span><span class="sc">{</span>lambda_hat<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sévérité : estimation Gamma</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>couts <span class="op">=</span> np.array([<span class="dv">1200</span>, <span class="dv">3500</span>, <span class="dv">800</span>, <span class="dv">5200</span>, <span class="dv">2100</span>, <span class="dv">950</span>, <span class="dv">4300</span>, <span class="dv">1800</span>])</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>alpha_hat, loc, beta_hat <span class="op">=</span> gamma.fit(couts, floc<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gamma : alpha=</span><span class="sc">{</span>alpha_hat<span class="sc">:.2f}</span><span class="ss">, beta=</span><span class="sc">{</span>beta_hat<span class="sc">:.0f}</span><span class="ss">"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="validation-et-diagnostic" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Validation et diagnostic</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="validation-et-diagnostics" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Validation et diagnostics</h1>
+<section id="qq-plot" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="qq-plot"><span class="header-section-number">5.1</span> QQ-plot</h2>
+<p>Le <strong>QQ-plot</strong> compare les quantiles observés aux quantiles théoriques. Si les points s’alignent sur la diagonale, le modèle est adapté.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>((array([   80.37540022,   126.50456876,   160.95198634,   189.78104151,
+         215.20177452,   238.27306896,   259.59969306,   279.56556711,
+         298.43243844,   316.38821773,   333.57320108,   350.09541303,
+         366.04012535,   381.47604512,   396.4594944 ,   411.03732496,
+         425.24900652,   439.12815816,   452.70369412,   466.00069648,
+         479.04109022,   491.84417282,   504.42703487,   516.80489799,
+         528.99138898,   540.99876445,   552.83809637,   564.51942648,
+         576.05189586,   587.44385422,   598.70295279,   609.83622363,
+         620.85014774,   631.75071386,   642.54346942,   653.23356496,
+         663.82579297,   674.32462189,   684.73422624,   695.05851311,
+         705.30114569,   715.46556431,   725.55500506,   735.57251655,
+         745.52097496,   755.40309752,   765.22145468,   774.97848116,
+         784.67648592,   794.31766119,   803.90409073,   813.43775733,
+         822.92054969,   832.35426864,   841.74063296,   851.08128458,
+         860.3777935 ,   869.63166221,   878.8443298 ,   888.01717582,
+         897.15152374,   906.24864423,   915.30975819,   924.33603952,
+         933.32861776,   942.28858049,   951.21697561,   960.11481343,
+         968.98306864,   977.82268213,   986.63456277,   995.41958894,
+        1004.1786101 ,  1012.91244818,  1021.62189891,  1030.30773307,
+        1038.97069769,  1047.6115171 ,  1056.23089406,  1064.82951064,
+        1073.40802924,  1081.96709341,  1090.50732871,  1099.02934345,
+        1107.5337295 ,  1116.02106293,  1124.4919047 ,  1132.94680129,
+        1141.38628532,  1149.81087607,  1158.22108007,  1166.61739157,
+        1175.00029308,  1183.37025577,  1191.72774   ,  1200.07319564,
+        1208.40706256,  1216.72977095,  1225.04174174,  1233.34338692,
+        1241.63510986,  1249.91730568,  1258.19036148,  1266.45465673,
+        1274.71056346,  1282.95844657,  1291.1986641 ,  1299.43156744,
+        1307.65750158,  1315.87680538,  1324.08981169,  1332.29684767,
+        1340.49823492,  1348.69428968,  1356.88532304,  1365.07164111,
+        1373.25354518,  1381.43133189,  1389.60529341,  1397.77571756,
+        1405.94288798,  1414.10708426,  1422.26858211,  1430.42765343,
+        1438.58456652,  1446.73958611,  1454.89297358,  1463.04498699,
+        1471.19588126,  1479.34590821,  1487.49531672,  1495.64435283,
+        1503.79325978,  1511.9422782 ,  1520.0916461 ,  1528.24159903,
+        1536.39237015,  1544.54419031,  1552.69728811,  1560.85189003,
+        1569.00822047,  1577.16650182,  1585.32695457,  1593.48979733,
+        1601.65524695,  1609.82351855,  1617.99482562,  1626.16938004,
+        1634.34739218,  1642.52907094,  1650.71462383,  1658.90425699,
+        1667.09817529,  1675.29658236,  1683.49968065,  1691.70767148,
+        1699.9207551 ,  1708.13913071,  1716.36299657,  1724.59254999,
+        1732.8279874 ,  1741.0695044 ,  1749.3172958 ,  1757.57155566,
+        1765.83247735,  1774.10025357,  1782.37507642,  1790.65713741,
+        1798.94662753,  1807.24373727,  1815.54865667,  1823.86157536,
+        1832.18268259,  1840.51216726,  1848.850218  ,  1857.19702314,
+        1865.5527708 ,  1873.91764892,  1882.29184528,  1890.67554751,
+        1899.06894319,  1907.47221983,  1915.88556492,  1924.30916599,
+        1932.74321058,  1941.18788634,  1949.64338103,  1958.10988255,
+        1966.58757898,  1975.07665863,  1983.57731003,  1992.089722  ,
+        2000.61408366,  2009.15058447,  2017.69941427,  2026.26076328,
+        2034.83482216,  2043.42178206,  2052.02183458,  2060.63517187,
+        2069.26198663,  2077.90247216,  2086.55682235,  2095.22523177,
+        2103.90789564,  2112.60500991,  2121.31677126,  2130.04337714,
+        2138.78502582,  2147.54191638,  2156.31424878,  2165.10222388,
+        2173.90604346,  2182.72591025,  2191.56202799,  2200.41460144,
+        2209.2838364 ,  2218.16993978,  2227.07311958,  2235.99358499,
+        2244.93154636,  2253.88721526,  2262.86080451,  2271.85252825,
+        2280.86260189,  2289.89124222,  2298.93866743,  2308.00509711,
+        2317.09075232,  2326.19585563,  2335.3206311 ,  2344.4653044 ,
+        2353.63010279,  2362.81525516,  2372.0209921 ,  2381.24754589,
+        2390.49515059,  2399.76404205,  2409.05445794,  2418.36663783,
+        2427.70082318,  2437.05725742,  2446.43618598,  2455.83785633,
+        2465.26251801,  2474.71042271,  2484.18182427,  2493.67697876,
+        2503.19614451,  2512.73958215,  2522.30755468,  2531.90032749,
+        2541.51816844,  2551.16134786,  2560.83013865,  2570.52481633,
+        2580.24565904,  2589.99294766,  2599.76696579,  2609.56799989,
+        2619.39633926,  2629.25227614,  2639.13610576,  2649.04812638,
+        2658.98863937,  2668.95794926,  2678.95636383,  2688.98419411,
+        2699.04175452,  2709.12936289,  2719.24734052,  2729.39601228,
+        2739.57570666,  2749.78675587,  2760.02949584,  2770.30426638,
+        2780.61141121,  2790.95127804,  2801.32421865,  2811.73058899,
+        2822.17074922,  2832.64506384,  2843.15390175,  2853.69763633,
+        2864.27664557,  2874.8913121 ,  2885.54202333,  2896.22917154,
+        2906.95315395,  2917.71437286,  2928.51323571,  2939.35015521,
+        2950.22554944,  2961.13984197,  2972.09346196,  2983.08684425,
+        2994.12042954,  3005.19466444,  3016.31000165,  3027.46690003,
+        3038.6658248 ,  3049.90724759,  3061.19164665,  3072.51950691,
+        3083.8913202 ,  3095.30758535,  3106.76880834,  3118.27550248,
+        3129.82818852,  3141.42739486,  3153.07365767,  3164.76752111,
+        3176.50953744,  3188.30026726,  3200.14027965,  3212.03015235,
+        3223.97047202,  3235.96183434,  3248.00484429,  3260.10011632,
+        3272.24827458,  3284.44995313,  3296.70579616,  3309.01645825,
+        3321.38260455,  3333.80491111,  3346.28406507,  3358.8207649 ,
+        3371.41572076,  3384.06965466,  3396.78330084,  3409.55740599,
+        3422.39272959,  3435.2900442 ,  3448.25013577,  3461.27380401,
+        3474.36186266,  3487.51513989,  3500.73447862,  3514.02073692,
+        3527.37478837,  3540.79752246,  3554.28984498,  3567.85267845,
+        3581.48696253,  3595.19365451,  3608.9737297 ,  3622.82818195,
+        3636.75802413,  3650.76428861,  3664.84802782,  3679.01031473,
+        3693.25224348,  3707.57492988,  3721.97951205,  3736.46715102,
+        3751.03903135,  3765.69636184,  3780.44037613,  3795.27233346,
+        3810.1935194 ,  3825.20524655,  3840.30885539,  3855.50571507,
+        3870.79722419,  3886.18481178,  3901.66993809,  3917.25409562,
+        3932.93881002,  3948.72564114,  3964.61618407,  3980.61207021,
+        3996.71496841,  4012.92658617,  4029.24867079,  4045.68301072,
+        4062.23143681,  4078.89582375,  4095.67809142,  4112.58020643,
+        4129.60418366,  4146.75208786,  4164.02603533,  4181.4281957 ,
+        4198.9607937 ,  4216.62611112,  4234.42648877,  4252.36432857,
+        4270.4420957 ,  4288.66232088,  4307.02760273,  4325.54061024,
+        4344.20408537,  4363.02084575,  4381.99378753,  4401.12588831,
+        4420.42021031,  4439.87990357,  4459.50820943,  4479.30846405,
+        4499.28410224,  4519.4386614 ,  4539.77578562,  4560.29923015,
+        4581.01286589,  4601.92068429,  4623.02680244,  4644.33546838,
+        4665.85106681,  4687.57812501,  4709.52131915,  4731.68548093,
+        4754.07560458,  4776.69685426,  4799.55457197,  4822.65428575,
+        4846.00171857,  4869.60279757,  4893.46366401,  4917.59068369,
+        4941.99045813,  4966.6698364 ,  4991.63592773,  5016.89611486,
+        5042.45806839,  5068.32976195,  5094.51948848,  5121.03587757,
+        5147.88791401,  5175.08495764,  5202.63676458,  5230.55351008,
+        5258.84581287,  5287.5247615 ,  5316.60194255,  5346.08947098,
+        5376.00002294,  5406.34687105,  5437.1439226 ,  5468.40576076,
+        5500.1476893 ,  5532.38578099,  5565.13693022,  5598.41891011,
+        5632.25043476,  5666.6512271 ,  5701.64209292,  5737.24500193,
+        5773.48317647,  5810.38118889,  5847.96506857,  5886.26241984,
+        5925.30255199,  5965.11662311,  6005.73779934,  6047.20143175,
+        6089.54525314,  6132.80959754,  6177.03764559,  6222.27569969,
+        6268.57349316,  6315.98453881,  6364.56652287,  6414.38175184,
+        6465.49766074,  6517.98739344,  6571.93046748,  6627.41353887,
+        6684.53128515,  6743.38742967,  6804.09593499,  6866.78240002,
+        6931.5857044 ,  6998.65995422,  7068.17679831,  7140.32820308,
+        7215.3297993 ,  7293.42494887,  7374.88972563,  7460.03906888,
+        7549.2344576 ,  7642.8935802 ,  7741.50265768,  7845.63234527,
+        7955.95853847,  8073.29002007,  8198.60584113,  8333.10686607,
+        8478.28846063,  8636.04567737,  8808.83011899,  8999.89233207,
+        9213.6726834 ,  9456.46543094,  9737.62321779, 10071.93500933,
+       10484.89150486, 11026.44875696, 11818.0706218 , 13307.19309049]), array([  197.50452291,   230.27024292,   247.24590941,   250.79916605,
+         253.29426809,   265.83433611,   271.51682568,   321.15762286,
+         323.87241524,   347.22647861,   361.11388837,   395.27271844,
+         406.69455136,   435.37271775,   439.48360797,   465.41708324,
+         469.63683616,   487.20082123,   500.37474736,   525.47054119,
+         534.83277405,   538.97579228,   550.58060774,   564.05278311,
+         564.29958703,   572.74382146,   590.73357316,   613.59821264,
+         622.92319155,   627.3201504 ,   633.41643589,   638.76836145,
+         644.91601229,   644.95361791,   645.58373865,   649.36832911,
+         651.96029249,   666.66587747,   709.19016575,   715.85991697,
+         737.23107255,   741.63063421,   750.61086168,   766.95911689,
+         775.59762153,   780.37730043,   787.45903215,   793.70708545,
+         802.77216942,   875.58293471,   889.04337862,   892.51088178,
+         936.02153058,   936.5160086 ,   946.78148224,   960.20595727,
+         981.29832527,   983.38005561,   994.70789615,  1006.86342403,
+        1007.63113035,  1011.88270736,  1016.06917072,  1030.59284124,
+        1031.59231757,  1040.30648992,  1043.27205523,  1043.69487382,
+        1046.40093149,  1047.69261821,  1068.58781349,  1085.88869328,
+        1105.6824131 ,  1108.76656586,  1122.17765886,  1132.59625253,
+        1133.92215632,  1136.95090124,  1149.30619411,  1175.54126027,
+        1180.38008157,  1188.98796274,  1192.59102159,  1201.57057232,
+        1211.42067513,  1213.75790575,  1215.86933809,  1226.69202378,
+        1238.44760176,  1238.68441699,  1250.85069531,  1257.48269655,
+        1257.91398222,  1260.42246089,  1269.30132067,  1275.40990096,
+        1276.01340119,  1282.19671612,  1288.44500612,  1289.00525003,
+        1302.74659797,  1306.02801907,  1341.50567333,  1350.86165685,
+        1354.90023935,  1356.12643921,  1364.75114328,  1370.57103079,
+        1372.02867567,  1375.05226093,  1400.82212543,  1404.90979397,
+        1423.84973705,  1436.25242299,  1438.2515496 ,  1438.56737554,
+        1439.85089748,  1445.31320909,  1447.26693464,  1457.21617918,
+        1457.69303196,  1477.6343568 ,  1491.19250986,  1492.93707756,
+        1503.30516044,  1507.92672108,  1523.56587595,  1540.99379042,
+        1541.16286028,  1542.50011487,  1542.75333647,  1549.62943893,
+        1555.90056666,  1559.53567808,  1561.31459027,  1564.55083787,
+        1575.85301133,  1586.27408681,  1587.04115858,  1588.41177874,
+        1593.66300109,  1606.26483363,  1606.97984205,  1607.3311155 ,
+        1613.83501418,  1615.6216506 ,  1618.22454143,  1626.11225256,
+        1627.92098171,  1634.9565249 ,  1636.7069132 ,  1641.19809393,
+        1648.79567719,  1670.3570956 ,  1682.15245128,  1684.40886664,
+        1688.44853366,  1692.9445642 ,  1694.27927965,  1696.61700261,
+        1697.06378979,  1709.86474603,  1711.78642093,  1725.80831895,
+        1732.71933438,  1749.46526959,  1761.11456173,  1770.17031273,
+        1770.69212041,  1771.39771198,  1784.2181948 ,  1821.86759077,
+        1825.61494977,  1825.97822049,  1842.1418716 ,  1864.11634886,
+        1917.65237585,  1920.31256817,  1926.7548268 ,  1947.19901521,
+        1947.74670193,  1947.8127014 ,  1961.07215248,  1964.52705386,
+        1976.61207171,  1981.64181507,  1993.06489245,  2012.9598304 ,
+        2013.74447842,  2014.61324818,  2030.24455464,  2038.0320748 ,
+        2054.27975721,  2062.8927029 ,  2065.24007947,  2068.87272106,
+        2073.42537656,  2073.4534415 ,  2087.77827744,  2091.75378895,
+        2096.04369029,  2098.2789177 ,  2108.08632404,  2109.02273183,
+        2127.05778289,  2128.54083396,  2145.68965895,  2149.22839542,
+        2157.43217368,  2160.37473285,  2172.75991258,  2200.49755554,
+        2202.8944745 ,  2206.3325065 ,  2210.487671  ,  2217.43830084,
+        2225.90068605,  2230.73776511,  2241.69709532,  2256.35280992,
+        2260.3800315 ,  2264.24020479,  2282.66876563,  2284.33106291,
+        2284.68956597,  2288.72547121,  2295.245901  ,  2298.41158581,
+        2331.36051635,  2353.64579453,  2358.589446  ,  2358.61270576,
+        2361.60281914,  2380.57618795,  2393.96774139,  2396.32552158,
+        2424.18141577,  2431.26294733,  2432.85533351,  2433.43272944,
+        2436.39702664,  2437.10844126,  2449.00679168,  2459.7422827 ,
+        2464.32056136,  2473.95371841,  2476.35913904,  2510.16813524,
+        2524.46444946,  2525.26267454,  2535.83692516,  2540.89474386,
+        2547.76475632,  2568.91122085,  2589.2919576 ,  2592.08557902,
+        2592.91503183,  2594.27696429,  2595.14381864,  2609.47090804,
+        2614.42331328,  2616.43835246,  2618.45854168,  2635.13594041,
+        2637.62195741,  2641.16405909,  2652.83594035,  2662.75156198,
+        2671.45723657,  2672.38290233,  2692.74126072,  2697.33181269,
+        2717.8820563 ,  2721.01131221,  2727.78900654,  2730.75988325,
+        2734.15586088,  2740.26192085,  2743.79234805,  2802.49953445,
+        2809.65941998,  2836.38494344,  2845.69166438,  2846.75336154,
+        2874.85761567,  2875.28755706,  2878.7287799 ,  2898.75364048,
+        2900.27035695,  2900.92562683,  2903.54274536,  2924.13807425,
+        2937.68563734,  2937.93111255,  2959.54621235,  2976.82406738,
+        2977.26736746,  2981.53604867,  2998.4403961 ,  3005.01262747,
+        3029.29728902,  3032.64546228,  3037.78572862,  3040.3718859 ,
+        3053.61810107,  3082.29247562,  3084.57136531,  3095.44074146,
+        3111.56139024,  3118.39545717,  3120.33550586,  3130.5892837 ,
+        3143.54824924,  3144.68144809,  3152.46923502,  3159.24845602,
+        3178.46179461,  3181.56590908,  3181.75326304,  3186.22800725,
+        3192.19142298,  3205.21345098,  3212.40837156,  3220.53891858,
+        3221.92389125,  3257.27004607,  3267.73071046,  3279.23177546,
+        3289.79559563,  3310.89018072,  3316.05841897,  3344.29064296,
+        3355.31489642,  3361.38718886,  3366.90831305,  3387.56752314,
+        3387.92447658,  3389.11851388,  3427.65034238,  3461.70249758,
+        3498.78788874,  3505.8757397 ,  3528.64558984,  3531.39759548,
+        3532.95844288,  3534.41035615,  3555.52667253,  3572.45693845,
+        3578.7121434 ,  3580.02106476,  3582.15363196,  3590.5190848 ,
+        3593.68549022,  3610.95145489,  3632.76668115,  3634.38891723,
+        3635.87131256,  3635.9021837 ,  3642.39726558,  3653.06583004,
+        3672.70715972,  3704.72171015,  3716.15417772,  3756.33057896,
+        3775.74556573,  3790.95436553,  3792.27125874,  3821.09263575,
+        3833.39840632,  3866.73453964,  3878.59755967,  3881.42843506,
+        3904.83266871,  3907.79971615,  3910.51281221,  3917.86925377,
+        3936.48674124,  3936.87977258,  3951.73575877,  3969.5877623 ,
+        3985.46304124,  4060.46893252,  4065.56280768,  4136.26832873,
+        4153.21821928,  4162.84616034,  4174.09142649,  4185.26068795,
+        4220.03071197,  4255.60173885,  4257.10904471,  4266.66570359,
+        4271.08489117,  4300.05934645,  4320.10424844,  4340.18195974,
+        4354.9168578 ,  4367.76439268,  4426.63278504,  4429.42174301,
+        4429.44323956,  4455.09014132,  4463.26834875,  4474.64677766,
+        4487.55265706,  4532.54988339,  4555.78936933,  4579.21844752,
+        4594.80235909,  4625.42250388,  4648.78340058,  4678.0369783 ,
+        4724.65859036,  4731.94360859,  4756.62649148,  4771.8146727 ,
+        4784.93237663,  4792.71425906,  4839.83992029,  4843.27151432,
+        4868.09271061,  4884.02034702,  4903.64086433,  4926.65071183,
+        4931.61816418,  4998.84092414,  5069.43991747,  5075.1625101 ,
+        5079.7145748 ,  5095.49577443,  5131.2831711 ,  5144.2535467 ,
+        5145.78547623,  5146.28764567,  5156.69895078,  5160.78637238,
+        5182.97033634,  5238.48984529,  5257.21883404,  5273.89486216,
+        5377.68605707,  5430.31913832,  5433.34425995,  5451.29686559,
+        5480.12509201,  5484.10921935,  5550.11971652,  5581.73881744,
+        5744.730919  ,  5772.6596544 ,  5805.43859032,  5843.40157896,
+        5859.25460808,  5880.19611089,  5975.93052462,  6145.03918662,
+        6153.39368581,  6191.01102416,  6197.24194805,  6319.20687092,
+        6342.78370079,  6383.05841472,  6458.48552384,  6459.56234471,
+        6479.30646569,  6502.74288853,  6503.29082548,  6547.76530123,
+        6660.24252202,  6689.86717778,  6853.59463012,  6862.81312002,
+        6867.43673897,  6918.80930261,  6974.57161835,  7000.71570808,
+        7028.33601757,  7165.88594757,  7180.7282194 ,  7354.37989314,
+        7397.01980614,  7434.25822756,  7672.56248462,  7735.96093332,
+        7839.53943902,  7988.08453245,  8061.8161781 ,  8133.11327967,
+        8177.39522397,  8180.06233435,  8561.1149993 ,  8990.55996286,
+        9135.14432975,  9272.58896326,  9417.29879532,  9590.02849018,
+        9979.02420089, 10194.79829734, 10946.99668317, 11527.71896107])), (np.float64(0.9575430535569764), np.float64(106.86694217107743), np.float64(0.999052150173915)))</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>((array([-2.99209858e+00, -2.71015927e+00, -2.55162541e+00, -2.43921385e+00,
+       -2.35113311e+00, -2.27822091e+00, -2.21572267e+00, -2.16084152e+00,
+       -2.11178767e+00, -2.06734403e+00, -2.02664403e+00, -1.98904794e+00,
+       -1.95406954e+00, -1.92133033e+00, -1.89052965e+00, -1.86142459e+00,
+       -1.83381593e+00, -1.80753820e+00, -1.78245240e+00, -1.75844061e+00,
+       -1.73540186e+00, -1.71324904e+00, -1.69190643e+00, -1.67130780e+00,
+       -1.65139483e+00, -1.63211595e+00, -1.61342528e+00, -1.59528183e+00,
+       -1.57764883e+00, -1.56049314e+00, -1.54378481e+00, -1.52749667e+00,
+       -1.51160399e+00, -1.49608418e+00, -1.48091659e+00, -1.46608224e+00,
+       -1.45156367e+00, -1.43734479e+00, -1.42341071e+00, -1.40974764e+00,
+       -1.39634279e+00, -1.38318426e+00, -1.37026095e+00, -1.35756253e+00,
+       -1.34507932e+00, -1.33280226e+00, -1.32072287e+00, -1.30883317e+00,
+       -1.29712567e+00, -1.28559331e+00, -1.27422944e+00, -1.26302778e+00,
+       -1.25198239e+00, -1.24108768e+00, -1.23033831e+00, -1.21972926e+00,
+       -1.20925574e+00, -1.19891322e+00, -1.18869738e+00, -1.17860411e+00,
+       -1.16862950e+00, -1.15876983e+00, -1.14902154e+00, -1.13938123e+00,
+       -1.12984566e+00, -1.12041173e+00, -1.11107648e+00, -1.10183707e+00,
+       -1.09269077e+00, -1.08363498e+00, -1.07466719e+00, -1.06578501e+00,
+       -1.05698612e+00, -1.04826831e+00, -1.03962946e+00, -1.03106750e+00,
+       -1.02258046e+00, -1.01416645e+00, -1.00582364e+00, -9.97550247e-01,
+       -9.89344581e-01, -9.81204996e-01, -9.73129904e-01, -9.65117774e-01,
+       -9.57167125e-01, -9.49276525e-01, -9.41444591e-01, -9.33669982e-01,
+       -9.25951403e-01, -9.18287599e-01, -9.10677353e-01, -9.03119487e-01,
+       -8.95612861e-01, -8.88156365e-01, -8.80748927e-01, -8.73389502e-01,
+       -8.66077081e-01, -8.58810678e-01, -8.51589342e-01, -8.44412143e-01,
+       -8.37278180e-01, -8.30186576e-01, -8.23136480e-01, -8.16127061e-01,
+       -8.09157513e-01, -8.02227049e-01, -7.95334905e-01, -7.88480336e-01,
+       -7.81662614e-01, -7.74881033e-01, -7.68134903e-01, -7.61423551e-01,
+       -7.54746322e-01, -7.48102575e-01, -7.41491685e-01, -7.34913044e-01,
+       -7.28366057e-01, -7.21850142e-01, -7.15364731e-01, -7.08909270e-01,
+       -7.02483218e-01, -6.96086043e-01, -6.89717230e-01, -6.83376271e-01,
+       -6.77062670e-01, -6.70775943e-01, -6.64515617e-01, -6.58281226e-01,
+       -6.52072317e-01, -6.45888445e-01, -6.39729174e-01, -6.33594076e-01,
+       -6.27482735e-01, -6.21394740e-01, -6.15329690e-01, -6.09287191e-01,
+       -6.03266856e-01, -5.97268307e-01, -5.91291174e-01, -5.85335090e-01,
+       -5.79399700e-01, -5.73484651e-01, -5.67589599e-01, -5.61714207e-01,
+       -5.55858142e-01, -5.50021077e-01, -5.44202692e-01, -5.38402673e-01,
+       -5.32620709e-01, -5.26856497e-01, -5.21109737e-01, -5.15380136e-01,
+       -5.09667405e-01, -5.03971258e-01, -4.98291417e-01, -4.92627606e-01,
+       -4.86979553e-01, -4.81346993e-01, -4.75729663e-01, -4.70127305e-01,
+       -4.64539663e-01, -4.58966488e-01, -4.53407532e-01, -4.47862553e-01,
+       -4.42331309e-01, -4.36813566e-01, -4.31309089e-01, -4.25817651e-01,
+       -4.20339023e-01, -4.14872983e-01, -4.09419311e-01, -4.03977788e-01,
+       -3.98548202e-01, -3.93130339e-01, -3.87723992e-01, -3.82328953e-01,
+       -3.76945020e-01, -3.71571992e-01, -3.66209669e-01, -3.60857856e-01,
+       -3.55516359e-01, -3.50184986e-01, -3.44863547e-01, -3.39551857e-01,
+       -3.34249730e-01, -3.28956983e-01, -3.23673435e-01, -3.18398908e-01,
+       -3.13133223e-01, -3.07876207e-01, -3.02627686e-01, -2.97387487e-01,
+       -2.92155443e-01, -2.86931384e-01, -2.81715143e-01, -2.76506557e-01,
+       -2.71305462e-01, -2.66111695e-01, -2.60925097e-01, -2.55745509e-01,
+       -2.50572773e-01, -2.45406732e-01, -2.40247233e-01, -2.35094122e-01,
+       -2.29947246e-01, -2.24806454e-01, -2.19671596e-01, -2.14542524e-01,
+       -2.09419090e-01, -2.04301147e-01, -1.99188550e-01, -1.94081154e-01,
+       -1.88978816e-01, -1.83881393e-01, -1.78788743e-01, -1.73700727e-01,
+       -1.68617203e-01, -1.63538032e-01, -1.58463078e-01, -1.53392201e-01,
+       -1.48325265e-01, -1.43262135e-01, -1.38202675e-01, -1.33146749e-01,
+       -1.28094226e-01, -1.23044970e-01, -1.17998849e-01, -1.12955731e-01,
+       -1.07915484e-01, -1.02877978e-01, -9.78430801e-02, -9.28106619e-02,
+       -8.77805930e-02, -8.27527442e-02, -7.77269864e-02, -7.27031911e-02,
+       -6.76812301e-02, -6.26609755e-02, -5.76422995e-02, -5.26250751e-02,
+       -4.76091750e-02, -4.25944724e-02, -3.75808407e-02, -3.25681535e-02,
+       -2.75562846e-02, -2.25451077e-02, -1.75344969e-02, -1.25243263e-02,
+       -7.51447003e-03, -2.50480239e-03,  2.50480239e-03,  7.51447003e-03,
+        1.25243263e-02,  1.75344969e-02,  2.25451077e-02,  2.75562846e-02,
+        3.25681535e-02,  3.75808407e-02,  4.25944724e-02,  4.76091750e-02,
+        5.26250751e-02,  5.76422995e-02,  6.26609755e-02,  6.76812301e-02,
+        7.27031911e-02,  7.77269864e-02,  8.27527442e-02,  8.77805930e-02,
+        9.28106619e-02,  9.78430801e-02,  1.02877978e-01,  1.07915484e-01,
+        1.12955731e-01,  1.17998849e-01,  1.23044970e-01,  1.28094226e-01,
+        1.33146749e-01,  1.38202675e-01,  1.43262135e-01,  1.48325265e-01,
+        1.53392201e-01,  1.58463078e-01,  1.63538032e-01,  1.68617203e-01,
+        1.73700727e-01,  1.78788743e-01,  1.83881393e-01,  1.88978816e-01,
+        1.94081154e-01,  1.99188550e-01,  2.04301147e-01,  2.09419090e-01,
+        2.14542524e-01,  2.19671596e-01,  2.24806454e-01,  2.29947246e-01,
+        2.35094122e-01,  2.40247233e-01,  2.45406732e-01,  2.50572773e-01,
+        2.55745509e-01,  2.60925097e-01,  2.66111695e-01,  2.71305462e-01,
+        2.76506557e-01,  2.81715143e-01,  2.86931384e-01,  2.92155443e-01,
+        2.97387487e-01,  3.02627686e-01,  3.07876207e-01,  3.13133223e-01,
+        3.18398908e-01,  3.23673435e-01,  3.28956983e-01,  3.34249730e-01,
+        3.39551857e-01,  3.44863547e-01,  3.50184986e-01,  3.55516359e-01,
+        3.60857856e-01,  3.66209669e-01,  3.71571992e-01,  3.76945020e-01,
+        3.82328953e-01,  3.87723992e-01,  3.93130339e-01,  3.98548202e-01,
+        4.03977788e-01,  4.09419311e-01,  4.14872983e-01,  4.20339023e-01,
+        4.25817651e-01,  4.31309089e-01,  4.36813566e-01,  4.42331309e-01,
+        4.47862553e-01,  4.53407532e-01,  4.58966488e-01,  4.64539663e-01,
+        4.70127305e-01,  4.75729663e-01,  4.81346993e-01,  4.86979553e-01,
+        4.92627606e-01,  4.98291417e-01,  5.03971258e-01,  5.09667405e-01,
+        5.15380136e-01,  5.21109737e-01,  5.26856497e-01,  5.32620709e-01,
+        5.38402673e-01,  5.44202692e-01,  5.50021077e-01,  5.55858142e-01,
+        5.61714207e-01,  5.67589599e-01,  5.73484651e-01,  5.79399700e-01,
+        5.85335090e-01,  5.91291174e-01,  5.97268307e-01,  6.03266856e-01,
+        6.09287191e-01,  6.15329690e-01,  6.21394740e-01,  6.27482735e-01,
+        6.33594076e-01,  6.39729174e-01,  6.45888445e-01,  6.52072317e-01,
+        6.58281226e-01,  6.64515617e-01,  6.70775943e-01,  6.77062670e-01,
+        6.83376271e-01,  6.89717230e-01,  6.96086043e-01,  7.02483218e-01,
+        7.08909270e-01,  7.15364731e-01,  7.21850142e-01,  7.28366057e-01,
+        7.34913044e-01,  7.41491685e-01,  7.48102575e-01,  7.54746322e-01,
+        7.61423551e-01,  7.68134903e-01,  7.74881033e-01,  7.81662614e-01,
+        7.88480336e-01,  7.95334905e-01,  8.02227049e-01,  8.09157513e-01,
+        8.16127061e-01,  8.23136480e-01,  8.30186576e-01,  8.37278180e-01,
+        8.44412143e-01,  8.51589342e-01,  8.58810678e-01,  8.66077081e-01,
+        8.73389502e-01,  8.80748927e-01,  8.88156365e-01,  8.95612861e-01,
+        9.03119487e-01,  9.10677353e-01,  9.18287599e-01,  9.25951403e-01,
+        9.33669982e-01,  9.41444591e-01,  9.49276525e-01,  9.57167125e-01,
+        9.65117774e-01,  9.73129904e-01,  9.81204996e-01,  9.89344581e-01,
+        9.97550247e-01,  1.00582364e+00,  1.01416645e+00,  1.02258046e+00,
+        1.03106750e+00,  1.03962946e+00,  1.04826831e+00,  1.05698612e+00,
+        1.06578501e+00,  1.07466719e+00,  1.08363498e+00,  1.09269077e+00,
+        1.10183707e+00,  1.11107648e+00,  1.12041173e+00,  1.12984566e+00,
+        1.13938123e+00,  1.14902154e+00,  1.15876983e+00,  1.16862950e+00,
+        1.17860411e+00,  1.18869738e+00,  1.19891322e+00,  1.20925574e+00,
+        1.21972926e+00,  1.23033831e+00,  1.24108768e+00,  1.25198239e+00,
+        1.26302778e+00,  1.27422944e+00,  1.28559331e+00,  1.29712567e+00,
+        1.30883317e+00,  1.32072287e+00,  1.33280226e+00,  1.34507932e+00,
+        1.35756253e+00,  1.37026095e+00,  1.38318426e+00,  1.39634279e+00,
+        1.40974764e+00,  1.42341071e+00,  1.43734479e+00,  1.45156367e+00,
+        1.46608224e+00,  1.48091659e+00,  1.49608418e+00,  1.51160399e+00,
+        1.52749667e+00,  1.54378481e+00,  1.56049314e+00,  1.57764883e+00,
+        1.59528183e+00,  1.61342528e+00,  1.63211595e+00,  1.65139483e+00,
+        1.67130780e+00,  1.69190643e+00,  1.71324904e+00,  1.73540186e+00,
+        1.75844061e+00,  1.78245240e+00,  1.80753820e+00,  1.83381593e+00,
+        1.86142459e+00,  1.89052965e+00,  1.92133033e+00,  1.95406954e+00,
+        1.98904794e+00,  2.02664403e+00,  2.06734403e+00,  2.11178767e+00,
+        2.16084152e+00,  2.21572267e+00,  2.27822091e+00,  2.35113311e+00,
+        2.43921385e+00,  2.55162541e+00,  2.71015927e+00,  2.99209858e+00]), array([  197.50452291,   230.27024292,   247.24590941,   250.79916605,
+         253.29426809,   265.83433611,   271.51682568,   321.15762286,
+         323.87241524,   347.22647861,   361.11388837,   395.27271844,
+         406.69455136,   435.37271775,   439.48360797,   465.41708324,
+         469.63683616,   487.20082123,   500.37474736,   525.47054119,
+         534.83277405,   538.97579228,   550.58060774,   564.05278311,
+         564.29958703,   572.74382146,   590.73357316,   613.59821264,
+         622.92319155,   627.3201504 ,   633.41643589,   638.76836145,
+         644.91601229,   644.95361791,   645.58373865,   649.36832911,
+         651.96029249,   666.66587747,   709.19016575,   715.85991697,
+         737.23107255,   741.63063421,   750.61086168,   766.95911689,
+         775.59762153,   780.37730043,   787.45903215,   793.70708545,
+         802.77216942,   875.58293471,   889.04337862,   892.51088178,
+         936.02153058,   936.5160086 ,   946.78148224,   960.20595727,
+         981.29832527,   983.38005561,   994.70789615,  1006.86342403,
+        1007.63113035,  1011.88270736,  1016.06917072,  1030.59284124,
+        1031.59231757,  1040.30648992,  1043.27205523,  1043.69487382,
+        1046.40093149,  1047.69261821,  1068.58781349,  1085.88869328,
+        1105.6824131 ,  1108.76656586,  1122.17765886,  1132.59625253,
+        1133.92215632,  1136.95090124,  1149.30619411,  1175.54126027,
+        1180.38008157,  1188.98796274,  1192.59102159,  1201.57057232,
+        1211.42067513,  1213.75790575,  1215.86933809,  1226.69202378,
+        1238.44760176,  1238.68441699,  1250.85069531,  1257.48269655,
+        1257.91398222,  1260.42246089,  1269.30132067,  1275.40990096,
+        1276.01340119,  1282.19671612,  1288.44500612,  1289.00525003,
+        1302.74659797,  1306.02801907,  1341.50567333,  1350.86165685,
+        1354.90023935,  1356.12643921,  1364.75114328,  1370.57103079,
+        1372.02867567,  1375.05226093,  1400.82212543,  1404.90979397,
+        1423.84973705,  1436.25242299,  1438.2515496 ,  1438.56737554,
+        1439.85089748,  1445.31320909,  1447.26693464,  1457.21617918,
+        1457.69303196,  1477.6343568 ,  1491.19250986,  1492.93707756,
+        1503.30516044,  1507.92672108,  1523.56587595,  1540.99379042,
+        1541.16286028,  1542.50011487,  1542.75333647,  1549.62943893,
+        1555.90056666,  1559.53567808,  1561.31459027,  1564.55083787,
+        1575.85301133,  1586.27408681,  1587.04115858,  1588.41177874,
+        1593.66300109,  1606.26483363,  1606.97984205,  1607.3311155 ,
+        1613.83501418,  1615.6216506 ,  1618.22454143,  1626.11225256,
+        1627.92098171,  1634.9565249 ,  1636.7069132 ,  1641.19809393,
+        1648.79567719,  1670.3570956 ,  1682.15245128,  1684.40886664,
+        1688.44853366,  1692.9445642 ,  1694.27927965,  1696.61700261,
+        1697.06378979,  1709.86474603,  1711.78642093,  1725.80831895,
+        1732.71933438,  1749.46526959,  1761.11456173,  1770.17031273,
+        1770.69212041,  1771.39771198,  1784.2181948 ,  1821.86759077,
+        1825.61494977,  1825.97822049,  1842.1418716 ,  1864.11634886,
+        1917.65237585,  1920.31256817,  1926.7548268 ,  1947.19901521,
+        1947.74670193,  1947.8127014 ,  1961.07215248,  1964.52705386,
+        1976.61207171,  1981.64181507,  1993.06489245,  2012.9598304 ,
+        2013.74447842,  2014.61324818,  2030.24455464,  2038.0320748 ,
+        2054.27975721,  2062.8927029 ,  2065.24007947,  2068.87272106,
+        2073.42537656,  2073.4534415 ,  2087.77827744,  2091.75378895,
+        2096.04369029,  2098.2789177 ,  2108.08632404,  2109.02273183,
+        2127.05778289,  2128.54083396,  2145.68965895,  2149.22839542,
+        2157.43217368,  2160.37473285,  2172.75991258,  2200.49755554,
+        2202.8944745 ,  2206.3325065 ,  2210.487671  ,  2217.43830084,
+        2225.90068605,  2230.73776511,  2241.69709532,  2256.35280992,
+        2260.3800315 ,  2264.24020479,  2282.66876563,  2284.33106291,
+        2284.68956597,  2288.72547121,  2295.245901  ,  2298.41158581,
+        2331.36051635,  2353.64579453,  2358.589446  ,  2358.61270576,
+        2361.60281914,  2380.57618795,  2393.96774139,  2396.32552158,
+        2424.18141577,  2431.26294733,  2432.85533351,  2433.43272944,
+        2436.39702664,  2437.10844126,  2449.00679168,  2459.7422827 ,
+        2464.32056136,  2473.95371841,  2476.35913904,  2510.16813524,
+        2524.46444946,  2525.26267454,  2535.83692516,  2540.89474386,
+        2547.76475632,  2568.91122085,  2589.2919576 ,  2592.08557902,
+        2592.91503183,  2594.27696429,  2595.14381864,  2609.47090804,
+        2614.42331328,  2616.43835246,  2618.45854168,  2635.13594041,
+        2637.62195741,  2641.16405909,  2652.83594035,  2662.75156198,
+        2671.45723657,  2672.38290233,  2692.74126072,  2697.33181269,
+        2717.8820563 ,  2721.01131221,  2727.78900654,  2730.75988325,
+        2734.15586088,  2740.26192085,  2743.79234805,  2802.49953445,
+        2809.65941998,  2836.38494344,  2845.69166438,  2846.75336154,
+        2874.85761567,  2875.28755706,  2878.7287799 ,  2898.75364048,
+        2900.27035695,  2900.92562683,  2903.54274536,  2924.13807425,
+        2937.68563734,  2937.93111255,  2959.54621235,  2976.82406738,
+        2977.26736746,  2981.53604867,  2998.4403961 ,  3005.01262747,
+        3029.29728902,  3032.64546228,  3037.78572862,  3040.3718859 ,
+        3053.61810107,  3082.29247562,  3084.57136531,  3095.44074146,
+        3111.56139024,  3118.39545717,  3120.33550586,  3130.5892837 ,
+        3143.54824924,  3144.68144809,  3152.46923502,  3159.24845602,
+        3178.46179461,  3181.56590908,  3181.75326304,  3186.22800725,
+        3192.19142298,  3205.21345098,  3212.40837156,  3220.53891858,
+        3221.92389125,  3257.27004607,  3267.73071046,  3279.23177546,
+        3289.79559563,  3310.89018072,  3316.05841897,  3344.29064296,
+        3355.31489642,  3361.38718886,  3366.90831305,  3387.56752314,
+        3387.92447658,  3389.11851388,  3427.65034238,  3461.70249758,
+        3498.78788874,  3505.8757397 ,  3528.64558984,  3531.39759548,
+        3532.95844288,  3534.41035615,  3555.52667253,  3572.45693845,
+        3578.7121434 ,  3580.02106476,  3582.15363196,  3590.5190848 ,
+        3593.68549022,  3610.95145489,  3632.76668115,  3634.38891723,
+        3635.87131256,  3635.9021837 ,  3642.39726558,  3653.06583004,
+        3672.70715972,  3704.72171015,  3716.15417772,  3756.33057896,
+        3775.74556573,  3790.95436553,  3792.27125874,  3821.09263575,
+        3833.39840632,  3866.73453964,  3878.59755967,  3881.42843506,
+        3904.83266871,  3907.79971615,  3910.51281221,  3917.86925377,
+        3936.48674124,  3936.87977258,  3951.73575877,  3969.5877623 ,
+        3985.46304124,  4060.46893252,  4065.56280768,  4136.26832873,
+        4153.21821928,  4162.84616034,  4174.09142649,  4185.26068795,
+        4220.03071197,  4255.60173885,  4257.10904471,  4266.66570359,
+        4271.08489117,  4300.05934645,  4320.10424844,  4340.18195974,
+        4354.9168578 ,  4367.76439268,  4426.63278504,  4429.42174301,
+        4429.44323956,  4455.09014132,  4463.26834875,  4474.64677766,
+        4487.55265706,  4532.54988339,  4555.78936933,  4579.21844752,
+        4594.80235909,  4625.42250388,  4648.78340058,  4678.0369783 ,
+        4724.65859036,  4731.94360859,  4756.62649148,  4771.8146727 ,
+        4784.93237663,  4792.71425906,  4839.83992029,  4843.27151432,
+        4868.09271061,  4884.02034702,  4903.64086433,  4926.65071183,
+        4931.61816418,  4998.84092414,  5069.43991747,  5075.1625101 ,
+        5079.7145748 ,  5095.49577443,  5131.2831711 ,  5144.2535467 ,
+        5145.78547623,  5146.28764567,  5156.69895078,  5160.78637238,
+        5182.97033634,  5238.48984529,  5257.21883404,  5273.89486216,
+        5377.68605707,  5430.31913832,  5433.34425995,  5451.29686559,
+        5480.12509201,  5484.10921935,  5550.11971652,  5581.73881744,
+        5744.730919  ,  5772.6596544 ,  5805.43859032,  5843.40157896,
+        5859.25460808,  5880.19611089,  5975.93052462,  6145.03918662,
+        6153.39368581,  6191.01102416,  6197.24194805,  6319.20687092,
+        6342.78370079,  6383.05841472,  6458.48552384,  6459.56234471,
+        6479.30646569,  6502.74288853,  6503.29082548,  6547.76530123,
+        6660.24252202,  6689.86717778,  6853.59463012,  6862.81312002,
+        6867.43673897,  6918.80930261,  6974.57161835,  7000.71570808,
+        7028.33601757,  7165.88594757,  7180.7282194 ,  7354.37989314,
+        7397.01980614,  7434.25822756,  7672.56248462,  7735.96093332,
+        7839.53943902,  7988.08453245,  8061.8161781 ,  8133.11327967,
+        8177.39522397,  8180.06233435,  8561.1149993 ,  8990.55996286,
+        9135.14432975,  9272.58896326,  9417.29879532,  9590.02849018,
+        9979.02420089, 10194.79829734, 10946.99668317, 11527.71896107])), (np.float64(1928.1039174643352), np.float64(2975.094641263398), np.float64(0.9526574638116094)))</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-qqplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qqplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-05_files/figure-html/fig-qqplot-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qqplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: QQ-plot : vérification de l’adéquation du modèle Gamma
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tests-statistiques" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="tests-statistiques"><span class="header-section-number">5.2</span> Tests statistiques</h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Usage</th>
+<th>Hypothèse nulle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Chi-deux</strong></td>
+<td>Adéquation à une distribution</td>
+<td>Les données suivent la loi théorique</td>
+</tr>
+<tr class="even">
+<td><strong>Kolmogorov-Smirnov</strong></td>
+<td>Comparaison de distributions</td>
+<td>Les deux distributions sont identiques</td>
+</tr>
+<tr class="odd">
+<td><strong>AIC / BIC</strong></td>
+<td>Comparaison de modèles</td>
+<td>Le modèle avec le plus petit AIC est préféré</td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>La validation est aussi importante que l’estimation. Un modèle avec de bons paramètres mais une mauvaise adéquation produira des primes biaisées. Toujours vérifier avec un QQ-plot et comparer plusieurs distributions avec l’AIC.</p>
+</div>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="les-5-concepts-à-retenir" class="level3 synthese-card" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="les-5-concepts-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts à retenir</h3>
+<ol type="1">
+<li><strong>Prime pure = Fréquence × Sévérité</strong> — Deux composantes modélisées séparément</li>
+<li><strong>Poisson pour la fréquence</strong> — Binomiale Négative si surdispersion</li>
+<li><strong>Gamma pour la sévérité</strong> — Lognormale ou Pareto pour les queues lourdes</li>
+<li><strong>Maximum de vraisemblance</strong> — Méthode standard d’estimation</li>
+<li><strong>QQ-plot et AIC</strong> — Toujours valider l’adéquation du modèle</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +1405,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Pourquoi séparer fréquence et sévérité ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Parce qu’elles ont des comportements statistiques différents (comptage vs montant continu), des variables explicatives différentes, et des distributions différentes. Les séparer permet une tarification plus fine et des actions ciblées (réduire la fréquence par la prévention, limiter la sévérité par les franchises).</p>
 </div>
 </div>
 </div>
@@ -587,13 +1421,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Qu’est-ce que la surdispersion et comment la traiter ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : La surdispersion survient quand la variance observée dépasse la moyenne (condition d’égalité de Poisson). Elle indique une hétérogénéité non captée. On la traite en passant à une <strong>Binomiale Négative</strong> qui a un paramètre de dispersion supplémentaire, ou en enrichissant le modèle avec plus de variables explicatives.</p>
 </div>
 </div>
 </div>
@@ -603,13 +1437,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Quand utiliser Gamma vs Lognormale pour la sévérité ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : <strong>Gamma</strong> : choix par défaut pour les GLM, queue modérée, bien adaptée aux sinistres attritionnels. <strong>Lognormale</strong> : queue plus lourde, utile quand il y a quelques sinistres très coûteux. On compare avec l’AIC et les QQ-plots. En pratique, Gamma est préférée car elle s’intègre naturellement dans le framework GLM.</p>
 </div>
 </div>
 </div>
@@ -619,16 +1453,62 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Comment interpréter un QQ-plot ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Les points doivent s’aligner sur la droite diagonale. Des écarts systématiques indiquent un mauvais ajustement : points au-dessus de la droite en queue droite = le modèle sous-estime les gros sinistres. Points en S = le modèle a la mauvaise forme. Un bon QQ-plot montre des points proches de la droite avec de légères fluctuations aléatoires.</p>
 </div>
 </div>
 </div>
+<hr>
+</section>
+<section id="glossaire" class="level1 unnumbered">
+<h1 class="unnumbered">Glossaire</h1>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fréquence</strong></td>
+<td>Nombre de sinistres par unité d’exposition</td>
+</tr>
+<tr class="even">
+<td><strong>Sévérité</strong></td>
+<td>Coût moyen individuel d’un sinistre</td>
+</tr>
+<tr class="odd">
+<td><strong>Poisson</strong></td>
+<td>Distribution classique pour les comptages</td>
+</tr>
+<tr class="even">
+<td><strong>Surdispersion</strong></td>
+<td>Variance &gt; Moyenne dans un modèle de comptage</td>
+</tr>
+<tr class="odd">
+<td><strong>Gamma</strong></td>
+<td>Distribution continue positive, asymétrique à droite</td>
+</tr>
+<tr class="even">
+<td><strong>Lognormale</strong></td>
+<td>Distribution dont le log suit une loi normale</td>
+</tr>
+<tr class="odd">
+<td><strong>MLE</strong></td>
+<td>Maximum Likelihood Estimation — méthode d’estimation</td>
+</tr>
+<tr class="even">
+<td><strong>QQ-plot</strong></td>
+<td>Graphique quantile-quantile pour vérifier l’adéquation</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 5</a> <a href="module-technique-05.html" class="btn btn-primary">Voir le Module Technique 5 →</a></p>
 

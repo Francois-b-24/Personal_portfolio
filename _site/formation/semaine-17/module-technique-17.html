@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 17 — Projet Central — Modélisation sévérité</title>
+<title>François BOUSSENGUI | Module Technique 17 – Projet Central : Modelisation severite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,7 +188,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 17 — Projet Central — Modélisation sévérité">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 17 – Projet Central : Modelisation severite">
 <meta property="og:description" content="GLM Gamma et queues lourdes">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +197,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 17 — Projet Central — Modélisation sévérité">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 17 – Projet Central : Modelisation severite">
 <meta name="twitter:description" content="GLM Gamma et queues lourdes">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -477,11 +477,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 17 — Projet Central — Modélisation sévérité</h1>
+      <h1 class="title">Module Technique 17 – Projet Central : Modelisation severite</h1>
             <p class="subtitle lead">GLM Gamma et queues lourdes</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
-                <div class="quarto-category">sévérité</div>
+                <div class="quarto-category">severite</div>
                 <div class="quarto-category">gamma</div>
               </div>
                   </div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#modèle-gamma-sévérité" id="toc-modèle-gamma-sévérité" class="nav-link active" data-scroll-target="#modèle-gamma-sévérité"><span class="header-section-number">1</span> Modèle Gamma sévérité</a></li>
-  <li><a href="#sinistres-graves" id="toc-sinistres-graves" class="nav-link" data-scroll-target="#sinistres-graves"><span class="header-section-number">2</span> Sinistres graves</a></li>
-  <li><a href="#distributions-queue-lourde" id="toc-distributions-queue-lourde" class="nav-link" data-scroll-target="#distributions-queue-lourde"><span class="header-section-number">3</span> Distributions queue lourde</a></li>
-  <li><a href="#validation-diagnostics" id="toc-validation-diagnostics" class="nav-link" data-scroll-target="#validation-diagnostics"><span class="header-section-number">4</span> Validation diagnostics</a></li>
-  <li><a href="#comparaison-fréquence" id="toc-comparaison-fréquence" class="nav-link" data-scroll-target="#comparaison-fréquence"><span class="header-section-number">5</span> Comparaison fréquence</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glm-gamma-pour-la-severite" id="toc-glm-gamma-pour-la-severite" class="nav-link active" data-scroll-target="#glm-gamma-pour-la-severite"><span class="header-section-number">1</span> GLM Gamma pour la severite</a></li>
+  <li><a href="#traitement-des-sinistres-graves-ecretement" id="toc-traitement-des-sinistres-graves-ecretement" class="nav-link" data-scroll-target="#traitement-des-sinistres-graves-ecretement"><span class="header-section-number">2</span> Traitement des sinistres graves : ecretement</a></li>
+  <li><a href="#distributions-a-queue-lourde-ajustement" id="toc-distributions-a-queue-lourde-ajustement" class="nav-link" data-scroll-target="#distributions-a-queue-lourde-ajustement"><span class="header-section-number">3</span> Distributions a queue lourde : ajustement</a></li>
+  <li><a href="#validation-qq-plot-gamma-residus-comparaison" id="toc-validation-qq-plot-gamma-residus-comparaison" class="nav-link" data-scroll-target="#validation-qq-plot-gamma-residus-comparaison"><span class="header-section-number">4</span> Validation : QQ-plot Gamma, residus, comparaison</a></li>
+  <li><a href="#integration-prime_pure-expxf" id="toc-integration-prime_pure-expxf" class="nav-link" data-scroll-target="#integration-prime_pure-expxf"><span class="header-section-number">5</span> Integration : prime_pure = exp(Xf *</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="modèle-gamma-sévérité" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Modèle Gamma sévérité</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="glm-gamma-pour-la-severite" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> GLM Gamma pour la severite</h1>
+<p>GLM Gamma pour la severite : filtre sur sinistres &gt; 0, lien log, famille Gamma.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="sinistres-graves" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Sinistres graves</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="traitement-des-sinistres-graves-ecretement" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Traitement des sinistres graves : ecretement</h1>
+<p>Traitement des sinistres graves : ecretement a un seuil (ex: 50K), modelisation separee au-dela.</p>
 <hr>
 </section>
-<section id="distributions-queue-lourde" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Distributions queue lourde</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="distributions-a-queue-lourde-ajustement" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Distributions a queue lourde : ajustement</h1>
+<p>Distributions a queue lourde : ajustement Pareto GPD au-dela du seuil.</p>
 <hr>
 </section>
-<section id="validation-diagnostics" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Validation diagnostics</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="validation-qq-plot-gamma-residus-comparaison" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Validation : QQ-plot Gamma, residus, comparaison</h1>
+<p>Validation : QQ-plot Gamma, residus, comparaison Gamma vs Lognormale (AIC).</p>
 <hr>
 </section>
-<section id="comparaison-fréquence" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Comparaison fréquence</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="integration-prime_pure-expxf" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Integration : prime_pure = exp(Xf *</h1>
+<p>Integration : prime_pure = exp(Xf * beta_f) * exp(Xs * beta_s).</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>GLM Gamma pour la severite : filtre sur</strong></li>
+<li><strong>Traitement des sinistres graves : ecretement a un</strong></li>
+<li><strong>Distributions a queue lourde : ajustement Pareto GPD</strong></li>
+<li><strong>Validation : QQ-plot Gamma, residus, comparaison Gamma vs</strong></li>
+<li><strong>Integration : prime_pure = exp(Xf * beta_f) </strong>*</li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 17</a> <a href="fiche-travail-17.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 17</a> <a href="fiche-travail-17.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

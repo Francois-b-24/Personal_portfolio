@@ -1,52 +1,136 @@
 ---
 title: "Semaine 9"
-subtitle: "Comportements et Anti-sélection & AWS — Architecture et Services"
+subtitle: "Comportements assurés et Anti-sélection & AWS — Architecture et Services intégrés"
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
-        <p><strong>Module 9 — Comportements et Anti-sélection</strong></p>
-        <ul>
-            <li>Asymétrie information</li>
-            <li>Sélection adverse</li>
-            <li>Aléa moral</li>
-            <li>Mécanismes correctifs</li>
-            <li>Impact tarification</li>
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module 9 — Comportements assurés et Anti-sélection</strong></p>
+        <ul class="track-topics">
+            <li>Asymétrie d'information en assurance</li>
+            <li>Sélection adverse (anti-sélection)</li>
+            <li>Aléa moral (moral hazard)</li>
+            <li>Mécanismes correctifs : franchises, bonus-malus, exclusions</li>
+            <li>Impact sur la tarification et la rentabilité</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
-        <p><strong>Module Technique 9 — AWS — Architecture et Services</strong></p>
-        <ul>
-            <li>VPC réseau privé</li>
-            <li>IAM gestion accès</li>
-            <li>CloudWatch monitoring</li>
-            <li>Architecture multi-services</li>
-            <li>Bonnes pratiques sécurité</li>
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 9 — AWS — Architecture et Services intégrés</strong></p>
+        <ul class="track-topics">
+            <li>VPC : réseau privé virtuel dans le cloud</li>
+            <li>IAM : gestion fine des accès et permissions</li>
+            <li>CloudWatch : monitoring et alertes</li>
+            <li>Architecture multi-services sur AWS</li>
+            <li>Well-Architected Framework : les 6 piliers</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Asymétrie d'information en assurance</li>
+        <li>Sélection adverse (anti-sélection)</li>
+        <li>Aléa moral (moral hazard)</li>
+        <li>Mécanismes correctifs : franchises, bonus-malus, exclusions</li>
+        <li>Impact sur la tarification et la rentabilité</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>VPC : réseau privé virtuel dans le cloud</li>
+        <li>IAM : gestion fine des accès et permissions</li>
+        <li>CloudWatch : monitoring et alertes</li>
+        <li>Architecture multi-services sur AWS</li>
+        <li>Well-Architected Framework : les 6 piliers</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Asymétrie information | VPC réseau privé |
-| **Jour 2** | Sélection adverse | IAM gestion accès |
-| **Jour 3** | Aléa moral | CloudWatch monitoring |
-| **Jour 4** | Mécanismes correctifs | Architecture multi-services |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Asymétrie d'information en assurance | VPC : réseau privé virtuel dans le cloud |
+| **Jour 2** | Sélection adverse (anti-sélection) | IAM : gestion fine des accès et permissions |
+| **Jour 3** | Aléa moral (moral hazard) | CloudWatch : monitoring et alertes |
+| **Jour 4** | Mécanismes correctifs : franchises, bonus-malus, exclusions | Architecture multi-services sur AWS |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 9](module-metier-09.html)
-- [Module Technique 9](module-technique-09.html)
-- [Fiche de travail](fiche-travail-09.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-09.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 9</div>
+        <div class="nav-card-desc">Comportements assurés et Anti-sélection</div>
+    </a>
+    <a href="module-technique-09.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 9</div>
+        <div class="nav-card-desc">AWS — Architecture et Services intégrés</div>
+    </a>
+    <a href="fiche-travail-09.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: "Module Technique 18 — Projet Central — Tarification GLM"
-subtitle: "Prime pure et validation"
-author: "François Boussengui"
+title: "Module Technique 18 -- Projet Central : Tarification GLM"
+subtitle: "Prime pure, chargements et validation"
+author: "Francois Boussengui"
 date: last-modified
 categories: [projet, tarification, glm]
 title-block-banner: "#06436e"
@@ -11,65 +11,109 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Prime pure GLM
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+# Calcul de la prime pure GLM
+
+Calcul de la prime pure GLM : produit des predictions frequence et severite par profil.
+
+:::{.concept-cle}
+**Point cle**
+
+Maitriser cet outil est essentiel pour industrialiser le projet central.
+:::
 
 ---
 
-# Intégration fréquence x sévérité
+# Chargements : securite (5-15% selon la
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Chargements
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Chargements : securite (5-15% selon la volatilite du segment), frais de gestion (8-10%), frais d'acquisition (15-22%), marge (3-5%).
 
 ---
 
-# Validation croisée
+# Prime commerciale par segment
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Comparaison tarif actuel
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Prime commerciale par segment.
 
 ---
 
-# Synthèse {.unnumbered}
+# Validation croisee temporelle : entrainer sur
 
-Les points techniques essentiels.
+Validation croisee temporelle : entrainer sur N-3 a N-1, valider sur N.
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Backtesting : comparer les primes predites
+
+Backtesting : comparer les primes predites vs le S/P observe.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les points essentiels
+
+1. **Calcul de la prime pure GLM : produit**
+2. **Chargements : securite (5-15% selon la volatilite du**
+3. **Prime commerciale par segment**
+4. **Validation croisee temporelle : entrainer sur N-3 a**
+5. **Backtesting : comparer les primes predites vs le**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ---
 
-[← Retour à la Semaine 18](index.html){.btn .btn-secondary}
-[Voir la Fiche de travail →](fiche-travail-18.html){.btn .btn-primary}
+[<- Retour a la Semaine 18](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail ->](fiche-travail-18.html){.btn .btn-primary}

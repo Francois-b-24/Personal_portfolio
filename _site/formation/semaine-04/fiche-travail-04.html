@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -189,7 +223,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Fiche de travail — Semaine 4">
-<meta property="og:description" content="Exercices pratiques et livrables">
+<meta property="og:description" content="Exercices pratiques : sinistralité et CI/CD">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -198,7 +232,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail — Semaine 4">
-<meta name="twitter:description" content="Exercices pratiques et livrables">
+<meta name="twitter:description" content="Exercices pratiques : sinistralité et CI/CD">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -478,7 +512,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Fiche de travail — Semaine 4</h1>
-            <p class="subtitle lead">Exercices pratiques et livrables</p>
+            <p class="subtitle lead">Exercices pratiques : sinistralité et CI/CD</p>
                       </div>
   </div>
     
@@ -495,7 +529,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -511,11 +545,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">Livrables</a></li>
-  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">Exercices métier</a></li>
-  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">Exercices techniques</a></li>
-  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">Pont métier-technique</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#livrables-à-produire" id="toc-livrables-à-produire" class="nav-link active" data-scroll-target="#livrables-à-produire">📦 Livrables à produire</a></li>
+  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">🏋️ Exercices métier</a></li>
+  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">🏋️ Exercices techniques</a></li>
+  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">🔗 Pont métier-technique</a></li>
+  <li><a href="#checklist-de-fin-de-semaine" id="toc-checklist-de-fin-de-semaine" class="nav-link" data-scroll-target="#checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</a></li>
   </ul>
 </nav>
     </div>
@@ -526,36 +560,236 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="livrables" class="level2">
-<h2 class="anchored" data-anchor-id="livrables">Livrables</h2>
-<ol type="1">
-<li><strong>Livrable métier</strong> : Application des concepts du Module 4</li>
-<li><strong>Livrable technique</strong> : Mise en pratique du Module Technique 4</li>
-<li><strong>Livrable intégrateur</strong> : Combinaison métier + technique</li>
-</ol>
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+.hint-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+<hr>
+<section id="livrables-à-produire" class="level2">
+<h2 class="anchored" data-anchor-id="livrables-à-produire">📦 Livrables à produire</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📊 Livrable 1 — Tableau d’indicateurs de sinistralité::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Calculer les indicateurs clés sur des données simulées.</p>
+<ul>
+<li>Générer un jeu de données de sinistres (1 000+ lignes)</li>
+<li>Calculer : fréquence, sévérité, prime pure, S/P</li>
+<li>Présenter les résultats dans un tableau par segment (âge, zone, type de véhicule)</li>
+<li>Commenter les écarts entre segments</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📈 Livrable 2 — Analyse de l’évolution du S/P::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Produire un graphique d’évolution du S/P sur 5 ans avec commentaire.</p>
+<ul>
+<li>Simuler des données sur 5 années</li>
+<li>Graphique matplotlib montrant la tendance</li>
+<li>Identifier les années atypiques et en expliquer les causes possibles</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🔄 Livrable 3 — Pipeline CI/CD fonctionnel::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p><strong>Objectif</strong> : Mettre en place un pipeline GitHub Actions sur ton repo.</p>
+<ul>
+<li>Workflow <code>.github/workflows/ci.yml</code></li>
+<li>Tests pytest (au moins 5 tests)</li>
+<li>Linting avec black et flake8</li>
+<li>Badge “CI passing” dans le README</li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🌟 Livrable 4 — Réflexions::: :::{.livrable-status .bonus}Bonus:::</p>
+</div>
+<p>Prépare 2-3 questions pour le débriefing sur le lien entre indicateurs de sinistralité et qualité du code.</p>
+</div>
+<hr>
 </section>
 <section id="exercices-métier" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-métier">Exercices métier</h2>
-<p>Applique les concepts du module sur des données simulées ou réelles.</p>
+<h2 class="anchored" data-anchor-id="exercices-métier">🏋️ Exercices métier</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M1 — Calcul d’indicateurs</p>
+</div>
+<p>Un portefeuille auto compte 8 000 contrats, 10 500 véhicules-année d’exposition, 840 sinistres pour une charge totale de 2 520 000 € et des primes acquises de 3 150 000 €.</p>
+<p><strong>Calcule</strong> : fréquence, sévérité, prime pure, S/P.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Fréquence</strong> = 840 / 10 500 = <strong>8.0%</strong></li>
+<li><strong>Sévérité</strong> = 2 520 000 / 840 = <strong>3 000 €</strong></li>
+<li><strong>Prime pure</strong> = 0.08 × 3 000 = <strong>240 €</strong></li>
+<li><strong>S/P</strong> = 2 520 000 / 3 150 000 = <strong>80%</strong></li>
+</ul>
+<p>Le S/P de 80% laisse une marge de 20% pour les frais et le bénéfice. C’est un résultat correct mais il faut vérifier que les frais ne dépassent pas 20%.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M2 — Diagnostic de dégradation</p>
+</div>
+<p>Un assureur observe les S/P suivants : N = 68%, N+1 = 75%, N+2 = 85%. Les primes ont augmenté de 3% par an mais la charge sinistres de 10% par an.</p>
+<p><strong>Analyse</strong> la situation et <strong>propose</strong> des actions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La sinistralité se dégrade : la charge sinistres croît 3× plus vite que les primes.</p>
+<p><strong>Causes possibles</strong> : inflation des coûts de réparation, hausse de la fréquence, anti-sélection (les bons risques partent).</p>
+<p><strong>Actions recommandées</strong> :</p>
+<ol type="1">
+<li>Revoir la tarification (+10-15% ciblés sur les segments déficitaires)</li>
+<li>Resegmenter le portefeuille pour identifier les segments les plus dégradés</li>
+<li>Renforcer la sélection à la souscription</li>
+<li>Analyser le taux de résiliation par profil de risque</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercices-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-techniques">Exercices techniques</h2>
-<p>Mets en pratique les outils techniques dans le contexte du projet.</p>
+<h2 class="anchored" data-anchor-id="exercices-techniques">🏋️ Exercices techniques</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🔄 Exercice T1 — Premier workflow</p>
+</div>
+<p>Crée un workflow GitHub Actions qui exécute pytest à chaque push sur main.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .github/workflows/ci.yml</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Tests</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3.10'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pytest tests/ -v</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🔄 Exercice T2 — Tests de sinistralité</p>
+</div>
+<p>Écris 5 tests pytest pour valider les fonctions <code>calculer_frequence()</code>, <code>calculer_sp()</code> et <code>calculer_prime_pure()</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_frequence():</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_frequence(<span class="dv">100</span>, <span class="dv">1000</span>) <span class="op">==</span> <span class="fl">0.1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sp():</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_sp(<span class="dv">70000</span>, <span class="dv">100000</span>) <span class="op">==</span> <span class="fl">0.7</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_prime_pure():</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_prime_pure(<span class="fl">0.08</span>, <span class="dv">2500</span>) <span class="op">==</span> <span class="fl">200.0</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_frequence_zero():</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ZeroDivisionError</span>):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        calculer_frequence(<span class="dv">10</span>, <span class="dv">0</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_sp_parfait():</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> calculer_sp(<span class="dv">100000</span>, <span class="dv">100000</span>) <span class="op">==</span> <span class="fl">1.0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="pont-métier-technique" class="level2">
-<h2 class="anchored" data-anchor-id="pont-métier-technique">Pont métier-technique</h2>
-<p>Comment les concepts de cette semaine s’articulent-ils dans le projet central ?</p>
+<h2 class="anchored" data-anchor-id="pont-métier-technique">🔗 Pont métier-technique</h2>
+<section id="réflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="réflexion">🤔 Réflexion</h3>
+<ol type="1">
+<li><strong>Comment le CI/CD peut-il sécuriser tes calculs de sinistralité ?</strong> (indice : que se passe-t-il si quelqu’un modifie une formule par erreur ?)</li>
+<li><strong>Quels tests écrirais-tu pour valider un modèle de provisionnement ?</strong> (plages de valeurs, cohérence temporelle…)</li>
+<li><strong>Comment intégrer les indicateurs de sinistralité dans le dashboard de ton projet central ?</strong></li>
+</ol>
 </section>
-<section id="checklist" class="level2">
-<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Module Métier 4 terminé</label></li>
-<li><label><input type="checkbox">Module Technique 4 terminé</label></li>
-<li><label><input type="checkbox">Livrables produits</label></li>
-<li><label><input type="checkbox">Exercices réalisés</label></li>
-</ul>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 4</a></p>
+</section>
+<section id="checklist-de-fin-de-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-fin-de-semaine">✅ Checklist de fin de semaine</h2>
+<div class="checklist">
+<ul>
+<li>Module Métier 4 terminé et auto-évaluation faite</li>
+<li>Module Technique 4 terminé</li>
+<li>Livrable 1 produit (tableau d’indicateurs)</li>
+<li>Livrable 2 produit (évolution S/P)</li>
+<li>Livrable 3 produit (pipeline CI/CD)</li>
+<li>Au moins 2 exercices métier réalisés</li>
+<li>Au moins 2 exercices techniques réalisés</li>
+<li>Questions préparées pour le débriefing</li>
+</ul>
+</div>
+<hr>
+<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 4</a> <a href="module-metier-04.html" class="btn btn-outline-primary">Module Métier 4</a> <a href="module-technique-04.html" class="btn btn-outline-primary">Module Technique 4</a></p>
 
 
 </section>

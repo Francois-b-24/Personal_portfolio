@@ -1,9 +1,9 @@
 ---
-title: "Module 21 — Étude de cas intégrée (partie 1)"
-subtitle: "Diagnostic portefeuille"
-author: "François Boussengui"
+title: "Module 21 -- Etude de cas integree (partie 1)"
+subtitle: "Diagnostic d'un portefeuille"
+author: "Francois Boussengui"
 date: last-modified
-categories: [assurance, étude-de-cas]
+categories: [assurance, etude-de-cas]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,65 +11,111 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Présentation du cas
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
----
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
 
-# Analyse exploratoire
+# Presentation du cas : portefeuille auto
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Presentation du cas : portefeuille auto 50K contrats en degradation (S/P passe de 72% a 88% en 3 ans).
 
----
+:::{.concept-cle}
+**Point cle**
 
-# Diagnostic sinistralité
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Segments problématiques
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Premières recommandations
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Synthèse {.unnumbered}
-
-Les concepts clés à retenir.
+Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.
+:::
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Analyse exploratoire : evolution du volume
+
+Analyse exploratoire : evolution du volume, du mix (age, zone, puissance), des flux (entrees/sorties).
+
+---
+
+# Diagnostic sinistralite : decomposition frequence x
+
+Diagnostic sinistralite : decomposition frequence x severite par segment, identification des segments qui degradent le S/P.
+
+:::{.attention-box}
+**Attention**
+
+Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.
+:::
+
+---
+
+# Analyse des flux : profil des
+
+Analyse des flux : profil des resiliants vs restants (anti-selection ?).
+
+---
+
+# Premieres hypotheses : tarif insuffisant sur
+
+Premieres hypotheses : tarif insuffisant sur jeunes urbains, fuite des bons risques ruraux.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les concepts cles
+
+1. **Presentation du cas : portefeuille auto 50K contrats**
+2. **Analyse exploratoire : evolution du volume, du mix**
+3. **Diagnostic sinistralite : decomposition frequence x severite par**
+4. **Analyse des flux : profil des resiliants vs**
+5. **Premieres hypotheses : tarif insuffisant sur jeunes urbains**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ---
 
-[← Retour à la Semaine 21](index.html){.btn .btn-secondary}
-[Voir le Module Technique 21 →](module-technique-21.html){.btn .btn-primary}
+[<- Retour a la Semaine 21](index.html){.btn .btn-secondary}
+[Voir le Module Technique 21 ->](module-technique-21.html){.btn .btn-primary}

@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 6"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : triangles de liquidation et EC2"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,30 +9,150 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 6
-2. **Livrable technique** : Mise en pratique du Module Technique 6
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Implémentation Chain Ladder en Python:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Script Python qui :
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+- Construit un triangle de liquidation à partir de données simulées
+- Calcule les facteurs de développement
+- Projette les charges ultimes
+- Estime les IBNR par génération
+:::
 
-## Checklist
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}☁️ Livrable 2 — Déploiement sur EC2:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-- [ ] Module Métier 6 terminé
-- [ ] Module Technique 6 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+- Lancer une instance t3.micro
+- Installer Python et les dépendances
+- Exécuter le script Chain Ladder sur l'instance
+- Récupérer les résultats sur S3
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📝 Livrable 3 — Analyse des résultats:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Document court analysant les IBNR estimés : sont-ils cohérents ? Quelles générations présentent le plus d'incertitude ?
+:::
+
+---
+
+## 🏋️ Exercices
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Chain Ladder à la main
+:::
+
+Triangle de charges cumulées (K€) :
+
+|  | Dév. 1 | Dév. 2 | Dév. 3 |
+|--|--------|--------|--------|
+| **2021** | 1000 | 1300 | 1400 |
+| **2022** | 1200 | 1500 | ? |
+| **2023** | 1100 | ? | ? |
+
+Calcule les facteurs et projette les charges ultimes.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- $f_1 = (1300+1500)/(1000+1200) = 1.273$
+- $f_2 = 1400/1300 = 1.077$
+- 2022 ultime : $1500 \times 1.077 = 1615$ K€ → IBNR = 115 K€
+- 2023 ultime : $1100 \times 1.273 \times 1.077 = 1508$ K€ → IBNR = 408 K€
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+☁️ Exercice T1 — Première instance EC2
+:::
+
+1. Lance une instance t3.micro (Free Tier)
+2. Connecte-toi en SSH
+3. Installe Python et pandas
+4. Exécute `python -c "import pandas; print(pandas.__version__)"`
+5. **Éteins l'instance**
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```bash
+# Lancer via console AWS ou CLI
+ssh -i ma-cle.pem ubuntu@<IP>
+sudo apt update && sudo apt install -y python3-pip
+pip3 install pandas
+python3 -c "import pandas; print(pandas.__version__)"
+# N'oublie pas d'arrêter l'instance !
+aws ec2 stop-instances --instance-ids i-xxx
+```
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Pourquoi exécuter le Chain Ladder sur EC2 plutôt que sur ton laptop ?** (gros triangles, automatisation)
+2. **Comment stocker les résultats du provisionnement pour le dashboard ?** (S3, base de données)
+3. **Comment automatiser le calcul mensuel des IBNR ?** (Lambda, cron, CI/CD)
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 6 terminé (triangles, Chain Ladder)
+- Module Technique 6 terminé (EC2, SSH, Security Groups)
+- Livrable 1 produit (Chain Ladder Python)
+- Livrable 2 produit (déploiement EC2)
+- Livrable 3 produit (analyse IBNR)
+- Exercices réalisés
+:::
 
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: "Module Technique 20 — Projet Central — API et Déploiement"
-subtitle: "FastAPI Docker AWS"
-author: "François Boussengui"
+title: "Module Technique 20 -- Projet Central : API et Deploiement"
+subtitle: "FastAPI + Docker + AWS"
+author: "Francois Boussengui"
 date: last-modified
-categories: [projet, api, déploiement]
+categories: [projet, api, deploiement]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,65 +11,109 @@ toc-depth: 3
 number-sections: true
 ---
 
-# API FastAPI scoring
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+# API FastAPI de scoring avec le
+
+API FastAPI de scoring avec le modele final du projet.
+
+:::{.concept-cle}
+**Point cle**
+
+Maitriser cet outil est essentiel pour industrialiser le projet central.
+:::
 
 ---
 
-# Conteneurisation Docker
+# Conteneurisation Docker complete : API +
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Déploiement AWS
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Conteneurisation Docker complete : API + modele + config.
 
 ---
 
-# Tests de charge
+# Docker Compose avec PostgreSQL pour stocker
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Monitoring API
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Docker Compose avec PostgreSQL pour stocker les predictions et les logs.
 
 ---
 
-# Synthèse {.unnumbered}
+# Deploiement sur AWS EC2 ou ECS
 
-Les points techniques essentiels.
+Deploiement sur AWS EC2 ou ECS Fargate.
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Tests de charge avec locust 
+
+Tests de charge avec locust : combien de requetes/seconde ? Monitoring avec CloudWatch : latence, erreurs, CPU.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les points essentiels
+
+1. **API FastAPI de scoring avec le modele final**
+2. **Conteneurisation Docker complete : API + modele +**
+3. **Docker Compose avec PostgreSQL pour stocker les predictions**
+4. **Deploiement sur AWS EC2 ou ECS Fargate**
+5. **Tests de charge avec locust : combien de**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ---
 
-[← Retour à la Semaine 20](index.html){.btn .btn-secondary}
-[Voir la Fiche de travail →](fiche-travail-20.html){.btn .btn-primary}
+[<- Retour a la Semaine 20](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail ->](fiche-travail-20.html){.btn .btn-primary}

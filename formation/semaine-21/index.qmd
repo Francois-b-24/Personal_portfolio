@@ -1,52 +1,136 @@
 ---
 title: "Semaine 21"
-subtitle: "Étude de cas intégrée (partie 1) & Projet Central — Dashboard"
+subtitle: "Étude de cas intégrée (partie 1) & Projet Central — Dashboard interactif"
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 21 — Étude de cas intégrée (partie 1)</strong></p>
-        <ul>
-            <li>Présentation du cas</li>
-            <li>Analyse exploratoire</li>
-            <li>Diagnostic sinistralité</li>
-            <li>Segments problématiques</li>
-            <li>Premières recommandations</li>
+        <ul class="track-topics">
+            <li>Présentation du cas : portefeuille en difficulté</li>
+            <li>Analyse exploratoire : volume, mix, tendances</li>
+            <li>Diagnostic de sinistralité par segment</li>
+            <li>Identification des segments problématiques</li>
+            <li>Premières hypothèses et pistes d'action</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
-        <p><strong>Module Technique 21 — Projet Central — Dashboard</strong></p>
-        <ul>
-            <li>Introduction Streamlit</li>
-            <li>Layout et composants</li>
-            <li>Graphiques Plotly</li>
-            <li>Filtres et sélecteurs</li>
-            <li>Déploiement dashboard</li>
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 21 — Projet Central — Dashboard interactif</strong></p>
+        <ul class="track-topics">
+            <li>Introduction à Streamlit</li>
+            <li>Layout, sidebar et composants interactifs</li>
+            <li>Graphiques interactifs avec Plotly</li>
+            <li>Filtres dynamiques et sélecteurs</li>
+            <li>Structure multi-pages et navigation</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Présentation du cas : portefeuille en difficulté</li>
+        <li>Analyse exploratoire : volume, mix, tendances</li>
+        <li>Diagnostic de sinistralité par segment</li>
+        <li>Identification des segments problématiques</li>
+        <li>Premières hypothèses et pistes d'action</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Introduction à Streamlit</li>
+        <li>Layout, sidebar et composants interactifs</li>
+        <li>Graphiques interactifs avec Plotly</li>
+        <li>Filtres dynamiques et sélecteurs</li>
+        <li>Structure multi-pages et navigation</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Présentation du cas | Introduction Streamlit |
-| **Jour 2** | Analyse exploratoire | Layout et composants |
-| **Jour 3** | Diagnostic sinistralité | Graphiques Plotly |
-| **Jour 4** | Segments problématiques | Filtres et sélecteurs |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Présentation du cas : portefeuille en difficulté | Introduction à Streamlit |
+| **Jour 2** | Analyse exploratoire : volume, mix, tendances | Layout, sidebar et composants interactifs |
+| **Jour 3** | Diagnostic de sinistralité par segment | Graphiques interactifs avec Plotly |
+| **Jour 4** | Identification des segments problématiques | Filtres dynamiques et sélecteurs |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 21](module-metier-21.html)
-- [Module Technique 21](module-technique-21.html)
-- [Fiche de travail](fiche-travail-21.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-21.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 21</div>
+        <div class="nav-card-desc">Étude de cas intégrée (partie 1)</div>
+    </a>
+    <a href="module-technique-21.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 21</div>
+        <div class="nav-card-desc">Projet Central — Dashboard interactif</div>
+    </a>
+    <a href="fiche-travail-21.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

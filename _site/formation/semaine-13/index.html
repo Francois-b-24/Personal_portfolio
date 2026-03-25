@@ -188,7 +188,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Semaine 13">
-<meta property="og:description" content="Données en assurance &amp; Projet Central — Cadrage">
+<meta property="og:description" content="Données en assurance &amp; Projet Central — Cadrage et Setup">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,7 +197,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Semaine 13">
-<meta name="twitter:description" content="Données en assurance &amp; Projet Central — Cadrage">
+<meta name="twitter:description" content="Données en assurance &amp; Projet Central — Cadrage et Setup">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,7 +477,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Semaine 13</h1>
-            <p class="subtitle lead">Données en assurance &amp; Projet Central — Cadrage</p>
+            <p class="subtitle lead">Données en assurance &amp; Projet Central — Cadrage et Setup</p>
                       </div>
   </div>
     
@@ -498,7 +498,9 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#vue-densemble" id="toc-vue-densemble" class="nav-link active" data-scroll-target="#vue-densemble">Vue d’ensemble</a></li>
+  <li><a href="#objectifs-de-la-semaine" id="toc-objectifs-de-la-semaine" class="nav-link" data-scroll-target="#objectifs-de-la-semaine">Objectifs de la semaine</a></li>
+  <li><a href="#planning-suggéré" id="toc-planning-suggéré" class="nav-link" data-scroll-target="#planning-suggéré">Planning suggéré</a></li>
   <li><a href="#accès-aux-modules" id="toc-accès-aux-modules" class="nav-link" data-scroll-target="#accès-aux-modules">Accès aux modules</a></li>
   </ul>
 </nav>
@@ -510,31 +512,89 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+<section id="vue-densemble" class="level2">
+<h2 class="anchored" data-anchor-id="vue-densemble">Vue d’ensemble</h2>
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 13 — Données en assurance</strong></p>
-        <ul>
-            <li>Sources de données</li>
-            <li>Qualité des données</li>
-            <li>Gouvernance</li>
-            <li>RGPD</li>
-            <li>Data lineage</li>
+        <ul class="track-topics">
+            <li>Sources de données en assurance</li>
+            <li>Qualité des données : complétude, cohérence, fraîcheur</li>
+            <li>Gouvernance des données et référentiels</li>
+            <li>RGPD et données personnelles en assurance</li>
+            <li>Data lineage et traçabilité</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
-        <p><strong>Module Technique 13 — Projet Central — Cadrage</strong></p>
-        <ul>
-            <li>Cadrage projet</li>
-            <li>Architecture cible</li>
-            <li>Setup repo</li>
-            <li>Environnement Docker</li>
-            <li>Structure données</li>
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
+        <p><strong>Module Technique 13 — Projet Central — Cadrage et Setup</strong></p>
+        <ul class="track-topics">
+            <li>Cadrage du projet : objectifs et périmètre</li>
+            <li>Architecture technique cible (API + BDD + Dashboard)</li>
+            <li>Setup du repo GitHub avec structure pro</li>
+            <li>Environnement Docker Compose du projet</li>
+            <li>Structure et dictionnaire des données</li>
         </ul>
     </div>
 </div>
-<section id="objectifs" class="level2">
-<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<hr>
+</section>
+<section id="objectifs-de-la-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs-de-la-semaine">Objectifs de la semaine</h2>
+<div class="objectives-box">
+    <h3 class="anchored">À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Sources de données en assurance</li>
+        <li>Qualité des données : complétude, cohérence, fraîcheur</li>
+        <li>Gouvernance des données et référentiels</li>
+        <li>RGPD et données personnelles en assurance</li>
+        <li>Data lineage et traçabilité</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Cadrage du projet : objectifs et périmètre</li>
+        <li>Architecture technique cible (API + BDD + Dashboard)</li>
+        <li>Setup du repo GitHub avec structure pro</li>
+        <li>Environnement Docker Compose du projet</li>
+        <li>Structure et dictionnaire des données</li>
+    </ol>
+</div>
+<hr>
+</section>
+<section id="planning-suggéré" class="level2">
+<h2 class="anchored" data-anchor-id="planning-suggéré">Planning suggéré</h2>
 <table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 34%">
+<col style="width: 52%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Jour</th>
@@ -545,39 +605,49 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <tbody>
 <tr class="odd">
 <td><strong>Jour 1</strong></td>
-<td>Sources de données</td>
-<td>Cadrage projet</td>
+<td>Sources de données en assurance</td>
+<td>Cadrage du projet : objectifs et périmètre</td>
 </tr>
 <tr class="even">
 <td><strong>Jour 2</strong></td>
-<td>Qualité des données</td>
-<td>Architecture cible</td>
+<td>Qualité des données : complétude, cohérence, fraîcheur</td>
+<td>Architecture technique cible (API + BDD + Dashboard)</td>
 </tr>
 <tr class="odd">
 <td><strong>Jour 3</strong></td>
-<td>Gouvernance</td>
-<td>Setup repo</td>
+<td>Gouvernance des données et référentiels</td>
+<td>Setup du repo GitHub avec structure pro</td>
 </tr>
 <tr class="even">
 <td><strong>Jour 4</strong></td>
-<td>RGPD</td>
-<td>Environnement Docker</td>
+<td>RGPD et données personnelles en assurance</td>
+<td>Environnement Docker Compose du projet</td>
 </tr>
 <tr class="odd">
 <td><strong>Jour 5</strong></td>
-<td><strong>Débriefing</strong></td>
-<td><strong>Livrable</strong></td>
+<td><strong>Débriefing et validation</strong></td>
+<td><strong>Livrables</strong></td>
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
 <section id="accès-aux-modules" class="level2">
 <h2 class="anchored" data-anchor-id="accès-aux-modules">Accès aux modules</h2>
-<ul>
-<li><a href="module-metier-13.html">Module Métier 13</a></li>
-<li><a href="module-technique-13.html">Module Technique 13</a></li>
-<li><a href="fiche-travail-13.html">Fiche de travail</a></li>
-</ul>
+<div class="nav-cards">
+    <a href="module-metier-13.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 13</div>
+        <div class="nav-card-desc">Données en assurance</div>
+    </a>
+    <a href="module-technique-13.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 13</div>
+        <div class="nav-card-desc">Projet Central — Cadrage et Setup</div>
+    </a>
+    <a href="fiche-travail-13.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
 <hr>
 <p><a href="../index.html" class="btn btn-secondary">← Retour à la formation</a></p>
 

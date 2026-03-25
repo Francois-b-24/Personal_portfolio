@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -189,7 +223,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Fiche de travail — Semaine 12">
-<meta property="og:description" content="Exercices pratiques et livrables">
+<meta property="og:description" content="Exercices : Solvabilité II et FastAPI">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -198,7 +232,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail — Semaine 12">
-<meta name="twitter:description" content="Exercices pratiques et livrables">
+<meta name="twitter:description" content="Exercices : Solvabilité II et FastAPI">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -478,7 +512,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Fiche de travail — Semaine 12</h1>
-            <p class="subtitle lead">Exercices pratiques et livrables</p>
+            <p class="subtitle lead">Exercices : Solvabilité II et FastAPI</p>
                       </div>
   </div>
     
@@ -495,7 +529,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -511,11 +545,10 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">Livrables</a></li>
-  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">Exercices métier</a></li>
-  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">Exercices techniques</a></li>
-  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">Pont métier-technique</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">📦 Livrables</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">🏋️ Exercices</a></li>
+  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">🔗 Pont métier-technique</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">✅ Checklist</a></li>
   </ul>
 </nav>
     </div>
@@ -526,34 +559,192 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+<hr>
 <section id="livrables" class="level2">
-<h2 class="anchored" data-anchor-id="livrables">Livrables</h2>
+<h2 class="anchored" data-anchor-id="livrables">📦 Livrables</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📋 Livrable 1 — Synthèse Solvabilité II::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Document de synthèse expliquant les 3 piliers et leur impact sur le travail d’un data scientist en assurance. Inclure un schéma des interactions entre piliers et activités techniques.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🐍 Livrable 2 — API FastAPI de scoring::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>API complète avec :</p>
+<ul>
+<li>Endpoint POST <code>/predict</code> acceptant un profil d’assuré</li>
+<li>Validation Pydantic des entrées</li>
+<li>Modèle de scoring (même simple : relativités en dur)</li>
+<li>Dockerfile pour conteneuriser l’API</li>
+<li>Documentation Swagger accessible à <code>/docs</code></li>
+</ul>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📊 Livrable 3 — Bilan mi-parcours::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>La semaine 12 marque la moitié du parcours. Rédige un bilan :</p>
+<ul>
+<li>Compétences acquises (métier + technique)</li>
+<li>Points forts et axes d’amélioration</li>
+<li>Objectifs pour les semaines 13-24 (projet central)</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="exercices" class="level2">
+<h2 class="anchored" data-anchor-id="exercices">🏋️ Exercices</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M1 — Ratio de solvabilité</p>
+</div>
+<p>Un assureur a des fonds propres de 150 M€, un SCR de 120 M€ et un MCR de 40 M€. Calcule les ratios de solvabilité et interprète.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Ratio SCR</strong> = 150 / 120 = <strong>125%</strong> → Solvable (&gt; 100%), marge confortable</li>
+<li><strong>Ratio MCR</strong> = 150 / 40 = <strong>375%</strong> → Très au-dessus du minimum</li>
+</ul>
+<p>L’assureur est solvable mais avec une marge de 25% seulement sur le SCR. Un sinistre catastrophique ou une baisse des marchés financiers pourrait rapidement dégrader ce ratio. À surveiller.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🐍 Exercice T1 — Première API FastAPI</p>
+</div>
+<p>Crée une API avec :</p>
 <ol type="1">
-<li><strong>Livrable métier</strong> : Application des concepts du Module 12</li>
-<li><strong>Livrable technique</strong> : Mise en pratique du Module Technique 12</li>
-<li><strong>Livrable intégrateur</strong> : Combinaison métier + technique</li>
+<li>GET <code>/health</code> → retourne <code>{"status": "ok"}</code></li>
+<li>POST <code>/quote</code> → accepte <code>{"age": int, "zone": str}</code> et retourne une prime calculée</li>
 </ol>
-</section>
-<section id="exercices-métier" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-métier">Exercices métier</h2>
-<p>Applique les concepts du module sur des données simulées ou réelles.</p>
-</section>
-<section id="exercices-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-techniques">Exercices techniques</h2>
-<p>Mets en pratique les outils techniques dans le contexte du projet.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastapi <span class="im">import</span> FastAPI</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> FastAPI()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> QuoteRequest(BaseModel):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    age: <span class="bu">int</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    zone: <span class="bu">str</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/health"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> health():</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"status"</span>: <span class="st">"ok"</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">@app.post</span>(<span class="st">"/quote"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quote(req: QuoteRequest):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    base <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    rel_age <span class="op">=</span> <span class="fl">1.8</span> <span class="cf">if</span> req.age <span class="op">&lt;</span> <span class="dv">26</span> <span class="cf">else</span> <span class="fl">1.0</span> <span class="cf">if</span> req.age <span class="op">&lt;</span> <span class="dv">65</span> <span class="cf">else</span> <span class="fl">1.2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    rel_zone <span class="op">=</span> {<span class="st">"paris"</span>: <span class="fl">1.4</span>, <span class="st">"lyon"</span>: <span class="fl">1.2</span>, <span class="st">"rural"</span>: <span class="fl">0.8</span>}.get(req.zone, <span class="fl">1.0</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    prime <span class="op">=</span> base <span class="op">*</span> rel_age <span class="op">*</span> rel_zone</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"prime"</span>: <span class="bu">round</span>(prime, <span class="dv">2</span>), <span class="st">"profil"</span>: req.<span class="bu">dict</span>()}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🐍 Exercice T2 — Dockeriser l’API</p>
+</div>
+<p>Écris un Dockerfile et un docker-compose.yml pour déployer l’API FastAPI du projet.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dockerfile</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> python:3.10-slim</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WORKDIR</span> /app</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> requirements.txt .</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">pip</span> install <span class="at">--no-cache-dir</span> <span class="at">-r</span> requirements.txt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> . .</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># docker-compose.yml</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.8"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">build</span><span class="kw">:</span><span class="at"> .</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"8000:8000"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MODEL_PATH=/app/models/glm.pkl</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="pont-métier-technique" class="level2">
-<h2 class="anchored" data-anchor-id="pont-métier-technique">Pont métier-technique</h2>
-<p>Comment les concepts de cette semaine s’articulent-ils dans le projet central ?</p>
+<h2 class="anchored" data-anchor-id="pont-métier-technique">🔗 Pont métier-technique</h2>
+<section id="réflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="réflexion">🤔 Réflexion</h3>
+<ol type="1">
+<li><strong>Comment ton API de scoring s’intègre-t-elle dans le cadre Solvabilité II ?</strong> (traçabilité des décisions, audit trail)</li>
+<li><strong>Quels KPIs de l’API faut-il monitorer pour le Pilier 2 ?</strong> (latence, erreurs, volume)</li>
+<li><strong>Comment documenter ton modèle pour satisfaire la fonction actuarielle (Pilier 2) ?</strong> (MLflow + rapport technique)</li>
+</ol>
+</section>
+<hr>
 </section>
 <section id="checklist" class="level2">
-<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Module Métier 12 terminé</label></li>
-<li><label><input type="checkbox">Module Technique 12 terminé</label></li>
-<li><label><input type="checkbox">Livrables produits</label></li>
-<li><label><input type="checkbox">Exercices réalisés</label></li>
+<h2 class="anchored" data-anchor-id="checklist">✅ Checklist</h2>
+<div class="checklist">
+<ul>
+<li>Module Métier 12 terminé (Solvabilité II, 3 piliers, ORSA)</li>
+<li>Module Technique 12 terminé (FastAPI, Pydantic, Docker)</li>
+<li>Livrable 1 (synthèse Solvabilité II)</li>
+<li>Livrable 2 (API FastAPI de scoring)</li>
+<li>Livrable 3 (bilan mi-parcours)</li>
+<li>Exercices réalisés</li>
+<li>Mi-parcours atteinte — prêt pour le projet central !</li>
 </ul>
+</div>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 12</a></p>
 

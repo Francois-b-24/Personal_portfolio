@@ -498,7 +498,9 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#vue-densemble" id="toc-vue-densemble" class="nav-link active" data-scroll-target="#vue-densemble">Vue d’ensemble</a></li>
+  <li><a href="#objectifs-de-la-semaine" id="toc-objectifs-de-la-semaine" class="nav-link" data-scroll-target="#objectifs-de-la-semaine">Objectifs de la semaine</a></li>
+  <li><a href="#planning-suggéré" id="toc-planning-suggéré" class="nav-link" data-scroll-target="#planning-suggéré">Planning suggéré</a></li>
   <li><a href="#accès-aux-modules" id="toc-accès-aux-modules" class="nav-link" data-scroll-target="#accès-aux-modules">Accès aux modules</a></li>
   </ul>
 </nav>
@@ -510,31 +512,89 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+<section id="vue-densemble" class="level2">
+<h2 class="anchored" data-anchor-id="vue-densemble">Vue d’ensemble</h2>
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 22 — Étude de cas intégrée (partie 2)</strong></p>
-        <ul>
-            <li>Plan action</li>
-            <li>Chiffrage impacts</li>
-            <li>Priorisation</li>
-            <li>Présentation résultats</li>
-            <li>Suivi indicateurs</li>
+        <ul class="track-topics">
+            <li>Élaboration du plan d'action</li>
+            <li>Chiffrage de l'impact des recommandations</li>
+            <li>Priorisation : quick wins vs transformations</li>
+            <li>Présentation synthétique des résultats</li>
+            <li>Suivi : indicateurs de succès et jalons</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module Technique 22 — Projet Central — Tests et CI/CD</strong></p>
-        <ul>
-            <li>Tests unitaires pytest</li>
-            <li>Tests intégration</li>
-            <li>Pipeline CI/CD</li>
-            <li>Coverage qualité</li>
+        <ul class="track-topics">
+            <li>Tests unitaires du projet avec pytest</li>
+            <li>Tests d'intégration (API + BDD + modèle)</li>
+            <li>Pipeline CI/CD complet du projet</li>
+            <li>Couverture de code et seuils de qualité</li>
             <li>Pre-commit hooks</li>
         </ul>
     </div>
 </div>
-<section id="objectifs" class="level2">
-<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<hr>
+</section>
+<section id="objectifs-de-la-semaine" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs-de-la-semaine">Objectifs de la semaine</h2>
+<div class="objectives-box">
+    <h3 class="anchored">À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Élaboration du plan d'action</li>
+        <li>Chiffrage de l'impact des recommandations</li>
+        <li>Priorisation : quick wins vs transformations</li>
+        <li>Présentation synthétique des résultats</li>
+        <li>Suivi : indicateurs de succès et jalons</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>Tests unitaires du projet avec pytest</li>
+        <li>Tests d'intégration (API + BDD + modèle)</li>
+        <li>Pipeline CI/CD complet du projet</li>
+        <li>Couverture de code et seuils de qualité</li>
+        <li>Pre-commit hooks</li>
+    </ol>
+</div>
+<hr>
+</section>
+<section id="planning-suggéré" class="level2">
+<h2 class="anchored" data-anchor-id="planning-suggéré">Planning suggéré</h2>
 <table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 34%">
+<col style="width: 52%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Jour</th>
@@ -545,39 +605,49 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <tbody>
 <tr class="odd">
 <td><strong>Jour 1</strong></td>
-<td>Plan action</td>
-<td>Tests unitaires pytest</td>
+<td>Élaboration du plan d’action</td>
+<td>Tests unitaires du projet avec pytest</td>
 </tr>
 <tr class="even">
 <td><strong>Jour 2</strong></td>
-<td>Chiffrage impacts</td>
-<td>Tests intégration</td>
+<td>Chiffrage de l’impact des recommandations</td>
+<td>Tests d’intégration (API + BDD + modèle)</td>
 </tr>
 <tr class="odd">
 <td><strong>Jour 3</strong></td>
-<td>Priorisation</td>
-<td>Pipeline CI/CD</td>
+<td>Priorisation : quick wins vs transformations</td>
+<td>Pipeline CI/CD complet du projet</td>
 </tr>
 <tr class="even">
 <td><strong>Jour 4</strong></td>
-<td>Présentation résultats</td>
-<td>Coverage qualité</td>
+<td>Présentation synthétique des résultats</td>
+<td>Couverture de code et seuils de qualité</td>
 </tr>
 <tr class="odd">
 <td><strong>Jour 5</strong></td>
-<td><strong>Débriefing</strong></td>
-<td><strong>Livrable</strong></td>
+<td><strong>Débriefing et validation</strong></td>
+<td><strong>Livrables</strong></td>
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
 <section id="accès-aux-modules" class="level2">
 <h2 class="anchored" data-anchor-id="accès-aux-modules">Accès aux modules</h2>
-<ul>
-<li><a href="module-metier-22.html">Module Métier 22</a></li>
-<li><a href="module-technique-22.html">Module Technique 22</a></li>
-<li><a href="fiche-travail-22.html">Fiche de travail</a></li>
-</ul>
+<div class="nav-cards">
+    <a href="module-metier-22.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 22</div>
+        <div class="nav-card-desc">Étude de cas intégrée (partie 2)</div>
+    </a>
+    <a href="module-technique-22.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 22</div>
+        <div class="nav-card-desc">Projet Central — Tests et CI/CD</div>
+    </a>
+    <a href="fiche-travail-22.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
 <hr>
 <p><a href="../index.html" class="btn btn-secondary">← Retour à la formation</a></p>
 

@@ -500,7 +500,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +516,41 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#instances-ec2" id="toc-instances-ec2" class="nav-link active" data-scroll-target="#instances-ec2"><span class="header-section-number">1</span> Instances EC2</a></li>
-  <li><a href="#groupes-de-sécurité" id="toc-groupes-de-sécurité" class="nav-link" data-scroll-target="#groupes-de-sécurité"><span class="header-section-number">2</span> Groupes de sécurité</a></li>
-  <li><a href="#connexion-ssh" id="toc-connexion-ssh" class="nav-link" data-scroll-target="#connexion-ssh"><span class="header-section-number">3</span> Connexion SSH</a></li>
-  <li><a href="#ami-et-snapshots" id="toc-ami-et-snapshots" class="nav-link" data-scroll-target="#ami-et-snapshots"><span class="header-section-number">4</span> AMI et snapshots</a></li>
-  <li><a href="#auto-scaling" id="toc-auto-scaling" class="nav-link" data-scroll-target="#auto-scaling"><span class="header-section-number">5</span> Auto Scaling</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#types-dinstances-ec2-compute-memory-gpu" id="toc-types-dinstances-ec2-compute-memory-gpu" class="nav-link" data-scroll-target="#types-dinstances-ec2-compute-memory-gpu"><span class="header-section-number">1</span> Types d’instances EC2 (compute, memory, GPU)</a>
+  <ul class="collapse">
+  <li><a href="#présentation" id="toc-présentation" class="nav-link" data-scroll-target="#présentation"><span class="header-section-number">1.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique" id="toc-mise-en-pratique" class="nav-link" data-scroll-target="#mise-en-pratique"><span class="header-section-number">1.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques"><span class="header-section-number">1.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#lancement-et-configuration-dune-instance" id="toc-lancement-et-configuration-dune-instance" class="nav-link" data-scroll-target="#lancement-et-configuration-dune-instance"><span class="header-section-number">2</span> Lancement et configuration d’une instance</a>
+  <ul class="collapse">
+  <li><a href="#présentation-1" id="toc-présentation-1" class="nav-link" data-scroll-target="#présentation-1"><span class="header-section-number">2.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-1" id="toc-mise-en-pratique-1" class="nav-link" data-scroll-target="#mise-en-pratique-1"><span class="header-section-number">2.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-1" id="toc-bonnes-pratiques-1" class="nav-link" data-scroll-target="#bonnes-pratiques-1"><span class="header-section-number">2.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#groupes-de-sécurité-et-règles-réseau" id="toc-groupes-de-sécurité-et-règles-réseau" class="nav-link" data-scroll-target="#groupes-de-sécurité-et-règles-réseau"><span class="header-section-number">3</span> Groupes de sécurité et règles réseau</a>
+  <ul class="collapse">
+  <li><a href="#présentation-2" id="toc-présentation-2" class="nav-link" data-scroll-target="#présentation-2"><span class="header-section-number">3.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-2" id="toc-mise-en-pratique-2" class="nav-link" data-scroll-target="#mise-en-pratique-2"><span class="header-section-number">3.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-2" id="toc-bonnes-pratiques-2" class="nav-link" data-scroll-target="#bonnes-pratiques-2"><span class="header-section-number">3.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#connexion-ssh-et-transfert-de-fichiers" id="toc-connexion-ssh-et-transfert-de-fichiers" class="nav-link" data-scroll-target="#connexion-ssh-et-transfert-de-fichiers"><span class="header-section-number">4</span> Connexion SSH et transfert de fichiers</a>
+  <ul class="collapse">
+  <li><a href="#présentation-3" id="toc-présentation-3" class="nav-link" data-scroll-target="#présentation-3"><span class="header-section-number">4.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-3" id="toc-mise-en-pratique-3" class="nav-link" data-scroll-target="#mise-en-pratique-3"><span class="header-section-number">4.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-3" id="toc-bonnes-pratiques-3" class="nav-link" data-scroll-target="#bonnes-pratiques-3"><span class="header-section-number">4.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#ami-snapshots-et-auto-scaling" id="toc-ami-snapshots-et-auto-scaling" class="nav-link" data-scroll-target="#ami-snapshots-et-auto-scaling"><span class="header-section-number">5</span> AMI, snapshots et Auto Scaling</a>
+  <ul class="collapse">
+  <li><a href="#présentation-4" id="toc-présentation-4" class="nav-link" data-scroll-target="#présentation-4"><span class="header-section-number">5.1</span> Présentation</a></li>
+  <li><a href="#mise-en-pratique-4" id="toc-mise-en-pratique-4" class="nav-link" data-scroll-target="#mise-en-pratique-4"><span class="header-section-number">5.2</span> Mise en pratique</a></li>
+  <li><a href="#bonnes-pratiques-4" id="toc-bonnes-pratiques-4" class="nav-link" data-scroll-target="#bonnes-pratiques-4"><span class="header-section-number">5.3</span> Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.3.1</span> Les points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +562,206 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="instances-ec2" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Instances EC2</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Types d’instances EC2 (compute, memory, GPU)</strong></li>
+<li><strong>Lancement et configuration d’une instance</strong></li>
+<li><strong>Groupes de sécurité et règles réseau</strong></li>
+<li><strong>Connexion SSH et transfert de fichiers</strong></li>
+<li><strong>AMI, snapshots et Auto Scaling</strong></li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules techniques précédents</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="types-dinstances-ec2-compute-memory-gpu" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Types d’instances EC2 (compute, memory, GPU)</h1>
+<section id="présentation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="présentation"><span class="header-section-number">1.1</span> Présentation</h2>
+<p><strong>Types d’instances EC2 (compute, memory, GPU)</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="mise-en-pratique"><span class="header-section-number">1.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser types d’instances ec2 (compute, memory, gpu) te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="bonnes-pratiques"><span class="header-section-number">1.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="groupes-de-sécurité" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Groupes de sécurité</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="lancement-et-configuration-dune-instance" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Lancement et configuration d’une instance</h1>
+<section id="présentation-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="présentation-1"><span class="header-section-number">2.1</span> Présentation</h2>
+<p><strong>Lancement et configuration d’une instance</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mise-en-pratique-1"><span class="header-section-number">2.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser lancement et configuration d’une instance te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="bonnes-pratiques-1"><span class="header-section-number">2.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="connexion-ssh" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Connexion SSH</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="groupes-de-sécurité-et-règles-réseau" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Groupes de sécurité et règles réseau</h1>
+<section id="présentation-2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="présentation-2"><span class="header-section-number">3.1</span> Présentation</h2>
+<p><strong>Groupes de sécurité et règles réseau</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="mise-en-pratique-2"><span class="header-section-number">3.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser groupes de sécurité et règles réseau te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-2" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="bonnes-pratiques-2"><span class="header-section-number">3.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="ami-et-snapshots" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> AMI et snapshots</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="connexion-ssh-et-transfert-de-fichiers" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Connexion SSH et transfert de fichiers</h1>
+<section id="présentation-3" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="présentation-3"><span class="header-section-number">4.1</span> Présentation</h2>
+<p><strong>Connexion SSH et transfert de fichiers</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-3" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="mise-en-pratique-3"><span class="header-section-number">4.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser connexion ssh et transfert de fichiers te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="bonnes-pratiques-3"><span class="header-section-number">4.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
 </section>
-<section id="auto-scaling" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Auto Scaling</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="ami-snapshots-et-auto-scaling" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> AMI, snapshots et Auto Scaling</h1>
+<section id="présentation-4" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="présentation-4"><span class="header-section-number">5.1</span> Présentation</h2>
+<p><strong>AMI, snapshots et Auto Scaling</strong> est un élément technique essentiel pour industrialiser tes projets data science en assurance.</p>
+</section>
+<section id="mise-en-pratique-4" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="mise-en-pratique-4"><span class="header-section-number">5.2</span> Mise en pratique</h2>
+<p>Les étapes pour maîtriser ce sujet :</p>
+<ol type="1">
+<li>Comprendre le concept et son utilité</li>
+<li>Installer et configurer les outils nécessaires</li>
+<li>Réaliser un premier cas d’usage simple</li>
+<li>Appliquer au contexte du projet central</li>
+</ol>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Maîtriser ami, snapshots et auto scaling te permettra d’industrialiser et de déployer tes modèles de manière professionnelle.</p>
+</div>
+</section>
+<section id="bonnes-pratiques-4" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="bonnes-pratiques-4"><span class="header-section-number">5.3</span> Bonnes pratiques</h2>
+<ul>
+<li>Documenter chaque étape de la configuration</li>
+<li>Versionner les configurations dans Git</li>
+<li>Tester avant de déployer</li>
+<li>Suivre les logs et monitorer les performances</li>
+</ul>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.3.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>Types d’instances EC2 (compute, memory, GPU)</strong></li>
+<li><strong>Lancement et configuration d’une instance</strong></li>
+<li><strong>Groupes de sécurité et règles réseau</strong></li>
+<li><strong>Connexion SSH et transfert de fichiers</strong></li>
+<li><strong>AMI, snapshots et Auto Scaling</strong></li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +772,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Types d’instances EC2 (compute, memory, GPU)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment types d’instances ec2 (compute, memory, gpu) s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -587,13 +788,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Lancement et configuration d’une instance
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment lancement et configuration d’une instance s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -603,13 +804,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Groupes de sécurité et règles réseau
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment groupes de sécurité et règles réseau s’applique dans le projet central.</p>
 </div>
 </div>
 </div>
@@ -619,13 +820,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Connexion SSH et transfert de fichiers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Explique comment connexion ssh et transfert de fichiers s’applique dans le projet central.</p>
 </div>
 </div>
 </div>

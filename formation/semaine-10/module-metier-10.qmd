@@ -1,9 +1,9 @@
 ---
 title: "Module 10 — Tarification avancée"
-subtitle: "GLM Poisson/Gamma et validation"
+subtitle: "GLM Poisson/Gamma, interactions et validation"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, tarification, GLM]
+categories: [assurance, tarification, GLM, machine-learning]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,63 +11,284 @@ toc-depth: 3
 number-sections: true
 ---
 
-# GLM Poisson fréquence
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Implémenter** un GLM Poisson pour la fréquence en Python
+2. **Implémenter** un GLM Gamma pour la sévérité
+3. **Gérer** les interactions et effets non-linéaires
+4. **Valider** avec la déviance, l'AIC et les lift curves
+5. **Comparer** les performances GLM vs Machine Learning
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 5 (fréquence/sévérité) et 8 (principes tarifaires, intro GLM)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# GLM Gamma sévérité
+# GLM Poisson pour la fréquence
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Implémentation avec statsmodels
+
+```python
+import statsmodels.api as sm
+import pandas as pd
+import numpy as np
+
+# Charger les données
+df = pd.read_csv("portefeuille_auto.csv")
+
+# Variables explicatives (dummies pour les catégorielles)
+X = pd.get_dummies(df[['age_classe', 'zone', 'puissance_classe']], drop_first=True)
+X = sm.add_constant(X)
+
+# Variable réponse
+y = df['nb_sinistres']
+
+# Offset = log(exposition) pour gérer les durées partielles
+offset = np.log(df['exposition'])
+
+# Modèle GLM Poisson
+model_freq = sm.GLM(y, X, family=sm.families.Poisson(), offset=offset)
+result_freq = model_freq.fit()
+
+print(result_freq.summary())
+```
+
+## Interprétation des coefficients
+
+Les coefficients s'interprètent comme des **log-relativités** :
+
+$$\ln(\lambda_i) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \ln(\text{exposition}_i)$$
+
+La relativité d'une modalité est $\exp(\beta_j)$ :
+
+| Variable | Coefficient | Relativité | Interprétation |
+|----------|------------|-----------|---------------|
+| Intercept | -2.50 | - | Fréquence de base = 0.082 |
+| age_18-25 | 0.62 | 1.86 | +86% de risque vs référence |
+| zone_Paris | 0.37 | 1.45 | +45% vs référence |
+| puissance_8+ | 0.10 | 1.11 | +11% vs référence |
 
 ---
 
-# Interactions non-linéaires
+# GLM Gamma pour la sévérité
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Implémentation
+
+```python
+# Filtrer les sinistres uniquement (sévérité > 0)
+df_sin = df[df['nb_sinistres'] > 0].copy()
+
+X_sev = pd.get_dummies(df_sin[['age_classe', 'zone', 'type_garantie']], drop_first=True)
+X_sev = sm.add_constant(X_sev)
+y_sev = df_sin['cout_moyen']
+
+# GLM Gamma avec lien log
+model_sev = sm.GLM(y_sev, X_sev, family=sm.families.Gamma(link=sm.families.links.Log()))
+result_sev = model_sev.fit()
+
+print(result_sev.summary())
+```
+
+:::{.concept-cle}
+**💡 La prime pure GLM**
+
+$$\text{Prime pure}_i = \hat{\lambda}_i \times \hat{s}_i = \exp(X_i^f \hat{\beta}^f) \times \exp(X_i^s \hat{\beta}^s)$$
+
+C'est le produit des prédictions du modèle fréquence et du modèle sévérité. Grâce au lien log, les deux se multiplient naturellement.
+:::
 
 ---
 
-# Validation croisée
+# Interactions et non-linéarité
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Interactions
+
+Une interaction signifie que l'effet d'une variable dépend du niveau d'une autre :
+
+```python
+# Ajouter une interaction âge × zone
+X['age_jeune_x_paris'] = X['age_18-25'] * X['zone_Paris']
+```
+
+:::{.exemple-box}
+**📝 Exemple**
+
+L'effet "jeune conducteur" est peut-être plus fort à Paris (trafic dense) qu'en rural. Sans interaction, le modèle suppose que l'effet âge est le même partout. Avec interaction, on capture cette différence.
+:::
+
+## Effets non-linéaires
+
+Pour les variables continues (âge, km), on peut utiliser des **splines** ou des **classes** :
+
+```python
+# Découper l'âge en classes
+df['age_classe'] = pd.cut(df['age'], bins=[18, 25, 35, 45, 55, 65, 99],
+                          labels=['18-25', '26-35', '36-45', '46-55', '56-65', '65+'])
+```
+
+---
+
+# Validation du modèle
+
+## Métriques de qualité
+
+| Métrique | Description | Bon modèle |
+|----------|-------------|-----------|
+| **Déviance** | Écart entre modèle et données | Plus basse = mieux |
+| **AIC** | Déviance + pénalité pour complexité | Plus bas = mieux |
+| **Lift curve** | Pouvoir discriminant du modèle | Courbe éloignée de la diagonale |
+| **Gini** | Concentration du pouvoir prédictif (0-1) | > 0.3 pour la fréquence |
+
+## Lift curve
+
+```{python}
+#| label: fig-lift
+#| fig-cap: "Lift curve : pouvoir discriminant du modèle de fréquence"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n = 1000
+predicted = np.random.beta(2, 20, n)
+actual = np.random.poisson(predicted * 10)
+
+# Trier par risque prédit
+order = np.argsort(predicted)
+cumul_expo = np.cumsum(np.ones(n)) / n
+cumul_sin = np.cumsum(actual[order]) / actual.sum()
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(cumul_expo, cumul_sin, color='#06436e', linewidth=2.5, label='Modèle GLM')
+ax.plot([0, 1], [0, 1], '--', color='#ccc', linewidth=1.5, label='Aléatoire')
+ax.fill_between(cumul_expo, cumul_sin, cumul_expo, alpha=0.1, color='#06436e')
+
+gini = 2 * (np.trapz(cumul_sin, cumul_expo) - 0.5)
+ax.text(0.6, 0.25, f'Gini = {gini:.2f}', fontsize=14, fontweight='bold', color='#06436e',
+        bbox=dict(boxstyle='round', facecolor='#e0f2fe', alpha=0.8))
+
+ax.set_xlabel('% exposition (trié par risque croissant)', fontsize=11)
+ax.set_ylabel('% sinistres cumulés', fontsize=11)
+ax.set_title('Lift curve — Modèle de fréquence', fontsize=14, fontweight='bold', color='#06436e')
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Overfitting**
+
+Un modèle avec trop de variables ou d'interactions peut sur-ajuster les données d'entraînement. Toujours valider sur un **jeu de test** séparé (ou par validation croisée) et comparer l'AIC sur train vs test.
+:::
 
 ---
 
 # GLM vs Machine Learning
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Comparaison
+
+| Critère | GLM | XGBoost / Random Forest |
+|---------|-----|------------------------|
+| **Interprétabilité** | Excellente (relativités) | Faible (boîte noire) |
+| **Performance prédictive** | Bonne | Souvent meilleure |
+| **Exigences réglementaires** | Standard accepté | Nécessite SHAP/LIME |
+| **Gestion des interactions** | Manuelle | Automatique |
+| **Risque d'overfitting** | Faible | Plus élevé |
+| **Adoption en assurance** | Universel | En progression |
+
+:::{.concept-cle}
+**💡 En pratique**
+
+La plupart des assureurs utilisent le GLM comme **modèle de référence** (benchmark) et le ML comme **outil d'amélioration**. On commence par un GLM, puis on teste si un modèle ML apporte un gain significatif. Si oui, on utilise SHAP pour l'interpréter et le justifier auprès du régulateur.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **GLM Poisson + offset** pour la fréquence — Coefficients = log-relativités
+2. **GLM Gamma** pour la sévérité — Même framework, même interprétation
+3. **Interactions** à ajouter manuellement — Tester si l'effet varie selon le contexte
+4. **Lift curve et Gini** pour valider — Le modèle discrimine-t-il bien les risques ?
+5. **GLM = benchmark, ML = amélioration** — Toujours comparer et justifier
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Pourquoi utiliser un offset dans le GLM Poisson ?
+
+**Réponse** : L'offset $\ln(\text{exposition})$ corrige les durées partielles. Un assuré couvert 6 mois a 2× moins de chances de sinistrer qu'un assuré couvert 12 mois. Sans offset, le modèle confondrait les assurés à faible risque avec ceux à faible exposition.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Comment interpréter un coefficient de 0.62 pour "age_18-25" ?
+
+**Réponse** : Relativité = $\exp(0.62) = 1.86$. Un jeune conducteur de 18-25 ans a un risque de fréquence **86% plus élevé** que la classe de référence, toutes choses égales par ailleurs. Sa composante fréquence dans la prime sera multipliée par 1.86.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Qu'est-ce qu'une lift curve et comment la lire ?
+
+**Réponse** : On trie les assurés par risque prédit croissant (axe X = % exposition) et on trace le % cumulé de sinistres (axe Y). Un bon modèle concentre les sinistres dans les déciles de risque élevé : la courbe s'éloigne de la diagonale. Le **Gini** résume cet écart (0 = aléatoire, 1 = parfait).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Quand le ML apporte-t-il un vrai gain par rapport au GLM ?
+
+**Réponse** : Quand il y a des **interactions complexes** non captées par le GLM (ex : effet croisé âge × zone × puissance × km), des **non-linéarités fortes**, ou beaucoup de variables. En pratique, le gain est souvent de 2-5% de Gini, ce qui peut représenter des millions d'euros sur un grand portefeuille.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Offset** | Terme fixe dans le GLM pour corriger l'exposition |
+| **Déviance** | Mesure d'écart du GLM aux données |
+| **AIC** | Critère de sélection de modèle (déviance + pénalité complexité) |
+| **Lift curve** | Graphique du pouvoir discriminant |
+| **Gini** | Coefficient de concentration du pouvoir prédictif (0 à 1) |
+| **Interaction** | Effet croisé entre deux variables |
+| **SHAP** | SHapley Additive exPlanations — interprétabilité ML |
 
 ---
 

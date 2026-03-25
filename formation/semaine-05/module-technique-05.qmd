@@ -1,5 +1,5 @@
 ---
-title: "Module Technique 5 — AWS — Introduction et S3"
+title: "Module Technique 5 — AWS : Introduction et S3"
 subtitle: "Découvrir le cloud et le stockage objet"
 author: "François Boussengui"
 date: last-modified
@@ -11,62 +11,258 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Pourquoi le cloud AWS
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Expliquer** les avantages du cloud pour la data science
+2. **Naviguer** dans l'écosystème AWS (régions, services)
+3. **Créer** et configurer un bucket S3
+4. **Manipuler** des fichiers avec AWS CLI
+5. **Utiliser** boto3 pour interagir avec S3 en Python
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Docker, Git, Python
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Concepts AWS fondamentaux
+# Pourquoi le cloud ?
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Comparaison on-premise vs cloud
+
+| Critère | On-premise | Cloud (AWS) |
+|---------|-----------|-------------|
+| **Coût initial** | Élevé (serveurs, infra) | Faible (pay-as-you-go) |
+| **Scalabilité** | Limitée, délai d'achat | Quasi-illimitée, instantanée |
+| **Maintenance** | À ta charge | Gérée par AWS |
+| **Disponibilité** | Variable | 99.99% (SLA) |
+| **Sécurité** | Tu gères tout | Modèle de responsabilité partagée |
+
+:::{.concept-cle}
+**💡 Pour la data science**, le cloud permet de lancer un GPU pour entraîner un modèle en 2 heures, puis de l'éteindre. Pas besoin d'acheter une machine à 10 000 € qui dort 95% du temps.
+:::
+
+## Les services AWS essentiels
+
+```{mermaid}
+%%| fig-cap: "Services AWS pour la data science"
+
+flowchart TD
+    subgraph Stockage
+        S3[S3 — Stockage objet]
+    end
+    subgraph Compute
+        EC2[EC2 — Machines virtuelles]
+        Lambda[Lambda — Serverless]
+    end
+    subgraph Base de données
+        RDS[RDS — SQL managé]
+    end
+    subgraph ML
+        SM[SageMaker — ML]
+    end
+
+    S3 --> EC2
+    S3 --> Lambda
+    S3 --> SM
+    EC2 --> RDS
+    Lambda --> RDS
+```
 
 ---
 
-# S3 stockage objet
+# S3 : le stockage objet
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Concepts fondamentaux
+
+Amazon S3 (Simple Storage Service) organise les données en **objets** dans des **buckets** :
+
+- **Bucket** : conteneur de niveau supérieur (nom unique **globalement** sur tout AWS)
+- **Objet** : fichier + métadonnées, identifié par une **clé** (chemin)
+- **Versioning** : garder l'historique des modifications d'un objet
+
+:::{.exemple-box}
+**📝 Cas d'usage en assurance**
+
+- Stocker les datasets bruts (CSV, Parquet) des sinistres
+- Archiver les modèles entraînés (fichiers .pkl, .joblib)
+- Héberger les rapports générés (PDF, HTML)
+- Partager des données entre équipes
+:::
+
+## Classes de stockage
+
+| Classe | Usage | Coût |
+|--------|-------|------|
+| **S3 Standard** | Accès fréquent | ~0.023 $/Go/mois |
+| **S3 Infrequent Access** | Accès rare | ~0.0125 $/Go/mois |
+| **S3 Glacier** | Archivage long terme | ~0.004 $/Go/mois |
 
 ---
 
 # AWS CLI
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Installation et configuration
+
+:::{.terminal-box}
+<span class="comment"># Installer AWS CLI</span><br>
+<span class="prompt">$</span> pip install awscli<br><br>
+<span class="comment"># Configurer les identifiants</span><br>
+<span class="prompt">$</span> aws configure<br>
+<span class="output">AWS Access Key ID: AKIA...</span><br>
+<span class="output">AWS Secret Access Key: ****</span><br>
+<span class="output">Default region name: eu-west-1</span><br>
+<span class="output">Default output format: json</span>
+:::
+
+## Opérations courantes
+
+:::{.terminal-box}
+<span class="comment"># Créer un bucket</span><br>
+<span class="prompt">$</span> aws s3 mb s3://mon-portefeuille-assurance<br><br>
+<span class="comment"># Uploader un fichier</span><br>
+<span class="prompt">$</span> aws s3 cp data/sinistres.csv s3://mon-portefeuille-assurance/data/<br><br>
+<span class="comment"># Lister le contenu</span><br>
+<span class="prompt">$</span> aws s3 ls s3://mon-portefeuille-assurance/data/<br>
+<span class="output">2024-01-15 10:30:00    2456789 sinistres.csv</span><br><br>
+<span class="comment"># Synchroniser un dossier entier</span><br>
+<span class="prompt">$</span> aws s3 sync ./data/ s3://mon-portefeuille-assurance/data/<br><br>
+<span class="comment"># Télécharger</span><br>
+<span class="prompt">$</span> aws s3 cp s3://mon-portefeuille-assurance/data/sinistres.csv ./local/
+:::
+
+:::{.attention-box}
+**⚠️ Sécurité**
+
+Ne jamais mettre tes clés AWS dans le code source ou sur GitHub. Utiliser `aws configure` (stocke dans `~/.aws/credentials`) ou des **variables d'environnement**. En CI/CD, utiliser les GitHub Secrets.
+:::
 
 ---
 
-# boto3 Python
+# boto3 : S3 en Python
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Opérations de base
+
+```python
+import boto3
+
+# Créer un client S3
+s3 = boto3.client('s3')
+
+# Upload un fichier
+s3.upload_file(
+    Filename='data/sinistres.csv',
+    Bucket='mon-portefeuille-assurance',
+    Key='data/sinistres.csv'
+)
+
+# Download un fichier
+s3.download_file(
+    Bucket='mon-portefeuille-assurance',
+    Key='data/sinistres.csv',
+    Filename='local/sinistres.csv'
+)
+
+# Lister les objets
+response = s3.list_objects_v2(
+    Bucket='mon-portefeuille-assurance',
+    Prefix='data/'
+)
+for obj in response.get('Contents', []):
+    print(f"{obj['Key']} — {obj['Size'] / 1024:.1f} Ko")
+```
+
+## Lire un CSV directement depuis S3
+
+```python
+import pandas as pd
+import boto3
+from io import StringIO
+
+s3 = boto3.client('s3')
+response = s3.get_object(Bucket='mon-bucket', Key='data/sinistres.csv')
+df = pd.read_csv(StringIO(response['Body'].read().decode('utf-8')))
+print(f"Dataset : {len(df)} lignes, {len(df.columns)} colonnes")
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+En production, les données sont rarement sur ton disque local. Elles sont sur S3 (ou un data lake). Savoir lire/écrire sur S3 avec boto3 est une compétence essentielle pour un data scientist en entreprise.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Le cloud = flexibilité et scalabilité** — Pay-as-you-go, pas d'investissement matériel
+2. **S3 = stockage objet** — Buckets + objets, pas un système de fichiers classique
+3. **AWS CLI pour les opérations rapides** — cp, sync, ls depuis le terminal
+4. **boto3 pour l'automatisation Python** — Upload, download, listing en script
+5. **Sécurité : jamais de clés dans le code** — aws configure ou variables d'environnement
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Quels sont les avantages du cloud pour un data scientist ?
+
+**Réponse** : Scalabilité instantanée (GPU à la demande), pay-as-you-go (pas d'investissement), services managés (pas de maintenance), collaboration facilitée (données centralisées), haute disponibilité (99.99%).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Différence entre un bucket et un objet S3 ?
+
+**Réponse** : Un **bucket** est un conteneur de niveau supérieur avec un nom unique global. Un **objet** est un fichier stocké dans un bucket, identifié par sa **clé** (chemin). Exemple : bucket `mon-projet`, objet `data/sinistres.csv`.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Comment sécuriser ses identifiants AWS ?
+
+**Réponse** : Utiliser `aws configure` (stocke dans `~/.aws/credentials`), des variables d'environnement, ou des GitHub Secrets en CI/CD. Ne **jamais** mettre les clés dans le code source, les commits Git, ou les Dockerfiles.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment lire un CSV depuis S3 directement en pandas ?
+
+**Réponse** : Avec boto3 : récupérer l'objet avec `s3.get_object()`, lire le body, décoder en UTF-8, et passer à `pd.read_csv()` via `StringIO`. Alternative : `pd.read_csv('s3://bucket/key')` avec le package `s3fs` installé.
 :::
 
 ---

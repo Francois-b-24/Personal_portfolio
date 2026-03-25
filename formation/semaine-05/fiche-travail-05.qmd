@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 5"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : modélisation fréquence/sévérité et AWS S3"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,31 +9,209 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 5
-2. **Livrable technique** : Mise en pratique du Module Technique 5
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+.hint-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables à produire
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Modélisation fréquence/sévérité:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Script Python qui :
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+- Génère des données de sinistres (1 000+ lignes)
+- Ajuste une loi de Poisson sur la fréquence
+- Ajuste une loi Gamma sur la sévérité
+- Produit des QQ-plots pour valider l'ajustement
+- Calcule la prime pure estimée
+:::
 
-## Checklist
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📈 Livrable 2 — Comparaison de distributions:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-- [ ] Module Métier 5 terminé
-- [ ] Module Technique 5 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+Comparer Gamma vs Lognormale sur les données de sévérité :
+
+- QQ-plots côte à côte
+- AIC pour les deux modèles
+- Conclusion argumentée sur le choix
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}☁️ Livrable 3 — Script boto3:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Script Python utilisant boto3 pour :
+
+- Créer un bucket S3
+- Uploader les données de sinistres
+- Les relire depuis S3 dans un DataFrame pandas
+:::
+
+---
+
+## 🏋️ Exercices métier
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Estimation Poisson
+:::
+
+À partir des données suivantes (nombre de sinistres par assuré sur 1 an), estime le paramètre λ de la loi de Poisson et vérifie s'il y a surdispersion :
+
+| Nb sinistres | 0 | 1 | 2 | 3 | 4+ |
+|-------------|---|---|---|---|-----|
+| Nb assurés | 7200 | 650 | 120 | 25 | 5 |
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- Total assurés : 8 000
+- Total sinistres : 0×7200 + 1×650 + 2×120 + 3×25 + 4×5 = 985
+- **λ̂ = 985/8000 = 0.123**
+- Moyenne = 0.123, Variance = 0.136
+- Ratio variance/moyenne = 1.10 → légère surdispersion, Poisson acceptable en première approximation
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M2 — Ajustement Gamma
+:::
+
+Des coûts de sinistres (en €) : 1200, 3500, 800, 5200, 2100, 950, 4300, 1800, 6100, 1500.
+
+Estime les paramètres de la loi Gamma par la méthode des moments.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- Moyenne x̄ = 2745 €
+- Variance s² = 3 204 750
+- **α̂ = x̄² / s² = 2745² / 3 204 750 ≈ 2.35**
+- **β̂ = s² / x̄ = 3 204 750 / 2745 ≈ 1167**
+- Vérification : α × β = 2.35 × 1167 ≈ 2742 ≈ x̄ ✓
+:::
+:::
+
+## 🏋️ Exercices techniques
+
+:::{.exercice-box}
+:::{.exercice-header}
+☁️ Exercice T1 — Premières commandes S3
+:::
+
+Avec AWS CLI :
+
+1. Crée un bucket `formation-assurance-[ton-nom]`
+2. Uploade un fichier CSV de test
+3. Liste le contenu du bucket
+4. Télécharge le fichier dans un autre dossier
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```bash
+aws s3 mb s3://formation-assurance-francois
+aws s3 cp sinistres.csv s3://formation-assurance-francois/data/
+aws s3 ls s3://formation-assurance-francois/data/
+aws s3 cp s3://formation-assurance-francois/data/sinistres.csv ./download/
+```
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+☁️ Exercice T2 — boto3 et pandas
+:::
+
+Écris un script Python qui uploade un DataFrame pandas sur S3 au format Parquet, puis le relit.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```python
+import boto3
+import pandas as pd
+from io import BytesIO
+
+# Créer des données
+df = pd.DataFrame({'sinistre_id': range(100), 'cout': np.random.gamma(2, 1500, 100)})
+
+# Upload en Parquet
+buffer = BytesIO()
+df.to_parquet(buffer, index=False)
+buffer.seek(0)
+s3 = boto3.client('s3')
+s3.put_object(Bucket='mon-bucket', Key='data/sinistres.parquet', Body=buffer.getvalue())
+
+# Relire
+response = s3.get_object(Bucket='mon-bucket', Key='data/sinistres.parquet')
+df_loaded = pd.read_parquet(BytesIO(response['Body'].read()))
+```
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Comment S3 pourrait-il servir de data lake pour ton projet d'assurance ?** (données brutes → nettoyées → modèles)
+2. **Pourquoi stocker les modèles entraînés sur S3 plutôt qu'en local ?** (reproductibilité, partage, versioning)
+3. **Comment automatiser l'upload des résultats de modélisation sur S3 via le CI/CD ?**
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 5 terminé (Poisson, Gamma, QQ-plot)
+- Module Technique 5 terminé (S3, CLI, boto3)
+- Livrable 1 produit (modélisation fréquence/sévérité)
+- Livrable 2 produit (comparaison distributions)
+- Livrable 3 produit (script boto3)
+- Exercices réalisés
+:::
 
 ---
 
 [← Retour à la Semaine 5](index.html){.btn .btn-secondary}
+[Module Métier 5](module-metier-05.html){.btn .btn-outline-primary}
+[Module Technique 5](module-technique-05.html){.btn .btn-outline-primary}

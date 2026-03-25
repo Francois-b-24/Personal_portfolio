@@ -1,6 +1,6 @@
 ---
-title: "Module Technique 12 — FastAPI — API de scoring"
-subtitle: "Construire une API de prédiction"
+title: "Module Technique 12 — FastAPI : API de scoring"
+subtitle: "Construire et déployer une API de prédiction"
 author: "François Boussengui"
 date: last-modified
 categories: [fastapi, api, scoring]
@@ -11,62 +11,209 @@ toc-depth: 3
 number-sections: true
 ---
 
-# FastAPI framework
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** FastAPI et ses avantages pour la data science
+2. **Créer** des endpoints GET et POST
+3. **Valider** les données d'entrée avec Pydantic
+4. **Servir** un modèle ML via une API REST
+5. **Documenter** automatiquement avec Swagger/OpenAPI
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Python, Docker, scikit-learn
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Endpoints et routes
+# Pourquoi FastAPI ?
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+FastAPI combine performance (async), validation automatique (Pydantic) et documentation (Swagger). C'est le framework idéal pour servir des modèles ML en production.
+
+| Framework | Performance | Validation | Doc auto | Async |
+|-----------|-----------|-----------|----------|-------|
+| Flask | Moyenne | Non | Non | Non |
+| Django | Moyenne | Non | Plugins | Non |
+| **FastAPI** | **Excellente** | **Oui** | **Oui** | **Oui** |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Pydantic valide automatiquement les entrées. Si un utilisateur envoie `{"age": "abc"}`, FastAPI retourne une erreur 422 avec un message clair — pas besoin d'écrire la validation manuellement.
+:::
 
 ---
 
-# Modèles Pydantic
+# Créer des endpoints
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Première API
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel, Field
+
+app = FastAPI(title="API Tarification Assurance")
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+class ProfilAssure(BaseModel):
+    age: int = Field(..., ge=18, le=99)
+    zone: str
+    crm: float = Field(default=1.0, ge=0.5, le=3.5)
+
+class PrimeResponse(BaseModel):
+    prime_pure: float
+    prime_commerciale: float
+
+@app.post("/predict", response_model=PrimeResponse)
+def predict(profil: ProfilAssure):
+    rel_age = 1.85 if profil.age < 26 else 1.0
+    rel_zone = {"paris": 1.45, "rural": 0.75}.get(profil.zone, 1.0)
+    prime_pure = 180 * rel_age * rel_zone * profil.crm
+    return PrimeResponse(
+        prime_pure=round(prime_pure, 2),
+        prime_commerciale=round(prime_pure / 0.70, 2)
+    )
+```
+
+:::{.terminal-box}
+<span class="prompt">$</span> uvicorn main:app --reload --port 8000<br>
+<span class="output">INFO: Uvicorn running on http://127.0.0.1:8000</span>
+:::
 
 ---
 
 # Servir un modèle ML
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Charger le modèle **au démarrage** (pas à chaque requête) :
+
+```python
+import pickle
+
+# Chargé une seule fois
+with open("models/glm.pkl", "rb") as f:
+    model = pickle.load(f)
+
+@app.post("/predict")
+def predict(profil: ProfilAssure):
+    features = [[profil.age, profil.puissance]]
+    pred = model.predict(features)[0]
+    return {"prime": round(float(pred), 2)}
+```
+
+:::{.attention-box}
+**⚠️ Attention**
+
+Ne jamais charger le modèle à chaque requête — un fichier pickle de 50 Mo ajouterait 1-2 secondes de latence à chaque appel.
+:::
+
+---
+
+# Dockeriser l'API
+
+```dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+:::{.terminal-box}
+<span class="prompt">$</span> docker build -t api-scoring:v1 .<br>
+<span class="prompt">$</span> docker run -p 8000:8000 api-scoring:v1
+:::
 
 ---
 
 # Documentation Swagger
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+FastAPI génère automatiquement :
+
+- **Swagger UI** à `/docs` — interface interactive pour tester
+- **ReDoc** à `/redoc` — documentation lisible
+- **OpenAPI JSON** à `/openapi.json` — spécification standard
+
+:::{.exemple-box}
+**📝 Avantage clé** : les équipes front-office peuvent tester l'API sans lire le code Python. Le format OpenAPI est reconnu par tous les outils d'intégration.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **FastAPI = performance + validation + docs** — Le framework idéal pour les APIs ML
+2. **Pydantic valide automatiquement** — Types, plages, champs obligatoires
+3. **Charger le modèle au démarrage** — Pas à chaque requête
+4. **POST /predict** — Envoyer un profil, recevoir une prime
+5. **Docker pour déployer** — Même API partout
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Pourquoi FastAPI plutôt que Flask ?
+
+**Réponse** : Validation Pydantic automatique, documentation Swagger auto, support async, type hints natifs. Flask nécessite des plugins pour tout ça.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Pourquoi charger le modèle au démarrage ?
+
+**Réponse** : Charger un pickle (10-100 Mo) à chaque requête ajouterait 0.5-2s de latence. Au démarrage, c'est fait une seule fois.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Comment gérer les erreurs ?
+
+**Réponse** : HTTPException avec codes appropriés (400 données invalides, 500 erreur interne). Logger côté serveur, ne pas exposer les détails au client.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment versionner une API ?
+
+**Réponse** : Préfixer les routes (`/v1/predict`, `/v2/predict`). Permet de maintenir l'ancienne version pendant la transition.
 :::
 
 ---

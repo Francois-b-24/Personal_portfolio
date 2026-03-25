@@ -1,6 +1,6 @@
 ---
-title: "Module Technique 11 — MLflow — Tracking et Versionnement"
-subtitle: "Suivre et versionner les modèles"
+title: "Module Technique 11 — MLflow : Tracking et Versionnement"
+subtitle: "Suivre et versionner tes modèles ML"
 author: "François Boussengui"
 date: last-modified
 categories: [mlflow, tracking, mlops]
@@ -11,62 +11,244 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Pourquoi MLflow
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** pourquoi le tracking est essentiel en MLOps
+2. **Logger** paramètres, métriques et artefacts avec MLflow
+3. **Comparer** des runs et sélectionner le meilleur modèle
+4. **Utiliser** le Model Registry pour versionner les modèles
+5. **Servir** un modèle depuis MLflow
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Python, scikit-learn/statsmodels, Docker
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Tracking expériences
+# Pourquoi MLflow ?
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Le problème du "quel modèle était le meilleur ?"
+
+Sans tracking, après quelques semaines d'expérimentation :
+
+- "Quel était le hyperparamètre du modèle de mardi ?"
+- "C'était le GLM ou le XGBoost qui avait le meilleur Gini ?"
+- "Quelle version du feature engineering a été utilisée ?"
+
+MLflow résout ce problème en **loggant automatiquement** chaque expérience.
+
+## Les 4 composantes de MLflow
+
+| Composante | Rôle |
+|-----------|------|
+| **Tracking** | Logger paramètres, métriques, artefacts |
+| **Projects** | Packager le code pour la reproductibilité |
+| **Models** | Format standard pour les modèles |
+| **Model Registry** | Versionner et déployer les modèles |
 
 ---
 
-# Logging paramètres
+# Tracking des expériences
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Logger un run
+
+```python
+import mlflow
+import mlflow.sklearn
+from sklearn.linear_model import PoissonRegressor
+from sklearn.metrics import mean_poisson_deviance
+import numpy as np
+
+# Démarrer une expérience
+mlflow.set_experiment("tarification-auto-frequence")
+
+with mlflow.start_run(run_name="glm-poisson-v1"):
+    # Paramètres
+    alpha = 0.01
+    mlflow.log_param("model_type", "PoissonRegressor")
+    mlflow.log_param("alpha", alpha)
+    mlflow.log_param("features", "age,zone,puissance,crm")
+    mlflow.log_param("n_samples", len(X_train))
+
+    # Entraînement
+    model = PoissonRegressor(alpha=alpha)
+    model.fit(X_train, y_train, sample_weight=exposure_train)
+
+    # Métriques
+    y_pred = model.predict(X_test)
+    deviance = mean_poisson_deviance(y_test, y_pred, sample_weight=exposure_test)
+    gini = calculate_gini(y_test, y_pred)
+
+    mlflow.log_metric("deviance", deviance)
+    mlflow.log_metric("gini", gini)
+    mlflow.log_metric("n_features", X_train.shape[1])
+
+    # Sauvegarder le modèle
+    mlflow.sklearn.log_model(model, "model")
+
+    # Artefacts (graphiques, tableaux)
+    mlflow.log_artifact("relativites.csv")
+    mlflow.log_artifact("lift_curve.png")
+
+    print(f"Run logged: deviance={deviance:.4f}, gini={gini:.3f}")
+```
+
+## Interface web
+
+:::{.terminal-box}
+<span class="comment"># Lancer l'interface MLflow</span><br>
+<span class="prompt">$</span> mlflow ui --port 5000<br>
+<span class="output">[INFO] Listening at: http://127.0.0.1:5000</span>
+:::
+
+L'interface web permet de :
+
+- Voir tous les runs d'une expérience
+- Comparer les métriques entre runs
+- Télécharger les artefacts (modèles, graphiques)
+- Filtrer et trier les résultats
+
+---
+
+# Comparer et sélectionner
+
+## Comparaison de runs
+
+```python
+# Rechercher les meilleurs runs
+runs = mlflow.search_runs(
+    experiment_names=["tarification-auto-frequence"],
+    order_by=["metrics.gini DESC"],
+    max_results=5
+)
+
+print(runs[["run_id", "params.model_type", "params.alpha",
+            "metrics.gini", "metrics.deviance"]])
+```
+
+| Run | Modèle | Alpha | Gini | Déviance |
+|-----|--------|-------|------|----------|
+| abc123 | PoissonRegressor | 0.01 | 0.342 | 0.1823 |
+| def456 | PoissonRegressor | 0.001 | 0.338 | 0.1831 |
+| ghi789 | XGBRegressor | - | 0.365 | 0.1798 |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+MLflow ne te dit pas **quel** modèle choisir — il te donne les **données** pour décider. En assurance, le choix dépend aussi de l'interprétabilité, de la conformité réglementaire et de la stabilité dans le temps.
+:::
 
 ---
 
 # Model Registry
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Versionner les modèles
 
----
+Le Model Registry est un **catalogue centralisé** des modèles :
 
-# Comparaison de runs
+```python
+# Enregistrer un modèle
+model_uri = f"runs:/{run_id}/model"
+mlflow.register_model(model_uri, "modele-frequence-auto")
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+# Passer en production
+from mlflow.tracking import MlflowClient
+client = MlflowClient()
+client.transition_model_version_stage(
+    name="modele-frequence-auto",
+    version=3,
+    stage="Production"
+)
+```
+
+Les stages disponibles :
+
+| Stage | Description |
+|-------|-------------|
+| **None** | Modèle enregistré, pas encore évalué |
+| **Staging** | En cours de validation / test |
+| **Production** | Modèle actif utilisé en production |
+| **Archived** | Ancien modèle, conservé pour traçabilité |
+
+:::{.attention-box}
+**⚠️ Gouvernance**
+
+En assurance, le passage d'un modèle en production doit être **validé** par un comité (actuaire, compliance, direction technique). MLflow fournit la traçabilité nécessaire : qui a entraîné quoi, avec quelles données, quelles performances, quand.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **MLflow Tracking** logge tout : paramètres, métriques, artefacts, modèles
+2. **L'interface web** permet de comparer visuellement les runs
+3. **search_runs()** pour trouver le meilleur modèle programmatiquement
+4. **Model Registry** versionne et gère le cycle de vie des modèles
+5. **Traçabilité complète** pour la gouvernance et la conformité
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Pourquoi logger les paramètres et pas seulement les métriques ?
+
+**Réponse** : Pour la **reproductibilité**. Si un modèle a un bon Gini, il faut savoir avec quels paramètres il a été entraîné pour pouvoir le reproduire. Aussi pour comprendre l'impact des paramètres sur la performance (ex : quel alpha donne le meilleur résultat ?).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Différence entre un run et un modèle enregistré ?
+
+**Réponse** : Un **run** est une exécution unique d'un entraînement (avec ses paramètres et métriques). Un **modèle enregistré** (Model Registry) est un modèle promu depuis un run, avec un nom, une version et un stage (Staging, Production). Beaucoup de runs → peu de modèles enregistrés → un seul en production.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Comment MLflow aide à la conformité en assurance ?
+
+**Réponse** : MLflow fournit une **piste d'audit complète** : qui a entraîné le modèle, quand, avec quelles données, quels paramètres, quelles performances. Le régulateur peut vérifier que le modèle en production a bien été validé et que les versions précédentes sont conservées.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment servir un modèle depuis MLflow ?
+
+**Réponse** : `mlflow models serve -m "models:/modele-frequence-auto/Production" -p 5001` lance une API REST. On peut aussi charger le modèle dans une Lambda ou un endpoint FastAPI avec `mlflow.pyfunc.load_model()`.
 :::
 
 ---

@@ -7,46 +7,130 @@ toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 19 — Approfondissement tarification</strong></p>
-        <ul>
-            <li>Micro-segmentation</li>
-            <li>Clustering</li>
-            <li>Arbres et ensembles</li>
-            <li>Régularisation</li>
-            <li>Éthique segmentation</li>
+        <ul class="track-topics">
+            <li>Micro-segmentation : aller au-delà des GLM</li>
+            <li>Clustering pour identifier des segments naturels</li>
+            <li>Arbres de décision et méthodes d'ensemble</li>
+            <li>Régularisation et surapprentissage</li>
+            <li>Éthique et équité de la segmentation</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module Technique 19 — Projet Central — Tarification ML</strong></p>
-        <ul>
-            <li>XGBoost tarification</li>
-            <li>Hyperparameter tuning</li>
-            <li>SHAP interprétabilité</li>
-            <li>GLM vs XGBoost</li>
-            <li>Choix modèle final</li>
+        <ul class="track-topics">
+            <li>XGBoost pour la tarification assurance</li>
+            <li>Optimisation des hyperparamètres (Optuna)</li>
+            <li>SHAP values : interpréter les prédictions</li>
+            <li>Comparaison GLM vs XGBoost</li>
+            <li>Choix du modèle final</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Micro-segmentation : aller au-delà des GLM</li>
+        <li>Clustering pour identifier des segments naturels</li>
+        <li>Arbres de décision et méthodes d'ensemble</li>
+        <li>Régularisation et surapprentissage</li>
+        <li>Éthique et équité de la segmentation</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>XGBoost pour la tarification assurance</li>
+        <li>Optimisation des hyperparamètres (Optuna)</li>
+        <li>SHAP values : interpréter les prédictions</li>
+        <li>Comparaison GLM vs XGBoost</li>
+        <li>Choix du modèle final</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Micro-segmentation | XGBoost tarification |
-| **Jour 2** | Clustering | Hyperparameter tuning |
-| **Jour 3** | Arbres et ensembles | SHAP interprétabilité |
-| **Jour 4** | Régularisation | GLM vs XGBoost |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Micro-segmentation : aller au-delà des GLM | XGBoost pour la tarification assurance |
+| **Jour 2** | Clustering pour identifier des segments naturels | Optimisation des hyperparamètres (Optuna) |
+| **Jour 3** | Arbres de décision et méthodes d'ensemble | SHAP values : interpréter les prédictions |
+| **Jour 4** | Régularisation et surapprentissage | Comparaison GLM vs XGBoost |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 19](module-metier-19.html)
-- [Module Technique 19](module-technique-19.html)
-- [Fiche de travail](fiche-travail-19.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-19.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 19</div>
+        <div class="nav-card-desc">Approfondissement tarification</div>
+    </a>
+    <a href="module-technique-19.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 19</div>
+        <div class="nav-card-desc">Projet Central — Tarification ML</div>
+    </a>
+    <a href="fiche-travail-19.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 10"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : tarification GLM avancée et certification AWS"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,30 +9,148 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 10
-2. **Livrable technique** : Mise en pratique du Module Technique 10
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Modèle GLM complet:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Notebook Python implémentant :
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+- GLM Poisson (fréquence) + GLM Gamma (sévérité)
+- Tableau de relativités par variable
+- Lift curve et calcul du Gini
+- Comparaison avec un modèle XGBoost
+- Prime pure prédite par segment
+:::
 
-## Checklist
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📝 Livrable 2 — Examen blanc AWS commenté:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-- [ ] Module Métier 10 terminé
-- [ ] Module Technique 10 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+Réaliser un examen blanc (Tutorials Dojo ou AWS Skill Builder). Document avec : score obtenu, questions ratées, explication de la bonne réponse, points à réviser.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🏗️ Livrable 3 — Architecture AWS du projet central:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Mettre à jour le schéma d'architecture du projet central en intégrant toutes les connaissances AWS acquises (semaines 5-10). Justifier chaque choix de service.
+:::
+
+---
+
+## 🏋️ Exercices
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Interpréter un GLM
+:::
+
+Un GLM Poisson de fréquence auto donne les coefficients suivants :
+
+| Variable | Coefficient | p-value |
+|----------|------------|---------|
+| Intercept | -2.50 | < 0.001 |
+| age_18-25 | 0.62 | < 0.001 |
+| age_56+ | 0.18 | 0.042 |
+| zone_Paris | 0.37 | < 0.001 |
+| puissance_8+ | 0.10 | 0.285 |
+
+Questions :
+
+1. Quelle est la fréquence de base ?
+2. Quelle est la relativité des jeunes conducteurs ?
+3. La variable puissance est-elle significative ?
+4. Quelle est la fréquence prédite pour un jeune parisien ?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+1. Fréquence de base = $\exp(-2.50) = 0.082$ (8.2%)
+2. Relativité jeunes = $\exp(0.62) = 1.86$ (+86%)
+3. Puissance 8+ : p-value = 0.285 > 0.05 → **non significatif**. À retirer ou regrouper.
+4. Jeune parisien : $\exp(-2.50 + 0.62 + 0.37) = \exp(-1.51) = 0.221$ (22.1%)
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+☁️ Exercice T1 — QCM AWS
+:::
+
+1. Une entreprise veut stocker 10 To de données accédées 2 fois par an. Quel service ?
+2. Comment sécuriser une API publique contre les attaques DDoS ?
+3. Quelle est la différence entre ALB et NLB ?
+
+::: {.callout-note collapse="true"}
+## Solutions
+
+1. **S3 Glacier** ou **S3 Glacier Deep Archive** (accès très rare, coût minimal)
+2. **AWS WAF** (Web Application Firewall) + **AWS Shield** (protection DDoS) devant un ALB ou CloudFront
+3. **ALB** (Application LB) : couche 7 (HTTP), routing par URL/header. **NLB** (Network LB) : couche 4 (TCP), ultra-faible latence, IP statique
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Comment déployer ton modèle GLM sur AWS ?** (Lambda pour le scoring temps réel, EC2 pour le batch)
+2. **Quels services AWS utiliserais-tu pour stocker les données, entraîner le modèle, et servir les prédictions ?**
+3. **Comment la certification AWS valorise-t-elle ton profil de data scientist en assurance ?**
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 10 terminé (GLM avancé, lift curves, GLM vs ML)
+- Module Technique 10 terminé (révision AWS, examen blanc)
+- Livrable 1 (modèle GLM complet)
+- Livrable 2 (examen blanc commenté)
+- Livrable 3 (architecture AWS mise à jour)
+- Exercices réalisés
+- Fin du Bloc III tarification et de l'axe technique AWS
+:::
 
 ---
 

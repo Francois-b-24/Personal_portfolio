@@ -1,9 +1,9 @@
 ---
-title: "Module Technique 10 — AWS — Certification SAA"
-subtitle: "Révision et examens blancs"
+title: "Module Technique 10 — AWS : Préparation Certification SAA"
+subtitle: "Révision des services et stratégies d'examen"
 author: "François Boussengui"
 date: last-modified
-categories: [aws, certification]
+categories: [aws, certification, saa]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,62 +11,217 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Révision services AWS
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Réviser** les services AWS clés pour l'examen SAA-C03
+2. **Comprendre** le Well-Architected Framework en pratique
+3. **S'entraîner** avec des examens blancs commentés
+4. **Maîtriser** les stratégies pour le jour J
+5. **Identifier** les ressources officielles utiles
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules Technique 5-9 (S3, EC2, RDS, Lambda, VPC, IAM)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures + révisions personnelles
+:::
+:::
 
 ---
 
-# Architecture Well-Architected
+# Révision des services clés
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Carte mentale des services
+
+```{mermaid}
+%%| fig-cap: "Services AWS à maîtriser pour le SAA-C03"
+
+flowchart TD
+    subgraph Compute
+        EC2[EC2]
+        Lambda[Lambda]
+        ECS[ECS/Fargate]
+    end
+    subgraph Storage
+        S3[S3]
+        EBS[EBS]
+        EFS[EFS]
+        Glacier[Glacier]
+    end
+    subgraph Database
+        RDS[RDS]
+        DynamoDB[DynamoDB]
+        ElastiCache[ElastiCache]
+    end
+    subgraph Network
+        VPC[VPC]
+        ALB[ALB/NLB]
+        Route53[Route 53]
+        CF[CloudFront]
+    end
+    subgraph Security
+        IAM[IAM]
+        KMS[KMS]
+        WAF[WAF]
+    end
+```
+
+## Fiches de révision rapide
+
+### S3 — Points clés examen
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Classes de stockage** | Standard → IA → Glacier → Deep Archive (coût décroissant, accès décroissant) |
+| **Versioning** | Protège contre les suppressions accidentelles |
+| **Lifecycle rules** | Automatise le passage entre classes de stockage |
+| **Encryption** | SSE-S3 (par défaut), SSE-KMS (gestion fine des clés), SSE-C (clé client) |
+| **Cross-region replication** | Pour la disaster recovery |
+
+### EC2 — Points clés examen
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Instance types** | Choisir selon le workload (compute, memory, storage, GPU) |
+| **Pricing** | On-Demand > Reserved > Savings Plans > Spot |
+| **Placement groups** | Cluster (faible latence), Spread (haute dispo), Partition (big data) |
+| **Auto Scaling** | Scale out/in selon des métriques CloudWatch |
+| **EBS vs Instance Store** | EBS persiste, Instance Store est éphémère |
+
+### VPC — Points clés examen
+
+| Concept | Ce qu'il faut retenir |
+|---------|----------------------|
+| **Subnets** | Public (IGW) vs Private (NAT Gateway) |
+| **Security Groups** | Stateful, au niveau de l'instance |
+| **NACLs** | Stateless, au niveau du subnet |
+| **VPC Peering** | Connexion entre 2 VPC (non transitif) |
+| **VPN / Direct Connect** | Connexion on-premise ↔ AWS |
+
+---
+
+# Stratégies d'examen
+
+## Format de l'examen
+
+| Paramètre | Détail |
+|-----------|--------|
+| **Durée** | 130 minutes |
+| **Questions** | 65 QCM (choix unique ou multiple) |
+| **Score** | 100-1000 (seuil : 720) |
+| **Coût** | 150 USD |
+| **Langue** | Anglais (avec 30 min bonus si non natif) |
+
+## Conseils
+
+:::{.concept-cle}
+**💡 Méthodologie de résolution**
+
+1. **Lire la dernière phrase** — C'est souvent la question réelle
+2. **Éliminer 2 réponses** — Il y a souvent 2 distracteurs évidents
+3. **Chercher les mots-clés** : "cost-effective", "highly available", "least operational overhead"
+4. **Si doute** → choisir la solution **managée** (AWS préfère ses services managés)
+5. **Ne pas bloquer** — Flaguer et revenir plus tard
+:::
+
+:::{.attention-box}
+**⚠️ Pièges fréquents**
+
+- Confondre **Security Group** (stateful, instance) et **NACL** (stateless, subnet)
+- Oublier que **S3 est eventually consistent** pour les overwrites
+- Confondre **horizontal scaling** (plus d'instances) et **vertical scaling** (plus de puissance)
+- Ignorer le **coût** quand la question demande "cost-effective"
+:::
 
 ---
 
 # Examens blancs
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Ressources recommandées
 
----
+| Ressource | Type | Coût |
+|-----------|------|------|
+| **AWS Skill Builder** | Cours + exam practice | Gratuit (base) |
+| **Tutorials Dojo** | QCM commentés (750+ questions) | ~15 USD |
+| **Stephane Maarek (Udemy)** | Cours vidéo + pratique | ~15 USD en promo |
+| **AWS Well-Architected Labs** | Exercices pratiques | Gratuit |
+| **Whizlabs** | Examens blancs | ~20 USD |
 
-# Stratégies examen
+:::{.exemple-box}
+**📝 Plan de révision suggéré**
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Ressources préparation
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+- **Semaine 1** : Revoir les notes des modules 5-9
+- **Semaine 2** : Faire 2 examens blancs (identifier les lacunes)
+- **Semaine 3** : Réviser les domaines faibles + 2 examens blancs
+- **Semaine 4** : Examen blanc final + révision légère
+- **Jour J** : Arriver reposé, lire calmement, gérer le temps
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Maîtriser les 5 domaines** : Compute, Storage, Database, Network, Security
+2. **Penser "managed first"** — AWS privilégie ses services managés dans les réponses
+3. **Lire la dernière phrase** — C'est souvent là que se cache la vraie question
+4. **Pratiquer avec des QCM** — Tutorials Dojo et AWS Skill Builder
+5. **Demander les 30 min bonus** — Si l'anglais n'est pas ta langue maternelle
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Quelle classe S3 pour des logs qu'on consulte rarement ?
+
+**Réponse** : **S3 Infrequent Access** (IA) ou **S3 Glacier Instant Retrieval** selon la fréquence d'accès. IA si on peut avoir besoin d'y accéder en quelques heures. Glacier si l'accès est vraiment rare (archivage).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Comment rendre une architecture hautement disponible ?
+
+**Réponse** : **Multi-AZ** pour RDS et ElastiCache, **Auto Scaling Group** sur plusieurs AZ pour EC2, **Application Load Balancer** pour distribuer le trafic, **S3** est nativement HA (11 nines de durabilité). Route 53 avec health checks pour le failover DNS.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Différence Security Group vs NACL ?
+
+**Réponse** : **Security Group** : stateful (la réponse est autorisée automatiquement), s'applique au niveau de l'instance, n'a que des règles ALLOW. **NACL** : stateless (il faut autoriser entrée ET sortie), s'applique au niveau du subnet, a des règles ALLOW et DENY avec un ordre de priorité.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment optimiser les coûts EC2 ?
+
+**Réponse** : (1) **Right-sizing** : choisir le bon type d'instance, (2) **Reserved Instances** ou **Savings Plans** pour les workloads stables (-40 à -75%), (3) **Spot** pour les tâches interruptibles (-90%), (4) **Auto Scaling** pour ne payer que ce qu'on utilise, (5) éteindre les instances de dev la nuit et le week-end.
 :::
 
 ---

@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module 9 — Comportements et Anti-sélection</title>
+<title>François BOUSSENGUI | Module 9 — Comportements assurés et Anti-sélection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -188,8 +191,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 9 — Comportements et Anti-sélection">
-<meta property="og:description" content="Aléa moral et sélection adverse">
+<meta property="og:title" content="François BOUSSENGUI | Module 9 — Comportements assurés et Anti-sélection">
+<meta property="og:description" content="Aléa moral, sélection adverse et mécanismes correctifs">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +200,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 9 — Comportements et Anti-sélection">
-<meta name="twitter:description" content="Aléa moral et sélection adverse">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 9 — Comportements assurés et Anti-sélection">
+<meta name="twitter:description" content="Aléa moral, sélection adverse et mécanismes correctifs">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,11 +480,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 9 — Comportements et Anti-sélection</h1>
-            <p class="subtitle lead">Aléa moral et sélection adverse</p>
+      <h1 class="title">Module 9 — Comportements assurés et Anti-sélection</h1>
+            <p class="subtitle lead">Aléa moral, sélection adverse et mécanismes correctifs</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">anti-sélection</div>
+                <div class="quarto-category">aléa-moral</div>
               </div>
                   </div>
   </div>
@@ -499,7 +503,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,13 +519,34 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#asymétrie-information" id="toc-asymétrie-information" class="nav-link active" data-scroll-target="#asymétrie-information"><span class="header-section-number">1</span> Asymétrie information</a></li>
-  <li><a href="#sélection-adverse" id="toc-sélection-adverse" class="nav-link" data-scroll-target="#sélection-adverse"><span class="header-section-number">2</span> Sélection adverse</a></li>
-  <li><a href="#aléa-moral" id="toc-aléa-moral" class="nav-link" data-scroll-target="#aléa-moral"><span class="header-section-number">3</span> Aléa moral</a></li>
-  <li><a href="#mécanismes-correctifs" id="toc-mécanismes-correctifs" class="nav-link" data-scroll-target="#mécanismes-correctifs"><span class="header-section-number">4</span> Mécanismes correctifs</a></li>
-  <li><a href="#impact-tarification" id="toc-impact-tarification" class="nav-link" data-scroll-target="#impact-tarification"><span class="header-section-number">5</span> Impact tarification</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#lasymétrie-dinformation" id="toc-lasymétrie-dinformation" class="nav-link" data-scroll-target="#lasymétrie-dinformation"><span class="header-section-number">1</span> L’asymétrie d’information</a>
+  <ul class="collapse">
+  <li><a href="#le-problème-fondamental" id="toc-le-problème-fondamental" class="nav-link" data-scroll-target="#le-problème-fondamental"><span class="header-section-number">1.1</span> Le problème fondamental</a></li>
+  </ul></li>
+  <li><a href="#sélection-adverse-anti-sélection" id="toc-sélection-adverse-anti-sélection" class="nav-link" data-scroll-target="#sélection-adverse-anti-sélection"><span class="header-section-number">2</span> Sélection adverse (anti-sélection)</a>
+  <ul class="collapse">
+  <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition"><span class="header-section-number">2.1</span> Définition</a></li>
+  <li><a href="#le-cercle-vicieux" id="toc-le-cercle-vicieux" class="nav-link" data-scroll-target="#le-cercle-vicieux"><span class="header-section-number">2.2</span> Le cercle vicieux</a></li>
+  </ul></li>
+  <li><a href="#aléa-moral-moral-hazard" id="toc-aléa-moral-moral-hazard" class="nav-link" data-scroll-target="#aléa-moral-moral-hazard"><span class="header-section-number">3</span> Aléa moral (moral hazard)</a>
+  <ul class="collapse">
+  <li><a href="#définition-1" id="toc-définition-1" class="nav-link" data-scroll-target="#définition-1"><span class="header-section-number">3.1</span> Définition</a></li>
+  </ul></li>
+  <li><a href="#mécanismes-correctifs" id="toc-mécanismes-correctifs" class="nav-link" data-scroll-target="#mécanismes-correctifs"><span class="header-section-number">4</span> Mécanismes correctifs</a>
+  <ul class="collapse">
+  <li><a href="#les-outils-de-lassureur" id="toc-les-outils-de-lassureur" class="nav-link" data-scroll-target="#les-outils-de-lassureur"><span class="header-section-number">4.1</span> Les outils de l’assureur</a></li>
+  </ul></li>
+  <li><a href="#impact-sur-la-tarification" id="toc-impact-sur-la-tarification" class="nav-link" data-scroll-target="#impact-sur-la-tarification"><span class="header-section-number">5</span> Impact sur la tarification</a>
+  <ul class="collapse">
+  <li><a href="#détecter-lanti-sélection" id="toc-détecter-lanti-sélection" class="nav-link" data-scroll-target="#détecter-lanti-sélection"><span class="header-section-number">5.1</span> Détecter l’anti-sélection</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-concepts-à-retenir" id="toc-les-5-concepts-à-retenir" class="nav-link" data-scroll-target="#les-5-concepts-à-retenir"><span class="header-section-number">5.1.1</span> 🎯 Les 5 concepts à retenir</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glossaire" id="toc-glossaire" class="nav-link" data-scroll-target="#glossaire">Glossaire</a></li>
   </ul>
 </nav>
     </div>
@@ -532,34 +557,231 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="asymétrie-information" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Asymétrie information</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Comprendre</strong> l’asymétrie d’information en assurance</li>
+<li><strong>Distinguer</strong> sélection adverse et aléa moral</li>
+<li><strong>Identifier</strong> les mécanismes correctifs (franchises, bonus-malus, exclusions)</li>
+<li><strong>Analyser</strong> l’impact sur la tarification et la rentabilité</li>
+<li><strong>Détecter</strong> les signaux d’anti-sélection dans un portefeuille</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Module 8 (principes tarifaires, GLM)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 2 à 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="lasymétrie-dinformation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> L’asymétrie d’information</h1>
+<section id="le-problème-fondamental" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="le-problème-fondamental"><span class="header-section-number">1.1</span> Le problème fondamental</h2>
+<p>En assurance, l’assuré en sait <strong>plus</strong> sur son propre risque que l’assureur. Cette asymétrie crée deux problèmes majeurs :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Asymétrie d'information] --&gt; B[Avant le contrat]
+    A --&gt; C[Après le contrat]
+    B --&gt; D[Sélection adverse&lt;br&gt;Anti-sélection]
+    C --&gt; E[Aléa moral&lt;br&gt;Moral hazard]
+    D --&gt; F[Les mauvais risques&lt;br&gt;s'assurent plus]
+    E --&gt; G[L'assuré prend&lt;br&gt;plus de risques]
+</pre>
+</div>
+<p></p><figcaption> Les deux faces de l’asymétrie d’information</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
 <hr>
 </section>
-<section id="sélection-adverse" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Sélection adverse</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="sélection-adverse-anti-sélection" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Sélection adverse (anti-sélection)</h1>
+<section id="définition" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="définition"><span class="header-section-number">2.1</span> Définition</h2>
+<p>La sélection adverse survient <strong>avant la signature du contrat</strong> : les individus qui savent être de mauvais risques ont davantage tendance à s’assurer (ou à choisir des couvertures plus étendues).</p>
+<div class="exemple-box">
+<p><strong>📝 Exemple classique</strong></p>
+<p>Un assureur propose une garantie “bris de machine” à 200 €/an pour toutes les entreprises. Les entreprises avec de vieilles machines (risque élevé) souscrivent massivement. Les entreprises avec des machines neuves (risque faible) trouvent le prix trop cher et ne souscrivent pas. Résultat : le portefeuille ne contient que des mauvais risques → le S/P explose.</p>
+</div>
+</section>
+<section id="le-cercle-vicieux" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="le-cercle-vicieux"><span class="header-section-number">2.2</span> Le cercle vicieux</h2>
+<ol type="1">
+<li>L’assureur fixe un prix moyen</li>
+<li>Les bons risques trouvent le prix trop élevé → ils partent</li>
+<li>Le portefeuille se dégrade → il faut augmenter les prix</li>
+<li>Encore plus de bons risques partent → <strong>spirale de dégradation</strong></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-spirale-antisélection" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spirale-antisélection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-09_files/figure-html/fig-spirale-antisélection-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spirale-antisélection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Spirale d’anti-sélection : évolution du portefeuille sur 5 ans
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>L’anti-sélection est <strong>la menace n°1</strong> pour un portefeuille d’assurance. Elle se combat par une tarification <strong>segmentée</strong> (chaque profil paie son juste prix) et une <strong>sélection à la souscription</strong> rigoureuse.</p>
+</div>
 <hr>
 </section>
-<section id="aléa-moral" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Aléa moral</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="aléa-moral-moral-hazard" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Aléa moral (moral hazard)</h1>
+<section id="définition-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="définition-1"><span class="header-section-number">3.1</span> Définition</h2>
+<p>L’aléa moral survient <strong>après la signature du contrat</strong> : une fois assuré, l’individu peut modifier son comportement et prendre davantage de risques.</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 44%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ex ante</strong></td>
+<td>Moins de prévention</td>
+<td>Ne plus fermer sa porte à clé car assuré vol</td>
+</tr>
+<tr class="even">
+<td><strong>Ex post</strong></td>
+<td>Gonflement des sinistres</td>
+<td>Déclarer des dommages préexistants</td>
+</tr>
+<tr class="odd">
+<td><strong>Fraude</strong></td>
+<td>Sinistres fictifs</td>
+<td>Incendie volontaire pour toucher l’indemnité</td>
+</tr>
+</tbody>
+</table>
+<div class="attention-box">
+<p><strong>⚠️ Coût de la fraude</strong></p>
+<p>La fraude à l’assurance représente environ <strong>5 à 7%</strong> des primes en France, soit plusieurs milliards d’euros par an. Elle renchérit le coût de l’assurance pour tous les assurés honnêtes.</p>
+</div>
 <hr>
+</section>
 </section>
 <section id="mécanismes-correctifs" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Mécanismes correctifs</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="les-outils-de-lassureur" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="les-outils-de-lassureur"><span class="header-section-number">4.1</span> Les outils de l’assureur</h2>
+<table class="table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mécanisme</th>
+<th>Cible</th>
+<th>Fonctionnement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Franchise</strong></td>
+<td>Aléa moral</td>
+<td>L’assuré supporte une partie du sinistre → incitation à la prudence</td>
+</tr>
+<tr class="even">
+<td><strong>Bonus-malus</strong></td>
+<td>Anti-sélection + aléa moral</td>
+<td>Prime ajustée selon l’historique → révélation du vrai risque</td>
+</tr>
+<tr class="odd">
+<td><strong>Exclusions</strong></td>
+<td>Anti-sélection</td>
+<td>Risques non couverts → limite la portée de la garantie</td>
+</tr>
+<tr class="even">
+<td><strong>Questionnaire</strong></td>
+<td>Anti-sélection</td>
+<td>Collecte d’information avant souscription</td>
+</tr>
+<tr class="odd">
+<td><strong>Expertise</strong></td>
+<td>Aléa moral</td>
+<td>Vérification des déclarations de sinistre</td>
+</tr>
+<tr class="even">
+<td><strong>Plafond</strong></td>
+<td>Aléa moral</td>
+<td>Limite l’indemnisation → réduit l’incitation au gonflement</td>
+</tr>
+</tbody>
+</table>
+<div class="exemple-box">
+<p><strong>📝 La franchise comme signal</strong></p>
+<p>Un assuré qui accepte une franchise élevée <strong>signale</strong> qu’il est un bon risque (il ne prévoit pas d’avoir beaucoup de sinistres). C’est un mécanisme de <strong>révélation</strong> : les mauvais risques préfèrent des franchises basses.</p>
+<p>C’est pourquoi offrir le choix entre franchise basse (prime élevée) et franchise haute (prime réduite) est un outil de segmentation efficace.</p>
+</div>
 <hr>
 </section>
-<section id="impact-tarification" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Impact tarification</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="impact-sur-la-tarification" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Impact sur la tarification</h1>
+<section id="détecter-lanti-sélection" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="détecter-lanti-sélection"><span class="header-section-number">5.1</span> Détecter l’anti-sélection</h2>
+<p>Signaux d’alerte dans un portefeuille :</p>
+<ul>
+<li><strong>Taux de résiliation élevé</strong> chez les bons profils</li>
+<li><strong>S/P en hausse</strong> malgré les augmentations tarifaires</li>
+<li><strong>Nouvelles affaires</strong> avec un profil de risque pire que le stock</li>
+<li><strong>Taux de transformation</strong> qui augmente (le tarif attire les mauvais risques)</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Lien avec la data science</strong></p>
+<p>La détection de l’anti-sélection est un problème de <strong>data science</strong> : analyser les flux entrée/sortie du portefeuille, segmenter les résiliants, modéliser le churn par profil de risque, et ajuster la tarification en conséquence. C’est exactement ce que tu feras dans ton projet central.</p>
+</div>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="les-5-concepts-à-retenir" class="level3 synthese-card" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="les-5-concepts-à-retenir"><span class="header-section-number">5.1.1</span> 🎯 Les 5 concepts à retenir</h3>
+<ol type="1">
+<li><strong>L’asymétrie d’information</strong> crée sélection adverse et aléa moral</li>
+<li><strong>Anti-sélection = avant le contrat</strong> — Les mauvais risques s’assurent plus</li>
+<li><strong>Aléa moral = après le contrat</strong> — L’assuré prend plus de risques</li>
+<li><strong>Franchises, bonus-malus, exclusions</strong> sont les mécanismes correctifs</li>
+<li><strong>La tarification segmentée</strong> est la meilleure arme contre l’anti-sélection</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -570,13 +792,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Différence entre sélection adverse et aléa moral ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : <strong>Sélection adverse</strong> : problème <strong>avant</strong> le contrat — les individus à haut risque s’assurent davantage car ils savent qu’ils ont plus de chances de sinistrer. <strong>Aléa moral</strong> : problème <strong>après</strong> le contrat — l’assuré modifie son comportement (moins de prévention, gonflement des sinistres) parce qu’il est couvert.</p>
 </div>
 </div>
 </div>
@@ -586,13 +808,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Comment la franchise combat-elle l’aléa moral ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : En laissant une partie du sinistre à la charge de l’assuré, la franchise l’incite à rester prudent (il a une “peau dans le jeu”). Elle décourage aussi les petites déclarations abusives car le coût de la franchise dépasse l’indemnité pour les petits sinistres.</p>
 </div>
 </div>
 </div>
@@ -602,13 +824,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Comment détecter l’anti-sélection dans un portefeuille ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Analyser les <strong>flux</strong> : comparer le profil de risque des entrants vs sortants. Si les résiliants ont un meilleur S/P que les restants, c’est un signal fort d’anti-sélection. Aussi : surveiller l’évolution du S/P par ancienneté et le taux de transformation par segment.</p>
 </div>
 </div>
 </div>
@@ -618,16 +840,58 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Pourquoi offrir le choix de la franchise est un outil de segmentation ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Les assurés <strong>révèlent</strong> leur niveau de risque par leur choix. Un bon risque accepte une franchise élevée (il ne prévoit pas beaucoup de sinistres, et économise sur la prime). Un mauvais risque préfère une franchise basse (il anticipe des sinistres et veut être bien couvert). C’est un mécanisme d’<strong>auto-sélection</strong> positif.</p>
 </div>
 </div>
 </div>
+<hr>
+</section>
+<section id="glossaire" class="level1 unnumbered">
+<h1 class="unnumbered">Glossaire</h1>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sélection adverse</strong></td>
+<td>Tendance des hauts risques à s’assurer davantage</td>
+</tr>
+<tr class="even">
+<td><strong>Aléa moral</strong></td>
+<td>Modification du comportement après souscription</td>
+</tr>
+<tr class="odd">
+<td><strong>Franchise</strong></td>
+<td>Part du sinistre à la charge de l’assuré</td>
+</tr>
+<tr class="even">
+<td><strong>CRM</strong></td>
+<td>Coefficient de Réduction-Majoration (bonus-malus)</td>
+</tr>
+<tr class="odd">
+<td><strong>Anti-sélection</strong></td>
+<td>Synonyme de sélection adverse</td>
+</tr>
+<tr class="even">
+<td><strong>Révélation</strong></td>
+<td>Mécanisme par lequel l’assuré révèle son risque par ses choix</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 9</a> <a href="module-technique-09.html" class="btn btn-primary">Voir le Module Technique 9 →</a></p>
 

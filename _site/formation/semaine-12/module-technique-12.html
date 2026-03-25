@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 12 — FastAPI — API de scoring</title>
+<title>François BOUSSENGUI | Module Technique 12 — FastAPI : API de scoring</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -188,8 +222,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 12 — FastAPI — API de scoring">
-<meta property="og:description" content="Construire une API de prédiction">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 12 — FastAPI : API de scoring">
+<meta property="og:description" content="Construire et déployer une API de prédiction">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +231,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 12 — FastAPI — API de scoring">
-<meta name="twitter:description" content="Construire une API de prédiction">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 12 — FastAPI : API de scoring">
+<meta name="twitter:description" content="Construire et déployer une API de prédiction">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -421,6 +455,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -477,8 +540,8 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 12 — FastAPI — API de scoring</h1>
-            <p class="subtitle lead">Construire une API de prédiction</p>
+      <h1 class="title">Module Technique 12 — FastAPI : API de scoring</h1>
+            <p class="subtitle lead">Construire et déployer une API de prédiction</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">fastapi</div>
                 <div class="quarto-category">api</div>
@@ -500,7 +563,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +579,19 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#fastapi-framework" id="toc-fastapi-framework" class="nav-link active" data-scroll-target="#fastapi-framework"><span class="header-section-number">1</span> FastAPI framework</a></li>
-  <li><a href="#endpoints-et-routes" id="toc-endpoints-et-routes" class="nav-link" data-scroll-target="#endpoints-et-routes"><span class="header-section-number">2</span> Endpoints et routes</a></li>
-  <li><a href="#modèles-pydantic" id="toc-modèles-pydantic" class="nav-link" data-scroll-target="#modèles-pydantic"><span class="header-section-number">3</span> Modèles Pydantic</a></li>
-  <li><a href="#servir-un-modèle-ml" id="toc-servir-un-modèle-ml" class="nav-link" data-scroll-target="#servir-un-modèle-ml"><span class="header-section-number">4</span> Servir un modèle ML</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#pourquoi-fastapi" id="toc-pourquoi-fastapi" class="nav-link" data-scroll-target="#pourquoi-fastapi"><span class="header-section-number">1</span> Pourquoi FastAPI ?</a></li>
+  <li><a href="#créer-des-endpoints" id="toc-créer-des-endpoints" class="nav-link" data-scroll-target="#créer-des-endpoints"><span class="header-section-number">2</span> Créer des endpoints</a>
+  <ul class="collapse">
+  <li><a href="#première-api" id="toc-première-api" class="nav-link" data-scroll-target="#première-api"><span class="header-section-number">2.1</span> Première API</a></li>
+  </ul></li>
+  <li><a href="#servir-un-modèle-ml" id="toc-servir-un-modèle-ml" class="nav-link" data-scroll-target="#servir-un-modèle-ml"><span class="header-section-number">3</span> Servir un modèle ML</a></li>
+  <li><a href="#dockeriser-lapi" id="toc-dockeriser-lapi" class="nav-link" data-scroll-target="#dockeriser-lapi"><span class="header-section-number">4</span> Dockeriser l’API</a></li>
   <li><a href="#documentation-swagger" id="toc-documentation-swagger" class="nav-link" data-scroll-target="#documentation-swagger"><span class="header-section-number">5</span> Documentation Swagger</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +603,179 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="fastapi-framework" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> FastAPI framework</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Comprendre</strong> FastAPI et ses avantages pour la data science</li>
+<li><strong>Créer</strong> des endpoints GET et POST</li>
+<li><strong>Valider</strong> les données d’entrée avec Pydantic</li>
+<li><strong>Servir</strong> un modèle ML via une API REST</li>
+<li><strong>Documenter</strong> automatiquement avec Swagger/OpenAPI</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Python, Docker, scikit-learn</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="pourquoi-fastapi" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Pourquoi FastAPI ?</h1>
+<p>FastAPI combine performance (async), validation automatique (Pydantic) et documentation (Swagger). C’est le framework idéal pour servir des modèles ML en production.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Framework</th>
+<th>Performance</th>
+<th>Validation</th>
+<th>Doc auto</th>
+<th>Async</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Flask</td>
+<td>Moyenne</td>
+<td>Non</td>
+<td>Non</td>
+<td>Non</td>
+</tr>
+<tr class="even">
+<td>Django</td>
+<td>Moyenne</td>
+<td>Non</td>
+<td>Plugins</td>
+<td>Non</td>
+</tr>
+<tr class="odd">
+<td><strong>FastAPI</strong></td>
+<td><strong>Excellente</strong></td>
+<td><strong>Oui</strong></td>
+<td><strong>Oui</strong></td>
+<td><strong>Oui</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Pydantic valide automatiquement les entrées. Si un utilisateur envoie <code>{"age": "abc"}</code>, FastAPI retourne une erreur 422 avec un message clair — pas besoin d’écrire la validation manuellement.</p>
+</div>
 <hr>
 </section>
-<section id="endpoints-et-routes" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Endpoints et routes</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="créer-des-endpoints" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Créer des endpoints</h1>
+<section id="première-api" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="première-api"><span class="header-section-number">2.1</span> Première API</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastapi <span class="im">import</span> FastAPI</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel, Field</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> FastAPI(title<span class="op">=</span><span class="st">"API Tarification Assurance"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/health"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> health():</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"status"</span>: <span class="st">"ok"</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProfilAssure(BaseModel):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    age: <span class="bu">int</span> <span class="op">=</span> Field(..., ge<span class="op">=</span><span class="dv">18</span>, le<span class="op">=</span><span class="dv">99</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    zone: <span class="bu">str</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    crm: <span class="bu">float</span> <span class="op">=</span> Field(default<span class="op">=</span><span class="fl">1.0</span>, ge<span class="op">=</span><span class="fl">0.5</span>, le<span class="op">=</span><span class="fl">3.5</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PrimeResponse(BaseModel):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    prime_pure: <span class="bu">float</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    prime_commerciale: <span class="bu">float</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">@app.post</span>(<span class="st">"/predict"</span>, response_model<span class="op">=</span>PrimeResponse)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict(profil: ProfilAssure):</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    rel_age <span class="op">=</span> <span class="fl">1.85</span> <span class="cf">if</span> profil.age <span class="op">&lt;</span> <span class="dv">26</span> <span class="cf">else</span> <span class="fl">1.0</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    rel_zone <span class="op">=</span> {<span class="st">"paris"</span>: <span class="fl">1.45</span>, <span class="st">"rural"</span>: <span class="fl">0.75</span>}.get(profil.zone, <span class="fl">1.0</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    prime_pure <span class="op">=</span> <span class="dv">180</span> <span class="op">*</span> rel_age <span class="op">*</span> rel_zone <span class="op">*</span> profil.crm</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PrimeResponse(</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        prime_pure<span class="op">=</span><span class="bu">round</span>(prime_pure, <span class="dv">2</span>),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        prime_commerciale<span class="op">=</span><span class="bu">round</span>(prime_pure <span class="op">/</span> <span class="fl">0.70</span>, <span class="dv">2</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="terminal-box">
+<p><span class="prompt">$</span> uvicorn main:app –reload –port 8000<br> <span class="output">INFO: Uvicorn running on http://127.0.0.1:8000</span></p>
+</div>
 <hr>
 </section>
-<section id="modèles-pydantic" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Modèles Pydantic</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="servir-un-modèle-ml" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Servir un modèle ML</h1>
+<p>Charger le modèle <strong>au démarrage</strong> (pas à chaque requête) :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Chargé une seule fois</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"models/glm.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> pickle.load(f)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">@app.post</span>(<span class="st">"/predict"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict(profil: ProfilAssure):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    features <span class="op">=</span> [[profil.age, profil.puissance]]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    pred <span class="op">=</span> model.predict(features)[<span class="dv">0</span>]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"prime"</span>: <span class="bu">round</span>(<span class="bu">float</span>(pred), <span class="dv">2</span>)}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="attention-box">
+<p><strong>⚠️ Attention</strong></p>
+<p>Ne jamais charger le modèle à chaque requête — un fichier pickle de 50 Mo ajouterait 1-2 secondes de latence à chaque appel.</p>
+</div>
 <hr>
 </section>
-<section id="servir-un-modèle-ml" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Servir un modèle ML</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="dockeriser-lapi" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Dockeriser l’API</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> python:3.10-slim</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WORKDIR</span> /app</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> requirements.txt .</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">pip</span> install <span class="at">--no-cache-dir</span> <span class="at">-r</span> requirements.txt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> . .</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPOSE</span> 8000</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CMD</span> [<span class="st">"uvicorn"</span>, <span class="st">"main:app"</span>, <span class="st">"--host"</span>, <span class="st">"0.0.0.0"</span>, <span class="st">"--port"</span>, <span class="st">"8000"</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="terminal-box">
+<p><span class="prompt"><span class="math inline">\(&lt;/span&gt; docker build -t api-scoring:v1 .&lt;br&gt;
+&lt;span class="prompt"&gt;\)</span></span> docker run -p 8000:8000 api-scoring:v1</p>
+</div>
 <hr>
 </section>
 <section id="documentation-swagger" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Documentation Swagger</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<p>FastAPI génère automatiquement :</p>
+<ul>
+<li><strong>Swagger UI</strong> à <code>/docs</code> — interface interactive pour tester</li>
+<li><strong>ReDoc</strong> à <code>/redoc</code> — documentation lisible</li>
+<li><strong>OpenAPI JSON</strong> à <code>/openapi.json</code> — spécification standard</li>
+</ul>
+<div class="exemple-box">
+<p><strong>📝 Avantage clé</strong> : les équipes front-office peuvent tester l’API sans lire le code Python. Le format OpenAPI est reconnu par tous les outils d’intégration.</p>
+</div>
 <hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">5.0.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>FastAPI = performance + validation + docs</strong> — Le framework idéal pour les APIs ML</li>
+<li><strong>Pydantic valide automatiquement</strong> — Types, plages, champs obligatoires</li>
+<li><strong>Charger le modèle au démarrage</strong> — Pas à chaque requête</li>
+<li><strong>POST /predict</strong> — Envoyer un profil, recevoir une prime</li>
+<li><strong>Docker pour déployer</strong> — Même API partout</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +786,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Pourquoi FastAPI plutôt que Flask ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Validation Pydantic automatique, documentation Swagger auto, support async, type hints natifs. Flask nécessite des plugins pour tout ça.</p>
 </div>
 </div>
 </div>
@@ -587,13 +802,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Pourquoi charger le modèle au démarrage ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Charger un pickle (10-100 Mo) à chaque requête ajouterait 0.5-2s de latence. Au démarrage, c’est fait une seule fois.</p>
 </div>
 </div>
 </div>
@@ -603,13 +818,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Comment gérer les erreurs ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : HTTPException avec codes appropriés (400 données invalides, 500 erreur interne). Logger côté serveur, ne pas exposer les détails au client.</p>
 </div>
 </div>
 </div>
@@ -619,13 +834,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Comment versionner une API ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Préfixer les routes (<code>/v1/predict</code>, <code>/v2/predict</code>). Permet de maintenir l’ancienne version pendant la transition.</p>
 </div>
 </div>
 </div>

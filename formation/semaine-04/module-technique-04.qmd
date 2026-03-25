@@ -1,9 +1,9 @@
 ---
 title: "Module Technique 4 — CI/CD avec GitHub Actions"
-subtitle: "Automatiser tests et déploiements"
+subtitle: "Automatiser tests et déploiements pour fiabiliser tes projets"
 author: "François Boussengui"
 date: last-modified
-categories: [ci-cd, github-actions]
+categories: [ci-cd, github-actions, automatisation]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,62 +11,261 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Concepts CI/CD
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Expliquer** les concepts de CI et CD et leurs bénéfices
+2. **Écrire** un workflow GitHub Actions complet
+3. **Configurer** des tests automatisés avec pytest
+4. **Mettre en place** du linting et formatage automatique
+5. **Comprendre** le déploiement continu
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Git, Docker, Python
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Workflows GitHub Actions
+# Pourquoi automatiser ?
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Sans CI/CD, chaque développeur doit manuellement lancer les tests, vérifier le formatage, et déployer. Résultat : des oublis, des bugs en production, des déploiements risqués.
+
+| | CI (Intégration Continue) | CD (Déploiement Continu) |
+|--|--------------------------|-------------------------|
+| **Quand** | À chaque push ou PR | Après validation CI |
+| **Quoi** | Tests, linting, build | Déploiement staging/prod |
+| **Objectif** | Détecter les bugs tôt | Livrer rapidement |
+
+```{mermaid}
+%%| fig-cap: "Pipeline CI/CD typique"
+
+flowchart LR
+    A[📝 Push] --> B[🔍 Lint]
+    B --> C[🧪 Tests]
+    C --> D{Tout passe ?}
+    D -->|Oui| E[📦 Build]
+    D -->|Non| F[❌ Alerte]
+    E --> G[🚀 Deploy]
+```
+
+:::{.concept-cle}
+**💡 En data science**, le CI/CD sert à valider que les modèles se chargent, que les prédictions sont cohérentes, et à déployer automatiquement les APIs de scoring.
+:::
 
 ---
 
-# Tests pytest
+# Structure d'un workflow GitHub Actions
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Un workflow est un fichier `.yml` dans `.github/workflows/` :
+
+```yaml
+# .github/workflows/ci.yml
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest black flake8
+
+      - name: Run linting
+        run: |
+          black --check .
+          flake8 . --max-line-length 120
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+```
+
+| Concept | Description |
+|---------|-------------|
+| **Trigger** (`on`) | Événement déclencheur (push, PR, schedule) |
+| **Job** | Groupe de tâches sur une VM dédiée |
+| **Step** | Étape individuelle dans un job |
+| **Action** | Module réutilisable (`actions/checkout@v4`) |
+| **Secret** | Variable chiffrée pour données sensibles |
 
 ---
 
-# Linting automatique
+# Tests automatisés avec pytest
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Écrire des tests pour l'assurance
+
+```python
+# tests/test_sinistralite.py
+import pytest
+from models.sinistralite import calculer_frequence, calculer_sp
+
+def test_frequence_normale():
+    """Fréquence = nb_sinistres / exposition"""
+    assert calculer_frequence(100, 1000) == 0.1
+
+def test_frequence_zero_exposition():
+    with pytest.raises(ZeroDivisionError):
+        calculer_frequence(10, 0)
+
+def test_sp_normal():
+    assert calculer_sp(70000, 100000) == 0.7
+
+@pytest.mark.parametrize("nb_sin,expo,expected", [
+    (50, 1000, 0.05),
+    (100, 1000, 0.10),
+    (200, 1000, 0.20),
+])
+def test_frequence_parametrique(nb_sin, expo, expected):
+    assert calculer_frequence(nb_sin, expo) == expected
+```
+
+:::{.terminal-box}
+<span class="prompt">$</span> pytest tests/ -v<br>
+<span class="output">tests/test_sinistralite.py::test_frequence_normale PASSED</span><br>
+<span class="output">tests/test_sinistralite.py::test_frequence_zero_exposition PASSED</span><br>
+<span class="output">tests/test_sinistralite.py::test_sp_normal PASSED</span><br>
+<span class="output">tests/test_sinistralite.py::test_frequence_parametrique[50-1000-0.05] PASSED</span><br>
+<span class="output">tests/test_sinistralite.py::test_frequence_parametrique[100-1000-0.1] PASSED</span><br>
+<span class="output">tests/test_sinistralite.py::test_frequence_parametrique[200-1000-0.2] PASSED</span><br><br>
+<span class="output">============ 6 passed in 0.08s ============</span>
+:::
+
+:::{.exemple-box}
+**📝 Bonnes pratiques**
+
+- Un test par comportement, pas par fonction
+- Noms descriptifs (`test_frequence_zero_exposition`)
+- `@pytest.mark.parametrize` pour tester plusieurs cas
+- Toujours tester les cas limites et erreurs
+:::
+
+---
+
+# Linting et formatage
+
+**Black** formate le code automatiquement — plus de débats de style :
+
+```bash
+black --check .   # Vérifier
+black .           # Formater
+```
+
+**Flake8** détecte les erreurs de style et bugs potentiels :
+
+```bash
+flake8 . --max-line-length 120 --ignore=E203,W503
+```
 
 ---
 
 # Déploiement continu
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```yaml
+  deploy:
+    needs: [test, lint]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t mon-api:${{ github.sha }} .
+      - run: docker push mon-registry/mon-api:${{ github.sha }}
+```
+
+:::{.attention-box}
+**⚠️ Sécurité** — Ne jamais stocker de secrets dans le code. Utiliser les GitHub Secrets :
+
+```yaml
+    env:
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+```
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **CI détecte les bugs tôt** — Tests et linting à chaque push
+2. **CD accélère la livraison** — Déploiement automatique après validation
+3. **GitHub Actions = YAML** — Triggers, jobs, steps
+4. **pytest est le standard** — Tests paramétriques, fixtures, markers
+5. **Les secrets restent secrets** — GitHub Secrets, jamais en dur
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Différence CI vs CD ?
+
+**Réponse** : **CI** automatise tests et validation à chaque changement. **CD** automatise le déploiement après validation. La CI est un prérequis au CD.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Pourquoi GitHub Secrets plutôt que des variables en dur ?
+
+**Réponse** : Les secrets dans le code sont visibles dans l'historique Git. GitHub Secrets les chiffre et les injecte uniquement pendant l'exécution du workflow.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Quand utiliser pytest.raises ?
+
+**Réponse** : Pour vérifier qu'une fonction lève bien une exception dans un cas d'erreur (ex: division par zéro). C'est un test de robustesse.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Avantage de black ?
+
+**Réponse** : Déterministe et non configurable : élimine les débats de style, garantit un code homogène, permet de se concentrer sur la logique métier.
 :::
 
 ---

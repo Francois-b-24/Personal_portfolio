@@ -1,5 +1,5 @@
 ---
-title: "Module Technique 7 — AWS — RDS et Bases de données"
+title: "Module Technique 7 — AWS : RDS et Bases de données"
 subtitle: "PostgreSQL managé dans le cloud"
 author: "François Boussengui"
 date: last-modified
@@ -11,62 +11,252 @@ toc-depth: 3
 number-sections: true
 ---
 
-# RDS bases managées
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** les avantages d'une base de données managée (RDS)
+2. **Créer** une instance PostgreSQL RDS
+3. **Se connecter** et exécuter des requêtes SQL depuis Python
+4. **Configurer** les backups et la maintenance
+5. **Sécuriser** l'accès via VPC et Security Groups
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules Technique 5-6 (S3, EC2)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Création PostgreSQL
+# RDS : bases de données managées
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Pourquoi ne pas installer PostgreSQL sur EC2 ?
+
+Tu pourrais installer PostgreSQL directement sur une instance EC2. Mais tu devrais gérer :
+
+- Les mises à jour de sécurité
+- Les backups quotidiens
+- La haute disponibilité (failover)
+- La scalabilité (augmenter CPU/RAM)
+- Le monitoring
+
+**RDS fait tout ça pour toi.** Tu te concentres sur tes requêtes et tes données.
+
+| | PostgreSQL sur EC2 | RDS PostgreSQL |
+|--|-------------------|----------------|
+| **Backups** | Manuels | Automatiques (quotidiens) |
+| **Mises à jour** | Manuelles | Automatiques |
+| **Haute dispo** | À configurer (réplication) | Multi-AZ en 1 clic |
+| **Scaling** | Arrêt + redimensionnement | Resize en quelques minutes |
+| **Coût** | Instance EC2 + ton temps | ~20% plus cher mais 0 maintenance |
 
 ---
 
-# Requêtes SQL
+# Créer une instance RDS
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Via la console AWS
+
+1. Service **RDS** > **Create database**
+2. Engine : **PostgreSQL**
+3. Template : **Free tier** (db.t3.micro)
+4. DB identifier : `portefeuille-assurance`
+5. Master username : `admin`
+6. Password : (stocker dans un secret !)
+7. Connectivity : VPC par défaut, **Public access: No** (sécurité)
+8. Database name : `assurance_db`
+
+:::{.attention-box}
+**⚠️ Public access = No**
+
+En production, la base ne doit **jamais** être accessible depuis Internet. Seules les instances EC2 ou Lambda dans le même VPC doivent pouvoir s'y connecter. C'est le Security Group qui contrôle cela.
+:::
+
+---
+
+# Connexion depuis Python
+
+## Avec psycopg2
+
+```python
+import psycopg2
+import os
+
+conn = psycopg2.connect(
+    host=os.environ["DB_HOST"],       # endpoint RDS
+    port=5432,
+    dbname="assurance_db",
+    user=os.environ["DB_USER"],
+    password=os.environ["DB_PASSWORD"]
+)
+
+cur = conn.cursor()
+
+# Créer une table de sinistres
+cur.execute("""
+    CREATE TABLE IF NOT EXISTS sinistres (
+        id SERIAL PRIMARY KEY,
+        date_survenance DATE NOT NULL,
+        date_declaration DATE,
+        branche VARCHAR(50),
+        garantie VARCHAR(100),
+        cout_initial NUMERIC(12,2),
+        cout_actuel NUMERIC(12,2),
+        statut VARCHAR(20) DEFAULT 'ouvert'
+    )
+""")
+conn.commit()
+```
+
+## Avec SQLAlchemy + pandas
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine(
+    f"postgresql://{user}:{password}@{host}:5432/assurance_db"
+)
+
+# Charger un DataFrame dans PostgreSQL
+df_sinistres = pd.read_csv("sinistres.csv")
+df_sinistres.to_sql("sinistres", engine, if_exists="replace", index=False)
+
+# Requêter avec SQL
+df = pd.read_sql("""
+    SELECT branche, COUNT(*) as nb_sinistres,
+           AVG(cout_actuel) as cout_moyen,
+           SUM(cout_actuel) as charge_totale
+    FROM sinistres
+    WHERE statut = 'ouvert'
+    GROUP BY branche
+    ORDER BY charge_totale DESC
+""", engine)
+print(df)
+```
+
+:::{.concept-cle}
+**💡 SQLAlchemy + pandas** est la combinaison idéale pour un data scientist : tu écris du SQL pour les requêtes complexes et tu récupères le résultat directement dans un DataFrame pour l'analyse.
+:::
 
 ---
 
 # Backups et maintenance
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Backups automatiques
+
+RDS fait des **snapshots quotidiens** automatiquement. Tu peux restaurer à n'importe quel point dans les 7 derniers jours (configurable jusqu'à 35 jours).
+
+## Fenêtre de maintenance
+
+RDS applique les patches de sécurité dans une **fenêtre de maintenance** que tu définis (ex : dimanche 3h-4h du matin). Pendant cette fenêtre, la base peut être indisponible quelques minutes.
 
 ---
 
-# Sécurité IAM
+# Sécurité
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Architecture réseau
+
+```{mermaid}
+%%| fig-cap: "Architecture sécurisée : EC2 → RDS dans un VPC privé"
+
+flowchart LR
+    subgraph Internet
+        U[👤 Toi]
+    end
+    subgraph VPC["VPC (réseau privé)"]
+        subgraph Public["Subnet public"]
+            EC2[🖥️ EC2<br>API/App]
+        end
+        subgraph Private["Subnet privé"]
+            RDS[🗄️ RDS<br>PostgreSQL]
+        end
+    end
+
+    U -->|SSH port 22| EC2
+    EC2 -->|port 5432| RDS
+    U -.->|❌ Bloqué| RDS
+```
+
+## Security Groups
+
+| Security Group | Règle | Source |
+|---------------|-------|--------|
+| **SG-EC2** | Inbound SSH (22) | Mon IP |
+| **SG-EC2** | Inbound HTTP (8000) | 0.0.0.0/0 |
+| **SG-RDS** | Inbound PostgreSQL (5432) | SG-EC2 |
+
+La base de données n'accepte les connexions **que** depuis les instances qui ont le Security Group SG-EC2.
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **RDS = BDD managée** — Backups, mises à jour, scaling automatiques
+2. **PostgreSQL** est le choix standard pour la data science
+3. **SQLAlchemy + pandas** pour requêter et analyser
+4. **Jamais de public access** — La BDD reste dans le VPC privé
+5. **Security Groups** contrôlent qui peut se connecter
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Pourquoi choisir RDS plutôt que PostgreSQL sur EC2 ?
+
+**Réponse** : RDS gère automatiquement les backups, les mises à jour de sécurité, la haute disponibilité et le scaling. Tu gagnes du temps et réduis les risques d'erreur humaine. Le surcoût (~20%) est largement compensé par le temps de maintenance économisé.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Comment charger un CSV dans PostgreSQL avec Python ?
+
+**Réponse** : Avec pandas et SQLAlchemy : `df.to_sql("table", engine, if_exists="replace")`. C'est la méthode la plus simple. Pour de gros volumes, utiliser `COPY` via psycopg2 ou `df.to_sql(..., method="multi", chunksize=1000)`.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Pourquoi mettre public_access=No sur RDS ?
+
+**Réponse** : Pour empêcher tout accès depuis Internet. La base contient des données sensibles (sinistres, clients). Seules les instances dans le même VPC (via Security Group) doivent pouvoir s'y connecter. C'est un principe de sécurité fondamental : **moindre privilège**.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment restaurer une base RDS à un point précis dans le temps ?
+
+**Réponse** : Via la console AWS ou CLI : **Point-in-Time Recovery**. RDS conserve les backups automatiques et les logs de transactions, permettant de restaurer à n'importe quelle seconde dans la fenêtre de rétention (7-35 jours). La restauration crée une **nouvelle instance** RDS.
 :::
 
 ---

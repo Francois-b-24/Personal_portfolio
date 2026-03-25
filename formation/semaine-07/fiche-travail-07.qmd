@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 7"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : provisionnement et RDS PostgreSQL"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,30 +9,154 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 7
-2. **Livrable technique** : Mise en pratique du Module Technique 7
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Comparaison Chain Ladder vs Bornhuetter-Ferguson:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Script Python implémentant les deux méthodes sur le même triangle. Comparer les IBNR estimés et commenter les écarts.
+:::
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}🗄️ Livrable 2 — Base de données sinistres sur RDS:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Checklist
+Créer une instance RDS PostgreSQL, charger un jeu de données de sinistres, et exécuter 3 requêtes analytiques (S/P par branche, fréquence par segment, évolution temporelle).
+:::
 
-- [ ] Module Métier 7 terminé
-- [ ] Module Technique 7 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📝 Livrable 3 — Analyse boni/mali:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Simuler 5 générations avec provisions initiales et coûts ultimes. Calculer les boni/mali et produire un graphique.
+:::
+
+---
+
+## 🏋️ Exercices
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Bornhuetter-Ferguson
+:::
+
+Triangle de charges cumulées et primes acquises :
+
+| Génération | Dév. 1 | Dév. 2 | Dév. 3 | Prime acquise |
+|-----------|--------|--------|--------|---------------|
+| 2021 | 1000 | 1300 | 1400 | 2000 |
+| 2022 | 1200 | 1500 | ? | 2200 |
+| 2023 | 1100 | ? | ? | 2100 |
+
+S/P a priori attendu : 70%. Calcule les IBNR par la méthode BF.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+Facteurs CL : $f_1 = 1.273$, $f_2 = 1.077$. CDF = $1.273 \times 1.077 = 1.371$.
+
+Charge ultime a priori : Prime × S/P = 2200 × 0.70 = 1540 (2022), 2100 × 0.70 = 1470 (2023).
+
+- **2022** : % non développé = $1 - 1/1.077 = 0.071$. IBNR BF = 1540 × 0.071 = **110 K€**
+- **2023** : % non développé = $1 - 1/1.371 = 0.271$. IBNR BF = 1470 × 0.271 = **398 K€**
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+🗄️ Exercice T1 — Requêtes SQL analytiques
+:::
+
+Écris les requêtes SQL pour calculer sur la table `sinistres` :
+
+1. Le S/P par branche
+2. La fréquence par tranche d'âge du conducteur
+3. L'évolution mensuelle de la charge sinistres
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```sql
+-- 1. S/P par branche
+SELECT branche,
+       SUM(cout_actuel) / SUM(prime_acquise) as sp
+FROM sinistres s JOIN contrats c ON s.contrat_id = c.id
+GROUP BY branche;
+
+-- 2. Fréquence par âge
+SELECT tranche_age,
+       COUNT(*) * 1.0 / SUM(exposition) as frequence
+FROM sinistres s JOIN assures a ON s.assure_id = a.id
+GROUP BY tranche_age;
+
+-- 3. Évolution mensuelle
+SELECT DATE_TRUNC('month', date_survenance) as mois,
+       SUM(cout_actuel) as charge_mensuelle
+FROM sinistres
+GROUP BY 1 ORDER BY 1;
+```
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Comment structurer ta base RDS pour stocker les triangles de liquidation ?** (table de faits sinistres + dimension temps)
+2. **Comment automatiser le calcul mensuel des provisions ?** (script Python + RDS + Lambda ou cron)
+3. **Quelles données du provisionnement alimenteront ton dashboard ?** (IBNR par génération, boni/mali)
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 7 terminé (provisionnement, CL, BF)
+- Module Technique 7 terminé (RDS, SQL, sécurité)
+- Livrable 1 (comparaison CL vs BF)
+- Livrable 2 (base RDS)
+- Livrable 3 (boni/mali)
+- Exercices réalisés
+:::
 
 ---
 

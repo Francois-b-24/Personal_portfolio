@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Fiche de travail — Semaine 20</title>
+<title>François BOUSSENGUI | Fiche de travail – Semaine 20</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,7 +188,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Fiche de travail — Semaine 20">
+<meta property="og:title" content="François BOUSSENGUI | Fiche de travail – Semaine 20">
 <meta property="og:description" content="Exercices pratiques et livrables">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +197,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail — Semaine 20">
+<meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail – Semaine 20">
 <meta name="twitter:description" content="Exercices pratiques et livrables">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -477,7 +477,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Fiche de travail — Semaine 20</h1>
+      <h1 class="title">Fiche de travail – Semaine 20</h1>
             <p class="subtitle lead">Exercices pratiques et livrables</p>
                       </div>
   </div>
@@ -488,14 +488,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -511,10 +511,10 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">Livrables</a></li>
-  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">Exercices métier</a></li>
+  <li><a href="#livrables-a-produire" id="toc-livrables-a-produire" class="nav-link active" data-scroll-target="#livrables-a-produire">Livrables a produire</a></li>
+  <li><a href="#exercices-metier" id="toc-exercices-metier" class="nav-link" data-scroll-target="#exercices-metier">Exercices metier</a></li>
   <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">Exercices techniques</a></li>
-  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">Pont métier-technique</a></li>
+  <li><a href="#pont-metier-technique" id="toc-pont-metier-technique" class="nav-link" data-scroll-target="#pont-metier-technique">Pont metier-technique</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   </ul>
 </nav>
@@ -526,36 +526,119 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="livrables" class="level2">
-<h2 class="anchored" data-anchor-id="livrables">Livrables</h2>
-<ol type="1">
-<li><strong>Livrable métier</strong> : Application des concepts du Module 20</li>
-<li><strong>Livrable technique</strong> : Mise en pratique du Module Technique 20</li>
-<li><strong>Livrable intégrateur</strong> : Combinaison métier + technique</li>
-</ol>
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+<hr>
+<section id="livrables-a-produire" class="level2">
+<h2 class="anchored" data-anchor-id="livrables-a-produire">Livrables a produire</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}Livrable 1 – Synthese metier::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Resumer les concepts cles du Module 20 dans tes propres mots avec un schema et un lien avec ton experience.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}Livrable 2 – Mise en pratique technique::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Appliquer les outils du Module Technique 20 au projet central. Code fonctionnel et documente.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}Livrable 3 – Integration projet::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Contribution au repo du projet central avec commit clair et tests.</p>
+</div>
+<hr>
 </section>
-<section id="exercices-métier" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-métier">Exercices métier</h2>
-<p>Applique les concepts du module sur des données simulées ou réelles.</p>
+<section id="exercices-metier" class="level2">
+<h2 class="anchored" data-anchor-id="exercices-metier">Exercices metier</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>Exercice M1 – Application des concepts</p>
+</div>
+<p>Applique les concepts du module metier sur des donnees simulees. Calcule les indicateurs cles et interprete.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Utilise pandas et matplotlib. Compare avec les ordres de grandeur du module.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercices-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="exercices-techniques">Exercices techniques</h2>
-<p>Mets en pratique les outils techniques dans le contexte du projet.</p>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>Exercice T1 – Mise en pratique</p>
+</div>
+<p>Realise le tutoriel du module technique pas a pas dans le contexte du projet central.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Piste de solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suis le module section par section. Consulte la documentation officielle.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
-<section id="pont-métier-technique" class="level2">
-<h2 class="anchored" data-anchor-id="pont-métier-technique">Pont métier-technique</h2>
-<p>Comment les concepts de cette semaine s’articulent-ils dans le projet central ?</p>
+<section id="pont-metier-technique" class="level2">
+<h2 class="anchored" data-anchor-id="pont-metier-technique">Pont metier-technique</h2>
+<section id="reflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="reflexion">Reflexion</h3>
+<ol type="1">
+<li>Comment les concepts metier enrichissent-ils le projet central ?</li>
+<li>Comment les outils techniques operationnalisent-ils ces concepts ?</li>
+<li>Quelle fonctionnalite du projet peux-tu avancer cette semaine ?</li>
+</ol>
+</section>
+<hr>
 </section>
 <section id="checklist" class="level2">
 <h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Module Métier 20 terminé</label></li>
-<li><label><input type="checkbox">Module Technique 20 terminé</label></li>
-<li><label><input type="checkbox">Livrables produits</label></li>
-<li><label><input type="checkbox">Exercices réalisés</label></li>
+<div class="checklist">
+<ul>
+<li>Module Metier 20 termine</li>
+<li>Module Technique 20 termine</li>
+<li>Livrables produits</li>
+<li>Exercices realises</li>
+<li>Questions preparees pour le debriefing</li>
 </ul>
+</div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 20</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 20</a></p>
 
 
 </section>

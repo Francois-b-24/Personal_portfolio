@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module 19 — Approfondissement tarification</title>
+<title>François BOUSSENGUI | Module 19 – Approfondissement tarification</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,7 +188,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 19 — Approfondissement tarification">
+<meta property="og:title" content="François BOUSSENGUI | Module 19 – Approfondissement tarification">
 <meta property="og:description" content="Segmentation fine et clustering">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +197,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 19 — Approfondissement tarification">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 19 – Approfondissement tarification">
 <meta name="twitter:description" content="Segmentation fine et clustering">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -477,11 +477,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 19 — Approfondissement tarification</h1>
+      <h1 class="title">Module 19 – Approfondissement tarification</h1>
             <p class="subtitle lead">Segmentation fine et clustering</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">segmentation</div>
+                <div class="quarto-category">clustering</div>
               </div>
                   </div>
   </div>
@@ -492,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#micro-segmentation" id="toc-micro-segmentation" class="nav-link active" data-scroll-target="#micro-segmentation"><span class="header-section-number">1</span> Micro-segmentation</a></li>
-  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering"><span class="header-section-number">2</span> Clustering</a></li>
-  <li><a href="#arbres-et-ensembles" id="toc-arbres-et-ensembles" class="nav-link" data-scroll-target="#arbres-et-ensembles"><span class="header-section-number">3</span> Arbres et ensembles</a></li>
-  <li><a href="#régularisation" id="toc-régularisation" class="nav-link" data-scroll-target="#régularisation"><span class="header-section-number">4</span> Régularisation</a></li>
-  <li><a href="#éthique-segmentation" id="toc-éthique-segmentation" class="nav-link" data-scroll-target="#éthique-segmentation"><span class="header-section-number">5</span> Éthique segmentation</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#micro-segmentation-aller-au-dela-des-classes" id="toc-micro-segmentation-aller-au-dela-des-classes" class="nav-link active" data-scroll-target="#micro-segmentation-aller-au-dela-des-classes"><span class="header-section-number">1</span> Micro-segmentation : aller au-dela des classes</a></li>
+  <li><a href="#clustering-k-means-dbscan-pour-identifier-des" id="toc-clustering-k-means-dbscan-pour-identifier-des" class="nav-link" data-scroll-target="#clustering-k-means-dbscan-pour-identifier-des"><span class="header-section-number">2</span> Clustering (K-means, DBSCAN) pour identifier des</a></li>
+  <li><a href="#arbres-de-decision-pour-decouvrir-des" id="toc-arbres-de-decision-pour-decouvrir-des" class="nav-link" data-scroll-target="#arbres-de-decision-pour-decouvrir-des"><span class="header-section-number">3</span> Arbres de decision pour decouvrir des</a></li>
+  <li><a href="#regularisation-eviter-le-surapprentissage-avec" id="toc-regularisation-eviter-le-surapprentissage-avec" class="nav-link" data-scroll-target="#regularisation-eviter-le-surapprentissage-avec"><span class="header-section-number">4</span> Regularisation : eviter le surapprentissage avec</a></li>
+  <li><a href="#ethique-equite-algorithmique-biais-dans" id="toc-ethique-equite-algorithmique-biais-dans" class="nav-link" data-scroll-target="#ethique-equite-algorithmique-biais-dans"><span class="header-section-number">5</span> Ethique : equite algorithmique, biais dans</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-concepts-cles" id="toc-les-concepts-cles" class="nav-link" data-scroll-target="#les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -532,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="micro-segmentation" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Micro-segmentation</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="micro-segmentation-aller-au-dela-des-classes" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Micro-segmentation : aller au-dela des classes</h1>
+<p>Micro-segmentation : aller au-dela des classes tarifaires classiques.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="clustering" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Clustering</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="clustering-k-means-dbscan-pour-identifier-des" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Clustering (K-means, DBSCAN) pour identifier des</h1>
+<p>Clustering (K-means, DBSCAN) pour identifier des segments naturels dans les donnees.</p>
 <hr>
 </section>
-<section id="arbres-et-ensembles" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Arbres et ensembles</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="arbres-de-decision-pour-decouvrir-des" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Arbres de decision pour decouvrir des</h1>
+<p>Arbres de decision pour decouvrir des interactions cachees.</p>
+<div class="attention-box">
+<p><strong>Attention</strong></p>
+<p>Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.</p>
+</div>
 <hr>
 </section>
-<section id="régularisation" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Régularisation</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="regularisation-eviter-le-surapprentissage-avec" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Regularisation : eviter le surapprentissage avec</h1>
+<p>Regularisation : eviter le surapprentissage avec des contraintes (min_samples_leaf, max_depth).</p>
 <hr>
 </section>
-<section id="éthique-segmentation" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Éthique segmentation</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="ethique-equite-algorithmique-biais-dans" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Ethique : equite algorithmique, biais dans</h1>
+<p>Ethique : equite algorithmique, biais dans les donnees historiques, conformite RGPD, explicabilite des decisions.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-concepts-cles" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</h3>
+<ol type="1">
+<li><strong>Micro-segmentation : aller au-dela des classes tarifaires classiques</strong></li>
+<li><strong>Clustering (K-means, DBSCAN) pour identifier des segments naturels</strong></li>
+<li><strong>Arbres de decision pour decouvrir des interactions cachees</strong></li>
+<li><strong>Regularisation : eviter le surapprentissage avec des contraintes</strong></li>
+<li><strong>Ethique : equite algorithmique, biais dans les donnees</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -576,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -592,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -608,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -624,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 19</a> <a href="module-technique-19.html" class="btn btn-primary">Voir le Module Technique 19 →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 19</a> <a href="module-technique-19.html" class="btn btn-primary">Voir le Module Technique 19 -&gt;</a></p>
 
 
 </section>

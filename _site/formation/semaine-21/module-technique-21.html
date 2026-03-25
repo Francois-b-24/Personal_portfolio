@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 21 — Projet Central — Dashboard</title>
+<title>François BOUSSENGUI | Module Technique 21 – Projet Central : Dashboard interactif</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 21 — Projet Central — Dashboard">
-<meta property="og:description" content="Streamlit et visualisations">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 21 – Projet Central : Dashboard interactif">
+<meta property="og:description" content="Streamlit, visualisations et UX">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 21 — Projet Central — Dashboard">
-<meta name="twitter:description" content="Streamlit et visualisations">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 21 – Projet Central : Dashboard interactif">
+<meta name="twitter:description" content="Streamlit, visualisations et UX">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,8 +477,8 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 21 — Projet Central — Dashboard</h1>
-            <p class="subtitle lead">Streamlit et visualisations</p>
+      <h1 class="title">Module Technique 21 – Projet Central : Dashboard interactif</h1>
+            <p class="subtitle lead">Streamlit, visualisations et UX</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
                 <div class="quarto-category">streamlit</div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#introduction-streamlit" id="toc-introduction-streamlit" class="nav-link active" data-scroll-target="#introduction-streamlit"><span class="header-section-number">1</span> Introduction Streamlit</a></li>
-  <li><a href="#layout-et-composants" id="toc-layout-et-composants" class="nav-link" data-scroll-target="#layout-et-composants"><span class="header-section-number">2</span> Layout et composants</a></li>
-  <li><a href="#graphiques-plotly" id="toc-graphiques-plotly" class="nav-link" data-scroll-target="#graphiques-plotly"><span class="header-section-number">3</span> Graphiques Plotly</a></li>
-  <li><a href="#filtres-et-sélecteurs" id="toc-filtres-et-sélecteurs" class="nav-link" data-scroll-target="#filtres-et-sélecteurs"><span class="header-section-number">4</span> Filtres et sélecteurs</a></li>
-  <li><a href="#déploiement-dashboard" id="toc-déploiement-dashboard" class="nav-link" data-scroll-target="#déploiement-dashboard"><span class="header-section-number">5</span> Déploiement dashboard</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#streamlit-pour-le-dashboard-philosophie" id="toc-streamlit-pour-le-dashboard-philosophie" class="nav-link active" data-scroll-target="#streamlit-pour-le-dashboard-philosophie"><span class="header-section-number">1</span> Streamlit pour le dashboard : philosophie</a></li>
+  <li><a href="#layout-st.sidebar-pour-les-filtres" id="toc-layout-st.sidebar-pour-les-filtres" class="nav-link" data-scroll-target="#layout-st.sidebar-pour-les-filtres"><span class="header-section-number">2</span> Layout : st.sidebar pour les filtres</a></li>
+  <li><a href="#graphiques-interactifs-avec-plotly-evolution" id="toc-graphiques-interactifs-avec-plotly-evolution" class="nav-link" data-scroll-target="#graphiques-interactifs-avec-plotly-evolution"><span class="header-section-number">3</span> Graphiques interactifs avec Plotly : evolution</a></li>
+  <li><a href="#filtres-dynamiques-st.selectbox-st.slider-st.multiselect" id="toc-filtres-dynamiques-st.selectbox-st.slider-st.multiselect" class="nav-link" data-scroll-target="#filtres-dynamiques-st.selectbox-st.slider-st.multiselect"><span class="header-section-number">4</span> Filtres dynamiques : st.selectbox, st.slider, st.multiselect</a></li>
+  <li><a href="#structure-multi-pages-pour-organiser-le-dashboard" id="toc-structure-multi-pages-pour-organiser-le-dashboard" class="nav-link" data-scroll-target="#structure-multi-pages-pour-organiser-le-dashboard"><span class="header-section-number">5</span> Structure multi-pages pour organiser le dashboard</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="introduction-streamlit" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction Streamlit</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="streamlit-pour-le-dashboard-philosophie" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Streamlit pour le dashboard : philosophie</h1>
+<p>Streamlit pour le dashboard : philosophie ‘script Python = app web’.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="layout-et-composants" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Layout et composants</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="layout-st.sidebar-pour-les-filtres" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Layout : st.sidebar pour les filtres</h1>
+<p>Layout : st.sidebar pour les filtres, st.columns pour la mise en page.</p>
 <hr>
 </section>
-<section id="graphiques-plotly" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Graphiques Plotly</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="graphiques-interactifs-avec-plotly-evolution" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Graphiques interactifs avec Plotly : evolution</h1>
+<p>Graphiques interactifs avec Plotly : evolution temporelle, repartition par segment, treemap.</p>
 <hr>
 </section>
-<section id="filtres-et-sélecteurs" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Filtres et sélecteurs</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="filtres-dynamiques-st.selectbox-st.slider-st.multiselect" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Filtres dynamiques : st.selectbox, st.slider, st.multiselect</h1>
+<p>Filtres dynamiques : st.selectbox, st.slider, st.multiselect.</p>
 <hr>
 </section>
-<section id="déploiement-dashboard" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Déploiement dashboard</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="structure-multi-pages-pour-organiser-le-dashboard" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Structure multi-pages pour organiser le dashboard</h1>
+<p>Structure multi-pages pour organiser le dashboard (Vue globale, Sinistralite, Tarification, Alertes).</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>Streamlit pour le dashboard : philosophie ’script Python</strong></li>
+<li><strong>Layout : st.sidebar pour les filtres, st.columns pour</strong></li>
+<li><strong>Graphiques interactifs avec Plotly : evolution temporelle, repartition</strong></li>
+<li><strong>Filtres dynamiques : st.selectbox, st.slider, st.multiselect</strong></li>
+<li><strong>Structure multi-pages pour organiser le dashboard (Vue globale</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 21</a> <a href="fiche-travail-21.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 21</a> <a href="fiche-travail-21.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

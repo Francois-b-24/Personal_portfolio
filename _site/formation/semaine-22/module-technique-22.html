@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 22 — Projet Central — Tests et CI/CD</title>
+<title>François BOUSSENGUI | Module Technique 22 – Projet Central : Tests et CI/CD</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 22 — Projet Central — Tests et CI/CD">
-<meta property="og:description" content="pytest et qualité code">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 22 – Projet Central : Tests et CI/CD">
+<meta property="og:description" content="pytest, GitHub Actions et qualite">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 22 — Projet Central — Tests et CI/CD">
-<meta name="twitter:description" content="pytest et qualité code">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 22 – Projet Central : Tests et CI/CD">
+<meta name="twitter:description" content="pytest, GitHub Actions et qualite">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,8 +477,8 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 22 — Projet Central — Tests et CI/CD</h1>
-            <p class="subtitle lead">pytest et qualité code</p>
+      <h1 class="title">Module Technique 22 – Projet Central : Tests et CI/CD</h1>
+            <p class="subtitle lead">pytest, GitHub Actions et qualite</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
                 <div class="quarto-category">tests</div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#tests-unitaires-pytest" id="toc-tests-unitaires-pytest" class="nav-link active" data-scroll-target="#tests-unitaires-pytest"><span class="header-section-number">1</span> Tests unitaires pytest</a></li>
-  <li><a href="#tests-intégration" id="toc-tests-intégration" class="nav-link" data-scroll-target="#tests-intégration"><span class="header-section-number">2</span> Tests intégration</a></li>
-  <li><a href="#pipeline-cicd" id="toc-pipeline-cicd" class="nav-link" data-scroll-target="#pipeline-cicd"><span class="header-section-number">3</span> Pipeline CI/CD</a></li>
-  <li><a href="#coverage-qualité" id="toc-coverage-qualité" class="nav-link" data-scroll-target="#coverage-qualité"><span class="header-section-number">4</span> Coverage qualité</a></li>
-  <li><a href="#pre-commit-hooks" id="toc-pre-commit-hooks" class="nav-link" data-scroll-target="#pre-commit-hooks"><span class="header-section-number">5</span> Pre-commit hooks</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#tests-unitaires-du-projet-tester" id="toc-tests-unitaires-du-projet-tester" class="nav-link active" data-scroll-target="#tests-unitaires-du-projet-tester"><span class="header-section-number">1</span> Tests unitaires du projet : tester</a></li>
+  <li><a href="#tests-dintegration-tester-le-flux" id="toc-tests-dintegration-tester-le-flux" class="nav-link" data-scroll-target="#tests-dintegration-tester-le-flux"><span class="header-section-number">2</span> Tests d’integration : tester le flux</a></li>
+  <li><a href="#fixtures-pytest-donnees-de-test" id="toc-fixtures-pytest-donnees-de-test" class="nav-link" data-scroll-target="#fixtures-pytest-donnees-de-test"><span class="header-section-number">3</span> Fixtures pytest : donnees de test</a></li>
+  <li><a href="#pipeline-cicd-github-actions-lint" id="toc-pipeline-cicd-github-actions-lint" class="nav-link" data-scroll-target="#pipeline-cicd-github-actions-lint"><span class="header-section-number">4</span> Pipeline CI/CD GitHub Actions : lint</a></li>
+  <li><a href="#couverture-de-code-avec-pytest-cov-objectif" id="toc-couverture-de-code-avec-pytest-cov-objectif" class="nav-link" data-scroll-target="#couverture-de-code-avec-pytest-cov-objectif"><span class="header-section-number">5</span> Couverture de code avec pytest-cov (objectif</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="tests-unitaires-pytest" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Tests unitaires pytest</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="tests-unitaires-du-projet-tester" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Tests unitaires du projet : tester</h1>
+<p>Tests unitaires du projet : tester chaque fonction du pipeline (nettoyage, features, prediction).</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="tests-intégration" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Tests intégration</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="tests-dintegration-tester-le-flux" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Tests d’integration : tester le flux</h1>
+<p>Tests d’integration : tester le flux complet API -&gt; modele -&gt; reponse.</p>
 <hr>
 </section>
-<section id="pipeline-cicd" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Pipeline CI/CD</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="fixtures-pytest-donnees-de-test" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Fixtures pytest : donnees de test</h1>
+<p>Fixtures pytest : donnees de test realistes.</p>
 <hr>
 </section>
-<section id="coverage-qualité" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Coverage qualité</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="pipeline-cicd-github-actions-lint" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Pipeline CI/CD GitHub Actions : lint</h1>
+<p>Pipeline CI/CD GitHub Actions : lint + test + build Docker + push.</p>
 <hr>
 </section>
-<section id="pre-commit-hooks" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Pre-commit hooks</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="couverture-de-code-avec-pytest-cov-objectif" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Couverture de code avec pytest-cov (objectif</h1>
+<p>Couverture de code avec pytest-cov (objectif &gt; 80%).</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>Tests unitaires du projet : tester chaque fonction</strong></li>
+<li><strong>Tests d’integration : tester le flux complet API</strong></li>
+<li><strong>Fixtures pytest : donnees de test realistes</strong></li>
+<li><strong>Pipeline CI/CD GitHub Actions : lint + test</strong></li>
+<li><strong>Couverture de code avec pytest-cov (objectif &gt; 80%)</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 22</a> <a href="fiche-travail-22.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 22</a> <a href="fiche-travail-22.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

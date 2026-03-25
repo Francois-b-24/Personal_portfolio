@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 16 — Projet Central — Modélisation fréquence</title>
+<title>François BOUSSENGUI | Module Technique 16 – Projet Central : Modelisation frequence</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 16 — Projet Central — Modélisation fréquence">
-<meta property="og:description" content="GLM Poisson appliqué">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 16 – Projet Central : Modelisation frequence">
+<meta property="og:description" content="GLM Poisson applique au projet">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 16 — Projet Central — Modélisation fréquence">
-<meta name="twitter:description" content="GLM Poisson appliqué">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 16 – Projet Central : Modelisation frequence">
+<meta name="twitter:description" content="GLM Poisson applique au projet">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,11 +477,11 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 16 — Projet Central — Modélisation fréquence</h1>
-            <p class="subtitle lead">GLM Poisson appliqué</p>
+      <h1 class="title">Module Technique 16 – Projet Central : Modelisation frequence</h1>
+            <p class="subtitle lead">GLM Poisson applique au projet</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
-                <div class="quarto-category">fréquence</div>
+                <div class="quarto-category">frequence</div>
                 <div class="quarto-category">glm</div>
               </div>
                   </div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#préparation-données-glm" id="toc-préparation-données-glm" class="nav-link active" data-scroll-target="#préparation-données-glm"><span class="header-section-number">1</span> Préparation données GLM</a></li>
-  <li><a href="#modèle-poisson" id="toc-modèle-poisson" class="nav-link" data-scroll-target="#modèle-poisson"><span class="header-section-number">2</span> Modèle Poisson</a></li>
-  <li><a href="#sélection-variables" id="toc-sélection-variables" class="nav-link" data-scroll-target="#sélection-variables"><span class="header-section-number">3</span> Sélection variables</a></li>
-  <li><a href="#validation-modèle" id="toc-validation-modèle" class="nav-link" data-scroll-target="#validation-modèle"><span class="header-section-number">4</span> Validation modèle</a></li>
-  <li><a href="#interprétation-coefficients" id="toc-interprétation-coefficients" class="nav-link" data-scroll-target="#interprétation-coefficients"><span class="header-section-number">5</span> Interprétation coefficients</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#application-du-glm-poisson-au-dataset" id="toc-application-du-glm-poisson-au-dataset" class="nav-link active" data-scroll-target="#application-du-glm-poisson-au-dataset"><span class="header-section-number">1</span> Application du GLM Poisson au dataset</a></li>
+  <li><a href="#preparation-des-donnees-exposition-comme" id="toc-preparation-des-donnees-exposition-comme" class="nav-link" data-scroll-target="#preparation-des-donnees-exposition-comme"><span class="header-section-number">2</span> Preparation des donnees : exposition comme</a></li>
+  <li><a href="#modele-avec-statsmodels-sm.glmy-x" id="toc-modele-avec-statsmodels-sm.glmy-x" class="nav-link" data-scroll-target="#modele-avec-statsmodels-sm.glmy-x"><span class="header-section-number">3</span> Modele avec statsmodels : sm.GLM(y, X</a></li>
+  <li><a href="#selection-de-variables-aic-stepwise" id="toc-selection-de-variables-aic-stepwise" class="nav-link" data-scroll-target="#selection-de-variables-aic-stepwise"><span class="header-section-number">4</span> Selection de variables : AIC stepwise</a></li>
+  <li><a href="#validation-deviance-residuelle-qq-plot-des" id="toc-validation-deviance-residuelle-qq-plot-des" class="nav-link" data-scroll-target="#validation-deviance-residuelle-qq-plot-des"><span class="header-section-number">5</span> Validation : deviance residuelle, QQ-plot des</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="préparation-données-glm" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Préparation données GLM</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="application-du-glm-poisson-au-dataset" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Application du GLM Poisson au dataset</h1>
+<p>Application du GLM Poisson au dataset du projet central.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="modèle-poisson" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Modèle Poisson</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="preparation-des-donnees-exposition-comme" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Preparation des donnees : exposition comme</h1>
+<p>Preparation des donnees : exposition comme offset, encodage des variables, train/test split temporel.</p>
 <hr>
 </section>
-<section id="sélection-variables" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Sélection variables</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="modele-avec-statsmodels-sm.glmy-x" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modele avec statsmodels : sm.GLM(y, X</h1>
+<p>Modele avec statsmodels : sm.GLM(y, X, family=Poisson(), offset=log_expo).</p>
 <hr>
 </section>
-<section id="validation-modèle" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Validation modèle</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="selection-de-variables-aic-stepwise" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Selection de variables : AIC stepwise</h1>
+<p>Selection de variables : AIC stepwise, drop1.</p>
 <hr>
 </section>
-<section id="interprétation-coefficients" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Interprétation coefficients</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="validation-deviance-residuelle-qq-plot-des" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Validation : deviance residuelle, QQ-plot des</h1>
+<p>Validation : deviance residuelle, QQ-plot des residus de Pearson, lift curve, Gini.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>Application du GLM Poisson au dataset du projet</strong></li>
+<li><strong>Preparation des donnees : exposition comme offset, encodage</strong></li>
+<li><strong>Modele avec statsmodels : sm.GLM(y, X, family=Poisson(), offset=log_expo)</strong></li>
+<li><strong>Selection de variables : AIC stepwise, drop1</strong></li>
+<li><strong>Validation : deviance residuelle, QQ-plot des residus de</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 16</a> <a href="fiche-travail-16.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 16</a> <a href="fiche-travail-16.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

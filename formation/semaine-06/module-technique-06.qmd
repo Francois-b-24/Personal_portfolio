@@ -1,6 +1,6 @@
 ---
-title: "Module Technique 6 — AWS — EC2 et Compute"
-subtitle: "Instances et calcul dans le cloud"
+title: "Module Technique 6 — AWS : EC2 et Compute"
+subtitle: "Lancer des machines virtuelles dans le cloud"
 author: "François Boussengui"
 date: last-modified
 categories: [aws, ec2, compute]
@@ -11,62 +11,213 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Instances EC2
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Choisir** le bon type d'instance EC2 pour ton usage
+2. **Lancer** et configurer une instance
+3. **Configurer** les groupes de sécurité (firewall)
+4. **Se connecter** en SSH et transférer des fichiers
+5. **Comprendre** les AMI, snapshots et Auto Scaling
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Module Technique 5 (AWS basics, S3)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
+
+---
+
+# Types d'instances EC2
+
+## Familles d'instances
+
+EC2 (Elastic Compute Cloud) propose des **machines virtuelles** dans le cloud. Chaque famille est optimisée pour un usage :
+
+| Famille | Usage | Exemple | Cas data science |
+|---------|-------|---------|-----------------|
+| **t3** | Usage général | t3.micro, t3.medium | Dev, tests, petits scripts |
+| **m6i** | Mémoire équilibrée | m6i.large, m6i.xlarge | ETL, pandas sur gros datasets |
+| **c6i** | Compute optimisé | c6i.xlarge | Entraînement ML CPU-bound |
+| **r6i** | Mémoire optimisée | r6i.large | Gros DataFrames en mémoire |
+| **p4d** | GPU | p4d.24xlarge | Deep learning |
+
+:::{.concept-cle}
+**💡 Pour ton projet central**, une instance **t3.medium** (2 vCPU, 4 Go RAM) suffit pour le développement. Pour l'entraînement des modèles, une **m6i.large** (2 vCPU, 8 Go) est un bon compromis coût/performance.
+:::
+
+## Modèles de tarification
+
+| Modèle | Description | Économie |
+|--------|-------------|----------|
+| **On-Demand** | Payé à l'heure, sans engagement | Référence |
+| **Spot** | Capacité excédentaire, prix variable | Jusqu'à -90% |
+| **Reserved** | Engagement 1-3 ans | -40 à -75% |
+| **Free Tier** | t2.micro gratuit 750h/mois pendant 1 an | 100% |
+
+---
+
+# Lancer une instance
+
+## Via la console AWS
+
+1. **Choisir une AMI** (Amazon Machine Image) : Ubuntu 22.04, Amazon Linux 2
+2. **Sélectionner le type** : t3.micro pour commencer
+3. **Configurer le réseau** : VPC par défaut
+4. **Ajouter le stockage** : 20 Go EBS minimum
+5. **Configurer le Security Group** : ouvrir SSH (port 22)
+6. **Créer une paire de clés** : fichier `.pem` pour se connecter
+
+## Via AWS CLI
+
+:::{.terminal-box}
+<span class="comment"># Lancer une instance</span><br>
+<span class="prompt">$</span> aws ec2 run-instances \<br>
+&nbsp;&nbsp;--image-id ami-0c55b159cbfafe1f0 \<br>
+&nbsp;&nbsp;--instance-type t3.micro \<br>
+&nbsp;&nbsp;--key-name ma-cle \<br>
+&nbsp;&nbsp;--security-group-ids sg-xxxxxxxx \<br>
+&nbsp;&nbsp;--count 1<br><br>
+<span class="comment"># Lister les instances</span><br>
+<span class="prompt">$</span> aws ec2 describe-instances --query 'Reservations[].Instances[].{ID:InstanceId,State:State.Name,IP:PublicIpAddress}'<br>
+<span class="output">[{"ID": "i-0abc123", "State": "running", "IP": "54.123.45.67"}]</span>
+:::
 
 ---
 
 # Groupes de sécurité
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Les **Security Groups** sont le firewall d'EC2 — ils contrôlent le trafic entrant et sortant :
+
+| Règle | Port | Source | Usage |
+|-------|------|--------|-------|
+| SSH | 22 | Mon IP | Connexion terminal |
+| HTTP | 80 | 0.0.0.0/0 | Serveur web |
+| HTTPS | 443 | 0.0.0.0/0 | Serveur web sécurisé |
+| Custom | 8000 | 0.0.0.0/0 | API FastAPI |
+| PostgreSQL | 5432 | Security Group app | Base de données |
+
+:::{.attention-box}
+**⚠️ Règle d'or** : n'ouvrir que les ports **strictement nécessaires**, et limiter SSH à **ton adresse IP** uniquement. Ne jamais ouvrir le port 22 à `0.0.0.0/0` (tout Internet).
+:::
 
 ---
 
 # Connexion SSH
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+:::{.terminal-box}
+<span class="comment"># Se connecter à l'instance</span><br>
+<span class="prompt">$</span> ssh -i ma-cle.pem ubuntu@54.123.45.67<br><br>
+<span class="comment"># Transférer un fichier vers l'instance</span><br>
+<span class="prompt">$</span> scp -i ma-cle.pem data.csv ubuntu@54.123.45.67:~/data/<br><br>
+<span class="comment"># Récupérer un fichier depuis l'instance</span><br>
+<span class="prompt">$</span> scp -i ma-cle.pem ubuntu@54.123.45.67:~/results/output.csv ./local/
+:::
+
+:::{.exemple-box}
+**📝 Workflow typique data science sur EC2**
+
+1. Lancer une instance m6i.large
+2. Se connecter en SSH
+3. Cloner le repo Git
+4. Installer les dépendances (`pip install -r requirements.txt`)
+5. Lancer l'entraînement du modèle
+6. Récupérer les résultats (ou les pousser sur S3)
+7. **Éteindre l'instance** pour ne plus payer
+:::
 
 ---
 
-# AMI et snapshots
+# AMI, Snapshots et Auto Scaling
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## AMI (Amazon Machine Image)
 
----
+Une AMI est un **template** d'instance : OS + logiciels préinstallés. Tu peux créer ta propre AMI avec Python, tes packages et tes configs, puis la réutiliser pour lancer des instances identiques.
 
-# Auto Scaling
+## Auto Scaling
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Pour les applications en production, Auto Scaling ajuste automatiquement le nombre d'instances selon la charge :
+
+```{mermaid}
+%%| fig-cap: "Auto Scaling selon la charge"
+
+flowchart LR
+    A[Charge faible<br>1 instance] --> B[Charge moyenne<br>2 instances]
+    B --> C[Pic de charge<br>4 instances]
+    C --> B
+    B --> A
+```
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Choisir la bonne famille** — t3 pour dev, m6i pour data, p4d pour GPU
+2. **Security Groups = firewall** — N'ouvrir que le strict nécessaire
+3. **SSH pour se connecter** — Clé .pem, port 22
+4. **Toujours éteindre les instances** — EC2 facture à l'heure
+5. **AMI pour standardiser** — Créer ton image avec tes outils préinstallés
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Quelle instance choisir pour entraîner un modèle XGBoost sur 1M de lignes ?
+
+**Réponse** : Une **m6i.large** (2 vCPU, 8 Go RAM) ou **m6i.xlarge** (4 vCPU, 16 Go) selon la taille des features. XGBoost est CPU-bound, pas besoin de GPU. Commencer petit et scaler si nécessaire.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Pourquoi ne pas ouvrir SSH à 0.0.0.0/0 ?
+
+**Réponse** : Cela expose le port 22 à **tout Internet**. Des bots scannent en permanence les ports SSH ouverts pour tenter des attaques brute-force. En limitant à ton IP, seul toi peux te connecter.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Spot vs On-Demand — quand utiliser Spot ?
+
+**Réponse** : **Spot** pour les tâches interruptibles : entraînement de modèles (on peut relancer), batch processing, tests. Économie jusqu'à 90%. **On-Demand** pour les serveurs qui doivent rester up : API de scoring, dashboard, base de données.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment éviter de payer pour une instance oubliée ?
+
+**Réponse** : Configurer des **alertes CloudWatch** sur les coûts, utiliser des **tags** pour identifier les instances de test, et mettre en place une **politique d'arrêt automatique** (Lambda + CloudWatch Events). Toujours vérifier `aws ec2 describe-instances` régulièrement.
 :::
 
 ---

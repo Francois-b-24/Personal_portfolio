@@ -1,9 +1,9 @@
 ---
 title: "Module 7 — Provisionnement"
-subtitle: "IBNR, IBNER et réserves"
+subtitle: "IBNR, IBNER et méthodes actuarielles de réserves"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, provisionnement, IBNR]
+categories: [assurance, provisionnement, IBNR, réserves]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,63 +11,256 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Pourquoi provisionner
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Expliquer** les obligations réglementaires de provisionnement
+2. **Appliquer** la méthode Chain Ladder pour estimer les IBNR
+3. **Comprendre** la méthode Bornhuetter-Ferguson et ses avantages
+4. **Comparer** les méthodes et choisir selon le contexte
+5. **Mesurer** l'impact du provisionnement sur les comptes
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Module 6 (triangles de liquidation)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# Chain Ladder appliquée
+# Obligations réglementaires
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Pourquoi l'assureur doit-il provisionner ?
+
+L'assureur encaisse les primes **aujourd'hui** pour payer des sinistres **demain**. Il a l'obligation légale et réglementaire de constituer des **provisions techniques** suffisantes pour honorer ses engagements futurs.
+
+Solvabilité II impose :
+
+- Des provisions calculées selon la **meilleure estimation** (Best Estimate)
+- Une **marge de risque** pour l'incertitude
+- Un contrôle par l'ACPR (Autorité de Contrôle Prudentiel et de Résolution)
+
+:::{.attention-box}
+**⚠️ Enjeu majeur**
+
+Un assureur qui sous-provisionne affiche un résultat artificiellement bon. Mais quand les sinistres se révèlent, la perte est brutale. Inversement, un sur-provisionnement immobilise du capital inutilement. Le juste équilibre est un exercice actuariel délicat.
+:::
 
 ---
 
-# Bornhuetter-Ferguson
+# Méthode Chain Ladder appliquée
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Rappel du principe
+
+Chain Ladder (vu module 6) projette les charges cumulées à l'aide de facteurs de développement :
+
+$$C_{i,j+1}^{\text{projeté}} = C_{i,j}^{\text{observé}} \times f_j$$
+
+$$\text{IBNR}_i = C_{i,\text{ultime}} - C_{i,\text{observé}}$$
+
+## Implémentation Python
+
+```python
+import numpy as np
+
+# Triangle de charges cumulées
+triangle = np.array([
+    [3200, 4100, 4500, 4650, 4700],
+    [3500, 4400, 4850, 5000, np.nan],
+    [3800, 4900, 5350, np.nan, np.nan],
+    [3400, 4300, np.nan, np.nan, np.nan],
+    [3600, np.nan, np.nan, np.nan, np.nan],
+])
+
+# Calcul des facteurs de développement
+n = triangle.shape[0]
+factors = []
+for j in range(n - 1):
+    num = sum(triangle[i, j+1] for i in range(n-j-1) if not np.isnan(triangle[i, j+1]))
+    den = sum(triangle[i, j] for i in range(n-j-1) if not np.isnan(triangle[i, j]))
+    factors.append(num / den)
+
+print("Facteurs:", [f"{f:.4f}" for f in factors])
+
+# Projection
+projected = triangle.copy()
+for i in range(1, n):
+    for j in range(n-i, n):
+        projected[i, j] = projected[i, j-1] * factors[j-1]
+
+# IBNR
+for i in range(n):
+    observed = triangle[i, n-1-i]
+    ultimate = projected[i, -1]
+    ibnr = ultimate - observed
+    print(f"Génération {2019+i}: Ultime={ultimate:.0f}, IBNR={ibnr:.0f}")
+```
 
 ---
 
-# Comparaison des méthodes
+# Méthode Bornhuetter-Ferguson
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Principe
+
+Bornhuetter-Ferguson (BF) **combine** l'approche Chain Ladder avec une **estimation a priori** de la charge ultime :
+
+$$\text{IBNR}_i^{BF} = \text{Charge ultime a priori}_i \times (1 - 1/\text{CDF}_j)$$
+
+où le CDF (Cumulative Development Factor) est le produit des facteurs restants.
+
+:::{.concept-cle}
+**💡 Avantage de BF**
+
+Chain Ladder est sensible aux premières données observées : si la première année d'une génération est atypique (beaucoup ou peu de déclarations), la projection sera biaisée. BF atténue ce problème en ancrant l'estimation sur un a priori (typiquement : prime × S/P attendu).
+:::
+
+## Comparaison CL vs BF
+
+| Critère | Chain Ladder | Bornhuetter-Ferguson |
+|---------|-------------|---------------------|
+| **Données utilisées** | Uniquement observées | Observées + a priori |
+| **Sensibilité aux données récentes** | Forte | Modérée |
+| **Robustesse** | Faible pour jeunes générations | Bonne |
+| **Quand l'utiliser** | Branches développées | Branches longues, peu de données |
+
+:::{.exemple-box}
+**📝 Quand choisir ?**
+
+- **Chain Ladder** : portefeuille auto matériel (développement court, beaucoup de données)
+- **Bornhuetter-Ferguson** : RC corporelle (développement long, incertitude forte sur les jeunes générations)
+- **En pratique** : on calcule les deux et on compare. Si les résultats divergent significativement, c'est un signal d'alerte.
+:::
 
 ---
 
-# Impact comptable
+# Impact sur les comptes
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Boni et mali de liquidation
+
+Quand une génération se clôture, la **différence** entre la provision constituée et le coût réel génère :
+
+- **Boni** : on avait trop provisionné → le résultat s'améliore
+- **Mali** : on avait sous-provisionné → le résultat se détériore
+
+```{python}
+#| label: fig-boni-mali
+#| fig-cap: "Boni et mali de liquidation par génération"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+generations = ['2018', '2019', '2020', '2021', '2022']
+boni_mali = [120, -50, 280, -180, 85]  # positif = boni, négatif = mali
+colors = ['#72f1b8' if v >= 0 else '#fe4454' for v in boni_mali]
+
+fig, ax = plt.subplots(figsize=(10, 5))
+bars = ax.bar(generations, boni_mali, color=colors, edgecolor='white', linewidth=2)
+
+for bar, val in zip(bars, boni_mali):
+    y = bar.get_height()
+    label = f'+{val} K€' if val >= 0 else f'{val} K€'
+    ax.text(bar.get_x() + bar.get_width()/2, y + (10 if y >= 0 else -25),
+            label, ha='center', fontweight='bold', color='#06436e')
+
+ax.axhline(y=0, color='black', linewidth=0.8)
+ax.set_ylabel('Boni (+) / Mali (−) en K€', fontsize=11)
+ax.set_xlabel('Génération', fontsize=11)
+ax.set_title('Boni et mali de liquidation', fontsize=14, fontweight='bold', color='#06436e')
+ax.grid(axis='y', alpha=0.3)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Un pattern de **mali systématiques** indique un sous-provisionnement chronique — signal d'alerte majeur. Un pattern de **boni systématiques** peut indiquer un sur-provisionnement volontaire (lissage du résultat), ce qui est surveillé par le régulateur.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **Le provisionnement est une obligation réglementaire** — Solvabilité II impose le Best Estimate
+2. **Chain Ladder projette à partir des données** — Simple mais sensible aux anomalies
+3. **BF ancre sur un a priori** — Plus robuste pour les jeunes générations
+4. **Boni/Mali = provision − réel** — Indicateur de qualité du provisionnement
+5. **Toujours comparer les méthodes** — La divergence CL/BF est un signal
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Pourquoi le provisionnement est-il si important ?
+
+**Réponse** : Il garantit que l'assureur peut honorer ses engagements futurs. Un sous-provisionnement masque des pertes et met en danger la solvabilité. Un sur-provisionnement immobilise du capital. Le régulateur (ACPR) contrôle l'adéquation des provisions.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Quand préférer BF à Chain Ladder ?
+
+**Réponse** : Quand les premières données de développement sont peu fiables (jeune génération, branche longue comme la RC corporelle, changement de gestion des sinistres). BF atténue la sensibilité aux données récentes en s'appuyant sur un a priori.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Qu'est-ce qu'un boni de liquidation ?
+
+**Réponse** : Quand le coût réel d'une génération est **inférieur** à la provision constituée. La différence (boni) améliore le résultat de l'exercice. L'inverse (mali) le détériore. Des boni systématiques peuvent indiquer un sur-provisionnement délibéré.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Comment améliorer l'estimation des IBNR ?
+
+**Réponse** : Combiner plusieurs méthodes (CL, BF, Mack), segmenter le triangle par type de sinistre (attritionnels/graves), tester la stabilité des facteurs de développement, intégrer des informations externes (inflation, jurisprudence), et quantifier l'incertitude avec des intervalles de confiance.
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Provision technique** | Montant réservé pour couvrir les engagements futurs |
+| **Best Estimate** | Meilleure estimation de la provision (Solvabilité II) |
+| **Chain Ladder** | Méthode de projection basée sur les facteurs de développement |
+| **Bornhuetter-Ferguson** | Méthode combinant données observées et estimation a priori |
+| **Boni** | Provision > Coût réel → améliore le résultat |
+| **Mali** | Provision < Coût réel → détériore le résultat |
+| **CDF** | Cumulative Development Factor — produit des facteurs restants |
 
 ---
 

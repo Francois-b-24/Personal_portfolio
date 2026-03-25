@@ -1,6 +1,6 @@
 ---
-title: "Module Technique 8 — AWS — Lambda et Serverless"
-subtitle: "Fonctions serverless"
+title: "Module Technique 8 — AWS Lambda et Serverless"
+subtitle: "Fonctions serverless et architecture event-driven"
 author: "François Boussengui"
 date: last-modified
 categories: [aws, lambda, serverless]
@@ -11,62 +11,223 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Serverless concepts
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Comprendre** le concept serverless et ses avantages
+2. **Créer** une fonction Lambda en Python
+3. **Configurer** des triggers (S3, API Gateway, CloudWatch)
+4. **Construire** une API serverless avec Lambda + API Gateway
+5. **Identifier** les cas d'usage data science pour Lambda
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules Technique 5-7 (S3, EC2, RDS)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
 
 ---
 
-# AWS Lambda fonctions
+# Serverless : le concept
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Plus de serveurs à gérer
+
+Avec EC2, tu gères un serveur : le lancer, le dimensionner, le patcher, le surveiller, l'éteindre. Avec **Lambda**, tu fournis juste ton code — AWS s'occupe de tout le reste.
+
+| Critère | EC2 | Lambda |
+|---------|-----|--------|
+| **Gestion** | Tu gères le serveur | Tu fournis le code |
+| **Facturation** | À l'heure (même inactif) | Au nombre d'exécutions |
+| **Scaling** | Manuel ou Auto Scaling | Automatique (0 → milliers) |
+| **Durée max** | Illimitée | 15 minutes |
+| **Mémoire max** | Choix du type d'instance | 10 Go |
+
+:::{.concept-cle}
+**💡 Lambda est idéal** pour les tâches courtes et événementielles : traiter un fichier uploadé sur S3, répondre à une requête API, exécuter un calcul planifié. Pas adapté pour de l'entraînement ML long ou du traitement continu.
+:::
 
 ---
 
-# Triggers et événements
+# Première fonction Lambda
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Structure d'un handler
+
+```python
+# lambda_function.py
+import json
+
+def lambda_handler(event, context):
+    """Point d'entrée de la fonction Lambda."""
+
+    # event contient les données d'entrée (JSON)
+    # context contient les métadonnées d'exécution
+
+    nom = event.get("nom_assure", "Inconnu")
+    prime = event.get("prime", 0)
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "message": f"Prime calculée pour {nom}",
+            "prime": prime * 1.15  # +15% chargements
+        })
+    }
+```
+
+## Déploiement
+
+Via la console AWS : créer une fonction, coller le code, tester avec un événement JSON :
+
+```json
+{
+    "nom_assure": "Dupont",
+    "prime": 500
+}
+```
 
 ---
 
-# API Gateway + Lambda
+# Triggers : événements déclencheurs
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Architecture event-driven
+
+Lambda s'exécute en réponse à un **événement** :
+
+```{mermaid}
+%%| fig-cap: "Triggers Lambda courants"
+
+flowchart TD
+    S3[📦 S3<br>Nouveau fichier] --> L1[Lambda<br>Traiter le CSV]
+    API[🌐 API Gateway<br>Requête HTTP] --> L2[Lambda<br>Scoring API]
+    CW[⏰ CloudWatch<br>Cron planifié] --> L3[Lambda<br>Calcul IBNR mensuel]
+    RDS[🗄️ RDS<br>Événement DB] --> L4[Lambda<br>Alerte anomalie]
+```
+
+:::{.exemple-box}
+**📝 Cas d'usage assurance**
+
+1. **S3 trigger** : un fichier de sinistres est uploadé → Lambda le nettoie et le charge dans RDS
+2. **API Gateway** : le front-end demande un devis → Lambda calcule la prime avec le modèle GLM
+3. **CloudWatch** : chaque 1er du mois → Lambda recalcule les provisions IBNR
+4. **Alerte** : si le S/P dépasse 85% → Lambda envoie une notification
+:::
 
 ---
 
-# Cas data science
+# Lambda + API Gateway = API serverless
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+## Créer une API de scoring sans serveur
+
+```python
+# lambda_function.py
+import json
+import pickle
+import boto3
+
+# Charger le modèle depuis S3 (exécuté 1 fois au cold start)
+s3 = boto3.client('s3')
+s3.download_file('mon-bucket', 'models/glm_frequence.pkl', '/tmp/model.pkl')
+with open('/tmp/model.pkl', 'rb') as f:
+    model = pickle.load(f)
+
+def lambda_handler(event, context):
+    body = json.loads(event.get('body', '{}'))
+
+    features = {
+        'age': body.get('age', 40),
+        'zone': body.get('zone', 'rural'),
+        'puissance': body.get('puissance', 6),
+    }
+
+    # Prédiction
+    prediction = model.predict([list(features.values())])[0]
+
+    return {
+        'statusCode': 200,
+        'headers': {'Content-Type': 'application/json'},
+        'body': json.dumps({
+            'prime_pure': round(float(prediction), 2),
+            'features': features
+        })
+    }
+```
+
+:::{.attention-box}
+**⚠️ Cold start**
+
+La première exécution d'une Lambda est plus lente (cold start : chargement du code et des dépendances). Pour une API de scoring, utiliser la **provisioned concurrency** pour garder des instances "chaudes", ou accepter un délai de 1-3 secondes au premier appel.
+:::
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les points techniques essentiels.
+:::{.synthese-card}
+### 🎯 Les 5 points essentiels
+
+1. **Serverless = pas de serveur à gérer** — Tu fournis le code, AWS gère le reste
+2. **Facturation à l'exécution** — 0 coût quand la fonction ne tourne pas
+3. **Triggers événementiels** — S3, API Gateway, CloudWatch, etc.
+4. **Lambda + API Gateway = API sans serveur** — Idéal pour le scoring en temps réel
+5. **Limite de 15 min** — Pas adapté pour l'entraînement ML, parfait pour l'inférence
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question technique.
+## Question 1 : Quand utiliser Lambda plutôt qu'EC2 ?
+
+**Réponse** : Lambda pour les tâches **courtes** (< 15 min), **événementielles** (déclenchées par un trigger), et **intermittentes** (pas de charge continue). EC2 pour les tâches longues, le traitement continu, ou quand tu as besoin de contrôle total sur le serveur.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question technique.
+## Question 2 : Qu'est-ce qu'un cold start ?
+
+**Réponse** : La première exécution d'une Lambda après une période d'inactivité. AWS doit charger le code, les dépendances et initialiser l'environnement. Délai de 1-3 secondes. Solutions : provisioned concurrency, garder la Lambda "chaude" avec des pings réguliers.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question technique.
+## Question 3 : Comment déployer un modèle ML sur Lambda ?
+
+**Réponse** : Stocker le modèle sérialisé (.pkl) sur S3. La Lambda le télécharge dans `/tmp` au démarrage (cold start), le charge en mémoire, puis fait des prédictions à chaque appel. Limites : taille du package (250 Mo zippé), mémoire (10 Go max), durée (15 min).
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question technique.
+## Question 4 : Comment créer un cron job avec Lambda ?
+
+**Réponse** : Avec **CloudWatch Events** (EventBridge) : créer une règle avec une expression cron (ex : `cron(0 8 1 * ? *)` = le 1er de chaque mois à 8h). La règle trigger la Lambda automatiquement. Utile pour le recalcul mensuel des provisions.
 :::
 
 ---

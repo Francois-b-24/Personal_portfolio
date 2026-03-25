@@ -7,46 +7,130 @@ toc: true
 toc-depth: 2
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
 ```{=html}
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #f8d65c">
+<style>
+.week-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.track-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.track-card.metier { border-top: 4px solid #f8d65c; }
+.track-card.technique { border-top: 4px solid #06436e; }
+.track-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.track-icon { font-size: 1.5rem; }
+.track-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.track-time { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+.track-topics { list-style: none; padding: 0; margin: 0; }
+.track-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+.track-topics li::before { content: "\2192"; position: absolute; left: 0; color: #06436e; }
+.objectives-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.objectives-box h3 { color: #06436e; margin-top: 0; }
+.deliverables-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
+.deliverables-box h3 { color: #065f46; margin-top: 0; }
+.nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.nav-card { display: block; background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
+.nav-card-title { font-weight: bold; color: #06436e; margin-bottom: 0.5rem; }
+.nav-card-desc { font-size: 0.9rem; color: #666; }
+</style>
+```
+
+## Vue d'ensemble
+
+```{=html}
+<div class="week-overview">
+    <div class="track-card metier">
+        <div class="track-header"><span class="track-icon">🏢</span><span class="track-title">Volet Métier</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module 7 — Provisionnement</strong></p>
-        <ul>
-            <li>Pourquoi provisionner</li>
-            <li>Chain Ladder appliquée</li>
-            <li>Bornhuetter-Ferguson</li>
-            <li>Comparaison des méthodes</li>
-            <li>Impact comptable</li>
+        <ul class="track-topics">
+            <li>Pourquoi provisionner : obligations réglementaires</li>
+            <li>Méthode Chain Ladder appliquée au provisionnement</li>
+            <li>Méthode Bornhuetter-Ferguson</li>
+            <li>Comparaison et choix de méthode</li>
+            <li>Impact sur les comptes et Solvabilité II</li>
         </ul>
     </div>
-    <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-top:4px solid #06436e">
+    <div class="track-card technique">
+        <div class="track-header"><span class="track-icon">🛠️</span><span class="track-title">Volet Technique</span></div>
+        <div class="track-time">⏱️ Environ 3 heures</div>
         <p><strong>Module Technique 7 — AWS — RDS et Bases de données</strong></p>
-        <ul>
-            <li>RDS bases managées</li>
-            <li>Création PostgreSQL</li>
-            <li>Requêtes SQL</li>
-            <li>Backups et maintenance</li>
-            <li>Sécurité IAM</li>
+        <ul class="track-topics">
+            <li>RDS : bases de données managées par AWS</li>
+            <li>Création d'une instance PostgreSQL RDS</li>
+            <li>Connexion et requêtes SQL depuis Python</li>
+            <li>Backups automatiques et maintenance</li>
+            <li>Sécurité : VPC, groupes de sécurité, IAM</li>
         </ul>
     </div>
 </div>
 ```
 
-## Objectifs
+---
+
+## Objectifs de la semaine
+
+```{=html}
+<div class="objectives-box">
+    <h3>À la fin de cette semaine, tu seras capable de :</h3>
+    <p><strong>Côté métier :</strong></p>
+    <ol>
+        <li>Pourquoi provisionner : obligations réglementaires</li>
+        <li>Méthode Chain Ladder appliquée au provisionnement</li>
+        <li>Méthode Bornhuetter-Ferguson</li>
+        <li>Comparaison et choix de méthode</li>
+        <li>Impact sur les comptes et Solvabilité II</li>
+    </ol>
+    <p><strong>Côté technique :</strong></p>
+    <ol>
+        <li>RDS : bases de données managées par AWS</li>
+        <li>Création d'une instance PostgreSQL RDS</li>
+        <li>Connexion et requêtes SQL depuis Python</li>
+        <li>Backups automatiques et maintenance</li>
+        <li>Sécurité : VPC, groupes de sécurité, IAM</li>
+    </ol>
+</div>
+```
+
+---
+
+## Planning suggéré
 
 | Jour | Matin (Métier) | Après-midi (Technique) |
 |------|----------------|------------------------|
-| **Jour 1** | Pourquoi provisionner | RDS bases managées |
-| **Jour 2** | Chain Ladder appliquée | Création PostgreSQL |
-| **Jour 3** | Bornhuetter-Ferguson | Requêtes SQL |
-| **Jour 4** | Comparaison des méthodes | Backups et maintenance |
-| **Jour 5** | **Débriefing** | **Livrable** |
+| **Jour 1** | Pourquoi provisionner : obligations réglementaires | RDS : bases de données managées par AWS |
+| **Jour 2** | Méthode Chain Ladder appliquée au provisionnement | Création d'une instance PostgreSQL RDS |
+| **Jour 3** | Méthode Bornhuetter-Ferguson | Connexion et requêtes SQL depuis Python |
+| **Jour 4** | Comparaison et choix de méthode | Backups automatiques et maintenance |
+| **Jour 5** | **Débriefing et validation** | **Livrables** |
+
+
+---
 
 ## Accès aux modules
 
-- [Module Métier 7](module-metier-07.html)
-- [Module Technique 7](module-technique-07.html)
-- [Fiche de travail](fiche-travail-07.html)
+```{=html}
+<div class="nav-cards">
+    <a href="module-metier-07.html" class="nav-card">
+        <div class="nav-card-title">📖 Module Métier 7</div>
+        <div class="nav-card-desc">Provisionnement</div>
+    </a>
+    <a href="module-technique-07.html" class="nav-card">
+        <div class="nav-card-title">🛠️ Module Technique 7</div>
+        <div class="nav-card-desc">AWS — RDS et Bases de données</div>
+    </a>
+    <a href="fiche-travail-07.html" class="nav-card">
+        <div class="nav-card-title">✅ Fiche de travail</div>
+        <div class="nav-card-desc">Exercices et livrables</div>
+    </a>
+</div>
+```
 
 ---
 

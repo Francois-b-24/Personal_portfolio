@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 20 — Projet Central — API et Déploiement</title>
+<title>François BOUSSENGUI | Module Technique 20 – Projet Central : API et Deploiement</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 20 — Projet Central — API et Déploiement">
-<meta property="og:description" content="FastAPI Docker AWS">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 20 – Projet Central : API et Deploiement">
+<meta property="og:description" content="FastAPI + Docker + AWS">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 20 — Projet Central — API et Déploiement">
-<meta name="twitter:description" content="FastAPI Docker AWS">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 20 – Projet Central : API et Deploiement">
+<meta name="twitter:description" content="FastAPI + Docker + AWS">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,12 +477,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 20 — Projet Central — API et Déploiement</h1>
-            <p class="subtitle lead">FastAPI Docker AWS</p>
+      <h1 class="title">Module Technique 20 – Projet Central : API et Deploiement</h1>
+            <p class="subtitle lead">FastAPI + Docker + AWS</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">projet</div>
                 <div class="quarto-category">api</div>
-                <div class="quarto-category">déploiement</div>
+                <div class="quarto-category">deploiement</div>
               </div>
                   </div>
   </div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#api-fastapi-scoring" id="toc-api-fastapi-scoring" class="nav-link active" data-scroll-target="#api-fastapi-scoring"><span class="header-section-number">1</span> API FastAPI scoring</a></li>
-  <li><a href="#conteneurisation-docker" id="toc-conteneurisation-docker" class="nav-link" data-scroll-target="#conteneurisation-docker"><span class="header-section-number">2</span> Conteneurisation Docker</a></li>
-  <li><a href="#déploiement-aws" id="toc-déploiement-aws" class="nav-link" data-scroll-target="#déploiement-aws"><span class="header-section-number">3</span> Déploiement AWS</a></li>
-  <li><a href="#tests-de-charge" id="toc-tests-de-charge" class="nav-link" data-scroll-target="#tests-de-charge"><span class="header-section-number">4</span> Tests de charge</a></li>
-  <li><a href="#monitoring-api" id="toc-monitoring-api" class="nav-link" data-scroll-target="#monitoring-api"><span class="header-section-number">5</span> Monitoring API</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#api-fastapi-de-scoring-avec-le" id="toc-api-fastapi-de-scoring-avec-le" class="nav-link active" data-scroll-target="#api-fastapi-de-scoring-avec-le"><span class="header-section-number">1</span> API FastAPI de scoring avec le</a></li>
+  <li><a href="#conteneurisation-docker-complete-api" id="toc-conteneurisation-docker-complete-api" class="nav-link" data-scroll-target="#conteneurisation-docker-complete-api"><span class="header-section-number">2</span> Conteneurisation Docker complete : API +</a></li>
+  <li><a href="#docker-compose-avec-postgresql-pour-stocker" id="toc-docker-compose-avec-postgresql-pour-stocker" class="nav-link" data-scroll-target="#docker-compose-avec-postgresql-pour-stocker"><span class="header-section-number">3</span> Docker Compose avec PostgreSQL pour stocker</a></li>
+  <li><a href="#deploiement-sur-aws-ec2-ou-ecs" id="toc-deploiement-sur-aws-ec2-ou-ecs" class="nav-link" data-scroll-target="#deploiement-sur-aws-ec2-ou-ecs"><span class="header-section-number">4</span> Deploiement sur AWS EC2 ou ECS</a></li>
+  <li><a href="#tests-de-charge-avec-locust" id="toc-tests-de-charge-avec-locust" class="nav-link" data-scroll-target="#tests-de-charge-avec-locust"><span class="header-section-number">5</span> Tests de charge avec locust</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-points-essentiels" id="toc-les-points-essentiels" class="nav-link" data-scroll-target="#les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="api-fastapi-scoring" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> API FastAPI scoring</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="api-fastapi-de-scoring-avec-le" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> API FastAPI de scoring avec le</h1>
+<p>API FastAPI de scoring avec le modele final du projet.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Maitriser cet outil est essentiel pour industrialiser le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="conteneurisation-docker" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Conteneurisation Docker</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="conteneurisation-docker-complete-api" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Conteneurisation Docker complete : API +</h1>
+<p>Conteneurisation Docker complete : API + modele + config.</p>
 <hr>
 </section>
-<section id="déploiement-aws" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Déploiement AWS</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="docker-compose-avec-postgresql-pour-stocker" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Docker Compose avec PostgreSQL pour stocker</h1>
+<p>Docker Compose avec PostgreSQL pour stocker les predictions et les logs.</p>
 <hr>
 </section>
-<section id="tests-de-charge" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Tests de charge</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="deploiement-sur-aws-ec2-ou-ecs" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Deploiement sur AWS EC2 ou ECS</h1>
+<p>Deploiement sur AWS EC2 ou ECS Fargate.</p>
 <hr>
 </section>
-<section id="monitoring-api" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Monitoring API</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="tests-de-charge-avec-locust" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Tests de charge avec locust</h1>
+<p>Tests de charge avec locust : combien de requetes/seconde ? Monitoring avec CloudWatch : latence, erreurs, CPU.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-points-essentiels" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-points-essentiels"><span class="header-section-number">5.0.1</span> Les points essentiels</h3>
+<ol type="1">
+<li><strong>API FastAPI de scoring avec le modele final</strong></li>
+<li><strong>Conteneurisation Docker complete : API + modele +</strong></li>
+<li><strong>Docker Compose avec PostgreSQL pour stocker les predictions</strong></li>
+<li><strong>Deploiement sur AWS EC2 ou ECS Fargate</strong></li>
+<li><strong>Tests de charge avec locust : combien de</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p>Comment appliquer ce concept dans le projet central ?</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 20</a> <a href="fiche-travail-20.html" class="btn btn-primary">Voir la Fiche de travail →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 20</a> <a href="fiche-travail-20.html" class="btn btn-primary">Voir la Fiche de travail -&gt;</a></p>
 
 
 </section>

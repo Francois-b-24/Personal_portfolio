@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 10 — AWS — Certification SAA</title>
+<title>François BOUSSENGUI | Module Technique 10 — AWS : Préparation Certification SAA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -188,8 +191,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 10 — AWS — Certification SAA">
-<meta property="og:description" content="Révision et examens blancs">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 10 — AWS : Préparation Certification SAA">
+<meta property="og:description" content="Révision des services et stratégies d’examen">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +200,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 10 — AWS — Certification SAA">
-<meta name="twitter:description" content="Révision et examens blancs">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 10 — AWS : Préparation Certification SAA">
+<meta name="twitter:description" content="Révision des services et stratégies d’examen">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,11 +480,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 10 — AWS — Certification SAA</h1>
-            <p class="subtitle lead">Révision et examens blancs</p>
+      <h1 class="title">Module Technique 10 — AWS : Préparation Certification SAA</h1>
+            <p class="subtitle lead">Révision des services et stratégies d’examen</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">aws</div>
                 <div class="quarto-category">certification</div>
+                <div class="quarto-category">saa</div>
               </div>
                   </div>
   </div>
@@ -499,7 +503,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,12 +519,30 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#révision-services-aws" id="toc-révision-services-aws" class="nav-link active" data-scroll-target="#révision-services-aws"><span class="header-section-number">1</span> Révision services AWS</a></li>
-  <li><a href="#architecture-well-architected" id="toc-architecture-well-architected" class="nav-link" data-scroll-target="#architecture-well-architected"><span class="header-section-number">2</span> Architecture Well-Architected</a></li>
-  <li><a href="#examens-blancs" id="toc-examens-blancs" class="nav-link" data-scroll-target="#examens-blancs"><span class="header-section-number">3</span> Examens blancs</a></li>
-  <li><a href="#stratégies-examen" id="toc-stratégies-examen" class="nav-link" data-scroll-target="#stratégies-examen"><span class="header-section-number">4</span> Stratégies examen</a></li>
-  <li><a href="#ressources-préparation" id="toc-ressources-préparation" class="nav-link" data-scroll-target="#ressources-préparation"><span class="header-section-number">5</span> Ressources préparation</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#révision-des-services-clés" id="toc-révision-des-services-clés" class="nav-link" data-scroll-target="#révision-des-services-clés"><span class="header-section-number">1</span> Révision des services clés</a>
+  <ul class="collapse">
+  <li><a href="#carte-mentale-des-services" id="toc-carte-mentale-des-services" class="nav-link" data-scroll-target="#carte-mentale-des-services"><span class="header-section-number">1.1</span> Carte mentale des services</a></li>
+  <li><a href="#fiches-de-révision-rapide" id="toc-fiches-de-révision-rapide" class="nav-link" data-scroll-target="#fiches-de-révision-rapide"><span class="header-section-number">1.2</span> Fiches de révision rapide</a>
+  <ul class="collapse">
+  <li><a href="#s3-points-clés-examen" id="toc-s3-points-clés-examen" class="nav-link" data-scroll-target="#s3-points-clés-examen"><span class="header-section-number">1.2.1</span> S3 — Points clés examen</a></li>
+  <li><a href="#ec2-points-clés-examen" id="toc-ec2-points-clés-examen" class="nav-link" data-scroll-target="#ec2-points-clés-examen"><span class="header-section-number">1.2.2</span> EC2 — Points clés examen</a></li>
+  <li><a href="#vpc-points-clés-examen" id="toc-vpc-points-clés-examen" class="nav-link" data-scroll-target="#vpc-points-clés-examen"><span class="header-section-number">1.2.3</span> VPC — Points clés examen</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#stratégies-dexamen" id="toc-stratégies-dexamen" class="nav-link" data-scroll-target="#stratégies-dexamen"><span class="header-section-number">2</span> Stratégies d’examen</a>
+  <ul class="collapse">
+  <li><a href="#format-de-lexamen" id="toc-format-de-lexamen" class="nav-link" data-scroll-target="#format-de-lexamen"><span class="header-section-number">2.1</span> Format de l’examen</a></li>
+  <li><a href="#conseils" id="toc-conseils" class="nav-link" data-scroll-target="#conseils"><span class="header-section-number">2.2</span> Conseils</a></li>
+  </ul></li>
+  <li><a href="#examens-blancs" id="toc-examens-blancs" class="nav-link" data-scroll-target="#examens-blancs"><span class="header-section-number">3</span> Examens blancs</a>
+  <ul class="collapse">
+  <li><a href="#ressources-recommandées" id="toc-ressources-recommandées" class="nav-link" data-scroll-target="#ressources-recommandées"><span class="header-section-number">3.1</span> Ressources recommandées</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">3.1.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -532,34 +554,320 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="révision-services-aws" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Révision services AWS</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Réviser</strong> les services AWS clés pour l’examen SAA-C03</li>
+<li><strong>Comprendre</strong> le Well-Architected Framework en pratique</li>
+<li><strong>S’entraîner</strong> avec des examens blancs commentés</li>
+<li><strong>Maîtriser</strong> les stratégies pour le jour J</li>
+<li><strong>Identifier</strong> les ressources officielles utiles</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules Technique 5-9 (S3, EC2, RDS, Lambda, VPC, IAM)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures + révisions personnelles</p>
+</div>
+</div>
+<hr>
+<section id="révision-des-services-clés" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Révision des services clés</h1>
+<section id="carte-mentale-des-services" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="carte-mentale-des-services"><span class="header-section-number">1.1</span> Carte mentale des services</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    subgraph Compute
+        EC2[EC2]
+        Lambda[Lambda]
+        ECS[ECS/Fargate]
+    end
+    subgraph Storage
+        S3[S3]
+        EBS[EBS]
+        EFS[EFS]
+        Glacier[Glacier]
+    end
+    subgraph Database
+        RDS[RDS]
+        DynamoDB[DynamoDB]
+        ElastiCache[ElastiCache]
+    end
+    subgraph Network
+        VPC[VPC]
+        ALB[ALB/NLB]
+        Route53[Route 53]
+        CF[CloudFront]
+    end
+    subgraph Security
+        IAM[IAM]
+        KMS[KMS]
+        WAF[WAF]
+    end
+</pre>
+</div>
+<p></p><figcaption> Services AWS à maîtriser pour le SAA-C03</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="fiches-de-révision-rapide" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="fiches-de-révision-rapide"><span class="header-section-number">1.2</span> Fiches de révision rapide</h2>
+<section id="s3-points-clés-examen" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="s3-points-clés-examen"><span class="header-section-number">1.2.1</span> S3 — Points clés examen</h3>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Classes de stockage</strong></td>
+<td>Standard → IA → Glacier → Deep Archive (coût décroissant, accès décroissant)</td>
+</tr>
+<tr class="even">
+<td><strong>Versioning</strong></td>
+<td>Protège contre les suppressions accidentelles</td>
+</tr>
+<tr class="odd">
+<td><strong>Lifecycle rules</strong></td>
+<td>Automatise le passage entre classes de stockage</td>
+</tr>
+<tr class="even">
+<td><strong>Encryption</strong></td>
+<td>SSE-S3 (par défaut), SSE-KMS (gestion fine des clés), SSE-C (clé client)</td>
+</tr>
+<tr class="odd">
+<td><strong>Cross-region replication</strong></td>
+<td>Pour la disaster recovery</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ec2-points-clés-examen" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="ec2-points-clés-examen"><span class="header-section-number">1.2.2</span> EC2 — Points clés examen</h3>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Instance types</strong></td>
+<td>Choisir selon le workload (compute, memory, storage, GPU)</td>
+</tr>
+<tr class="even">
+<td><strong>Pricing</strong></td>
+<td>On-Demand &gt; Reserved &gt; Savings Plans &gt; Spot</td>
+</tr>
+<tr class="odd">
+<td><strong>Placement groups</strong></td>
+<td>Cluster (faible latence), Spread (haute dispo), Partition (big data)</td>
+</tr>
+<tr class="even">
+<td><strong>Auto Scaling</strong></td>
+<td>Scale out/in selon des métriques CloudWatch</td>
+</tr>
+<tr class="odd">
+<td><strong>EBS vs Instance Store</strong></td>
+<td>EBS persiste, Instance Store est éphémère</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vpc-points-clés-examen" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="vpc-points-clés-examen"><span class="header-section-number">1.2.3</span> VPC — Points clés examen</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Ce qu’il faut retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Subnets</strong></td>
+<td>Public (IGW) vs Private (NAT Gateway)</td>
+</tr>
+<tr class="even">
+<td><strong>Security Groups</strong></td>
+<td>Stateful, au niveau de l’instance</td>
+</tr>
+<tr class="odd">
+<td><strong>NACLs</strong></td>
+<td>Stateless, au niveau du subnet</td>
+</tr>
+<tr class="even">
+<td><strong>VPC Peering</strong></td>
+<td>Connexion entre 2 VPC (non transitif)</td>
+</tr>
+<tr class="odd">
+<td><strong>VPN / Direct Connect</strong></td>
+<td>Connexion on-premise ↔︎ AWS</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="architecture-well-architected" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Architecture Well-Architected</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+</section>
+<section id="stratégies-dexamen" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Stratégies d’examen</h1>
+<section id="format-de-lexamen" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="format-de-lexamen"><span class="header-section-number">2.1</span> Format de l’examen</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Paramètre</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Durée</strong></td>
+<td>130 minutes</td>
+</tr>
+<tr class="even">
+<td><strong>Questions</strong></td>
+<td>65 QCM (choix unique ou multiple)</td>
+</tr>
+<tr class="odd">
+<td><strong>Score</strong></td>
+<td>100-1000 (seuil : 720)</td>
+</tr>
+<tr class="even">
+<td><strong>Coût</strong></td>
+<td>150 USD</td>
+</tr>
+<tr class="odd">
+<td><strong>Langue</strong></td>
+<td>Anglais (avec 30 min bonus si non natif)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conseils" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="conseils"><span class="header-section-number">2.2</span> Conseils</h2>
+<div class="concept-cle">
+<p><strong>💡 Méthodologie de résolution</strong></p>
+<ol type="1">
+<li><strong>Lire la dernière phrase</strong> — C’est souvent la question réelle</li>
+<li><strong>Éliminer 2 réponses</strong> — Il y a souvent 2 distracteurs évidents</li>
+<li><strong>Chercher les mots-clés</strong> : “cost-effective”, “highly available”, “least operational overhead”</li>
+<li><strong>Si doute</strong> → choisir la solution <strong>managée</strong> (AWS préfère ses services managés)</li>
+<li><strong>Ne pas bloquer</strong> — Flaguer et revenir plus tard</li>
+</ol>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Pièges fréquents</strong></p>
+<ul>
+<li>Confondre <strong>Security Group</strong> (stateful, instance) et <strong>NACL</strong> (stateless, subnet)</li>
+<li>Oublier que <strong>S3 est eventually consistent</strong> pour les overwrites</li>
+<li>Confondre <strong>horizontal scaling</strong> (plus d’instances) et <strong>vertical scaling</strong> (plus de puissance)</li>
+<li>Ignorer le <strong>coût</strong> quand la question demande “cost-effective”</li>
+</ul>
+</div>
 <hr>
+</section>
 </section>
 <section id="examens-blancs" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Examens blancs</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<section id="ressources-recommandées" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="ressources-recommandées"><span class="header-section-number">3.1</span> Ressources recommandées</h2>
+<table class="table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ressource</th>
+<th>Type</th>
+<th>Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>AWS Skill Builder</strong></td>
+<td>Cours + exam practice</td>
+<td>Gratuit (base)</td>
+</tr>
+<tr class="even">
+<td><strong>Tutorials Dojo</strong></td>
+<td>QCM commentés (750+ questions)</td>
+<td>~15 USD</td>
+</tr>
+<tr class="odd">
+<td><strong>Stephane Maarek (Udemy)</strong></td>
+<td>Cours vidéo + pratique</td>
+<td>~15 USD en promo</td>
+</tr>
+<tr class="even">
+<td><strong>AWS Well-Architected Labs</strong></td>
+<td>Exercices pratiques</td>
+<td>Gratuit</td>
+</tr>
+<tr class="odd">
+<td><strong>Whizlabs</strong></td>
+<td>Examens blancs</td>
+<td>~20 USD</td>
+</tr>
+</tbody>
+</table>
+<div class="exemple-box">
+<p><strong>📝 Plan de révision suggéré</strong></p>
+<ul>
+<li><strong>Semaine 1</strong> : Revoir les notes des modules 5-9</li>
+<li><strong>Semaine 2</strong> : Faire 2 examens blancs (identifier les lacunes)</li>
+<li><strong>Semaine 3</strong> : Réviser les domaines faibles + 2 examens blancs</li>
+<li><strong>Semaine 4</strong> : Examen blanc final + révision légère</li>
+<li><strong>Jour J</strong> : Arriver reposé, lire calmement, gérer le temps</li>
+</ul>
+</div>
 <hr>
 </section>
-<section id="stratégies-examen" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Stratégies examen</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
-<hr>
-</section>
-<section id="ressources-préparation" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Ressources préparation</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
-<hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">3.1.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>Maîtriser les 5 domaines</strong> : Compute, Storage, Database, Network, Security</li>
+<li><strong>Penser “managed first”</strong> — AWS privilégie ses services managés dans les réponses</li>
+<li><strong>Lire la dernière phrase</strong> — C’est souvent là que se cache la vraie question</li>
+<li><strong>Pratiquer avec des QCM</strong> — Tutorials Dojo et AWS Skill Builder</li>
+<li><strong>Demander les 30 min bonus</strong> — Si l’anglais n’est pas ta langue maternelle</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -570,13 +878,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Quelle classe S3 pour des logs qu’on consulte rarement ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : <strong>S3 Infrequent Access</strong> (IA) ou <strong>S3 Glacier Instant Retrieval</strong> selon la fréquence d’accès. IA si on peut avoir besoin d’y accéder en quelques heures. Glacier si l’accès est vraiment rare (archivage).</p>
 </div>
 </div>
 </div>
@@ -586,13 +894,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Comment rendre une architecture hautement disponible ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : <strong>Multi-AZ</strong> pour RDS et ElastiCache, <strong>Auto Scaling Group</strong> sur plusieurs AZ pour EC2, <strong>Application Load Balancer</strong> pour distribuer le trafic, <strong>S3</strong> est nativement HA (11 nines de durabilité). Route 53 avec health checks pour le failover DNS.</p>
 </div>
 </div>
 </div>
@@ -602,13 +910,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Différence Security Group vs NACL ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : <strong>Security Group</strong> : stateful (la réponse est autorisée automatiquement), s’applique au niveau de l’instance, n’a que des règles ALLOW. <strong>NACL</strong> : stateless (il faut autoriser entrée ET sortie), s’applique au niveau du subnet, a des règles ALLOW et DENY avec un ordre de priorité.</p>
 </div>
 </div>
 </div>
@@ -618,13 +926,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Comment optimiser les coûts EC2 ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : (1) <strong>Right-sizing</strong> : choisir le bon type d’instance, (2) <strong>Reserved Instances</strong> ou <strong>Savings Plans</strong> pour les workloads stables (-40 à -75%), (3) <strong>Spot</strong> pour les tâches interruptibles (-90%), (4) <strong>Auto Scaling</strong> pour ne payer que ce qu’on utilise, (5) éteindre les instances de dev la nuit et le week-end.</p>
 </div>
 </div>
 </div>

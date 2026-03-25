@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module 15 — Industrialisation des modèles</title>
+<title>François BOUSSENGUI | Module 15 – Industrialisation des modeles</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,8 +188,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 15 — Industrialisation des modèles">
-<meta property="og:description" content="Mise en production et scalabilité">
+<meta property="og:title" content="François BOUSSENGUI | Module 15 – Industrialisation des modeles">
+<meta property="og:description" content="Du notebook a la production">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +197,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 15 — Industrialisation des modèles">
-<meta name="twitter:description" content="Mise en production et scalabilité">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 15 – Industrialisation des modeles">
+<meta name="twitter:description" content="Du notebook a la production">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,8 +477,8 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 15 — Industrialisation des modèles</h1>
-            <p class="subtitle lead">Mise en production et scalabilité</p>
+      <h1 class="title">Module 15 – Industrialisation des modeles</h1>
+            <p class="subtitle lead">Du notebook a la production</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">industrialisation</div>
@@ -492,14 +492,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,13 +515,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#du-notebook-à-la-production" id="toc-du-notebook-à-la-production" class="nav-link active" data-scroll-target="#du-notebook-à-la-production"><span class="header-section-number">1</span> Du notebook à la production</a></li>
-  <li><a href="#conteneurisation-modèles" id="toc-conteneurisation-modèles" class="nav-link" data-scroll-target="#conteneurisation-modèles"><span class="header-section-number">2</span> Conteneurisation modèles</a></li>
-  <li><a href="#scalabilité" id="toc-scalabilité" class="nav-link" data-scroll-target="#scalabilité"><span class="header-section-number">3</span> Scalabilité</a></li>
-  <li><a href="#maintenance" id="toc-maintenance" class="nav-link" data-scroll-target="#maintenance"><span class="header-section-number">4</span> Maintenance</a></li>
-  <li><a href="#documentation-technique" id="toc-documentation-technique" class="nav-link" data-scroll-target="#documentation-technique"><span class="header-section-number">5</span> Documentation technique</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#passage-du-notebook-exploratoire-au-module" id="toc-passage-du-notebook-exploratoire-au-module" class="nav-link active" data-scroll-target="#passage-du-notebook-exploratoire-au-module"><span class="header-section-number">1</span> Passage du notebook exploratoire au module</a></li>
+  <li><a href="#conteneurisation-docker-pour-la-reproductibilite" id="toc-conteneurisation-docker-pour-la-reproductibilite" class="nav-link" data-scroll-target="#conteneurisation-docker-pour-la-reproductibilite"><span class="header-section-number">2</span> Conteneurisation Docker pour la reproductibilite</a></li>
+  <li><a href="#versionnement-des-modeles-avec-mlflow" id="toc-versionnement-des-modeles-avec-mlflow" class="nav-link" data-scroll-target="#versionnement-des-modeles-avec-mlflow"><span class="header-section-number">3</span> Versionnement des modeles avec MLflow</a></li>
+  <li><a href="#scalabilite-batch-vs-temps-reel" id="toc-scalabilite-batch-vs-temps-reel" class="nav-link" data-scroll-target="#scalabilite-batch-vs-temps-reel"><span class="header-section-number">4</span> Scalabilite : batch vs temps reel</a></li>
+  <li><a href="#documentation-technique-readme-docstrings-schemas" id="toc-documentation-technique-readme-docstrings-schemas" class="nav-link" data-scroll-target="#documentation-technique-readme-docstrings-schemas"><span class="header-section-number">5</span> Documentation technique : README, docstrings, schemas</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-concepts-cles" id="toc-les-concepts-cles" class="nav-link" data-scroll-target="#les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -532,38 +535,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="du-notebook-à-la-production" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Du notebook à la production</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="passage-du-notebook-exploratoire-au-module" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Passage du notebook exploratoire au module</h1>
+<p>Passage du notebook exploratoire au module Python structure (classes, fonctions, tests).</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="conteneurisation-modèles" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Conteneurisation modèles</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="conteneurisation-docker-pour-la-reproductibilite" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Conteneurisation Docker pour la reproductibilite</h1>
+<p>Conteneurisation Docker pour la reproductibilite.</p>
 <hr>
 </section>
-<section id="scalabilité" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Scalabilité</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="versionnement-des-modeles-avec-mlflow" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Versionnement des modeles avec MLflow</h1>
+<p>Versionnement des modeles avec MLflow.</p>
+<div class="attention-box">
+<p><strong>Attention</strong></p>
+<p>Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.</p>
+</div>
 <hr>
 </section>
-<section id="maintenance" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Maintenance</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="scalabilite-batch-vs-temps-reel" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Scalabilite : batch vs temps reel</h1>
+<p>Scalabilite : batch vs temps reel, dimensionnement.</p>
 <hr>
 </section>
-<section id="documentation-technique" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Documentation technique</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="documentation-technique-readme-docstrings-schemas" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Documentation technique : README, docstrings, schemas</h1>
+<p>Documentation technique : README, docstrings, schemas d’architecture.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-concepts-cles" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</h3>
+<ol type="1">
+<li><strong>Passage du notebook exploratoire au module Python structure</strong></li>
+<li><strong>Conteneurisation Docker pour la reproductibilite</strong></li>
+<li><strong>Versionnement des modeles avec MLflow</strong></li>
+<li><strong>Scalabilite : batch vs temps reel, dimensionnement</strong></li>
+<li><strong>Documentation technique : README, docstrings, schemas d’architecture</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -576,7 +606,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -592,7 +622,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -608,7 +638,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -624,12 +654,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 15</a> <a href="module-technique-15.html" class="btn btn-primary">Voir le Module Technique 15 →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 15</a> <a href="module-technique-15.html" class="btn btn-primary">Voir le Module Technique 15 -&gt;</a></p>
 
 
 </section>

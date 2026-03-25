@@ -1,9 +1,9 @@
 ---
-title: "Module 11 — Rentabilité et Indicateurs"
-subtitle: "S/P, combined ratio et CLV"
+title: "Module 11 — Rentabilité et Indicateurs de pilotage"
+subtitle: "S/P, combined ratio, CLV et tableaux de bord"
 author: "François Boussengui"
 date: last-modified
-categories: [assurance, rentabilité, pilotage]
+categories: [assurance, rentabilité, indicateurs, pilotage]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,63 +11,237 @@ toc-depth: 3
 number-sections: true
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+:::{.objectifs-box}
+### 🎯 Objectifs d'apprentissage
+
+1. **Distinguer** S/P net et brut et leurs usages
+2. **Calculer** le combined ratio et ses composantes
+3. **Estimer** la Customer Lifetime Value (CLV) en assurance
+4. **Concevoir** un tableau de bord de pilotage technique
+5. **Définir** des alertes et seuils pertinents
+:::
+
+:::{.prerequis-temps}
+:::{div}
+📚 **Prérequis** : Modules 4-10 (sinistralité, tarification)
+:::
+:::{div}
+⏱️ **Temps estimé** : 3 heures
+:::
+:::
+
+---
+
 # S/P net et brut
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Les nuances du ratio de sinistralité
+
+| Ratio | Formule | Usage |
+|-------|---------|-------|
+| **S/P brut** | Charge brute / Primes brutes | Performance du portefeuille direct |
+| **S/P net de réassurance** | Charge nette / Primes nettes | Performance après cession |
+| **S/P comptable** | Charge exercice / Primes acquises | Résultat comptable de l'année |
+| **S/P par génération** | Charge ultime / Primes acquises | Analyse du risque par année de survenance |
+
+:::{.concept-cle}
+**💡 Point clé**
+
+Le S/P brut reflète la qualité technique du portefeuille. Le S/P net mesure le résultat réel après réassurance. Un portefeuille peut avoir un S/P brut de 110% (perte) mais un S/P net de 85% (bénéfice) grâce à la réassurance qui absorbe les sinistres graves.
+:::
 
 ---
 
-# Combined ratio
+# Le combined ratio
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## La mesure complète de rentabilité
+
+Le S/P ne suffit pas — il faut aussi intégrer les **frais** :
+
+$$\text{Combined Ratio} = \underbrace{\frac{\text{Sinistres}}{\text{Primes}}}_{\text{S/P}} + \underbrace{\frac{\text{Frais}}{\text{Primes}}}_{\text{Ratio de frais}}$$
+
+| Composante | Calcul | Cible |
+|-----------|--------|-------|
+| **S/P** | Charge sinistres / Primes | 65-75% |
+| **Ratio de frais de gestion** | Frais internes / Primes | 5-10% |
+| **Ratio de frais d'acquisition** | Commissions / Primes | 15-25% |
+| **Combined Ratio** | Total | < 100% |
+
+```{python}
+#| label: fig-combined-ratio
+#| fig-cap: "Décomposition du combined ratio par branche"
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+branches = ['Auto', 'MRH', 'RC Pro', 'Construction']
+sp = [72, 58, 80, 65]
+frais_gestion = [8, 7, 10, 9]
+frais_acquisition = [18, 22, 15, 20]
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+x = np.arange(len(branches))
+width = 0.5
+
+p1 = ax.bar(x, sp, width, color='#06436e', label='S/P')
+p2 = ax.bar(x, frais_gestion, width, bottom=sp, color='#2fe8f0', label='Frais de gestion')
+p3 = ax.bar(x, frais_acquisition, width, bottom=[s+g for s,g in zip(sp, frais_gestion)],
+            color='#f8d65c', label="Frais d'acquisition")
+
+# Combined ratio total
+for i, (s, g, a) in enumerate(zip(sp, frais_gestion, frais_acquisition)):
+    total = s + g + a
+    color = '#72f1b8' if total < 100 else '#fe4454'
+    ax.text(i, total + 1, f'{total}%', ha='center', fontweight='bold', fontsize=11, color=color)
+
+ax.axhline(y=100, color='#fe4454', linestyle='--', linewidth=1.5, alpha=0.7, label='Seuil de rentabilité')
+ax.set_xlabel('Branche', fontsize=11)
+ax.set_ylabel('Ratio (%)', fontsize=11)
+ax.set_title('Combined Ratio par branche', fontsize=14, fontweight='bold', color='#06436e')
+ax.set_xticks(x)
+ax.set_xticklabels(branches)
+ax.legend(loc='upper right')
+ax.grid(axis='y', alpha=0.3)
+ax.set_ylim(0, 115)
+plt.tight_layout()
+plt.show()
+```
+
+:::{.attention-box}
+**⚠️ Combined Ratio > 100%**
+
+Un CR > 100% signifie que l'activité technique est **déficitaire** : les primes ne couvrent pas les sinistres + frais. L'assureur peut quand même être rentable grâce aux **produits financiers** (placement des primes encaissées avant paiement des sinistres), mais c'est une situation fragile.
+:::
 
 ---
 
-# Customer Lifetime Value
+# Customer Lifetime Value (CLV)
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## Valeur d'un client dans le temps
+
+La CLV mesure la **valeur totale** qu'un client apporte pendant toute la durée de sa relation :
+
+$$\text{CLV} = \sum_{t=1}^{T} \frac{\text{Marge}_t}{(1+r)^t} \times p_t$$
+
+où $p_t$ = probabilité que le client soit encore là en année $t$ et $r$ = taux d'actualisation.
+
+:::{.exemple-box}
+**📝 Calcul simplifié**
+
+Un client auto paye 500 €/an de prime, avec un combined ratio de 95% (marge = 5% = 25 €/an) et un taux de rétention de 85% par an :
+
+$$\text{CLV} = 25 \times \frac{0.85}{1 - 0.85} = 25 \times 5.67 = 142 \text{ €}$$
+
+Ce client vaut 142 € actualisés. Si l'acquisition coûte 100 €, il est rentable. Si elle coûte 200 €, il faut revoir le canal d'acquisition ou la politique de rétention.
+:::
+
+:::{.concept-cle}
+**💡 La CLV change la perspective**
+
+Sans CLV, un client qui coûte 100 € à acquérir et génère 25 €/an de marge semble peu rentable. Avec CLV, on comprend que sur sa durée de vie (5-7 ans en moyenne), il rapporte bien plus que son coût d'acquisition. C'est un outil de pilotage **stratégique**.
+:::
 
 ---
 
-# Tableaux de bord
+# Tableaux de bord de pilotage
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+## KPIs essentiels
 
----
+| Niveau | KPI | Fréquence | Seuil d'alerte |
+|--------|-----|-----------|---------------|
+| **Portefeuille** | Combined ratio | Mensuel | > 100% |
+| **Portefeuille** | S/P par génération | Trimestriel | > 80% |
+| **Commercial** | Taux de résiliation | Mensuel | > 15% |
+| **Commercial** | Nouvelles affaires (mix risque) | Mensuel | S/P NA > S/P stock |
+| **Technique** | Fréquence de sinistres | Mensuel | Hausse > 5% vs N-1 |
+| **Technique** | Sévérité moyenne | Trimestriel | Hausse > inflation + 3% |
+| **Financier** | CLV moyenne | Trimestriel | Baisse > 10% |
 
-# Alertes et seuils
+## Alertes et gouvernance
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Un bon système d'alertes :
+
+1. **Détecte** automatiquement les dépassements de seuil
+2. **Notifie** les bonnes personnes (actuaire, direction technique)
+3. **Documente** l'analyse et les actions prises
+4. **Suit** l'efficacité des actions dans le temps
 
 ---
 
 # Synthèse {.unnumbered}
 
-Les concepts clés à retenir.
+:::{.synthese-card}
+### 🎯 Les 5 concepts à retenir
+
+1. **S/P seul ne suffit pas** — Le combined ratio intègre aussi les frais
+2. **CR < 100% = rentable techniquement** — Au-dessus, on dépend des produits financiers
+3. **La CLV valorise la relation client** — Acquisition, rétention, marge dans le temps
+4. **Les KPIs doivent être actionnables** — Pas seulement descriptifs
+5. **Alertes automatiques** — Détecter les dérives avant qu'elles ne soient irréversibles
+:::
 
 ---
 
 # Auto-évaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
-## Question 1
-Question de compréhension.
+## Question 1 : Un assureur a un CR de 103%. Est-il nécessairement en perte ?
+
+**Réponse** : Non. Le CR ne mesure que la **rentabilité technique**. L'assureur peut être globalement rentable grâce aux **produits financiers** (placement des provisions). Mais c'est une situation fragile : si les taux baissent ou si la sinistralité se dégrade encore, les produits financiers ne compenseront plus.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 2
-Question de compréhension.
+## Question 2 : Pourquoi la CLV est-elle importante pour la politique de rétention ?
+
+**Réponse** : La CLV quantifie ce que l'on **perd** quand un client part. Si la CLV d'un bon client est de 500 € et qu'une action de rétention coûte 50 €, l'investissement est largement rentable. Sans CLV, on ne sait pas combien investir pour retenir un client.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 3
-Question de compréhension.
+## Question 3 : Quel KPI surveiller en priorité pour détecter une spirale de dégradation ?
+
+**Réponse** : Le **taux de résiliation par profil de risque**. Si les bons clients partent (résiliants avec un S/P < moyenne du portefeuille), c'est le signal le plus précoce d'anti-sélection. Le S/P lui-même est un indicateur retardé — il ne se dégrade qu'après le départ des bons risques.
 :::
 
 ::: {.callout-note collapse="true"}
-## Question 4
-Question de compréhension.
+## Question 4 : Différence entre S/P par exercice et S/P par génération ?
+
+**Réponse** : S/P par **exercice** = tous les flux comptables de l'année (paiements + variations réserves de toutes générations). S/P par **génération** = charge ultime des sinistres d'une année de survenance / primes acquises de cette année. La génération isole le risque réel, l'exercice peut être trompeur (boni/mali sur anciennes générations).
 :::
+
+---
+
+# Glossaire {.unnumbered}
+
+| Terme | Définition |
+|-------|------------|
+| **Combined ratio** | S/P + ratio de frais — mesure de rentabilité technique globale |
+| **CLV** | Customer Lifetime Value — valeur actualisée d'un client |
+| **Taux de rétention** | % de clients qui renouvellent leur contrat |
+| **KPI** | Key Performance Indicator — indicateur clé de performance |
+| **Produits financiers** | Revenus des placements des provisions |
 
 ---
 

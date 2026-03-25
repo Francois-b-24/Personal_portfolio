@@ -1,7 +1,7 @@
 ---
-title: "Module Technique 19 — Projet Central — Tarification ML"
-subtitle: "XGBoost et SHAP"
-author: "François Boussengui"
+title: "Module Technique 19 -- Projet Central : Tarification ML"
+subtitle: "XGBoost, SHAP et comparaison GLM vs ML"
+author: "Francois Boussengui"
 date: last-modified
 categories: [projet, xgboost, shap]
 title-block-banner: "#06436e"
@@ -11,65 +11,109 @@ toc-depth: 3
 number-sections: true
 ---
 
-# XGBoost tarification
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
+
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
+
+# XGBoost Poisson/Gamma pour la tarification 
+
+XGBoost Poisson/Gamma pour la tarification : meilleure capture des interactions et non-linearites.
+
+:::{.concept-cle}
+**Point cle**
+
+Maitriser cet outil est essentiel pour industrialiser le projet central.
+:::
 
 ---
 
-# Hyperparameter tuning
+# Optimisation hyperparametres avec Optuna : n_estimators
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# SHAP interprétabilité
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+Optimisation hyperparametres avec Optuna : n_estimators, max_depth, learning_rate, min_child_weight.
 
 ---
 
-# GLM vs XGBoost
+# SHAP values : interpreter chaque prediction
 
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
-
----
-
-# Choix modèle final
-
-Contenu technique détaillé avec exemples de code et bonnes pratiques.
+SHAP values : interpreter chaque prediction, waterfall plot, summary plot, dependence plot.
 
 ---
 
-# Synthèse {.unnumbered}
+# Comparaison GLM vs XGBoost : Gini
 
-Les points techniques essentiels.
+Comparaison GLM vs XGBoost : Gini, lift curve, stabilite dans le temps, interpretabilite.
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Decision documentee dans MLflow : quel
+
+Decision documentee dans MLflow : quel modele deployer et pourquoi.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les points essentiels
+
+1. **XGBoost Poisson/Gamma pour la tarification : meilleure capture**
+2. **Optimisation hyperparametres avec Optuna : n_estimators, max_depth, learning_rate**
+3. **SHAP values : interpreter chaque prediction, waterfall plot**
+4. **Comparaison GLM vs XGBoost : Gini, lift curve**
+5. **Decision documentee dans MLflow : quel modele deployer**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question technique.
+
+Comment appliquer ce concept dans le projet central ?
 :::
 
 ---
 
-[← Retour à la Semaine 19](index.html){.btn .btn-secondary}
-[Voir la Fiche de travail →](fiche-travail-19.html){.btn .btn-primary}
+[<- Retour a la Semaine 19](index.html){.btn .btn-secondary}
+[Voir la Fiche de travail ->](fiche-travail-19.html){.btn .btn-primary}

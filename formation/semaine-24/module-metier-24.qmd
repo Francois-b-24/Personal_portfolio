@@ -1,7 +1,7 @@
 ---
-title: "Module 24 — Soutenance et Bilan"
-subtitle: "Présentation finale et compétences"
-author: "François Boussengui"
+title: "Module 24 -- Soutenance et Bilan"
+subtitle: "Presentation finale et perspectives"
+author: "Francois Boussengui"
 date: last-modified
 categories: [bilan, soutenance]
 title-block-banner: "#06436e"
@@ -11,65 +11,111 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Présentation projet central
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
----
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
 
-# Bilan compétences
+# Presentation du projet central devant le
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Presentation du projet central devant le jury : contexte, methodologie, resultats, demo, limites.
 
----
+:::{.concept-cle}
+**Point cle**
 
-# Auto-évaluation finale
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Perspectives
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Plan développement
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Synthèse {.unnumbered}
-
-Les concepts clés à retenir.
+Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.
+:::
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# Bilan des 24 semaines : competences
+
+Bilan des 24 semaines : competences metier (fondements, sinistralite, tarification, pilotage, reglementation) et techniques (Docker, Git, AWS, MLflow, FastAPI, Streamlit).
+
+---
+
+# Auto-evaluation honnete : qu'est-ce qui a
+
+Auto-evaluation honnete : qu'est-ce qui a bien marche, qu'est-ce qui pourrait etre ameliore.
+
+:::{.attention-box}
+**Attention**
+
+Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.
+:::
+
+---
+
+# Perspectives : approfondissements (deep learning, NLP
+
+Perspectives : approfondissements (deep learning, NLP sur les descriptions de sinistres, IoT telematique).
+
+---
+
+# Plan de developpement professionnel : certifications
+
+Plan de developpement professionnel : certifications visees, projets a mener, competences a renforcer.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les concepts cles
+
+1. **Presentation du projet central devant le jury **
+2. **Bilan des 24 semaines : competences metier (fondements**
+3. **Auto-evaluation honnete : qu'est-ce qui a bien marche**
+4. **Perspectives : approfondissements (deep learning, NLP sur les**
+5. **Plan de developpement professionnel : certifications visees, projets**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ---
 
-[← Retour à la Semaine 24](index.html){.btn .btn-secondary}
-[Voir le Module Technique 24 →](module-technique-24.html){.btn .btn-primary}
+[<- Retour a la Semaine 24](index.html){.btn .btn-secondary}
+[Voir le Module Technique 24 ->](module-technique-24.html){.btn .btn-primary}

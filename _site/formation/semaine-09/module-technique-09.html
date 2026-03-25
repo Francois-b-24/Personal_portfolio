@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module Technique 9 — AWS — Architecture et Services</title>
+<title>François BOUSSENGUI | Module Technique 9 — AWS : Architecture et Services intégrés</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,6 +137,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -188,8 +225,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module Technique 9 — AWS — Architecture et Services">
-<meta property="og:description" content="VPC, IAM, CloudWatch">
+<meta property="og:title" content="François BOUSSENGUI | Module Technique 9 — AWS : Architecture et Services intégrés">
+<meta property="og:description" content="VPC, IAM, CloudWatch et bonnes pratiques">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +234,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 9 — AWS — Architecture et Services">
-<meta name="twitter:description" content="VPC, IAM, CloudWatch">
+<meta name="twitter:title" content="François BOUSSENGUI | Module Technique 9 — AWS : Architecture et Services intégrés">
+<meta name="twitter:description" content="VPC, IAM, CloudWatch et bonnes pratiques">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -477,12 +514,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module Technique 9 — AWS — Architecture et Services</h1>
-            <p class="subtitle lead">VPC, IAM, CloudWatch</p>
+      <h1 class="title">Module Technique 9 — AWS : Architecture et Services intégrés</h1>
+            <p class="subtitle lead">VPC, IAM, CloudWatch et bonnes pratiques</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">aws</div>
                 <div class="quarto-category">architecture</div>
                 <div class="quarto-category">vpc</div>
+                <div class="quarto-category">iam</div>
               </div>
                   </div>
   </div>
@@ -500,7 +538,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,12 +554,29 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#vpc-réseau-privé" id="toc-vpc-réseau-privé" class="nav-link active" data-scroll-target="#vpc-réseau-privé"><span class="header-section-number">1</span> VPC réseau privé</a></li>
-  <li><a href="#iam-gestion-accès" id="toc-iam-gestion-accès" class="nav-link" data-scroll-target="#iam-gestion-accès"><span class="header-section-number">2</span> IAM gestion accès</a></li>
-  <li><a href="#cloudwatch-monitoring" id="toc-cloudwatch-monitoring" class="nav-link" data-scroll-target="#cloudwatch-monitoring"><span class="header-section-number">3</span> CloudWatch monitoring</a></li>
-  <li><a href="#architecture-multi-services" id="toc-architecture-multi-services" class="nav-link" data-scroll-target="#architecture-multi-services"><span class="header-section-number">4</span> Architecture multi-services</a></li>
-  <li><a href="#bonnes-pratiques-sécurité" id="toc-bonnes-pratiques-sécurité" class="nav-link" data-scroll-target="#bonnes-pratiques-sécurité"><span class="header-section-number">5</span> Bonnes pratiques sécurité</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#vpc-réseau-privé-virtuel" id="toc-vpc-réseau-privé-virtuel" class="nav-link" data-scroll-target="#vpc-réseau-privé-virtuel"><span class="header-section-number">1</span> VPC : réseau privé virtuel</a>
+  <ul class="collapse">
+  <li><a href="#pourquoi-un-vpc" id="toc-pourquoi-un-vpc" class="nav-link" data-scroll-target="#pourquoi-un-vpc"><span class="header-section-number">1.1</span> Pourquoi un VPC ?</a></li>
+  </ul></li>
+  <li><a href="#iam-gestion-des-accès" id="toc-iam-gestion-des-accès" class="nav-link" data-scroll-target="#iam-gestion-des-accès"><span class="header-section-number">2</span> IAM : gestion des accès</a>
+  <ul class="collapse">
+  <li><a href="#principe-du-moindre-privilège" id="toc-principe-du-moindre-privilège" class="nav-link" data-scroll-target="#principe-du-moindre-privilège"><span class="header-section-number">2.1</span> Principe du moindre privilège</a></li>
+  <li><a href="#exemple-de-policy" id="toc-exemple-de-policy" class="nav-link" data-scroll-target="#exemple-de-policy"><span class="header-section-number">2.2</span> Exemple de policy</a></li>
+  </ul></li>
+  <li><a href="#cloudwatch-monitoring" id="toc-cloudwatch-monitoring" class="nav-link" data-scroll-target="#cloudwatch-monitoring"><span class="header-section-number">3</span> CloudWatch : monitoring</a>
+  <ul class="collapse">
+  <li><a href="#métriques-et-alertes" id="toc-métriques-et-alertes" class="nav-link" data-scroll-target="#métriques-et-alertes"><span class="header-section-number">3.1</span> Métriques et alertes</a></li>
+  <li><a href="#alertes-de-coût" id="toc-alertes-de-coût" class="nav-link" data-scroll-target="#alertes-de-coût"><span class="header-section-number">3.2</span> Alertes de coût</a></li>
+  </ul></li>
+  <li><a href="#well-architected-framework" id="toc-well-architected-framework" class="nav-link" data-scroll-target="#well-architected-framework"><span class="header-section-number">4</span> Well-Architected Framework</a>
+  <ul class="collapse">
+  <li><a href="#les-6-piliers" id="toc-les-6-piliers" class="nav-link" data-scroll-target="#les-6-piliers"><span class="header-section-number">4.1</span> Les 6 piliers</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-points-essentiels" id="toc-les-5-points-essentiels" class="nav-link" data-scroll-target="#les-5-points-essentiels"><span class="header-section-number">4.1.1</span> 🎯 Les 5 points essentiels</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul>
 </nav>
@@ -533,34 +588,312 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="vpc-réseau-privé" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> VPC réseau privé</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #06436e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.terminal-box { background: #1e293b; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 8px; font-family: 'Fira Code', monospace; margin: 1rem 0; overflow-x: auto; }
+.terminal-box .prompt { color: #72f1b8; }
+.terminal-box .comment { color: #64748b; }
+.terminal-box .output { color: #f8d65c; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<ol type="1">
+<li><strong>Concevoir</strong> un VPC avec subnets publics et privés</li>
+<li><strong>Configurer</strong> IAM (utilisateurs, rôles, politiques)</li>
+<li><strong>Mettre en place</strong> CloudWatch pour le monitoring</li>
+<li><strong>Architecturer</strong> une application multi-services sur AWS</li>
+<li><strong>Appliquer</strong> les principes du Well-Architected Framework</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules Technique 5-8 (S3, EC2, RDS, Lambda)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 3 heures</p>
+</div>
+</div>
+<hr>
+<section id="vpc-réseau-privé-virtuel" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> VPC : réseau privé virtuel</h1>
+<section id="pourquoi-un-vpc" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="pourquoi-un-vpc"><span class="header-section-number">1.1</span> Pourquoi un VPC ?</h2>
+<p>Un VPC (Virtual Private Cloud) est ton <strong>réseau privé</strong> dans AWS. Il isole tes ressources du reste d’Internet et te donne un contrôle total sur le trafic.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    subgraph VPC["VPC 10.0.0.0/16"]
+        subgraph Public["Subnet Public"]
+            ALB[Load Balancer]
+            NAT[NAT Gateway]
+        end
+        subgraph Private["Subnet Privé"]
+            EC2[EC2 — API FastAPI]
+            Lambda[Lambda — Scoring]
+        end
+        subgraph Data["Subnet Données"]
+            RDS[RDS — PostgreSQL]
+            S3[S3 — Data Lake]
+        end
+    end
+
+    Internet[🌐 Internet] --&gt; ALB
+    ALB --&gt; EC2
+    ALB --&gt; Lambda
+    EC2 --&gt; RDS
+    Lambda --&gt; RDS
+    EC2 --&gt; S3
+</pre>
+</div>
+<p></p><figcaption> Architecture VPC pour le projet de pilotage assurance</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Composant</th>
+<th>Subnet</th>
+<th>Accès Internet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Load Balancer</td>
+<td>Public</td>
+<td>Oui (entrée)</td>
+</tr>
+<tr class="even">
+<td>API (EC2)</td>
+<td>Privé</td>
+<td>Via NAT (sortie uniquement)</td>
+</tr>
+<tr class="odd">
+<td>Base de données (RDS)</td>
+<td>Données</td>
+<td>Non</td>
+</tr>
+<tr class="even">
+<td>S3</td>
+<td>-</td>
+<td>Via VPC Endpoint</td>
+</tr>
+</tbody>
+</table>
+<div class="concept-cle">
+<p><strong>💡 Principe de base</strong> : les ressources qui n’ont pas besoin d’être accessibles depuis Internet (BDD, services internes) sont dans des <strong>subnets privés</strong>. Seul le point d’entrée (Load Balancer) est dans un subnet public.</p>
+</div>
 <hr>
 </section>
-<section id="iam-gestion-accès" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> IAM gestion accès</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="iam-gestion-des-accès" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> IAM : gestion des accès</h1>
+<section id="principe-du-moindre-privilège" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="principe-du-moindre-privilège"><span class="header-section-number">2.1</span> Principe du moindre privilège</h2>
+<p>IAM (Identity and Access Management) contrôle <strong>qui</strong> peut faire <strong>quoi</strong> sur <strong>quelles ressources</strong> :</p>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 41%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>User</strong></td>
+<td>Personne physique</td>
+<td>Toi, ton collègue</td>
+</tr>
+<tr class="even">
+<td><strong>Group</strong></td>
+<td>Ensemble d’utilisateurs</td>
+<td>Équipe data science</td>
+</tr>
+<tr class="odd">
+<td><strong>Role</strong></td>
+<td>Identité assumable par un service</td>
+<td>Lambda qui accède à S3</td>
+</tr>
+<tr class="even">
+<td><strong>Policy</strong></td>
+<td>Document JSON de permissions</td>
+<td>“Lire S3 bucket X”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exemple-de-policy" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="exemple-de-policy"><span class="header-section-number">2.2</span> Exemple de policy</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2012-10-17"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"Statement"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Effect"</span><span class="fu">:</span> <span class="st">"Allow"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Action"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="st">"s3:GetObject"</span><span class="ot">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">"s3:PutObject"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Resource"</span><span class="fu">:</span> <span class="st">"arn:aws:s3:::mon-bucket-assurance/*"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Effect"</span><span class="fu">:</span> <span class="st">"Allow"</span><span class="fu">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Action"</span><span class="fu">:</span> <span class="st">"rds:Connect"</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"Resource"</span><span class="fu">:</span> <span class="st">"arn:aws:rds:eu-west-1:123456:db:portefeuille"</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="attention-box">
+<p><strong>⚠️ Ne jamais utiliser <code>*</code> en production</strong></p>
+<p><code>"Action": "*"</code> et <code>"Resource": "*"</code> donnent <strong>tous les droits sur tout</strong>. En cas de fuite de clés, un attaquant peut détruire toute ton infrastructure. Toujours appliquer le <strong>moindre privilège</strong> : chaque service n’a accès qu’à ce dont il a strictement besoin.</p>
+</div>
 <hr>
+</section>
 </section>
 <section id="cloudwatch-monitoring" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> CloudWatch monitoring</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+<h1 data-number="3"><span class="header-section-number">3</span> CloudWatch : monitoring</h1>
+<section id="métriques-et-alertes" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="métriques-et-alertes"><span class="header-section-number">3.1</span> Métriques et alertes</h2>
+<p>CloudWatch collecte les métriques de tous tes services AWS :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Service</th>
+<th>Métriques clés</th>
+<th>Seuil d’alerte typique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>EC2</strong></td>
+<td>CPU, mémoire, réseau</td>
+<td>CPU &gt; 80% pendant 5 min</td>
+</tr>
+<tr class="even">
+<td><strong>RDS</strong></td>
+<td>Connexions, latence, espace disque</td>
+<td>Espace &lt; 20%</td>
+</tr>
+<tr class="odd">
+<td><strong>Lambda</strong></td>
+<td>Invocations, erreurs, durée</td>
+<td>Taux d’erreur &gt; 5%</td>
+</tr>
+<tr class="even">
+<td><strong>S3</strong></td>
+<td>Requêtes, taille stockée</td>
+<td>Coût &gt; seuil budgétaire</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alertes-de-coût" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="alertes-de-coût"><span class="header-section-number">3.2</span> Alertes de coût</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer une alerte si les coûts dépassent 50$/mois</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> cloudwatch put-metric-alarm <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">--alarm-name</span> <span class="st">"budget-alert"</span> <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--metric-name</span> EstimatedCharges <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--namespace</span> AWS/Billing <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--statistic</span> Maximum <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--period</span> 86400 <span class="dt">\</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--threshold</span> 50 <span class="dt">\</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--comparison-operator</span> GreaterThanThreshold <span class="dt">\</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">--evaluation-periods</span> 1 <span class="dt">\</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">--alarm-actions</span> arn:aws:sns:eu-west-1:123456:alerts</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="exemple-box">
+<p><strong>📝 Dashboard CloudWatch pour ton projet</strong></p>
+<p>Crée un dashboard qui affiche en temps réel :</p>
+<ul>
+<li>Nombre de requêtes API de scoring</li>
+<li>Temps de réponse moyen</li>
+<li>Taux d’erreur des Lambda</li>
+<li>Utilisation CPU/mémoire de l’EC2</li>
+<li>Espace disque RDS</li>
+</ul>
+</div>
 <hr>
 </section>
-<section id="architecture-multi-services" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Architecture multi-services</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
+</section>
+<section id="well-architected-framework" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Well-Architected Framework</h1>
+<section id="les-6-piliers" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="les-6-piliers"><span class="header-section-number">4.1</span> Les 6 piliers</h2>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 36%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pilier</th>
+<th>Question clé</th>
+<th>Exemple projet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Excellence opérationnelle</strong></td>
+<td>Comment améliorer les processus ?</td>
+<td>CI/CD, monitoring, logs</td>
+</tr>
+<tr class="even">
+<td><strong>Sécurité</strong></td>
+<td>Comment protéger les données ?</td>
+<td>IAM, VPC, chiffrement</td>
+</tr>
+<tr class="odd">
+<td><strong>Fiabilité</strong></td>
+<td>Comment résister aux pannes ?</td>
+<td>Multi-AZ, backups, auto-scaling</td>
+</tr>
+<tr class="even">
+<td><strong>Performance</strong></td>
+<td>Comment optimiser les ressources ?</td>
+<td>Bon type d’instance, cache</td>
+</tr>
+<tr class="odd">
+<td><strong>Optimisation des coûts</strong></td>
+<td>Comment réduire les dépenses ?</td>
+<td>Spot, reserved, right-sizing</td>
+</tr>
+<tr class="even">
+<td><strong>Durabilité</strong></td>
+<td>Comment réduire l’impact environnemental ?</td>
+<td>Right-sizing, régions vertes</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="bonnes-pratiques-sécurité" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Bonnes pratiques sécurité</h1>
-<p>Contenu technique détaillé avec exemples de code et bonnes pratiques.</p>
-<hr>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les points techniques essentiels.</p>
+<section id="les-5-points-essentiels" class="level3 synthese-card" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="les-5-points-essentiels"><span class="header-section-number">4.1.1</span> 🎯 Les 5 points essentiels</h3>
+<ol type="1">
+<li><strong>VPC isole ton réseau</strong> — Subnets publics/privés, Security Groups</li>
+<li><strong>IAM = moindre privilège</strong> — Chaque service a le minimum de droits nécessaires</li>
+<li><strong>CloudWatch surveille tout</strong> — Métriques, logs, alertes, dashboards</li>
+<li><strong>Architecture en couches</strong> — Public → Privé → Données</li>
+<li><strong>Well-Architected</strong> — 6 piliers pour une infra solide</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -571,13 +904,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Pourquoi mettre RDS dans un subnet privé ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Pour empêcher tout accès direct depuis Internet. La base contient des données sensibles (sinistres, clients). Seules les applications dans le même VPC (EC2, Lambda) doivent pouvoir s’y connecter. C’est le principe de <strong>défense en profondeur</strong>.</p>
 </div>
 </div>
 </div>
@@ -587,13 +920,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Qu’est-ce qu’un rôle IAM et quand l’utiliser ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Un rôle est une identité <strong>assumable par un service</strong> (pas par une personne). Exemple : un rôle pour Lambda qui lui permet de lire S3 et écrire dans RDS. Avantage : pas de clés d’accès à gérer, les credentials sont temporaires et automatiquement renouvelées.</p>
 </div>
 </div>
 </div>
@@ -603,13 +936,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Comment être alerté si ton budget AWS dépasse un seuil ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : Avec <strong>CloudWatch Billing Alarms</strong> : créer une alarme sur la métrique <code>EstimatedCharges</code> avec un seuil (ex : 50$). Quand le seuil est dépassé, une notification SNS est envoyée (email, SMS). Aussi possible via <strong>AWS Budgets</strong> avec plus d’options.</p>
 </div>
 </div>
 </div>
@@ -619,13 +952,13 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Quels piliers du Well-Architected sont les plus critiques pour un projet data assurance ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question technique.</p>
+<p><strong>Réponse</strong> : <strong>Sécurité</strong> (données personnelles, RGPD, conformité ACPR) et <strong>Fiabilité</strong> (le scoring doit être disponible 24/7 pour le front-office). L’<strong>optimisation des coûts</strong> est aussi importante car les volumes de données peuvent être importants.</p>
 </div>
 </div>
 </div>

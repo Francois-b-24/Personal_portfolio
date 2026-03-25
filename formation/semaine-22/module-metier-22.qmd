@@ -1,9 +1,9 @@
 ---
-title: "Module 22 — Étude de cas intégrée (partie 2)"
-subtitle: "Recommandations et plan action"
-author: "François Boussengui"
+title: "Module 22 -- Etude de cas integree (partie 2)"
+subtitle: "Recommandations et plan d'action"
+author: "Francois Boussengui"
 date: last-modified
-categories: [assurance, étude-de-cas]
+categories: [assurance, etude-de-cas, recommandations]
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
 toc: true
@@ -11,65 +11,111 @@ toc-depth: 3
 number-sections: true
 ---
 
-# Plan action
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
----
+```{=html}
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+```
 
-# Chiffrage impacts
+# Plan d'action structure : (1) Court
 
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
+Plan d'action structure : (1) Court terme : augmentation ciblee des tarifs sur les segments deficitaires (+12% jeunes urbains).
 
----
+:::{.concept-cle}
+**Point cle**
 
-# Priorisation
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Présentation résultats
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Suivi indicateurs
-
-Contenu détaillé pour ce concept fondamental de l'assurance non-vie.
-
----
-
-# Synthèse {.unnumbered}
-
-Les concepts clés à retenir.
+Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.
+:::
 
 ---
 
-# Auto-évaluation {.unnumbered}
+# (2) Moyen terme : resegmentation du
+
+(2) Moyen terme : resegmentation du portefeuille, introduction de nouvelles variables tarifaires (telematique).
+
+---
+
+# (3) Long terme : programme de
+
+(3) Long terme : programme de fidelisation des bons risques.
+
+:::{.attention-box}
+**Attention**
+
+Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.
+:::
+
+---
+
+# Chiffrage : impact attendu sur le
+
+Chiffrage : impact attendu sur le S/P, le volume, la prime moyenne.
+
+---
+
+# Priorisation : matrice effort/impact
+
+Priorisation : matrice effort/impact.
+
+---
+
+# Synthese {.unnumbered}
+
+:::{.synthese-card}
+### Les concepts cles
+
+1. **Plan d'action structure : (1) Court terme **
+2. **(2) Moyen terme : resegmentation du portefeuille, introduction**
+3. **(3) Long terme : programme de fidelisation des**
+4. **Chiffrage : impact attendu sur le S/P, le**
+5. **Priorisation : matrice effort/impact**
+:::
+
+---
+
+# Auto-evaluation {.unnumbered}
 
 ::: {.callout-note collapse="true"}
 ## Question 1
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 2
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 3
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Question 4
-Question de compréhension.
+
+Explique ce concept dans tes propres mots et donne un exemple concret.
 :::
 
 ---
 
-[← Retour à la Semaine 22](index.html){.btn .btn-secondary}
-[Voir le Module Technique 22 →](module-technique-22.html){.btn .btn-primary}
+[<- Retour a la Semaine 22](index.html){.btn .btn-secondary}
+[Voir le Module Technique 22 ->](module-technique-22.html){.btn .btn-primary}

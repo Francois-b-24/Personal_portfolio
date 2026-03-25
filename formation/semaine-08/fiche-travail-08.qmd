@@ -1,6 +1,6 @@
 ---
 title: "Fiche de travail — Semaine 8"
-subtitle: "Exercices pratiques et livrables"
+subtitle: "Exercices : principes tarifaires et Lambda serverless"
 author: "François Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
@@ -9,30 +9,168 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 8
-2. **Livrable technique** : Mise en pratique du Module Technique 8
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
-Applique les concepts du module sur des données simulées ou réelles.
+---
 
-## Exercices techniques
+## 📦 Livrables
 
-Mets en pratique les outils techniques dans le contexte du projet.
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📊 Livrable 1 — Calcul de relativités tarifaires:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-## Pont métier-technique
+Script Python qui :
 
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
+- Simule un portefeuille auto (5 000+ contrats) avec variables tarifaires
+- Calcule la prime pure par segment (âge, zone, puissance)
+- Produit un graphique de relativités par variable
+- Applique le CRM bonus-malus
+:::
 
-## Checklist
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}⚡ Livrable 2 — Fonction Lambda de scoring:::
+:::{.livrable-status .required}Obligatoire:::
+:::
 
-- [ ] Module Métier 8 terminé
-- [ ] Module Technique 8 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+- Créer une Lambda Python qui reçoit un profil d'assuré (JSON) et retourne une prime estimée
+- Configurer un trigger API Gateway
+- Tester avec curl ou Postman
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}📝 Livrable 3 — Synthèse Bloc II-III:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Document de synthèse couvrant les semaines 4-8 : sinistralité → fréquence/sévérité → triangles → provisionnement → tarification. Schéma global de la chaîne actuarielle.
+:::
+
+---
+
+## 🏋️ Exercices
+
+:::{.exercice-box}
+:::{.exercice-header}
+📝 Exercice M1 — Tarification complète
+:::
+
+Un assuré a le profil suivant : homme, 28 ans, Paris, véhicule 7 CV, 15 000 km/an, CRM = 0.76.
+
+Relativités du GLM :
+
+- Âge 26-35 : 1.15
+- Zone Paris : 1.45
+- Puissance 7 CV : 1.10
+- Km 15K : 1.05
+
+Prime pure de base (référence) : 180 €. Frais : 25%. Marge : 5%.
+
+Calcule la prime commerciale finale.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+- Prime pure ajustée : 180 × 1.15 × 1.45 × 1.10 × 1.05 = **346.6 €**
+- Avec CRM : 346.6 × 0.76 = **263.4 €**
+- Prime commerciale : 263.4 / (1 - 0.25 - 0.05) = 263.4 / 0.70 = **376.3 €**
+:::
+:::
+
+:::{.exercice-box}
+:::{.exercice-header}
+⚡ Exercice T1 — Lambda basique
+:::
+
+Crée une fonction Lambda qui prend en entrée `{"age": 30, "zone": "paris", "crm": 0.76}` et retourne la prime calculée.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+```python
+import json
+
+RELATIVITES = {
+    "age": {"18-25": 1.85, "26-35": 1.15, "36-45": 1.00, "46-55": 0.90, "56+": 1.10},
+    "zone": {"paris": 1.45, "grande_ville": 1.20, "ville": 1.00, "rural": 0.75}
+}
+PRIME_BASE = 180
+
+def lambda_handler(event, context):
+    age = event.get("age", 40)
+    zone = event.get("zone", "ville")
+    crm = event.get("crm", 1.0)
+
+    # Déterminer la tranche d'âge
+    if age < 26: rel_age = RELATIVITES["age"]["18-25"]
+    elif age < 36: rel_age = RELATIVITES["age"]["26-35"]
+    elif age < 46: rel_age = RELATIVITES["age"]["36-45"]
+    elif age < 56: rel_age = RELATIVITES["age"]["46-55"]
+    else: rel_age = RELATIVITES["age"]["56+"]
+
+    rel_zone = RELATIVITES["zone"].get(zone, 1.0)
+    prime = PRIME_BASE * rel_age * rel_zone * crm
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps({"prime": round(prime, 2)})
+    }
+```
+:::
+:::
+
+---
+
+## 🔗 Pont métier-technique
+
+:::{.reflexion-box}
+### 🤔 Réflexion
+
+1. **Comment exposer ton modèle GLM via une API Lambda** pour que le front-office puisse obtenir des devis en temps réel ?
+2. **Quels avantages du serverless pour une API de devis** qui a des pics de trafic (début d'année, échéances) ?
+3. **Comment le CRM bonus-malus pourrait-il être enrichi** par des données IoT (télématique auto) ?
+:::
+
+---
+
+## ✅ Checklist
+
+:::{.checklist}
+- Module Métier 8 terminé (tarification a priori/a posteriori, GLM)
+- Module Technique 8 terminé (Lambda, triggers, API Gateway)
+- Livrable 1 (relativités tarifaires)
+- Livrable 2 (Lambda de scoring)
+- Livrable 3 (synthèse Bloc II-III)
+- Exercices réalisés
+- Fin du Bloc II sinistralité et début du Bloc III tarification
+:::
 
 ---
 

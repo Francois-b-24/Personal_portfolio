@@ -1,7 +1,7 @@
 ---
-title: "Fiche de travail — Semaine 13"
+title: "Fiche de travail -- Semaine 13"
 subtitle: "Exercices pratiques et livrables"
-author: "François Boussengui"
+author: "Francois Boussengui"
 date: last-modified
 title-block-banner: "#06436e"
 title-block-banner-color: "rgb(251, 225, 174)"
@@ -9,31 +9,121 @@ toc: true
 toc-depth: 2
 ---
 
-## Livrables
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align = "center", out.width = "100%")
+```
 
-1. **Livrable métier** : Application des concepts du Module 13
-2. **Livrable technique** : Mise en pratique du Module Technique 13
-3. **Livrable intégrateur** : Combinaison métier + technique
+```{r echo=FALSE}
+library(reticulate)
+use_virtualenv("/Users/f.b/.virtualenvs/r-reticulate")
+```
 
-## Exercices métier
-
-Applique les concepts du module sur des données simulées ou réelles.
-
-## Exercices techniques
-
-Mets en pratique les outils techniques dans le contexte du projet.
-
-## Pont métier-technique
-
-Comment les concepts de cette semaine s'articulent-ils dans le projet central ?
-
-## Checklist
-
-- [ ] Module Métier 13 terminé
-- [ ] Module Technique 13 terminé
-- [ ] Livrables produits
-- [ ] Exercices réalisés
+```{=html}
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.livrable-status.bonus { background: #fef3c7; color: #92400e; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+```
 
 ---
 
-[← Retour à la Semaine 13](index.html){.btn .btn-secondary}
+## Livrables a produire
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}Livrable 1 -- Synthese metier:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Resumer les concepts cles du Module 13 dans tes propres mots avec un schema et un lien avec ton experience.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}Livrable 2 -- Mise en pratique technique:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Appliquer les outils du Module Technique 13 au projet central. Code fonctionnel et documente.
+:::
+
+:::{.livrable-card}
+:::{.livrable-header}
+:::{.livrable-title}Livrable 3 -- Integration projet:::
+:::{.livrable-status .required}Obligatoire:::
+:::
+
+Contribution au repo du projet central avec commit clair et tests.
+:::
+
+---
+
+## Exercices metier
+
+:::{.exercice-box}
+:::{.exercice-header}
+Exercice M1 -- Application des concepts
+:::
+
+Applique les concepts du module metier sur des donnees simulees. Calcule les indicateurs cles et interprete.
+
+::: {.callout-note collapse="true"}
+## Piste de solution
+
+Utilise pandas et matplotlib. Compare avec les ordres de grandeur du module.
+:::
+:::
+
+## Exercices techniques
+
+:::{.exercice-box}
+:::{.exercice-header}
+Exercice T1 -- Mise en pratique
+:::
+
+Realise le tutoriel du module technique pas a pas dans le contexte du projet central.
+
+::: {.callout-note collapse="true"}
+## Piste de solution
+
+Suis le module section par section. Consulte la documentation officielle.
+:::
+:::
+
+---
+
+## Pont metier-technique
+
+:::{.reflexion-box}
+### Reflexion
+
+1. Comment les concepts metier enrichissent-ils le projet central ?
+2. Comment les outils techniques operationnalisent-ils ces concepts ?
+3. Quelle fonctionnalite du projet peux-tu avancer cette semaine ?
+:::
+
+---
+
+## Checklist
+
+:::{.checklist}
+- Module Metier 13 termine
+- Module Technique 13 termine
+- Livrables produits
+- Exercices realises
+- Questions preparees pour le debriefing
+:::
+
+---
+
+[<- Retour a la Semaine 13](index.html){.btn .btn-secondary}

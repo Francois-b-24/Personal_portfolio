@@ -8,7 +8,7 @@
 
 <meta name="author" content="François Boussengui">
 
-<title>François BOUSSENGUI | Module 4 — Sinistralité — Concepts fondamentaux</title>
+<title>François BOUSSENGUI | Module 4 — Sinistralité : Concepts fondamentaux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,9 @@ cookieconsent.run({
 background: #06436e;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script>
     window.addEventListener('load', function() {
       document.getElementById("cc-nb-title").innerHTML = "🍪 Mon site web utilise des cookies";
@@ -188,8 +191,8 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 4 — Sinistralité — Concepts fondamentaux">
-<meta property="og:description" content="Comprendre le processus sinistre">
+<meta property="og:title" content="François BOUSSENGUI | Module 4 — Sinistralité : Concepts fondamentaux">
+<meta property="og:description" content="Comprendre le processus sinistre et ses indicateurs clés">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -197,8 +200,8 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 4 — Sinistralité — Concepts fondamentaux">
-<meta name="twitter:description" content="Comprendre le processus sinistre">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 4 — Sinistralité : Concepts fondamentaux">
+<meta name="twitter:description" content="Comprendre le processus sinistre et ses indicateurs clés">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -421,6 +424,35 @@ Note : Les stats utilisent l'API GitHub (60 requêtes/heure sans authentificatio
 Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-readme-stats)
 -->
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -477,11 +509,12 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 4 — Sinistralité — Concepts fondamentaux</h1>
-            <p class="subtitle lead">Comprendre le processus sinistre</p>
+      <h1 class="title">Module 4 — Sinistralité : Concepts fondamentaux</h1>
+            <p class="subtitle lead">Comprendre le processus sinistre et ses indicateurs clés</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
                 <div class="quarto-category">sinistralité</div>
+                <div class="quarto-category">indicateurs</div>
               </div>
                   </div>
   </div>
@@ -499,7 +532,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -515,13 +548,44 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#le-processus-sinistre" id="toc-le-processus-sinistre" class="nav-link active" data-scroll-target="#le-processus-sinistre"><span class="header-section-number">1</span> Le processus sinistre</a></li>
-  <li><a href="#types-de-sinistres" id="toc-types-de-sinistres" class="nav-link" data-scroll-target="#types-de-sinistres"><span class="header-section-number">2</span> Types de sinistres</a></li>
-  <li><a href="#indicateurs-clés-sp-fréquence" id="toc-indicateurs-clés-sp-fréquence" class="nav-link" data-scroll-target="#indicateurs-clés-sp-fréquence"><span class="header-section-number">3</span> Indicateurs clés : S/P, fréquence</a></li>
-  <li><a href="#réserves-et-ibnr" id="toc-réserves-et-ibnr" class="nav-link" data-scroll-target="#réserves-et-ibnr"><span class="header-section-number">4</span> Réserves et IBNR</a></li>
-  <li><a href="#suivi-temporel" id="toc-suivi-temporel" class="nav-link" data-scroll-target="#suivi-temporel"><span class="header-section-number">5</span> Suivi temporel</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</a></li>
+  <li><a href="#le-processus-sinistre" id="toc-le-processus-sinistre" class="nav-link" data-scroll-target="#le-processus-sinistre"><span class="header-section-number">1</span> Le processus sinistre</a>
+  <ul class="collapse">
+  <li><a href="#de-la-survenance-au-règlement" id="toc-de-la-survenance-au-règlement" class="nav-link" data-scroll-target="#de-la-survenance-au-règlement"><span class="header-section-number">1.1</span> De la survenance au règlement</a></li>
+  <li><a href="#le-coût-ultime" id="toc-le-coût-ultime" class="nav-link" data-scroll-target="#le-coût-ultime"><span class="header-section-number">1.2</span> Le coût ultime</a></li>
+  </ul></li>
+  <li><a href="#typologie-des-sinistres" id="toc-typologie-des-sinistres" class="nav-link" data-scroll-target="#typologie-des-sinistres"><span class="header-section-number">2</span> Typologie des sinistres</a>
+  <ul class="collapse">
+  <li><a href="#trois-catégories-fondamentales" id="toc-trois-catégories-fondamentales" class="nav-link" data-scroll-target="#trois-catégories-fondamentales"><span class="header-section-number">2.1</span> Trois catégories fondamentales</a></li>
+  <li><a href="#le-seuil-de-gravité" id="toc-le-seuil-de-gravité" class="nav-link" data-scroll-target="#le-seuil-de-gravité"><span class="header-section-number">2.2</span> Le seuil de gravité</a></li>
+  </ul></li>
+  <li><a href="#indicateurs-de-sinistralité" id="toc-indicateurs-de-sinistralité" class="nav-link" data-scroll-target="#indicateurs-de-sinistralité"><span class="header-section-number">3</span> Indicateurs de sinistralité</a>
+  <ul class="collapse">
+  <li><a href="#les-quatre-indicateurs-fondamentaux" id="toc-les-quatre-indicateurs-fondamentaux" class="nav-link" data-scroll-target="#les-quatre-indicateurs-fondamentaux"><span class="header-section-number">3.1</span> Les quatre indicateurs fondamentaux</a>
+  <ul class="collapse">
+  <li><a href="#ratio-sp-sinistres-sur-primes" id="toc-ratio-sp-sinistres-sur-primes" class="nav-link" data-scroll-target="#ratio-sp-sinistres-sur-primes"><span class="header-section-number">3.1.1</span> Ratio S/P (Sinistres sur Primes)</a></li>
+  <li><a href="#fréquence" id="toc-fréquence" class="nav-link" data-scroll-target="#fréquence"><span class="header-section-number">3.1.2</span> Fréquence</a></li>
+  <li><a href="#sévérité-coût-moyen" id="toc-sévérité-coût-moyen" class="nav-link" data-scroll-target="#sévérité-coût-moyen"><span class="header-section-number">3.1.3</span> Sévérité (coût moyen)</a></li>
+  <li><a href="#relation-fondamentale" id="toc-relation-fondamentale" class="nav-link" data-scroll-target="#relation-fondamentale"><span class="header-section-number">3.1.4</span> Relation fondamentale</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#réserves-et-provisions" id="toc-réserves-et-provisions" class="nav-link" data-scroll-target="#réserves-et-provisions"><span class="header-section-number">4</span> Réserves et provisions</a>
+  <ul class="collapse">
+  <li><a href="#pourquoi-provisionner" id="toc-pourquoi-provisionner" class="nav-link" data-scroll-target="#pourquoi-provisionner"><span class="header-section-number">4.1</span> Pourquoi provisionner ?</a></li>
+  <li><a href="#le-triangle-de-développement-aperçu" id="toc-le-triangle-de-développement-aperçu" class="nav-link" data-scroll-target="#le-triangle-de-développement-aperçu"><span class="header-section-number">4.2</span> Le triangle de développement (aperçu)</a></li>
+  </ul></li>
+  <li><a href="#suivi-de-la-sinistralité-dans-le-temps" id="toc-suivi-de-la-sinistralité-dans-le-temps" class="nav-link" data-scroll-target="#suivi-de-la-sinistralité-dans-le-temps"><span class="header-section-number">5</span> Suivi de la sinistralité dans le temps</a>
+  <ul class="collapse">
+  <li><a href="#analyse-par-génération-vs-par-exercice" id="toc-analyse-par-génération-vs-par-exercice" class="nav-link" data-scroll-target="#analyse-par-génération-vs-par-exercice"><span class="header-section-number">5.1</span> Analyse par génération vs par exercice</a></li>
+  <li><a href="#signaux-dalerte" id="toc-signaux-dalerte" class="nav-link" data-scroll-target="#signaux-dalerte"><span class="header-section-number">5.2</span> Signaux d’alerte</a></li>
+  </ul></li>
+  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a>
+  <ul class="collapse">
+  <li><a href="#les-5-concepts-fondamentaux-à-retenir" id="toc-les-5-concepts-fondamentaux-à-retenir" class="nav-link" data-scroll-target="#les-5-concepts-fondamentaux-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts fondamentaux à retenir</a></li>
+  </ul></li>
   <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#glossaire" id="toc-glossaire" class="nav-link" data-scroll-target="#glossaire">Glossaire</a></li>
+  <li><a href="#ressources-complémentaires" id="toc-ressources-complémentaires" class="nav-link" data-scroll-target="#ressources-complémentaires">Ressources complémentaires</a></li>
   </ul>
 </nav>
     </div>
@@ -532,34 +596,360 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="objectifs-dapprentissage" class="level3 objectifs-box" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="objectifs-dapprentissage"><span class="header-section-number">0.0.1</span> 🎯 Objectifs d’apprentissage</h3>
+<p>À l’issue de ce module, tu seras capable de :</p>
+<ol type="1">
+<li><strong>Décrire</strong> le processus complet de gestion d’un sinistre</li>
+<li><strong>Distinguer</strong> sinistres attritionnels, graves et catastrophiques</li>
+<li><strong>Calculer</strong> les principaux indicateurs (S/P, fréquence, sévérité)</li>
+<li><strong>Comprendre</strong> les réserves IBNR et leur impact comptable</li>
+<li><strong>Analyser</strong> l’évolution de la sinistralité dans le temps</li>
+</ol>
+</section>
+<div class="prerequis-temps">
+<div class="{div}">
+<p>📚 <strong>Prérequis</strong> : Modules 1-3 (fondements, produits, exposition)</p>
+</div>
+<div class="{div}">
+<p>⏱️ <strong>Temps estimé</strong> : 2 à 3 heures</p>
+</div>
+</div>
+<hr>
 <section id="le-processus-sinistre" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Le processus sinistre</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="de-la-survenance-au-règlement" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="de-la-survenance-au-règlement"><span class="header-section-number">1.1</span> De la survenance au règlement</h2>
+<p>Un sinistre traverse plusieurs étapes avant d’être définitivement réglé :</p>
+<ol type="1">
+<li><strong>Survenance</strong> : l’événement dommageable se produit (accident, incendie, dégât des eaux…)</li>
+<li><strong>Déclaration</strong> : l’assuré notifie l’assureur — délai légal de 5 jours en général, 2 jours pour le vol</li>
+<li><strong>Ouverture du dossier</strong> : enregistrement dans le système, première évaluation, mise en réserve</li>
+<li><strong>Instruction</strong> : expertise terrain, collecte des pièces justificatives, évaluation du montant</li>
+<li><strong>Règlement</strong> : paiement de l’indemnité (peut être partiel ou échelonné)</li>
+<li><strong>Clôture</strong> : fermeture du dossier une fois tous les paiements effectués</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[🔥 Survenance] --&gt; B[📞 Déclaration]
+    B --&gt; C[📂 Ouverture]
+    C --&gt; D[🔍 Instruction]
+    D --&gt; E[💰 Règlement]
+    E --&gt; F[✅ Clôture]
+
+    style A fill:#fe4454,color:white
+    style F fill:#72f1b8,color:#333
+</pre>
+</div>
+<p></p><figcaption> Processus de gestion d’un sinistre</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>Le <strong>délai entre survenance et déclaration</strong> est critique. Les sinistres tardifs (IBNR — Incurred But Not Reported) sont survenus mais pas encore déclarés. L’assureur doit les provisionner sans les connaître individuellement — c’est l’un des défis majeurs de l’actuariat.</p>
+</div>
+</section>
+<section id="le-coût-ultime" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="le-coût-ultime"><span class="header-section-number">1.2</span> Le coût ultime</h2>
+<p>Le coût d’un sinistre est rarement connu définitivement à l’ouverture du dossier. Il évolue au fil de l’instruction :</p>
+<ul>
+<li><strong>Évaluation initiale</strong> : estimation approximative à l’ouverture</li>
+<li><strong>Révisions</strong> : ajustements au fil des expertises et des informations</li>
+<li><strong>Règlements partiels</strong> : paiements intermédiaires (réparations, indemnités journalières)</li>
+<li><strong>Coût ultime</strong> : montant total et définitif une fois le dossier clos</li>
+</ul>
+<div class="exemple-box">
+<p><strong>📝 Exemple concret</strong></p>
+<p>Un dégât des eaux est déclaré et évalué initialement à 5 000 €. Après expertise, on découvre des moisissures cachées : le coût passe à 12 000 €. Six mois plus tard, un recours contre le voisin permet de récupérer 4 000 €. Le coût ultime net est de 8 000 €.</p>
+</div>
 <hr>
 </section>
-<section id="types-de-sinistres" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Types de sinistres</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="typologie-des-sinistres" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Typologie des sinistres</h1>
+<section id="trois-catégories-fondamentales" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="trois-catégories-fondamentales"><span class="header-section-number">2.1</span> Trois catégories fondamentales</h2>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 33%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Fréquence</th>
+<th>Sévérité</th>
+<th>Part de la charge</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Attritionnels</strong></td>
+<td>Élevée</td>
+<td>Faible à modérée</td>
+<td>30-50%</td>
+<td>Bris de glace, petits dégâts des eaux</td>
+</tr>
+<tr class="even">
+<td><strong>Graves</strong></td>
+<td>Faible</td>
+<td>Élevée</td>
+<td>30-50%</td>
+<td>Incendie total, accident corporel grave</td>
+</tr>
+<tr class="odd">
+<td><strong>Catastrophiques</strong></td>
+<td>Très faible</td>
+<td>Très élevée</td>
+<td>10-30%</td>
+<td>Tempête, inondation, séisme</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-typologie-sinistres" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-typologie-sinistres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-04_files/figure-html/fig-typologie-sinistres-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-typologie-sinistres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distribution des sinistres par type : la règle des 80/20
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Attention</strong></p>
+<p>Les sinistres <strong>graves et catastrophiques</strong>, bien que rares, peuvent représenter plus de la moitié de la charge totale. Leur modélisation nécessite des techniques spécifiques : théorie des valeurs extrêmes, distributions à queue lourde (Pareto, GPD). C’est aussi pourquoi la <strong>réassurance</strong> est indispensable.</p>
+</div>
+</section>
+<section id="le-seuil-de-gravité" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="le-seuil-de-gravité"><span class="header-section-number">2.2</span> Le seuil de gravité</h2>
+<p>Chaque assureur définit un <strong>seuil</strong> au-delà duquel un sinistre est qualifié de “grave”. Ce seuil dépend de la branche et du portefeuille :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Branche</th>
+<th>Seuil typique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Auto matériel</td>
+<td>50 000 €</td>
+</tr>
+<tr class="even">
+<td>Auto corporel</td>
+<td>200 000 €</td>
+</tr>
+<tr class="odd">
+<td>MRH</td>
+<td>100 000 €</td>
+</tr>
+<tr class="even">
+<td>RC Professionnelle</td>
+<td>500 000 €</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="indicateurs-clés-sp-fréquence" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Indicateurs clés : S/P, fréquence</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="indicateurs-de-sinistralité" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Indicateurs de sinistralité</h1>
+<section id="les-quatre-indicateurs-fondamentaux" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="les-quatre-indicateurs-fondamentaux"><span class="header-section-number">3.1</span> Les quatre indicateurs fondamentaux</h2>
+<section id="ratio-sp-sinistres-sur-primes" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="ratio-sp-sinistres-sur-primes"><span class="header-section-number">3.1.1</span> Ratio S/P (Sinistres sur Primes)</h3>
+<p><span class="math display">\[S/P = \frac{\text{Charge de sinistres}}{\text{Primes acquises}}\]</span></p>
+<p>Un S/P de 70% signifie que 70 centimes de chaque euro de prime servent à payer les sinistres. Un S/P supérieur à 100% indique une <strong>perte technique</strong>.</p>
+</section>
+<section id="fréquence" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="fréquence"><span class="header-section-number">3.1.2</span> Fréquence</h3>
+<p><span class="math display">\[f = \frac{\text{Nombre de sinistres}}{\text{Exposition}}\]</span></p>
+</section>
+<section id="sévérité-coût-moyen" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="sévérité-coût-moyen"><span class="header-section-number">3.1.3</span> Sévérité (coût moyen)</h3>
+<p><span class="math display">\[s = \frac{\text{Charge de sinistres}}{\text{Nombre de sinistres}}\]</span></p>
+</section>
+<section id="relation-fondamentale" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="relation-fondamentale"><span class="header-section-number">3.1.4</span> Relation fondamentale</h3>
+<p><span class="math display">\[\text{Prime pure} = f \times s = \text{Fréquence} \times \text{Sévérité}\]</span></p>
+<p>C’est la <strong>décomposition fréquence × sévérité</strong>, base de toute la tarification actuarielle.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>(40.0, 110.0)</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-sp-evolution" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sp-evolution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-04_files/figure-html/fig-sp-evolution-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sp-evolution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Évolution du ratio S/P sur 5 ans par branche
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="exemple-box">
+<p><strong>📝 Lecture du graphique</strong></p>
+<p>Observe le pic du S/P MRH en 2020 (85%) : il correspond à un événement climatique majeur (tempête Alex). Ce type de pic illustre pourquoi la <strong>réassurance</strong> est indispensable pour lisser la volatilité. L’auto reste plus stable car les sinistres sont moins corrélés.</p>
+</div>
 <hr>
 </section>
-<section id="réserves-et-ibnr" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Réserves et IBNR</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+</section>
+<section id="réserves-et-provisions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Réserves et provisions</h1>
+<section id="pourquoi-provisionner" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="pourquoi-provisionner"><span class="header-section-number">4.1</span> Pourquoi provisionner ?</h2>
+<p>L’assureur encaisse les primes <strong>avant</strong> de payer les sinistres. Il doit constituer des <strong>réserves</strong> pour honorer ses engagements futurs :</p>
+<table class="table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 26%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type de réserve</th>
+<th>Description</th>
+<th>Méthode d’estimation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PSAP</strong></td>
+<td>Provision pour Sinistres À Payer (dossiers ouverts)</td>
+<td>Évaluation dossier par dossier</td>
+</tr>
+<tr class="even">
+<td><strong>IBNR</strong></td>
+<td>Incurred But Not Reported (survenus, non déclarés)</td>
+<td>Chain Ladder, Bornhuetter-Ferguson</td>
+</tr>
+<tr class="odd">
+<td><strong>IBNER</strong></td>
+<td>Incurred But Not Enough Reserved (sous-évalués)</td>
+<td>Ajustement des réserves existantes</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-reserves" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="module-metier-04_files/figure-html/fig-reserves-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Décomposition des réserves techniques d’un portefeuille auto
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="attention-box">
+<p><strong>⚠️ Impact comptable majeur</strong></p>
+<p>Les réserves impactent directement le résultat de l’assureur. Une <strong>sous-estimation</strong> des IBNR améliore artificiellement le résultat de l’année en cours, mais détériore les résultats futurs quand les sinistres se révèlent. C’est un enjeu de <strong>gouvernance</strong> majeur, surveillé de près par l’ACPR (Autorité de Contrôle Prudentiel et de Résolution).</p>
+</div>
+</section>
+<section id="le-triangle-de-développement-aperçu" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="le-triangle-de-développement-aperçu"><span class="header-section-number">4.2</span> Le triangle de développement (aperçu)</h2>
+<p>Les IBNR sont estimés à l’aide de <strong>triangles de liquidation</strong> — un tableau qui montre comment les sinistres d’une même année de survenance se développent au fil du temps. Ce sujet sera approfondi dans les modules 6 et 7.</p>
 <hr>
 </section>
-<section id="suivi-temporel" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Suivi temporel</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+</section>
+<section id="suivi-de-la-sinistralité-dans-le-temps" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Suivi de la sinistralité dans le temps</h1>
+<section id="analyse-par-génération-vs-par-exercice" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="analyse-par-génération-vs-par-exercice"><span class="header-section-number">5.1</span> Analyse par génération vs par exercice</h2>
+<p>Deux approches pour suivre la sinistralité :</p>
+<ul>
+<li><strong>Par exercice</strong> (année comptable) : tous les flux financiers de l’année, quelle que soit l’année de survenance</li>
+<li><strong>Par génération</strong> (année de survenance) : tous les sinistres survenus la même année, quel que soit le moment du paiement</li>
+</ul>
+<div class="concept-cle">
+<p><strong>💡 Point clé</strong></p>
+<p>L’analyse par <strong>génération</strong> est plus pertinente car elle isole le risque réel d’une période donnée. L’analyse par exercice mélange les paiements de sinistres anciens et récents, ce qui brouille la lecture des tendances.</p>
+</div>
+</section>
+<section id="signaux-dalerte" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="signaux-dalerte"><span class="header-section-number">5.2</span> Signaux d’alerte</h2>
+<p>Le suivi temporel permet de détecter des tendances inquiétantes :</p>
+<table class="table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 51%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal</th>
+<th>Causes possibles</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fréquence en hausse</td>
+<td>Changement de comportement, fraude, évolution réglementaire</td>
+<td>Resserrer la souscription, revoir les exclusions</td>
+</tr>
+<tr class="even">
+<td>Sévérité en hausse</td>
+<td>Inflation des coûts, évolution jurisprudentielle</td>
+<td>Ajuster les réserves, revoir les franchises</td>
+</tr>
+<tr class="odd">
+<td>S/P en hausse</td>
+<td>Tarification insuffisante, anti-sélection</td>
+<td>Augmenter les tarifs, resegmenter</td>
+</tr>
+</tbody>
+</table>
+<div class="exemple-box">
+<p><strong>📝 Lien avec le projet central</strong></p>
+<p>Dans ton projet de pilotage de portefeuille, le suivi de ces indicateurs dans le temps sera au cœur du dashboard. Tu construiras des vues par génération, par segment et par garantie pour détecter les dérives.</p>
+</div>
 <hr>
+</section>
 </section>
 <section id="synthèse" class="level1 unnumbered">
 <h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="les-5-concepts-fondamentaux-à-retenir" class="level3 synthese-card" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="les-5-concepts-fondamentaux-à-retenir"><span class="header-section-number">5.2.1</span> 🎯 Les 5 concepts fondamentaux à retenir</h3>
+<ol type="1">
+<li><strong>Le sinistre suit un processus</strong> — De la survenance à la clôture, chaque étape génère des données exploitables</li>
+<li><strong>Attritionnels ≠ Graves ≠ Catastrophiques</strong> — Trois dynamiques très différentes à modéliser séparément</li>
+<li><strong>Prime pure = Fréquence × Sévérité</strong> — La décomposition fondamentale de la tarification</li>
+<li><strong>Les IBNR sont un risque caché</strong> — Les sinistres non encore déclarés doivent être provisionnés</li>
+<li><strong>L’analyse par génération est plus fiable</strong> — Elle isole le risque réel d’une période donnée</li>
+</ol>
+</section>
 <hr>
 </section>
 <section id="auto-évaluation" class="level1 unnumbered">
@@ -570,13 +960,13 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 1
+Question 1 : Qu’est-ce qu’un sinistre IBNR et pourquoi est-il problématique ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Un <strong>IBNR</strong> (Incurred But Not Reported) est un sinistre qui s’est déjà produit mais dont l’assureur n’a pas encore connaissance. Il est problématique car l’assureur doit le provisionner sans connaître ni son existence ni son montant. Les IBNR sont estimés par des méthodes actuarielles (Chain Ladder, Bornhuetter-Ferguson) et leur sous-estimation peut fausser gravement le résultat technique.</p>
 </div>
 </div>
 </div>
@@ -586,13 +976,13 @@ Question 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 2
+Question 2 : Pourquoi le S/P seul ne suffit pas pour juger la rentabilité ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Le S/P ne tient compte que des sinistres rapportés aux primes. Il ignore les <strong>frais de gestion</strong>, les <strong>frais d’acquisition</strong> et le <strong>coût du capital</strong>. Le <strong>combined ratio</strong> (S/P + ratio de frais) est plus complet. Un S/P de 70% peut correspondre à une perte si les frais représentent 35% des primes (combined ratio = 105%).</p>
 </div>
 </div>
 </div>
@@ -602,13 +992,13 @@ Question 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 3
+Question 3 : Pourquoi modéliser séparément sinistres attritionnels et graves ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : Leurs comportements statistiques sont très différents. Les <strong>attritionnels</strong> sont nombreux et prévisibles (loi des grands nombres), modélisables par des distributions classiques (Poisson/Gamma). Les <strong>graves</strong> sont rares et imprévisibles, avec des distributions à queue lourde (Pareto, GPD). Les mélanger dans un même modèle dégrade la qualité des estimations.</p>
 </div>
 </div>
 </div>
@@ -618,16 +1008,75 @@ Question 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 4
+Question 4 : Quelle différence entre l’analyse par exercice et par génération ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p><strong>Réponse</strong> : L’analyse par <strong>exercice</strong> prend les flux comptables de l’année (paiements + variations de réserves), toutes générations confondues. L’analyse par <strong>génération</strong> regroupe tous les sinistres survenus la même année. La génération est plus pertinente car elle isole le risque réel : un exercice peut paraître bon simplement parce que des boni sur d’anciennes générations compensent une mauvaise sinistralité courante.</p>
 </div>
 </div>
 </div>
+<hr>
+</section>
+<section id="glossaire" class="level1 unnumbered">
+<h1 class="unnumbered">Glossaire</h1>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>S/P</strong></td>
+<td>Ratio Sinistres sur Primes — indicateur clé de rentabilité technique</td>
+</tr>
+<tr class="even">
+<td><strong>IBNR</strong></td>
+<td>Incurred But Not Reported — sinistres survenus mais non déclarés</td>
+</tr>
+<tr class="odd">
+<td><strong>IBNER</strong></td>
+<td>Incurred But Not Enough Reserved — sinistres connus mais sous-provisionnés</td>
+</tr>
+<tr class="even">
+<td><strong>PSAP</strong></td>
+<td>Provision pour Sinistres À Payer — réserve pour les dossiers ouverts</td>
+</tr>
+<tr class="odd">
+<td><strong>Fréquence</strong></td>
+<td>Nombre de sinistres rapporté à l’exposition</td>
+</tr>
+<tr class="even">
+<td><strong>Sévérité</strong></td>
+<td>Coût moyen d’un sinistre</td>
+</tr>
+<tr class="odd">
+<td><strong>Combined ratio</strong></td>
+<td>S/P + ratio de frais — mesure complète de la rentabilité technique</td>
+</tr>
+<tr class="even">
+<td><strong>Génération</strong></td>
+<td>Ensemble des sinistres survenus la même année</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ressources-complémentaires" class="level1 unnumbered">
+<h1 class="unnumbered">Ressources complémentaires</h1>
+<ul>
+<li><strong>Denuit &amp; Charpentier</strong> — <em>Mathématiques de l’assurance non-vie</em> (tome 1)</li>
+<li><strong>Klugman, Panjer &amp; Willmot</strong> — <em>Loss Models: From Data to Decisions</em></li>
+<li><strong>ACPR</strong> — Rapports annuels sur la situation des assureurs français</li>
+</ul>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 4</a> <a href="module-technique-04.html" class="btn btn-primary">Voir le Module Technique 4 →</a></p>
 

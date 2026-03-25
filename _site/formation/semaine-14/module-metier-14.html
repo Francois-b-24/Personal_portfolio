@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="François Boussengui">
+<meta name="author" content="Francois Boussengui">
 
-<title>François BOUSSENGUI | Module 14 — MLOps appliqué</title>
+<title>François BOUSSENGUI | Module 14 – MLOps applique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -188,7 +188,7 @@ background: #06436e;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
-<meta property="og:title" content="François BOUSSENGUI | Module 14 — MLOps appliqué">
+<meta property="og:title" content="François BOUSSENGUI | Module 14 – MLOps applique">
 <meta property="og:description" content="Cycle de vie ML et monitoring">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -197,7 +197,7 @@ background: #06436e;
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
-<meta name="twitter:title" content="François BOUSSENGUI | Module 14 — MLOps appliqué">
+<meta name="twitter:title" content="François BOUSSENGUI | Module 14 – MLOps applique">
 <meta name="twitter:description" content="Cycle de vie ML et monitoring">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
@@ -477,7 +477,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Module 14 — MLOps appliqué</h1>
+      <h1 class="title">Module 14 – MLOps applique</h1>
             <p class="subtitle lead">Cycle de vie ML et monitoring</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">assurance</div>
@@ -493,14 +493,14 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Auteur·rice</div>
       <div class="quarto-title-meta-contents">
-               <p>François Boussengui </p>
+               <p>Francois Boussengui </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -516,13 +516,16 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#cycle-vie-ml" id="toc-cycle-vie-ml" class="nav-link active" data-scroll-target="#cycle-vie-ml"><span class="header-section-number">1</span> Cycle vie ML</a></li>
-  <li><a href="#monitoring-production" id="toc-monitoring-production" class="nav-link" data-scroll-target="#monitoring-production"><span class="header-section-number">2</span> Monitoring production</a></li>
-  <li><a href="#détection-drift" id="toc-détection-drift" class="nav-link" data-scroll-target="#détection-drift"><span class="header-section-number">3</span> Détection drift</a></li>
-  <li><a href="#réentraînement" id="toc-réentraînement" class="nav-link" data-scroll-target="#réentraînement"><span class="header-section-number">4</span> Réentraînement</a></li>
-  <li><a href="#gouvernance-modèles" id="toc-gouvernance-modèles" class="nav-link" data-scroll-target="#gouvernance-modèles"><span class="header-section-number">5</span> Gouvernance modèles</a></li>
-  <li><a href="#synthèse" id="toc-synthèse" class="nav-link" data-scroll-target="#synthèse">Synthèse</a></li>
-  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
+  <li><a href="#cycle-complet-donnees---features" id="toc-cycle-complet-donnees---features" class="nav-link active" data-scroll-target="#cycle-complet-donnees---features"><span class="header-section-number">1</span> Cycle complet : donnees -&gt; features</a></li>
+  <li><a href="#monitoring-metriques-de-performance-gini" id="toc-monitoring-metriques-de-performance-gini" class="nav-link" data-scroll-target="#monitoring-metriques-de-performance-gini"><span class="header-section-number">2</span> Monitoring : metriques de performance (Gini</a></li>
+  <li><a href="#drift-data-drift-distribution-des" id="toc-drift-data-drift-distribution-des" class="nav-link" data-scroll-target="#drift-data-drift-distribution-des"><span class="header-section-number">3</span> Drift : data drift (distribution des</a></li>
+  <li><a href="#strategies-de-reentrainement-periodique-sur" id="toc-strategies-de-reentrainement-periodique-sur" class="nav-link" data-scroll-target="#strategies-de-reentrainement-periodique-sur"><span class="header-section-number">4</span> Strategies de reentrainement : periodique, sur</a></li>
+  <li><a href="#gouvernance-comite-modele-documentation-audit" id="toc-gouvernance-comite-modele-documentation-audit" class="nav-link" data-scroll-target="#gouvernance-comite-modele-documentation-audit"><span class="header-section-number">5</span> Gouvernance : comite modele, documentation, audit</a></li>
+  <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthese</a>
+  <ul class="collapse">
+  <li><a href="#les-concepts-cles" id="toc-les-concepts-cles" class="nav-link" data-scroll-target="#les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</a></li>
+  </ul></li>
+  <li><a href="#auto-evaluation" id="toc-auto-evaluation" class="nav-link" data-scroll-target="#auto-evaluation">Auto-evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -533,38 +536,65 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
-<section id="cycle-vie-ml" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Cycle vie ML</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<style>
+.objectifs-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+.objectifs-box h3 { color: #92400e; margin-top: 0; }
+.concept-cle { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 4px solid #06436e; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.attention-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 4px solid #fe4454; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.exemple-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #72f1b8; padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+.synthese-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0; }
+.prerequis-temps { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+.prerequis-temps > div { background: #f1f5f9; padding: 0.75rem 1.25rem; border-radius: 8px; }
+</style>
+<section id="cycle-complet-donnees---features" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Cycle complet : donnees -&gt; features</h1>
+<p>Cycle complet : donnees -&gt; features -&gt; entrainement -&gt; validation -&gt; deploiement -&gt; monitoring -&gt; reentrainement.</p>
+<div class="concept-cle">
+<p><strong>Point cle</strong></p>
+<p>Ce concept est fondamental pour la suite du parcours et sera directement applique dans le projet central.</p>
+</div>
 <hr>
 </section>
-<section id="monitoring-production" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Monitoring production</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="monitoring-metriques-de-performance-gini" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Monitoring : metriques de performance (Gini</h1>
+<p>Monitoring : metriques de performance (Gini, AIC), metriques operationnelles (latence, erreurs).</p>
 <hr>
 </section>
-<section id="détection-drift" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Détection drift</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="drift-data-drift-distribution-des" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Drift : data drift (distribution des</h1>
+<p>Drift : data drift (distribution des features change), concept drift (relation features/target change).</p>
+<div class="attention-box">
+<p><strong>Attention</strong></p>
+<p>Bien comprendre ces mecanismes est essentiel pour eviter des erreurs de modelisation et de pilotage.</p>
+</div>
 <hr>
 </section>
-<section id="réentraînement" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Réentraînement</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="strategies-de-reentrainement-periodique-sur" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Strategies de reentrainement : periodique, sur</h1>
+<p>Strategies de reentrainement : periodique, sur trigger, continu.</p>
 <hr>
 </section>
-<section id="gouvernance-modèles" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Gouvernance modèles</h1>
-<p>Contenu détaillé pour ce concept fondamental de l’assurance non-vie.</p>
+<section id="gouvernance-comite-modele-documentation-audit" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Gouvernance : comite modele, documentation, audit</h1>
+<p>Gouvernance : comite modele, documentation, audit trail.</p>
 <hr>
 </section>
-<section id="synthèse" class="level1 unnumbered">
-<h1 class="unnumbered">Synthèse</h1>
-<p>Les concepts clés à retenir.</p>
+<section id="synthese" class="level1 unnumbered">
+<h1 class="unnumbered">Synthese</h1>
+<section id="les-concepts-cles" class="level3 synthese-card" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="les-concepts-cles"><span class="header-section-number">5.0.1</span> Les concepts cles</h3>
+<ol type="1">
+<li><strong>Cycle complet : donnees -&gt; features -&gt; entrainement</strong></li>
+<li><strong>Monitoring : metriques de performance (Gini, AIC), metriques</strong></li>
+<li><strong>Drift : data drift (distribution des features change)</strong></li>
+<li><strong>Strategies de reentrainement : periodique, sur trigger, continu</strong></li>
+<li><strong>Gouvernance : comite modele, documentation, audit trail</strong></li>
+</ol>
+</section>
 <hr>
 </section>
-<section id="auto-évaluation" class="level1 unnumbered">
-<h1 class="unnumbered">Auto-évaluation</h1>
+<section id="auto-evaluation" class="level1 unnumbered">
+<h1 class="unnumbered">Auto-evaluation</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -577,7 +607,7 @@ Question 1
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -593,7 +623,7 @@ Question 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -609,7 +639,7 @@ Question 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
@@ -625,12 +655,12 @@ Question 4
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Question de compréhension.</p>
+<p>Explique ce concept dans tes propres mots et donne un exemple concret.</p>
 </div>
 </div>
 </div>
 <hr>
-<p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 14</a> <a href="module-technique-14.html" class="btn btn-primary">Voir le Module Technique 14 →</a></p>
+<p><a href="index.html" class="btn btn-secondary">&lt;- Retour a la Semaine 14</a> <a href="module-technique-14.html" class="btn btn-primary">Voir le Module Technique 14 -&gt;</a></p>
 
 
 </section>

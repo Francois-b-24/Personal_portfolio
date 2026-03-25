@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -189,7 +223,7 @@ background: #06436e;
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bfrancois.netlify.app/">
 <meta property="og:title" content="François BOUSSENGUI | Fiche de travail — Semaine 11">
-<meta property="og:description" content="Exercices pratiques et livrables">
+<meta property="og:description" content="Exercices : rentabilité et MLflow">
 <meta property="og:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="François B. Portfolio">
@@ -198,7 +232,7 @@ background: #06436e;
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bfrancois.netlify.app/">
 <meta name="twitter:title" content="François BOUSSENGUI | Fiche de travail — Semaine 11">
-<meta name="twitter:description" content="Exercices pratiques et livrables">
+<meta name="twitter:description" content="Exercices : rentabilité et MLflow">
 <meta name="twitter:image" content="https://bfrancois.netlify.app/assets/img/moi.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -478,7 +512,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Fiche de travail — Semaine 11</h1>
-            <p class="subtitle lead">Exercices pratiques et livrables</p>
+            <p class="subtitle lead">Exercices : rentabilité et MLflow</p>
                       </div>
   </div>
     
@@ -495,7 +529,7 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 mars 2026</p>
+        <p class="date">25 mars 2026</p>
       </div>
     </div>
     
@@ -511,11 +545,10 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul class="collapse">
-  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">Livrables</a></li>
-  <li><a href="#exercices-métier" id="toc-exercices-métier" class="nav-link" data-scroll-target="#exercices-métier">Exercices métier</a></li>
-  <li><a href="#exercices-techniques" id="toc-exercices-techniques" class="nav-link" data-scroll-target="#exercices-techniques">Exercices techniques</a></li>
-  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">Pont métier-technique</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#livrables" id="toc-livrables" class="nav-link active" data-scroll-target="#livrables">📦 Livrables</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">🏋️ Exercices</a></li>
+  <li><a href="#pont-métier-technique" id="toc-pont-métier-technique" class="nav-link" data-scroll-target="#pont-métier-technique">🔗 Pont métier-technique</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">✅ Checklist</a></li>
   </ul>
 </nav>
     </div>
@@ -526,34 +559,126 @@ Les cartes utilisent github-readme-stats (https://github.com/anuraghazra/github-
 
 
 
+<style>
+.livrable-card { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #06436e; }
+.livrable-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.livrable-title { font-weight: bold; font-size: 1.1rem; color: #06436e; }
+.livrable-status { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; }
+.livrable-status.required { background: #fee2e2; color: #991b1b; }
+.exercice-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.exercice-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #06436e; font-weight: bold; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; font-size: 1.2rem; }
+.reflexion-box { background: linear-gradient(135deg, #fef9e6 0%, #fef3c7 100%); border-left: 4px solid #f8d65c; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1rem 0; }
+</style>
+<hr>
 <section id="livrables" class="level2">
-<h2 class="anchored" data-anchor-id="livrables">Livrables</h2>
-<ol type="1">
-<li><strong>Livrable métier</strong> : Application des concepts du Module 11</li>
-<li><strong>Livrable technique</strong> : Mise en pratique du Module Technique 11</li>
-<li><strong>Livrable intégrateur</strong> : Combinaison métier + technique</li>
-</ol>
+<h2 class="anchored" data-anchor-id="livrables">📦 Livrables</h2>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📊 Livrable 1 — Dashboard de rentabilité::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Script Python qui calcule et visualise : S/P par branche, combined ratio, évolution sur 5 ans, CLV par segment. Produire un mini-rapport avec les KPIs commentés.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}🔬 Livrable 2 — Expérimentation MLflow::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Entraîner 5+ modèles (GLM avec différents paramètres + 1 XGBoost) en loggant tout dans MLflow. Comparer via l’interface web et documenter le choix du meilleur modèle.</p>
+</div>
+<div class="livrable-card">
+<div class="livrable-header">
+<p>:::{.livrable-title}📋 Livrable 3 — Modèle enregistré::: :::{.livrable-status .required}Obligatoire:::</p>
+</div>
+<p>Enregistrer le meilleur modèle dans le Model Registry et le passer en stage “Staging”. Documenter la procédure de validation.</p>
+</div>
+<hr>
 </section>
-<section id="exercices-métier" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-métier">Exercices métier</h2>
-<p>Applique les concepts du module sur des données simulées ou réelles.</p>
-</section>
-<section id="exercices-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-techniques">Exercices techniques</h2>
-<p>Mets en pratique les outils techniques dans le contexte du projet.</p>
+<section id="exercices" class="level2">
+<h2 class="anchored" data-anchor-id="exercices">🏋️ Exercices</h2>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>📝 Exercice M1 — Combined ratio</p>
+</div>
+<p>Un assureur auto a : Primes acquises = 50 M€, Charge sinistres = 37 M€, Frais de gestion = 4 M€, Commissions = 9 M€. Calcule le S/P, le ratio de frais et le combined ratio. L’activité est-elle rentable ?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>S/P = 37/50 = <strong>74%</strong></li>
+<li>Ratio frais gestion = 4/50 = <strong>8%</strong></li>
+<li>Ratio commissions = 9/50 = <strong>18%</strong></li>
+<li><strong>Combined ratio = 74 + 8 + 18 = 100%</strong></li>
+</ul>
+<p>L’activité est au <strong>point mort</strong> technique. Pas de marge pour les imprévus. Rentable uniquement grâce aux produits financiers. Actions : réduire le S/P (tarification, sélection) ou les frais (digitalisation, renégociation commissions).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="exercice-box">
+<div class="exercice-header">
+<p>🔬 Exercice T1 — Premier run MLflow</p>
+</div>
+<p>Installe MLflow (<code>pip install mlflow</code>) et logge un modèle simple avec paramètres et métriques. Lance l’interface web et vérifie que tout est visible.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlflow</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mlflow.set_experiment(<span class="st">"test-mlflow"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> mlflow.start_run():</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    mlflow.log_param(<span class="st">"model"</span>, <span class="st">"test"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    mlflow.log_metric(<span class="st">"accuracy"</span>, <span class="fl">0.85</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    mlflow.log_metric(<span class="st">"gini"</span>, <span class="fl">0.35</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Puis : mlflow ui --port 5000</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="pont-métier-technique" class="level2">
-<h2 class="anchored" data-anchor-id="pont-métier-technique">Pont métier-technique</h2>
-<p>Comment les concepts de cette semaine s’articulent-ils dans le projet central ?</p>
+<h2 class="anchored" data-anchor-id="pont-métier-technique">🔗 Pont métier-technique</h2>
+<section id="réflexion" class="level3 reflexion-box">
+<h3 class="anchored" data-anchor-id="réflexion">🤔 Réflexion</h3>
+<ol type="1">
+<li><strong>Comment MLflow t’aide-t-il à justifier ton choix de modèle auprès d’un actuaire ?</strong> (traçabilité, comparaison objective)</li>
+<li><strong>Quels KPIs du dashboard de rentabilité pourraient déclencher un réentraînement du modèle ?</strong> (S/P qui dérive, Gini qui baisse)</li>
+<li><strong>Comment versionner un modèle GLM quand les données changent chaque mois ?</strong></li>
+</ol>
+</section>
+<hr>
 </section>
 <section id="checklist" class="level2">
-<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Module Métier 11 terminé</label></li>
-<li><label><input type="checkbox">Module Technique 11 terminé</label></li>
-<li><label><input type="checkbox">Livrables produits</label></li>
-<li><label><input type="checkbox">Exercices réalisés</label></li>
+<h2 class="anchored" data-anchor-id="checklist">✅ Checklist</h2>
+<div class="checklist">
+<ul>
+<li>Module Métier 11 terminé (combined ratio, CLV, KPIs)</li>
+<li>Module Technique 11 terminé (MLflow tracking, registry)</li>
+<li>Livrable 1 (dashboard rentabilité)</li>
+<li>Livrable 2 (expérimentation MLflow)</li>
+<li>Livrable 3 (modèle enregistré)</li>
+<li>Exercices réalisés</li>
 </ul>
+</div>
 <hr>
 <p><a href="index.html" class="btn btn-secondary">← Retour à la Semaine 11</a></p>
 
